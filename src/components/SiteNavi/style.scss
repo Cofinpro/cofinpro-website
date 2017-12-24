@@ -1,0 +1,164 @@
+
+.cofinpro-logo {
+    width: 110px; 
+}
+
+#cofinpro-nav.on-main-site {
+    margin-top: 48px;
+}
+
+#cofinpro-nav {
+
+    button {
+        margin-left: auto;
+    }
+
+    padding-right: 0px;
+    padding-left: 0px; 
+
+    a {
+        padding-bottom: 0px;
+        padding-right: 0px;
+        padding-left: 0px;
+
+        display: inline;
+
+        line-height: 0.9rem;
+        font-size: 0.9rem;
+
+        color: black;
+    }
+
+    .navbar-brand {
+        padding-top: 0px;
+    }
+
+    .nav-dotted-line {
+        width: 15px;
+        margin-right: 0.3rem;
+        margin-left: 0.3rem;
+    }
+
+    .nav-dotted-line-vertical {
+        height: 15px;
+        margin-right: 0.3rem;
+        margin-left: 0.3rem;
+    }
+
+
+    .nav-item.active {
+        font-weight: 800;
+    
+        a {
+            border-bottom: 1px solid black;
+        }
+    }
+
+    .toggle-icon {
+        font-size:2rem;
+    }
+
+    .navbar-toggler {
+        border: none;
+        cursor:pointer;
+
+    }
+
+    .navbar-toggler:focus {
+        outline: none;
+    }
+
+    .navbar-toggler>span:hover {
+        color: #b34d00 !important;
+    }
+
+    .title-menu {
+        margin-left: auto;
+        padding-top: 12px;
+    }
+
+    button.navbar-toggler {
+        margin-left: 0px;
+    }
+
+}
+
+#cofinpro-nav-career {
+    
+        padding-right: 0px;
+        padding-left: 0px;
+    
+        a {
+            padding-bottom: 0px;
+            padding-right: 0px;
+            padding-left: 0px;
+    
+            display: inline;
+            
+            color: black;
+        }
+    
+        .navbar-brand {
+            padding-top: 0px;
+        }
+    
+        .nav-dotted-line {
+            width: 15px;
+            margin-right: 0.3rem;
+            margin-left: 0.3rem;
+        }
+    
+        .nav-dotted-line-vertical {
+            height: 15px;
+            margin-right: 0.3rem;
+            margin-left: 0.3rem;
+        }
+    
+    
+        .nav-item.active {
+            font-weight: 800;
+        }
+    
+        .toggle-icon {
+            font-size:2rem;
+        }
+    
+        .navbar-toggler {
+            border: none;
+            cursor:pointer;
+            line-height: inherit;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    
+        .navbar-toggler:focus {
+            outline: none;
+        }
+    
+        .navbar-toggler>span:hover {
+            color: #7995b6 !important;
+        }
+
+        .title-perspective {
+   
+        }
+    
+    }
+
+    #navbarCareerContent {
+
+        a {
+            padding-bottom: 0px;
+            padding-right: 0px;
+            padding-left: 0px;
+    
+            display: inline;
+    
+            color: black;
+
+        }
+
+        .nav-item.active {
+            font-weight: 800;
+        }
+    }

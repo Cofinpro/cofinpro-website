@@ -1,0 +1,364 @@
+// Colors
+//
+// Grayscale and brand colors for use across Bootstrap.
+
+// Start with assigning color names to specific hex values.
+//
+// Color system
+//
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #A9C5E8 !default;
+$indigo: #3f51b5 !default;
+$purple: #673ab7 !default;
+$pink: #e91e63 !default;
+$red: #f44336 !default;
+$orange: #EC7B1A !default;
+$orange-light: #F5EEED !default;
+$yellow: #ffab00 !default;
+$green: #8bc34a !default;
+$teal: #009688 !default;
+$cyan: #00bcd4 !default;
+
+// Reassign color vars to semantic color scheme
+$theme-colors: (
+    primary: $orange,
+    secondary: $blue,
+    success: $green,
+    info: $cyan,
+    warning: $yellow,
+    danger: $red,
+    light: $gray-100,
+    dark: $gray-800
+  )
+  !default; 
+
+$font-family-sans-serif: apercu-regular-pro;
+$font-family-monospace: apercu-regular-pro;
+$font-family-base: apercu-regular-pro;
+
+$font-size-base: 1.125rem !default;
+$font-size-lg:                ($font-size-base * 1.25) !default;
+$font-size-sm:                ($font-size-base * .875) !default;
+
+$grid-columns:      12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+
+.news-content {
+  margin-top: 1rem;
+}
+
+#navbarSupportedContent {
+  @include media-breakpoint-only(xs) {
+    background-color:$orange;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-only(sm) {
+    background-color:$orange;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-only(md) {
+    background-color:$orange;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-only(lg) {
+      background-color:white;
+  }
+  @include media-breakpoint-only(xl) {
+      background-color:white;
+  }
+}
+
+#navbarCareerContent {
+  background-color:$blue;
+  padding: 2rem;
+  margin-top: 1rem;
+}
+
+.min-view-height {
+  min-height: 80vh;
+}
+
+.filler-box {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.filler-box-two {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.space-button-left-right { 
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.inline-link {
+  display: inline;
+}
+
+.sub-line {
+  font-size: 1.125rem;
+}
+
+.bg-brown {
+  background-color: #847575;
+}
+
+.bg-orange-light {
+  background-color: $orange-light;
+}
+
+.icon-social-media {
+  width: 2rem;
+}
+
+.img-md-padding {
+  padding: 1.5rem;
+}
+
+.padding-sm {
+  padding: 1rem;
+}
+
+.padding-md {
+  padding: 2rem;
+}
+
+.padding-sm-top-bottom {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.padding-md-top-bottom {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.padding-lg-top-bottom {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.padding-xl-top-bottom {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+
+.padding-sm-bottom {
+  padding-bottom: 1rem;
+}
+
+.padding-md-bottom {
+  padding-bottom: 2rem;
+}
+
+.padding-sm-top {
+  padding-top: 1rem;
+}
+
+.padding-md-top {
+  padding-top: 2rem;
+}
+
+.padding-lg-top {
+  padding-top: 4rem;
+}
+
+.margin-sm-top-bottom {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.margin-md-top-bottom {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.margin-lg-top-bottom {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.margin-sm-top {
+  margin-top: 1rem;
+}
+
+.margin-md-top {
+  margin-top: 2rem;
+}
+
+.margin-sm-bottom {
+  margin-bottom: 1rem;
+}
+
+.margin-md-bottom {
+  margin-bottom: 2rem;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0rem;
+}
+
+.no-padding-bottom {
+  padding-bottom: 0rem;
+}
+
+.stellenangebote-box {
+  border: 3px dashed #A9C5E8;
+}
+
+a.darken:hover img {
+  /*-webkit-filter: grayscale(1);
+  filter: grayscale(1);*/
+}
+
+.nav-dotted-line-vertical {
+  height: 15px;
+  margin-right: 0.3rem;
+  margin-left: 0.3rem;
+}
+
+#carouselCaptionsArbeitsplatz,
+.imageCarousel,
+.socialMediaCarousel {
+
+  .carousel-control-prev>i,
+  .carousel-control-next>i {
+      font-size: 2rem;
+      color: #EC7B1A !important;
+  }
+
+  @include media-breakpoint-only(md) {
+    .carousel-control-prev {
+      left: -62px;
+    }
+  
+    .carousel-control-next {
+      right: -62px;
+  
+    }
+  }
+  @include media-breakpoint-only(lg) {
+    .carousel-control-prev {
+      left: -96px;
+    }
+  
+    .carousel-control-next {
+      right: -96px;
+  
+    }
+  }
+  @include media-breakpoint-only(xl) {
+    .carousel-control-prev {
+      left: -96px;
+    }
+  
+    .carousel-control-next {
+      right: -96px;
+  
+    }
+  }
+
+}
+
+.ytp-large-play-button {
+
+  visibility: hidden !important;
+
+}
+
+.jobangebote-technologie-box {
+  border: 3px dashed $orange;
+}
+
+.jobangebote-studenten-box {
+  border: 3px dashed $blue;
+}
+
+.jobangebote-andere-box {
+  border: 3px dashed $orange;
+}
+
+.social-media-icon-carousel {
+  height: 30px;
+  padding-left: 14px;
+  padding-right: 14px;
+
+  @include media-breakpoint-only(xs) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  @include media-breakpoint-only(md) {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+}
+
+.cofinpro-logo-startseite {
+  margin-top: 24px;
+}
+
+#button-pinnwand-collapse,
+#button-startseite-collapse {
+  background: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+
+  i {
+    color: $orange;
+    font-size: 2rem;
+  }
+}
+
+#button-startseite-collapse:focus {
+  outline: none;
+}
+
+.invisible {
+  visibility: hidden;
+}

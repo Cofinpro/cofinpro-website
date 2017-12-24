@@ -1,0 +1,658 @@
+{
+  "data": {
+    "allContentfulAsset": {
+      "edges": [
+        {
+          "node": {
+            "id": "c2PXfIZNogo6immYsmEEGKw",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2PXfIZNogo6immYsmEEGKw/6cb3558f83baf3fc528c3582c0b708f2/social_media_10_jahre_cofinpro.jpg",
+              "fileName": "social_media_10_jahre_cofinpro.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4uitHTutAcEmYOC2COa8OQ",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4uitHTutAcEmYOC2COa8OQ/cbcebe403c03ffc8e60a1f89bdf826a6/social_media_cofinpro_roller.jpg",
+              "fileName": "social_media_cofinpro_roller.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4VQ1vWZ2Ba2AgsK28OmKgE",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4VQ1vWZ2Ba2AgsK28OmKgE/bcd31a8bc8c25d62587d74aa65c0c1aa/c4VQ1vWZ2Ba2AgsK28OmKgE.jpg",
+              "fileName": "c4VQ1vWZ2Ba2AgsK28OmKgE.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c42L5bFyoXmUu06iSoAOmqI",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/42L5bFyoXmUu06iSoAOmqI/03f366547ae28f4c6820e97c00cf4fb1/c42L5bFyoXmUu06iSoAOmqI.jpg",
+              "fileName": "c42L5bFyoXmUu06iSoAOmqI.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6YSRiyGNYAOiMeQGgMsEye",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6YSRiyGNYAOiMeQGgMsEye/6290947ab3adc35607227462b3426bb2/Aussenansicht_2_optimiert.jpg",
+              "fileName": "Aussenansicht_2_optimiert.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c11FcICzQg6WkaEiSa8sO06",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/11FcICzQg6WkaEiSa8sO06/96c8cd1d05cf8e3975aa59fdf9a66ebc/weiterbildung_optimiert.jpg",
+              "fileName": "weiterbildung_optimiert.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1zMlS70qO4KkGEY88GsK2U",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1zMlS70qO4KkGEY88GsK2U/a7789da2eecd3586263c6c65d3875b10/icon_3_house_fixed.png",
+              "fileName": "icon_3_house_fixed.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5ni8BBWGRimYwiuuS4EGw6",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5ni8BBWGRimYwiuuS4EGw6/9a410f65a690333f9bd685b678715013/icon_hand_star_fixed.png",
+              "fileName": "icon_hand_star_fixed.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1qHBO9lQzGQMG6OqWCwuy0",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1qHBO9lQzGQMG6OqWCwuy0/83bea23ca850c42d4346bd070ba6cdd8/icon_money_fixed.png",
+              "fileName": "icon_money_fixed.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "Rwu2NxNO4m80Oi6mEyEAC",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/Rwu2NxNO4m80Oi6mEyEAC/53b8a961235ce008391aaa8475bbbcab/icon_3_people_fixed.png",
+              "fileName": "icon_3_people_fixed.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c2WhIxmYJks8cUqMUuGsO4",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2WhIxmYJks8cUqMUuGsO4/4e2814d3f380ab7223255b5335b737f5/Bildschirmfoto_2017-11-14_um_15.38.36.png",
+              "fileName": "Bildschirmfoto 2017-11-14 um 15.38.36.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4cRXOFQE1yuQQ28i6eiu0e",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4cRXOFQE1yuQQ28i6eiu0e/206a38b7df0d6873d91757357b2f8f98/Bildschirmfoto_2017-11-14_um_15.37.41.png",
+              "fileName": "Bildschirmfoto 2017-11-14 um 15.37.41.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3O4reCHL204sI8C4EaK64w",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/3O4reCHL204sI8C4EaK64w/095f5669eefdde4c96a35659a12daee0/Bildschirmfoto_2017-11-14_um_15.37.58.png",
+              "fileName": "Bildschirmfoto 2017-11-14 um 15.37.58.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c2bk4cQCtck0oKe0aK4eK4w",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2bk4cQCtck0oKe0aK4eK4w/730a1ccc8f504195aeb79ae65b81126b/17-1961-Alexa-Schulz-Kredit-Senior.png",
+              "fileName": "17-1961-Alexa-Schulz-Kredit-Senior.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3TlQLckY80UCO0wWK6wOSy",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/3TlQLckY80UCO0wWK6wOSy/d14ca6241b0239a1ee6a682e053b9d73/standorte.png",
+              "fileName": "standorte.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "UC6iBrhlYse0ymWsOc8Wi",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/UC6iBrhlYse0ymWsOc8Wi/e6cf803bb66fba4e3e552ad5407158c9/gptw.png",
+              "fileName": "gptw.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c68HmgJ7s6kowcYc6csQOKc",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/68HmgJ7s6kowcYc6csQOKc/a397f65880ce28af6b03140d6dcf6b94/vielfalt.png",
+              "fileName": "vielfalt.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "jrZ0VPYaqskYSSUyc0KqI",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/jrZ0VPYaqskYSSUyc0KqI/68068ada547c77978aeede0aaabbda1b/fair_company.png",
+              "fileName": "fair_company.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "BqlKRaeNigaqeuuKE0aKY",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/BqlKRaeNigaqeuuKE0aKY/17152a5bb2dfc30f48344c32721f8aee/kununu-open-company-clean.png",
+              "fileName": "kununu-open-company-clean.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c7yiM5zhIwEU0mW0W8qIQ8Y",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/7yiM5zhIwEU0mW0W8qIQ8Y/91a55edcaf05f72800f7208c0fb69330/kununu-top-company-clean.png",
+              "fileName": "kununu-top-company-clean.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c2s992GlBLO2eQGWuu42UMG",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2s992GlBLO2eQGWuu42UMG/aa889b0515a47bbd6ec6b1cd09556b53/19-2137-Samuel-Bornemann-Wert-Junior.jpg",
+              "fileName": "19-2137-Samuel-Bornemann-Wert-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4z14Ktt6B2G68C0GeA2ymq",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4z14Ktt6B2G68C0GeA2ymq/07a8f826c79688aa94da72b9b670f9ee/21-2446-Valentino-Pola-Tech-Senior.jpg",
+              "fileName": "21-2446-Valentino-Pola-Tech-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1xl26f0AyEaaIywS2cIEAc",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1xl26f0AyEaaIywS2cIEAc/8971188581866083c23bf84a3e518784/21-2525-Valentino-Pola-Tech-Senior.jpg",
+              "fileName": "21-2525-Valentino-Pola-Tech-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4BuidOpLyUmgoSow0ysCME",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/0d2bc640943b13bb202918ab10cbae17/17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+              "fileName": "17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5qc37QxMQwoEYq6AYUi6ak",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5qc37QxMQwoEYq6AYUi6ak/ca42f00cc18d9ec45165e44fbdeb869c/11-1457-Alexander-Christau-Kredit-Senior.jpg",
+              "fileName": "11-1457-Alexander-Christau-Kredit-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c46J8dnmMGsaiuEcOOKcYme",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/46J8dnmMGsaiuEcOOKcYme/072aa2470690b7727fbdc35265781cd1/08-1153-Marco-Moczarski-Methodik-Senior.jpg",
+              "fileName": "08-1153-Marco-Moczarski-Methodik-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6MMeSW8cdqoe82WYCa2O8u",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/ab4c984168d70d9740247aecddfad668/23-2865-Stefan-Gra_____-Kredit-Senior.jpg",
+              "fileName": "23-2865-Stefan-Gra├ƒ-Kredit-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "SypfZygiE6MogU6U4SeaE",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/SypfZygiE6MogU6U4SeaE/033f77221e97b92231a69605404008e9/15-1832-Peter-Zepetzauer-Kredit.jpg",
+              "fileName": "15-1832-Peter-Zepetzauer-Kredit.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "nbfYKhyCe4ISk40Uw88mE",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/nbfYKhyCe4ISk40Uw88mE/e68fed6e2d17d505ce6b6c38a18c23d5/06-0960-Sven-Thiele-Wert-Senior.jpg",
+              "fileName": "06-0960-Sven-Thiele-Wert-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c31F9uXjOo0q0OKig2I6uIm",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/31F9uXjOo0q0OKig2I6uIm/e045ced1e4a3549d391abaa0a240b0cc/04-0723-Melanie-Purger-Wert-Senior.jpg",
+              "fileName": "04-0723-Melanie-Purger-Wert-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3Io9SAEvReYCQ4G8WuuKOO",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/3Io9SAEvReYCQ4G8WuuKOO/b78854ded928b69e62d4742b2500d37e/03-0569-Stefan-Ankert-Wert-Senior.jpg",
+              "fileName": "03-0569-Stefan-Ankert-Wert-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6hbstGb6k8MUUIWI4W44uo",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6hbstGb6k8MUUIWI4W44uo/e402c37585452593b472f41bd51926d4/18-2097-Simon-Mangel-Wert-Junior.jpg",
+              "fileName": "18-2097-Simon-Mangel-Wert-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4MPPqBxbby44YeoSgYM6QQ",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4MPPqBxbby44YeoSgYM6QQ/dad9ede202e08a9db09edf0a23d9c57e/16-1891-Kristina-Gru_____nwald-Wert-Junior.jpg",
+              "fileName": "16-1891-Kristina-Gru╠ênwald-Wert-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5AoFe1mNsQamUKqgwuYwky",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5AoFe1mNsQamUKqgwuYwky/2a23d31a6f8823b06832486b9862d197/05-0889-Daniel-Fiedler-Wert-Senior.jpg",
+              "fileName": "05-0889-Daniel-Fiedler-Wert-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "sWTx2k9yDeEUsYOimkqOq",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/sWTx2k9yDeEUsYOimkqOq/f7bbc59ccfcd19ffdacb6bd3b691c0a8/07-1082-Majlen-Hermann-Stip-Junior.jpg",
+              "fileName": "07-1082-Majlen-Hermann-Stip-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5g1h8VnqkgeEsucQGcKUSg",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5g1h8VnqkgeEsucQGcKUSg/8cece367f3c5f63d61cca66ba5f43534/10-1354-Jonas-Brehm-Praktikant.jpg",
+              "fileName": "10-1354-Jonas-Brehm-Praktikant.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5Q0OCFpjjOa4WMCKwyOuOs",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5Q0OCFpjjOa4WMCKwyOuOs/52015b88cae00ace9e9517c1fda2c826/22-2706-Melise-Akcay-DHBW-Studentin.jpg",
+              "fileName": "22-2706-Melise-Akcay-DHBW-Studentin.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c306hUxPjgQMcOeScyWYyIc",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/306hUxPjgQMcOeScyWYyIc/abc3479318f4276dbfd8f1691515828a/13-1627-Michael-Etzbach-Tech-Junior.jpg",
+              "fileName": "13-1627-Michael-Etzbach-Tech-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c7tGcHUCncI68meeKuYIgUk",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/7tGcHUCncI68meeKuYIgUk/d01068bd23711a2dbbef5aa9ea299c37/20-2227-Aljana-Scharrer-Kredit-Junior.jpg",
+              "fileName": "20-2227-Aljana-Scharrer-Kredit-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c80B8mKLwk08CEcaUgQq4",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/80B8mKLwk08CEcaUgQq4/bc83d71dec1443bc7d4375bbf7d96c68/12-1543-Jo_____rg-Ramser-Tech-Senior.jpg",
+              "fileName": "12-1543-Jo╠êrg-Ramser-Tech-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c2PGItCpVGo20aaAe26CEeo",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2PGItCpVGo20aaAe26CEeo/f5c738fd12cc1a17577695d17170f9f6/21-2310-Valentino-Pola-Tech-Senior.jpg",
+              "fileName": "21-2310-Valentino-Pola-Tech-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3k6ub8gcfmgckyKkwSWeIY",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/3k6ub8gcfmgckyKkwSWeIY/fef0c9cdcc19b52d0343319b7a94bf87/01-0381-Andreas-Fischer-Tech-Junior.jpg",
+              "fileName": "01-0381-Andreas-Fischer-Tech-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4ZldZzT0rey86UqK6oeiws",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4ZldZzT0rey86UqK6oeiws/93d23ba1576bf43fe2c21b1be45b8ff0/14-1644-Michael-Heck-Tech-Senior.jpg",
+              "fileName": "14-1644-Michael-Heck-Tech-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c2ECXdvjuHqCsgOyMckiKYU",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2ECXdvjuHqCsgOyMckiKYU/279bffd4020cdc795ba9bed764492ac8/02-0488-Daniel-Eichsteller-Tech-Junior.jpg",
+              "fileName": "02-0488-Daniel-Eichsteller-Tech-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c2ptEraok0k6uiQuGkScoMK",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/2ptEraok0k6uiQuGkScoMK/4eb4773a47818c4727deda5c5e1ddb6b/14-1658-Michael-Heck-Tech-Senior.jpg",
+              "fileName": "14-1658-Michael-Heck-Tech-Senior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6uTfP5H2BUIc48acYOoYsq",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6uTfP5H2BUIc48acYOoYsq/46cf33b12dd6f0252be6956a59978a8d/02-0506-Daniel-Eichsteller-Tech-Junior.jpg",
+              "fileName": "02-0506-Daniel-Eichsteller-Tech-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1PbUnqlQbyGk8WoSe8kuuc",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1PbUnqlQbyGk8WoSe8kuuc/b7da58ef1bf6e1bf831500b8d6e6ab87/02-0499-Daniel-Eichsteller-Tech-Junior.jpg",
+              "fileName": "02-0499-Daniel-Eichsteller-Tech-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c57s6yFwTKoeaciseSU6mgy",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/57s6yFwTKoeaciseSU6mgy/6c6cee556c994801bab8b88b95c4684a/01-0428-Andreas-Fischer-Tech-Junior.jpg",
+              "fileName": "01-0428-Andreas-Fischer-Tech-Junior.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1b6XQ6VDrwYWssoSQcCimA",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1b6XQ6VDrwYWssoSQcCimA/4b86d1b736467e585dfa7bfdd9426daa/Bildschirmfoto.jpg",
+              "fileName": "Bildschirmfoto.jpg",
+              "contentType": "image/jpeg"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c27scKub1s0E0eUcowOKiOY",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/27scKub1s0E0eUcowOKiOY/564751741530f309dd431b826c68bcfa/trainingswahl.png",
+              "fileName": "trainingswahl.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3ktPZA7YjuAwoogu4wyCEi",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/3ktPZA7YjuAwoogu4wyCEi/85fcc9e3100c3294f7e1c759191848dd/icon_youtube.png",
+              "fileName": "icon_youtube.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6M5VrI78MEsmywuIYIuq8i",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6M5VrI78MEsmywuIYIuq8i/83ee26abd6c3234d4df0ddffb3fe792c/stellenangebot_icons.png",
+              "fileName": "stellenangebot_icons.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5Q13btR8OcAakSwW8oUoG2",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5Q13btR8OcAakSwW8oUoG2/926e84a04a9d803ac64d98fdcce5476c/nav-line.png",
+              "fileName": "nav-line.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6DSDxJVh1SQuuqssosG4iI",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6DSDxJVh1SQuuqssosG4iI/fb2642372ad38abd3f895c2eafce53a6/icon_facebook.png",
+              "fileName": "icon_facebook.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1FScPCojE84yUcKwik44oS",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1FScPCojE84yUcKwik44oS/802edd7dec5b79ffeb92c987e4933329/icon_twitter.png",
+              "fileName": "icon_twitter.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5jn1laaJRKiCEeEKIQW4iW",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5jn1laaJRKiCEeEKIQW4iW/6d8adaad8c54791606208bc927cc5b9c/icon_instagram.png",
+              "fileName": "icon_instagram.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6Btc3AAxpYsY4Sw8CmESOi",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/6Btc3AAxpYsY4Sw8CmESOi/45f7f7d2c959fd02e2262312cc428b39/icon_menu_toggle.png",
+              "fileName": "icon_menu_toggle.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1ls26W0dewIWy80Yqae6gK",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1ls26W0dewIWy80Yqae6gK/42cfb6004bfe27eed104c797355d6885/icon_facebook.png",
+              "fileName": "icon_facebook.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "wWnt3H7LSoWQIWUEyqcW8",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/wWnt3H7LSoWQIWUEyqcW8/2f3178be8b27032c1324553d19779b9a/icon_dotted_line_vertical.png",
+              "fileName": "icon_dotted_line_vertical.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c7peri77i5qksKO002C2ECu",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/7peri77i5qksKO002C2ECu/58a20d5e4ce54a78580f45dafdcceb75/3_people_arrows.png",
+              "fileName": "3_people_arrows.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5LEqvVTi6I6ukEQQEaUKAS",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/5LEqvVTi6I6ukEQQEaUKAS/eb1d105321cbbd02727ee3da5e743527/cofinpro_logo.png",
+              "fileName": "cofinpro_logo.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1axMQlTuFGemS4smSAKScC",
+            "file": {
+              "url": "//assets.contentful.com/niza6hilizwt/1axMQlTuFGemS4smSAKScC/43a3ed3dfaa85dba1c38a01d79aab480/favicon.ico",
+              "fileName": "favicon.ico",
+              "contentType": "image/vnd.microsoft.icon"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1OUmqsbOWcgOUwg2Qc6Kkg",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/1OUmqsbOWcgOUwg2Qc6Kkg/7433833878f3278372d4f35c0c0805ba/icon_plus.png",
+              "fileName": "icon_plus.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c4sOI75NP8QI0mWYAwMcKis",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/4sOI75NP8QI0mWYAwMcKis/6a927d6b6e38179c0eb845ccd2213073/trainingswahl_xs.png",
+              "fileName": "trainingswahl_xs.png",
+              "contentType": "image/png"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c655Ww1RkgEcwKA6EwESIK",
+            "file": {
+              "url": "//images.contentful.com/niza6hilizwt/655Ww1RkgEcwKA6EwESIK/7c6e4bf1442c40ab429028e77af610f1/kompetenzmatrix.png",
+              "fileName": "kompetenzmatrix.png",
+              "contentType": "image/png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

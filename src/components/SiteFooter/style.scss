@@ -1,0 +1,42 @@
+footer {
+    margin-top: 4rem;
+}
+
+.padding-footer-links {
+    padding-top: 2.6rem;
+}
+
+#nav-footer {
+
+    .nav-item.active {
+        font-weight: 600;
+
+        a {
+            border-bottom: 1px solid white;
+        }
+    }
+
+}
+
+.icon-social-media-box {
+    padding: 14px;
+
+    i {
+        font-size: 1.8rem;
+    }
+}
+
+.footer-pages-nav {
+    a {
+        padding-bottom: 0rem;
+    }
+}
+
+.scroll-up-box>a>i {
+    font-size: 2rem;
+    color:white;
+}
+
+.scroll-up-box>a>i:hover {
+    color:rgb(48, 48, 48) !important;
+}

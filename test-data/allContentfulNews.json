@@ -1,0 +1,329 @@
+{
+  "data": {
+    "allContentfulNews": {
+      "edges": [
+        {
+          "node": {
+            "id": "c2k1rS1kO3K2E2MmkS4wWii",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Cofinpro wird 10 Jahre",
+            "titelbild": {
+              "id": "c4KykVYLu6QkKiMSMuKCYsa",
+              "title": "cofinpro 10 jahre kuchen",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/4KykVYLu6QkKiMSMuKCYsa/c5cbbfdb728e8e052bb993a111f18f7d/cofinpro_10_jahre_kuchen.jpg",
+                "fileName": "cofinpro_10_jahre_kuchen.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2017-12-19",
+            "ueberschrift": "Runde Sache",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "Zum zehnten Geburtstag haben wir uns auch selbst gratuliert: Weil uns enorm viel Vertrauen entgegengebracht wurde, weil sich beispiellose Kooperationen ergeben und einzigartige Partner gefunden haben, und weil wir endlos stolz auf unser Team sein können. Aber zu einem guten Geburtstag gehört natürlich noch mehr – nämlich ein guter Kuchen. Weshalb unsere Chefetage den Anzug gegen Schürzen getauscht und Frankfurter »Ebbelweikuche« gebacken hat, wie der Hesse sagen würde. Also saftigen Apfelweinkuchen. Und den fanden nicht nur unsere Kunden lecker, sondern auch wir Geburtstagskinder. "
+            },
+            "absatz1": {
+              "absatz1": "Zum zehnten Geburtstag haben wir uns auch selbst gratuliert: Weil uns enorm viel Vertrauen entgegengebracht wurde, weil sich beispiellose Kooperationen ergeben und einzigartige Partner gefunden haben, und weil wir endlos stolz auf unser Team sein können. Aber zu einem guten Geburtstag gehört natürlich noch mehr – nämlich ein guter Kuchen. Weshalb unsere Chefetage den Anzug gegen Schürzen getauscht und Frankfurter »Ebbelweikuche« gebacken hat, wie der Hesse sagen würde. Also saftigen Apfelweinkuchen. Und den fanden nicht nur unsere Kunden lecker, sondern auch wir Geburtstagskinder."
+            },
+            "newsBild": null,
+            "absatz2": null
+          }
+        },
+        {
+          "node": {
+            "id": "c2nYki4Cr1mwGUUeIcAw8C0",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Cofinpro goes green",
+            "titelbild": {
+              "id": "c56FQPnEeROoS4C6uGIaUSm",
+              "title": "cofinpro roller frontal",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/56FQPnEeROoS4C6uGIaUSm/f6efc965d3a440ba53782a285a85e49c/cofinpro_roller_frontal.jpg",
+                "fileName": "cofinpro_roller_frontal.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2017-12-18",
+            "ueberschrift": "Grün, grün, grün ...",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "... sind alle unsere E-Roller auf den ersten Blick zwar nicht, aber sie sind es doch: emissionsfrei und CO₂-neutral und dabei wieselflink im schleppenden Großstadtverkehr. Seit kurzem können Cofinpro-Mitarbeiter auf ihren eigenen unu-Elektrorollern dem Feinstaub davonfahren. Erste Spritztouren sorgten für hohe Punktzahlen und breites Lächeln bei den Neuinhabern, wie unser Beweisbildmaterial zeigt. Wenn wir dem Klimawandel trotzen wollen, müssen wir uns ranhalten. Wir finden, Elektromobilität ist ein wichtiger Schritt in die richtige Richtung.\n "
+            },
+            "absatz1": {
+              "absatz1": "... sind alle unsere E-Roller auf den ersten Blick zwar nicht, aber sie sind es doch: emissionsfrei und CO₂-neutral und dabei wieselflink im schleppenden Großstadtverkehr. Seit kurzem können Cofinpro-Mitarbeiter auf ihren eigenen unu-Elektrorollern dem Feinstaub davonfahren. Erste Spritztouren sorgten für hohe Punktzahlen und breites Lächeln bei den Neuinhabern, wie unser Beweisbildmaterial zeigt. Wenn wir dem Klimawandel trotzen wollen, müssen wir uns ranhalten. Wir finden, Elektromobilität ist ein wichtiger Schritt in die richtige Richtung.\n "
+            },
+            "newsBild": null,
+            "absatz2": null
+          }
+        },
+        {
+          "node": {
+            "id": "c4iWqh3gWfSsMgmMiAKucAw",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Adventsworkshop 2017",
+            "titelbild": {
+              "id": "c1xl26f0AyEaaIywS2cIEAc",
+              "title": "21-2525-Valentino-Pola-Tech-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/1xl26f0AyEaaIywS2cIEAc/8971188581866083c23bf84a3e518784/21-2525-Valentino-Pola-Tech-Senior.jpg",
+                "fileName": "21-2525-Valentino-Pola-Tech-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2017-12-01",
+            "ueberschrift": "Adventsworkshop 2017",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit."
+            },
+            "absatz1": {
+              "absatz1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            },
+            "newsBild": {
+              "id": "c2s992GlBLO2eQGWuu42UMG",
+              "title": "19-2137-Samuel-Bornemann-Wert-Junior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/2s992GlBLO2eQGWuu42UMG/aa889b0515a47bbd6ec6b1cd09556b53/19-2137-Samuel-Bornemann-Wert-Junior.jpg",
+                "fileName": "19-2137-Samuel-Bornemann-Wert-Junior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatz2": {
+              "absatz2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c6JTUa4cd5mawK2GoSqAcyO",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Adventsworkshop 2016",
+            "titelbild": {
+              "id": "c6MMeSW8cdqoe82WYCa2O8u",
+              "title": "23-2865-Stefan-Gra├ƒ-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/ab4c984168d70d9740247aecddfad668/23-2865-Stefan-Gra_____-Kredit-Senior.jpg",
+                "fileName": "23-2865-Stefan-Gra├ƒ-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2016-12-01",
+            "ueberschrift": "Adventsworkshop 2016",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit."
+            },
+            "absatz1": {
+              "absatz1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            },
+            "newsBild": {
+              "id": "c4BuidOpLyUmgoSow0ysCME",
+              "title": "17-1956-Alexa-Schulz-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/0d2bc640943b13bb202918ab10cbae17/17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "fileName": "17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatz2": {
+              "absatz2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c7tlbhcoe7mMIwQsgcSk4EU",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Adventsworkshop 2015",
+            "titelbild": {
+              "id": "c6MMeSW8cdqoe82WYCa2O8u",
+              "title": "23-2865-Stefan-Gra├ƒ-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/ab4c984168d70d9740247aecddfad668/23-2865-Stefan-Gra_____-Kredit-Senior.jpg",
+                "fileName": "23-2865-Stefan-Gra├ƒ-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2015-12-01",
+            "ueberschrift": "Adventsworkshop 2015",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit."
+            },
+            "absatz1": {
+              "absatz1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            },
+            "newsBild": {
+              "id": "c4BuidOpLyUmgoSow0ysCME",
+              "title": "17-1956-Alexa-Schulz-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/0d2bc640943b13bb202918ab10cbae17/17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "fileName": "17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatz2": {
+              "absatz2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c7HURhVWPviOaw2oIsMK2I2",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Adventsworkshop 2014",
+            "titelbild": {
+              "id": "c6MMeSW8cdqoe82WYCa2O8u",
+              "title": "23-2865-Stefan-Gra├ƒ-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/ab4c984168d70d9740247aecddfad668/23-2865-Stefan-Gra_____-Kredit-Senior.jpg",
+                "fileName": "23-2865-Stefan-Gra├ƒ-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2014-12-01",
+            "ueberschrift": "Adventsworkshop 2014",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit."
+            },
+            "absatz1": {
+              "absatz1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            },
+            "newsBild": {
+              "id": "c4BuidOpLyUmgoSow0ysCME",
+              "title": "17-1956-Alexa-Schulz-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/0d2bc640943b13bb202918ab10cbae17/17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "fileName": "17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatz2": {
+              "absatz2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1dkUv9QahquM82ocyIc2gY",
+            "metaData": {
+              "title": "Hier ein Titel für Einzelne News",
+              "keywords": {
+                "keywords": "keyword1, keyword2, keyword 3, keyword 4"
+              },
+              "description": {
+                "description": "Hier eine Beschreibung für Einzelne News"
+              }
+            },
+            "parent": {
+              "id": "News"
+            },
+            "titel": "Adventsworkshop 2013",
+            "titelbild": {
+              "id": "c6MMeSW8cdqoe82WYCa2O8u",
+              "title": "23-2865-Stefan-Gra├ƒ-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/ab4c984168d70d9740247aecddfad668/23-2865-Stefan-Gra_____-Kredit-Senior.jpg",
+                "fileName": "23-2865-Stefan-Gra├ƒ-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "datumFuerDieAnzeige": "2013-12-01",
+            "ueberschrift": "Adventsworkshop 2013",
+            "kurzeBeschreibung": {
+              "kurzeBeschreibung": "Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit aut fugit, sed quia consequuntur magni. Sed ut perspiciatis unde omnis iste ipsa quae ab illo inventore veritatis aspernatur aut odit."
+            },
+            "absatz1": {
+              "absatz1": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            },
+            "newsBild": {
+              "id": "c4BuidOpLyUmgoSow0ysCME",
+              "title": "17-1956-Alexa-Schulz-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.contentful.com/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/0d2bc640943b13bb202918ab10cbae17/17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "fileName": "17-1956-Alexa-Schulz-Kredit-Senior.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatz2": {
+              "absatz2": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+            }
+          }
+        }
+      ]
+    }
+  }
+}
