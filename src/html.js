@@ -129,8 +129,6 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-          <script src="https://cdn.jsdelivr.net/vue/2.0.5/vue.min.js" />
-          <script src="https://unpkg.com/botui/build/botui.js" />
           <script src={pathPrefix + '/js/ApiAi.min.js'} />
         </head>
         <body>

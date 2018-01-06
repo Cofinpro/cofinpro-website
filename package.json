@@ -40,6 +40,7 @@
     "material-design-icons": "^3.0.1",
     "moment": "^2.19.4",
     "pubsub-js": "^1.5.7",
+    "react-chat-window": "^1.0.5",
     "react-helmet": "^5.2.0",
     "react-lazyload": "^2.3.0",
     "react-marked": "^0.3.1",
