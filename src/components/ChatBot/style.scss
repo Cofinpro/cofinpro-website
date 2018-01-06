@@ -14,3 +14,7 @@
 .sc-message--content.sent .sc-message--text {
   background-color: #ec7b1a;
 }
+
+.sc-chat-window {
+  z-index: 9999;
+}
