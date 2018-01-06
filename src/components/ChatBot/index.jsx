@@ -12,9 +12,12 @@ class ChatBot extends React.Component {
       messageList: [],
       newMessagesCount: 0,
       isOpen: false,
-      client: new ApiAi.ApiAiClient({
-        accessToken: 'fc4365c0c0cb4a8693382023a77ad9ab',
-      }),
+      client:
+        typeof ApiAi !== 'undefined'
+          ? new ApiAi.ApiAiClient({
+              accessToken: 'fc4365c0c0cb4a8693382023a77ad9ab',
+            })
+          : null,
     }
   }
 
