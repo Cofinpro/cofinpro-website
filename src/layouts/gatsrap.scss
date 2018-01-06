@@ -19,52 +19,48 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
 
-$blue: #A9C5E8 !default;
+$blue: #a9c5e8 !default;
 $indigo: #3f51b5 !default;
 $purple: #673ab7 !default;
 $pink: #e91e63 !default;
 $red: #f44336 !default;
-$orange: #EC7B1A !default;
-$orange-light: #F5EEED !default;
+$orange: #ec7b1a !default;
+$orange-light: #f5eeed !default;
 $yellow: #ffab00 !default;
 $green: #8bc34a !default;
 $teal: #009688 !default;
 $cyan: #00bcd4 !default;
+$brown: #847575 !default;
 
 // Reassign color vars to semantic color scheme
 $theme-colors: (
     primary: $orange,
     secondary: $blue,
     success: $green,
-    info: $cyan,
+    info: $brown,
     warning: $yellow,
     danger: $red,
     light: $gray-100,
     dark: $gray-800
   )
-  !default; 
+  !default;
 
 $font-family-sans-serif: apercu-regular-pro;
 $font-family-monospace: apercu-regular-pro;
 $font-family-base: apercu-regular-pro;
 
 $font-size-base: 1.125rem !default;
-$font-size-lg:                ($font-size-base * 1.25) !default;
-$font-size-sm:                ($font-size-base * .875) !default;
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-sm: ($font-size-base * 0.875) !default;
 
-$grid-columns:      12;
+$grid-columns: 12;
 $grid-gutter-width: 30px;
 
 $grid-breakpoints: (
-  // Extra small screen / phone
   xs: 0,
-  // Small screen / phone
   sm: 576px,
-  // Medium screen / tablet
   md: 768px,
-  // Large screen / desktop
   lg: 992px,
-  // Extra large screen / wide desktop
   xl: 1200px
 );
 
@@ -83,30 +79,30 @@ $container-max-widths: (
 
 #navbarSupportedContent {
   @include media-breakpoint-only(xs) {
-    background-color:$orange;
+    background-color: $orange;
     padding: 2rem;
     margin-top: 1rem;
   }
   @include media-breakpoint-only(sm) {
-    background-color:$orange;
+    background-color: $orange;
     padding: 2rem;
     margin-top: 1rem;
   }
   @include media-breakpoint-only(md) {
-    background-color:$orange;
+    background-color: $orange;
     padding: 2rem;
     margin-top: 1rem;
   }
   @include media-breakpoint-only(lg) {
-      background-color:white;
+    background-color: white;
   }
   @include media-breakpoint-only(xl) {
-      background-color:white;
+    background-color: white;
   }
 }
 
 #navbarCareerContent {
-  background-color:$blue;
+  background-color: $blue;
   padding: 2rem;
   margin-top: 1rem;
 }
@@ -125,7 +121,7 @@ $container-max-widths: (
   padding-bottom: 4rem;
 }
 
-.space-button-left-right { 
+.space-button-left-right {
   margin-right: 1rem;
   margin-left: 1rem;
 }
@@ -181,7 +177,6 @@ $container-max-widths: (
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
-
 
 .padding-sm-bottom {
   padding-bottom: 1rem;
@@ -243,7 +238,7 @@ $container-max-widths: (
 }
 
 .stellenangebote-box {
-  border: 3px dashed #A9C5E8;
+  border: 3px dashed #a9c5e8;
 }
 
 a.darken:hover img {
@@ -260,50 +255,43 @@ a.darken:hover img {
 #carouselCaptionsArbeitsplatz,
 .imageCarousel,
 .socialMediaCarousel {
-
-  .carousel-control-prev>i,
-  .carousel-control-next>i {
-      font-size: 2rem;
-      color: #EC7B1A !important;
+  .carousel-control-prev > i,
+  .carousel-control-next > i {
+    font-size: 2rem;
+    color: #ec7b1a !important;
   }
 
   @include media-breakpoint-only(md) {
     .carousel-control-prev {
       left: -62px;
     }
-  
+
     .carousel-control-next {
       right: -62px;
-  
     }
   }
   @include media-breakpoint-only(lg) {
     .carousel-control-prev {
       left: -96px;
     }
-  
+
     .carousel-control-next {
       right: -96px;
-  
     }
   }
   @include media-breakpoint-only(xl) {
     .carousel-control-prev {
       left: -96px;
     }
-  
+
     .carousel-control-next {
       right: -96px;
-  
     }
   }
-
 }
 
 .ytp-large-play-button {
-
   visibility: hidden !important;
-
 }
 
 .jobangebote-technologie-box {
@@ -335,7 +323,6 @@ a.darken:hover img {
     padding-left: 12px;
     padding-right: 12px;
   }
-
 }
 
 .cofinpro-logo-startseite {
@@ -361,4 +348,12 @@ a.darken:hover img {
 
 .invisible {
   visibility: hidden;
+}
+
+.no-padding-left {
+  padding-left: 0px;
+}
+
+.padding-0 {
+  padding: 0px;
 }
