@@ -13,6 +13,14 @@ import RichTextParserHelper from '../utils/richTextParserHelper'
 import StorageHelper from '../utils/storageHelper'
 
 class StellenanzeigeTemplate extends React.Component {
+  getCurrentUrl() {
+    if (typeof window !== 'undefined') {
+      return window.location.href
+    } else {
+      return ''
+    }
+  }
+
   render() {
     const { location } = this.props
 
@@ -25,6 +33,7 @@ class StellenanzeigeTemplate extends React.Component {
       <div>
         <Helmet
           title={stellenAnzeige.node.metaData.title}
+          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
           meta={[
             {
               property: 'og:title',

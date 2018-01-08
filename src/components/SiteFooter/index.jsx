@@ -119,7 +119,7 @@ class SiteFooter extends React.Component {
                   >
                     <li
                       className={
-                        location.pathname === '/pinnwand'
+                        location.pathname.startsWith('/pinnwand')
                           ? 'nav-item active'
                           : 'nav-item'
                       }

@@ -120,7 +120,6 @@ class Template extends React.Component {
         />{' '}
         {children({ ...this.props })}
         <SiteFooter title={siteMetadata.title} {...this.props} />
-        <ChatBot {...this.props} />
       </div>
     )
   }

@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: 'Cofinpro Karriere Seite',
-    description: 'Wir sind sehr stolz darauf, dass wir unseren Mitarbeitern ein optimales Arbeitsumfeld bieten können. Starten Sie jetzt Ihre Karriere bei Cofinpro.',
+    description:
+      'Wir sind sehr stolz darauf, dass wir unseren Mitarbeitern ein optimales Arbeitsumfeld bieten können. Starten Sie jetzt Ihre Karriere bei Cofinpro.',
     url: 'https://www.karriere-cofinpro.de',
     author: 'Benjamin Tenke',
     twitter: 'cofinpro_ag',
-    siteUrl: `https://www.karriere-cofinpro.de`
+    siteUrl: `https://www.karriere-cofinpro.de`,
   },
   pathPrefix: '/',
   plugins: [
@@ -20,7 +21,8 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: 'niza6hilizwt',
-        accessToken: 'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
+        accessToken:
+          'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
       },
     },
     'gatsby-transformer-json',
@@ -29,7 +31,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
           },
           {
             resolve: 'gatsby-remark-responsive-iframe',
@@ -40,27 +42,21 @@ module.exports = {
           'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
-          "gatsby-remark-autolink-headers",
+          'gatsby-remark-autolink-headers',
         ],
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-111444132-1",
+        trackingId: 'UA-111444132-1',
         anonymize: true,
-      }
-    },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://www.karriere-cofinpro.de`,
       },
     },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-twitter"
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-twitter',
   ],
 }
