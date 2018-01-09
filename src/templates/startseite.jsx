@@ -16,6 +16,29 @@ class StartseiteTemplate extends React.Component {
     }
   }
 
+  componentDidMount() {
+    $('#navbarToggleExternalContent').collapse({ toggle: false })
+
+    $('#button-startseite-collapse').click(function() {
+      if ($('#button-startseite-collapse>i').hasClass('fa')) {
+        $('#navbarToggleExternalContent').collapse('toggle')
+
+        $('#button-startseite-collapse>i').toggleClass('fa-chevron-down')
+        $('#button-startseite-collapse>i').toggleClass('fa-chevron-up')
+      }
+
+      if ($('#button-startseite-collapse>i').hasClass('material-icons')) {
+        $('#navbarToggleExternalContent').collapse('toggle')
+
+        $('#button-startseite-collapse>i').text(function(i, old) {
+          return old == 'keyboard_arrow_down'
+            ? 'keyboard_arrow_up'
+            : 'keyboard_arrow_down'
+        })
+      }
+    })
+  }
+
   render() {
     const graphQlResult = this.props.data.contentfulWahlDerKompetenz
 

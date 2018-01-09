@@ -11,6 +11,28 @@ import './style.scss'
 import Kompetenzen from '../../../data/Kompetenzen'
 
 class SiteNavi extends React.Component {
+  componentDidMount() {
+    $(document).on('click', '.navbar-collapse.show', function(e) {
+      if ($(e.target).is('a')) {
+        $(this).collapse('hide')
+      }
+    })
+
+    $(document).on('click', '#navbarCareerContent.show', function(e) {
+      if ($(e.target).is('a')) {
+        $(this).collapse('hide')
+      }
+    })
+
+    $('#perspectiveNavbarToggler').click(function() {
+      $('#navbarSupportedContent').collapse('hide')
+    })
+
+    $('#menuNavbarToggler').click(function() {
+      $('#navbarCareerContent').collapse('hide')
+    })
+  }
+
   savePerspective(perspective) {
     StorageHelper.saveInSessionStorage('perspective', perspective)
     this.setState({ perspective: perspective })

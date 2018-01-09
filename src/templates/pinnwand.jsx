@@ -6,6 +6,29 @@ import get from 'lodash/get'
 import NewsPreview from '../components/NewsPreview'
 
 class PinnwandTemplate extends React.Component {
+  componentDidMount() {
+    $('#oldNewsContent').collapse({ toggle: false })
+
+    $('#button-pinnwand-collapse').click(function() {
+      if ($('#button-pinnwand-collapse>i').hasClass('fa')) {
+        $('#oldNewsContent').collapse('toggle')
+
+        $('#button-pinnwand-collapse>i').toggleClass('fa-chevron-down')
+        $('#button-pinnwand-collapse>i').toggleClass('fa-chevron-up')
+      }
+
+      if ($('#button-pinnwand-collapse>i').hasClass('material-icons')) {
+        $('#oldNewsContent').collapse('toggle')
+
+        $('#button-pinnwand-collapse>i').text(function(i, old) {
+          return old == 'keyboard_arrow_down'
+            ? 'keyboard_arrow_up'
+            : 'keyboard_arrow_down'
+        })
+      }
+    })
+  }
+
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -99,7 +122,12 @@ class PinnwandTemplate extends React.Component {
       <div>
         <Helmet
           title="News & Stories aus unserer Unternehmensberatung: Cofinpro"
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
+          link={[
+            {
+              rel: 'canonical',
+              href: this.getCurrentUrl(),
+            },
+          ]}
           meta={[
             {
               property: 'og:title',

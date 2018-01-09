@@ -13,6 +13,11 @@ class SiteFooter extends React.Component {
 
     const { location, title } = this.props
 
+    function scrollToTop(e) {
+      e.preventDefault()
+      $('html,body').animate({ scrollTop: 0 }, 'slow')
+    }
+
     return (
       <footer className="footer bg-brown text-white padding-md-top-bottom">
         <div className="container">
@@ -33,7 +38,7 @@ class SiteFooter extends React.Component {
 
             <div className="col-12 col-lg-2 align-self-center padding-sm-top-bottom">
               <p className="text-center scroll-up-box">
-                <a id="back-to-top" href="#">
+                <a id="back-to-top" href="#" onClick={scrollToTop}>
                   <i className="fa fa-chevron-up" aria-hidden="true" />
                 </a>
               </p>
