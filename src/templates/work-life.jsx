@@ -8,6 +8,7 @@ import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import Testimonial from '../components/Testimonial'
 import ContentfulImage from '../components/ContentfulImage'
+import HtmlHeader from '../components/HtmlHeader'
 
 class WorkLifeTemplate extends React.Component {
   getCurrentUrl() {
@@ -25,28 +26,7 @@ class WorkLifeTemplate extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
       <div>
-        <Helmet
-          title={graphQlResult.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${graphQlResult.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${graphQlResult.metaData.keywords.keywords}`,
-            },
-            {
-              property: 'Description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-            {
-              property: 'og:description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-          ]}
-        />
+        <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}

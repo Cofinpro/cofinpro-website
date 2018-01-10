@@ -10,6 +10,7 @@ import Testimonial from '../components/Testimonial'
 import ContentfulImage from '../components/ContentfulImage'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import ContentBoxStyleOne from '../components/ContentBoxStyleOne'
+import HtmlHeader from '../components/HtmlHeader'
 
 class GehaltBeteiligungTemplate extends React.Component {
   getCurrentUrl() {
@@ -28,28 +29,7 @@ class GehaltBeteiligungTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title={graphQlResult.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${graphQlResult.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${graphQlResult.metaData.keywords.keywords}`,
-            },
-            {
-              property: 'Description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-            {
-              property: 'og:description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-          ]}
-        />
+        <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}

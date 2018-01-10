@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import ContentfulImage from '../components/ContentfulImage'
+import HtmlHeader from '../components/HtmlHeader'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -51,36 +52,7 @@ class StartseiteTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title={graphQlResult.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${graphQlResult.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${graphQlResult.metaData.keywords.keywords}`,
-            },
-            {
-              property: 'Description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-            {
-              property: 'og:description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-            {
-              property: 'og:type',
-              content: 'website',
-            },
-            {
-              property: 'og:type',
-              content: 'de_DE',
-            },
-          ]}
-        />
+        <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <div className="container margin-lg-top-bottom">
           <div className="row padding-sm-bottom">

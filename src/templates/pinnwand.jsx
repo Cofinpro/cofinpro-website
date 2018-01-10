@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import NewsPreview from '../components/NewsPreview'
+import HtmlHeader from '../components/HtmlHeader'
 
 class PinnwandTemplate extends React.Component {
   componentDidMount() {

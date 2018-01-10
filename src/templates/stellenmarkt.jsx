@@ -6,6 +6,7 @@ import get from 'lodash/get'
 import CarrerOfferPreview from '../components/CarrerOfferPreview'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
+import HtmlHeader from '../components/HtmlHeader'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -244,28 +245,7 @@ class StellenmarktTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title={graphQlResult.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${graphQlResult.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${graphQlResult.metaData.keywords.keywords}`,
-            },
-            {
-              property: 'Description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-            {
-              property: 'og:description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-          ]}
-        />
+        <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}

@@ -6,6 +6,7 @@ import get from 'lodash/get'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulImage from '../components/ContentfulImage'
+import HtmlHeader from '../components/HtmlHeader'
 
 class NewsTemplate extends React.Component {
   getCurrentUrl() {
@@ -24,28 +25,7 @@ class NewsTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title={news.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${news.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${news.metaData.keywords.keywords}`,
-            },
-            {
-              property: 'Description',
-              content: `${news.metaData.description.description}`,
-            },
-            {
-              property: 'og:description',
-              content: `${news.metaData.description.description}`,
-            },
-          ]}
-        />
+        <HtmlHeader dataFromCms={news.metaData} {...this.props} />
 
         <SiteHeader title="Pinnwand" imageFile={news.titelbild} />
 

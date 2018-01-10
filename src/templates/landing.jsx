@@ -13,6 +13,7 @@ import ContentfulImage from '../components/ContentfulImage'
 import SocialMediaCarousel from '../components/SocialMediaCarousel'
 import CarrerOfferBox from '../components/CarrerOfferBox'
 import Testimonial from '../components/Testimonial'
+import HtmlHeader from '../components/HtmlHeader'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -41,28 +42,7 @@ class LandingTemplate extends React.Component {
 
     return (
       <div>
-        <Helmet
-          title={graphQlResult.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${graphQlResult.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${graphQlResult.metaData.keywords.keywords}`,
-            },
-            {
-              property: 'Description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-            {
-              property: 'og:description',
-              content: `${graphQlResult.metaData.description.description}`,
-            },
-          ]}
-        />
+        <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}

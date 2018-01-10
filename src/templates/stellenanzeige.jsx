@@ -8,6 +8,7 @@ import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import CarrerOfferCarouselBox from '../components/CarrerOfferCarouselBox'
+import HtmlHeader from '../components/HtmlHeader'
 
 import RichTextParserHelper from '../utils/richTextParserHelper'
 import StorageHelper from '../utils/storageHelper'
@@ -31,35 +32,9 @@ class StellenanzeigeTemplate extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
       <div>
-        <Helmet
-          title={stellenAnzeige.node.metaData.title}
-          link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
-          meta={[
-            {
-              property: 'og:title',
-              content: `${stellenAnzeige.node.metaData.title}`,
-            },
-            {
-              property: 'Keywords',
-              content: `${
-                stellenAnzeige.node.metaData.keywords != null
-                  ? stellenAnzeige.node.metaData.keywords.keywords
-                  : ''
-              }`,
-            },
-            {
-              property: 'Description',
-              content: `${
-                stellenAnzeige.node.metaData.description.description
-              }`,
-            },
-            {
-              property: 'og:description',
-              content: `${
-                stellenAnzeige.node.metaData.description.description
-              }`,
-            },
-          ]}
+        <HtmlHeader
+          dataFromCms={stellenAnzeige.node.metaData}
+          {...this.props}
         />
 
         <SiteHeader
