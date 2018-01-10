@@ -75,10 +75,6 @@ class Template extends React.Component {
         )
       }
 
-      /*if (StorageHelper.getFromSessionStorage('perspective').length < 0) {
-          navigateTo('wahl-der-perspektive');
-        } */
-
       if (
         this.state.locationUpdate !== location.pathname ||
         this.state.perspective !==
@@ -120,6 +116,7 @@ class Template extends React.Component {
         />{' '}
         {children({ ...this.props })}
         <SiteFooter title={siteMetadata.title} {...this.props} />
+        <ChatBot {...this.props} />
       </div>
     )
   }

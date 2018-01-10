@@ -20,6 +20,13 @@ class ChatBot extends React.Component {
           : null,
     }
   }
+  componentDidMount() {
+    if (this.state.messageList.length == 0) {
+      this._sendMessage(
+        'Hi, ich bin der Recruiting ChatBot der Cofinpro. Ich kenne mich mit den folgenden Themen aus: Deine persönliche bzw. professionelle Weiterentwicklung bei uns oder auch wie der Bewerbungsprozess so abläuft. Fragen zu den Auswahltagen und Telefoninterviews kann ich natürlich auch benatworten. Mit den Themen wie Beratung oder unseren Projekten bin ich auch vertraut.'
+      )
+    }
+  }
 
   _onMessageWasSent(message) {
     console.log(message)
@@ -92,8 +99,7 @@ class ChatBot extends React.Component {
         <Launcher
           agentProfile={{
             teamName: 'Cofinpro ChatBot #beta',
-            imageUrl:
-              'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png',
+            imageUrl: pathPrefix + '/img/chat_icon.jpg',
           }}
           onMessageWasSent={this._onMessageWasSent.bind(this)}
           messageList={this.state.messageList}

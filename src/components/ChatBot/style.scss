@@ -2,19 +2,32 @@
 .sc-header--close-button,
 .sc-header--team-name,
 .sc-header--team-name:hover {
-  background: #ec7b1a;
+  background: #a9c5e8;
 }
 
 .sc-header--close-button:hover {
-  background: #c56717;
+  background: #a9c5e8;
 }
 
 .sc-launcher,
 .sc-message--text,
 .sc-message--content.sent .sc-message--text {
-  background-color: #ec7b1a;
+  background-color: #a9c5e8;
 }
 
 .sc-chat-window {
   z-index: 9999;
+}
+
+.sc-message--avatar {
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  margin: 0px;
+  min-width: 0px;
+  min-height: 0px;
+}
+
+.sc-user-input--emoji-icon-wrapper {
+  visibility: hidden;
 }
