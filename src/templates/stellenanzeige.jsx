@@ -46,8 +46,8 @@ class StellenanzeigeTemplate extends React.Component {
         <div className="container padding-md-top-bottom">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
-              <h3 className="text-primary">Wir wünschen uns einfach Dich!</h3>
-              <h2>{stellenAnzeige.node.titel}</h2>
+              <h2 className="text-primary">Wir wünschen uns einfach Dich!</h2>
+              <h1>{stellenAnzeige.node.titel}</h1>
               <ContentfulMarkdownText
                 text={stellenAnzeige.node.absatzEins.absatzEins}
               />

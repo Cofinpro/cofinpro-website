@@ -258,7 +258,7 @@ class StellenmarktTemplate extends React.Component {
           subtitle={graphQlResult.beschreibungUntertitel}
           text1={graphQlResult.beschreibungAbsatz1.beschreibungAbsatz1}
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
-          subtitleTag="h3"
+          subtitleTag="h2"
         />
 
         <StellenangeboteFach found={fachFound} {...this.props} />

@@ -50,7 +50,6 @@ export default class HTML extends React.Component {
             rel="stylesheet"
             href={pathPrefix + '/css/apercu-regular.css'}
           />
-          <link rel="stylesheet" href={pathPrefix + '/css/material.css'} />
           <link rel="stylesheet" href={pathPrefix + '/css/botui.min.css'} />
           <link
             rel="stylesheet"
@@ -129,7 +128,6 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-          <script src={pathPrefix + '/js/ApiAi.min.js'} />
         </head>
         <body>
           <div
@@ -140,6 +138,7 @@ export default class HTML extends React.Component {
           <script src="https://code.jquery.com/jquery-3.2.1.min.js" />
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" />
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" />
+          <script src={pathPrefix + '/js/ApiAi.min.js'} />
         </body>
       </html>
     )
