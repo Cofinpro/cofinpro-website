@@ -50,7 +50,6 @@ export default class HTML extends React.Component {
             rel="stylesheet"
             href={pathPrefix + '/css/apercu-regular.css'}
           />
-          <link rel="stylesheet" href={pathPrefix + '/css/material.css'} />
           <link rel="stylesheet" href={pathPrefix + '/css/botui.min.css'} />
           <link
             rel="stylesheet"
