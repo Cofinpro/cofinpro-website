@@ -25,7 +25,7 @@ class SiteHeader extends React.Component {
     } else if (titleTag !== null && titleTag === 'h6') {
       titleElement = <h6 className="h2">{title}</h6>
     } else {
-      ;<h3 className="h2">{title}</h3>
+      titleElement = <h3 className="h2">{title}</h3>
     }
 
     return (

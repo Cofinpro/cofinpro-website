@@ -25,7 +25,7 @@ class SiteHeaderContent extends React.Component {
     } else if (titleTag !== null && titleTag === 'h6') {
       titleElement = <h6 className="h2">{title}</h6>
     } else {
-      ;<h3 className="h2">{title}</h3>
+      titleElement = <h3 className="h2">{title}</h3>
     }
 
     var subTitleElement
@@ -43,7 +43,7 @@ class SiteHeaderContent extends React.Component {
     } else if (subtitleTag !== null && subtitleTag === 'h6') {
       subTitleElement = <h6 className="h6">{subtitle}</h6>
     } else {
-      ;<h1 className="h6">{subtitle}</h1>
+      subTitleElement = <h1 className="h6">{subtitle}</h1>
     }
 
     return (
