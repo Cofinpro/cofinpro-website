@@ -2,11 +2,94 @@ module.exports = {
   siteMetadata: {
     title: 'Cofinpro Karriere Seite',
     description:
-      'Wir sind sehr stolz darauf, dass wir unseren Mitarbeitern ein optimales Arbeitsumfeld bieten können. Starten Sie jetzt Ihre Karriere bei Cofinpro.',
+      'Wir sind sehr stolz darauf, dass wir unseren Mitarbeitern ein optimales Arbeitsu' +
+      'mfeld bieten können. Starten Sie jetzt Ihre Karriere bei Cofinpro.',
     url: 'https://www.karriere-cofinpro.de',
     author: 'Benjamin Tenke',
     twitter: 'cofinpro_ag',
     siteUrl: `https://www.karriere-cofinpro.de`,
+    redirects: [
+      {
+        from: '/undefined/deine-entwicklung',
+        to: '/',
+      },
+      {
+        from: '/deine-entwicklung',
+        to: '/',
+      },
+      {
+        from: '/undefined/gehalt-beteiligung',
+        to: '/',
+      },
+      {
+        from: '/gehalt-beteiligung',
+        to: '/',
+      },
+      {
+        from: '/undefined/deine-karriere',
+        to: '/',
+      },
+      {
+        from: '/deine-karriere',
+        to: '/',
+      },
+      {
+        from: '/undefined/landing',
+        to: '/',
+      },
+      {
+        from: '/landing',
+        to: '/',
+      },
+      {
+        from: '/stellenmarkt',
+        to: '/jobs',
+      },
+      {
+        from: '/stellenprofil-informatiker',
+        to: '/jobs',
+      },
+      {
+        from: '/job-empfehlung',
+        to: '/jobs',
+      },
+      {
+        from: '/soziale-vielfalt-bei-cofinpro',
+        to: '/ueber-uns',
+      },
+      {
+        from: '/bewerbung-einreichen',
+        to: '/jobs-bewerbung',
+      },
+      {
+        from: '/weiterentwicklung',
+        to: '/fachlicher-professional/deine-entwicklung',
+      },
+      {
+        from: '/gehaltsmodel',
+        to: '/fachlicher-professional/gehalt-beteiligung',
+      },
+      {
+        from: '/impressum-karriere',
+        to: '/impressum',
+      },
+      {
+        from: '/auszeichnungen',
+        to: '/ueber-uns',
+      },
+      {
+        from: '/bewerbungsprozess',
+        to: '/jobs-bewerbung',
+      },
+      {
+        from: '/zukuenftige-kollegen',
+        to: '/ueber-uns',
+      },
+      {
+        from: '/laufbahnmodell',
+        to: '/fachlicher-professional/deine-karriere',
+      },
+    ],
   },
   pathPrefix: '/',
   plugins: [
