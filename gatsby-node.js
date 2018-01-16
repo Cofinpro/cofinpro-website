@@ -436,6 +436,18 @@ function createDeineKarriere(
     })
 
     createRedirect({
+      fromPath: '/soziale-vielfalt-bei-cofinpro',
+      redirectInBrowser: true,
+      toPath: '/ueber-uns',
+    })
+
+    createRedirect({
+      fromPath: '/bewerbung-einreichen',
+      redirectInBrowser: true,
+      toPath: '/jobs-bewerbung',
+    })
+
+    createRedirect({
       fromPath: '/weiterentwicklung',
       redirectInBrowser: true,
       toPath: '/fachlicher-professional/deine-entwicklung',
