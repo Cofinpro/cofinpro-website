@@ -423,6 +423,60 @@ function createDeineKarriere(
       toPath: '/jobs',
     })
 
+    createRedirect({
+      fromPath: '/stellenprofil-informatiker',
+      redirectInBrowser: true,
+      toPath: '/jobs',
+    })
+
+    createRedirect({
+      fromPath: '/job-empfehlung',
+      redirectInBrowser: true,
+      toPath: '/jobs',
+    })
+
+    createRedirect({
+      fromPath: '/weiterentwicklung',
+      redirectInBrowser: true,
+      toPath: '/fachlicher-professional/deine-entwicklung',
+    })
+
+    createRedirect({
+      fromPath: '/gehaltsmodel',
+      redirectInBrowser: true,
+      toPath: '/fachlicher-professional/gehalt-beteiligung',
+    })
+
+    createRedirect({
+      fromPath: '/impressum-karriere',
+      redirectInBrowser: true,
+      toPath: '/impressum',
+    })
+
+    createRedirect({
+      fromPath: '/auszeichnungen',
+      redirectInBrowser: true,
+      toPath: '/ueber-uns',
+    })
+
+    createRedirect({
+      fromPath: '/bewerbungsprozess',
+      redirectInBrowser: true,
+      toPath: '/jobs-bewerbung',
+    })
+
+    createRedirect({
+      fromPath: '/zukuenftige-kollegen',
+      redirectInBrowser: true,
+      toPath: '/ueber-uns',
+    })
+
+    createRedirect({
+      fromPath: '/laufbahnmodell',
+      redirectInBrowser: true,
+      toPath: '/fachlicher-professional/deine-karriere',
+    })
+
     const deineKarriereTemplate = path.resolve(
       `./src/templates/deine-karriere.jsx`
     )
