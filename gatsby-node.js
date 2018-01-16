@@ -51,6 +51,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         createWorkLife,
         createJobsBewerbung,
         createStartseite,
+        createRedirects,
       ],
       function(error, success) {
         resolve()
@@ -393,36 +394,6 @@ function createDeineKarriere(
       }
     `
   ).then(result => {
-    createRedirect({
-      fromPath: pathPrefix + '/undefined/deine-karriere',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: pathPrefix + '/deine-karriere',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/deine-karriere',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/undefined/deine-karriere',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/stellenmarkt',
-      redirectInBrowser: true,
-      toPath: '/jobs',
-    })
-
     const deineKarriereTemplate = path.resolve(
       `./src/templates/deine-karriere.jsx`
     )
@@ -467,30 +438,6 @@ function createDeineEntwicklung(
       }
     `
   ).then(result => {
-    createRedirect({
-      fromPath: pathPrefix + '/deine-entwicklung',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: pathPrefix + '/undefined/deine-entwicklung',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/deine-entwicklung',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/undefined/deine-entwicklung',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
     const deineEntwicklungTemplate = path.resolve(
       `./src/templates/deine-entwicklung.jsx`
     )
@@ -537,30 +484,6 @@ function createStart(
       }
     `
   ).then(result => {
-    createRedirect({
-      fromPath: '/landing',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/undefined/landing',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: pathPrefix + '/landing',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: pathPrefix + '/undefined/landing',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
     const landingTemplate = path.resolve(`./src/templates/landing.jsx`)
 
     var topNews = []
@@ -614,18 +537,6 @@ function createGehaltBenefits(
       }
     `
   ).then(result => {
-    createRedirect({
-      fromPath: '/gehalt-beteiligung',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
-    createRedirect({
-      fromPath: '/undefined/gehalt-beteiligung',
-      redirectInBrowser: true,
-      toPath: '/',
-    })
-
     const gehaltBeteiligungTemplate = path.resolve(
       `./src/templates/gehalt-beteiligung.jsx`
     )
@@ -761,6 +672,47 @@ function createStartseite(
 
       console.log(`created page /index.jsx`)
     })
+
+    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+  })
+}
+
+function createRedirects(
+  graphql,
+  createPage,
+  createRedirect,
+  stellenAnzeigen,
+  news,
+  callback
+) {
+  graphql(
+    `
+      {
+        site {
+          siteMetadata {
+            redirects {
+              from
+              to
+            }
+          }
+        }
+      }
+    `
+  ).then(result => {
+    for (var i = 0; i < result.data.site.siteMetadata.redirects.length; ++i) {
+      createRedirect({
+        fromPath: pathPrefix + result.data.site.siteMetadata.redirects[i].from,
+        redirectInBrowser: true,
+        toPath: pathPrefix + result.data.site.siteMetadata.redirects[i].to,
+      })
+
+      console.log(
+        `created redirect from` +
+          result.data.site.siteMetadata.redirects[i].from +
+          ' to:' +
+          result.data.site.siteMetadata.redirects[i].to
+      )
+    }
 
     callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
   })

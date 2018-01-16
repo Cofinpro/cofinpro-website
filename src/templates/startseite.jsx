@@ -5,6 +5,7 @@ import get from 'lodash/get'
 
 import ContentfulImage from '../components/ContentfulImage'
 import HtmlHeader from '../components/HtmlHeader'
+import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -300,7 +301,9 @@ class StartseiteTemplate extends React.Component {
           <div className="row padding-lg-top-bottom">
             <div className="col-12">
               <div className="collapse" id="navbarToggleExternalContent">
-                <p>{graphQlResult.seoTextFeld.seoTextFeld}</p>
+                <ContentfulMarkdownText
+                  text={graphQlResult.seoTextFeld.seoTextFeld}
+                />
               </div>
               <button
                 id="button-startseite-collapse"
