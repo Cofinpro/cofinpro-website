@@ -52,23 +52,26 @@ class LaufbahnTemplate extends React.Component {
           text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
-        <div className="container padding-md-top-bottom">
-          <div className="row">
-            <div className="col">
-              <p className="h2 text-primary padding-sm-bottom">
-                {graphQlResult.titelLaufbahnBild}
-              </p>
-              <ContentfulImage
-                imageFile={graphQlResult.bildFuerLaufbahn}
-                styleClasses="img-fluid d-none d-md-block"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.bildFuerLaufbahnMobile}
-                styleClasses="img-fluid d-block d-md-none"
-              />
+        {graphQlResult.perspektive.name == null ||
+        graphQlResult.perspektive.name !== 'andere' ? (
+          <div className="container padding-md-top-bottom">
+            <div className="row">
+              <div className="col">
+                <p className="h2 text-primary padding-sm-bottom">
+                  {graphQlResult.titelLaufbahnBild}
+                </p>
+                <ContentfulImage
+                  imageFile={graphQlResult.bildFuerLaufbahn}
+                  styleClasses="img-fluid d-none d-md-block"
+                />
+                <ContentfulImage
+                  imageFile={graphQlResult.bildFuerLaufbahnMobile}
+                  styleClasses="img-fluid d-block d-md-none"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
 
         <div className="container padding-lg-top-bottom">
           <div className="row">
@@ -81,12 +84,24 @@ class LaufbahnTemplate extends React.Component {
               <p>{graphQlResult.skillsBeschreibung.skillsBeschreibung}</p>
               {graphQlResult.skills.length > 0
                 ? graphQlResult.skills.map((skill, i) => {
+                    var colorHeader
+
+                    if (i == 0) {
+                      colorHeader = 'text-primary'
+                    } else if (i == 1) {
+                      colorHeader = 'text-secondary'
+                    } else if (i == 2) {
+                      colorHeader = 'text-info'
+                    } else {
+                      colorHeader = 'text-dark'
+                    }
+
                     return (
                       <p
                         key={'skill-' + i}
                         hidden={skill.ueberschrift == null ? true : false}
                       >
-                        <span className="text-primary">
+                        <span className={colorHeader}>
                           {skill.ueberschrift}&nbsp;
                         </span>
                         {skill.text ? skill.text.text : null}
@@ -115,21 +130,24 @@ class LaufbahnTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-md-top-bottom">
-          <div className="row">
-            <div className="col">
-              <p>{graphQlResult.titelKompetenzen}</p>
-              <ContentfulImage
-                imageFile={graphQlResult.bildKompetenzen}
-                styleClasses="img-fluid d-none d-md-block"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.bildKompetenzenSmartphone}
-                styleClasses="img-fluid d-block d-md-none"
-              />
+        {graphQlResult.perspektive.name == null ||
+        graphQlResult.perspektive.name !== 'andere' ? (
+          <div className="container padding-lg-top-bottom">
+            <div className="row">
+              <div className="col">
+                <p>{graphQlResult.titelKompetenzen}</p>
+                <ContentfulImage
+                  imageFile={graphQlResult.bildKompetenzen}
+                  styleClasses="img-fluid d-none d-md-block"
+                />
+                <ContentfulImage
+                  imageFile={graphQlResult.bildKompetenzenSmartphone}
+                  styleClasses="img-fluid d-block d-md-none"
+                />
+              </div>
             </div>
           </div>
-        </div>
+        ) : null}
       </div>
     )
   }

@@ -63,7 +63,9 @@ class DeineEntwicklungTemplate extends React.Component {
                 imageFile={graphQlResult.trainingBild}
                 styleClasses="img-fluid padding-sm-top-bottom"
               />
-              <p>{graphQlResult.trainingBeschreibung.trainingBeschreibung}</p>
+              <p className="margin-md-bottom">
+                {graphQlResult.trainingBeschreibung.trainingBeschreibung}
+              </p>
 
               <Link to={pathPrefix + '/jobs'}>
                 <span className="btn btn btn-outline-primary">

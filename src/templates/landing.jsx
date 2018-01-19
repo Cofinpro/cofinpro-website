@@ -128,7 +128,7 @@ class LandingTemplate extends React.Component {
               : null}
             <div className="col-12 col-md-1" />
           </div>
-          <div className="row">
+          <div className="row margin-sm-top">
             <div className="col-12 col-md-10 mx-auto">
               <Link className="readmore" to={pathPrefix + '/pinnwand'}>
                 <span className="btn btn-outline-primary">ZUR PINNWAND</span>
