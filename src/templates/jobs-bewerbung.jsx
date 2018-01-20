@@ -84,11 +84,12 @@ class JobsBewerbungTemplate extends React.Component {
                       <p className="display-3 text-info">1</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt1Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-10">
@@ -123,11 +124,12 @@ class JobsBewerbungTemplate extends React.Component {
                       <p className="display-3 text-info">3</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt3Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-10">
@@ -165,11 +167,12 @@ class JobsBewerbungTemplate extends React.Component {
                       <p className="display-3 text-info">2</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt2Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-10">
@@ -206,11 +209,12 @@ class JobsBewerbungTemplate extends React.Component {
                       <p className="display-3 text-info">4</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt4Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
                     <div className="col-12 col-md-10">
