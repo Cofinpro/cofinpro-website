@@ -84,7 +84,7 @@ class JobsBewerbungTemplate extends React.Component {
                       <p className="display-3 text-info">1</p>
                     </div>
 
-                    <div className="col-12">
+                    <div className="col-10">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt1Titel}
                       </p>
