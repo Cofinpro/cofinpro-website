@@ -26,7 +26,7 @@ class Testimonial extends React.Component {
 
     return (
       <div>
-        <h2 className="h6">{title}</h2>
+        <h2 className="h6 margin-sm-bottom">{title}</h2>
         <div className="embed-responsive embed-responsive-4by3">
           <iframe
             className="embed-responsive-item"
