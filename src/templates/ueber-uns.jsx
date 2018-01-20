@@ -13,6 +13,12 @@ import TestimonialCarousel from '../components/TestimonialCarousel'
 import HtmlHeader from '../components/HtmlHeader'
 
 class UeberUnsTemplate extends React.Component {
+  componentDidMount() {
+    $('#carousel-auszeichnungen').carousel({
+      interval: 2000,
+    })
+  }
+
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -309,7 +315,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
           <div className="row padding-sm-top-bottom">
             <div className="col-12 col-md-1" />
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-5">
               <ContentfulMarkdownText
                 text={
                   graphQlResult.raeumlichkeitenBeschreibung
@@ -347,7 +353,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
           <div className="row">
             <div className="col-12 col-md-6 padding-sm-top-bottom">
-              <div className="embed-responsive embed-responsive-16by9">
+              <div className="embed-responsive embed-responsive-4by3">
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink1.replace('/watch?v=', '/embed/')}
@@ -355,13 +361,15 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
             <div className="col-12 col-md-6">
-              <p className="h4">{graphQlResult.kollegenZitat.kollegenZitat}</p>
+              <p className="h4 padding-sm-bottom">
+                {graphQlResult.kollegenZitat.kollegenZitat}
+              </p>
               <p>{graphQlResult.kollegenAuthorZitat}</p>
             </div>
           </div>
           <div className="row">
             <div className="col-12 col-md-6 padding-sm-top-bottom">
-              <div className="embed-responsive embed-responsive-16by9">
+              <div className="embed-responsive embed-responsive-4by3">
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink2.replace('/watch?v=', '/embed/')}
@@ -369,7 +377,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
             <div className="col-12 col-md-6 padding-sm-top-bottom">
-              <div className="embed-responsive embed-responsive-16by9">
+              <div className="embed-responsive embed-responsive-4by3">
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink3.replace('/watch?v=', '/embed/')}
@@ -380,7 +388,7 @@ class UeberUnsTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6" />
             <div className="col-12 col-md-6 padding-sm-top-bottom">
-              <div className="embed-responsive embed-responsive-16by9">
+              <div className="embed-responsive embed-responsive-4by3">
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink4.replace('/watch?v=', '/embed/')}
@@ -402,8 +410,9 @@ class UeberUnsTemplate extends React.Component {
             </div>
             <div className="col-12 col-md-1" />
           </div>
-          <div className="row justify-content-end padding-sm-top-bottom">
-            <div className="col-12 col-md-8">
+          <div className="row padding-sm-top-bottom">
+            <div className="col-12 col-md-3" />
+            <div className="col-12 col-md-5">
               <ContentfulMarkdownText
                 text={graphQlResult.projekteBeschreibung.projekteBeschreibung}
                 {...this.props}
@@ -413,7 +422,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container margin-md-top">
           <div className="row">
             <div className="col">
               <h2>{graphQlResult.faktenCofinpro.titel}</h2>
@@ -454,6 +463,7 @@ class UeberUnsTemplate extends React.Component {
                   <ImageCarousel
                     carouselId="auszeichnungen"
                     contentfulImages={graphQlResult.auszeichnungenBilder}
+                    options="slide"
                   />
                   <p className="text-center padding-md-top">
                     Unsere Auszeichnungen

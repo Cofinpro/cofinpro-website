@@ -54,10 +54,10 @@ class LaufbahnTemplate extends React.Component {
 
         {graphQlResult.perspektive.name == null ||
         graphQlResult.perspektive.name !== 'andere' ? (
-          <div className="container padding-md-top-bottom">
+          <div className="container padding-lg-top-bottom">
             <div className="row">
               <div className="col">
-                <p className="h2 text-primary padding-sm-bottom">
+                <p className="h2 padding-sm-bottom">
                   {graphQlResult.titelLaufbahnBild}
                 </p>
                 <ContentfulImage
@@ -91,7 +91,7 @@ class LaufbahnTemplate extends React.Component {
                     } else if (i == 1) {
                       colorHeader = 'text-secondary'
                     } else if (i == 2) {
-                      colorHeader = 'text-info'
+                      colorHeader = 'text-primary'
                     } else {
                       colorHeader = 'text-dark'
                     }
@@ -135,14 +135,14 @@ class LaufbahnTemplate extends React.Component {
           <div className="container padding-lg-top-bottom">
             <div className="row">
               <div className="col">
-                <p>{graphQlResult.titelKompetenzen}</p>
+                <p className="h2">{graphQlResult.titelKompetenzen}</p>
                 <ContentfulImage
                   imageFile={graphQlResult.bildKompetenzen}
-                  styleClasses="img-fluid d-none d-md-block"
+                  styleClasses="img-fluid d-none d-md-block padding-sm-top"
                 />
                 <ContentfulImage
                   imageFile={graphQlResult.bildKompetenzenSmartphone}
-                  styleClasses="img-fluid d-block d-md-none"
+                  styleClasses="img-fluid d-block d-md-none padding-sm-top"
                 />
               </div>
             </div>

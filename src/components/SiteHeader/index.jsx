@@ -32,7 +32,7 @@ class SiteHeader extends React.Component {
       <div className="container margin-md-bottom">
         <div className="row">
           <div className="col">
-            <div className="title-box">
+            <div className="row title-box">
               <div className="col-11 col-md-9">{titleElement}</div>
               <div className="col-1 col-md-3" />
             </div>

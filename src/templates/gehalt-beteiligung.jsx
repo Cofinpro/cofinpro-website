@@ -27,6 +27,19 @@ class GehaltBeteiligungTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    function CreateImage(props) {
+      if (typeof props.image !== 'undefined') {
+        return (
+          <ContentfulImage
+            imageFile={props.image}
+            styleClasses="img-fluid padding-md-bottom"
+          />
+        )
+      } else {
+        return null
+      }
+    }
+
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
@@ -67,44 +80,70 @@ class GehaltBeteiligungTemplate extends React.Component {
           <div className="container padding-md-bottom padding-lg-top">
             <div className="row">
               <div className="col-12 col-md-5">
-                {graphQlResult.artenVonStudenten == null ||
-                graphQlResult.artenVonStudenten.length === 0 ? (
-                  <ContentBoxStyleOne
-                    title={graphQlResult.infoboxLinksObenTitel}
-                    subtitle={graphQlResult.infoboxLinksObenUntertitel}
-                    image={graphQlResult.infoboxLinksObenBild}
-                    paragraphs={[
-                      graphQlResult.infoboxLinksObenBeschreibung
-                        .infoboxLinksObenBeschreibung,
-                      graphQlResult.infoboxLinksObenBeschreibungAbsatz2
-                        .infoboxLinksObenBeschreibungAbsatz2,
-                    ]}
-                  />
-                ) : null}
+                <div className="row">
+                  <div className="col-12 col-md-10">
+                    <h2 className="h6">
+                      {graphQlResult.infoboxLinksObenUntertitel}
+                    </h2>
+                    <h3 className="h2">
+                      {graphQlResult.infoboxLinksObenTitel}
+                    </h3>
+                    <CreateImage
+                      image={graphQlResult.infoboxLinksObenBild}
+                      {...this.props}
+                    />
+                  </div>
+                  <div className="col-12 col-md-2" />
+                  <div className="col-12 col-md-12">
+                    <ContentfulMarkdownText
+                      text={
+                        graphQlResult.infoboxLinksObenBeschreibung
+                          .infoboxLinksObenBeschreibung
+                      }
+                    />
+                    <ContentfulMarkdownText
+                      text={
+                        graphQlResult.infoboxLinksObenBeschreibungAbsatz2
+                          .infoboxLinksObenBeschreibungAbsatz2
+                      }
+                    />
+                  </div>
+                </div>
               </div>
 
-              <div className="col-12 col-md-1" />
+              <div className="col-12 col-md-2" />
 
               <div className="col-12 col-md-5 padding-lg-top">
                 <div className="d-none d-md-block filler-box">
                   <p className="filler" />
                 </div>
 
-                {graphQlResult.artenVonStudenten == null ||
-                graphQlResult.artenVonStudenten.length === 0 ? (
-                  <ContentBoxStyleOne
-                    title={graphQlResult.infoboxRechtsObenTitel}
-                    subtitle={graphQlResult.infoboxRechtsObenUntertitel}
-                    image={graphQlResult.infoboxRechtsObenBild}
-                    paragraphs={[
-                      graphQlResult.infoboxRechtsObenBeschreibung
-                        .infoboxRechtsObenBeschreibung,
-                    ]}
-                  />
-                ) : null}
+                <div className="row">
+                  <div className="col-12 col-md-10">
+                    <h2 className="h6">
+                      {graphQlResult.infoboxRechtsObenUntertitel}
+                    </h2>
+                    <h3 className="h2">
+                      {graphQlResult.infoboxRechtsObenTitel}
+                    </h3>
+                    <CreateImage
+                      image={graphQlResult.infoboxRechtsObenBild}
+                      {...this.props}
+                    />
+                  </div>
+                  <div className="col-12 col-md-2" />
+                  <div className="col-12 col-md-12">
+                    <ContentfulMarkdownText
+                      text={
+                        graphQlResult.infoboxRechtsObenBeschreibung
+                          .infoboxRechtsObenBeschreibung
+                      }
+                    />
+                  </div>
+                </div>
               </div>
 
-              <div className="col-12 col-md-1" />
+              <div className="col-12 col-md-2" />
             </div>
           </div>
         ) : null}
@@ -116,18 +155,29 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-1" />
 
               <div className="col-12 col-md-5">
-                {graphQlResult.artenVonStudenten == null ||
-                graphQlResult.artenVonStudenten.length === 0 ? (
-                  <ContentBoxStyleOne
-                    title={graphQlResult.infoboxLinksUntenTitel}
-                    subtitle={graphQlResult.infoboxLinksUntenUntertitel}
-                    image={graphQlResult.infoboxLinksUntenBild}
-                    paragraphs={[
-                      graphQlResult.infoboxLinksUntenBeschreibung
-                        .infoboxLinksUntenBeschreibung,
-                    ]}
-                  />
-                ) : null}
+                <div className="row">
+                  <div className="col-12 col-md-10">
+                    <h2 className="h6">
+                      {graphQlResult.infoboxLinksUntenUntertitel}
+                    </h2>
+                    <h3 className="h2">
+                      {graphQlResult.infoboxLinksUntenTitel}
+                    </h3>
+                    <CreateImage
+                      image={graphQlResult.infoboxLinksUntenBild}
+                      {...this.props}
+                    />
+                  </div>
+                  <div className="col-12 col-md-2" />
+                  <div className="col-12 col-md-12">
+                    <ContentfulMarkdownText
+                      text={
+                        graphQlResult.infoboxLinksUntenBeschreibung
+                          .infoboxLinksUntenBeschreibung
+                      }
+                    />
+                  </div>
+                </div>
               </div>
 
               <div className="col-12 col-md-1" />

@@ -45,18 +45,33 @@ $theme-colors: (
   )
   !default;
 
+$display3-size: 3.75rem !default;
+$display4-size: 3.375rem !default;
+
 $font-family-sans-serif: apercu-regular-pro;
 $font-family-monospace: apercu-regular-pro;
 $font-family-base: apercu-regular-pro;
 
-$font-size-base: 1.125rem !default;
-$font-size-lg: ($font-size-base * 1.25) !default;
-$font-size-sm: ($font-size-base * 0.875) !default;
+$font-size-base: 0.875rem !default;
+$font-size-lg: 1.125rem !default;
+$font-size-sm: 0.875rem !default;
 
 $h1-font-size: 3rem;
 $h2-font-size: 2.25rem;
 $h4-font-size: 1.5rem;
 $h6-font-size: 0.875rem;
+
+$h1-font-size-sm: 1.5rem;
+$h1-font-size-md: 3rem;
+
+$h2-font-size-sm: 1.5rem;
+$h2-font-size-md: 2.25rem;
+
+$h4-font-size-sm: 1.125rem;
+$h4-font-size-md: 1.5rem;
+
+$h6-font-size-sm: 0.75rem;
+$h6-font-size-md: 0.875rem;
 
 $headings-font-family: inherit !default;
 
@@ -80,8 +95,114 @@ $container-max-widths: (
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
+p {
+  @include media-breakpoint-only(xs) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-base;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $font-size-lg;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $font-size-lg;
+  }
+}
+
+.h1 {
+  @include media-breakpoint-only(xs) {
+    font-size: $h1-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h1-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h1-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h1-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h1-font-size;
+  }
+}
+
 .h2 {
   margin-bottom: 1rem;
+
+  @include media-breakpoint-only(xs) {
+    font-size: $h2-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h2-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h2-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h2-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h2-font-size;
+  }
+}
+
+.h4 {
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h4-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h4-font-size;
+  }
+
+  p {
+    @include media-breakpoint-only(xs) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $h4-font-size-md;
+    }
+    @include media-breakpoint-only(lg) {
+      font-size: $h4-font-size;
+    }
+    @include media-breakpoint-only(xl) {
+      font-size: $h4-font-size;
+    }
+  }
+}
+
+.h6 {
+  @include media-breakpoint-only(xs) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h6-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h6-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h6-font-size;
+  }
 }
 
 .news-content {
@@ -135,14 +256,19 @@ $container-max-widths: (
 .space-button-left-right {
   margin-right: 1rem;
   margin-left: 1rem;
+
+  @include media-breakpoint-only(xs) {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
 }
 
 .inline-link {
   display: inline;
-}
-
-.sub-line {
-  font-size: 1.125rem;
 }
 
 .bg-brown {
@@ -197,6 +323,10 @@ $container-max-widths: (
   padding-bottom: 2rem;
 }
 
+.padding-lg-bottom {
+  padding-bottom: 4rem;
+}
+
 .padding-sm-top {
   padding-top: 1rem;
 }
@@ -230,6 +360,10 @@ $container-max-widths: (
 
 .margin-md-top {
   margin-top: 2rem;
+}
+
+.margin-lg-top {
+  margin-top: 4rem;
 }
 
 .margin-sm-bottom {
@@ -365,6 +499,28 @@ a.darken:hover img {
   padding: 0px;
 }
 
-button.ytp-large-play-button.ytp-button {
-  display: none !important;
+.title-box {
+  position: relative;
+  left: 1rem;
+  top: 2.125rem;
+  z-index: 1000;
+
+  @include media-breakpoint-only(xs) {
+    position: relative;
+    left: 0rem;
+    top: 1.5rem;
+    z-index: 1000;
+  }
+  @include media-breakpoint-only(sm) {
+    position: relative;
+    left: 0rem;
+    top: 1.5rem;
+    z-index: 1000;
+  }
+  @include media-breakpoint-only(md) {
+    position: relative;
+    left: 0rem;
+    top: 1.5rem;
+    z-index: 1000;
+  }
 }
