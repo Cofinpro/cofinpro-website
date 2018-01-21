@@ -64,7 +64,7 @@ class StellenmarktTemplate extends React.Component {
         return null
       }
       return (
-        <div className="container padding-lg-top-bottom">
+        <div className="container padding-md-top-bottom">
           <div className="row justify-content-start">
             <div className="col-12 col-md-10 col-lg-8">
               <h3>JOBANGEBOTE FÜR ANDERE EXPERTISEN</h3>
@@ -85,7 +85,7 @@ class StellenmarktTemplate extends React.Component {
                               employmentType={stellenAnzeige.art}
                               expiration={stellenAnzeige.befristung}
                               locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.id}
+                              anzeigeId={stellenAnzeige.url}
                               styleClass="jobangebote-andere-box"
                               {...props}
                             />
@@ -96,6 +96,7 @@ class StellenmarktTemplate extends React.Component {
                   : null}
               </div>
             </div>
+            <div className="col-12 col-md-1 col-lg-1" />
           </div>
         </div>
       )
@@ -108,8 +109,9 @@ class StellenmarktTemplate extends React.Component {
         return null
       }
       return (
-        <div className="container padding-lg-top-bottom">
-          <div className="row justify-content-center">
+        <div className="container padding-md-top-bottom">
+          <div className="row justify-content-start">
+            <div className="col-12 col-md-1 col-lg-1" />
             <div className="col-12 col-md-10 col-lg-8">
               <h3>JOBANGEBOTE FÜR STUDENTEN</h3>
               <div className="row">
@@ -129,7 +131,7 @@ class StellenmarktTemplate extends React.Component {
                               employmentType={stellenAnzeige.art}
                               expiration={stellenAnzeige.befristung}
                               locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.id}
+                              anzeigeId={stellenAnzeige.url}
                               styleClass="jobangebote-studenten-box"
                               {...props}
                             />
@@ -152,7 +154,7 @@ class StellenmarktTemplate extends React.Component {
         return null
       }
       return (
-        <div className="container padding-lg-top-bottom">
+        <div className="container padding-md-top-bottom">
           <div className="row justify-content-start">
             <div className="col-12 col-md-10 col-lg-8">
               <h3>JOBANGEBOTE FÜR FACHBERATER</h3>
@@ -178,7 +180,7 @@ class StellenmarktTemplate extends React.Component {
                               employmentType={stellenAnzeige.art}
                               expiration={stellenAnzeige.befristung}
                               locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.id}
+                              anzeigeId={stellenAnzeige.url}
                               styleClass="jobangebote-fachberater-box"
                               {...props}
                             />
@@ -201,7 +203,7 @@ class StellenmarktTemplate extends React.Component {
         return null
       }
       return (
-        <div className="container padding-lg-top-bottom">
+        <div className="container padding-md-top-bottom">
           <div className="row justify-content-end">
             <div className="col-12 col-md-10 col-lg-8">
               <h3>JOBANGEBOTE FÜR TECHNOLOGIE-BERATER</h3>
@@ -227,7 +229,7 @@ class StellenmarktTemplate extends React.Component {
                               employmentType={stellenAnzeige.art}
                               expiration={stellenAnzeige.befristung}
                               locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.id}
+                              anzeigeId={stellenAnzeige.url}
                               styleClass="jobangebote-technologie-box"
                               {...props}
                             />
@@ -250,6 +252,7 @@ class StellenmarktTemplate extends React.Component {
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
           imageFile={graphQlResult.titelbild}
+          imageSmall={graphQlResult.titelbildKlein}
           titleTag="h1"
         />
 
@@ -315,6 +318,16 @@ export const pageQuery = graphql`
       contentfulTitel
       hauptueberschrift
       titelbild {
+        id
+        title
+        description
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      titelbildKlein {
         id
         title
         description

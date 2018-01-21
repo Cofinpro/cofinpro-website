@@ -502,7 +502,7 @@ a.darken:hover img {
 .title-box {
   position: relative;
   left: 1rem;
-  top: 2.125rem;
+  top: 2.5rem;
   z-index: 1000;
 
   @include media-breakpoint-only(xs) {
@@ -523,4 +523,8 @@ a.darken:hover img {
     top: 1.5rem;
     z-index: 1000;
   }
+}
+
+.container-stellenanzeige-text ul {
+  padding-left: 1rem;
 }

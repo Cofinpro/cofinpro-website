@@ -46,8 +46,10 @@ class StellenanzeigeTemplate extends React.Component {
         <div className="container padding-md-top-bottom">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
-              <h2 className="text-primary">Wir wünschen uns einfach Dich!</h2>
-              <h1>{stellenAnzeige.node.titel}</h1>
+              <h2 className="h3 text-primary">
+                Wir wünschen uns einfach Dich!
+              </h2>
+              <h1 className="h2">{stellenAnzeige.node.titel}</h1>
               <ContentfulMarkdownText
                 text={stellenAnzeige.node.absatzEins.absatzEins}
               />
@@ -92,10 +94,10 @@ class StellenanzeigeTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container container-stellenanzeige-text">
           <div className="row">
-            <div className="col-12 col-md-4">
-              <h3 className="h5">
+            <div className="col-12 col-md-4 padding-md-bottom">
+              <h3 className="h4 padding-sm-bottom">
                 {stellenAnzeige.node.spaltenInfoTitelLinks}
               </h3>
               <ContentfulMarkdownText
@@ -105,8 +107,8 @@ class StellenanzeigeTemplate extends React.Component {
                 }
               />
             </div>
-            <div className="col-12 col-md-4">
-              <h3 className="h5">
+            <div className="col-12 col-md-4 padding-md-bottom">
+              <h3 className="h4 padding-sm-bottom">
                 {stellenAnzeige.node.spaltenInfoTitelMitte}
               </h3>
               <ContentfulMarkdownText
@@ -116,8 +118,8 @@ class StellenanzeigeTemplate extends React.Component {
                 }
               />
             </div>
-            <div className="col-12 col-md-4">
-              <h3 className="h5">
+            <div className="col-12 col-md-4 padding-md-bottom">
+              <h3 className="h4 padding-sm-bottom">
                 {stellenAnzeige.node.spaltenInfoTitelRechts}
               </h3>
               <ContentfulMarkdownText

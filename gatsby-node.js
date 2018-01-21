@@ -207,6 +207,7 @@ function getStellenanzeigen(
           edges {
             node {
               id
+              url
               metaData {
                 title
                 keywords {
@@ -276,7 +277,7 @@ function createStellenanzeigen(
 
   _.each(stellenAnzeigen, edge => {
     createPage({
-      path: `/stellenanzeige/${edge.node.id}`,
+      path: `/stellenanzeige/${edge.node.url}`,
       component: slash(template),
       context: {
         id: edge.node.id,
@@ -285,7 +286,13 @@ function createStellenanzeigen(
       },
     })
 
-    console.log(`created page stellenanzeige/${edge.node.id}.`)
+    createRedirect({
+      fromPath: `/stellenanzeige/${edge.node.id}`,
+      redirectInBrowser: true,
+      toPath: `/stellenanzeige/${edge.node.url}`,
+    })
+
+    console.log(`created page stellenanzeige/${edge.node.url}.`)
   })
 
   callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
