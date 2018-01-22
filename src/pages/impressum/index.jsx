@@ -43,10 +43,10 @@ class Impressum extends React.Component {
           ]}
         />
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container padding-md-top-bottom">
           <div className="row">
-            <div className="col text-center">
-              <h1 className="margin-md-bottom">Impressum</h1>
+            <div className="col">
+              <h1 className="h2 margin-md-bottom">Impressum</h1>
 
               <p>
                 Cofinpro AG
@@ -87,24 +87,27 @@ class Impressum extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-sm-top-bottom text-center">
-          <a
-            name="Datenschutz"
-            href="https://cofinpro.de/datenschutz/"
-            target="_blank"
-          >
-            Datenschutz
-          </a>
-        </div>
-
-        <div className="container padding-sm-top-bottom text-center">
-          <a
-            name="AGB/Disclaimer"
-            href="https://cofinpro.de/agb/"
-            target="_blank"
-          >
-            AGB/Disclaimer
-          </a>
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <a
+                className="btn btn-outline-primary margin-sm-right"
+                name="Datenschutz"
+                href="https://cofinpro.de/datenschutz/"
+                target="_blank"
+              >
+                Datenschutz
+              </a>
+              <a
+                className="btn btn-outline-primary"
+                name="AGB/Disclaimer"
+                href="https://cofinpro.de/agb/"
+                target="_blank"
+              >
+                AGB/Disclaimer
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     )

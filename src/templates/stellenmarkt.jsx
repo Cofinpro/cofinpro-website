@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import CarrerOfferPreview from '../components/CarrerOfferPreview'
+import CarrerOfferPreviewFallback from '../components/CarrerOfferPreviewFallback'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import HtmlHeader from '../components/HtmlHeader'
@@ -61,7 +62,23 @@ class StellenmarktTemplate extends React.Component {
       const found = props.found
 
       if (!found) {
-        return null
+        return (
+          <div className="container padding-md-top-bottom">
+            <div className="row justify-content-start">
+              <div className="col-12 col-md-10 col-lg-8">
+                <h3>JOBANGEBOTE FÜR ANDERE EXPERTISEN</h3>
+                <div className="row">
+                  <div className="col-12 col-md-6 padding-sm-top-bottom">
+                    <CarrerOfferPreviewFallback
+                      borderStyle="primary"
+                      {...props}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
       }
       return (
         <div className="container padding-md-top-bottom">
@@ -106,7 +123,24 @@ class StellenmarktTemplate extends React.Component {
       const found = props.found
 
       if (!found) {
-        return null
+        return (
+          <div className="container padding-md-top-bottom">
+            <div className="row justify-content-start">
+              <div className="col-12 col-md-1 col-lg-1" />
+              <div className="col-12 col-md-10 col-lg-8">
+                <h3>JOBANGEBOTE FÜR STUDENTEN</h3>
+                <div className="row">
+                  <div className="col-12 col-md-6 padding-sm-top-bottom">
+                    <CarrerOfferPreviewFallback
+                      borderStyle="secondary"
+                      {...props}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
       }
       return (
         <div className="container padding-md-top-bottom">
@@ -151,7 +185,23 @@ class StellenmarktTemplate extends React.Component {
       const found = props.found
 
       if (!found) {
-        return null
+        return (
+          <div className="container padding-md-top-bottom">
+            <div className="row justify-content-start">
+              <div className="col-12 col-md-10 col-lg-8">
+                <h3>JOBANGEBOTE FÜR FACHBERATER</h3>
+                <div className="row">
+                  <div className="col-12 col-md-6 padding-sm-top-bottom">
+                    <CarrerOfferPreviewFallback
+                      borderStyle="secondary"
+                      {...props}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
       }
       return (
         <div className="container padding-md-top-bottom">
@@ -200,7 +250,23 @@ class StellenmarktTemplate extends React.Component {
       const found = props.found
 
       if (!found) {
-        return null
+        return (
+          <div className="container padding-md-top-bottom">
+            <div className="row justify-content-end">
+              <div className="col-12 col-md-10 col-lg-8">
+                <h3>JOBANGEBOTE FÜR TECHNOLOGIE-BERATER</h3>
+                <div className="row">
+                  <div className="col-12 col-md-6 padding-sm-top-bottom">
+                    <CarrerOfferPreviewFallback
+                      borderStyle="primary"
+                      {...props}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )
       }
       return (
         <div className="container padding-md-top-bottom">

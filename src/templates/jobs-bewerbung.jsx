@@ -48,7 +48,7 @@ class JobsBewerbungTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <div className="container padding-md-top-bottom margin-md-top-bottom">
+        <div className="container padding-md-top-bottom">
           <CarrerOfferCarouselBox
             titel={graphQlResult.ueberschriftStellenanzeigen}
             stellenAnzeigen={stellenAnzeigen}

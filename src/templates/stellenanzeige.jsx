@@ -63,6 +63,7 @@ class StellenanzeigeTemplate extends React.Component {
               <img
                 src={pathPrefix + '/img/stellenangebot_icons.png'}
                 className="img-fluid"
+                alt="Icons Stellenangebot"
               />
             </div>
           </div>
@@ -72,6 +73,7 @@ class StellenanzeigeTemplate extends React.Component {
               <img
                 src={pathPrefix + '/img/Group_5.png'}
                 className="img-fluid"
+                alt="Icons Stellenangebot"
               />
             </div>
           </div>
@@ -118,34 +120,42 @@ class StellenanzeigeTemplate extends React.Component {
         <div className="container bg-orange-light padding-lg-top-bottom margin-lg-top-bottom">
           <div className="row">
             <div className="col text-center">
-              <p className="h5 w-75 d-none d-md-block mx-auto padding-sm-bottom">
-                <span className="text-primary">
+              <div className="w-75 d-none d-md-block mx-auto padding-sm-bottom">
+                <p className="h2 text-primary">
                   Wir passen zu Deiner Wunschliste?
-                </span>{' '}
-                <br />
-                <br />Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
-                einen von sechs weiteren deutschen Standorten unter
-                <Link className="readmore" to={pathPrefix + '/jobs'}>
-                  <span> Jobs </span>
-                </Link>
-                oder karriere@cofinpro.de. <br /> <br />Bei Fragen zu Deiner
-                Bewerbung hat Fabienne Daum (Tel. +49 (0) 69 / 2 99 20 87 60)
-                ein offenes Ohr und unser Chatbot ein offenes Fenster für Dich.
-              </p>
-              <p className="h5  w-100 d-block d-md-none mx-auto padding-sm-bottom">
-                Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder einen
-                von sechs weiteren deutschen Standorten unter
-                <Link className="readmore" to={pathPrefix + '/jobs'}>
-                  <span> Jobs </span>
-                </Link>
-                oder karriere@cofinpro.de. <br /> <br />{' '}
-                <span className="text-primary">
+                </p>
+                <p className="">
+                  Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
+                  einen von sechs weiteren deutschen Standorten unter
+                  <Link className="readmore" to={pathPrefix + '/jobs'}>
+                    <span> Jobs </span>
+                  </Link>
+                  oder karriere@cofinpro.de.
+                </p>
+                <p className="">
+                  Bei Fragen zu deiner Bewerbung hat Fabienne Daum (Tel. +49 (0)
+                  69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot ein
+                  offenes Fenster für dich.
+                </p>
+              </div>
+              <div className="w-100 d-block d-md-none mx-auto padding-sm-bottom">
+                <p className="h2 text-primary">
                   Wir passen zu Deiner Wunschliste?
-                </span>{' '}
-                <br /> <br />Bei Fragen zu deiner Bewerbung hat Fabienne Daum
-                (Tel. +49 (0) 69 / 2 99 20 87 60) ein offenes Ohr und unser
-                Chatbot ein offenes Fenster für dich.
-              </p>
+                </p>
+                <p className="">
+                  Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
+                  einen von sechs weiteren deutschen Standorten unter
+                  <Link className="readmore" to={pathPrefix + '/jobs'}>
+                    <span> Jobs </span>
+                  </Link>
+                  oder karriere@cofinpro.de.
+                </p>
+                <p className="">
+                  Bei Fragen zu deiner Bewerbung hat Fabienne Daum (Tel. +49 (0)
+                  69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot ein
+                  offenes Fenster für dich.
+                </p>
+              </div>
               <a href={stellenAnzeige.node.uMantis.uMantis} target="_blank">
                 <span className="btn btn btn-outline-primary">
                   JETZT BEWERBEN
@@ -159,7 +169,7 @@ class StellenanzeigeTemplate extends React.Component {
           <CarrerOfferCarouselBox
             titel={'WEITERE JOBANZEIGEN'}
             stellenAnzeigen={stellenAnzeigen}
-            buttonText={'MEHR JOBS ANZEIGEN'}
+            buttonText={'ALLE JOBS'}
             blacklistedItem={stellenAnzeige.node.id}
             {...this.props}
           />

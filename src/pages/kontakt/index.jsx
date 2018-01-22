@@ -38,10 +38,10 @@ class Kontakt extends React.Component {
           ]}
         />
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container padding-md-top-bottom">
           <div className="row">
             <div className="col">
-              <h1>Kontakt für Bewerber</h1>
+              <h1 className="h2">Kontakt für Bewerber</h1>
 
               <p>
                 Über unser Online-Bewerbungssystem hast du die Möglichkeit, Ihre
@@ -61,20 +61,18 @@ class Kontakt extends React.Component {
                 href="https://recruitingapp-2586.umantis.com/Vacancies/InitiativeApplication/1"
                 className="btn btn-outline-primary"
               >
-                Initiativbewerbung erfassen
+                INITIATIVBEWERBUNG ERFASSEN
               </a>
 
               <p className="padding-md-top">
-                Fragen zum Bewerbungsprozess beantwortet dir unser
+                Fragen zum Bewerbungsprozess beantwortet Dir unser
                 <br />Human Resources-Team unter
                 <br />Tel + 49 (0) 69-2 99 20 87 60 und per E-Mail über
                 <br />karriere@cofinpro.de
               </p>
 
               <Link to={pathPrefix + '/jobs'}>
-                <span className="btn btn btn-outline-primary">
-                  Aktuelle Jobs
-                </span>
+                <span className="btn btn btn-outline-primary">ALLE JOBS</span>
               </Link>
             </div>
           </div>

@@ -6,6 +6,7 @@ import PubSub from 'pubsub-js'
 import './style.scss'
 
 import CarrerOfferPreview from '../CarrerOfferPreview'
+import CarrerOfferPreviewFallback from '../CarrerOfferPreviewFallback'
 
 import StorageHelper from '../../utils/storageHelper'
 
@@ -79,84 +80,109 @@ class CarrerOffersCarousel extends React.Component {
           tempBucket = []
         }
       }
-      console.log(buckets)
 
-      return (
-        <div className="carousel-inner">
-          {buckets.map((innerBuckets, i) => {
-            return (
-              <div
-                className={'carousel-item ' + (i === 0 ? 'active' : '')}
-                key={i}
-              >
-                <div className="carousel-item-content row text-dark" key={i}>
-                  {innerBuckets.map((dataItem, j) => {
-                    return (
-                      <div className="col-12 col-md-6 col-lg-4" key={i + j}>
-                        <CarrerOfferPreview
-                          title={dataItem.node.titel}
-                          employmentType={dataItem.node.art}
-                          expiration={dataItem.node.befristung}
-                          locationEmployee={dataItem.node.ort}
-                          anzeigeId={dataItem.node.url}
-                          {...props}
-                        />
-                      </div>
-                    )
-                  })}
-                </div>
+      if (buckets.length > 0) {
+        return (
+          <div
+            id={id + '_carouselCaptions'}
+            className="carousel slide jobs-bewerbung-carousel"
+            data-interval="false"
+            data-ride="carousel"
+          >
+            <ol className="carousel-indicators">
+              <li
+                data-target={'#' + id + '_carouselCaptions'}
+                data-slide-to="0"
+                className=""
+              />
+              <li
+                data-target={'#' + id + '_carouselCaptions'}
+                data-slide-to="1"
+                className=""
+              />
+              <li
+                data-target={'#' + id + '_carouselCaptions'}
+                data-slide-to="2"
+                className="active"
+              />
+            </ol>
+
+            <div className="carousel-inner">
+              {buckets.map((innerBuckets, i) => {
+                return (
+                  <div
+                    className={'carousel-item ' + (i === 0 ? 'active' : '')}
+                    key={i}
+                  >
+                    <div
+                      className="carousel-item-content row text-dark"
+                      key={i}
+                    >
+                      {innerBuckets.map((dataItem, j) => {
+                        return (
+                          <div className="col-12 col-md-6 col-lg-4" key={i + j}>
+                            <CarrerOfferPreview
+                              title={dataItem.node.titel}
+                              employmentType={dataItem.node.art}
+                              expiration={dataItem.node.befristung}
+                              locationEmployee={dataItem.node.ort}
+                              anzeigeId={dataItem.node.url}
+                              {...props}
+                            />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            <a
+              className="carousel-control-prev"
+              href={'#' + id + '_carouselCaptions'}
+              role="button"
+              data-slide="prev"
+            >
+              <i
+                className="fa fa-chevron-left text-primary"
+                aria-hidden="true"
+              />
+              <span className="sr-only">Previous</span>
+            </a>
+            <a
+              className="carousel-control-next"
+              href={'#' + id + '_carouselCaptions'}
+              role="button"
+              data-slide="next"
+            >
+              <i
+                className="fa fa-chevron-right text-primary"
+                aria-hidden="true"
+              />
+              <span className="sr-only">Next</span>
+            </a>
+          </div>
+        )
+      } else {
+        return (
+          <div>
+            <div className="row justify-content-center padding-sm-top padding-md-bottom">
+              <div className="col-12 col-md-6 col-lg-4">
+                <CarrerOfferPreviewFallback
+                  borderStyle="secondary"
+                  {...props}
+                />
               </div>
-            )
-          })}
-        </div>
-      )
+            </div>
+          </div>
+        )
+      }
     }
 
     return (
-      <div
-        id={id + '_carouselCaptions'}
-        className="carousel slide jobs-bewerbung-carousel"
-        data-interval="false"
-        data-ride="carousel"
-      >
-        <ol className="carousel-indicators">
-          <li
-            data-target={'#' + id + '_carouselCaptions'}
-            data-slide-to="0"
-            className=""
-          />
-          <li
-            data-target={'#' + id + '_carouselCaptions'}
-            data-slide-to="1"
-            className=""
-          />
-          <li
-            data-target={'#' + id + '_carouselCaptions'}
-            data-slide-to="2"
-            className="active"
-          />
-        </ol>
-
+      <div>
         <CarouselInner perspective={this.state.perspektive} {...this.props} />
-
-        <a
-          className="carousel-control-prev"
-          href={'#' + id + '_carouselCaptions'}
-          role="button"
-          data-slide="prev"
-        >
-          <i className="fa fa-chevron-left text-primary" aria-hidden="true" />
-          <span className="sr-only">Previous</span>
-        </a>
-        <a
-          className="carousel-control-next"
-          href={'#' + id + '_carouselCaptions'}
-          role="button"
-          data-slide="next"
-        >
-          <i className="fa fa-chevron-right text-primary" aria-hidden="true" />
-          <span className="sr-only">Next</span>
-        </a>
       </div>
     )
   }
