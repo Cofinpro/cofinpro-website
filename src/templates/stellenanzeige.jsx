@@ -67,27 +67,10 @@ class StellenanzeigeTemplate extends React.Component {
             </div>
           </div>
 
-          <div className="row dd-block d-md-none">
-            <div className="col-4">
+          <div className="row d-block d-md-none">
+            <div className="col-12 text-center padding-md-bottom">
               <img
-                src={
-                  pathPrefix +
-                  '/img/1_teile_ideen_im_vetrauensvollen_umfeld.jpg'
-                }
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-4">
-              <img
-                src={pathPrefix + '/img/2_bewege_mit_uns_zeitgeistthemen.jpg'}
-                className="img-fluid"
-              />
-            </div>
-            <div className="col-4">
-              <img
-                src={
-                  pathPrefix + '/img/3_entwickle_dich_in_kompetenten_teams.jpg'
-                }
+                src={pathPrefix + '/img/Group_5.png'}
                 className="img-fluid"
               />
             </div>
