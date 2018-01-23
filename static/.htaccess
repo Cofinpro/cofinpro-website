@@ -4,6 +4,11 @@ RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
 RewriteRule ^ https://www.%1%{REQUEST_URI} [L,NE,R=301]
 
+Redirect 301 /deine-entwicklung https://www.karriere-cofinpro.de
+Redirect 301 /gehalt-beteiligung https://www.karriere-cofinpro.de
+Redirect 301 /deine-karriere https://www.karriere-cofinpro.de
+Redirect 301 /landing https://www.karriere-cofinpro.de
+
 Redirect 301 /stellenmarkt https://www.karriere-cofinpro.de/jobs
  Redirect 301 /stellenprofil-informatiker https://www.karriere-cofinpro.de/jobs
  Redirect 301 /job-empfehlung https://www.karriere-cofinpro.de/jobs
