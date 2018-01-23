@@ -51,7 +51,7 @@ class UeberUnsTemplate extends React.Component {
           <div className="row text-center">
             <div className="col-12 col-md-2" />
             <div className="col-12 col-md-8">
-              <p className="h5">{graphQlResult.ueberschriftVon3SpaltenTop}</p>
+              <p className="">{graphQlResult.ueberschriftVon3SpaltenTop}</p>
             </div>
             <div className="col-12 col-md-2" />
           </div>
