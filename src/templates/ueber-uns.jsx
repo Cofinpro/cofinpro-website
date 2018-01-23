@@ -72,11 +72,11 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildLinks}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
               />
-              <h4 className="p d-inline padding-sm-bottom">
+              <h4 className="p padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelLinks}
                 <br />
               </h4>
-              <p className="d-inline">
+              <p className="">
                 {graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
               </p>
             </div>
@@ -89,11 +89,11 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildMitte}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
               />
-              <h4 className="p d-inline padding-sm-bottom">
+              <h4 className="p padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelMitte}
                 <br />
               </h4>
-              <p className="d-inline">
+              <p className="">
                 {graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
               </p>
             </div>
@@ -106,11 +106,11 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildRechts}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
               />
-              <h4 className="p d-inline padding-sm-bottom">
+              <h4 className="p padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelRechts}
                 <br />
               </h4>
-              <p className="d-inline">
+              <p className="">
                 {graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
               </p>
             </div>
