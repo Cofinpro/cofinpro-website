@@ -10,38 +10,6 @@ module.exports = {
     siteUrl: `https://www.karriere-cofinpro.de`,
     redirects: [
       {
-        from: '/undefined/deine-entwicklung',
-        to: '/',
-      },
-      {
-        from: '/deine-entwicklung',
-        to: '/',
-      },
-      {
-        from: '/undefined/gehalt-beteiligung',
-        to: '/',
-      },
-      {
-        from: '/gehalt-beteiligung',
-        to: '/',
-      },
-      {
-        from: '/undefined/deine-karriere',
-        to: '/',
-      },
-      {
-        from: '/deine-karriere',
-        to: '/',
-      },
-      {
-        from: '/undefined/landing',
-        to: '/',
-      },
-      {
-        from: '/landing',
-        to: '/',
-      },
-      {
         from: '/stellenmarkt',
         to: '/jobs',
       },

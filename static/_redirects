@@ -1,5 +1,9 @@
 # Redirects from what the browser requests to what we serve
 /landing              /
 /deine-entwicklung    /
+/deine-karriere   /
 /gehalt-beteiligung   /
-/gehalt-beteiligung   /
+/undefined/landing    /
+/undefined/deine-entwicklung    /
+/undefined/deine-karriere   /
+/undefined/gehalt-beteiligung   /
