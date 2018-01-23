@@ -73,6 +73,10 @@ $container-max-widths: (
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
+.p {
+  font-size: 1.125rem;
+}
+
 .news-content {
   margin-top: 1rem;
 }
