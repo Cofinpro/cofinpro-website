@@ -53,10 +53,6 @@ module.exports = {
         from: '/zukuenftige-kollegen',
         to: '/ueber-uns',
       },
-      {
-        from: '/laufbahnmodell',
-        to: '/fachlicher-professional/deine-karriere',
-      },
     ],
   },
   pathPrefix: '/',

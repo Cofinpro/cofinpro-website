@@ -707,7 +707,7 @@ function createRedirects(
       })
 
       console.log(
-        `created redirect from` +
+        `created redirect from:` +
           result.data.site.siteMetadata.redirects[i].from +
           ' to:' +
           result.data.site.siteMetadata.redirects[i].to
