@@ -96,7 +96,8 @@ $container-max-widths: (
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
 p,
-li {
+li,
+.p {
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
@@ -377,6 +378,10 @@ li {
 
 .margin-sm-right {
   margin-right: 1rem;
+}
+
+.margin-md-right {
+  margin-right: 2rem;
 }
 
 .no-margin-bottom {

@@ -51,7 +51,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         createWorkLife,
         createJobsBewerbung,
         createStartseite,
-        createRedirects,
       ],
       function(error, success) {
         resolve()

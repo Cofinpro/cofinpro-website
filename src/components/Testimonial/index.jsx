@@ -20,9 +20,41 @@ class Testimonial extends React.Component {
       authorTitle,
       videoUrl,
       imageFile,
+      showCarouselSliderIcons,
+      carouselId,
     } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    var sliderIcons
+
+    if (
+      showCarouselSliderIcons !== undefined &&
+      showCarouselSliderIcons === true
+    ) {
+      sliderIcons = (
+        <div className="d-block d-md-none">
+          <a
+            className="carousel-control-prev-under-picture margin-md-right"
+            href={'#carousel-' + carouselId}
+            role="button"
+            data-slide="prev"
+          >
+            <i className="fa fa-chevron-left text-dark" aria-hidden="true" />
+          </a>
+          <a
+            className="carousel-control-next-under-picture"
+            href={'#carousel-' + carouselId}
+            role="button"
+            data-slide="next"
+          >
+            <i className="fa fa-chevron-right text-dark" aria-hidden="true" />
+          </a>
+        </div>
+      )
+    } else {
+      sliderIcons = null
+    }
 
     return (
       <div>
@@ -33,6 +65,7 @@ class Testimonial extends React.Component {
             src={videoUrl.replace('/watch?v=', '/embed/')}
           />
         </div>
+        {sliderIcons}
         <p className="h4 padding-sm-top padding-sm-bottom">{text}</p>
         <p>
           {author} - {authorTitle}

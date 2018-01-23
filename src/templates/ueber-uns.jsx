@@ -72,7 +72,7 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildLinks}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
               />
-              <h4 className="h5 d-inline padding-sm-bottom">
+              <h4 className="p d-inline padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelLinks}
                 <br />
               </h4>
@@ -89,7 +89,7 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildMitte}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
               />
-              <h4 className="h5 d-inline padding-sm-bottom">
+              <h4 className="p d-inline padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelMitte}
                 <br />
               </h4>
@@ -106,7 +106,7 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildRechts}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
               />
-              <h4 className="h5 d-inline padding-sm-bottom">
+              <h4 className="p d-inline padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelRechts}
                 <br />
               </h4>
@@ -287,29 +287,55 @@ class UeberUnsTemplate extends React.Component {
                       </div>
                     )
                   })}
+                  <div className="d-block d-md-none">
+                    <a
+                      className="carousel-control-prev-under-picture margin-md-right"
+                      href="#carouselCaptionsArbeitsplatz"
+                      role="button"
+                      data-slide="prev"
+                    >
+                      <i
+                        className="fa fa-chevron-left text-dark"
+                        aria-hidden="true"
+                      />
+                    </a>
+                    <a
+                      className="carousel-control-next-under-picture"
+                      href="#carouselCaptionsArbeitsplatz"
+                      role="button"
+                      data-slide="next"
+                    >
+                      <i
+                        className="fa fa-chevron-right text-dark"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  </div>
                 </div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselCaptionsArbeitsplatz"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <i
-                    className="fa fa-chevron-left text-primary"
-                    aria-hidden="true"
-                  />
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselCaptionsArbeitsplatz"
-                  role="button"
-                  data-slide="next"
-                >
-                  <i
-                    className="fa fa-chevron-right text-primary"
-                    aria-hidden="true"
-                  />
-                </a>
+                <div className="d-none d-md-block">
+                  <a
+                    className="carousel-control-prev"
+                    href="#carouselCaptionsArbeitsplatz"
+                    role="button"
+                    data-slide="prev"
+                  >
+                    <i
+                      className="fa fa-chevron-left text-primary"
+                      aria-hidden="true"
+                    />
+                  </a>
+                  <a
+                    className="carousel-control-next"
+                    href="#carouselCaptionsArbeitsplatz"
+                    role="button"
+                    data-slide="next"
+                  >
+                    <i
+                      className="fa fa-chevron-right text-primary"
+                      aria-hidden="true"
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
