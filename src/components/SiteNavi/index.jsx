@@ -149,13 +149,10 @@ class SiteNavi extends React.Component {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <object
-                  type="image/svg+xml"
-                  data={pathPrefix + '/svg/icon_menu_perspektive_toggler.svg'}
-                  className="logo"
-                >
-                  menu kompetenz toggler
-                </object>
+                <img
+                  alt="Menü Icon"
+                  src={pathPrefix + '/svg/icon_menu_perspektive_toggler.svg'}
+                />
               </button>
             </form>
           </div>
@@ -183,13 +180,10 @@ class SiteNavi extends React.Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <object
-              type="image/svg+xml"
-              data={pathPrefix + '/svg/icon_menu_toggler.svg'}
-              className="logo"
-            >
-              menu toggler
-            </object>
+            <img
+              alt="Menü Icon"
+              src={pathPrefix + '/svg/icon_menu_toggler.svg'}
+            />
           </button>
 
           <div

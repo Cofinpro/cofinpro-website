@@ -6,6 +6,8 @@ import './style.scss'
 
 import ContentfulImage from '../ContentfulImage'
 
+import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+
 class ImageCarousel extends React.Component {
   render() {
     const { carouselId, contentfulImages, options } = this.props
@@ -36,25 +38,7 @@ class ImageCarousel extends React.Component {
               )
             })}
           </div>
-          <a
-            className="carousel-control-prev"
-            href={'#carousel-' + carouselId}
-            role="button"
-            data-slide="prev"
-          >
-            <i className="fa fa-chevron-left text-primary" aria-hidden="true" />
-          </a>
-          <a
-            className="carousel-control-next"
-            href={'#carousel-' + carouselId}
-            role="button"
-            data-slide="next"
-          >
-            <i
-              className="fa fa-chevron-right text-primary"
-              aria-hidden="true"
-            />
-          </a>
+          <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
         </div>
       )
     } else {
