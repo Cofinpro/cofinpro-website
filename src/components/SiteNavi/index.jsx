@@ -149,7 +149,13 @@ class SiteNavi extends React.Component {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span className="fa fa-bars text-secondary toggle-icon" />
+                <object
+                  type="image/svg+xml"
+                  data={pathPrefix + '/svg/icon_menu_perspektive_toggler.svg'}
+                  className="logo"
+                >
+                  menu kompetenz toggler
+                </object>
               </button>
             </form>
           </div>
@@ -177,7 +183,13 @@ class SiteNavi extends React.Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="fa fa-bars text-primary toggle-icon" />
+            <object
+              type="image/svg+xml"
+              data={pathPrefix + '/svg/icon_menu_toggler.svg'}
+              className="logo"
+            >
+              menu toggler
+            </object>
           </button>
 
           <div

@@ -5,6 +5,12 @@ import get from 'lodash/get'
 import './style.scss'
 
 class SiteFooter extends React.Component {
+  componentDidMount() {
+    $('#back-to-top').click(function() {
+      console.log('test')
+    })
+  }
+
   render() {
     const data = this.props.data
 
@@ -12,6 +18,10 @@ class SiteFooter extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const { location, title } = this.props
+
+    function scrollToTop() {
+      $('html,body').animate({ scrollTop: 0 }, 'slow')
+    }
 
     function scrollToTop(e) {
       e.preventDefault()
@@ -37,11 +47,19 @@ class SiteFooter extends React.Component {
             </div>
 
             <div className="col-12 col-lg-2 align-self-center padding-sm-top-bottom">
-              <p className="text-center scroll-up-box">
-                <a id="back-to-top" href="#" onClick={scrollToTop}>
-                  <i className="fa fa-chevron-up" aria-hidden="true" />
+              <div className="text-center scroll-up-box">
+                <a
+                  id="back-to-top"
+                  className="d-block"
+                  href="#"
+                  onClick={scrollToTop}
+                >
+                  <img
+                    alt="Button zum nach oben scrollen"
+                    src={pathPrefix + '/svg/icon_arrow_dotted_up.svg'}
+                  />
                 </a>
-              </p>
+              </div>
             </div>
 
             <div className="col-12 col-lg-5 padding-sm-top-bottom">

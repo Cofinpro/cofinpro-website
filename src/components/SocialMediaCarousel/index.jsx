@@ -7,6 +7,8 @@ import './style.scss'
 import ContentfulImage from '../ContentfulImage'
 import ContentfulMarkdownText from '../ContentfulMarkdownText'
 
+import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+
 class SocialMediaCarousel extends React.Component {
   render() {
     const { carouselId, socialMediaPosts } = this.props
@@ -107,22 +109,7 @@ class SocialMediaCarousel extends React.Component {
               )
             })}
           </div>
-          <a
-            className="carousel-control-prev"
-            href={'#carousel-' + carouselId}
-            role="button"
-            data-slide="prev"
-          >
-            <i className="fa fa-chevron-left text-dark" aria-hidden="true" />
-          </a>
-          <a
-            className="carousel-control-next"
-            href={'#carousel-' + carouselId}
-            role="button"
-            data-slide="next"
-          >
-            <i className="fa fa-chevron-right text-dark" aria-hidden="true" />
-          </a>
+          <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
         </div>
       )
     } else {
