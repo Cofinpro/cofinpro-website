@@ -34,14 +34,18 @@ class NewsTemplate extends React.Component {
             <div className="col-12 col-md-8 text-center">
               <p>{news.datumFuerDieAnzeige}</p>
               <h2>{news.ueberschrift}</h2>
-              <p>{news.absatz1.absatz1}</p>
+              <ContentfulMarkdownText
+                text={news.absatz1 !== null ? news.absatz1.absatz1 : ''}
+                {...this.props}
+              />
               <ContentfulImage
                 imageFile={news.newsBild}
                 styleClasses="img-fluid padding-sm-top-bottom"
               />
-              <p className="margin-md-bottom">
-                {news.absatz2 != null ? news.absatz2.absatz2 : ''}
-              </p>
+              <ContentfulMarkdownText
+                text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}
+                {...this.props}
+              />
               <Link to={pathPrefix + '/pinnwand'}>
                 <span className="btn btn btn-outline-primary">
                   ZUR PINNWAND
