@@ -6,6 +6,7 @@ import get from 'lodash/get'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulImage from '../components/ContentfulImage'
+import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import HtmlHeader from '../components/HtmlHeader'
 
 class NewsTemplate extends React.Component {
