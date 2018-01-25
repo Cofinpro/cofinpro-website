@@ -199,6 +199,68 @@ class LandingTemplate extends React.Component {
                 {graphQlResult.socialMediaBeschreibung.socialMediaBeschreibung}
               </p>
             </div>
+            <div className="col-12 text-center padding-sm-bottom">
+              <a
+                href="https://www.facebook.com/Cofinpro"
+                target="_blank"
+                title="facebook"
+              >
+                <img
+                  src={pathPrefix + '/img/icons/facebook.png'}
+                  className="social-media-icon-carousel"
+                />
+              </a>
+              <a
+                href="http://instagram.com/cofinpro_ag"
+                target="_blank"
+                title="instagram"
+              >
+                <img
+                  src={pathPrefix + '/img/icons/instagram.png'}
+                  className="social-media-icon-carousel"
+                />
+              </a>
+              <a
+                href="https://twitter.com/cofinpro_ag"
+                target="_blank"
+                title="twitter"
+              >
+                <img
+                  src={pathPrefix + '/img/icons/twitter.png'}
+                  className="social-media-icon-carousel"
+                />
+              </a>
+              <a
+                href="https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ"
+                target="_blank"
+                title="you tube"
+              >
+                <img
+                  src={pathPrefix + '/img/icons/youtube.png'}
+                  className="social-media-icon-carousel"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/846504/"
+                target="_blank"
+                title="linkedin"
+              >
+                <img
+                  src={pathPrefix + '/img/icons/linkedin.png'}
+                  className="social-media-icon-carousel"
+                />
+              </a>
+              <a
+                href="https://www.xing.com/companies/cofinproag"
+                target="_blank"
+                title="xing"
+              >
+                <img
+                  src={pathPrefix + '/img/icons/xing.png'}
+                  className="social-media-icon-carousel"
+                />
+              </a>
+            </div>
           </div>
 
           <div className="row justify-content-center padding-md-top-bottom">
