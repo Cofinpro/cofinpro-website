@@ -115,8 +115,9 @@ class SiteNavi extends React.Component {
           hidden={locationUpdate !== mainUrl ? true : false}
         >
           <img
-            src={pathPrefix + '/img/cofinpro_logo.png'}
             className="cofinpro-logo-startseite"
+            alt="Nächstes Bild"
+            src={pathPrefix + '/svg/logo_cofinpro.svg'}
           />
         </a>
 
@@ -128,8 +129,9 @@ class SiteNavi extends React.Component {
           <div className="d-flex w-100 justify-content-between align-items-center">
             <a href="https://www.cofinpro.de" className="navbar-brand">
               <img
-                src={pathPrefix + '/img/cofinpro_logo.png'}
                 className="cofinpro-logo"
+                alt="Nächstes Bild"
+                src={pathPrefix + '/svg/logo_cofinpro.svg'}
               />
             </a>
             <form className="form-inline">

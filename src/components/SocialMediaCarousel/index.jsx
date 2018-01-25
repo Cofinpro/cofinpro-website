@@ -18,98 +18,38 @@ class SocialMediaCarousel extends React.Component {
 
     if (socialMediaPosts != null && socialMediaPosts.length > 0) {
       return (
-        <div
-          id={'carousel-' + carouselId}
-          className="carousel slide socialMediaCarousel padding-md-top-bottom"
-          data-ride="carousel"
-        >
-          <div className="carousel-inner margin-md-top-bottom">
-            {socialMediaPosts.map((mediaPost, i) => {
-              return (
-                <div
-                  className={
-                    'text-center carousel-item' + (i == 0 ? ' active' : '')
-                  }
-                  key={'carousel-item-' + i}
-                >
-                  <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank">
-                    <ContentfulImage
-                      imageFile={mediaPost.bildDesPosts}
-                      styleClasses="d-block mx-auto social-media-image padding-sm-bottom"
-                      key={'carousel-item-image-big-' + i}
+        <div>
+          <div
+            id={'carousel-' + carouselId}
+            className="carousel slide socialMediaCarousel"
+            data-ride="carousel"
+          >
+            <div className="carousel-inner">
+              {socialMediaPosts.map((mediaPost, i) => {
+                return (
+                  <div
+                    className={
+                      'text-center carousel-item' + (i == 0 ? ' active' : '')
+                    }
+                    key={'carousel-item-' + i}
+                  >
+                    <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank">
+                      <ContentfulImage
+                        imageFile={mediaPost.bildDesPosts}
+                        styleClasses="img-fluid social-media-image padding-sm-bottom"
+                        key={'carousel-item-image-big-' + i}
+                      />
+                    </a>
+                    <ContentfulMarkdownText
+                      text={mediaPost.textDesPosts.textDesPosts}
+                      styleClasses="d-block w-75 mx-auto"
                     />
-                  </a>
-                  <ContentfulMarkdownText
-                    text={mediaPost.textDesPosts.textDesPosts}
-                    styleClasses="d-block w-75 mx-auto"
-                  />
-                  <div className="text-center padding-sm-top">
-                    <a
-                      href="https://www.facebook.com/Cofinpro"
-                      target="_blank"
-                      title="facebook"
-                    >
-                      <img
-                        src={pathPrefix + '/img/icons/facebook.png'}
-                        className="social-media-icon-carousel"
-                      />
-                    </a>
-                    <a
-                      href="http://instagram.com/cofinpro_ag"
-                      target="_blank"
-                      title="instagram"
-                    >
-                      <img
-                        src={pathPrefix + '/img/icons/instagram.png'}
-                        className="social-media-icon-carousel"
-                      />
-                    </a>
-                    <a
-                      href="https://twitter.com/cofinpro_ag"
-                      target="_blank"
-                      title="twitter"
-                    >
-                      <img
-                        src={pathPrefix + '/img/icons/twitter.png'}
-                        className="social-media-icon-carousel"
-                      />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ"
-                      target="_blank"
-                      title="you tube"
-                    >
-                      <img
-                        src={pathPrefix + '/img/icons/youtube.png'}
-                        className="social-media-icon-carousel"
-                      />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/company/846504/"
-                      target="_blank"
-                      title="linkedin"
-                    >
-                      <img
-                        src={pathPrefix + '/img/icons/linkedin.png'}
-                        className="social-media-icon-carousel"
-                      />
-                    </a>
-                    <a
-                      href="https://www.xing.com/companies/cofinproag"
-                      target="_blank"
-                      title="xing"
-                    >
-                      <img
-                        src={pathPrefix + '/img/icons/xing.png'}
-                        className="social-media-icon-carousel"
-                      />
-                    </a>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
+            <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
           </div>
-          <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
         </div>
       )
     } else {
