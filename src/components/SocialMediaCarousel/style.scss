@@ -1,33 +1,44 @@
 .socialMediaCarousel {
+  height: 560px;
 
-    background-color: #F2EEEE;
+  /*background-color: #F2EEEE;*/
 
-    .carousel-indicators .active {
-        background-color: black;
-    }
+  .carousel-indicators .active {
+    background-color: black;
+  }
 
-    .carousel-inner {
-        background-color: #F2EEEE;
-    }
-  
-    .carousel-indicators li {
-        background-color: rgb(175, 175, 175);
-    } 
+  .carousel-inner {
+    /*background-color: #F2EEEE;*/
+  }
 
-    .carousel-control-prev>i,
-    .carousel-control-next>i {
-        font-size: 2rem; 
-        color: #EC7B1A !important;
-    }
+  .carousel-indicators li {
+    background-color: rgb(175, 175, 175);
+  }
 
-    .carousel-item{ 
-        img {
-            /*padding-left: 3rem;
+  .carousel-control-prev > i,
+  .carousel-control-next > i {
+    font-size: 2rem;
+    color: #ec7b1a !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    font-size: 2rem;
+    color: #ec7b1a !important;
+    width: 10%;
+  }
+
+  .carousel-item {
+    height: 560px;
+
+    img {
+      /*padding-left: 3rem;
             padding-right: 3rem;*/
-        }
+      max-width: 80%;
     }
+  }
 
-    .social-media-image {
-        
-    }
+  .social-media-image {
+    max-height: 380px;
+  }
 }
