@@ -457,25 +457,6 @@ a.darken:hover img {
   border: 3px solid $orange;
 }
 
-.social-media-icon-carousel {
-  height: 30px;
-  padding-left: 14px;
-  padding-right: 14px;
-
-  @include media-breakpoint-only(xs) {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  @include media-breakpoint-only(sm) {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  @include media-breakpoint-only(md) {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
 .cofinpro-logo-startseite {
   margin-top: 24px;
 }

@@ -4,15 +4,26 @@ import './style.scss'
 
 class CarouselControlPrevNext extends React.Component {
   render() {
-    const { sliderId } = this.props
+    const { sliderId, version } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    var cssClassNext
+    var cssClassPrev
+
+    if (version !== null && version === 2) {
+      cssClassNext = 'carousel-control-next-under-picture'
+      cssClassPrev = 'carousel-control-prev-under-picture margin-md-right'
+    } else {
+      cssClassNext = 'carousel-control-next'
+      cssClassPrev = 'carousel-control-prev'
+    }
+
     return (
       <div>
         <a
-          className="carousel-control-prev"
+          className={cssClassPrev}
           href={'#' + sliderId}
           role="button"
           data-slide="prev"
@@ -23,7 +34,7 @@ class CarouselControlPrevNext extends React.Component {
           />
         </a>
         <a
-          className="carousel-control-next"
+          className={cssClassNext}
           href={'#' + sliderId}
           role="button"
           data-slide="next"

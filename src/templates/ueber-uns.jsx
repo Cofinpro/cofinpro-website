@@ -7,6 +7,7 @@ import Facts from '../components/Facts'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import ImageCarousel from '../components/ImageCarousel'
+import ImageCarouselV2 from '../components/ImageCarouselV2'
 import ContentfulImage from '../components/ContentfulImage'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import TestimonialCarousel from '../components/TestimonialCarousel'
@@ -263,80 +264,11 @@ class UeberUnsTemplate extends React.Component {
               <h3 className="h2 padding-sm-bottom">
                 {graphQlResult.raeumlichkeitenTitel}
               </h3>
-              <div
-                id="carouselCaptionsArbeitsplatz"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="false"
-              >
-                <div className="carousel-inner">
-                  {graphQlResult.raeumlichkeitenBilder.map((bild, i) => {
-                    return (
-                      <div
-                        className={
-                          'text-center carousel-item' +
-                          (i == 0 ? ' active' : '')
-                        }
-                        key={'carousel-item-' + i}
-                      >
-                        <ContentfulImage
-                          imageFile={bild}
-                          styleClasses="d-block w-100 padding-sm-bottom"
-                          key={'carousel-item-image-small-' + i}
-                        />
-                      </div>
-                    )
-                  })}
-                  <div className="d-block d-md-none">
-                    <a
-                      className="carousel-control-prev-under-picture margin-md-right"
-                      href="#carouselCaptionsArbeitsplatz"
-                      role="button"
-                      data-slide="prev"
-                    >
-                      <i
-                        className="fa fa-chevron-left text-dark"
-                        aria-hidden="true"
-                      />
-                    </a>
-                    <a
-                      className="carousel-control-next-under-picture"
-                      href="#carouselCaptionsArbeitsplatz"
-                      role="button"
-                      data-slide="next"
-                    >
-                      <i
-                        className="fa fa-chevron-right text-dark"
-                        aria-hidden="true"
-                      />
-                    </a>
-                  </div>
-                </div>
-                <div className="d-none d-md-block">
-                  <a
-                    className="carousel-control-prev"
-                    href="#carouselCaptionsArbeitsplatz"
-                    role="button"
-                    data-slide="prev"
-                  >
-                    <i
-                      className="fa fa-chevron-left text-primary"
-                      aria-hidden="true"
-                    />
-                  </a>
-                  <a
-                    className="carousel-control-next"
-                    href="#carouselCaptionsArbeitsplatz"
-                    role="button"
-                    data-slide="next"
-                  >
-                    <i
-                      className="fa fa-chevron-right text-primary"
-                      aria-hidden="true"
-                    />
-                  </a>
-                </div>
-              </div>
+              <ImageCarouselV2
+                carouselId="workplace"
+                contentfulImages={graphQlResult.raeumlichkeitenBilder}
+                options="slide"
+              />
             </div>
           </div>
           <div className="row padding-sm-top-bottom">

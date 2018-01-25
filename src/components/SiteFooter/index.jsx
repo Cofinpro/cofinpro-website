@@ -32,8 +32,8 @@ class SiteFooter extends React.Component {
       <footer className="footer bg-brown text-white padding-md-top-bottom">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-5 padding-sm-top-bottom">
-              <p className="text-center text-lg-left">
+            <div className="col-12 col-md-5 padding-sm-top-bottom">
+              <p className="text-center text-md-left text-address">
                 COFINPRO AG
                 <br />
                 Untermainkai 27-28
@@ -46,7 +46,7 @@ class SiteFooter extends React.Component {
               </p>
             </div>
 
-            <div className="col-12 col-lg-2 align-self-center padding-sm-top-bottom">
+            <div className="col-12 col-md-2 align-self-center">
               <div className="text-center scroll-up-box">
                 <a
                   id="back-to-top"
@@ -62,9 +62,9 @@ class SiteFooter extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 col-lg-5 padding-sm-top-bottom">
+            <div className="col-12 col-md-5 padding-sm-top-bottom">
               <div className="row">
-                <div className="col text-lg-right right text-center">
+                <div className="col text-md-right right text-center">
                   <a
                     title="facebook"
                     target="_blank"

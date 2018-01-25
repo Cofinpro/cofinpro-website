@@ -8,14 +8,9 @@ import ContentfulImage from '../ContentfulImage'
 
 import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
 
-class ImageCarousel extends React.Component {
+class ImageCarouselV2 extends React.Component {
   render() {
-    const {
-      carouselId,
-      contentfulImages,
-      options,
-      specialNavigationOnMediaSm,
-    } = this.props
+    const { carouselId, contentfulImages, options } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -24,7 +19,7 @@ class ImageCarousel extends React.Component {
       return (
         <div
           id={'carousel-' + carouselId}
-          className={'carousel imageCarousel ' + options}
+          className={'carousel imageCarouselV2 ' + options}
           data-ride="carousel"
         >
           <div className="carousel-inner">
@@ -42,8 +37,16 @@ class ImageCarousel extends React.Component {
                 </div>
               )
             })}
+            <div className="d-block d-md-none">
+              <CarouselControlPrevNext
+                sliderId={'carousel-' + carouselId}
+                version={2}
+              />
+            </div>
           </div>
-          <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
+          <div className="d-none d-md-block">
+            <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
+          </div>
         </div>
       )
     } else {
@@ -52,4 +55,4 @@ class ImageCarousel extends React.Component {
   }
 }
 
-export default ImageCarousel
+export default ImageCarouselV2

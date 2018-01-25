@@ -8,6 +8,8 @@ import './style.scss'
 import CarrerOfferPreview from '../CarrerOfferPreview'
 import CarrerOfferPreviewFallback from '../CarrerOfferPreviewFallback'
 
+import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+
 import StorageHelper from '../../utils/storageHelper'
 
 class CarrerOffersCarousel extends React.Component {
@@ -137,31 +139,7 @@ class CarrerOffersCarousel extends React.Component {
                 )
               })}
             </div>
-
-            <a
-              className="carousel-control-prev"
-              href={'#' + id + '_carouselCaptions'}
-              role="button"
-              data-slide="prev"
-            >
-              <i
-                className="fa fa-chevron-left text-primary"
-                aria-hidden="true"
-              />
-              <span className="sr-only">Previous</span>
-            </a>
-            <a
-              className="carousel-control-next"
-              href={'#' + id + '_carouselCaptions'}
-              role="button"
-              data-slide="next"
-            >
-              <i
-                className="fa fa-chevron-right text-primary"
-                aria-hidden="true"
-              />
-              <span className="sr-only">Next</span>
-            </a>
+            <CarouselControlPrevNext sliderId={id + '_carouselCaptions'} />
           </div>
         )
       } else {

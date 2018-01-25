@@ -341,7 +341,7 @@ class StellenmarktTemplate extends React.Component {
         <div className="container bg-orange-light padding-lg-top-bottom margin-lg-top-bottom">
           <div className="row">
             <div className="col text-center">
-              <h2 className="h5 padding-sm-bottom">
+              <h2 className="h4 padding-sm-bottom">
                 {graphQlResult.callToActionText.callToActionText}
               </h2>
               <a
