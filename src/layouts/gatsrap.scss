@@ -519,3 +519,12 @@ a.darken:hover img {
 .container-stellenanzeige-text ul {
   padding-left: 1rem;
 }
+
+.btn-transparent,
+.btn-transparent:hover,
+.btn-transparent:focus {
+  background: none;
+  background-color: none;
+  border: none;
+  box-shadow: none;
+}

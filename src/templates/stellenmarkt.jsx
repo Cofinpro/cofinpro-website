@@ -3,11 +3,11 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import CarrerOfferPreview from '../components/CarrerOfferPreview'
-import CarrerOfferPreviewFallback from '../components/CarrerOfferPreviewFallback'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import HtmlHeader from '../components/HtmlHeader'
+
+import JobContainerBox from '../components/stellenmarkt/JobContainerBox'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -16,300 +16,12 @@ class StellenmarktTemplate extends React.Component {
     super(props)
   }
 
-  getCurrentUrl() {
-    if (typeof window !== 'undefined') {
-      return window.location.href
-    } else {
-      return ''
-    }
-  }
-
   render() {
     const { location } = this.props
 
     const graphQlResult = this.props.data.contentfulStellenmarkt
 
     const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
-
-    var andereFound = false
-    var fachFound = false
-    var techFound = false
-    var studentFound = false
-
-    markPresentGroups()
-
-    function markPresentGroups() {
-      stellenAnzeigen.map((item, i) => {
-        if (item.node.perspektiveLink.name === 'andere') {
-          andereFound = true
-        } else if (
-          item.node.perspektiveLink.name === 'fachlicher-professional' ||
-          item.node.perspektiveLink.name === 'fachlicher-absolvent'
-        ) {
-          fachFound = true
-        } else if (
-          item.node.perspektiveLink.name === 'technologischer-professional' ||
-          item.node.perspektiveLink.name === 'technologischer-absolvent'
-        ) {
-          techFound = true
-        } else if (item.node.perspektiveLink.name === 'studenten') {
-          studentFound = true
-        }
-      })
-    }
-
-    function StellenangeboteAndere(props) {
-      const found = props.found
-
-      if (!found) {
-        return (
-          <div className="container padding-md-top-bottom">
-            <div className="row justify-content-start">
-              <div className="col-12 col-md-10 col-lg-8">
-                <h3>JOBANGEBOTE FÜR ANDERE EXPERTISEN</h3>
-                <div className="row">
-                  <div className="col-12 col-md-6 padding-sm-top-bottom">
-                    <CarrerOfferPreviewFallback
-                      borderStyle="primary"
-                      {...props}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      }
-      return (
-        <div className="container padding-md-top-bottom">
-          <div className="row justify-content-start">
-            <div className="col-12 col-md-10 col-lg-8">
-              <h3>JOBANGEBOTE FÜR ANDERE EXPERTISEN</h3>
-              <div className="row">
-                {stellenAnzeigen != null && stellenAnzeigen.length > 0
-                  ? stellenAnzeigen.map((item, i) => {
-                      var stellenAnzeige = item.node
-
-                      if (stellenAnzeige.perspektiveLink.name === 'andere') {
-                        return (
-                          <div
-                            className="col-12 col-md-6 padding-sm-top-bottom"
-                            key={'column-ANDERE-' + i}
-                          >
-                            <CarrerOfferPreview
-                              key={'CarrerOfferPreview-ANDERE-' + i}
-                              title={stellenAnzeige.titel}
-                              employmentType={stellenAnzeige.art}
-                              expiration={stellenAnzeige.befristung}
-                              locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.url}
-                              styleClass="jobangebote-andere-box"
-                              {...props}
-                            />
-                          </div>
-                        )
-                      }
-                    })
-                  : null}
-              </div>
-            </div>
-            <div className="col-12 col-md-1 col-lg-1" />
-          </div>
-        </div>
-      )
-    }
-
-    function StellenangeboteStudenten(props) {
-      const found = props.found
-
-      if (!found) {
-        return (
-          <div className="container padding-md-top-bottom">
-            <div className="row justify-content-start">
-              <div className="col-12 col-md-1 col-lg-1" />
-              <div className="col-12 col-md-10 col-lg-8">
-                <h3>JOBANGEBOTE FÜR STUDENTEN</h3>
-                <div className="row">
-                  <div className="col-12 col-md-6 padding-sm-top-bottom">
-                    <CarrerOfferPreviewFallback
-                      borderStyle="secondary"
-                      {...props}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      }
-      return (
-        <div className="container padding-md-top-bottom">
-          <div className="row justify-content-start">
-            <div className="col-12 col-md-1 col-lg-1" />
-            <div className="col-12 col-md-10 col-lg-8">
-              <h3>JOBANGEBOTE FÜR STUDENTEN</h3>
-              <div className="row">
-                {stellenAnzeigen != null && stellenAnzeigen.length > 0
-                  ? stellenAnzeigen.map((item, i) => {
-                      var stellenAnzeige = item.node
-
-                      if (stellenAnzeige.perspektiveLink.name === 'studenten') {
-                        return (
-                          <div
-                            className="col-12 col-md-6 padding-sm-top-bottom"
-                            key={'column-STUDI-' + i}
-                          >
-                            <CarrerOfferPreview
-                              key={'CarrerOfferPreview-STUDI-' + i}
-                              title={stellenAnzeige.titel}
-                              employmentType={stellenAnzeige.art}
-                              expiration={stellenAnzeige.befristung}
-                              locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.url}
-                              styleClass="jobangebote-studenten-box"
-                              {...props}
-                            />
-                          </div>
-                        )
-                      }
-                    })
-                  : null}
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    }
-
-    function StellenangeboteFach(props) {
-      const found = props.found
-
-      if (!found) {
-        return (
-          <div className="container padding-md-top-bottom">
-            <div className="row justify-content-start">
-              <div className="col-12 col-md-10 col-lg-8">
-                <h3>JOBANGEBOTE FÜR FACHBERATER</h3>
-                <div className="row">
-                  <div className="col-12 col-md-6 padding-sm-top-bottom">
-                    <CarrerOfferPreviewFallback
-                      borderStyle="secondary"
-                      {...props}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      }
-      return (
-        <div className="container padding-md-top-bottom">
-          <div className="row justify-content-start">
-            <div className="col-12 col-md-10 col-lg-8">
-              <h3>JOBANGEBOTE FÜR FACHBERATER</h3>
-              <div className="row">
-                {stellenAnzeigen != null && stellenAnzeigen.length > 0
-                  ? stellenAnzeigen.map((item, i) => {
-                      var stellenAnzeige = item.node
-
-                      if (
-                        stellenAnzeige.perspektiveLink.name ===
-                          'fachlicher-professional' ||
-                        stellenAnzeige.perspektiveLink.name ===
-                          'fachlicher-absolvent'
-                      ) {
-                        return (
-                          <div
-                            className="col-12 col-md-6 padding-sm-top-bottom"
-                            key={'column-FACHBERATER-' + i}
-                          >
-                            <CarrerOfferPreview
-                              key={'CarrerOfferPreview-FACHBERATER-' + i}
-                              title={stellenAnzeige.titel}
-                              employmentType={stellenAnzeige.art}
-                              expiration={stellenAnzeige.befristung}
-                              locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.url}
-                              styleClass="jobangebote-fachberater-box"
-                              {...props}
-                            />
-                          </div>
-                        )
-                      }
-                    })
-                  : null}
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    }
-
-    function StellenangeboteTech(props) {
-      const found = props.found
-
-      if (!found) {
-        return (
-          <div className="container padding-md-top-bottom">
-            <div className="row justify-content-end">
-              <div className="col-12 col-md-10 col-lg-8">
-                <h3>JOBANGEBOTE FÜR TECHNOLOGIE-BERATER</h3>
-                <div className="row">
-                  <div className="col-12 col-md-6 padding-sm-top-bottom">
-                    <CarrerOfferPreviewFallback
-                      borderStyle="primary"
-                      {...props}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      }
-      return (
-        <div className="container padding-md-top-bottom">
-          <div className="row justify-content-end">
-            <div className="col-12 col-md-10 col-lg-8">
-              <h3>JOBANGEBOTE FÜR TECHNOLOGIE-BERATER</h3>
-              <div className="row">
-                {stellenAnzeigen != null && stellenAnzeigen.length > 0
-                  ? stellenAnzeigen.map((item, i) => {
-                      var stellenAnzeige = item.node
-
-                      if (
-                        stellenAnzeige.perspektiveLink.name ===
-                          'technologischer-professional' ||
-                        stellenAnzeige.perspektiveLink.name ===
-                          'technologischer-absolvent'
-                      ) {
-                        return (
-                          <div
-                            className="col-12 col-md-6 padding-sm-top-bottom"
-                            key={'column-TECHI-' + i}
-                          >
-                            <CarrerOfferPreview
-                              key={'CarrerOfferPreview-TECHI-' + i}
-                              title={stellenAnzeige.titel}
-                              employmentType={stellenAnzeige.art}
-                              expiration={stellenAnzeige.befristung}
-                              locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.url}
-                              styleClass="jobangebote-technologie-box"
-                              {...props}
-                            />
-                          </div>
-                        )
-                      }
-                    })
-                  : null}
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    }
 
     return (
       <div>
@@ -330,13 +42,52 @@ class StellenmarktTemplate extends React.Component {
           subtitleTag="h2"
         />
 
-        <StellenangeboteFach found={fachFound} {...this.props} />
+        <JobContainerBox
+          id="FACHBERATER"
+          anzeigen={this.props.pathContext.stellenAnzeigen}
+          boxTitle="JOBANGEBOTE FÜR FACHBERATER"
+          filter={['fachlicher-professional', 'fachlicher-absolvent']}
+          boxStyle="jobangebote-fachberater-box"
+          columnDefinition="col-12 col-md-10 col-lg-8"
+          rowDefinition="row justify-content-start"
+          borderStyleFallback="secondary"
+          {...this.props}
+        />
 
-        <StellenangeboteTech found={techFound} {...this.props} />
+        <JobContainerBox
+          id="TECHI"
+          anzeigen={this.props.pathContext.stellenAnzeigen}
+          boxTitle="JOBANGEBOTE FÜR TECHNOLOGIE-BERATER"
+          filter={['technologischer-professional', 'technologischer-absolvent']}
+          boxStyle="jobangebote-technologie-box"
+          columnDefinition="col-12 col-md-10 col-lg-8"
+          rowDefinition="row justify-content-end"
+          borderStyleFallback="primary"
+          {...this.props}
+        />
 
-        <StellenangeboteStudenten found={studentFound} {...this.props} />
+        <JobContainerBox
+          id="STUDI"
+          anzeigen={this.props.pathContext.stellenAnzeigen}
+          boxTitle="JOBANGEBOTE FÜR STUDENTEN"
+          filter={['studenten']}
+          boxStyle="jobangebote-studenten-box"
+          additionalColumn={<div className="col-12 col-md-1 col-lg-1" />}
+          rowDefinition="row justify-content-start"
+          borderStyleFallback="secondary"
+          {...this.props}
+        />
 
-        <StellenangeboteAndere found={andereFound} {...this.props} />
+        <JobContainerBox
+          id="ANDERE"
+          anzeigen={this.props.pathContext.stellenAnzeigen}
+          boxTitle="JOBANGEBOTE FÜR ANDERE EXPERTISEN"
+          filter={['andere']}
+          boxStyle="jobangebote-andere-box"
+          rowDefinition="row justify-content-start"
+          borderStyleFallback="primary"
+          {...this.props}
+        />
 
         <div className="container bg-orange-light padding-lg-top-bottom margin-lg-top-bottom">
           <div className="row">
