@@ -22,21 +22,26 @@ class StartseiteTemplate extends React.Component {
     $('#navbarToggleExternalContent').collapse({ toggle: false })
 
     $('#button-startseite-collapse').click(function() {
-      if ($('#button-startseite-collapse>i').hasClass('fa')) {
-        $('#navbarToggleExternalContent').collapse('toggle')
+      $('#navbarToggleExternalContent').collapse('toggle')
 
-        $('#button-startseite-collapse>i').toggleClass('fa-chevron-down')
-        $('#button-startseite-collapse>i').toggleClass('fa-chevron-up')
-      }
-
-      if ($('#button-startseite-collapse>i').hasClass('material-icons')) {
-        $('#navbarToggleExternalContent').collapse('toggle')
-
-        $('#button-startseite-collapse>i').text(function(i, old) {
-          return old == 'keyboard_arrow_down'
-            ? 'keyboard_arrow_up'
-            : 'keyboard_arrow_down'
-        })
+      if (
+        $('#button-startseite-collapse>img.collapse-icon-down').hasClass(
+          'd-none'
+        )
+      ) {
+        $('#button-startseite-collapse>img.collapse-icon-up').addClass('d-none')
+        $('#button-startseite-collapse>img.collapse-icon-down').removeClass(
+          'd-none'
+        )
+      } else if (
+        $('#button-startseite-collapse>img.collapse-icon-up').hasClass('d-none')
+      ) {
+        $('#button-startseite-collapse>img.collapse-icon-down').addClass(
+          'd-none'
+        )
+        $('#button-startseite-collapse>img.collapse-icon-up').removeClass(
+          'd-none'
+        )
       }
     })
   }
@@ -315,9 +320,15 @@ class StartseiteTemplate extends React.Component {
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <i
-                  className="fa fa-chevron-down text-primary"
-                  aria-hidden="true"
+                <img
+                  className="collapse-icon-down"
+                  alt="Mehr Jobs zeigen"
+                  src={pathPrefix + '/svg/icon_arrow_dotted_down_orange.svg'}
+                />
+                <img
+                  className="d-none collapse-icon-up"
+                  alt="Weniger Jobs zeigen"
+                  src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
                 />
               </button>
             </div>

@@ -115,6 +115,19 @@ function getNews(
               absatz1 {
                 absatz1
               }
+              newsBild {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              absatz2 {
+                absatz2
+              }
             }
           }
         }

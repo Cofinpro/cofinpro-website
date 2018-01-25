@@ -6,6 +6,7 @@ import get from 'lodash/get'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulImage from '../components/ContentfulImage'
+import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import HtmlHeader from '../components/HtmlHeader'
 
 class NewsTemplate extends React.Component {
@@ -27,21 +28,29 @@ class NewsTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={news.metaData} {...this.props} />
 
-        <SiteHeader title="Pinnwand" imageFile={news.titelbild} />
+        <SiteHeader
+          title="Pinnwand"
+          imageFile={news.titelbild}
+          imageSmall={news.titelbild}
+        />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-sm-top-bottom">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
               <p>{news.datumFuerDieAnzeige}</p>
               <h2>{news.ueberschrift}</h2>
-              <p>{news.absatz1.absatz1}</p>
+              <ContentfulMarkdownText
+                text={news.absatz1 !== null ? news.absatz1.absatz1 : ''}
+                {...this.props}
+              />
               <ContentfulImage
                 imageFile={news.newsBild}
                 styleClasses="img-fluid padding-sm-top-bottom"
               />
-              <p className="margin-md-bottom">
-                {news.absatz2 != null ? news.absatz2.absatz2 : ''}
-              </p>
+              <ContentfulMarkdownText
+                text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}
+                {...this.props}
+              />
               <Link to={pathPrefix + '/pinnwand'}>
                 <span className="btn btn btn-outline-primary">
                   ZUR PINNWAND
