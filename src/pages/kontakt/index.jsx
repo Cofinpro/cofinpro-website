@@ -44,8 +44,8 @@ class Kontakt extends React.Component {
               <h1 className="h2">Kontakt für Bewerber</h1>
 
               <p>
-                Über unser Online-Bewerbungssystem hast du die Möglichkeit, Ihre
-                vollständigen Bewerbungsunterlagen mit
+                Über unser Online-Bewerbungssystem hast du die Möglichkeit,
+                Deine vollständigen Bewerbungsunterlagen mit
               </p>
 
               <ul>
@@ -54,7 +54,7 @@ class Kontakt extends React.Component {
                 <li>Kopien aller relevanten Zeugnisse</li>
               </ul>
 
-              <p>an uns weiterleiten</p>
+              <p>an uns zu senden</p>
 
               <a
                 target="_blank"
