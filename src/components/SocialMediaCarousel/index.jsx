@@ -33,7 +33,7 @@ class SocialMediaCarousel extends React.Component {
                   <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank">
                     <ContentfulImage
                       imageFile={mediaPost.bildDesPosts}
-                      styleClasses="d-block mx-auto social-media-image padding-sm-bottom"
+                      styleClasses="img-fluid social-media-image padding-sm-bottom"
                       key={'carousel-item-image-big-' + i}
                     />
                   </a>
