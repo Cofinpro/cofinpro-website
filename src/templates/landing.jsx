@@ -57,7 +57,7 @@ class LandingTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <div className="container">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col text-center">
               <h2>{graphQlResult.faktenCofinpro.titel}</h2>
@@ -80,7 +80,7 @@ class LandingTemplate extends React.Component {
           fakt4Image={graphQlResult.faktenCofinpro.fakt4Bild}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-60-top">
           <div className="row">
             <div className="col text-center">
               <Link className="readmore" to="/ueber-uns">
@@ -92,15 +92,15 @@ class LandingTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-10 mx-auto">
               <h2 className="h6">{graphQlResult.newsUntertitel}</h2>
               <h3 className="h2">{graphQlResult.newsTitel}</h3>
-              <p className="padding-md-bottom d-block w-100 d-lg-none">
+              <p className="margin-20-bottom d-block w-100 d-lg-none">
                 {graphQlResult.newsBeschreibung.newsBeschreibung}
               </p>
-              <p className="padding-md-bottom d-none d-lg-block w-75">
+              <p className="margin-20-bottom d-none d-lg-block w-75">
                 {graphQlResult.newsBeschreibung.newsBeschreibung}
               </p>
             </div>
@@ -128,7 +128,7 @@ class LandingTemplate extends React.Component {
               : null}
             <div className="col-12 col-md-1" />
           </div>
-          <div className="row margin-sm-top">
+          <div className="row margin-40-top">
             <div className="col-12 col-md-10 mx-auto">
               <Link className="readmore" to={pathPrefix + '/pinnwand'}>
                 <span className="btn btn-outline-primary">ZUR PINNWAND</span>
@@ -137,7 +137,7 @@ class LandingTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-5">
               <div className="d-none d-md-block padding-lg-top-bottom">
@@ -161,7 +161,7 @@ class LandingTemplate extends React.Component {
             </div>
 
             <div className="col-12 col-md-2">
-              <div className="d-sm-block d-md-none padding-md-top-bottom">
+              <div className="d-sm-block d-md-none margin-120-top">
                 <p />
               </div>
             </div>
@@ -190,7 +190,7 @@ class LandingTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-8 mx-auto">
               <h2 className="h6">{graphQlResult.socialMediaUntertitel}</h2>
@@ -199,7 +199,7 @@ class LandingTemplate extends React.Component {
                 {graphQlResult.socialMediaBeschreibung.socialMediaBeschreibung}
               </p>
             </div>
-            <div className="col-12 text-center padding-sm-bottom">
+            <div className="col-12 text-center margin-20-top padding-sm-bottom">
               <a
                 href="https://www.facebook.com/Cofinpro"
                 target="_blank"

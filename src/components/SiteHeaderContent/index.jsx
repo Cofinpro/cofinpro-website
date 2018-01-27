@@ -47,7 +47,7 @@ class SiteHeaderContent extends React.Component {
     }
 
     return (
-      <div className="container padding-md-top-bottom">
+      <div className="container margin-60-top">
         <div className="row justify-content-center">
           <div className="col-12 col-md-8 text-center">
             {subTitleElement}

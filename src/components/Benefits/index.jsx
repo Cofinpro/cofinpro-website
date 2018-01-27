@@ -13,7 +13,7 @@ class Benefits extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-      <div className="container text-center margin-md-top-bottom">
+      <div className="container text-center margin-100-top">
         <div className="row padding-md-bottom">
           <div className="col">
             <h2 className="h4">{title}</h2>

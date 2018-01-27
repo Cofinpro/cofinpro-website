@@ -18,7 +18,7 @@ class NewsPreview extends React.Component {
         <Link to={pathPrefix + '/pinnwand/news/' + newsId}>
           <ContentfulImage imageFile={this.props.imageFile} />
         </Link>
-        <p className="news-content">
+        <p className="news-content margin-20-top">
           <span className="news-date">{createdAt}</span>
           <br />
           <span className="news-title">

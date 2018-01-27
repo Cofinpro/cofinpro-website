@@ -54,11 +54,11 @@ class UeberUnsTemplate extends React.Component {
           text2={null}
         />
 
-        <div className="container padding-sm-top-bottom">
+        <div className="container margin-100-top">
           <div className="row text-center">
             <div className="col-12 col-md-2" />
             <div className="col-12 col-md-8">
-              <p className="h5">{graphQlResult.ueberschriftVon3SpaltenTop}</p>
+              <p className="">{graphQlResult.ueberschriftVon3SpaltenTop}</p>
             </div>
             <div className="col-12 col-md-2" />
           </div>
@@ -117,7 +117,7 @@ class UeberUnsTemplate extends React.Component {
             </div>
           </div>
 
-          <div className="row text-center padding-sm-top-bottom">
+          <div className="row text-center padding-sm-top">
             <div className="col-12 col-md-2" />
             <div className="col-12 col-md-8">
               <p>{graphQlResult.spaltenTopTextUnten.spaltenTopTextUnten}</p>
@@ -126,9 +126,9 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container">
           <div className="row">
-            <div className="col-12 col-md-6 d-none d-md-block">
+            <div className="col-12 col-md-6 d-none d-md-block margin-60-top">
               <div className="row justify-content-end">
                 <div className="col-12 col-lg-10 order-1">
                   <div className="row">
@@ -149,7 +149,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12 col-lg-10 order-3">
-                  <div className="row d-none d-md-block filler-box-two">
+                  <div className="row d-none d-md-block filler-box-120">
                     <div className="col-12">
                       <p className="filler" />
                     </div>
@@ -175,7 +175,7 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-6 d-none d-md-block">
               <div className="row">
                 <div className="col-12 order-2">
-                  <div className="row d-none d-md-block filler-box justify-content-end">
+                  <div className="row d-none d-md-block filler-box-240 justify-content-end">
                     <div className="col-12 col-lg-10">
                       <p className="filler" />
                     </div>
@@ -199,7 +199,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-1 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-1 d-block d-md-none margin-60-top">
               <div className="row">
                 <div className="col-12">
                   <h2 className="h6">{graphQlResult.ersteTextboxUntertitel}</h2>
@@ -212,7 +212,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-3 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-3 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box-two">
                 <div className="col">
                   <p className="filler" />
@@ -233,7 +233,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-2 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-2 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box">
                 <div className="col">
                   <p className="filler" />
@@ -256,14 +256,12 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-1" />
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.raeumlichkeitenUntertitel}</h2>
-              <h3 className="h2 padding-sm-bottom">
-                {graphQlResult.raeumlichkeitenTitel}
-              </h3>
+              <h3 className="h2">{graphQlResult.raeumlichkeitenTitel}</h3>
               <ImageCarouselV2
                 carouselId="workplace"
                 contentfulImages={graphQlResult.raeumlichkeitenBilder}
@@ -271,7 +269,7 @@ class UeberUnsTemplate extends React.Component {
               />
             </div>
           </div>
-          <div className="row padding-sm-top-bottom">
+          <div className="row margin-20-top">
             <div className="col-12 col-md-1" />
             <div className="col-12 col-md-5">
               <ContentfulMarkdownText
@@ -285,7 +283,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-sm-top-bottom d-block d-md-none">
+        <div className="container margin-100-top d-block d-md-none">
           <div className="row">
             <div className="col">
               <h2 className="h6">{graphQlResult.kollegenUntertitel}</h2>
@@ -302,7 +300,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom d-none d-md-block">
+        <div className="container margin-100-top d-none d-md-block">
           <div className="row">
             <div className="col">
               <h2 className="h6">{graphQlResult.kollegenUntertitel}</h2>
@@ -310,7 +308,7 @@ class UeberUnsTemplate extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-6 padding-sm-top-bottom">
+            <div className="col-12 col-md-6 padding-sm-bottom">
               <div className="embed-responsive embed-responsive-4by3">
                 <iframe
                   className="embed-responsive-item"
@@ -356,19 +354,19 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-100-top">
           <div className="row justify-content-end">
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.projekteUntertitel}</h2>
               <h3 className="h2">{graphQlResult.projekteTitel}</h3>
               <ContentfulImage
                 imageFile={graphQlResult.projekteBild}
-                styleClasses="img-fluid padding-sm-top-bottom"
+                styleClasses="img-fluid"
               />
             </div>
             <div className="col-12 col-md-1" />
           </div>
-          <div className="row padding-sm-top-bottom">
+          <div className="row margin-20-top">
             <div className="col-12 col-md-3" />
             <div className="col-12 col-md-5">
               <ContentfulMarkdownText
@@ -380,7 +378,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-md-top">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col">
               <h2>{graphQlResult.faktenCofinpro.titel}</h2>
@@ -403,7 +401,7 @@ class UeberUnsTemplate extends React.Component {
           fakt4Image={graphQlResult.faktenCofinpro.fakt4Bild}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-40-top">
           <div className="row align-items-center">
             <div className="col-12 col-md-5 text-center">
               <ContentfulImage
@@ -413,7 +411,7 @@ class UeberUnsTemplate extends React.Component {
               <p>Unsere Standorte</p>
             </div>
             <div className="col-12 col-md-2">
-              <p className="padding-md-top-bottom" />
+              <p className="margin-80-top"> </p>
             </div>
             <div className="col-12 col-md-4">
               <div className="row">

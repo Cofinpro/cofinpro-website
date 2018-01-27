@@ -54,7 +54,7 @@ class LaufbahnTemplate extends React.Component {
 
         {graphQlResult.perspektive.name == null ||
         graphQlResult.perspektive.name !== 'andere' ? (
-          <div className="container padding-lg-top-bottom">
+          <div className="container margin-120-top">
             <div className="row">
               <div className="col">
                 <p className="h2 padding-sm-bottom">
@@ -73,10 +73,10 @@ class LaufbahnTemplate extends React.Component {
           </div>
         ) : null}
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-5">
-              <div className="d-none d-md-block padding-lg-top-bottom">
+              <div className="d-none d-md-block filler-box-200">
                 <p className="filler" />
               </div>
               <h2 className="h6">{graphQlResult.skillUntertitel}</h2>
@@ -112,7 +112,7 @@ class LaufbahnTemplate extends React.Component {
             </div>
 
             <div className="col-12 col-md-2">
-              <div className="d-sm-block d-md-none padding-md-top-bottom">
+              <div className="d-sm-block d-md-none margin-80-top">
                 <p />
               </div>
             </div>
@@ -132,7 +132,7 @@ class LaufbahnTemplate extends React.Component {
 
         {graphQlResult.perspektive.name == null ||
         graphQlResult.perspektive.name !== 'andere' ? (
-          <div className="container padding-lg-top-bottom">
+          <div className="container margin-100-top">
             <div className="row">
               <div className="col">
                 <p className="h2">{graphQlResult.titelKompetenzen}</p>

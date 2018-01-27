@@ -250,6 +250,39 @@ li,
   padding-bottom: 8rem;
 }
 
+.filler-box-240 {
+  margin-top: 240px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-120 {
+  margin-top: 120px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-200 {
+  margin-top: 200px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
 .filler-box-two {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -527,4 +560,84 @@ a.darken:hover img {
   background-color: none;
   border: none;
   box-shadow: none;
+}
+
+.margin-120-bottom {
+  margin-bottom: 120px;
+
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+
+.margin-100-bottom {
+  margin-bottom: 100px;
+
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+
+.margin-80-bottom {
+  margin-bottom: 80px;
+}
+
+.margin-60-bottom {
+  margin-bottom: 60px;
+}
+
+.margin-40-bottom {
+  margin-bottom: 40px;
+}
+
+.margin-20-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-120-top {
+  margin-top: 120px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+
+.margin-100-top {
+  margin-top: 100px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+
+.margin-80-top {
+  margin-top: 80px;
+}
+
+.margin-60-top {
+  margin-top: 60px;
+}
+
+.margin-40-top {
+  margin-top: 40px;
+}
+
+.margin-20-top {
+  margin-top: 20px;
+}
+
+.margin-10-top {
+  margin-top: 10px;
 }

@@ -59,15 +59,15 @@ class Testimonial extends React.Component {
     return (
       <div>
         <h2 className="h6 margin-sm-bottom">{title}</h2>
-        <div className="embed-responsive embed-responsive-4by3 margin-sm-bottom">
+        <div className="embed-responsive embed-responsive-4by3 margin-20-bottom">
           <iframe
             className="embed-responsive-item"
             src={videoUrl.replace('/watch?v=', '/embed/')}
           />
         </div>
         {sliderIcons}
-        <p className="h4 padding-sm-top padding-sm-bottom">{text}</p>
-        <p>
+        <p className="h4">{text}</p>
+        <p className="margin-10-top">
           {author} - {authorTitle}
         </p>
       </div>
