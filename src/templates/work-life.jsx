@@ -51,7 +51,7 @@ class WorkLifeTemplate extends React.Component {
           text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
-        <div className="container padding-lg-top padding-md-bottom">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-8">
               <div className="row">
@@ -60,7 +60,7 @@ class WorkLifeTemplate extends React.Component {
                   <h3 className="h2">{graphQlResult.infoboxLinksTitel}</h3>
                   <ContentfulImage
                     imageFile={graphQlResult.infoboxLinksBild}
-                    styleClasses="img-fluid padding-sm-top-bottom"
+                    styleClasses="img-fluid margin-20-bottom"
                   />
                 </div>
               </div>
@@ -85,7 +85,7 @@ class WorkLifeTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-md-bottom">
+        <div className="container margin-120-top">
           <div className="row justify-content-end">
             <div className="col-12 col-md-5">
               <Testimonial

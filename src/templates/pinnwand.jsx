@@ -92,7 +92,7 @@ class PinnwandTemplate extends React.Component {
                     if (i >= threshold) {
                       return (
                         <div
-                          className="col-12 col-md-6"
+                          className="col-12 col-md-6 margin-20-bottom"
                           key={'news-column-old-' + i}
                         >
                           <NewsPreview
@@ -151,9 +151,7 @@ class PinnwandTemplate extends React.Component {
         <div className="container padding-md-top">
           <div className="row">
             <div className="col-12">
-              <h1 className="margin-md-top-bottom display-4 font-weight-bold">
-                Pinnwand
-              </h1>
+              <h1 className="margin-40-bottom">Pinnwand</h1>
             </div>
           </div>
 
@@ -162,7 +160,10 @@ class PinnwandTemplate extends React.Component {
               ? allNews.map((edge, i) => {
                   if (i < threshold) {
                     return (
-                      <div className="col-12 col-md-6" key={'news-column-' + i}>
+                      <div
+                        className="col-12 col-md-6 margin-20-bottom"
+                        key={'news-column-' + i}
+                      >
                         <NewsPreview
                           key={'news-NewsPreview-' + i}
                           createdAt={edge.node.datumFuerDieAnzeige}

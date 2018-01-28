@@ -48,7 +48,7 @@ class JobsBewerbungTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-80-top">
           <CarrerOfferCarouselBox
             titel={graphQlResult.ueberschriftStellenanzeigen}
             stellenAnzeigen={stellenAnzeigen}
@@ -57,22 +57,26 @@ class JobsBewerbungTemplate extends React.Component {
           />
         </div>
 
-        <TestimonialLarge
-          title={graphQlResult.testimonial.ueberschrift}
-          text={graphQlResult.testimonial.zitat.zitat}
-          author={graphQlResult.testimonial.autor}
-          authorTitle={graphQlResult.testimonial.autorTitel}
-          videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-          imageFile={graphQlResult.testimonial.bildTestimonial}
-        />
+        <div className="margin-120-top">
+          <TestimonialLarge
+            title={graphQlResult.testimonial.ueberschrift}
+            text={graphQlResult.testimonial.zitat.zitat}
+            author={graphQlResult.testimonial.autor}
+            authorTitle={graphQlResult.testimonial.autorTitel}
+            videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
+            imageFile={graphQlResult.testimonial.bildTestimonial}
+          />
+        </div>
 
-        <div className="container padding-md-top-bottom">
-          <div className="row padding-md-top">
+        <div className="container margin-100-top">
+          <div className="row">
             <div className="col">
               <h2 className="h6">
                 {graphQlResult.bewerbungsprozessUntertitel}
               </h2>
-              <h3 className="h2">{graphQlResult.bewerbungsprozessTitel}</h3>
+              <h3 className="h2 margin-40-bottom">
+                {graphQlResult.bewerbungsprozessTitel}
+              </h3>
             </div>
           </div>
           <div className="row">
@@ -238,7 +242,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-1 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-1 d-block d-md-none">
               <div className="row d-flex align-items-center">
                 <div className="col-2">
                   <p className="display-3 text-info">1</p>
@@ -266,7 +270,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-3 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-3 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box-two">
                 <div className="col">
                   <p className="filler" />
@@ -300,7 +304,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-2 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-2 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box">
                 <div className="col">
                   <p className="filler" />
@@ -334,7 +338,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-4 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-4 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box-two">
                 <div className="col">
                   <p className="filler" />
@@ -370,7 +374,7 @@ class JobsBewerbungTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container bg-orange-light padding-lg-top-bottom margin-lg-top-bottom">
+        <div className="container bg-orange-light margin-100-top padding-md-top-bottom">
           <div className="row">
             <div className="col text-center">
               <ContentfulMarkdownText

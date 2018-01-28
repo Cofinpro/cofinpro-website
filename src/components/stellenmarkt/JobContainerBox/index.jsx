@@ -93,7 +93,7 @@ class JobContainerBox extends React.Component {
 
     if (bucket.length < 1) {
       return (
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-60-top">
           <div className={rowDefinition}>
             {additionalColumn !== undefined ? additionalColumn : null}
             <div className="col-12 col-md-10 col-lg-8">
@@ -113,7 +113,7 @@ class JobContainerBox extends React.Component {
     }
 
     return (
-      <div className="container padding-md-top-bottom">
+      <div className="container margin-60-top">
         <div className={rowDefinition}>
           {additionalColumn !== undefined ? additionalColumn : null}
           <div className="col-12 col-md-10 col-lg-8">

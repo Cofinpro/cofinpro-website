@@ -23,14 +23,14 @@ class CarrerOfferPreview extends React.Component {
 
     return (
       <div className={'carrerOfferPreview ' + additionalStyleClass}>
-        <div className="padding-sm">
+        <div className="padding-20">
           <Link
             to={pathPrefix + '/stellenanzeige/' + anzeigeId}
             className="text-dark"
           >
-            <div className="col-12">
+            <div>
               <p className="text-left font-weight-bold">
-                {title.length > 48 ? title.substring(0, 48) + '...' : title}
+                {title.length > 72 ? title.substring(0, 72) + '...' : title}
               </p>
               <p className="no-margin-bottom">
                 Art: {employmentType}

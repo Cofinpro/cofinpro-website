@@ -77,7 +77,7 @@ class GehaltBeteiligungTemplate extends React.Component {
 
         {graphQlResult.artenVonStudenten == null ||
         graphQlResult.artenVonStudenten.length === 0 ? (
-          <div className="container padding-md-bottom padding-lg-top">
+          <div className="container margin-120-top">
             <div className="row">
               <div className="col-12 col-md-5">
                 <div className="row">
@@ -113,8 +113,11 @@ class GehaltBeteiligungTemplate extends React.Component {
 
               <div className="col-12 col-md-2" />
 
-              <div className="col-12 col-md-5 padding-lg-top">
-                <div className="d-none d-md-block filler-box">
+              <div className="col-12 col-md-5">
+                <div className="d-none d-md-block filler-box-220">
+                  <p className="filler" />
+                </div>
+                <div className="d-block d-md-none margin-60-top">
                   <p className="filler" />
                 </div>
 
@@ -150,11 +153,18 @@ class GehaltBeteiligungTemplate extends React.Component {
 
         {graphQlResult.artenVonStudenten == null ||
         graphQlResult.artenVonStudenten.length === 0 ? (
-          <div className="container padding-md-top-bottom">
+          <div className="container">
             <div className="row">
               <div className="col-12 col-md-1" />
 
               <div className="col-12 col-md-5">
+                <div className="d-none d-md-block margin-100-top">
+                  <p className="filler" />
+                </div>
+                <div className="d-block d-md-none margin-60-top">
+                  <p className="filler" />
+                </div>
+
                 <div className="row">
                   <div className="col-12 col-md-10">
                     <h2 className="h6">
@@ -182,8 +192,11 @@ class GehaltBeteiligungTemplate extends React.Component {
 
               <div className="col-12 col-md-1" />
 
-              <div className="col-12 col-md-5 padding-lg-top">
-                <div className="d-none d-md-block filler-box">
+              <div className="col-12 col-md-5">
+                <div className="d-none d-md-block filler-box-320">
+                  <p className="filler" />
+                </div>
+                <div className="d-block d-md-none margin-60-top">
                   <p className="filler" />
                 </div>
 
@@ -202,7 +215,7 @@ class GehaltBeteiligungTemplate extends React.Component {
 
         {graphQlResult.artenVonStudenten != null &&
         graphQlResult.artenVonStudenten.length > 0 ? (
-          <div className="container padding-md-top-bottom">
+          <div className="container margin-120-top">
             <div className="row">
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 0 ? (
@@ -287,7 +300,7 @@ class GehaltBeteiligungTemplate extends React.Component {
             <div className="row">
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 2 ? (
-                  <div className="padding-md-top-bottom">
+                  <div className="padding-md-top">
                     <p className="h4 padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[5].ueberschrift}
                     </p>
@@ -304,8 +317,9 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6" />
             </div>
 
-            <div className="row">
-              <div className="col-12 col-md-6 padding-md-top-bottom">
+            <div className="row margin-120-top">
+              <div className="col-12 col-md-6" />
+              <div className="col-12 col-md-6">
                 <Testimonial
                   title={graphQlResult.testimonial.ueberschrift}
                   text={graphQlResult.testimonial.zitat.zitat}
@@ -315,7 +329,6 @@ class GehaltBeteiligungTemplate extends React.Component {
                   imageFile={graphQlResult.testimonial.bildTestimonial}
                 />
               </div>
-              <div className="col-12 col-md-6" />
             </div>
           </div>
         ) : null}

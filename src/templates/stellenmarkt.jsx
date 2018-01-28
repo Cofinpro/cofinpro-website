@@ -42,6 +42,10 @@ class StellenmarktTemplate extends React.Component {
           subtitleTag="h2"
         />
 
+        <div className="d-none d-md-block margin-120-top">
+          <p />
+        </div>
+
         <JobContainerBox
           id="FACHBERATER"
           anzeigen={this.props.pathContext.stellenAnzeigen}
@@ -89,7 +93,7 @@ class StellenmarktTemplate extends React.Component {
           {...this.props}
         />
 
-        <div className="container bg-orange-light padding-lg-top-bottom margin-lg-top-bottom">
+        <div className="container bg-orange-light padding-md-top-bottom margin-120-top">
           <div className="row">
             <div className="col text-center">
               <h2 className="h4 padding-sm-bottom">

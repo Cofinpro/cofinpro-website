@@ -29,7 +29,7 @@ class NewsTemplate extends React.Component {
         <HtmlHeader dataFromCms={news.metaData} {...this.props} />
 
         <SiteHeader
-          title="Pinnwand"
+          title={news.ueberschrift}
           imageFile={news.titelbild}
           imageSmall={news.titelbild}
         />
@@ -37,7 +37,7 @@ class NewsTemplate extends React.Component {
         <div className="container padding-sm-top-bottom">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
-              <p>{news.datumFuerDieAnzeige}</p>
+              <p className="margin-40-top">{news.datumFuerDieAnzeige}</p>
               <h2>{news.ueberschrift}</h2>
               <ContentfulMarkdownText
                 text={news.absatz1 !== null ? news.absatz1.absatz1 : ''}
@@ -45,7 +45,7 @@ class NewsTemplate extends React.Component {
               />
               <ContentfulImage
                 imageFile={news.newsBild}
-                styleClasses="img-fluid padding-sm-top-bottom"
+                styleClasses="img-fluid margin-20-bottom"
               />
               <ContentfulMarkdownText
                 text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}

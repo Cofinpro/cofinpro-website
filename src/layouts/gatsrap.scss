@@ -250,6 +250,17 @@ li,
   padding-bottom: 8rem;
 }
 
+.filler-box-320 {
+  margin-top: 320px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
 .filler-box-240 {
   margin-top: 240px;
 
@@ -263,6 +274,17 @@ li,
 
 .filler-box-120 {
   margin-top: 120px;
+
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-220 {
+  margin-top: 220px;
 
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
@@ -417,6 +439,10 @@ li,
   margin-right: 2rem;
 }
 
+.no-margin {
+  margin: 0;
+}
+
 .no-margin-bottom {
   margin-bottom: 0rem;
 }
@@ -425,13 +451,12 @@ li,
   padding-bottom: 0rem;
 }
 
-.stellenangebote-box {
-  border: 3px solid #a9c5e8;
+.no-padding {
+  padding: 0rem;
 }
 
-a.darken:hover img {
-  /*-webkit-filter: grayscale(1);
-  filter: grayscale(1);*/
+.stellenangebote-box {
+  border: 3px solid #a9c5e8;
 }
 
 .nav-dotted-line-vertical {
@@ -513,6 +538,7 @@ a.darken:hover img {
 
 .invisible {
   visibility: hidden;
+  display: none;
 }
 
 .no-padding-left {
@@ -551,6 +577,10 @@ a.darken:hover img {
 
 .container-stellenanzeige-text ul {
   padding-left: 1rem;
+
+  li {
+    font-size: 14px;
+  }
 }
 
 .btn-transparent,
@@ -640,4 +670,14 @@ a.darken:hover img {
 
 .margin-10-top {
   margin-top: 10px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.stellenanzeige-call-to-action {
+  p.p-small {
+    font-size: 14px;
+  }
 }
