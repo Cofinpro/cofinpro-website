@@ -173,6 +173,7 @@ class PinnwandTemplate extends React.Component {
                           }
                           newsId={edge.node.id}
                           imageFile={edge.node.titelbild}
+                          url={edge.node.url}
                           {...this.props}
                         />
                       </div>

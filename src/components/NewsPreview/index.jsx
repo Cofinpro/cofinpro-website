@@ -8,14 +8,14 @@ import ContentfulImage from '../ContentfulImage'
 
 class NewsPreview extends React.Component {
   render() {
-    const { createdAt, title, description, newsId } = this.props
+    const { createdAt, title, description, newsId, url } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
       <div>
-        <Link to={pathPrefix + '/pinnwand/news/' + newsId}>
+        <Link to={pathPrefix + '/pinnwand/' + url}>
           <ContentfulImage imageFile={this.props.imageFile} />
         </Link>
         <p className="news-content margin-20-top">
@@ -30,7 +30,7 @@ class NewsPreview extends React.Component {
           {description.length > 200
             ? description.substring(0, 200) + '...'
             : description}
-          &nbsp;<Link to={pathPrefix + '/pinnwand/news/' + newsId}>></Link>
+          &nbsp;<Link to={pathPrefix + '/pinnwand/' + url}>></Link>
         </p>
       </div>
     )

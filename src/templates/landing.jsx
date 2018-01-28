@@ -120,6 +120,7 @@ class LandingTemplate extends React.Component {
                         }
                         newsId={news.node.id}
                         imageFile={news.node.titelbild}
+                        url={news.node.url}
                         {...this.props}
                       />
                     </div>

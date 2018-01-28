@@ -96,6 +96,7 @@ function getNews(
               parent {
                 id
               }
+              url
               titel
               titelbild {
                 id
@@ -184,7 +185,7 @@ function createNews(
 
   _.each(news, edge => {
     createPage({
-      path: `pinnwand/news/${edge.node.id}`,
+      path: `pinnwand/${edge.node.url}`,
       component: slash(template),
       context: {
         id: edge.node.id,
@@ -192,7 +193,7 @@ function createNews(
       },
     })
 
-    console.log(`created page pinnwand/news/${edge.node.id}.`)
+    console.log(`created page pinnwand/${edge.node.id}.`)
   })
 
   callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
