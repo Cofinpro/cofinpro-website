@@ -25,7 +25,7 @@ class SiteHeaderContent extends React.Component {
     } else if (titleTag !== null && titleTag === 'h6') {
       titleElement = <h6 className="h2 margin-sm-bottom">{title}</h6>
     } else {
-      titleElement = <h3 className="h2 margin-sm-bottom">{title}</h3>
+      titleElement = <h2 className="h2 margin-sm-bottom">{title}</h2>
     }
 
     var subTitleElement

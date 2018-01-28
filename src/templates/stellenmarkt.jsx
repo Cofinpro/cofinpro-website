@@ -40,6 +40,7 @@ class StellenmarktTemplate extends React.Component {
           text1={graphQlResult.beschreibungAbsatz1.beschreibungAbsatz1}
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
           subtitleTag="h2"
+          titleTag="h3"
         />
 
         <div className="d-none d-md-block margin-120-top">
