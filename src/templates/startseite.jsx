@@ -19,6 +19,19 @@ class StartseiteTemplate extends React.Component {
   }
 
   componentDidMount() {
+    $('#links-tech').hide()
+    $('#links-fach').hide()
+
+    $('#img-wahl-tech').click(function() {
+      $('#links-fach').fadeOut(500)
+      $('#links-tech').fadeIn(500)
+    })
+
+    $('#img-wahl-fach').click(function() {
+      $('#links-tech').fadeOut(500)
+      $('#links-fach').fadeIn(500)
+    })
+
     $('#navbarToggleExternalContent').collapse({ toggle: false })
 
     $('#button-startseite-collapse').click(function() {
@@ -205,106 +218,85 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-12 col-md-3 d-none d-md-block" />
                   </div>
 
-                  <div className="row d-block d-md-none">
-                    <div className="col-12">
-                      <p className="h4">FACH-BERATER</p>
-                    </div>
-                  </div>
-
-                  <div className="row d-md-none">
+                  <div className="row d-flex-inline d-md-none margin-20-bottom">
                     <div className="col-6 text-center">
-                      <Link
-                        to={pathPrefix + '/fachlicher-professional/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'fachlicher-professional'
-                          )
-                        }}
-                      >
+                      <div id="img-wahl-fach">
                         <ContentfulImage
-                          imageFile={
-                            graphQlResult.bildFachProfessionalSmartphone
-                          }
-                          styleClasses="img-fluid img-consultant"
+                          imageFile={graphQlResult.bildFuerPerspektiveFach}
+                          styleClasses="img-fluid img-consultant margin-20-bottom"
                         />
-                      </Link>
-                    </div>
-                    <div className="col-6 text-center">
-                      <div className="d-block margin-60-top">
-                        <p className="filler" />
                       </div>
-                      <Link
-                        to={pathPrefix + '/fachlicher-absolvent/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'fachlicher-absolvent'
-                          )
-                        }}
-                      >
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFachAbsolventSmartphone}
-                          styleClasses="img-fluid img-consultant"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-
-                  <div className="row d-block d-md-none margin-40-top">
-                    <div className="col-12">
-                      <p className="h4">TECHNOLOGIE-BERATER</p>
-                    </div>
-                  </div>
-
-                  <div className="row d-md-none">
-                    <div className="col-6 text-center">
-                      <Link
-                        to={
-                          pathPrefix + '/technologischer-professional/landing'
-                        }
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'technologischer-professional'
-                          )
-                        }}
-                      >
-                        <ContentfulImage
-                          imageFile={
-                            graphQlResult.bildTechnologieProfessionalSmartphone
-                          }
-                          styleClasses="img-fluid img-consultant"
-                        />
-                      </Link>
-                    </div>
-                    <div className="col-6 text-center">
-                      <div className="d-block margin-60-top">
-                        <p className="filler" />
+                      <h3 className="h5 link-black">FACH-BERATER</h3>
+                      <div id="links-fach">
+                        <Link
+                          to={pathPrefix + '/fachlicher-absolvent/landing'}
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'fachlicher-absolvent'
+                            )
+                          }}
+                        >
+                          <h3 className="h5 link-black">
+                            > Absolvent & Young Professional
+                          </h3>
+                        </Link>
+                        <Link
+                          to={pathPrefix + '/fachlicher-professional/landing'}
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'fachlicher-professional'
+                            )
+                          }}
+                        >
+                          <h3 className="h5 link-black">> Professional</h3>
+                        </Link>
                       </div>
-                      <Link
-                        to={pathPrefix + '/technologischer-absolvent/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'technologischer-absolvent'
-                          )
-                        }}
-                      >
+                    </div>
+                    <div className="col-6 text-center">
+                      <div id="img-wahl-tech">
                         <ContentfulImage
-                          imageFile={
-                            graphQlResult.bildTechnologieAbsolventSmartphone
-                          }
-                          styleClasses="img-fluid img-consultant"
+                          imageFile={graphQlResult.bildFuerPerspektiveTech}
+                          styleClasses="img-fluid img-consultant margin-20-bottom"
                         />
-                      </Link>
+                      </div>
+                      <h3 className="h5 link-black">TECHNOLOGIE-BERATER</h3>
+                      <div id="links-tech">
+                        <Link
+                          to={pathPrefix + '/technologischer-absolvent/landing'}
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'technologischer-absolvent'
+                            )
+                          }}
+                        >
+                          <h3 className="h5 link-black">
+                            > Absolvent & Young Professional
+                          </h3>
+                        </Link>
+                        <Link
+                          to={
+                            pathPrefix + '/technologischer-professional/landing'
+                          }
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'technologischer-professional'
+                            )
+                          }}
+                        >
+                          <h3 className="h5 link-black">> Professional</h3>
+                        </Link>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="row d-md-none margin-40-top">
-                    <div className="col-6">
-                      <p className="h4">STUDENT</p>
+                  <div className="row d-flex-inline d-md-none">
+                    <div className="col-6 text-center">
                       <Link
+                        className="text-dark"
                         to={pathPrefix + '/studenten/landing'}
                         onClick={() => {
                           StorageHelper.saveInSessionStorage(
@@ -315,16 +307,14 @@ class StartseiteTemplate extends React.Component {
                       >
                         <ContentfulImage
                           imageFile={graphQlResult.bildFuerPerspektiveStudent}
-                          styleClasses="img-fluid img-consultant"
+                          styleClasses="img-fluid img-consultant margin-20-bottom img-wahl-student"
                         />
+                        <h3 className="h5">STUDENT</h3>
                       </Link>
                     </div>
-                    <div className="col-6">
-                      <div className="d-block margin-60-top">
-                        <p className="filler" />
-                      </div>
-                      <p className="h4">ANDERE EXPERTISE</p>
+                    <div className="col-6 text-center">
                       <Link
+                        className="text-dark"
                         to={pathPrefix + '/andere/landing'}
                         onClick={() => {
                           StorageHelper.saveInSessionStorage(
@@ -335,8 +325,9 @@ class StartseiteTemplate extends React.Component {
                       >
                         <ContentfulImage
                           imageFile={graphQlResult.bildFuerPerspektiveAndere}
-                          styleClasses="img-fluid img-consultant"
+                          styleClasses="img-fluid img-consultant margin-20-bottom img-wahl-andere"
                         />
+                        <h3 className="h5">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
                   </div>
@@ -585,3 +576,143 @@ export const pageQuery = graphql`
 
 
 */
+
+/*
+
+<div className="row d-block d-md-none">
+                    <div className="col-12">
+                      <p className="h4">FACH-BERATER</p>
+                    </div>
+                  </div>
+
+                  <div className="row d-flex-inline d-md-none">
+                    <div className="col-6 text-center">
+                      <Link
+                        to={pathPrefix + '/fachlicher-professional/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'fachlicher-professional'
+                          )
+                        }}
+                      >
+                        <ContentfulImage
+                          imageFile={
+                            graphQlResult.bildFachProfessionalSmartphone
+                          }
+                          styleClasses="img-fluid img-consultant"
+                        />
+                      </Link>
+                    </div>
+                    <div className="col-6 text-center">
+                      <div className="d-block margin-60-top">
+                        <p className="filler" />
+                      </div>
+                      <Link
+                        to={pathPrefix + '/fachlicher-absolvent/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'fachlicher-absolvent'
+                          )
+                        }}
+                      >
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFachAbsolventSmartphone}
+                          styleClasses="img-fluid img-consultant"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="row d-block d-md-none margin-40-top">
+                    <div className="col-12">
+                      <p className="h4">TECHNOLOGIE-BERATER</p>
+                    </div>
+                  </div>
+
+                  <div className="row d-flex-inline d-md-none">
+                    <div className="col-6 text-center">
+                      <Link
+                        to={
+                          pathPrefix + '/technologischer-professional/landing'
+                        }
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'technologischer-professional'
+                          )
+                        }}
+                      >
+                        <ContentfulImage
+                          imageFile={
+                            graphQlResult.bildTechnologieProfessionalSmartphone
+                          }
+                          styleClasses="img-fluid img-consultant"
+                        />
+                      </Link>
+                    </div>
+                    <div className="col-6 text-center">
+                      <div className="d-block margin-60-top">
+                        <p className="filler" />
+                      </div>
+                      <Link
+                        to={pathPrefix + '/technologischer-absolvent/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'technologischer-absolvent'
+                          )
+                        }}
+                      >
+                        <ContentfulImage
+                          imageFile={
+                            graphQlResult.bildTechnologieAbsolventSmartphone
+                          }
+                          styleClasses="img-fluid img-consultant"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+
+                  <div className="row d-flex-inline d-md-none margin-40-top">
+                    <div className="col-6">
+                      <p className="h4">STUDENT</p>
+                      <Link
+                        to={pathPrefix + '/studenten/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'studenten'
+                          )
+                        }}
+                      >
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFuerPerspektiveStudent}
+                          styleClasses="img-fluid img-consultant"
+                        />
+                      </Link>
+                    </div>
+                    <div className="col-6">
+                      <div className="d-block margin-60-top">
+                        <p className="filler" />
+                      </div>
+                      <p className="h4">ANDERE EXPERTISE</p>
+                      <Link
+                        to={pathPrefix + '/andere/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'andere'
+                          )
+                        }}
+                      >
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFuerPerspektiveAndere}
+                          styleClasses="img-fluid img-consultant"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+
+                  */
