@@ -23,12 +23,12 @@ class StartseiteTemplate extends React.Component {
     $('#links-fach').hide()
 
     $('#img-wahl-tech').click(function() {
-      $('#links-fach').fadeOut(500)
+      $('#links-fach').hide()
       $('#links-tech').fadeIn(500)
     })
 
     $('#img-wahl-fach').click(function() {
-      $('#links-tech').fadeOut(500)
+      $('#links-tech').hide()
       $('#links-fach').fadeIn(500)
     })
 
