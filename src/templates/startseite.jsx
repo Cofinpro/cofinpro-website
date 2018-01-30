@@ -22,6 +22,19 @@ class StartseiteTemplate extends React.Component {
     $('#links-tech').hide()
     $('#links-fach').hide()
 
+    $('#desktop-links-tech').hide()
+    $('#desktop-links-fach').hide()
+
+    $('#desktop-wahl-fach').click(function() {
+      $('#desktop-links-tech').hide()
+      $('#desktop-links-fach').fadeIn(500)
+    })
+
+    $('#desktop-wahl-tech').click(function() {
+      $('#desktop-links-fach').hide()
+      $('#desktop-links-tech').fadeIn(500)
+    })
+
     $('#img-wahl-tech').click(function() {
       $('#links-fach').hide()
       $('#links-tech').fadeIn(500)
@@ -104,24 +117,26 @@ class StartseiteTemplate extends React.Component {
 
                   <div className="row text-center">
                     <div className="col-12 col-md-3 d-none d-md-block">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bildFuerPerspektiveFach}
-                        styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                      />
-                      <h3 className="h5 link-black">FACHBERATER</h3>
+                      <div id="desktop-wahl-fach">
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFuerPerspektiveFach}
+                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
+                        />
+                        <h3 className="h5 link-black">FACHBERATER</h3>
+                      </div>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bildFuerPerspektiveTech}
-                        styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                      />
-                      <h3 className="h5 link-black">TECHNOLOGISCHER BERATER</h3>
+                      <div id="desktop-wahl-tech">
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFuerPerspektiveTech}
+                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
+                        />
+                        <h3 className="h5 link-black">
+                          TECHNOLOGISCHER BERATER
+                        </h3>
+                      </div>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bildFuerPerspektiveStudent}
-                        styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                      />
                       <Link
                         className="text-dark"
                         to={pathPrefix + '/studenten/landing'}
@@ -132,14 +147,14 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFuerPerspektiveStudent}
+                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
+                        />
                         <h3 className="h5 link-black">> STUDENT</h3>
                       </Link>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bildFuerPerspektiveAndere}
-                        styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                      />
                       <Link
                         className="text-dark"
                         to={pathPrefix + '/andere/landing'}
@@ -150,69 +165,79 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
+                        <ContentfulImage
+                          imageFile={graphQlResult.bildFuerPerspektiveAndere}
+                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
+                        />
                         <h3 className="h5 link-black">> ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
                   </div>
 
-                  <div className="row text-center">
+                  <div className="row text-center margin-10-top">
                     <div className="col-12 col-md-3 d-none d-md-block">
-                      <Link
-                        className="text-dark"
-                        to={pathPrefix + '/fachlicher-absolvent/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'fachlicher-absolvent'
-                          )
-                        }}
-                      >
-                        <h3 className="h5 link-black">
-                          > Absolvent & Young Professional
-                        </h3>
-                      </Link>
-                      <Link
-                        className="text-dark"
-                        to={pathPrefix + '/fachlicher-professional/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'fachlicher-professional'
-                          )
-                        }}
-                      >
-                        <h3 className="h5 link-black">> Professional</h3>
-                      </Link>
+                      <div id="desktop-links-fach">
+                        <Link
+                          className=""
+                          to={pathPrefix + '/fachlicher-absolvent/landing'}
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'fachlicher-absolvent'
+                            )
+                          }}
+                        >
+                          <h3 className="h5">
+                            > Absolvent & Young Professional
+                          </h3>
+                        </Link>
+                        <p> oder </p>
+                        <Link
+                          className=""
+                          to={pathPrefix + '/fachlicher-professional/landing'}
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'fachlicher-professional'
+                            )
+                          }}
+                        >
+                          <h3 className="h5">> Professional</h3>
+                        </Link>
+                      </div>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
-                      <Link
-                        className="text-dark"
-                        to={pathPrefix + '/technologischer-absolvent/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'technologischer-absolvent'
-                          )
-                        }}
-                      >
-                        <h3 className="h5 link-black">
-                          > Absolvent & Young Professional
-                        </h3>
-                      </Link>
-                      <Link
-                        className="text-dark"
-                        to={
-                          pathPrefix + '/technologischer-professional/landing'
-                        }
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'technologischer-professional'
-                          )
-                        }}
-                      >
-                        <h3 className="h5 link-black">> Professional</h3>
-                      </Link>
+                      <div id="desktop-links-tech">
+                        <Link
+                          className=""
+                          to={pathPrefix + '/technologischer-absolvent/landing'}
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'technologischer-absolvent'
+                            )
+                          }}
+                        >
+                          <h3 className="h5">
+                            > Absolvent & Young Professional
+                          </h3>
+                        </Link>
+                        <p> oder </p>
+                        <Link
+                          className=""
+                          to={
+                            pathPrefix + '/technologischer-professional/landing'
+                          }
+                          onClick={() => {
+                            StorageHelper.saveInSessionStorage(
+                              'perspective',
+                              'technologischer-professional'
+                            )
+                          }}
+                        >
+                          <h3 className="h5">> Professional</h3>
+                        </Link>
+                      </div>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block" />
                     <div className="col-12 col-md-3 d-none d-md-block" />
@@ -225,8 +250,8 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveFach}
                           styleClasses="img-fluid img-consultant margin-20-bottom"
                         />
+                        <h3 className="h5 link-black">FACH-BERATER</h3>
                       </div>
-                      <h3 className="h5 link-black">FACH-BERATER</h3>
                       <div id="links-fach">
                         <Link
                           to={pathPrefix + '/fachlicher-absolvent/landing'}
@@ -260,8 +285,8 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveTech}
                           styleClasses="img-fluid img-consultant margin-20-bottom"
                         />
+                        <h3 className="h5 link-black">TECHNOLOGIE-BERATER</h3>
                       </div>
-                      <h3 className="h5 link-black">TECHNOLOGIE-BERATER</h3>
                       <div id="links-tech">
                         <Link
                           to={pathPrefix + '/technologischer-absolvent/landing'}
