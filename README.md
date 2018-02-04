@@ -8,7 +8,7 @@ Im ersten Menü nach dem Login, sieht man welche Seiten derzeit bei netlify betr
 
 * www.karriere.cofinpro.de (Produktion-Umgebung)
 * www.dev.cofinpro.de (Test-Umgebung)
-* www.karriere-cofinpro.de (Alte Domain, wird nur zur Weiterletiung auf karriere.cofinpro.de verwendet)
+* www.karriere-cofinpro.de (Alte Domain, wird nur zur Weiterleitung auf karriere.cofinpro.de verwendet)
 
 Der Grund warum die Webseite bei netlify gehostet wird und nicht bei 1und1 ist die Möglichkeit automatisch oder manuell neue Builds mit npm zu starten. 
 
