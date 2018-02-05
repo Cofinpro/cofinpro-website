@@ -28,21 +28,49 @@ class StartseiteTemplate extends React.Component {
     $('#desktop-wahl-fach').click(function() {
       $('#desktop-links-tech').hide()
       $('#desktop-links-fach').fadeIn(500)
+
+      $('html, body').animate(
+        {
+          scrollTop: $('#desktop-links-fach').offset().top - 300,
+        },
+        600
+      )
     })
 
     $('#desktop-wahl-tech').click(function() {
       $('#desktop-links-fach').hide()
       $('#desktop-links-tech').fadeIn(500)
+
+      $('html, body').animate(
+        {
+          scrollTop: $('#desktop-links-tech').offset().top - 300,
+        },
+        600
+      )
     })
 
     $('#img-wahl-tech').click(function() {
       $('#links-fach').hide()
       $('#links-tech').fadeIn(500)
+
+      $('html, body').animate(
+        {
+          scrollTop: $('#links-tech').offset().top - 200,
+        },
+        600
+      )
     })
 
     $('#img-wahl-fach').click(function() {
       $('#links-tech').hide()
       $('#links-fach').fadeIn(500)
+
+      $('html, body').animate(
+        {
+          scrollTop: $('#links-fach').offset().top - 200,
+        },
+        600
+      )
     })
 
     $('#navbarToggleExternalContent').collapse({ toggle: false })
@@ -102,16 +130,9 @@ class StartseiteTemplate extends React.Component {
                       <h2 className="subtitle-welcome h4 padding-sm-top d-none d-md-block">
                         {graphQlResult.untertitelDerSeite.untertitelDerSeite}
                       </h2>
-                      <p className="h2 text-white padding-sm-top d-none d-md-block">
-                        KOMPETENZEN
-                      </p>
-
                       <h2 className="h4 subtitle-welcome padding-sm-top d-block d-md-none">
                         {graphQlResult.untertitelDerSeite.untertitelDerSeite}
                       </h2>
-                      <p className="h4 text-white padding-sm-top d-block d-md-none">
-                        KOMPETENZEN
-                      </p>
                     </div>
                   </div>
 
@@ -362,12 +383,7 @@ class StartseiteTemplate extends React.Component {
           </div>
 
           <div className="row padding-lg-top-bottom">
-            <div className="col-12">
-              <div className="collapse" id="navbarToggleExternalContent">
-                <ContentfulMarkdownText
-                  text={graphQlResult.seoTextFeld.seoTextFeld}
-                />
-              </div>
+            <div className="col-12 col-md-9">
               <button
                 id="button-startseite-collapse"
                 className="btn btn-light text-white"
@@ -389,6 +405,14 @@ class StartseiteTemplate extends React.Component {
                   src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
                 />
               </button>
+              <div
+                className="collapse margin-20-top"
+                id="navbarToggleExternalContent"
+              >
+                <ContentfulMarkdownText
+                  text={graphQlResult.seoTextFeld.seoTextFeld}
+                />
+              </div>
             </div>
           </div>
         </div>

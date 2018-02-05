@@ -31,7 +31,7 @@ class TestimonialLarge extends React.Component {
         <div className="row">
           <div className="col-12 col-md-1" />
           <div className="col-12 col-md-5">
-            <div className="embed-responsive embed-responsive-4by3">
+            <div className="embed-responsive embed-responsive-16by9">
               <iframe
                 className="embed-responsive-item"
                 src={videoUrl.replace('/watch?v=', '/embed/')}

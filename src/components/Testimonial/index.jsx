@@ -59,7 +59,7 @@ class Testimonial extends React.Component {
     return (
       <div>
         <h2 className="h6 margin-20-bottom">{title}</h2>
-        <div className="embed-responsive embed-responsive-4by3 margin-20-bottom">
+        <div className="embed-responsive embed-responsive-16by9 margin-20-bottom">
           <iframe
             className="embed-responsive-item"
             src={videoUrl.replace('/watch?v=', '/embed/')}

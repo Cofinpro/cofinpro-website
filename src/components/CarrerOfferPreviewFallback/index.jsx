@@ -20,11 +20,11 @@ class CarrerOfferPreviewFallback extends React.Component {
             href="https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
           >
             <p className="no-margin-bottom text-left padding-sm-bottom">
-              Zur Zeit haben wir leider keine freien Stellen, aber wir freuen
-              uns über deine Initiativbewerbung!
+              Dass wir hier aktuell keinen Job ausgeschrieben haben, bedeutet
+              nicht, dass wir Dich nicht kennenlernen möchten.
             </p>
             <p className="text-primary no-margin-bottom d-flex justify-content-between">
-              Jetzt initiativ bewerben <span>></span>
+              Schick uns gerne gleich Deine Initiativbewerbung! <span>></span>
             </p>
           </a>
         </div>
