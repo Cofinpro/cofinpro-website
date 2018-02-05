@@ -9,6 +9,7 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import Testimonial from '../components/Testimonial'
 import ContentfulImage from '../components/ContentfulImage'
 import HtmlHeader from '../components/HtmlHeader'
+import ImageCarouselV2 from '../components/ImageCarouselV2'
 
 class WorkLifeTemplate extends React.Component {
   getCurrentUrl() {
@@ -58,10 +59,13 @@ class WorkLifeTemplate extends React.Component {
                 <div className="col-12">
                   <h2 className="h6">{graphQlResult.infoboxLinksUntertitel}</h2>
                   <h3 className="h2">{graphQlResult.infoboxLinksTitel}</h3>
-                  <ContentfulImage
-                    imageFile={graphQlResult.infoboxLinksBild}
-                    styleClasses="img-fluid margin-20-bottom"
-                  />
+                  <div className="margin-20-bottom">
+                    <ImageCarouselV2
+                      carouselId="outtakes"
+                      contentfulImages={graphQlResult.infoBoxLinksBilder}
+                      options="slide"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="row">
@@ -195,7 +199,7 @@ export const pageQuery = graphql`
       }
       infoboxLinksUntertitel
       infoboxLinksTitel
-      infoboxLinksBild {
+      infoBoxLinksBilder {
         id
         title
         description
