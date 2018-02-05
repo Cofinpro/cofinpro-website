@@ -12,6 +12,11 @@ Im ersten Menü nach dem Login, sieht man welche Seiten derzeit bei netlify betr
 
 Der Grund warum die Webseite bei netlify gehostet wird und nicht bei 1und1 ist die Möglichkeit automatisch oder manuell neue Builds mit npm zu starten. 
 
+## Wie werden neue Builds bei Netlify getriggered?
+
+www.karriere.cofinpro.de wird durch einen GIT PUSH im master getriggered.  
+www.dev.cofinpro.de wird durch einen GIT PUSH im branch dev getriggered und durch Änderungen im CMS (Contentful).
+
 ## Redirects - Konfiguration und bestehende Redirects
 
 Die Redirects befinden sich in der Datei _redirects unter /static.
