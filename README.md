@@ -20,3 +20,11 @@ www.dev.cofinpro.de wird durch einen GIT PUSH im branch dev getriggered und durc
 ## Redirects - Konfiguration und bestehende Redirects
 
 Die Redirects befinden sich in der Datei _redirects unter /static.
+
+## Was liegt wo im Projekt?
+
+# Bilder
+
+Bilder finden sich unter static/img.
+
+Im img Ordner selbst liegen die statischen Bilder der Webseite. Der Ordner contentful beinhaltet alle Bilder die aus dem CMS stammen. Diese wurden beim bauen der Seite per "gatsby  build" heruntergeladen und in diesem Ordner gespeichert. 

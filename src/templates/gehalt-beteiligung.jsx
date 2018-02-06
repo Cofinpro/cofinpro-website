@@ -332,37 +332,6 @@ class GehaltBeteiligungTemplate extends React.Component {
             </div>
           </div>
         ) : null}
-
-        {/*<div className="container padding-md-top-bottom text-center">
-                    <div className="row padding-md-top-bottom">
-                        <div className="col">
-                            <p>PRIVAT NUTZBARE SONDERLEISTUNGEN</p>
-                            <p className="h1">Die richtige Ausstattung für flexible Arbeitsplatzmodelle</p>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-3 d-block d-md-none"></div>
-                        <div className="col-5 col-md-3">
-                            <img src={pathPrefix + '/img/icon_hand_star.png'} className="img-fluid" />
-                            <p className="sub-line">Lorem ipsum dolor sit amet, consetetur</p>
-                        </div>
-                        <div className="col-3 d-block d-md-none"></div>
-                        <div className="d-none d-md-block col-12 col-md-1 align-self-center">
-                            <img src={pathPrefix + '/img/icon_plus.png'} className="img-fluid" />
-                        </div>
-                        <div className="col-5 col-md-3">
-                            <img src={pathPrefix + '/img/icon_3_house.png'} className="img-fluid" />
-                            <p className="sub-line">Lorem ipsum dolor sit amet, consetetur</p>
-                        </div>
-                        <div className="col-2 col-md-1 align-self-center">
-                            <img src={pathPrefix + '/img/icon_plus.png'} className="img-fluid" />
-                        </div>
-                        <div className="col-5 col-md-3">
-                            <img src={pathPrefix + '/img/icon_3_people.png'} className="img-fluid" />
-                            <p className="sub-line">Lorem ipsum dolor sit amet, consetetur</p>
-                        </div>
-                    </div>
-                </div>}*/}
       </div>
     )
   }
