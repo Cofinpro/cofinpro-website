@@ -719,3 +719,17 @@ li,
 .border-primary-dashed {
   border: 3px dashed $orange;
 }
+
+.link-style {
+  cursor: pointer;
+}
+
+.link-style:hover {
+  text-decoration: underline;
+}
+
+.two-column-text {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}

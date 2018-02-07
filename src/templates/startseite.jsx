@@ -143,7 +143,9 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveFach}
                           styleClasses="img-fluid img-consultant padding-sm-top-bottom"
                         />
-                        <h3 className="h5 link-black">FACHBERATER</h3>
+                        <h3 className="h5 link-black link-style">
+                          FACHBERATER
+                        </h3>
                       </div>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
@@ -152,7 +154,7 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveTech}
                           styleClasses="img-fluid img-consultant padding-sm-top-bottom"
                         />
-                        <h3 className="h5 link-black">
+                        <h3 className="h5 link-black link-style">
                           TECHNOLOGISCHER BERATER
                         </h3>
                       </div>
@@ -172,7 +174,7 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveStudent}
                           styleClasses="img-fluid img-consultant padding-sm-top-bottom"
                         />
-                        <h3 className="h5 link-black">> STUDENT</h3>
+                        <h3 className="h5 link-black">STUDENT</h3>
                       </Link>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
@@ -190,7 +192,7 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveAndere}
                           styleClasses="img-fluid img-consultant padding-sm-top-bottom"
                         />
-                        <h3 className="h5 link-black">> ANDERE EXPERTISE</h3>
+                        <h3 className="h5 link-black">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
                   </div>
@@ -383,7 +385,7 @@ class StartseiteTemplate extends React.Component {
           </div>
 
           <div className="row padding-lg-top-bottom">
-            <div className="col-12 col-md-9">
+            <div className="col-12">
               <button
                 id="button-startseite-collapse"
                 className="btn btn-light text-white"
@@ -406,7 +408,7 @@ class StartseiteTemplate extends React.Component {
                 />
               </button>
               <div
-                className="collapse margin-20-top"
+                className="collapse margin-20-top two-column-text"
                 id="navbarToggleExternalContent"
               >
                 <ContentfulMarkdownText

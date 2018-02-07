@@ -14,19 +14,21 @@ class CarrerOfferPreviewFallback extends React.Component {
     return (
       <div className="">
         <div className={'preview-fallback-box border-' + borderStyle}>
-          <a
-            className="text-dark d-block"
-            target="_blank"
-            href="https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
-          >
+          <div className="fallback-text-container">
             <p className="no-margin-bottom text-left padding-sm-bottom">
               Dass wir hier aktuell keinen Job ausgeschrieben haben, bedeutet
               nicht, dass wir Dich nicht kennenlernen möchten.
             </p>
-            <p className="text-primary no-margin-bottom d-flex justify-content-between">
-              Schick uns gerne gleich Deine Initiativbewerbung! <span>></span>
-            </p>
-          </a>
+            <a
+              className="text-dark d-block"
+              target="_blank"
+              href="https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
+            >
+              <p className="text-primary no-margin-bottom d-flex justify-content-between">
+                Schick uns gerne gleich Deine Initiativbewerbung! <span>></span>
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     )

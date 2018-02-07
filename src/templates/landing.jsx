@@ -14,6 +14,7 @@ import SocialMediaCarousel from '../components/SocialMediaCarousel'
 import CarrerOfferBox from '../components/CarrerOfferBox'
 import Testimonial from '../components/Testimonial'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -83,11 +84,11 @@ class LandingTemplate extends React.Component {
         <div className="container margin-60-top">
           <div className="row">
             <div className="col text-center">
-              <Link className="readmore" to="/ueber-uns">
-                <span className="btn btn-outline-primary">
-                  MEHR ÜBER COFINPRO
-                </span>
-              </Link>
+              <LinkButton
+                text="MEHR ÜBER COFINPRO"
+                path="/ueber-uns"
+                {...this.props}
+              />
             </div>
           </div>
         </div>
@@ -131,9 +132,11 @@ class LandingTemplate extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12 col-md-10 mx-auto">
-              <Link className="readmore" to={pathPrefix + '/pinnwand'}>
-                <span className="btn btn-outline-primary">ZUR PINNWAND</span>
-              </Link>
+              <LinkButton
+                text="ZUR PINNWAND"
+                path="/pinnwand"
+                {...this.props}
+              />
             </div>
           </div>
         </div>
@@ -179,11 +182,11 @@ class LandingTemplate extends React.Component {
 
                 <div className="row padding-sm-top">
                   <div className="col-12 col-md-9">
-                    <Link className="readmore" to={pathPrefix + '/jobs'}>
-                      <span className="btn btn btn-outline-primary">
-                        {graphQlResult.buttonRechteBox}
-                      </span>
-                    </Link>
+                    <LinkButton
+                      text={graphQlResult.buttonRechteBox}
+                      path="/jobs"
+                      {...this.props}
+                    />
                   </div>
                 </div>
               </div>

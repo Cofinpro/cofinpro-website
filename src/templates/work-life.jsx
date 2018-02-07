@@ -13,6 +13,15 @@ import ImageCarouselV2 from '../components/ImageCarouselV2'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 
 class WorkLifeTemplate extends React.Component {
+  componentDidMount() {
+    $('#carousel-adventsworkshop').carousel({
+      interval: 4000,
+    })
+    $('#carousel-outtakes').carousel({
+      interval: 4000,
+    })
+  }
+
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href

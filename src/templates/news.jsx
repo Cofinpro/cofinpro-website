@@ -8,6 +8,7 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulImage from '../components/ContentfulImage'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
 
 class NewsTemplate extends React.Component {
   getCurrentUrl() {
@@ -51,11 +52,11 @@ class NewsTemplate extends React.Component {
                 text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}
                 {...this.props}
               />
-              <Link to={pathPrefix + '/pinnwand'}>
-                <span className="btn btn btn-outline-primary">
-                  ZUR PINNWAND
-                </span>
-              </Link>
+              <LinkButton
+                text="ZUR PINNWAND"
+                path="/pinnwand"
+                {...this.props}
+              />
             </div>
           </div>
         </div>
