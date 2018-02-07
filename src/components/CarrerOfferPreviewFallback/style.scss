@@ -1,6 +1,10 @@
 .preview-fallback-box {
   border: 3px solid #a9c5e8;
 
+  a:hover {
+    text-decoration: none;
+  }
+
   .fallback-text-container {
     padding: 1.5rem;
   }

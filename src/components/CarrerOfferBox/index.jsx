@@ -54,7 +54,7 @@ class CarrerOfferBox extends React.Component {
 
     if (buckets.length > 0) {
       return (
-        <div>
+        <div className="carrer-offer-box">
           {buckets.length > 0
             ? buckets.map((anzeige, i) => {
                 if (i < 3) {

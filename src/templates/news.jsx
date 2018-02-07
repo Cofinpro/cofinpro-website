@@ -46,17 +46,13 @@ class NewsTemplate extends React.Component {
               />
               <ContentfulImage
                 imageFile={news.newsBild}
-                styleClasses="img-fluid margin-20-bottom"
+                styleClasses="img-fluid margin-20-bottom news-image-2"
               />
               <ContentfulMarkdownText
                 text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}
                 {...this.props}
               />
-              <LinkButton
-                text="ZUR PINNWAND"
-                path="/pinnwand"
-                {...this.props}
-              />
+              <LinkButton text="ZUR PINNWAND" path="/pinnwand" />
             </div>
           </div>
         </div>

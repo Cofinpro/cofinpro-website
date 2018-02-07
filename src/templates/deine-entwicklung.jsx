@@ -9,6 +9,7 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import Testimonial from '../components/Testimonial'
 import ContentfulImage from '../components/ContentfulImage'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
 
 class DeineEntwicklungTemplate extends React.Component {
   getCurrentUrl() {
@@ -67,11 +68,7 @@ class DeineEntwicklungTemplate extends React.Component {
                 {graphQlResult.trainingBeschreibung.trainingBeschreibung}
               </p>
 
-              <Link to={pathPrefix + '/jobs'}>
-                <span className="btn btn btn-outline-primary">
-                  JETZT BEWERBEN
-                </span>
-              </Link>
+              <LinkButton text="JETZT BEWERBEN" path="/jobs" />
             </div>
 
             <div className="col-12 col-md-2">
