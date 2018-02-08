@@ -6,6 +6,7 @@ import './style.scss'
 
 import ContentfulImage from '../ContentfulImage'
 import Testimonial from '../Testimonial'
+import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
 
 class TestimonialCarousel extends React.Component {
   render() {
@@ -44,22 +45,7 @@ class TestimonialCarousel extends React.Component {
             })}
           </div>
           <div className="d-none d-md-block">
-            <a
-              className="carousel-control-prev"
-              href={'#carousel-' + carouselId}
-              role="button"
-              data-slide="prev"
-            >
-              <i className="fa fa-chevron-left text-dark" aria-hidden="true" />
-            </a>
-            <a
-              className="carousel-control-next"
-              href={'#carousel-' + carouselId}
-              role="button"
-              data-slide="next"
-            >
-              <i className="fa fa-chevron-right text-dark" aria-hidden="true" />
-            </a>
+            <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />
           </div>
         </div>
       )

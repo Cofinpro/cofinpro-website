@@ -5,6 +5,7 @@ import get from 'lodash/get'
 import './style.scss'
 
 import ContentfulImage from '../ContentfulImage'
+import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
 
 class Testimonial extends React.Component {
   componentDidMount() {
@@ -34,22 +35,10 @@ class Testimonial extends React.Component {
     ) {
       sliderIcons = (
         <div className="d-block d-md-none">
-          <a
-            className="carousel-control-prev-under-picture margin-md-right"
-            href={'#carousel-' + carouselId}
-            role="button"
-            data-slide="prev"
-          >
-            <i className="fa fa-chevron-left text-dark" aria-hidden="true" />
-          </a>
-          <a
-            className="carousel-control-next-under-picture"
-            href={'#carousel-' + carouselId}
-            role="button"
-            data-slide="next"
-          >
-            <i className="fa fa-chevron-right text-dark" aria-hidden="true" />
-          </a>
+          <CarouselControlPrevNext
+            sliderId={'carousel-' + carouselId}
+            version={2}
+          />
         </div>
       )
     } else {
