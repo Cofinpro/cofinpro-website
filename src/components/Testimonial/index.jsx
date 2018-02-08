@@ -34,7 +34,7 @@ class Testimonial extends React.Component {
       showCarouselSliderIcons === true
     ) {
       sliderIcons = (
-        <div className="d-block d-md-none">
+        <div className="d-block d-md-none margin-20-bottom">
           <CarouselControlPrevNext
             sliderId={'carousel-' + carouselId}
             version={2}
@@ -45,10 +45,25 @@ class Testimonial extends React.Component {
       sliderIcons = null
     }
 
+    var marginUnderVideo
+
+    if (
+      showCarouselSliderIcons !== undefined &&
+      showCarouselSliderIcons === true
+    ) {
+      marginUnderVideo = ''
+    } else {
+      marginUnderVideo = 'margin-20-bottom'
+    }
+
     return (
       <div>
         <h2 className="h6 margin-20-bottom">{title}</h2>
-        <div className="embed-responsive embed-responsive-16by9 margin-20-bottom">
+        <div
+          className={
+            'embed-responsive embed-responsive-16by9 ' + marginUnderVideo
+          }
+        >
           <iframe
             className="embed-responsive-item"
             src={videoUrl.replace('/watch?v=', '/embed/')}
