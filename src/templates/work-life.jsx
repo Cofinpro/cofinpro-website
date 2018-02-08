@@ -9,8 +9,19 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import Testimonial from '../components/Testimonial'
 import ContentfulImage from '../components/ContentfulImage'
 import HtmlHeader from '../components/HtmlHeader'
+import ImageCarouselV2 from '../components/ImageCarouselV2'
+import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 
 class WorkLifeTemplate extends React.Component {
+  componentDidMount() {
+    $('#carousel-adventsworkshop').carousel({
+      interval: 4000,
+    })
+    $('#carousel-outtakes').carousel({
+      interval: 4000,
+    })
+  }
+
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -51,17 +62,20 @@ class WorkLifeTemplate extends React.Component {
           text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
-        <div className="container padding-lg-top padding-md-bottom">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-8">
               <div className="row">
                 <div className="col-12">
                   <h2 className="h6">{graphQlResult.infoboxLinksUntertitel}</h2>
                   <h3 className="h2">{graphQlResult.infoboxLinksTitel}</h3>
-                  <ContentfulImage
-                    imageFile={graphQlResult.infoboxLinksBild}
-                    styleClasses="img-fluid padding-sm-top-bottom"
-                  />
+                  <div className="margin-20-bottom">
+                    <ImageCarouselV2
+                      carouselId="outtakes"
+                      contentfulImages={graphQlResult.infoBoxLinksBilder}
+                      options="slide"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="row">
@@ -85,17 +99,38 @@ class WorkLifeTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-md-bottom">
-          <div className="row justify-content-end">
-            <div className="col-12 col-md-5">
-              <Testimonial
-                title={graphQlResult.testimonial.ueberschrift}
-                text={graphQlResult.testimonial.zitat.zitat}
-                author={graphQlResult.testimonial.autor}
-                authorTitle={graphQlResult.testimonial.autorTitel}
-                videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-                imageFile={graphQlResult.testimonial.bildTestimonial}
-              />
+        <div className="container margin-120-top">
+          <div className="row">
+            <div className="col-12 col-md-4" />
+            <div className="col-12 col-md-8">
+              <div className="row">
+                <div className="col-12">
+                  <h2 className="h6">
+                    {graphQlResult.infoboxRechtsUntertitel}
+                  </h2>
+                  <h3 className="h2">{graphQlResult.infoboxRechtsTitel}</h3>
+                  <div className="margin-20-bottom">
+                    <ImageCarouselV2
+                      carouselId="adventsworkshop"
+                      contentfulImages={graphQlResult.infoboxRechtsBilder}
+                      options="slide"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12 col-lg-8">
+                  <ContentfulMarkdownText
+                    text={
+                      graphQlResult.infoboxRechtsBeschreibung !== null
+                        ? graphQlResult.infoboxRechtsBeschreibung
+                            .infoboxRechtsBeschreibung
+                        : ''
+                    }
+                    {...this.props}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -195,7 +230,7 @@ export const pageQuery = graphql`
       }
       infoboxLinksUntertitel
       infoboxLinksTitel
-      infoboxLinksBild {
+      infoBoxLinksBilder {
         id
         title
         description
@@ -205,15 +240,27 @@ export const pageQuery = graphql`
           contentType
         }
       }
-      infoboxLinksBeschreibung {
-        infoboxLinksBeschreibung
-      }
       infoboxLinksPoints {
         titel
         ueberschrift
         text {
           text
         }
+      }
+      infoboxRechtsUntertitel
+      infoboxRechtsTitel
+      infoboxRechtsBilder {
+        id
+        title
+        description
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      infoboxRechtsBeschreibung {
+        infoboxRechtsBeschreibung
       }
       testimonial {
         titel

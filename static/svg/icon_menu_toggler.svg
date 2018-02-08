@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg width="21px" height="20px" viewBox="0 0 21 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style> svg { cursor: pointer; } </style>
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square" stroke-dasharray="2,6">
+        <g id="Startseite-Bühne-Mobile" transform="translate(-280.000000, -15.000000)" stroke="#EC7B1A" stroke-width="2.5">
+            <g id="Group-10">
+                <g id="Group" transform="translate(281.000000, 15.000000)">
+                    <path d="M0.476190476,1.30434783 L20,1.30434783" id="Line"></path>
+                    <path d="M0.476190476,18.6956522 L20,18.6956522" id="Line-Copy"></path>
+                    <path d="M0.476190476,10 L20,10" id="Line-Copy-2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

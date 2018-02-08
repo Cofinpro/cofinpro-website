@@ -8,6 +8,7 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulImage from '../components/ContentfulImage'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
 
 class NewsTemplate extends React.Component {
   getCurrentUrl() {
@@ -28,12 +29,16 @@ class NewsTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={news.metaData} {...this.props} />
 
-        <SiteHeader title="Pinnwand" imageFile={news.titelbild} />
+        <SiteHeader
+          title={news.ueberschrift}
+          imageFile={news.titelbild}
+          imageSmall={news.titelbild}
+        />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-sm-top-bottom">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
-              <p>{news.datumFuerDieAnzeige}</p>
+              <p className="margin-40-top">{news.datumFuerDieAnzeige}</p>
               <h2>{news.ueberschrift}</h2>
               <ContentfulMarkdownText
                 text={news.absatz1 !== null ? news.absatz1.absatz1 : ''}
@@ -41,17 +46,13 @@ class NewsTemplate extends React.Component {
               />
               <ContentfulImage
                 imageFile={news.newsBild}
-                styleClasses="img-fluid padding-sm-top-bottom"
+                styleClasses="img-fluid margin-20-bottom news-image-2"
               />
               <ContentfulMarkdownText
                 text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}
                 {...this.props}
               />
-              <Link to={pathPrefix + '/pinnwand'}>
-                <span className="btn btn btn-outline-primary">
-                  ZUR PINNWAND
-                </span>
-              </Link>
+              <LinkButton text="ZUR PINNWAND" path="/pinnwand" />
             </div>
           </div>
         </div>

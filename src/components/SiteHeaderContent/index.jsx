@@ -13,19 +13,19 @@ class SiteHeaderContent extends React.Component {
     var titleElement
 
     if (titleTag !== null && titleTag === 'h1') {
-      titleElement = <h1 className="h2">{title}</h1>
+      titleElement = <h1 className="h2 margin-sm-bottom">{title}</h1>
     } else if (titleTag !== null && titleTag === 'h2') {
-      titleElement = <h2 className="h2">{title}</h2>
+      titleElement = <h2 className="h2 margin-sm-bottom">{title}</h2>
     } else if (titleTag !== null && titleTag === 'h3') {
-      titleElement = <h3 className="h2">{title}</h3>
+      titleElement = <h3 className="h2 margin-sm-bottom">{title}</h3>
     } else if (titleTag !== null && titleTag === 'h4') {
-      titleElement = <h4 className="h2">{title}</h4>
+      titleElement = <h4 className="h2 margin-sm-bottom">{title}</h4>
     } else if (titleTag !== null && titleTag === 'h5') {
-      titleElement = <h5 className="h2">{title}</h5>
+      titleElement = <h5 className="h2 margin-sm-bottom">{title}</h5>
     } else if (titleTag !== null && titleTag === 'h6') {
-      titleElement = <h6 className="h2">{title}</h6>
+      titleElement = <h6 className="h2 margin-sm-bottom">{title}</h6>
     } else {
-      titleElement = <h3 className="h2">{title}</h3>
+      titleElement = <h2 className="h2 margin-sm-bottom">{title}</h2>
     }
 
     var subTitleElement
@@ -47,11 +47,11 @@ class SiteHeaderContent extends React.Component {
     }
 
     return (
-      <div className="container padding-md-top-bottom">
+      <div className="container margin-60-top">
         <div className="row justify-content-center">
           <div className="col-12 col-md-8 text-center">
-            {titleElement}
             {subTitleElement}
+            {titleElement}
             <ContentfulMarkdownText text={text1} />
             <ContentfulMarkdownText text={text2} />
           </div>

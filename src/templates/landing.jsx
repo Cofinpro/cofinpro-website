@@ -14,6 +14,7 @@ import SocialMediaCarousel from '../components/SocialMediaCarousel'
 import CarrerOfferBox from '../components/CarrerOfferBox'
 import Testimonial from '../components/Testimonial'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -57,7 +58,7 @@ class LandingTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <div className="container">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col text-center">
               <h2>{graphQlResult.faktenCofinpro.titel}</h2>
@@ -80,27 +81,27 @@ class LandingTemplate extends React.Component {
           fakt4Image={graphQlResult.faktenCofinpro.fakt4Bild}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-60-top">
           <div className="row">
             <div className="col text-center">
-              <Link className="readmore" to="/ueber-uns">
-                <span className="btn btn-outline-primary">
-                  MEHR ÜBER COFINPRO
-                </span>
-              </Link>
+              <LinkButton
+                text="MEHR ÜBER COFINPRO"
+                path="/ueber-uns"
+                {...this.props}
+              />
             </div>
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-10 mx-auto">
               <h2 className="h6">{graphQlResult.newsUntertitel}</h2>
               <h3 className="h2">{graphQlResult.newsTitel}</h3>
-              <p className="padding-md-bottom d-block w-100 d-lg-none">
+              <p className="margin-20-bottom d-block w-100 d-lg-none">
                 {graphQlResult.newsBeschreibung.newsBeschreibung}
               </p>
-              <p className="padding-md-bottom d-none d-lg-block w-75">
+              <p className="margin-20-bottom d-none d-lg-block w-75">
                 {graphQlResult.newsBeschreibung.newsBeschreibung}
               </p>
             </div>
@@ -120,6 +121,7 @@ class LandingTemplate extends React.Component {
                         }
                         newsId={news.node.id}
                         imageFile={news.node.titelbild}
+                        url={news.node.url}
                         {...this.props}
                       />
                     </div>
@@ -128,16 +130,18 @@ class LandingTemplate extends React.Component {
               : null}
             <div className="col-12 col-md-1" />
           </div>
-          <div className="row">
+          <div className="row margin-40-top">
             <div className="col-12 col-md-10 mx-auto">
-              <Link className="readmore" to={pathPrefix + '/pinnwand'}>
-                <span className="btn btn-outline-primary">ZUR PINNWAND</span>
-              </Link>
+              <LinkButton
+                text="ZUR PINNWAND"
+                path="/pinnwand"
+                {...this.props}
+              />
             </div>
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-5">
               <div className="d-none d-md-block padding-lg-top-bottom">
@@ -161,7 +165,7 @@ class LandingTemplate extends React.Component {
             </div>
 
             <div className="col-12 col-md-2">
-              <div className="d-sm-block d-md-none padding-md-top-bottom">
+              <div className="d-sm-block d-md-none margin-120-top">
                 <p />
               </div>
             </div>
@@ -178,11 +182,11 @@ class LandingTemplate extends React.Component {
 
                 <div className="row padding-sm-top">
                   <div className="col-12 col-md-9">
-                    <Link className="readmore" to={pathPrefix + '/jobs'}>
-                      <span className="btn btn btn-outline-primary">
-                        {graphQlResult.buttonRechteBox}
-                      </span>
-                    </Link>
+                    <LinkButton
+                      text={graphQlResult.buttonRechteBox}
+                      path="/jobs"
+                      {...this.props}
+                    />
                   </div>
                 </div>
               </div>
@@ -190,16 +194,16 @@ class LandingTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-8 mx-auto">
               <h2 className="h6">{graphQlResult.socialMediaUntertitel}</h2>
               <h3 className="h2">{graphQlResult.socialMediaTitel}</h3>
-              <p className="padding-lg-bottom">
+              <p className="">
                 {graphQlResult.socialMediaBeschreibung.socialMediaBeschreibung}
               </p>
             </div>
-            <div className="col-12 text-center padding-sm-bottom">
+            <div className="col-12 text-center margin-20-top padding-sm-bottom">
               <a
                 href="https://www.facebook.com/Cofinpro"
                 target="_blank"
@@ -263,7 +267,7 @@ class LandingTemplate extends React.Component {
             </div>
           </div>
 
-          <div className="row justify-content-center padding-md-top-bottom">
+          <div className="row justify-content-center padding-md-top">
             <div className="col-12 col-md-10 col-lg-8 mx-auto">
               <SocialMediaCarousel
                 carouselId={'social-media'}

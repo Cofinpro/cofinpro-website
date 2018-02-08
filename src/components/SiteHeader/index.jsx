@@ -13,26 +13,26 @@ class SiteHeader extends React.Component {
     var titleElement
 
     if (titleTag !== null && titleTag === 'h1') {
-      titleElement = <h1 className="h2">{title}</h1>
+      titleElement = <h1 className="h1">{title}</h1>
     } else if (titleTag !== null && titleTag === 'h2') {
-      titleElement = <h2 className="h2">{title}</h2>
+      titleElement = <h2 className="h1">{title}</h2>
     } else if (titleTag !== null && titleTag === 'h3') {
-      titleElement = <h3 className="h2">{title}</h3>
+      titleElement = <h3 className="h1">{title}</h3>
     } else if (titleTag !== null && titleTag === 'h4') {
-      titleElement = <h4 className="h2">{title}</h4>
+      titleElement = <h4 className="h1">{title}</h4>
     } else if (titleTag !== null && titleTag === 'h5') {
-      titleElement = <h5 className="h2">{title}</h5>
+      titleElement = <h5 className="h1">{title}</h5>
     } else if (titleTag !== null && titleTag === 'h6') {
-      titleElement = <h6 className="h2">{title}</h6>
+      titleElement = <h6 className="h1">{title}</h6>
     } else {
-      titleElement = <h3 className="h2">{title}</h3>
+      titleElement = <h3 className="h1">{title}</h3>
     }
 
     return (
-      <div className="container margin-lg-top-bottom">
+      <div className="container">
         <div className="row">
           <div className="col">
-            <div className="title-box">
+            <div className="row title-box">
               <div className="col-11 col-md-9">{titleElement}</div>
               <div className="col-1 col-md-3" />
             </div>

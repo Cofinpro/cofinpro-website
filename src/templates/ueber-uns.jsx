@@ -7,12 +7,19 @@ import Facts from '../components/Facts'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import ImageCarousel from '../components/ImageCarousel'
+import ImageCarouselV2 from '../components/ImageCarouselV2'
 import ContentfulImage from '../components/ContentfulImage'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import TestimonialCarousel from '../components/TestimonialCarousel'
 import HtmlHeader from '../components/HtmlHeader'
 
 class UeberUnsTemplate extends React.Component {
+  componentDidMount() {
+    $('#carousel-auszeichnungen').carousel({
+      interval: 2000,
+    })
+  }
+
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -47,7 +54,7 @@ class UeberUnsTemplate extends React.Component {
           text2={null}
         />
 
-        <div className="container padding-sm-top-bottom">
+        <div className="container margin-100-top">
           <div className="row text-center">
             <div className="col-12 col-md-2" />
             <div className="col-12 col-md-8">
@@ -58,59 +65,56 @@ class UeberUnsTemplate extends React.Component {
 
           <div className="row justify-content-center text-center padding-md-top-bottom">
             <div className="col-6 col-md-4">
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildLinks}
-                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-top-bottom"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildLinks}
-                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
-              />
               <h4 className="p padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelLinks}
-                <br />
               </h4>
+              <ContentfulImage
+                imageFile={graphQlResult.spaltenTopBildLinks}
+                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
+              />
+              <ContentfulImage
+                imageFile={graphQlResult.spaltenTopBildLinks}
+                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
+              />
               <p className="">
                 {graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
               </p>
             </div>
             <div className="col-6 col-md-4">
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildMitte}
-                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-top-bottom"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildMitte}
-                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
-              />
               <h4 className="p padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelMitte}
-                <br />
               </h4>
+              <ContentfulImage
+                imageFile={graphQlResult.spaltenTopBildMitte}
+                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
+              />
+              <ContentfulImage
+                imageFile={graphQlResult.spaltenTopBildMitte}
+                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
+              />
               <p className="">
                 {graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
               </p>
             </div>
             <div className="col-6 col-md-4">
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildRechts}
-                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-top-bottom"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildRechts}
-                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-top-bottom"
-              />
               <h4 className="p padding-sm-bottom">
                 {graphQlResult.spaltenTopTitelRechts}
-                <br />
               </h4>
+              <ContentfulImage
+                imageFile={graphQlResult.spaltenTopBildRechts}
+                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
+              />
+              <ContentfulImage
+                imageFile={graphQlResult.spaltenTopBildRechts}
+                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
+              />
               <p className="">
                 {graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
               </p>
             </div>
           </div>
 
-          <div className="row text-center padding-sm-top-bottom">
+          <div className="row text-center padding-sm-top">
             <div className="col-12 col-md-2" />
             <div className="col-12 col-md-8">
               <p>{graphQlResult.spaltenTopTextUnten.spaltenTopTextUnten}</p>
@@ -119,9 +123,9 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container">
           <div className="row">
-            <div className="col-12 col-md-6 d-none d-md-block">
+            <div className="col-12 col-md-6 d-none d-md-block margin-60-top">
               <div className="row justify-content-end">
                 <div className="col-12 col-lg-10 order-1">
                   <div className="row">
@@ -142,7 +146,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12 col-lg-10 order-3">
-                  <div className="row d-none d-md-block filler-box-two">
+                  <div className="row d-none d-md-block filler-box-120">
                     <div className="col-12">
                       <p className="filler" />
                     </div>
@@ -168,7 +172,7 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-6 d-none d-md-block">
               <div className="row">
                 <div className="col-12 order-2">
-                  <div className="row d-none d-md-block filler-box justify-content-end">
+                  <div className="row d-none d-md-block filler-box-240 justify-content-end">
                     <div className="col-12 col-lg-10">
                       <p className="filler" />
                     </div>
@@ -192,7 +196,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-1 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-1 d-block d-md-none margin-60-top">
               <div className="row">
                 <div className="col-12">
                   <h2 className="h6">{graphQlResult.ersteTextboxUntertitel}</h2>
@@ -205,7 +209,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-3 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-3 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box-two">
                 <div className="col">
                   <p className="filler" />
@@ -226,7 +230,7 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-2 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-2 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box">
                 <div className="col">
                   <p className="filler" />
@@ -249,67 +253,22 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-1" />
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.raeumlichkeitenUntertitel}</h2>
-              <h3 className="h2 padding-sm-bottom">
-                {graphQlResult.raeumlichkeitenTitel}
-              </h3>
-              <div
-                id="carouselCaptionsArbeitsplatz"
-                className="carousel slide"
-                data-ride="carousel"
-                data-interval="false"
-              >
-                <div className="carousel-inner">
-                  {graphQlResult.raeumlichkeitenBilder.map((bild, i) => {
-                    return (
-                      <div
-                        className={
-                          'text-center carousel-item' +
-                          (i == 0 ? ' active' : '')
-                        }
-                        key={'carousel-item-' + i}
-                      >
-                        <ContentfulImage
-                          imageFile={bild}
-                          styleClasses="d-block w-100 padding-sm-bottom"
-                          key={'carousel-item-image-small-' + i}
-                        />
-                      </div>
-                    )
-                  })}
-                </div>
-                <a
-                  className="carousel-control-prev"
-                  href="#carouselCaptionsArbeitsplatz"
-                  role="button"
-                  data-slide="prev"
-                >
-                  <i
-                    className="fa fa-chevron-left text-primary"
-                    aria-hidden="true"
-                  />
-                </a>
-                <a
-                  className="carousel-control-next"
-                  href="#carouselCaptionsArbeitsplatz"
-                  role="button"
-                  data-slide="next"
-                >
-                  <i
-                    className="fa fa-chevron-right text-primary"
-                    aria-hidden="true"
-                  />
-                </a>
-              </div>
+              <h3 className="h2">{graphQlResult.raeumlichkeitenTitel}</h3>
+              <ImageCarouselV2
+                carouselId="workplace"
+                contentfulImages={graphQlResult.raeumlichkeitenBilder}
+                options="slide"
+              />
             </div>
           </div>
-          <div className="row padding-sm-top-bottom">
+          <div className="row margin-20-top">
             <div className="col-12 col-md-1" />
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-5">
               <ContentfulMarkdownText
                 text={
                   graphQlResult.raeumlichkeitenBeschreibung
@@ -321,7 +280,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-sm-top-bottom d-block d-md-none">
+        <div className="container margin-100-top d-block d-md-none">
           <div className="row">
             <div className="col">
               <h2 className="h6">{graphQlResult.kollegenUntertitel}</h2>
@@ -338,7 +297,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-lg-top-bottom d-none d-md-block">
+        <div className="container margin-100-top d-none d-md-block">
           <div className="row">
             <div className="col">
               <h2 className="h6">{graphQlResult.kollegenUntertitel}</h2>
@@ -346,7 +305,7 @@ class UeberUnsTemplate extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-6 padding-sm-top-bottom">
+            <div className="col-12 col-md-6 padding-sm-bottom">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
@@ -355,7 +314,9 @@ class UeberUnsTemplate extends React.Component {
               </div>
             </div>
             <div className="col-12 col-md-6">
-              <p className="h4">{graphQlResult.kollegenZitat.kollegenZitat}</p>
+              <p className="h4 padding-sm-bottom">
+                {graphQlResult.kollegenZitat.kollegenZitat}
+              </p>
               <p>{graphQlResult.kollegenAuthorZitat}</p>
             </div>
           </div>
@@ -390,20 +351,21 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-100-top">
           <div className="row justify-content-end">
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.projekteUntertitel}</h2>
               <h3 className="h2">{graphQlResult.projekteTitel}</h3>
               <ContentfulImage
                 imageFile={graphQlResult.projekteBild}
-                styleClasses="img-fluid padding-sm-top-bottom"
+                styleClasses="img-fluid"
               />
             </div>
             <div className="col-12 col-md-1" />
           </div>
-          <div className="row justify-content-end padding-sm-top-bottom">
-            <div className="col-12 col-md-8">
+          <div className="row margin-20-top">
+            <div className="col-12 col-md-3" />
+            <div className="col-12 col-md-5">
               <ContentfulMarkdownText
                 text={graphQlResult.projekteBeschreibung.projekteBeschreibung}
                 {...this.props}
@@ -413,7 +375,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col">
               <h2>{graphQlResult.faktenCofinpro.titel}</h2>
@@ -436,7 +398,7 @@ class UeberUnsTemplate extends React.Component {
           fakt4Image={graphQlResult.faktenCofinpro.fakt4Bild}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container margin-40-top">
           <div className="row align-items-center">
             <div className="col-12 col-md-5 text-center">
               <ContentfulImage
@@ -446,7 +408,7 @@ class UeberUnsTemplate extends React.Component {
               <p>Unsere Standorte</p>
             </div>
             <div className="col-12 col-md-2">
-              <p className="padding-md-top-bottom" />
+              <p className="margin-80-top"> </p>
             </div>
             <div className="col-12 col-md-4">
               <div className="row">
@@ -454,6 +416,7 @@ class UeberUnsTemplate extends React.Component {
                   <ImageCarousel
                     carouselId="auszeichnungen"
                     contentfulImages={graphQlResult.auszeichnungenBilder}
+                    options="slide"
                   />
                   <p className="text-center padding-md-top">
                     Unsere Auszeichnungen

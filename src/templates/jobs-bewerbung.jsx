@@ -48,54 +48,63 @@ class JobsBewerbungTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <div className="container padding-md-top-bottom margin-md-top-bottom">
+        <div className="container margin-80-top">
           <CarrerOfferCarouselBox
             titel={graphQlResult.ueberschriftStellenanzeigen}
             stellenAnzeigen={stellenAnzeigen}
-            buttonText={'MEHR JOBS ANZEIGEN'}
+            buttonText={'ALLE JOBS'}
             {...this.props}
           />
         </div>
 
-        <TestimonialLarge
-          title={graphQlResult.testimonial.ueberschrift}
-          text={graphQlResult.testimonial.zitat.zitat}
-          author={graphQlResult.testimonial.autor}
-          authorTitle={graphQlResult.testimonial.autorTitel}
-          videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-          imageFile={graphQlResult.testimonial.bildTestimonial}
-        />
+        <div className="margin-120-top">
+          <TestimonialLarge
+            title={graphQlResult.testimonial.ueberschrift}
+            text={graphQlResult.testimonial.zitat.zitat}
+            author={graphQlResult.testimonial.autor}
+            authorTitle={graphQlResult.testimonial.autorTitel}
+            videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
+            imageFile={graphQlResult.testimonial.bildTestimonial}
+          />
+        </div>
 
-        <div className="container padding-md-top-bottom">
-          <div className="row padding-md-top-bottom">
+        <div className="container margin-100-top">
+          <div className="row">
             <div className="col">
               <h2 className="h6">
                 {graphQlResult.bewerbungsprozessUntertitel}
               </h2>
-              <h3 className="h2">{graphQlResult.bewerbungsprozessTitel}</h3>
+              <h3 className="h2 margin-40-bottom">
+                {graphQlResult.bewerbungsprozessTitel}
+              </h3>
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-5 d-none d-md-block">
+            <div className="col-12 col-md-6 d-none d-md-block">
               <div className="row">
-                <div className="col-12 order-1">
+                <div className="col-12 col-md-10 order-1">
                   <div className="row d-flex align-items-center">
                     <div className="col-2">
-                      <p className="display-4">1</p>
+                      <p className="display-3 text-info">1</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt1Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
-                    <div className="col">
+                    <div className="col-12 col-md-10">
                       <ContentfulImage
                         imageFile={graphQlResult.bewerbungsprozessSchritt1Bild}
                         styleClasses="img-fluid padding-sm-top-bottom"
                       />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12">
                       <p>
                         {
                           graphQlResult.bewerbungsprozessSchritt1Beschreibung
@@ -105,8 +114,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
                   </div>
                 </div>
-
-                <div className="col-12 order-3">
+                <div className="col-12 col-md-2 order-2" />
+                <div className="col-12 col-md-2 order-2" />
+                <div className="col-12 col-md-10 order-3 justify-content-end">
                   <div className="row d-none d-md-block filler-box-two">
                     <div className="col">
                       <p className="filler" />
@@ -115,21 +125,26 @@ class JobsBewerbungTemplate extends React.Component {
 
                   <div className="row">
                     <div className="col-2">
-                      <p className="display-4">3</p>
+                      <p className="display-3 text-info">3</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt3Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
-                    <div className="col">
+                    <div className="col-12 col-md-10">
                       <ContentfulImage
                         imageFile={graphQlResult.bewerbungsprozessSchritt3Bild}
                         styleClasses="img-fluid padding-sm-top-bottom"
                       />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12">
                       <p>
                         {
                           graphQlResult.bewerbungsprozessSchritt3Beschreibung
@@ -142,11 +157,9 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 col-md-2 d-none d-md-block" />
-
-            <div className="col-12 col-md-5 d-none d-md-block">
+            <div className="col-12 col-md-6 d-none d-md-block">
               <div className="row">
-                <div className="col-12 order-2">
+                <div className="col-12 col-md-10 order-2">
                   <div className="row d-none d-md-block filler-box">
                     <div className="col">
                       <p className="filler" />
@@ -155,21 +168,26 @@ class JobsBewerbungTemplate extends React.Component {
 
                   <div className="row">
                     <div className="col-2">
-                      <p className="display-4">2</p>
+                      <p className="display-3 text-info">2</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt2Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
-                    <div className="col">
+                    <div className="col-12 col-md-10">
                       <ContentfulImage
                         imageFile={graphQlResult.bewerbungsprozessSchritt2Bild}
                         styleClasses="img-fluid padding-sm-top-bottom"
                       />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12">
                       <p>
                         {
                           graphQlResult.bewerbungsprozessSchritt2Beschreibung
@@ -180,7 +198,10 @@ class JobsBewerbungTemplate extends React.Component {
                   </div>
                 </div>
 
-                <div className="col-12 order-4">
+                <div className="col-12 col-md-2 order-3" />
+                <div className="col-12 col-md-2 order-3" />
+
+                <div className="col-12 col-md-10 order-4">
                   <div className="row d-none d-md-block filler-box-two">
                     <div className="col">
                       <p className="filler" />
@@ -189,21 +210,26 @@ class JobsBewerbungTemplate extends React.Component {
 
                   <div className="row">
                     <div className="col-2">
-                      <p className="display-4">4</p>
+                      <p className="display-3 text-info">4</p>
                     </div>
 
-                    <div className="col-10">
+                    <div className="col-12 col-md-8">
                       <p className="h4">
                         {graphQlResult.bewerbungsprozessSchritt4Titel}
                       </p>
                     </div>
+                    <div className="col-12 col-md-2" />
                   </div>
                   <div className="row">
-                    <div className="col">
+                    <div className="col-12 col-md-10">
                       <ContentfulImage
                         imageFile={graphQlResult.bewerbungsprozessSchritt4Bild}
                         styleClasses="img-fluid padding-sm-top-bottom"
                       />
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-12">
                       <p>
                         {
                           graphQlResult.bewerbungsprozessSchritt4Beschreibung
@@ -216,10 +242,10 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-1 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-1 d-block d-md-none">
               <div className="row d-flex align-items-center">
                 <div className="col-2">
-                  <p className="display-4">1</p>
+                  <p className="display-3 text-info">1</p>
                 </div>
 
                 <div className="col-10">
@@ -244,7 +270,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-3 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-3 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box-two">
                 <div className="col">
                   <p className="filler" />
@@ -253,7 +279,7 @@ class JobsBewerbungTemplate extends React.Component {
 
               <div className="row">
                 <div className="col-2">
-                  <p className="display-4">3</p>
+                  <p className="display-3 text-info">3</p>
                 </div>
 
                 <div className="col-10">
@@ -278,7 +304,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-2 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-2 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box">
                 <div className="col">
                   <p className="filler" />
@@ -287,7 +313,7 @@ class JobsBewerbungTemplate extends React.Component {
 
               <div className="row">
                 <div className="col-2">
-                  <p className="display-4">2</p>
+                  <p className="display-3 text-info">2</p>
                 </div>
 
                 <div className="col-10">
@@ -312,7 +338,7 @@ class JobsBewerbungTemplate extends React.Component {
               </div>
             </div>
 
-            <div className="col-12 order-4 d-block d-md-none padding-md-top-bottom">
+            <div className="col-12 order-4 d-block d-md-none margin-60-top">
               <div className="row d-none d-md-block filler-box-two">
                 <div className="col">
                   <p className="filler" />
@@ -321,7 +347,7 @@ class JobsBewerbungTemplate extends React.Component {
 
               <div className="row">
                 <div className="col-2">
-                  <p className="display-4">4</p>
+                  <p className="display-3 text-info">4</p>
                 </div>
 
                 <div className="col-10">
@@ -348,26 +374,27 @@ class JobsBewerbungTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container bg-orange-light padding-lg-top-bottom margin-lg-top-bottom">
+        <div className="container bg-orange-light margin-100-top padding-md-top-bottom">
           <div className="row">
             <div className="col text-center">
               <ContentfulMarkdownText
                 text={graphQlResult.callToActionUntenText.callToActionUntenText}
-                styleClasses="img-fluid h5 d-block d-md-none w-100"
+                styleClasses="h4 d-block d-md-none w-100"
               />
               <ContentfulMarkdownText
                 text={graphQlResult.callToActionUntenText.callToActionUntenText}
-                styleClasses="h5 d-none d-md-block w-75 mx-auto"
+                styleClasses="h4 d-none d-md-block w-75 mx-auto"
               />
               <div className="row">
-                <div className="col-12 col-md-6 padding-md-top text-md-right">
+                <div className="col-12 col-md-1" />
+                <div className="col-12 col-md-5 padding-md-top text-md-right">
                   <Link to={pathPrefix + '/jobs'}>
-                    <span className="btn btn-outline-primary space-button-left-right">
+                    <span className="btn btn-outline-primary space-button-left-right w-100">
                       AUF FREIEN JOB BEWERBEN
                     </span>
                   </Link>
                 </div>
-                <div className="col-12 col-md-6 padding-md-top text-md-left">
+                <div className="col-12 col-md-5 padding-md-top text-md-left">
                   <a
                     href={
                       graphQlResult.linkZurInitiativBewerbung
@@ -375,7 +402,7 @@ class JobsBewerbungTemplate extends React.Component {
                     }
                     target="_blank"
                   >
-                    <span className="btn btn-outline-primary space-button-left-right">
+                    <span className="btn btn-outline-primary space-button-left-right w-100">
                       {graphQlResult.linkZurInitiativBewerbung.linkBezeichnung}
                     </span>
                   </a>

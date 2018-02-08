@@ -115,7 +115,11 @@ class Template extends React.Component {
           {...this.props}
         />{' '}
         {children({ ...this.props })}
-        <SiteFooter title={siteMetadata.title} {...this.props} />
+        <SiteFooter
+          locationUpdate={this.state.locationUpdate}
+          title={siteMetadata.title}
+          {...this.props}
+        />
       </div>
     )
   }

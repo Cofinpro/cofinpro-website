@@ -9,6 +9,7 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import Testimonial from '../components/Testimonial'
 import ContentfulImage from '../components/ContentfulImage'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
 
 class DeineEntwicklungTemplate extends React.Component {
   getCurrentUrl() {
@@ -51,10 +52,10 @@ class DeineEntwicklungTemplate extends React.Component {
           text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container margin-120-top">
           <div className="row">
             <div className="col-12 col-md-5">
-              <div className="d-none d-md-block padding-lg-top-bottom">
+              <div className="d-none d-md-block margin-120-top">
                 <p className="filler" />
               </div>
               <h2 className="h6">{graphQlResult.trainingUntertitel}</h2>
@@ -63,17 +64,15 @@ class DeineEntwicklungTemplate extends React.Component {
                 imageFile={graphQlResult.trainingBild}
                 styleClasses="img-fluid padding-sm-top-bottom"
               />
-              <p>{graphQlResult.trainingBeschreibung.trainingBeschreibung}</p>
+              <p className="margin-md-bottom">
+                {graphQlResult.trainingBeschreibung.trainingBeschreibung}
+              </p>
 
-              <Link to={pathPrefix + '/jobs'}>
-                <span className="btn btn btn-outline-primary">
-                  JETZT BEWERBEN
-                </span>
-              </Link>
+              <LinkButton text="JETZT BEWERBEN" path="/jobs" />
             </div>
 
             <div className="col-12 col-md-2">
-              <div className="d-sm-block d-md-none padding-md-top-bottom">
+              <div className="d-sm-block d-md-none margin-80-top">
                 <p />
               </div>
             </div>

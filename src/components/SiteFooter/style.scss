@@ -1,12 +1,36 @@
-footer {
-  margin-top: 4rem;
-}
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
 
 .padding-footer-links {
-  padding-top: 2.6rem;
+  padding-top: 1rem;
+}
+
+.text-address {
+  font-size: 0.875rem;
+
+  @include media-breakpoint-only(xs) {
+    font-size: 0.75rem;
+  }
+
+  @include media-breakpoint-only(sm) {
+    font-size: 0.75rem;
+  }
 }
 
 #nav-footer {
+  li {
+    font-size: 0.875rem;
+
+    @include media-breakpoint-only(xs) {
+      font-size: 0.75rem;
+    }
+
+    @include media-breakpoint-only(sm) {
+      font-size: 0.75rem;
+    }
+  }
+
   .nav-item.active {
     font-weight: 600;
 
@@ -27,8 +51,8 @@ footer {
 .footer-pages-nav {
   a {
     padding: 0px;
-    margin-right: 1rem;
-    margin-left: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     margin-top: 0.5rem;
   }
 }
@@ -40,4 +64,32 @@ footer {
 
 .scroll-up-box > a > i:hover {
   color: rgb(48, 48, 48) !important;
+}
+
+.testTest {
+  width: 24px;
+  height: 14px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.social-media-icon-carousel {
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 1rem;
+
+  @include media-breakpoint-only(xs) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  @include media-breakpoint-only(md) {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
 }

@@ -1,164 +1,153 @@
-
 .cofinpro-logo {
-    width: 110px; 
+  width: 110px;
 }
 
 #cofinpro-nav.on-main-site {
-    margin-top: 48px;
+  margin-top: 48px;
 }
 
 #cofinpro-nav {
+  button {
+    margin-left: auto;
+  }
 
-    button {
-        margin-left: auto;
-    }
+  padding-right: 0px;
+  padding-left: 0px;
 
+  a {
+    padding-bottom: 0px;
     padding-right: 0px;
-    padding-left: 0px; 
+    padding-left: 0px;
+
+    display: inline;
+
+    line-height: 0.9rem;
+    font-size: 0.875rem;
+
+    color: black;
+  }
+
+  .navbar-brand {
+    padding-top: 0px;
+  }
+
+  .nav-dotted-line {
+    width: 15px;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .nav-dotted-line-vertical {
+    height: 15px;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .nav-item.active {
+    font-weight: 800;
 
     a {
-        padding-bottom: 0px;
-        padding-right: 0px;
-        padding-left: 0px;
-
-        display: inline;
-
-        line-height: 0.9rem;
-        font-size: 0.9rem;
-
-        color: black;
+      border-bottom: 1px solid black;
     }
+  }
 
-    .navbar-brand {
-        padding-top: 0px;
-    }
+  .toggle-icon {
+    font-size: 2rem;
+  }
 
-    .nav-dotted-line {
-        width: 15px;
-        margin-right: 0.3rem;
-        margin-left: 0.3rem;
-    }
+  .navbar-toggler {
+    border: none;
+    cursor: pointer;
+  }
 
-    .nav-dotted-line-vertical {
-        height: 15px;
-        margin-right: 0.3rem;
-        margin-left: 0.3rem;
-    }
+  .navbar-toggler:focus {
+    outline: none;
+  }
 
+  .navbar-toggler > span:hover {
+    color: #b34d00 !important;
+  }
 
-    .nav-item.active {
-        font-weight: 800;
-    
-        a {
-            border-bottom: 1px solid black;
-        }
-    }
+  .title-menu {
+    margin-left: auto;
+    padding-top: 12px;
+  }
 
-    .toggle-icon {
-        font-size:2rem;
-    }
-
-    .navbar-toggler {
-        border: none;
-        cursor:pointer;
-
-    }
-
-    .navbar-toggler:focus {
-        outline: none;
-    }
-
-    .navbar-toggler>span:hover {
-        color: #b34d00 !important;
-    }
-
-    .title-menu {
-        margin-left: auto;
-        padding-top: 12px;
-    }
-
-    button.navbar-toggler {
-        margin-left: 0px;
-    }
-
+  button.navbar-toggler {
+    margin-left: 0px;
+  }
 }
 
 #cofinpro-nav-career {
-    
-        padding-right: 0px;
-        padding-left: 0px;
-    
-        a {
-            padding-bottom: 0px;
-            padding-right: 0px;
-            padding-left: 0px;
-    
-            display: inline;
-            
-            color: black;
-        }
-    
-        .navbar-brand {
-            padding-top: 0px;
-        }
-    
-        .nav-dotted-line {
-            width: 15px;
-            margin-right: 0.3rem;
-            margin-left: 0.3rem;
-        }
-    
-        .nav-dotted-line-vertical {
-            height: 15px;
-            margin-right: 0.3rem;
-            margin-left: 0.3rem;
-        }
-    
-    
-        .nav-item.active {
-            font-weight: 800;
-        }
-    
-        .toggle-icon {
-            font-size:2rem;
-        }
-    
-        .navbar-toggler {
-            border: none;
-            cursor:pointer;
-            line-height: inherit;
-            padding-top: 0px;
-            padding-bottom: 0px;
-        }
-    
-        .navbar-toggler:focus {
-            outline: none;
-        }
-    
-        .navbar-toggler>span:hover {
-            color: #7995b6 !important;
-        }
+  padding-right: 0px;
+  padding-left: 0px;
 
-        .title-perspective {
-   
-        }
-    
-    }
+  a {
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
 
-    #navbarCareerContent {
+    display: inline;
 
-        a {
-            padding-bottom: 0px;
-            padding-right: 0px;
-            padding-left: 0px;
-    
-            display: inline;
-    
-            color: black;
+    color: black;
+  }
 
-        }
+  .navbar-brand {
+    padding-top: 0px;
+  }
 
-        .nav-item.active {
-            font-weight: 800;
-        }
-    }
+  .nav-dotted-line {
+    width: 15px;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .nav-dotted-line-vertical {
+    height: 15px;
+    margin-right: 0.3rem;
+    margin-left: 0.3rem;
+  }
+
+  .nav-item.active {
+    font-weight: 800;
+  }
+
+  .toggle-icon {
+    font-size: 2rem;
+  }
+
+  .navbar-toggler {
+    border: none;
+    cursor: pointer;
+    line-height: inherit;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .navbar-toggler:focus {
+    outline: none;
+  }
+
+  .navbar-toggler > span:hover {
+    color: #7995b6 !important;
+  }
+
+  .title-perspective {
+  }
+}
+
+#navbarCareerContent {
+  a {
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+
+    display: inline;
+
+    color: black;
+  }
+
+  .nav-item.active {
+    font-weight: 800;
+  }
+}

@@ -7,40 +7,48 @@ import './style.scss'
 import ContentfulImage from '../ContentfulImage'
 
 class TestimonialLarge extends React.Component {
-    render() {
-        const { title, image, text, author, authorTitle, videoUrl, imageFile } = this.props
-        const pathPrefix = process.env.NODE_ENV === 'development'
-            ? ''
-            : __PATH_PREFIX__
+  render() {
+    const {
+      title,
+      image,
+      text,
+      author,
+      authorTitle,
+      videoUrl,
+      imageFile,
+    } = this.props
+    const pathPrefix =
+      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-        return (
-            <div className="container padding-lg-top-bottom">
-                <div className="row">
-                    <div className="col-12 col-md-1">
-                    </div>
-                    <div className="col-12 col-md-11">
-                        <p>{title}</p>
-                    </div>
-                </div>
-                <div className="row padding-sm-bottom">
-                    <div className="col-12 col-md-1">
-                    </div>
-                    <div className="col-12 col-md-5">
-                        <div className="embed-responsive embed-responsive-16by9">
-                            <iframe className="embed-responsive-item" src={videoUrl.replace("/watch?v=", "/embed/")}></iframe>
-                        </div>
-                    </div>
-                    <div className="col-12 col-md-5">
-                        <p className="h5 padding-md-bottom">{text}</p>
-                        <p>{author} - {authorTitle}</p>
-                    </div>
-                    <div className="col-12 col-md-1">
-                    </div>
-                </div>
-
+    return (
+      <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-1" />
+          <div className="col-12 col-md-11">
+            <p className="h6 margin-20-bottom">{title}</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-12 col-md-1" />
+          <div className="col-12 col-md-5">
+            <div className="embed-responsive embed-responsive-16by9">
+              <iframe
+                className="embed-responsive-item"
+                src={videoUrl.replace('/watch?v=', '/embed/')}
+              />
             </div>
-        )
-    }
+          </div>
+          <div className="col-12 col-md-5">
+            <p className="h4 margin-20-bottom">{text}</p>
+            <p>
+              {author} - {authorTitle}
+            </p>
+          </div>
+          <div className="col-12 col-md-1" />
+        </div>
+      </div>
+    )
+  }
 }
 
 export default TestimonialLarge
