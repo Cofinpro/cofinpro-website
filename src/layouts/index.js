@@ -10,8 +10,6 @@ import StorageHelper from '../utils/storageHelper'
 
 import './gatsrap.scss'
 import 'animate.css/animate.css'
-import 'prismjs/themes/prism-okaidia.css'
-import 'devicon/devicon.min.css'
 
 class Template extends React.Component {
   constructor(props) {
