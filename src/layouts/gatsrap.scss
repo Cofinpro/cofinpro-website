@@ -98,6 +98,17 @@ $container-max-widths: (
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 
+main {
+  margin-top: 69px;
+
+  @include media-breakpoint-only(lg) {
+    margin-top: 96px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 96px;
+  }
+}
+
 p,
 li,
 .p {
@@ -256,7 +267,7 @@ li,
   }
 }
 
-#navbarCareerContent {
+#nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
   margin-top: 1rem;
@@ -752,4 +763,8 @@ li,
 
 #links-tech {
   display: none;
+}
+
+.close {
+  opacity: 1;
 }

@@ -6,43 +6,29 @@ import PubSub from 'pubsub-js'
 
 import StorageHelper from '../../utils/storageHelper'
 
+import MenuCareer from '../navigation/MenuCareer'
+import MenuCompetence from '../navigation/MenuCompetence'
+
 import './style.scss'
 
 import Kompetenzen from '../../../data/Kompetenzen'
 
 class SiteNavi extends React.Component {
   componentDidMount() {
-    $(document).on('click', '.navbar-collapse.show', function(e) {
-      if ($(e.target).is('a')) {
-        $(this).collapse('hide')
-      }
-    })
-
-    $(document).on('click', '#navbarCareerContent.show', function(e) {
-      if ($(e.target).is('a')) {
-        $(this).collapse('hide')
-      }
-    })
 
     $('#perspectiveNavbarToggler').click(function() {
       $('#navbarSupportedContent').collapse('hide')
     })
 
     $('#menuNavbarToggler').click(function() {
-      $('#navbarCareerContent').collapse('hide')
+      $('#nav-menu-competence').collapse('hide')
     })
-  }
 
-  savePerspective(perspective) {
-    StorageHelper.saveInSessionStorage('perspective', perspective)
-    this.setState({ perspective: perspective })
-    PubSub.publish('perspectiveChange', perspective)
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      visible: false,
       perspective: StorageHelper.getFromSessionStorage('perspective'),
     }
 
@@ -50,20 +36,6 @@ class SiteNavi extends React.Component {
 
     for (var i = 0; i < Kompetenzen.data.length; ++i) {
       this.perspectives.push(Kompetenzen.data[i].id)
-    }
-  }
-
-  getPathPrefixPerspective() {
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
-    if (
-      this.getPerspective() === undefined ||
-      this.getPerspective().length === 0
-    ) {
-      return pathPrefix
-    } else {
-      return pathPrefix + '/' + this.getPerspective()
     }
   }
 
@@ -109,7 +81,7 @@ class SiteNavi extends React.Component {
     var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
 
     return (
-      <div className="container">
+      <div className="container fixed-top bg-white">
         <a
           href="https://www.cofinpro.de"
           hidden={locationUpdate !== mainUrl ? true : false}
@@ -139,21 +111,40 @@ class SiteNavi extends React.Component {
                 {this.getPerspectiveTitle()}
               </span>
               <span className="title-perspective text-secondary d-inline d-md-none navbar-text mr-sm-2">
-                DEINE KOMPETENZ
+                KOMPETENZ
               </span>
               <button
                 id="perspectiveNavbarToggler"
                 className="navbar-toggler"
                 type="button"
                 data-toggle="collapse"
-                data-target="#navbarCareerContent"
-                aria-controls="navbarCareerContent"
+                data-target="#nav-menu-competence"
+                aria-controls="nav-menu-competence"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
                 <img
                   alt="Menü Icon"
                   src={pathPrefix + '/svg/icon_menu_perspektive_toggler.svg'}
+                />
+              </button>
+              <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
+                MENÜ
+              </span>
+              <button
+                id="menuNavbarToggler"
+                hidden={locationUpdate === mainUrl ? true : false}
+                className="navbar-toggler d-inline d-lg-none"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <img
+                  alt="Menü Icon"
+                  src={pathPrefix + '/svg/icon_menu_toggler.svg'}
                 />
               </button>
             </form>
@@ -168,357 +159,11 @@ class SiteNavi extends React.Component {
           }
           hidden={locationUpdate === mainUrl ? true : false}
         >
-          <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
-            MENÜ
-          </span>
-          <button
-            id="menuNavbarToggler"
-            hidden={locationUpdate === mainUrl ? true : false}
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <img
-              alt="Menü Icon"
-              src={pathPrefix + '/svg/icon_menu_toggler.svg'}
-            />
-          </button>
 
-          <div
-            className="collapse navbar-collapse"
-            id="navbarSupportedContent"
-            hidden={locationUpdate === mainUrl ? true : false}
-          >
-            <p className="d-block d-lg-none text-white">MENÜ</p>
-            <ul
-              className="navbar-nav mr-auto"
-              hidden={locationUpdate === mainUrl ? true : false}
-            >
-              <li
-                className={
-                  location.pathname.match('/.*/landing')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link
-                  to={this.getPathPrefixPerspective() + '/landing'}
-                  className="nav-link"
-                >
-                  HOME
-                </Link>
-                <img
-                  src={pathPrefix + '/img/nav-line.png'}
-                  className="d-inline d-lg-inline nav-dotted-line"
-                />
-                <img
-                  src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                  className="d-block d-lg-none nav-dotted-line-vertical"
-                />
-              </li>
-              <li
-                className={
-                  location.pathname.match('/ueber-uns')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link to={pathPrefix + '/ueber-uns'} className="nav-link">
-                  ÜBER UNS
-                </Link>
-                <img
-                  src={pathPrefix + '/img/nav-line.png'}
-                  className="d-inline d-lg-inline nav-dotted-line"
-                />
-                <img
-                  src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                  className="d-block d-lg-none nav-dotted-line-vertical"
-                />
-              </li>
-              <li
-                className={
-                  location.pathname.match('/.*/deine-karriere')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link
-                  to={this.getPathPrefixPerspective() + '/deine-karriere'}
-                  className="nav-link"
-                >
-                  DEINE KARRIERE
-                </Link>
-                <img
-                  src={pathPrefix + '/img/nav-line.png'}
-                  className="d-inline d-lg-inline nav-dotted-line"
-                />
-                <img
-                  src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                  className="d-block d-lg-none nav-dotted-line-vertical"
-                />
-              </li>
-              <li
-                className={
-                  location.pathname.match('/.*/deine-entwicklung')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link
-                  to={this.getPathPrefixPerspective() + '/deine-entwicklung'}
-                  className="nav-link"
-                >
-                  DEINE ENTWICKLUNG
-                </Link>
-                <img
-                  src={pathPrefix + '/img/nav-line.png'}
-                  className="d-inline d-lg-inline nav-dotted-line"
-                />
-                <img
-                  src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                  className="d-block d-lg-none nav-dotted-line-vertical"
-                />
-              </li>
-              <li
-                className={
-                  location.pathname.match('/.*/gehalt-beteiligung')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link
-                  to={this.getPathPrefixPerspective() + '/gehalt-beteiligung'}
-                  className="nav-link"
-                >
-                  GEHALT & BENEFITS
-                </Link>
-                <img
-                  src={pathPrefix + '/img/nav-line.png'}
-                  className="d-inline d-lg-inline nav-dotted-line"
-                />
-                <img
-                  src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                  className="d-block d-lg-none nav-dotted-line-vertical"
-                />
-              </li>
-              <li
-                className={
-                  location.pathname.match('/work-life')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link to={pathPrefix + '/work-life'} className="nav-link">
-                  WORK & LIFE
-                </Link>
-                <img
-                  src={pathPrefix + '/img/nav-line.png'}
-                  className="d-inline d-lg-inline nav-dotted-line"
-                />
-                <img
-                  src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                  className="d-block d-lg-none nav-dotted-line-vertical"
-                />
-              </li>
-              <li
-                className={
-                  location.pathname.match('/jobs-bewerbung')
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link to={pathPrefix + '/jobs-bewerbung'} className="nav-link">
-                  JOBS & BEWERBUNG
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <MenuCareer location={location} locationUpdate={locationUpdate} {...this.props} />
         </nav>
 
-        <div
-          className="collapse"
-          id="navbarCareerContent"
-          hidden={locationUpdate === mainUrl ? true : false}
-        >
-          <p className="d-block text-white h5 padding-sm-bottom">
-            DEINE KOMPETENZ
-          </p>
-          <ul className="navbar-nav mr-auto text-dark">
-            <li>
-              <p className="h6">FACHBERATER</p>
-            </li>
-            <li
-              className={
-                StorageHelper.getFromSessionStorage('perspective').match(
-                  'fachlicher-absolvent'
-                )
-                  ? 'nav-item h6 active'
-                  : 'nav-item h6'
-              }
-            >
-              <Link
-                to={
-                  location.pathname.slice(1).split('/').length > 0 &&
-                  this.perspectives.indexOf(
-                    location.pathname.slice(1).split('/')[urlFragmentPers]
-                  ) > -1
-                    ? 'fachlicher-absolvent/' +
-                      location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                    : location.pathname
-                }
-                onClick={() => this.savePerspective('fachlicher-absolvent')}
-                className="nav-link"
-              >
-                > Absolvent & Young Professional
-              </Link>
-            </li>
-            <li
-              className={
-                StorageHelper.getFromSessionStorage('perspective').match(
-                  'fachlicher-professional'
-                )
-                  ? 'nav-item h6 active'
-                  : 'nav-item h6'
-              }
-            >
-              <Link
-                to={
-                  location.pathname.slice(1).split('/').length > 0 &&
-                  this.perspectives.indexOf(
-                    location.pathname.slice(1).split('/')[urlFragmentPers]
-                  ) > -1
-                    ? 'fachlicher-professional/' +
-                      location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                    : location.pathname
-                }
-                onClick={() => this.savePerspective('fachlicher-professional')}
-                className="nav-link"
-              >
-                > Professional
-              </Link>
-            </li>
-            <li>
-              <span className="text-white h6">/</span>
-            </li>
-            <li>
-              <p className="h6">TECHNOLOGISCHER BERATER</p>
-            </li>
-            <li
-              className={
-                StorageHelper.getFromSessionStorage('perspective').match(
-                  'technologischer-absolvent'
-                )
-                  ? 'nav-item h6 active'
-                  : 'nav-item h6'
-              }
-            >
-              <Link
-                to={
-                  location.pathname.slice(1).split('/').length > 0 &&
-                  this.perspectives.indexOf(
-                    location.pathname.slice(1).split('/')[urlFragmentPers]
-                  ) > -1
-                    ? 'technologischer-absolvent/' +
-                      location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                    : location.pathname
-                }
-                onClick={() =>
-                  this.savePerspective('technologischer-absolvent')
-                }
-                className="nav-link"
-              >
-                > Absolvent & Young Professional
-              </Link>
-            </li>
-            <li
-              className={
-                StorageHelper.getFromSessionStorage('perspective').match(
-                  'technologischer-professional'
-                )
-                  ? 'nav-item h6 active'
-                  : 'nav-item h6'
-              }
-            >
-              <Link
-                to={
-                  location.pathname.slice(1).split('/').length > 0 &&
-                  this.perspectives.indexOf(
-                    location.pathname.slice(1).split('/')[urlFragmentPers]
-                  ) > -1
-                    ? 'technologischer-professional/' +
-                      location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                    : location.pathname
-                }
-                onClick={() =>
-                  this.savePerspective('technologischer-professional')
-                }
-                className="nav-link"
-              >
-                > Professional
-              </Link>
-            </li>
-            <li>
-              <span className="text-white h6">/</span>
-            </li>
-            <li
-              className={
-                StorageHelper.getFromSessionStorage('perspective').match(
-                  'studenten'
-                )
-                  ? 'nav-item h6 active'
-                  : 'nav-item h6'
-              }
-            >
-              <Link
-                to={
-                  location.pathname.slice(1).split('/').length > 0 &&
-                  this.perspectives.indexOf(
-                    location.pathname.slice(1).split('/')[urlFragmentPers]
-                  ) > -1
-                    ? 'studenten/' +
-                      location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                    : location.pathname
-                }
-                onClick={() => this.savePerspective('studenten')}
-                className="nav-link"
-              >
-                STUDENTEN
-              </Link>
-            </li>
-            <li>
-              <span className="text-white h6">/</span>
-            </li>
-            <li
-              className={
-                StorageHelper.getFromSessionStorage('perspective').match(
-                  'andere'
-                )
-                  ? 'nav-item h6 active'
-                  : 'nav-item h6'
-              }
-            >
-              <Link
-                to={
-                  location.pathname.slice(1).split('/').length > 0 &&
-                  this.perspectives.indexOf(
-                    location.pathname.slice(1).split('/')[urlFragmentPers]
-                  ) > -1
-                    ? 'andere/' +
-                      location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                    : location.pathname
-                }
-                onClick={() => this.savePerspective('andere')}
-                className="nav-link"
-              >
-                ANDERE EXPERTISE
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <MenuCompetence location={location} locationUpdate={locationUpdate} {...this.props} />
       </div>
     )
   }

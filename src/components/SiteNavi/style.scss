@@ -1,3 +1,7 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 .cofinpro-logo {
   width: 110px;
 }
@@ -7,6 +11,26 @@
 }
 
 #cofinpro-nav {
+
+  padding-bottom: 1.4rem;
+
+  @include media-breakpoint-only(xs) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  
+  }
+
+  @include media-breakpoint-only(sm) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  
+  }
+
+  @include media-breakpoint-only(md) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
   button {
     margin-left: auto;
   }
@@ -68,11 +92,6 @@
     color: #b34d00 !important;
   }
 
-  .title-menu {
-    margin-left: auto;
-    padding-top: 12px;
-  }
-
   button.navbar-toggler {
     margin-left: 0px;
   }
@@ -81,6 +100,19 @@
 #cofinpro-nav-career {
   padding-right: 0px;
   padding-left: 0px;
+
+  .title-menu {
+    margin-left: auto;
+    padding-top: 12px; 
+
+    @include media-breakpoint-only(xs) {
+      font-size: 10px;
+    }
+  
+    @include media-breakpoint-only(sm) {
+      font-size: 10px;
+    }
+  }
 
   a {
     padding-bottom: 0px;
@@ -133,10 +165,20 @@
   }
 
   .title-perspective {
+
+    padding-top: 12px;
+
+    @include media-breakpoint-only(xs) {
+      font-size: 10px;
+    }
+  
+    @include media-breakpoint-only(sm) {
+      font-size: 10px;
+    }
   }
 }
 
-#navbarCareerContent {
+#nav-menu-competence {
   a {
     padding-bottom: 0px;
     padding-right: 0px;
