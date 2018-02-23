@@ -177,6 +177,9 @@ class NavigationCareer extends React.Component {
                 />
               </nav>
             </div>
+            <div className="col-12 d-none d-lg-block header-gradient">
+                
+            </div>
             <div className="col-12 col-lg-6 offset-lg-6">
               <MenuCompetence
                 location={location}

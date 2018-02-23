@@ -12,20 +12,48 @@ class SiteHeader extends React.Component {
 
     var titleElement
 
-    if (titleTag !== null && titleTag === 'h1') {
-      titleElement = <h1 className="h1">{title}</h1>
-    } else if (titleTag !== null && titleTag === 'h2') {
-      titleElement = <h2 className="h1">{title}</h2>
-    } else if (titleTag !== null && titleTag === 'h3') {
-      titleElement = <h3 className="h1">{title}</h3>
-    } else if (titleTag !== null && titleTag === 'h4') {
-      titleElement = <h4 className="h1">{title}</h4>
-    } else if (titleTag !== null && titleTag === 'h5') {
-      titleElement = <h5 className="h1">{title}</h5>
-    } else if (titleTag !== null && titleTag === 'h6') {
-      titleElement = <h6 className="h1">{title}</h6>
+    var tempTitleElement
+
+    if(title.indexOf(' ') === -1) {
+      tempTitleElement = title;
+    } else if(title.split(" ").length == 2) {
+      var twoWords = title.split(" ");
+
+      tempTitleElement = <span>{twoWords[0]} <br></br> {twoWords[1]}</span>;
     } else {
-      titleElement = <h3 className="h1">{title}</h3>
+
+      var s = title;
+
+      var middle = Math.floor(s.length / 2);
+      var before = s.lastIndexOf(' ', middle);
+      var after = s.indexOf(' ', middle + 1);
+      
+      if (middle - before < after - middle) {
+          middle = before;
+      } else {
+          middle = after;
+      }
+      
+      var s1 = s.substr(0, middle);
+      var s2 = s.substr(middle + 1);
+
+      tempTitleElement = <span>{s1} <br></br> {s2}</span>;
+    }
+
+    if (titleTag !== null && titleTag === 'h1') {
+      titleElement = <h1 className="h1">{tempTitleElement}</h1>
+    } else if (titleTag !== null && titleTag === 'h2') {
+      titleElement = <h2 className="h1">{tempTitleElement}</h2>
+    } else if (titleTag !== null && titleTag === 'h3') {
+      titleElement = <h3 className="h1">{tempTitleElement}</h3>
+    } else if (titleTag !== null && titleTag === 'h4') {
+      titleElement = <h4 className="h1">{tempTitleElement}</h4>
+    } else if (titleTag !== null && titleTag === 'h5') {
+      titleElement = <h5 className="h1">{tempTitleElement}</h5>
+    } else if (titleTag !== null && titleTag === 'h6') {
+      titleElement = <h6 className="h1">{tempTitleElement}</h6>
+    } else {
+      titleElement = <h3 className="h1">{tempTitleElement}</h3>
     }
 
     return (

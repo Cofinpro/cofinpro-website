@@ -12,7 +12,17 @@
 
 #cofinpro-nav {
 
-  padding-bottom: 1.4rem;
+  background:white;
+
+  opacity: 0.95;
+
+  @include media-breakpoint-only(lg) {
+    opacity: 1;
+  }
+
+  @include media-breakpoint-only(xl) {
+    opacity: 1;
+  }
 
   @include media-breakpoint-only(xs) {
     padding-bottom: 0px;
@@ -211,4 +221,10 @@
       border-bottom: 1px solid black;
     }
   }
+}
+
+.header-gradient {
+  height: 12px;
+  /*opacity: 0.95;*/
+  background:white;
 }
