@@ -44,10 +44,8 @@ $theme-colors: (
     dark: $gray-800
   )
   !default;
-
 $display3-size: 3.75rem !default;
 $display4-size: 3.375rem !default;
-
 $font-family-sans-serif: apercu-regular-pro;
 $font-family-monospace: apercu-regular-pro;
 $font-family-base: apercu-regular-pro;
@@ -55,32 +53,25 @@ $font-family-base: apercu-regular-pro;
 $font-size-base: 0.875rem !default;
 $font-size-lg: 1.125rem !default;
 $font-size-sm: 0.875rem !default;
-
 $h1-font-size: 3rem;
 $h2-font-size: 2.25rem;
 $h4-font-size: 1.5rem;
 $h6-font-size: 0.875rem;
-
 $h1-font-size-sm: 1.5rem;
 $h1-font-size-md: 3rem;
-
 $h2-font-size-sm: 1.5rem;
 $h2-font-size-md: 2.25rem;
-
 $h4-font-size-sm: 1.125rem;
 $h4-font-size-md: 1.5rem;
 
 $h5-font-size-sm: 1rem;
 $h5-font-size-md: 1.125rem;
-
 $h6-font-size-sm: 0.75rem;
 $h6-font-size-md: 0.875rem;
 
 $headings-font-family: inherit !default;
-
 $grid-columns: 12;
 $grid-gutter-width: 30px;
-
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -88,19 +79,15 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px
 );
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 1060px,
   xl: 1240px
 );
-
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
-
 main {
   margin-top: 69px;
-
   @include media-breakpoint-only(lg) {
     margin-top: 96px;
   }
@@ -115,6 +102,7 @@ li,
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $font-size-sm;
   }
@@ -129,7 +117,17 @@ li,
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { 
+  font-weight: bold !important;
+} 
+
 .h1 {
+  font-weight: bold !important;
   @include media-breakpoint-only(xs) {
     font-size: $h1-font-size-sm;
   }
@@ -148,8 +146,8 @@ li,
 }
 
 .h2 {
+  font-weight: bold !important;
   margin-bottom: 1rem;
-
   @include media-breakpoint-only(xs) {
     font-size: $h2-font-size-sm;
   }
@@ -166,7 +164,6 @@ li,
     font-size: $h2-font-size;
   }
 }
-
 .h4 {
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
@@ -183,7 +180,6 @@ li,
   @include media-breakpoint-only(xl) {
     font-size: $h4-font-size;
   }
-
   p {
     @include media-breakpoint-only(xs) {
       font-size: $h4-font-size-sm;
@@ -202,7 +198,6 @@ li,
     }
   }
 }
-
 .h5 {
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
@@ -220,7 +215,6 @@ li,
     font-size: $h5-font-size;
   }
 }
-
 .h6 {
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
@@ -238,15 +232,11 @@ li,
     font-size: $h6-font-size;
   }
 }
-
 .news-content {
   margin-top: 1rem;
 }
-
 #navbarSupportedContent {
-
   opacity: 0.95;
-
   @include media-breakpoint-only(xs) {
     background-color: $orange;
     padding: 2rem;
@@ -269,27 +259,21 @@ li,
     background-color: white;
   }
 }
-
 #nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
   margin-top: 1rem;
-
   opacity: 0.95;
 }
-
 .min-view-height {
   min-height: 80vh;
 }
-
 .filler-box {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
-
 .filler-box-320 {
   margin-top: 320px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
@@ -300,7 +284,6 @@ li,
 
 .filler-box-240 {
   margin-top: 240px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
@@ -308,10 +291,8 @@ li,
     margin-top: 60px;
   }
 }
-
 .filler-box-120 {
   margin-top: 120px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
@@ -319,10 +300,8 @@ li,
     margin-top: 60px;
   }
 }
-
 .filler-box-220 {
   margin-top: 220px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
@@ -330,10 +309,8 @@ li,
     margin-top: 60px;
   }
 }
-
 .filler-box-200 {
   margin-top: 200px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
@@ -341,16 +318,13 @@ li,
     margin-top: 60px;
   }
 }
-
 .filler-box-two {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-
 .space-button-left-right {
   margin-right: 1rem;
   margin-left: 1rem;
-
   @include media-breakpoint-only(xs) {
     margin-right: 0rem;
     margin-left: 0rem;
@@ -360,23 +334,18 @@ li,
     margin-left: 0rem;
   }
 }
-
 .inline-link {
   display: inline;
 }
-
 .bg-brown {
   background-color: #847575;
 }
-
 .bg-orange-light {
   background-color: $orange-light;
 }
-
 .icon-social-media {
   width: 2rem;
 }
-
 .img-md-padding {
   padding: 1.5rem;
 }
@@ -393,17 +362,14 @@ li,
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
-
 .padding-md-top-bottom {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-
 .padding-lg-top-bottom {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-
 .padding-xl-top-bottom {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -412,19 +378,15 @@ li,
 .padding-sm-bottom {
   padding-bottom: 1rem;
 }
-
 .padding-md-bottom {
   padding-bottom: 2rem;
 }
-
 .padding-lg-bottom {
   padding-bottom: 4rem;
 }
-
 .padding-sm-top {
   padding-top: 1rem;
 }
-
 .padding-md-top {
   padding-top: 2rem;
 }
@@ -437,33 +399,26 @@ li,
   margin-top: 15px;
   margin-bottom: 15px;
 }
-
 .margin-md-top-bottom {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
 .margin-lg-top-bottom {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-
 .margin-sm-top {
   margin-top: 1rem;
 }
-
 .margin-md-top {
   margin-top: 2rem;
 }
-
 .margin-lg-top {
   margin-top: 4rem;
 }
-
 .margin-sm-bottom {
   margin-bottom: 1rem;
 }
-
 .margin-md-bottom {
   margin-bottom: 2rem;
 }
@@ -498,10 +453,10 @@ li,
 
 .nav-dotted-line-vertical {
   height: 15px;
+
   margin-right: 0.3rem;
   margin-left: 0.3rem;
 }
-
 #carouselCaptionsArbeitsplatz,
 .imageCarousel,
 .socialMediaCarousel {
@@ -510,12 +465,10 @@ li,
     font-size: 2rem;
     color: #ec7b1a !important;
   }
-
   @include media-breakpoint-only(md) {
     .carousel-control-prev {
       left: -62px;
     }
-
     .carousel-control-next {
       right: -62px;
     }
@@ -524,7 +477,6 @@ li,
     .carousel-control-prev {
       left: -96px;
     }
-
     .carousel-control-next {
       right: -96px;
     }
@@ -533,65 +485,52 @@ li,
     .carousel-control-prev {
       left: -96px;
     }
-
     .carousel-control-next {
       right: -96px;
     }
   }
 }
-
 .jobangebote-technologie-box {
   border: 3px dashed $orange;
 }
-
 .jobangebote-studenten-box {
   border: 3px solid $blue;
 }
-
 .jobangebote-andere-box {
   border: 3px dashed $orange;
 }
-
 .cofinpro-logo-startseite {
   margin-top: 24px;
 }
-
 #button-pinnwand-collapse,
 #button-startseite-collapse {
   background: none;
   border: none;
   box-shadow: none;
   cursor: pointer;
-
   i {
     color: $orange;
     font-size: 2rem;
   }
 }
-
 #button-startseite-collapse:focus {
   outline: none;
 }
-
 .invisible {
   visibility: hidden;
   display: none;
 }
-
 .no-padding-left {
   padding-left: 0px;
 }
-
 .padding-0 {
   padding: 0px;
 }
-
 .title-box {
   position: relative;
   left: 1rem;
   top: 2.5rem;
   z-index: 1000;
-
   @include media-breakpoint-only(xs) {
     position: relative;
     left: 0rem;
@@ -600,6 +539,7 @@ li,
   }
   @include media-breakpoint-only(sm) {
     position: relative;
+
     left: 0rem;
     top: 1.5rem;
     z-index: 1000;
@@ -611,15 +551,12 @@ li,
     z-index: 1000;
   }
 }
-
 .container-stellenanzeige-text ul {
   padding-left: 1rem;
-
   li {
     font-size: 14px;
   }
 }
-
 .btn-transparent,
 .btn-transparent:hover,
 .btn-transparent:focus {
@@ -628,10 +565,8 @@ li,
   border: none;
   box-shadow: none;
 }
-
 .margin-120-bottom {
   margin-bottom: 120px;
-
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
@@ -642,7 +577,6 @@ li,
 
 .margin-100-bottom {
   margin-bottom: 100px;
-
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
@@ -650,26 +584,20 @@ li,
     margin-bottom: 80px;
   }
 }
-
 .margin-80-bottom {
   margin-bottom: 80px;
 }
-
 .margin-60-bottom {
   margin-bottom: 60px;
 }
-
 .margin-40-bottom {
   margin-bottom: 40px;
 }
-
 .margin-20-bottom {
   margin-bottom: 20px;
 }
-
 .margin-120-top {
   margin-top: 120px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
@@ -677,10 +605,8 @@ li,
     margin-top: 80px;
   }
 }
-
 .margin-100-top {
   margin-top: 100px;
-
   @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
@@ -688,23 +614,18 @@ li,
     margin-top: 80px;
   }
 }
-
 .margin-80-top {
   margin-top: 80px;
 }
-
 .margin-60-top {
   margin-top: 60px;
 }
-
 .margin-40-top {
   margin-top: 40px;
 }
-
 .margin-20-top {
   margin-top: 20px;
 }
-
 .margin-10-top {
   margin-top: 10px;
 }
@@ -718,54 +639,42 @@ li,
     font-size: 14px;
   }
 }
-
 .line-black {
   color: black;
 }
-
 .img-consultant {
   cursor: pointer;
 }
-
 #desktop-links-fach p,
 #desktop-links-tech p {
   margin-bottom: 0.4rem;
 }
-
 .border-primary-dashed {
   border: 3px dashed $orange;
 }
-
 .link-style {
   cursor: pointer;
 }
-
 .link-style:hover {
   text-decoration: underline;
 }
-
 .two-column-text {
   -webkit-column-count: 2;
   -moz-column-count: 2;
   column-count: 2;
 }
-
 .news-image-2 {
   max-height: 400px;
 }
-
 #desktop-links-fach {
   display: none;
 }
-
 #desktop-links-tech {
   display: none;
 }
-
 #links-fach {
   display: none;
 }
-
 #links-tech {
   display: none;
 }
@@ -775,8 +684,6 @@ li,
 }
 
 .container-md-full-width {
-
-
   @include media-breakpoint-only(xs) {
     padding-left: 0px;
     padding-right: 0px;
