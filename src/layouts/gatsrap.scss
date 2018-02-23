@@ -244,6 +244,9 @@ li,
 }
 
 #navbarSupportedContent {
+
+  opacity: 0.95;
+
   @include media-breakpoint-only(xs) {
     background-color: $orange;
     padding: 2rem;
@@ -271,6 +274,8 @@ li,
   background-color: $blue;
   padding: 2rem;
   margin-top: 1rem;
+
+  opacity: 0.95;
 }
 
 .min-view-height {

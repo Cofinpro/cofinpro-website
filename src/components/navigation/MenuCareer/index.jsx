@@ -114,7 +114,7 @@ class MenuCareer extends React.Component {
         id="navbarSupportedContent"
         hidden={locationUpdate === mainUrl ? true : false}
       >
-        <a href="https://www.cofinpro.de" className="navbar-brand">
+        <a href="https://www.cofinpro.de" className="navbar-brand d-none d-lg-inline">
             <img
               className="cofinpro-logo"
               alt="Nächstes Bild"
