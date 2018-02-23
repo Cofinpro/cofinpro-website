@@ -114,6 +114,13 @@ class MenuCareer extends React.Component {
         id="navbarSupportedContent"
         hidden={locationUpdate === mainUrl ? true : false}
       >
+        <a href="https://www.cofinpro.de" className="navbar-brand">
+            <img
+              className="cofinpro-logo"
+              alt="Nächstes Bild"
+              src={pathPrefix + '/svg/logo_cofinpro.svg'}
+            />
+        </a>
         <div className="d-block d-lg-none text-white margin-20-bottom">
           <p className="d-inline h5">MENÜ</p>
           <button id="close-button-menu" type="button" className="close d-inline" aria-label="Close">

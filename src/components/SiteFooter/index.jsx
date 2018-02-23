@@ -52,7 +52,7 @@ class SiteFooter extends React.Component {
         <footer className="footer bg-brown text-white padding-md-top-bottom margin-120-top">
           <div className="container">
             <div className="row">
-              <div className="col-12 col-md-5 padding-sm-top-bottom">
+              <div className="col-12 col-md-5 align-self-end padding-sm-top-bottom">
                 <p className="text-center text-md-left text-address">
                   COFINPRO AG
                   <br />
@@ -62,11 +62,11 @@ class SiteFooter extends React.Component {
                   <br />
                   Tel: +49 (0) 69-2 99 20 87 60
                   <br />
-                  E-Mail: welcome@cofinpro.de
+                  E-Mail: <a className="text-white" href="mailto:welcome@cofinpro.de">welcome@cofinpro.de</a>
                 </p>
               </div>
 
-              <div className="col-12 col-md-2 align-self-center">
+              <div className="col-12 col-md-2 align-self-end padding-sm-top-bottom">
                 <div className="text-center scroll-up-box">
                   <a
                     id="back-to-top"
@@ -82,7 +82,7 @@ class SiteFooter extends React.Component {
                 </div>
               </div>
 
-              <div className="col-12 col-md-5 padding-sm-top-bottom">
+              <div className="col-12 col-md-5 align-self-end padding-sm-top-bottom">
                 <div className="row">
                   <div className="col text-md-right right text-center">
                     <a
@@ -158,7 +158,7 @@ class SiteFooter extends React.Component {
                   <div className="col">
                     <ul
                       id="nav-footer"
-                      className="nav justify-content-center justify-content-lg-end text-center text-lg-right"
+                      className="nav justify-content-center justify-content-md-end text-center text-md-right"
                     >
                       <li
                         className={

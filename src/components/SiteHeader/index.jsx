@@ -29,35 +29,35 @@ class SiteHeader extends React.Component {
     }
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <div className="row title-box">
-              <div className="col-11 col-md-9">{titleElement}</div>
-              <div className="col-1 col-md-3" />
-            </div>
+      <div>
+        <div className="container">
+          <div className="row title-box">
+            <div className="col-11 col-md-9 header-title">{titleElement}</div>
+            <div className="col-1 col-md-3" />
           </div>
         </div>
-        {imageSmall !== null ? (
-          <div className="row">
-            <div className="col">
-              <ContentfulImage
-                imageFile={imageFile}
-                styleClasses="img-fluid d-none d-md-block"
-              />
-              <ContentfulImage
-                imageFile={imageSmall}
-                styleClasses="img-fluid d-block d-md-none"
-              />
+        <div className="container container-md-full-width">
+          {imageSmall !== null ? (
+            <div className="row">
+              <div className="col">
+                <ContentfulImage
+                  imageFile={imageFile}
+                  styleClasses="img-fluid d-none d-md-block"
+                />
+                <ContentfulImage
+                  imageFile={imageSmall}
+                  styleClasses="img-fluid d-block d-md-none"
+                />
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className="row">
-            <div className="col">
-              <ContentfulImage imageFile={imageFile} />
+          ) : (
+            <div className="row">
+              <div className="col">
+                <ContentfulImage imageFile={imageFile} />
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     )
   }

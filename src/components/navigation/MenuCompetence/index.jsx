@@ -18,6 +18,10 @@ class MenuCompetence extends React.Component {
             }
         })
 
+        $('#close-button-menu-competence').click(function() {
+            $('#nav-menu-competence').collapse('hide')
+        })
+
     }
 
     savePerspective(perspective) {
@@ -79,9 +83,16 @@ class MenuCompetence extends React.Component {
                 id="nav-menu-competence"
                 hidden={locationUpdate === mainUrl ? true : false}
             >
-                <p className="d-block text-white h5 padding-sm-bottom">
-                    DEINE KOMPETENZ
-                </p>
+                <div className="d-block text-white margin-20-bottom">
+                    <p className="d-inline h5">DEINE KOMPETENZ</p>
+                    <button id="close-button-menu-competence" type="button" className="close d-inline" aria-label="Close">
+                        <img
+                        className="close-button-img"
+                        alt="Menü schließen"
+                        src={pathPrefix + '/svg/icon_close.svg'}
+                        />
+                    </button>
+                </div>
                 <ul className="navbar-nav mr-auto text-dark">
                     <li>
                         <p className="h6">FACHBERATER</p>

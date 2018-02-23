@@ -310,6 +310,7 @@ class UeberUnsTemplate extends React.Component {
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink1.replace('/watch?v=', '/embed/')}
+                  allowFullScreen
                 />
               </div>
             </div>
@@ -326,6 +327,7 @@ class UeberUnsTemplate extends React.Component {
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink2.replace('/watch?v=', '/embed/')}
+                  allowFullScreen
                 />
               </div>
             </div>
@@ -334,6 +336,7 @@ class UeberUnsTemplate extends React.Component {
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink3.replace('/watch?v=', '/embed/')}
+                  allowFullScreen
                 />
               </div>
             </div>
@@ -345,6 +348,7 @@ class UeberUnsTemplate extends React.Component {
                 <iframe
                   className="embed-responsive-item"
                   src={graphQlResult.videoLink4.replace('/watch?v=', '/embed/')}
+                  allowFullScreen
                 />
               </div>
             </div>

@@ -92,8 +92,8 @@ $grid-breakpoints: (
 $container-max-widths: (
   sm: 540px,
   md: 720px,
-  lg: 960px,
-  xl: 1140px
+  lg: 1060px,
+  xl: 1240px
 );
 
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
@@ -767,4 +767,30 @@ li,
 
 .close {
   opacity: 1;
+}
+
+.container-md-full-width {
+
+
+  @include media-breakpoint-only(xs) {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+  }
+  @include media-breakpoint-only(md) {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+  }
 }

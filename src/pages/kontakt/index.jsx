@@ -40,7 +40,7 @@ class Kontakt extends React.Component {
 
         <div className="container padding-md-top-bottom">
           <div className="row">
-            <div className="col">
+            <div className="col-12 col-md-5">
               <h1 className="h2">Kontakt für Bewerber</h1>
 
               <p>
@@ -68,7 +68,7 @@ class Kontakt extends React.Component {
                 Fragen zum Bewerbungsprozess beantwortet Dir unser
                 <br />Human Resources-Team unter
                 <br />Tel + 49 (0) 69-2 99 20 87 60 und per E-Mail über
-                <br />karriere@cofinpro.de
+                <br /><a href="mailto:karriere@cofinpro.de">karriere@cofinpro.de</a>
               </p>
 
               <Link to={pathPrefix + '/jobs'}>

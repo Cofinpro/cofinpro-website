@@ -31,6 +31,14 @@
     padding-top: 0px;
   }
 
+  @include media-breakpoint-only(lg) {
+    padding-top: 0px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-top: 0px;
+  }
+
   button {
     margin-left: auto;
   }
@@ -68,7 +76,6 @@
   }
 
   .nav-item.active {
-    font-weight: 800;
 
     a {
       border-bottom: 1px solid black;
@@ -100,6 +107,14 @@
 #cofinpro-nav-career {
   padding-right: 0px;
   padding-left: 0px;
+
+  @include media-breakpoint-only(lg) {
+    padding-bottom: 0px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-bottom: 0px;
+  }
 
   .title-menu {
     margin-left: auto;
@@ -141,7 +156,9 @@
   }
 
   .nav-item.active {
-    font-weight: 800;
+    a {
+      border-bottom: 1px solid black;
+    }
   }
 
   .toggle-icon {
@@ -190,6 +207,8 @@
   }
 
   .nav-item.active {
-    font-weight: 800;
+    a {
+      border-bottom: 1px solid black;
+    }
   }
 }

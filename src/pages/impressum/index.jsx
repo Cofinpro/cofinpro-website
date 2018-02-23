@@ -58,28 +58,28 @@ class Impressum extends React.Component {
               </p>
 
               <p>
-                Sitz der Gesellschaft
+                <strong>Sitz der Gesellschaft</strong>
                 <br />Frankfurt
               </p>
 
               <p>
-                Handelsregister
+                <strong>Handelsregister</strong>
                 <br />HRB 10 29 30
                 <br />Amtsgericht Frankfurt am Main
               </p>
 
               <p>
-                USt-ID
+                <strong>USt-ID</strong>
                 <br />DE 814 878 661
               </p>
 
               <p>
-                Vorsitzender des Aufsichtsrates
+                <strong>Vorsitzender des Aufsichtsrates</strong>
                 <br />Markus Bohner
               </p>
 
               <p>
-                Vorstand
+                <strong>Vorstand</strong>
                 <br />Gerald Prior (Vorsitzender)
                 <br />Christine Naber
               </p>

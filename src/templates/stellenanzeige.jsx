@@ -46,7 +46,7 @@ class StellenanzeigeTemplate extends React.Component {
         <div className="container margin-60-top">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
-              <h2 className="h3 text-primary">
+              <h2 className="h2 text-primary">
                 Wir wünschen uns einfach Dich!
               </h2>
               <h1 className="h2">{stellenAnzeige.node.titel}</h1>
