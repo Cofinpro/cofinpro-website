@@ -3,14 +3,14 @@ import Link from 'gatsby-link'
 
 class LinkButton extends React.Component {
   render() {
-    const { text, path } = this.props
+    const { text, path, styleSpan, styleLink } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-      <Link to={pathPrefix + path}>
-        <span className="btn btn btn-outline-primary">{text}</span>
+      <Link className={"link-button " + styleLink} to={pathPrefix + path}>
+        <span className={"btn btn btn-outline-primary " + styleSpan}>{text}</span>
       </Link>
     )
   }

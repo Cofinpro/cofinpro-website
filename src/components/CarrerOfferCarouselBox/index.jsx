@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
 import CarrerOfferPreview from '../CarrerOfferPreview'
+import LinkButton from '../buttons/LinkButton'
 
 import CarrerOffersCarousel from '../CarrerOffersCarousel'
 
@@ -88,9 +89,7 @@ class CarrerOfferCarouselBox extends React.Component {
 
         <div className="row">
           <div className="col text-center">
-            <Link className="readmore" to={pathPrefix + '/jobs'}>
-              <span className="btn btn btn-outline-primary">{buttonText}</span>
-            </Link>
+            <LinkButton text={buttonText} path="/jobs" />
           </div>
         </div>
       </div>
