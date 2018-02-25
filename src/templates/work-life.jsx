@@ -84,7 +84,7 @@ class WorkLifeTemplate extends React.Component {
                     ? graphQlResult.infoboxLinksPoints.map((point, i) => {
                         return (
                           <p key={'point-' + i}>
-                            <span className="text-primary">
+                            <span className="bold-font">
                               {point.ueberschrift}&nbsp;
                             </span>
                             {point.text ? point.text.text : null}

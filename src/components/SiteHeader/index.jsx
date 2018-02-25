@@ -75,7 +75,7 @@ class SiteHeader extends React.Component {
         <div className="container container-md-full-width">
           {imageSmall !== null ? (
             <div className="row">
-              <div className="col">
+              <div className="col-12 col-lg-10 offset-lg-1">
                 {titleImage !== undefined && titleImage !== null ? (
                   <Img sizes={titleImage.sizes} />
                 ) : (

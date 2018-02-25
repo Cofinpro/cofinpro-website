@@ -87,7 +87,7 @@ class JobsBewerbungTemplate extends React.Component {
                 <div className="col-12 col-md-10 order-1">
                   <div className="row d-flex align-items-center">
                     <div className="col-2">
-                      <p className="display-3 text-info">1</p>
+                      <p className="display-3 text-info bold-font">1</p>
                     </div>
 
                     <div className="col-12 col-md-8">
@@ -127,7 +127,7 @@ class JobsBewerbungTemplate extends React.Component {
 
                   <div className="row">
                     <div className="col-2">
-                      <p className="display-3 text-info">3</p>
+                      <p className="display-3 text-info bold-font">3</p>
                     </div>
 
                     <div className="col-12 col-md-8">
@@ -170,7 +170,7 @@ class JobsBewerbungTemplate extends React.Component {
 
                   <div className="row">
                     <div className="col-2">
-                      <p className="display-3 text-info">2</p>
+                      <p className="display-3 text-info bold-font">2</p>
                     </div>
 
                     <div className="col-12 col-md-8">
@@ -212,7 +212,7 @@ class JobsBewerbungTemplate extends React.Component {
 
                   <div className="row">
                     <div className="col-2">
-                      <p className="display-3 text-info">4</p>
+                      <p className="display-3 text-info bold-font">4</p>
                     </div>
 
                     <div className="col-12 col-md-8">
@@ -247,7 +247,7 @@ class JobsBewerbungTemplate extends React.Component {
             <div className="col-12 order-1 d-block d-md-none">
               <div className="row d-flex align-items-center">
                 <div className="col-2">
-                  <p className="display-3 text-info">1</p>
+                  <p className="display-3 text-info bold-font">1</p>
                 </div>
 
                 <div className="col-10">
@@ -281,7 +281,7 @@ class JobsBewerbungTemplate extends React.Component {
 
               <div className="row">
                 <div className="col-2">
-                  <p className="display-3 text-info">3</p>
+                  <p className="display-3 text-info bold-font">3</p>
                 </div>
 
                 <div className="col-10">
@@ -315,7 +315,7 @@ class JobsBewerbungTemplate extends React.Component {
 
               <div className="row">
                 <div className="col-2">
-                  <p className="display-3 text-info">2</p>
+                  <p className="display-3 text-info bold-font">2</p>
                 </div>
 
                 <div className="col-10">
@@ -349,7 +349,7 @@ class JobsBewerbungTemplate extends React.Component {
 
               <div className="row">
                 <div className="col-2">
-                  <p className="display-3 text-info">4</p>
+                  <p className="display-3 text-info bold-font">4</p>
                 </div>
 
                 <div className="col-10">

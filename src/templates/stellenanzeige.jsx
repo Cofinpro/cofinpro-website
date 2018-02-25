@@ -131,7 +131,7 @@ class StellenanzeigeTemplate extends React.Component {
                 <p className="h4 text-primary">
                   Wir passen zu Deiner Wunschliste?
                 </p>
-                <p className="p-small">
+                <p className="h4p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
                   einen von sechs weiteren deutschen Standorten unter
                   <Link className="readmore" to={pathPrefix + '/jobs'}>

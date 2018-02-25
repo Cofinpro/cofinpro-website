@@ -35,32 +35,32 @@ class Facts extends React.Component {
                   imageFile={fakt1Image}
                   styleClasses="img-fluid img-md-padding"
                 />
-                <p className="display-4 text-info">{fakt1Text}</p>
-                <p>{fakt1Titel}</p>
+                <p className="display-4 text-info bold-font">{fakt1Text}</p>
+                <p className="p-font-large-md">{fakt1Titel}</p>
               </div>
               <div className="col-6 col-md-3">
                 <ContentfulImage
                   imageFile={fakt2Image}
                   styleClasses="img-fluid img-md-padding"
                 />
-                <p className="display-4 text-info">{fakt2Text}</p>
-                <p>{fakt2Titel}</p>
+                <p className="display-4 text-info bold-font">{fakt2Text}</p>
+                <p className="p-font-large-md">{fakt2Titel}</p>
               </div>
               <div className="col-6 col-md-3">
                 <ContentfulImage
                   imageFile={fakt3Image}
                   styleClasses="img-fluid img-md-padding"
                 />
-                <p className="display-4 text-info">{fakt3Text}</p>
-                <p>{fakt3Titel}</p>
+                <p className="display-4 text-info bold-font">{fakt3Text}</p>
+                <p className="p-font-large-md">{fakt3Titel}</p>
               </div>
               <div className="col-6 col-md-3">
                 <ContentfulImage
                   imageFile={fakt4Image}
                   styleClasses="img-fluid img-md-padding"
                 />
-                <p className="display-4 text-info">{fakt4Text}</p>
-                <p>{fakt4Titel}</p>
+                <p className="display-4 text-info bold-font">{fakt4Text}</p>
+                <p className="p-font-large-md">{fakt4Titel}</p>
               </div>
             </div>
           </div>

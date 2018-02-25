@@ -84,7 +84,7 @@ class MenuCompetence extends React.Component {
                 hidden={locationUpdate === mainUrl ? true : false}
             >
                 <div className="d-block text-white margin-20-bottom">
-                    <p className="d-inline h5">DEINE KOMPETENZ</p>
+                    <p className="d-inline menu-body-header">DEINE KOMPETENZ</p>
                     <button id="close-button-menu-competence" type="button" className="close d-inline" aria-label="Close">
                         <img
                         className="close-button-img"
@@ -95,15 +95,15 @@ class MenuCompetence extends React.Component {
                 </div>
                 <ul className="navbar-nav mr-auto text-dark">
                     <li>
-                        <p className="h6">FACHBERATER</p>
+                        <p>FACHBERATER</p>
                     </li>
                     <li
                         className={
                             StorageHelper.getFromSessionStorage('perspective').match(
                                 'fachlicher-absolvent'
                             )
-                                ? 'nav-item h6 active'
-                                : 'nav-item h6'
+                                ? 'nav-item active'
+                                : 'nav-item'
                         }
                     >
                         <Link
@@ -127,8 +127,8 @@ class MenuCompetence extends React.Component {
                             StorageHelper.getFromSessionStorage('perspective').match(
                                 'fachlicher-professional'
                             )
-                                ? 'nav-item h6 active'
-                                : 'nav-item h6'
+                                ? 'nav-item active'
+                                : 'nav-item'
                         }
                     >
                         <Link
@@ -148,18 +148,18 @@ class MenuCompetence extends React.Component {
                         </Link>
                     </li>
                     <li>
-                        <span className="text-white h6">/</span>
+                        <span className="text-white">/</span>
                     </li>
                     <li>
-                        <p className="h6">TECHNOLOGISCHER BERATER</p>
+                        <p>TECHNOLOGISCHER BERATER</p>
                     </li>
                     <li
                         className={
                             StorageHelper.getFromSessionStorage('perspective').match(
                                 'technologischer-absolvent'
                             )
-                                ? 'nav-item h6 active'
-                                : 'nav-item h6'
+                                ? 'nav-item active'
+                                : 'nav-item'
                         }
                     >
                         <Link
@@ -185,8 +185,8 @@ class MenuCompetence extends React.Component {
                             StorageHelper.getFromSessionStorage('perspective').match(
                                 'technologischer-professional'
                             )
-                                ? 'nav-item h6 active'
-                                : 'nav-item h6'
+                                ? 'nav-item active'
+                                : 'nav-item'
                         }
                     >
                         <Link
@@ -208,15 +208,15 @@ class MenuCompetence extends React.Component {
                         </Link>
                     </li>
                     <li>
-                        <span className="text-white h6">/</span>
+                        <span className="text-white">/</span>
                     </li>
                     <li
                         className={
                             StorageHelper.getFromSessionStorage('perspective').match(
                                 'studenten'
                             )
-                                ? 'nav-item h6 active'
-                                : 'nav-item h6'
+                                ? 'nav-item active'
+                                : 'nav-item'
                         }
                     >
                         <Link
@@ -236,15 +236,15 @@ class MenuCompetence extends React.Component {
                         </Link>
                     </li>
                     <li>
-                        <span className="text-white h6">/</span>
+                        <span className="text-white">/</span>
                     </li>
                     <li
                         className={
                             StorageHelper.getFromSessionStorage('perspective').match(
                                 'andere'
                             )
-                                ? 'nav-item h6 active'
-                                : 'nav-item h6'
+                                ? 'nav-item active'
+                                : 'nav-item'
                         }
                     >
                         <Link

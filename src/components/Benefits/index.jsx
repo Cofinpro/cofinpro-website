@@ -29,7 +29,7 @@ class Benefits extends React.Component {
               imageFile={img1}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
-            <p className="padding-sm-top">{text1}</p>
+            <p className="padding-sm-top p-font-large-md">{text1}</p>
           </div>
           <div className="col-6 col-md-4">
             <ContentfulImage
@@ -40,7 +40,7 @@ class Benefits extends React.Component {
               imageFile={img2}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
-            <p className="padding-sm-top">{text2}</p>
+            <p className="padding-sm-top p-font-large-md">{text2}</p>
           </div>
           <div className="col-6 col-md-4">
             <ContentfulImage
@@ -51,7 +51,7 @@ class Benefits extends React.Component {
               imageFile={img3}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
-            <p className="padding-sm-top">{text3}</p>
+            <p className="padding-sm-top p-font-large-md">{text3}</p>
           </div>
         </div>
       </div>

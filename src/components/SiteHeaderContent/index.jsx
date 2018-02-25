@@ -52,8 +52,8 @@ class SiteHeaderContent extends React.Component {
           <div className="col-12 col-md-8 text-center">
             {subTitleElement}
             {titleElement}
-            <ContentfulMarkdownText text={text1} />
-            <ContentfulMarkdownText text={text2} />
+            <ContentfulMarkdownText styleClasses="p-font-large-lg" text={text1} />
+            <ContentfulMarkdownText styleClasses="p-font-large-lg" text={text2} />
           </div>
         </div>
       </div>

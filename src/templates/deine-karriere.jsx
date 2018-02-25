@@ -56,10 +56,12 @@ class LaufbahnTemplate extends React.Component {
         graphQlResult.perspektive.name !== 'andere' ? (
           <div className="container margin-120-top">
             <div className="row">
-              <div className="col">
-                <p className="h2 padding-sm-bottom">
+              <div className="col-12">
+                <p className="h2 text-primary padding-sm-bottom">
                   {graphQlResult.titelLaufbahnBild}
                 </p>
+              </div>
+              <div className="col-8 offset-2 col-md-12 offset-md-0">
                 <ContentfulImage
                   imageFile={graphQlResult.bildFuerLaufbahn}
                   styleClasses="img-fluid d-none d-md-block"
@@ -135,7 +137,9 @@ class LaufbahnTemplate extends React.Component {
           <div className="container margin-100-top">
             <div className="row">
               <div className="col">
-                <p className="h2">{graphQlResult.titelKompetenzen}</p>
+                <p className="h2 text-primary">
+                  {graphQlResult.titelKompetenzen}
+                </p>
                 <ContentfulImage
                   imageFile={graphQlResult.bildKompetenzen}
                   styleClasses="img-fluid d-none d-md-block padding-sm-top"

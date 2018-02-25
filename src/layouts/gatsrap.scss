@@ -50,7 +50,7 @@ $font-family-sans-serif: apercu-regular-pro;
 $font-family-monospace: apercu-regular-pro;
 $font-family-base: apercu-regular-pro;
 $font-size-base: 0.875rem !default;
-$font-size-lg: 1.125rem !default;
+$font-size-lg: 1rem !default;
 $font-size-sm: 0.875rem !default;
 $h1-font-size: 3rem;
 $h2-font-size: 2.25rem;
@@ -69,7 +69,6 @@ $h6-font-size-md: 0.875rem;
 $headings-font-family: inherit !default;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
-
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -92,6 +91,53 @@ main {
   @include media-breakpoint-only(xl) {
     margin-top: 96px;
   }
+}
+.p-font-large-lg {
+  font-size: 1.125rem;
+  @include media-breakpoint-only(xs) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-sm;
+  }
+
+  p {
+    font-size: 1.125rem;
+    @include media-breakpoint-only(xs) {
+      font-size: $font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $font-size-sm;
+    }
+  }
+}
+.p-font-large-md {
+  font-size: 1.125rem;
+  @include media-breakpoint-only(xs) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size-sm;
+  }
+
+  p {
+    font-size: 1.125rem;
+    @include media-breakpoint-only(xs) {
+      font-size: $font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $font-size-sm;
+    }
+  }
+}
+.p-font-large {
+  font-size: 1.125rem;
 }
 p,
 li,
@@ -157,7 +203,6 @@ h6 {
     font-size: $h2-font-size;
   }
 }
-
 .h4 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
@@ -213,6 +258,44 @@ h6 {
 }
 .h6 {
   font-family: apercu-bold-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h6-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h6-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h6-font-size;
+  }
+}
+p.h5,
+span.h5,
+div.h5 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h5-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h5-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h5-font-size;
+  }
+}
+li.h6 {
+  font-family: apercu-regular-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
   }
@@ -384,7 +467,6 @@ div.h4 {
 }
 .padding-xl-top-bottom {
   padding-top: 6rem;
-
   padding-bottom: 6rem;
 }
 .padding-sm-bottom {
@@ -405,7 +487,6 @@ div.h4 {
 .padding-lg-top {
   padding-top: 4rem;
 }
-
 .margin-sm-top-bottom {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -421,10 +502,10 @@ div.h4 {
 .margin-sm-top {
   margin-top: 1rem;
 }
-
 .margin-md-top {
   margin-top: 2rem;
 }
+
 .margin-lg-top {
   margin-top: 4rem;
 }
@@ -449,18 +530,14 @@ div.h4 {
 .no-padding-bottom {
   padding-bottom: 0rem;
 }
-
 .no-padding {
   padding: 0rem;
 }
-
 .stellenangebote-box {
   border: 3px solid #a9c5e8;
 }
-
 .nav-dotted-line-vertical {
   height: 15px;
-
   margin-right: 0.3rem;
   margin-left: 0.3rem;
 }
@@ -652,7 +729,6 @@ div.h4 {
 #desktop-links-tech p {
   margin-bottom: 0.4rem;
 }
-
 .border-primary-dashed {
   border: 3px dashed $orange;
 }
@@ -714,7 +790,9 @@ div.h4 {
 }
 .image-news-middle-part {
 }
-
 .normal-font {
   font-family: apercu-regular-pro;
+}
+.bold-font {
+  font-family: apercu-bold-pro;
 }

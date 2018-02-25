@@ -42,7 +42,7 @@ class SocialMediaCarousel extends React.Component {
                     </a>
                     <ContentfulMarkdownText
                       text={mediaPost.textDesPosts.textDesPosts}
-                      styleClasses="d-block w-75 mx-auto"
+                      styleClasses="d-block w-75 mx-auto p-font-large-md"
                     />
                   </div>
                 )

@@ -41,7 +41,7 @@ class TestimonialLarge extends React.Component {
           </div>
           <div className="col-12 col-md-5">
             <p className="h4 margin-20-bottom">{text}</p>
-            <p>
+            <p className="p-font-large-md">
               {author} - {authorTitle}
             </p>
           </div>

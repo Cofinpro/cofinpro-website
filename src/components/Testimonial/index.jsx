@@ -72,7 +72,7 @@ class Testimonial extends React.Component {
         </div>
         {sliderIcons}
         <p className="h4">{text}</p>
-        <p className="margin-10-top">
+        <p className="margin-10-top p-font-large-md">
           {author} - {authorTitle}
         </p>
       </div>

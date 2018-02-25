@@ -51,7 +51,11 @@ class UeberUnsTemplate extends React.Component {
               ? graphQlResult.beschreibungAbsatz1.beschreibungAbsatz1
               : null
           }
-          text2={null}
+          text2={
+            graphQlResult.beschreibungAbsatz2
+              ? graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2
+              : null
+          }
         />
 
         <div className="container margin-100-top">
@@ -114,13 +118,6 @@ class UeberUnsTemplate extends React.Component {
             </div>
           </div>
 
-          <div className="row text-center padding-sm-top">
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-8">
-              <p>{graphQlResult.spaltenTopTextUnten.spaltenTopTextUnten}</p>
-            </div>
-            <div className="col-12 col-md-2" />
-          </div>
         </div>
 
         <div className="container">
@@ -318,7 +315,7 @@ class UeberUnsTemplate extends React.Component {
               <p className="h4 padding-sm-bottom">
                 {graphQlResult.kollegenZitat.kollegenZitat}
               </p>
-              <p>{graphQlResult.kollegenAuthorZitat}</p>
+              <p className="p-font-large-md">{graphQlResult.kollegenAuthorZitat}</p>
             </div>
           </div>
           <div className="row">
@@ -409,7 +406,7 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.standorte}
                 styleClasses="img-fluid img-md-padding"
               />
-              <p>Unsere Standorte</p>
+              <p className="p-font-large">Unsere Standorte</p>
             </div>
             <div className="col-12 col-md-2">
               <p className="margin-80-top"> </p>
@@ -422,7 +419,7 @@ class UeberUnsTemplate extends React.Component {
                     contentfulImages={graphQlResult.auszeichnungenBilder}
                     options="slide"
                   />
-                  <p className="text-center padding-md-top">
+                  <p className="text-center p-font-large padding-md-top">
                     Unsere Auszeichnungen
                   </p>
                 </div>
@@ -526,9 +523,6 @@ export const pageQuery = graphql`
           fileName
           contentType
         }
-      }
-      spaltenTopTextUnten {
-        spaltenTopTextUnten
       }
       ersteTextboxUntertitel
       ersteTextboxTitel

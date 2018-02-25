@@ -98,10 +98,10 @@ class LandingTemplate extends React.Component {
             <div className="col-12 col-md-10 mx-auto">
               <h2 className="h6">{graphQlResult.newsUntertitel}</h2>
               <h3 className="h2">{graphQlResult.newsTitel}</h3>
-              <p className="margin-20-bottom d-block w-100 d-lg-none">
+              <p className="margin-20-bottom d-block w-100 d-lg-none p-font-large-md">
                 {graphQlResult.newsBeschreibung.newsBeschreibung}
               </p>
-              <p className="margin-20-bottom d-none d-lg-block w-75">
+              <p className="margin-20-bottom d-none d-lg-block w-75 p-font-large-md">
                 {graphQlResult.newsBeschreibung.newsBeschreibung}
               </p>
             </div>
@@ -199,7 +199,7 @@ class LandingTemplate extends React.Component {
             <div className="col-12 col-md-8 mx-auto">
               <h2 className="h6">{graphQlResult.socialMediaUntertitel}</h2>
               <h3 className="h2">{graphQlResult.socialMediaTitel}</h3>
-              <p className="">
+              <p className="p-font-large-md">
                 {graphQlResult.socialMediaBeschreibung.socialMediaBeschreibung}
               </p>
             </div>
