@@ -127,12 +127,12 @@ class StartseiteTemplate extends React.Component {
                 <div className="">
                   <div className="row">
                     <div className="col-12">
-                      <h2 className="subtitle-welcome h4 padding-sm-top d-none d-md-block">
+                      <h2 className="h4 normal-font subtitle-welcome padding-sm-top d-none d-md-block">
                         {graphQlResult.untertitelDerSeite.untertitelDerSeite}
                       </h2>
-                      <h2 className="h4 subtitle-welcome padding-sm-top d-block d-md-none">
+                      <h2 className="h4 normal-font subtitle-welcome padding-sm-top d-block d-md-none">
                         {graphQlResult.untertitelDerSeite.untertitelDerSeite}
-                      </h2>
+                      </h2> 
                     </div>
                   </div>
 
