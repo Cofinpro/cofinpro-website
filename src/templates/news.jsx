@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
@@ -25,14 +26,15 @@ class NewsTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    console.log(news.titelbildSharp);
+
     return (
       <div>
         <HtmlHeader dataFromCms={news.metaData} {...this.props} />
 
         <SiteHeader
           title={news.ueberschrift}
-          imageFile={news.titelbild}
-          imageSmall={news.titelbild}
+          titleImage={news.titelbildSharp}
         />
 
         <div className="container padding-sm-top-bottom">

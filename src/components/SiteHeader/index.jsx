@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import './style.scss'
 
@@ -8,36 +9,43 @@ import ContentfulImage from '../ContentfulImage'
 
 class SiteHeader extends React.Component {
   render() {
-    const { title, imageFile, imageSmall, titleTag } = this.props
+    const { title, imageFile, imageSmall, titleTag, titleImage } = this.props
 
     var titleElement
 
     var tempTitleElement
 
-    if(title.indexOf(' ') === -1) {
-      tempTitleElement = title;
-    } else if(title.split(" ").length == 2) {
-      var twoWords = title.split(" ");
+    if (title.indexOf(' ') === -1) {
+      tempTitleElement = title
+    } else if (title.split(' ').length == 2) {
+      var twoWords = title.split(' ')
 
-      tempTitleElement = <span>{twoWords[0]} <br></br> {twoWords[1]}</span>;
+      tempTitleElement = (
+        <span>
+          {twoWords[0]} <br /> {twoWords[1]}
+        </span>
+      )
     } else {
+      var s = title
 
-      var s = title;
+      var middle = Math.floor(s.length / 2)
+      var before = s.lastIndexOf(' ', middle)
+      var after = s.indexOf(' ', middle + 1)
 
-      var middle = Math.floor(s.length / 2);
-      var before = s.lastIndexOf(' ', middle);
-      var after = s.indexOf(' ', middle + 1);
-      
       if (middle - before < after - middle) {
-          middle = before;
+        middle = before
       } else {
-          middle = after;
+        middle = after
       }
-      
-      var s1 = s.substr(0, middle);
-      var s2 = s.substr(middle + 1);
 
-      tempTitleElement = <span>{s1} <br></br> {s2}</span>;
+      var s1 = s.substr(0, middle)
+      var s2 = s.substr(middle + 1)
+
+      tempTitleElement = (
+        <span>
+          {s1} <br /> {s2}
+        </span>
+      )
     }
 
     if (titleTag !== null && titleTag === 'h1') {
@@ -68,10 +76,14 @@ class SiteHeader extends React.Component {
           {imageSmall !== null ? (
             <div className="row">
               <div className="col">
-                <ContentfulImage
-                  imageFile={imageFile}
-                  styleClasses="img-fluid d-none d-md-block"
-                />
+                {titleImage !== undefined && titleImage !== null ? (
+                  <Img sizes={titleImage.sizes} />
+                ) : (
+                  <ContentfulImage
+                    imageFile={imageFile}
+                    styleClasses="img-fluid d-none d-md-block"
+                  />
+                )}
                 <ContentfulImage
                   imageFile={imageSmall}
                   styleClasses="img-fluid d-block d-md-none"
@@ -81,7 +93,11 @@ class SiteHeader extends React.Component {
           ) : (
             <div className="row">
               <div className="col">
-                <ContentfulImage imageFile={imageFile} />
+                {titleImage !== undefined && titleImage !== null ? (
+                  <Img sizes={titleImage.sizes} />
+                ) : (
+                  <ContentfulImage imageFile={imageFile} />
+                )}
               </div>
             </div>
           )}

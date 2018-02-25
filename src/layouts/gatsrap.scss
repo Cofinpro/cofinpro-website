@@ -123,11 +123,11 @@ h3,
 h4,
 h5,
 h6 { 
-  font-weight: bold !important;
+  font-family: apercu-bold-pro;
 } 
 
 .h1 {
-  font-weight: bold !important;
+  font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h1-font-size-sm;
   }
@@ -146,7 +146,7 @@ h6 {
 }
 
 .h2 {
-  font-weight: bold !important;
+  font-family: apercu-bold-pro;
   margin-bottom: 1rem;
   @include media-breakpoint-only(xs) {
     font-size: $h2-font-size-sm;
@@ -663,9 +663,6 @@ h6 {
   -moz-column-count: 2;
   column-count: 2;
 }
-.news-image-2 {
-  max-height: 400px;
-}
 #desktop-links-fach {
   display: none;
 }
@@ -715,4 +712,8 @@ h6 {
     border-radius: 0px;
   }
 
+}
+
+.image-news-middle-part {
+  
 }
