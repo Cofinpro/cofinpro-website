@@ -11,6 +11,8 @@ import TestimonialLarge from '../components/TestimonialLarge'
 import ContentfulImage from '../components/ContentfulImage'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import HtmlHeader from '../components/HtmlHeader'
+import LinkButton from '../components/buttons/LinkButton'
+import ExternalLinkButton from '../components/buttons/ExternalLinkButton'
 
 import StorageHelper from '../utils/storageHelper'
 
@@ -89,9 +91,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt1Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -129,9 +131,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt3Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -172,9 +174,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt2Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -214,9 +216,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt4Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -249,9 +251,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt1Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -283,9 +285,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt3Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -317,9 +319,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt2Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -351,9 +353,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt4Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -388,24 +390,24 @@ class JobsBewerbungTemplate extends React.Component {
               <div className="row">
                 <div className="col-12 col-md-1" />
                 <div className="col-12 col-md-5 padding-md-top text-md-right">
-                  <Link to={pathPrefix + '/jobs'}>
-                    <span className="btn btn-outline-primary space-button-left-right w-100">
-                      AUF FREIEN JOB BEWERBEN
-                    </span>
-                  </Link>
+                  <LinkButton
+                    text="AUF FREIEN JOB BEWERBEN"
+                    path="/jobs"
+                    styleSpan="space-button-left-right w-100"
+                  />
                 </div>
                 <div className="col-12 col-md-5 padding-md-top text-md-left">
-                  <a
-                    href={
+                  <ExternalLinkButton
+                    text={
+                      graphQlResult.linkZurInitiativBewerbung.linkBezeichnung
+                    }
+                    _href={
                       graphQlResult.linkZurInitiativBewerbung
                         .linkZurExternenQuelle.linkZurExternenQuelle
                     }
-                    target="_blank"
-                  >
-                    <span className="btn btn-outline-primary space-button-left-right w-100">
-                      {graphQlResult.linkZurInitiativBewerbung.linkBezeichnung}
-                    </span>
-                  </a>
+                    _target="_blank"
+                    styleSpan="space-button-left-right w-100"
+                  />
                 </div>
               </div>
             </div>

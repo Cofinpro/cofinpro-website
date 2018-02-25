@@ -103,7 +103,7 @@ class PinnwandTemplate extends React.Component {
                               edge.node.kurzeBeschreibung.kurzeBeschreibung
                             }
                             newsId={edge.node.id}
-                            imageFile={edge.node.titelbild}
+                            imageFile={edge.node.titelbildSharp}
                             {...props}
                           />
                         </div>
@@ -172,7 +172,7 @@ class PinnwandTemplate extends React.Component {
                             edge.node.kurzeBeschreibung.kurzeBeschreibung
                           }
                           newsId={edge.node.id}
-                          imageFile={edge.node.titelbild}
+                          imageFile={edge.node.titelbildSharp}
                           url={edge.node.url}
                           {...this.props}
                         />

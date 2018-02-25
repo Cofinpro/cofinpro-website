@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, navigateTo } from 'gatsby-link'
 import { siteMetadata } from '../../gatsby-config'
-import SiteNavi from '../components/SiteNavi'
+import NavigationCareer from '../components/navigation/NavigationCareer'
 import SiteFooter from '../components/SiteFooter'
 import ChatBot from '../components/ChatBot'
 import emergence from 'emergence.js'
@@ -107,12 +107,16 @@ class Template extends React.Component {
 
     return (
       <div>
-        <SiteNavi
-          locationUpdate={this.state.locationUpdate}
-          title={siteMetadata.title}
-          {...this.props}
-        />{' '}
-        {children({ ...this.props })}
+        <header>
+          <NavigationCareer
+            locationUpdate={this.state.locationUpdate}
+            title={siteMetadata.title}
+            {...this.props}
+          />
+        </header>{' '}
+        <main>
+          {children({ ...this.props })}
+        </main>
         <SiteFooter
           locationUpdate={this.state.locationUpdate}
           title={siteMetadata.title}

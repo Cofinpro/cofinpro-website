@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import './style.scss'
 
@@ -8,7 +9,7 @@ import ContentfulImage from '../ContentfulImage'
 
 class NewsPreview extends React.Component {
   render() {
-    const { createdAt, title, description, newsId, url } = this.props
+    const { createdAt, title, description, newsId, url, imageFile } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -16,7 +17,7 @@ class NewsPreview extends React.Component {
     return (
       <div>
         <Link to={pathPrefix + '/pinnwand/' + url}>
-          <ContentfulImage imageFile={this.props.imageFile} />
+          <Img sizes={imageFile.sizes} />
         </Link>
         <p className="news-content margin-20-top">
           <span className="news-date">{createdAt}</span>

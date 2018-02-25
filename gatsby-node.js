@@ -19,7 +19,7 @@ const pathPrefix = ''
 // bootstrap is finished so you have access to any information necessary to
 // programmatically create pages.
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect } = boundActionCreators
+  const { createPage, createRedirect, createNodeField } = boundActionCreators
 
   moment.locale('de')
 
@@ -143,12 +143,44 @@ function getNews(
             'YYYY-MM-DD'
           ).format('L')
         }
+
       })
 
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+      var itemsProcessed = 0;
+
+      news.forEach((item, index, array) => {
+
+        graphql(`
+            {
+            titelbildSharp: imageSharp(id: { regex: "/` + item.node.titelbild.id + `/" }) {
+              sizes(maxWidth: 2000, maxHeight: 1250, quality: 60, cropFocus: CENTER) {
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                originalImg
+                originalName
+                base64
+                aspectRatio
+                sizes
+              }
+            }
+          }          
+        `).then(result => {
+
+            item.node.titelbildSharp = result.data.titelbildSharp;
+
+            itemsProcessed++;
+            if(itemsProcessed === news.length) {
+              callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+            }
+        })
+
+      });
     })
   }
 }
+
 
 function createPinnwand(
   graphql,
@@ -184,6 +216,10 @@ function createNews(
   const template = path.resolve(`./src/templates/news.jsx`)
 
   _.each(news, edge => {
+
+    var titelbildIdVar = edge.node.titelbild !== null ? "/" + edge.node.titelbild.id + "/" : "";
+    var newsBildIdVar = edge.node.newsBild !== null ? "/" + edge.node.newsBild.id + "/" : "";
+
     createPage({
       path: `pinnwand/${edge.node.url}`,
       component: slash(template),
@@ -768,7 +804,7 @@ function refreshImages(
     graphql(
       `
         {
-          allContentfulAsset(limit: 1000) {
+          allContentfulAsset(limit: 2000) {
             edges {
               node {
                 id

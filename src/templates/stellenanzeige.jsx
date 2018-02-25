@@ -9,6 +9,7 @@ import SiteHeaderContent from '../components/SiteHeaderContent'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import CarrerOfferCarouselBox from '../components/CarrerOfferCarouselBox'
 import HtmlHeader from '../components/HtmlHeader'
+import ExternalLinkButton from '../components/buttons/ExternalLinkButton'
 
 import RichTextParserHelper from '../utils/richTextParserHelper'
 import StorageHelper from '../utils/storageHelper'
@@ -46,7 +47,7 @@ class StellenanzeigeTemplate extends React.Component {
         <div className="container margin-60-top">
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
-              <h2 className="h3 text-primary">
+              <h2 className="h2 text-primary">
                 Wir wünschen uns einfach Dich!
               </h2>
               <h1 className="h2">{stellenAnzeige.node.titel}</h1>
@@ -180,11 +181,11 @@ class StellenanzeigeTemplate extends React.Component {
                   offenes Fenster für dich.
                 </p>
               </div>
-              <a href={stellenAnzeige.node.uMantis.uMantis} target="_blank">
-                <span className="btn btn btn-outline-primary">
-                  JETZT BEWERBEN
-                </span>
-              </a>
+              <ExternalLinkButton
+                text="JETZT BEWERBEN"
+                _href={stellenAnzeige.node.uMantis.uMantis}
+                _target="_blank"
+              />
             </div>
           </div>
         </div>

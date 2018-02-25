@@ -31,8 +31,7 @@ class NewsTemplate extends React.Component {
 
         <SiteHeader
           title={news.ueberschrift}
-          imageFile={news.titelbild}
-          imageSmall={news.titelbild}
+          titleImage={news.titelbildSharp}
         />
 
         <div className="container padding-sm-top-bottom">

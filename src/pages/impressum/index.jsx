@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
+import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
+
 class Impressum extends React.Component {
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
@@ -58,28 +60,28 @@ class Impressum extends React.Component {
               </p>
 
               <p>
-                Sitz der Gesellschaft
+                <strong>Sitz der Gesellschaft</strong>
                 <br />Frankfurt
               </p>
 
               <p>
-                Handelsregister
+                <strong>Handelsregister</strong>
                 <br />HRB 10 29 30
                 <br />Amtsgericht Frankfurt am Main
               </p>
 
               <p>
-                USt-ID
+                <strong>USt-ID</strong>
                 <br />DE 814 878 661
               </p>
 
               <p>
-                Vorsitzender des Aufsichtsrates
+                <strong>Vorsitzender des Aufsichtsrates</strong>
                 <br />Markus Bohner
               </p>
 
               <p>
-                Vorstand
+                <strong>Vorstand</strong>
                 <br />Gerald Prior (Vorsitzender)
                 <br />Christine Naber
               </p>
@@ -90,22 +92,17 @@ class Impressum extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col">
-              <a
-                className="btn btn-outline-primary margin-sm-right"
-                name="Datenschutz"
-                href="https://cofinpro.de/datenschutz/"
-                target="_blank"
-              >
-                Datenschutz
-              </a>
-              <a
-                className="btn btn-outline-primary"
-                name="AGB/Disclaimer"
-                href="https://cofinpro.de/agb/"
-                target="_blank"
-              >
-                AGB/Disclaimer
-              </a>
+              <ExternalLinkButton
+                text="Datenschutz"
+                _href="https://cofinpro.de/datenschutz/"
+                _target="_blank"
+                styleLink="margin-sm-right"
+              />
+              <ExternalLinkButton
+                text="AGB/Disclaimer"
+                _href="https://cofinpro.de/agb/"
+                _target="_blank"
+              />
             </div>
           </div>
         </div>

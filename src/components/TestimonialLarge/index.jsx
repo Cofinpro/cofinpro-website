@@ -35,6 +35,7 @@ class TestimonialLarge extends React.Component {
               <iframe
                 className="embed-responsive-item"
                 src={videoUrl.replace('/watch?v=', '/embed/')}
+                allowFullScreen
               />
             </div>
           </div>

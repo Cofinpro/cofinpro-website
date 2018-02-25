@@ -6,6 +6,7 @@ import get from 'lodash/get'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import HtmlHeader from '../components/HtmlHeader'
+import ExternalLinkButton from '../components/buttons/ExternalLinkButton'
 
 import JobContainerBox from '../components/stellenmarkt/JobContainerBox'
 
@@ -100,16 +101,14 @@ class StellenmarktTemplate extends React.Component {
               <h2 className="h4 padding-sm-bottom">
                 {graphQlResult.callToActionText.callToActionText}
               </h2>
-              <a
-                href={
+              <ExternalLinkButton
+                text={graphQlResult.linkZurInitiativBewerbung.linkBezeichnung}
+                _href={
                   graphQlResult.linkZurInitiativBewerbung.linkZurExternenQuelle
                     .linkZurExternenQuelle
                 }
-              >
-                <span className="btn btn btn-outline-primary">
-                  {graphQlResult.linkZurInitiativBewerbung.linkBezeichnung}
-                </span>
-              </a>
+                _target="_blank"
+              />
             </div>
           </div>
         </div>

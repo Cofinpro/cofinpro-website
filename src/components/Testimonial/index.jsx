@@ -67,7 +67,8 @@ class Testimonial extends React.Component {
           <iframe
             className="embed-responsive-item"
             src={videoUrl.replace('/watch?v=', '/embed/')}
-          />
+            allowFullScreen
+          /> 
         </div>
         {sliderIcons}
         <p className="h4">{text}</p>

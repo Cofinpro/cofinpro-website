@@ -1,3 +1,7 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 .cofinpro-logo {
   width: 110px;
 }
@@ -7,6 +11,44 @@
 }
 
 #cofinpro-nav {
+
+  background:white;
+
+  opacity: 0.95;
+
+  @include media-breakpoint-only(lg) {
+    opacity: 1;
+  }
+
+  @include media-breakpoint-only(xl) {
+    opacity: 1;
+  }
+
+  @include media-breakpoint-only(xs) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  
+  }
+
+  @include media-breakpoint-only(sm) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  
+  }
+
+  @include media-breakpoint-only(md) {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    padding-top: 0px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-top: 0px;
+  }
+
   button {
     margin-left: auto;
   }
@@ -44,7 +86,6 @@
   }
 
   .nav-item.active {
-    font-weight: 800;
 
     a {
       border-bottom: 1px solid black;
@@ -68,11 +109,6 @@
     color: #b34d00 !important;
   }
 
-  .title-menu {
-    margin-left: auto;
-    padding-top: 12px;
-  }
-
   button.navbar-toggler {
     margin-left: 0px;
   }
@@ -81,6 +117,27 @@
 #cofinpro-nav-career {
   padding-right: 0px;
   padding-left: 0px;
+
+  @include media-breakpoint-only(lg) {
+    padding-bottom: 0px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-bottom: 0px;
+  }
+
+  .title-menu {
+    margin-left: auto;
+    padding-top: 12px; 
+
+    @include media-breakpoint-only(xs) {
+      font-size: 10px;
+    }
+  
+    @include media-breakpoint-only(sm) {
+      font-size: 10px;
+    }
+  }
 
   a {
     padding-bottom: 0px;
@@ -109,7 +166,9 @@
   }
 
   .nav-item.active {
-    font-weight: 800;
+    a {
+      border-bottom: 1px solid black;
+    }
   }
 
   .toggle-icon {
@@ -133,10 +192,20 @@
   }
 
   .title-perspective {
+
+    padding-top: 12px;
+
+    @include media-breakpoint-only(xs) {
+      font-size: 10px;
+    }
+  
+    @include media-breakpoint-only(sm) {
+      font-size: 10px;
+    }
   }
 }
 
-#navbarCareerContent {
+#nav-menu-competence {
   a {
     padding-bottom: 0px;
     padding-right: 0px;
@@ -148,6 +217,14 @@
   }
 
   .nav-item.active {
-    font-weight: 800;
+    a {
+      border-bottom: 1px solid black;
+    }
   }
+}
+
+.header-gradient {
+  height: 12px;
+  /*opacity: 0.95;*/
+  background:white;
 }
