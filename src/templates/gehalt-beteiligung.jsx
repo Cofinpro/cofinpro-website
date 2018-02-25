@@ -220,9 +220,9 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 0 ? (
                   <div className="padding-md-top-bottom">
-                    <p className="h4 padding-sm-bottom">
+                    <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[0].ueberschrift}
-                    </p>
+                    </h4>
                     <ContentfulMarkdownText
                       text={
                         graphQlResult.artenVonStudenten[0].beschreibung
@@ -236,9 +236,9 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 1 ? (
                   <div className="padding-md-top-bottom">
-                    <p className="h4 padding-sm-bottom">
+                    <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[1].ueberschrift}
-                    </p>
+                    </h4>
                     <ContentfulMarkdownText
                       text={
                         graphQlResult.artenVonStudenten[1].beschreibung
@@ -249,9 +249,9 @@ class GehaltBeteiligungTemplate extends React.Component {
                 ) : null}
                 {graphQlResult.artenVonStudenten.length > 2 ? (
                   <div className="padding-md-top-bottom">
-                    <p className="h4 padding-sm-bottom">
+                    <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[2].ueberschrift}
-                    </p>
+                    </h4>
                     <ContentfulMarkdownText
                       text={
                         graphQlResult.artenVonStudenten[2].beschreibung
@@ -267,9 +267,9 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 2 ? (
                   <div className="padding-md-top-bottom">
-                    <p className="h4 padding-sm-bottom">
+                    <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[3].ueberschrift}
-                    </p>
+                    </h4>
                     <ContentfulMarkdownText
                       text={
                         graphQlResult.artenVonStudenten[3].beschreibung
@@ -283,9 +283,9 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 2 ? (
                   <div className="padding-md-top-bottom">
-                    <p className="h4 padding-sm-bottom">
+                    <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[4].ueberschrift}
-                    </p>
+                    </h4>
                     <ContentfulMarkdownText
                       text={
                         graphQlResult.artenVonStudenten[4].beschreibung
@@ -301,9 +301,9 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 2 ? (
                   <div className="padding-md-top">
-                    <p className="h4 padding-sm-bottom">
+                    <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[5].ueberschrift}
-                    </p>
+                    </h4>
                     <ContentfulMarkdownText
                       text={
                         graphQlResult.artenVonStudenten[5].beschreibung

@@ -112,7 +112,7 @@ class MenuCompetence extends React.Component {
                                     this.perspectives.indexOf(
                                         location.pathname.slice(1).split('/')[urlFragmentPers]
                                     ) > -1
-                                    ? 'fachlicher-absolvent/' +
+                                    ? '/fachlicher-absolvent/' +
                                     location.pathname.slice(1).split('/')[urlFragmentPers + 1]
                                     : location.pathname
                             }
@@ -137,7 +137,7 @@ class MenuCompetence extends React.Component {
                                     this.perspectives.indexOf(
                                         location.pathname.slice(1).split('/')[urlFragmentPers]
                                     ) > -1
-                                    ? 'fachlicher-professional/' +
+                                    ? '/fachlicher-professional/' +
                                     location.pathname.slice(1).split('/')[urlFragmentPers + 1]
                                     : location.pathname
                             }
@@ -168,7 +168,7 @@ class MenuCompetence extends React.Component {
                                     this.perspectives.indexOf(
                                         location.pathname.slice(1).split('/')[urlFragmentPers]
                                     ) > -1
-                                    ? 'technologischer-absolvent/' +
+                                    ? '/technologischer-absolvent/' +
                                     location.pathname.slice(1).split('/')[urlFragmentPers + 1]
                                     : location.pathname
                             }
@@ -195,7 +195,7 @@ class MenuCompetence extends React.Component {
                                     this.perspectives.indexOf(
                                         location.pathname.slice(1).split('/')[urlFragmentPers]
                                     ) > -1
-                                    ? 'technologischer-professional/' +
+                                    ? '/technologischer-professional/' +
                                     location.pathname.slice(1).split('/')[urlFragmentPers + 1]
                                     : location.pathname
                             }
@@ -225,7 +225,7 @@ class MenuCompetence extends React.Component {
                                     this.perspectives.indexOf(
                                         location.pathname.slice(1).split('/')[urlFragmentPers]
                                     ) > -1
-                                    ? 'studenten/' +
+                                    ? '/studenten/' +
                                     location.pathname.slice(1).split('/')[urlFragmentPers + 1]
                                     : location.pathname
                             }
@@ -253,7 +253,7 @@ class MenuCompetence extends React.Component {
                                     this.perspectives.indexOf(
                                         location.pathname.slice(1).split('/')[urlFragmentPers]
                                     ) > -1
-                                    ? 'andere/' +
+                                    ? '/andere/' +
                                     location.pathname.slice(1).split('/')[urlFragmentPers + 1]
                                     : location.pathname
                             }

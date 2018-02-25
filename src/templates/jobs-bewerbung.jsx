@@ -91,9 +91,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt1Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -131,9 +131,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt3Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -174,9 +174,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt2Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -216,9 +216,9 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <p className="h4">
+                      <h4>
                         {graphQlResult.bewerbungsprozessSchritt4Titel}
-                      </p>
+                      </h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -251,9 +251,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt1Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -285,9 +285,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt3Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -319,9 +319,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt2Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">
@@ -353,9 +353,9 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <p className="h4">
+                  <h4>
                     {graphQlResult.bewerbungsprozessSchritt4Titel}
-                  </p>
+                  </h4>
                 </div>
               </div>
               <div className="row">

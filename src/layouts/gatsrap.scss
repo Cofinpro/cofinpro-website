@@ -49,7 +49,6 @@ $display4-size: 3.375rem !default;
 $font-family-sans-serif: apercu-regular-pro;
 $font-family-monospace: apercu-regular-pro;
 $font-family-base: apercu-regular-pro;
-
 $font-size-base: 0.875rem !default;
 $font-size-lg: 1.125rem !default;
 $font-size-sm: 0.875rem !default;
@@ -63,15 +62,14 @@ $h2-font-size-sm: 1.5rem;
 $h2-font-size-md: 2.25rem;
 $h4-font-size-sm: 1.125rem;
 $h4-font-size-md: 1.5rem;
-
 $h5-font-size-sm: 1rem;
 $h5-font-size-md: 1.125rem;
 $h6-font-size-sm: 0.75rem;
 $h6-font-size-md: 0.875rem;
-
 $headings-font-family: inherit !default;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -95,14 +93,12 @@ main {
     margin-top: 96px;
   }
 }
-
 p,
 li,
 .p {
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
-
   @include media-breakpoint-only(sm) {
     font-size: $font-size-sm;
   }
@@ -116,16 +112,14 @@ li,
     font-size: $font-size-lg;
   }
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 { 
+h6 {
   font-family: apercu-bold-pro;
-} 
-
+}
 .h1 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
@@ -144,7 +138,6 @@ h6 {
     font-size: $h1-font-size;
   }
 }
-
 .h2 {
   font-family: apercu-bold-pro;
   margin-bottom: 1rem;
@@ -164,7 +157,9 @@ h6 {
     font-size: $h2-font-size;
   }
 }
+
 .h4 {
+  font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
   }
@@ -199,6 +194,7 @@ h6 {
   }
 }
 .h5 {
+  font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
   }
@@ -216,6 +212,7 @@ h6 {
   }
 }
 .h6 {
+  font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
   }
@@ -230,6 +227,26 @@ h6 {
   }
   @include media-breakpoint-only(xl) {
     font-size: $h6-font-size;
+  }
+}
+p.h4,
+span.h4,
+div.h4 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h4-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h4-font-size;
   }
 }
 .news-content {
@@ -262,7 +279,6 @@ h6 {
 #nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
-  margin-top: 1rem;
   opacity: 0.95;
 }
 .min-view-height {
@@ -281,7 +297,6 @@ h6 {
     margin-top: 60px;
   }
 }
-
 .filler-box-240 {
   margin-top: 240px;
   @include media-breakpoint-only(xs) {
@@ -349,15 +364,12 @@ h6 {
 .img-md-padding {
   padding: 1.5rem;
 }
-
 .padding-sm {
   padding: 1rem;
 }
-
 .padding-md {
   padding: 2rem;
 }
-
 .padding-sm-top-bottom {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -372,9 +384,9 @@ h6 {
 }
 .padding-xl-top-bottom {
   padding-top: 6rem;
+
   padding-bottom: 6rem;
 }
-
 .padding-sm-bottom {
   padding-bottom: 1rem;
 }
@@ -390,7 +402,6 @@ h6 {
 .padding-md-top {
   padding-top: 2rem;
 }
-
 .padding-lg-top {
   padding-top: 4rem;
 }
@@ -410,6 +421,7 @@ h6 {
 .margin-sm-top {
   margin-top: 1rem;
 }
+
 .margin-md-top {
   margin-top: 2rem;
 }
@@ -422,23 +434,18 @@ h6 {
 .margin-md-bottom {
   margin-bottom: 2rem;
 }
-
 .margin-sm-right {
   margin-right: 1rem;
 }
-
 .margin-md-right {
   margin-right: 2rem;
 }
-
 .no-margin {
   margin: 0;
 }
-
 .no-margin-bottom {
   margin-bottom: 0rem;
 }
-
 .no-padding-bottom {
   padding-bottom: 0rem;
 }
@@ -539,7 +546,6 @@ h6 {
   }
   @include media-breakpoint-only(sm) {
     position: relative;
-
     left: 0rem;
     top: 1.5rem;
     z-index: 1000;
@@ -574,7 +580,6 @@ h6 {
     margin-bottom: 80px;
   }
 }
-
 .margin-100-bottom {
   margin-bottom: 100px;
   @include media-breakpoint-only(xs) {
@@ -629,11 +634,9 @@ h6 {
 .margin-10-top {
   margin-top: 10px;
 }
-
 .padding-20 {
   padding: 20px;
 }
-
 .stellenanzeige-call-to-action {
   p.p-small {
     font-size: 14px;
@@ -649,6 +652,7 @@ h6 {
 #desktop-links-tech p {
   margin-bottom: 0.4rem;
 }
+
 .border-primary-dashed {
   border: 3px dashed $orange;
 }
@@ -675,11 +679,9 @@ h6 {
 #links-tech {
   display: none;
 }
-
 .close {
   opacity: 1;
 }
-
 .container-md-full-width {
   @include media-breakpoint-only(xs) {
     padding-left: 0px;
@@ -703,17 +705,12 @@ h6 {
     max-width: 100%;
   }
 }
-
 .link-button {
-  
   span {
     border-style: dashed;
     border-width: 2px;
     border-radius: 0px;
   }
-
 }
-
 .image-news-middle-part {
-  
 }
