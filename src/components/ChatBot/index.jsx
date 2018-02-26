@@ -23,13 +23,12 @@ class ChatBot extends React.Component {
   componentDidMount() {
     if (this.state.messageList.length == 0) {
       this._sendMessage(
-        'Hi, ich bin der Recruiting ChatBot der Cofinpro. Ich kenne mich mit den folgenden Themen aus: Deine persönliche bzw. professionelle Weiterentwicklung bei uns oder auch wie der Bewerbungsprozess so abläuft. Fragen zu den Auswahltagen und Telefoninterviews kann ich natürlich auch benatworten. Mit den Themen wie Beratung oder unseren Projekten bin ich auch vertraut.'
+        'Hi, ich bin der Recruiting-Chatbot! Viele nette Cofinpros haben mich mit Wissen gefüttert, und seitdem ist es meine Lieblingsbeschäftigung, Deine Fragen zu beantworten. Über alles, was mit Deiner Karriere und Weiterentwicklung bei Cofinpro zu tun hat, weiß ich bestens Bescheid (auch wenn natürlich auch ich noch weiter dazulerne). Du willst mehr über unsere Beratung und den Bewerbungsprozess erfahren? Dann schieß einfach los.'
       )
     }
   }
 
   _onMessageWasSent(message) {
-    console.log(message)
     if (message.author === 'me') {
       var context = this
 
@@ -99,7 +98,7 @@ class ChatBot extends React.Component {
         <Launcher
           agentProfile={{
             teamName: 'Cofinpro ChatBot #beta',
-            imageUrl: pathPrefix + '/img/chat_icon.jpg',
+            imageUrl: null,
           }}
           onMessageWasSent={this._onMessageWasSent.bind(this)}
           messageList={this.state.messageList}

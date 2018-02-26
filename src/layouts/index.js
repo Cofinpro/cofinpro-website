@@ -114,14 +114,13 @@ class Template extends React.Component {
             {...this.props}
           />
         </header>{' '}
-        <main>
-          {children({ ...this.props })}
-        </main>
+        <main>{children({ ...this.props })}</main>
         <SiteFooter
           locationUpdate={this.state.locationUpdate}
           title={siteMetadata.title}
           {...this.props}
         />
+        <ChatBot {...this.props} />
       </div>
     )
   }
