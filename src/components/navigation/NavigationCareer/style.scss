@@ -11,29 +11,28 @@
 }
 
 #cofinpro-nav {
-
-  background:white;
+  background: white;
 
   opacity: 0.95;
 
   @include media-breakpoint-only(lg) {
     opacity: 1;
+    padding-bottom: 1rem;
   }
 
   @include media-breakpoint-only(xl) {
     opacity: 1;
+    padding-bottom: 1rem;
   }
 
   @include media-breakpoint-only(xs) {
     padding-bottom: 0px;
     padding-top: 0px;
-  
   }
 
   @include media-breakpoint-only(sm) {
     padding-bottom: 0px;
     padding-top: 0px;
-  
   }
 
   @include media-breakpoint-only(md) {
@@ -86,7 +85,6 @@
   }
 
   .nav-item.active {
-
     a {
       border-bottom: 1px solid black;
     }
@@ -128,12 +126,12 @@
 
   .title-menu {
     margin-left: auto;
-    padding-top: 12px; 
+    padding-top: 12px;
 
     @include media-breakpoint-only(xs) {
       font-size: 10px;
     }
-  
+
     @include media-breakpoint-only(sm) {
       font-size: 10px;
     }
@@ -192,13 +190,12 @@
   }
 
   .title-perspective {
-
     padding-top: 12px;
 
     @include media-breakpoint-only(xs) {
       font-size: 10px;
     }
-  
+
     @include media-breakpoint-only(sm) {
       font-size: 10px;
     }
@@ -234,5 +231,5 @@
 .header-gradient {
   height: 12px;
   /*opacity: 0.95;*/
-  background:white;
+  background: white;
 }
