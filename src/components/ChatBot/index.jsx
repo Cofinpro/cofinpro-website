@@ -89,12 +89,16 @@ class ChatBot extends React.Component {
   }
 
   render() {
-    const {} = this.props
+    const { locationUpdate } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    var urlFragmentPers = pathPrefix != null && pathPrefix.length > 2 ? 1 : 0
+
+    var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
+
     return (
-      <div>
+      <div hidden={locationUpdate === mainUrl ? true : false}>
         <Launcher
           agentProfile={{
             teamName: 'Cofinpro ChatBot #beta',

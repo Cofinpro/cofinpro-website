@@ -120,7 +120,7 @@ class Template extends React.Component {
           title={siteMetadata.title}
           {...this.props}
         />
-        <ChatBot {...this.props} />
+        <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />
       </div>
     )
   }
