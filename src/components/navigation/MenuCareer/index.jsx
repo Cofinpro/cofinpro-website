@@ -9,10 +9,8 @@ import './style.scss'
 import Kompetenzen from '../../../../data/Kompetenzen'
 
 class MenuCareer extends React.Component {
-
   componentDidMount() {
-
-    $(document).on('click', '.navbar-collapse.show', function (e) {
+    $(document).on('click', '.navbar-collapse.show', function(e) {
       if ($(e.target).is('a')) {
         $(this).collapse('hide')
       }
@@ -21,7 +19,6 @@ class MenuCareer extends React.Component {
     $('#close-button-menu').click(function() {
       $('#navbarSupportedContent').collapse('hide')
     })
-
   }
 
   constructor(props) {
@@ -74,12 +71,12 @@ class MenuCareer extends React.Component {
       {
         name: 'HOME',
         link: this.getPathPrefixPerspective() + '/landing',
-        pattern: '/.*/landing'
+        pattern: '/.*/landing',
       },
       {
         name: 'ÜBER UNS',
         link: pathPrefix + '/ueber-uns',
-        pattern: '/ueber-uns'
+        pattern: '/ueber-uns',
       },
       {
         name: 'DEINE KARRIERE',
@@ -114,16 +111,24 @@ class MenuCareer extends React.Component {
         id="navbarSupportedContent"
         hidden={locationUpdate === mainUrl ? true : false}
       >
-        <a href="https://www.cofinpro.de" className="navbar-brand d-none d-lg-inline">
-            <img
-              className="cofinpro-logo"
-              alt="Nächstes Bild"
-              src={pathPrefix + '/svg/logo_cofinpro.svg'}
-            />
+        <a
+          href="https://www.cofinpro.de"
+          className="navbar-brand d-none d-lg-inline"
+        >
+          <img
+            className="cofinpro-logo"
+            alt="Nächstes Bild"
+            src={pathPrefix + '/svg/logo_cofinpro.svg'}
+          />
         </a>
         <div className="d-block d-lg-none text-white margin-20-bottom">
           <p className="d-inline menu-body-header">MENÜ</p>
-          <button id="close-button-menu" type="button" className="close d-inline" aria-label="Close">
+          <button
+            id="close-button-menu"
+            type="button"
+            className="close d-inline"
+            aria-label="Close"
+          >
             <img
               className="close-button-img"
               alt="Menü schließen"
@@ -132,13 +137,13 @@ class MenuCareer extends React.Component {
           </button>
         </div>
         <ul
-          className="navbar-nav mr-auto"
+          className="navbar-nav w-100 justify-content-end"
           hidden={locationUpdate === mainUrl ? true : false}
         >
-          {menuItems.map(function (menuItem, i) {
+          {menuItems.map(function(menuItem, i) {
             return (
               <li
-                key={"navItemMenuCarrer-" + i}
+                key={'navItemMenuCarrer-' + i}
                 className={
                   location.pathname.match(menuItem.pattern)
                     ? 'nav-item active'
@@ -146,28 +151,31 @@ class MenuCareer extends React.Component {
                 }
               >
                 <Link
-                  key={"linkMenuCarrer-" + i}
+                  key={'linkMenuCarrer-' + i}
                   to={menuItem.link}
                   className="nav-link"
                 >
                   {menuItem.name}
                 </Link>
-                {i < menuItems.length - 1 &&
-                  <div key={"lineContainerMenuCarrer-" + i} className="d-inline">
+                {i < menuItems.length - 1 && (
+                  <div
+                    key={'lineContainerMenuCarrer-' + i}
+                    className="d-inline"
+                  >
                     <img
-                      key={"dottedLineMenuCarrer-" + i}
+                      key={'dottedLineMenuCarrer-' + i}
                       src={pathPrefix + '/img/nav-line.png'}
                       className="d-inline d-lg-inline nav-dotted-line"
                     />
                     <img
-                      key={"dottedLineVerticalMenuCarrer-" + i}
+                      key={'dottedLineVerticalMenuCarrer-' + i}
                       src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
                       className="d-block d-lg-none nav-dotted-line-vertical"
                     />
                   </div>
-                }
+                )}
               </li>
-            );
+            )
           })}
         </ul>
       </div>
