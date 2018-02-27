@@ -203,6 +203,9 @@ h6 {
     font-size: $h2-font-size;
   }
 }
+.h3 {
+  font-family: apercu-bold-pro;
+}
 .h4 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {

@@ -31,19 +31,19 @@ class SiteHeaderContent extends React.Component {
     var subTitleElement
 
     if (subtitleTag !== null && subtitleTag === 'h1') {
-      subTitleElement = <h1 className="h6">{subtitle}</h1>
+      subTitleElement = <h1 className="h6 normal-font">{subtitle}</h1>
     } else if (subtitleTag !== null && subtitleTag === 'h2') {
-      subTitleElement = <h2 className="h6">{subtitle}</h2>
+      subTitleElement = <h2 className="h6 normal-font">{subtitle}</h2>
     } else if (subtitleTag !== null && subtitleTag === 'h3') {
-      subTitleElement = <h3 className="h6">{subtitle}</h3>
+      subTitleElement = <h3 className="h6 normal-font">{subtitle}</h3>
     } else if (subtitleTag !== null && subtitleTag === 'h4') {
-      subTitleElement = <h4 className="h6">{subtitle}</h4>
+      subTitleElement = <h4 className="h6 normal-font">{subtitle}</h4>
     } else if (subtitleTag !== null && subtitleTag === 'h5') {
-      subTitleElement = <h5 className="h6">{subtitle}</h5>
+      subTitleElement = <h5 className="h6 normal-font">{subtitle}</h5>
     } else if (subtitleTag !== null && subtitleTag === 'h6') {
-      subTitleElement = <h6 className="h6">{subtitle}</h6>
+      subTitleElement = <h6 className="h6 normal-font">{subtitle}</h6>
     } else {
-      subTitleElement = <h1 className="h6">{subtitle}</h1>
+      subTitleElement = <h1 className="h6 normal-font">{subtitle}</h1>
     }
 
     return (
@@ -52,8 +52,14 @@ class SiteHeaderContent extends React.Component {
           <div className="col-12 col-md-8 text-center">
             {subTitleElement}
             {titleElement}
-            <ContentfulMarkdownText styleClasses="p-font-large-lg" text={text1} />
-            <ContentfulMarkdownText styleClasses="p-font-large-lg" text={text2} />
+            <ContentfulMarkdownText
+              styleClasses="p-font-large-lg"
+              text={text1}
+            />
+            <ContentfulMarkdownText
+              styleClasses="p-font-large-lg"
+              text={text2}
+            />
           </div>
         </div>
       </div>
