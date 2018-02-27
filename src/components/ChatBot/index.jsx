@@ -23,7 +23,7 @@ class ChatBot extends React.Component {
   componentDidMount() {
     if (this.state.messageList.length == 0) {
       this._sendMessage(
-        'Hi, ich bin der Recruiting-Chatbot! Viele nette Cofinpros haben mich mit Wissen gefüttert, und seitdem ist es meine Lieblingsbeschäftigung, Deine Fragen zu beantworten. Über alles, was mit Deiner Karriere und Weiterentwicklung bei Cofinpro zu tun hat, weiß ich bestens Bescheid (auch wenn natürlich auch ich noch weiter dazulerne). Du willst mehr über unsere Beratung und den Bewerbungsprozess erfahren? Dann schieß einfach los.'
+        'Hi, ich bin der Cofinpro Recruiting-Chatbot! Viele nette Cofinpros haben mich mit Wissen gefüttert, und seitdem ist es meine Lieblingsbeschäftigung, Deine Fragen zu beantworten. Über alles, was mit Deiner Karriere und Weiterentwicklung bei Cofinpro zu tun hat, weiß ich bestens Bescheid (auch wenn ich noch weiter dazulerne). Du willst mehr über unsere Beratung und den Bewerbungsprozess erfahren? Dann schieß einfach los.'
       )
     }
   }
