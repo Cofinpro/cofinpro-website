@@ -9,7 +9,14 @@ import ContentfulImage from '../ContentfulImage'
 
 class SiteHeader extends React.Component {
   render() {
-    const { title, imageFile, imageSmall, titleTag, titleImage } = this.props
+    const {
+      title,
+      imageFile,
+      imageSmall,
+      titleTag,
+      titleImage,
+      titleImageSmall,
+    } = this.props
 
     var titleElement
 
@@ -77,17 +84,24 @@ class SiteHeader extends React.Component {
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
                 {titleImage !== undefined && titleImage !== null ? (
-                  <Img sizes={titleImage.sizes} />
+                  <Img imgStyle="d-none d-md-block" sizes={titleImage.sizes} />
                 ) : (
                   <ContentfulImage
                     imageFile={imageFile}
                     styleClasses="img-fluid d-none d-md-block"
                   />
                 )}
-                <ContentfulImage
-                  imageFile={imageSmall}
-                  styleClasses="img-fluid d-block d-md-none"
-                />
+                {titleImageSmall !== undefined && titleImageSmall !== null ? (
+                  <Img
+                    imgStyle="d-block d-md-none"
+                    sizes={titleImageSmall.sizes}
+                  />
+                ) : (
+                  <ContentfulImage
+                    imageFile={imageSmall}
+                    styleClasses="img-fluid d-block d-md-none"
+                  />
+                )}
               </div>
             </div>
           ) : (
