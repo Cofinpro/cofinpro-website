@@ -64,7 +64,7 @@ class NavigationCareer extends React.Component {
 
         return '' + StorageHelper.getFromSessionStorage('perspective')
       } else {
-        return ''
+        return 'Kompetenz wählen'
       }
     }
   }
@@ -116,7 +116,7 @@ class NavigationCareer extends React.Component {
                   {this.getPerspectiveTitle()}
                 </span>*/}
                       <span className="title-perspective text-secondary d-inline navbar-text mr-sm-2">
-                        KOMPETENZ
+                        {this.getPerspectiveTitle()}
                       </span>
                       <button
                         id="perspectiveNavbarToggler"
