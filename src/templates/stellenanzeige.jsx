@@ -72,7 +72,7 @@ class StellenanzeigeTemplate extends React.Component {
           <div className="row d-block d-md-none">
             <div className="col-12 text-center padding-md-bottom">
               <img
-                src={pathPrefix + '/img/Group_5.png'}
+                src={pathPrefix + '/img/stellenangebote_m.jpg'}
                 className="img-fluid"
                 alt="Icons Stellenangebot"
               />
