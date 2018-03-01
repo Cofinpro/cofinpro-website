@@ -9,7 +9,15 @@ import ContentfulImage from '../ContentfulImage'
 
 class NewsPreview extends React.Component {
   render() {
-    const { createdAt, title, description, newsId, url, imageFile } = this.props
+    const {
+      createdAt,
+      title,
+      description,
+      newsId,
+      url,
+      imageFile,
+      imageFileSharp,
+    } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -17,7 +25,11 @@ class NewsPreview extends React.Component {
     return (
       <div>
         <Link to={pathPrefix + '/pinnwand/' + url}>
-          <Img sizes={imageFile.sizes} />
+          {imageFileSharp !== undefined && imageFileSharp !== null ? (
+            <Img sizes={imageFileSharp != null ? imageFileSharp.sizes : null} />
+          ) : (
+            <ContentfulImage imageFile={imageFile} styleClasses="img-fluid" />
+          )}
         </Link>
         <p className="news-content margin-20-top">
           <span className="news-date">{createdAt}</span>

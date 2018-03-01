@@ -31,6 +31,7 @@ class NewsTemplate extends React.Component {
 
         <SiteHeader
           title={news.ueberschrift}
+          imageFile={news.titelbild}
           titleImage={news.titelbildSharp}
         />
 
