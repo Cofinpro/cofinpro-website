@@ -854,6 +854,8 @@ function refreshImages(
         }
       `
     ).then(result => {
+      var itemsProcessed = 0
+
       _.each(result.data.allContentfulAsset.edges, edge => {
         var fileName = edge.node.file.fileName
         var newFileName =
@@ -866,26 +868,39 @@ function refreshImages(
 
           var url = 'http:' + edge.node.file.url
 
-          getAndStoreAssetFromContentful(url, path)
+          console.log('getting file from url:' + url)
+          console.log('storing file under path:' + path)
+
+          axios({
+            method: 'get',
+            url: url,
+            responseType: 'stream',
+          }).then(function(response) {
+            response.data.pipe(fs.createWriteStream(path))
+            itemsProcessed++
+
+            if (
+              itemsProcessed === result.data.allContentfulAsset.edges.length
+            ) {
+              setTimeout(function() {
+                callback(
+                  null,
+                  graphql,
+                  createPage,
+                  createRedirect,
+                  stellenAnzeigen,
+                  news
+                )
+                console.log('timeout completed')
+              }, 1000)
+            }
+          })
+        } else {
+          itemsProcessed++
         }
       })
-
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
     })
   }
-}
-
-function getAndStoreAssetFromContentful(_url, _path) {
-  console.log('getting file from url:' + _url)
-  console.log('storing file under path:' + _path)
-
-  axios({
-    method: 'get',
-    url: _url,
-    responseType: 'stream',
-  }).then(function(response) {
-    response.data.pipe(fs.createWriteStream(_path))
-  })
 }
 
 function existsAsset(_path) {
