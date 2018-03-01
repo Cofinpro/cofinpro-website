@@ -17,7 +17,7 @@ class NewsPreview extends React.Component {
     return (
       <div>
         <Link to={pathPrefix + '/pinnwand/' + url}>
-          <Img sizes={imageFile.sizes} />
+          <Img sizes={imageFile != null ? imageFile.sizes : null} />
         </Link>
         <p className="news-content margin-20-top">
           <span className="news-date">{createdAt}</span>
