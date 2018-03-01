@@ -84,7 +84,7 @@ class SiteHeader extends React.Component {
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
                 {titleImage !== undefined && titleImage !== null ? (
-                  <Img imgStyle="d-none d-md-block" sizes={titleImage.sizes} />
+                  <Img sizes={titleImage.sizes} />
                 ) : (
                   <ContentfulImage
                     imageFile={imageFile}
