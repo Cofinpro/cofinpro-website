@@ -84,7 +84,10 @@ class SiteHeader extends React.Component {
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
                 {titleImage !== undefined && titleImage !== null ? (
-                  <Img sizes={titleImage.sizes} />
+                  <div>
+                    <div className="image-overlay-gradient" />
+                    <Img sizes={titleImage.sizes} />
+                  </div>
                 ) : (
                   <ContentfulImage
                     imageFile={imageFile}

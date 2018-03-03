@@ -19,7 +19,7 @@ const pathPrefix = ''
 // bootstrap is finished so you have access to any information necessary to
 // programmatically create pages.
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect, createNodeField } = boundActionCreators
+  const { createPage, createRedirect } = boundActionCreators
 
   moment.locale('de')
 
@@ -817,6 +817,8 @@ function refreshImages(
   news,
   callback
 ) {
+  console.log('started image processing.')
+
   if (runWithTestData) {
     _.each(testDataAllContentfulAsset.data.allContentfulAsset.edges, edge => {
       var fileName = edge.node.file.fileName
@@ -863,6 +865,8 @@ function refreshImages(
           fileName.substring(fileName.lastIndexOf('.'), fileName.length)
         var path = './static/img/contentful/' + newFileName
 
+        console.log('checking if image exists under:' + path)
+
         if (!existsAsset(path)) {
           console.log('asset for id:' + edge.node.id + ' not found.')
 
@@ -897,6 +901,20 @@ function refreshImages(
           })
         } else {
           itemsProcessed++
+
+          if (itemsProcessed === result.data.allContentfulAsset.edges.length) {
+            setTimeout(function() {
+              callback(
+                null,
+                graphql,
+                createPage,
+                createRedirect,
+                stellenAnzeigen,
+                news
+              )
+              console.log('timeout completed')
+            }, 1000)
+          }
         }
       })
     })

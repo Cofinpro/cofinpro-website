@@ -1,0 +1,11 @@
+.image-overlay-gradient {
+  z-index: 2;
+  position: absolute;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0) 5%,
+    rgba(255, 255, 255, 0.3) 95%
+  );
+  height: 100%;
+  width: 100%;
+}
