@@ -100,13 +100,21 @@ class NavigationCareer extends React.Component {
                   className="navbar"
                   hidden={locationUpdate === mainUrl ? true : false}
                 >
+                  <div>
+                    <a
+                      className="text-muted d-inline d-lg-none"
+                      href="https://www.cofinpro.de"
+                    >
+                      Zur Hauptseite
+                    </a>
+                  </div>
                   <div className="d-flex w-100 justify-content-between align-items-center">
                     <div>
                       <a
                         className="text-muted d-none d-lg-inline"
                         href="https://www.cofinpro.de"
                       >
-                        &lt;- Zur Hauptseite
+                        Zur Hauptseite
                       </a>
                       <a
                         href="https://www.cofinpro.de"
