@@ -9,7 +9,29 @@ class ChatBot extends React.Component {
   constructor() {
     super()
     this.state = {
-      messageList: [],
+      messageList: [
+        {
+          type: 'text',
+          author: 'them',
+          data: { text: 'Hi, ich bin der Cofinpro Recruiting-Chatbot!' },
+        },
+        {
+          type: 'text',
+          author: 'them',
+          data: {
+            text:
+              'Viele nette Cofinpros haben mich mit Wissen gefüttert, und seitdem ist es meine Lieblingsbeschäftigung, Deine Fragen zu beantworten. Über alles, was mit Deiner Karriere und Weiterentwicklung bei Cofinpro zu tun hat, weiß ich bestens Bescheid (auch wenn ich noch weiter dazulerne).',
+          },
+        },
+        {
+          type: 'text',
+          author: 'them',
+          data: {
+            text:
+              'Du willst mehr über unsere Beratung und den Bewerbungsprozess erfahren? Dann schieß einfach los.',
+          },
+        },
+      ],
       newMessagesCount: 0,
       isOpen: false,
       client:
@@ -18,13 +40,6 @@ class ChatBot extends React.Component {
               accessToken: 'fc4365c0c0cb4a8693382023a77ad9ab',
             })
           : null,
-    }
-  }
-  componentDidMount() {
-    if (this.state.messageList.length == 0) {
-      this._sendMessage(
-        'Hi, ich bin der Cofinpro Recruiting-Chatbot! Viele nette Cofinpros haben mich mit Wissen gefüttert, und seitdem ist es meine Lieblingsbeschäftigung, Deine Fragen zu beantworten. Über alles, was mit Deiner Karriere und Weiterentwicklung bei Cofinpro zu tun hat, weiß ich bestens Bescheid (auch wenn ich noch weiter dazulerne). Du willst mehr über unsere Beratung und den Bewerbungsprozess erfahren? Dann schieß einfach los.'
-      )
     }
   }
 

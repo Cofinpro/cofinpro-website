@@ -19,7 +19,7 @@ const pathPrefix = ''
 // bootstrap is finished so you have access to any information necessary to
 // programmatically create pages.
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect, createNodeField } = boundActionCreators
+  const { createPage, createRedirect } = boundActionCreators
 
   moment.locale('de')
 
@@ -817,6 +817,8 @@ function refreshImages(
   news,
   callback
 ) {
+  console.log('started image processing.')
+
   if (runWithTestData) {
     _.each(testDataAllContentfulAsset.data.allContentfulAsset.edges, edge => {
       var fileName = edge.node.file.fileName
@@ -854,6 +856,8 @@ function refreshImages(
         }
       `
     ).then(result => {
+      var itemsProcessed = 0
+
       _.each(result.data.allContentfulAsset.edges, edge => {
         var fileName = edge.node.file.fileName
         var newFileName =
@@ -861,31 +865,60 @@ function refreshImages(
           fileName.substring(fileName.lastIndexOf('.'), fileName.length)
         var path = './static/img/contentful/' + newFileName
 
+        console.log('checking if image exists under:' + path)
+
         if (!existsAsset(path)) {
           console.log('asset for id:' + edge.node.id + ' not found.')
 
           var url = 'http:' + edge.node.file.url
 
-          getAndStoreAssetFromContentful(url, path)
+          console.log('getting file from url:' + url)
+          console.log('storing file under path:' + path)
+
+          axios({
+            method: 'get',
+            url: url,
+            responseType: 'stream',
+          }).then(function(response) {
+            response.data.pipe(fs.createWriteStream(path))
+            itemsProcessed++
+
+            if (
+              itemsProcessed === result.data.allContentfulAsset.edges.length
+            ) {
+              setTimeout(function() {
+                callback(
+                  null,
+                  graphql,
+                  createPage,
+                  createRedirect,
+                  stellenAnzeigen,
+                  news
+                )
+                console.log('timeout completed')
+              }, 1000)
+            }
+          })
+        } else {
+          itemsProcessed++
+
+          if (itemsProcessed === result.data.allContentfulAsset.edges.length) {
+            setTimeout(function() {
+              callback(
+                null,
+                graphql,
+                createPage,
+                createRedirect,
+                stellenAnzeigen,
+                news
+              )
+              console.log('timeout completed')
+            }, 1000)
+          }
         }
       })
-
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
     })
   }
-}
-
-function getAndStoreAssetFromContentful(_url, _path) {
-  console.log('getting file from url:' + _url)
-  console.log('storing file under path:' + _path)
-
-  axios({
-    method: 'get',
-    url: _url,
-    responseType: 'stream',
-  }).then(function(response) {
-    response.data.pipe(fs.createWriteStream(_path))
-  })
 }
 
 function existsAsset(_path) {
