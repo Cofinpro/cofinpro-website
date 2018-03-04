@@ -20,7 +20,7 @@ class StellenmarktTemplate extends React.Component {
   render() {
     const { location } = this.props
 
-    const graphQlResult = this.props.data.contentfulStellenmarkt
+    const graphQlResult = this.props.data.contentfulSeiteStellenmarkt
 
     const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
 
@@ -121,7 +121,7 @@ export default StellenmarktTemplate
 
 export const pageQuery = graphql`
   query stellenmarktQuery($id: String!) {
-    contentfulStellenmarkt(id: { eq: $id }) {
+    contentfulSeiteStellenmarkt(id: { eq: $id }) {
       id
       metaData {
         id

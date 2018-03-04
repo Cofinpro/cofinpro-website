@@ -31,7 +31,7 @@ class WorkLifeTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulWorkLife
+    const graphQlResult = this.props.data.contentfulSeiteWorkLife
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -143,7 +143,7 @@ export default WorkLifeTemplate
 
 export const pageQuery = graphql`
   query workLifeQuery($id: String!) {
-    contentfulWorkLife(id: { eq: $id }) {
+    contentfulSeiteWorkLife(id: { eq: $id }) {
       metaData {
         title
         keywords {

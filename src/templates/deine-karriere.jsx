@@ -21,7 +21,7 @@ class LaufbahnTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulDeineKarriere
+    const graphQlResult = this.props.data.contentfulSeiteDeineKarriere
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -161,7 +161,7 @@ export default LaufbahnTemplate
 
 export const pageQuery = graphql`
   query deineKarriereQuery($id: String!) {
-    contentfulDeineKarriere(id: { eq: $id }) {
+    contentfulSeiteDeineKarriere(id: { eq: $id }) {
       id
       metaData {
         id

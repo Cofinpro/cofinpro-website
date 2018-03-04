@@ -28,7 +28,7 @@ class LandingTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulStartseitePerspektive
+    const graphQlResult = this.props.data.contentfulSeiteLandingPerspektive
 
     const anzeigen = this.props.pathContext.anzeigen
 
@@ -286,7 +286,7 @@ export default LandingTemplate
 
 export const pageQuery = graphql`
   query startseitePerspektiveQuery($id: String!) {
-    contentfulStartseitePerspektive(id: { eq: $id }) {
+    contentfulSeiteLandingPerspektive(id: { eq: $id }) {
       id
       perspektive {
         name

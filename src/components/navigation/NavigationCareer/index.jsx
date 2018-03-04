@@ -102,7 +102,7 @@ class NavigationCareer extends React.Component {
                 >
                   <div>
                     <a
-                      className="text-muted d-inline d-lg-none"
+                      className="text-muted d-inline d-lg-none small-main-page-nav"
                       href="https://www.cofinpro.de"
                     >
                       Zur Hauptseite
@@ -135,8 +135,11 @@ class NavigationCareer extends React.Component {
                         {/*<span className="title-perspective text-secondary d-none d-md-inline navbar-text">
                   {this.getPerspectiveTitle()}
                 </span>*/}
-                        <span className="title-perspective text-secondary d-inline navbar-text mr-sm-2">
+                        <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-lg-inline">
                           {this.getPerspectiveTitle()}
+                        </span>
+                        <span className="title-perspective text-secondary navbar-text mr-sm-2 d-inline d-lg-none">
+                          KOMPETENZ
                         </span>
                         <button
                           id="perspectiveNavbarToggler"

@@ -16,6 +16,7 @@ class SiteHeader extends React.Component {
       titleTag,
       titleImage,
       titleImageSmall,
+      isOverlayActive,
     } = this.props
 
     var titleElement
@@ -84,8 +85,10 @@ class SiteHeader extends React.Component {
             <div className="row">
               <div className="col-12 col-lg-10 offset-lg-1">
                 {titleImage !== undefined && titleImage !== null ? (
-                  <div>
-                    <div className="image-overlay-gradient" />
+                  <div className="d-none d-md-block">
+                    {isOverlayActive !== undefined && isOverlayActive ? (
+                      <div className="image-overlay-gradient" />
+                    ) : null}
                     <Img sizes={titleImage.sizes} />
                   </div>
                 ) : (
