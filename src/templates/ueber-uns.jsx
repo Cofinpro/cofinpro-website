@@ -29,7 +29,7 @@ class UeberUnsTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulUeberUns
+    const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -117,7 +117,6 @@ class UeberUnsTemplate extends React.Component {
               </p>
             </div>
           </div>
-
         </div>
 
         <div className="container">
@@ -315,7 +314,9 @@ class UeberUnsTemplate extends React.Component {
               <p className="h4 padding-sm-bottom">
                 {graphQlResult.kollegenZitat.kollegenZitat}
               </p>
-              <p className="p-font-large-md">{graphQlResult.kollegenAuthorZitat}</p>
+              <p className="p-font-large-md">
+                {graphQlResult.kollegenAuthorZitat}
+              </p>
             </div>
           </div>
           <div className="row">
@@ -437,7 +438,7 @@ export default UeberUnsTemplate
 
 export const pageQuery = graphql`
   query ueberUnsQuery($id: String!) {
-    contentfulUeberUns(id: { eq: $id }) {
+    contentfulSeiteUeberUns(id: { eq: $id }) {
       id
       metaData {
         title

@@ -33,6 +33,7 @@ class NewsTemplate extends React.Component {
           title={news.ueberschrift}
           imageFile={news.titelbild}
           titleImage={news.titelbildSharp}
+          isOverlayActive={true}
         />
 
         <div className="container padding-sm-top-bottom">

@@ -78,7 +78,7 @@ function getNews(
   } else {
     graphql(`
       {
-        allContentfulNews(
+        allContentfulSeiteNews(
           sort: { fields: [datumFuerDieAnzeige], order: DESC }
         ) {
           edges {
@@ -134,7 +134,7 @@ function getNews(
         }
       }
     `).then(result => {
-      news = result.data.allContentfulNews.edges
+      news = result.data.allContentfulSeiteNews.edges
 
       news.forEach(function(object, index) {
         if (object.node.datumFuerDieAnzeige != null) {
@@ -285,9 +285,11 @@ function getStellenanzeigen(
 
     callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
   } else {
+    console.log('starting graphql query for stellenanezigen.')
+
     graphql(`
       {
-        allContentfulStellenanzeige {
+        allContentfulSeiteStellenanzeige {
           edges {
             node {
               id
@@ -342,7 +344,9 @@ function getStellenanzeigen(
         }
       }
     `).then(result => {
-      stellenAnzeigen = result.data.allContentfulStellenanzeige.edges
+      stellenAnzeigen = result.data.allContentfulSeiteStellenanzeige.edges
+
+      console.log('finished graphql query for stellenanezigen.')
 
       callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
     })
@@ -393,7 +397,7 @@ function createStellenmarkt(
   graphql(
     `
       {
-        allContentfulStellenmarkt(limit: 1000) {
+        allContentfulSeiteStellenmarkt(limit: 1000) {
           edges {
             node {
               id
@@ -405,7 +409,7 @@ function createStellenmarkt(
   ).then(result => {
     const template = path.resolve(`./src/templates/stellenmarkt.jsx`)
 
-    _.each(result.data.allContentfulStellenmarkt.edges, edge => {
+    _.each(result.data.allContentfulSeiteStellenmarkt.edges, edge => {
       createPage({
         path: `/jobs`,
         component: slash(template),
@@ -433,7 +437,7 @@ function createUeberUns(
   graphql(
     `
       {
-        allContentfulUeberUns(limit: 1000) {
+        allContentfulSeiteUeberUns(limit: 1000) {
           edges {
             node {
               id
@@ -445,7 +449,7 @@ function createUeberUns(
   ).then(result => {
     const ueberUnsTemplate = path.resolve(`./src/templates/ueber-uns.jsx`)
 
-    _.each(result.data.allContentfulUeberUns.edges, edge => {
+    _.each(result.data.allContentfulSeiteUeberUns.edges, edge => {
       createPage({
         path: `/ueber-uns`,
         component: slash(ueberUnsTemplate),
@@ -472,7 +476,7 @@ function createDeineKarriere(
   graphql(
     `
       {
-        allContentfulDeineKarriere(limit: 1000) {
+        allContentfulSeiteDeineKarriere(limit: 1000) {
           edges {
             node {
               id
@@ -489,7 +493,7 @@ function createDeineKarriere(
       `./src/templates/deine-karriere.jsx`
     )
 
-    _.each(result.data.allContentfulDeineKarriere.edges, edge => {
+    _.each(result.data.allContentfulSeiteDeineKarriere.edges, edge => {
       createPage({
         path: `${edge.node.perspektive.name}/deine-karriere`,
         component: slash(deineKarriereTemplate),
@@ -516,12 +520,22 @@ function createDeineEntwicklung(
   graphql(
     `
       {
-        allContentfulDeineEntwicklung(limit: 1000) {
+        allContentfulSeiteDeineEntwicklung(limit: 1000) {
           edges {
             node {
               id
               perspektive {
                 name
+              }
+              titelbild {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
               }
             }
           }
@@ -529,25 +543,76 @@ function createDeineEntwicklung(
       }
     `
   ).then(result => {
+    var resultMainQuery = result
+
     const deineEntwicklungTemplate = path.resolve(
       `./src/templates/deine-entwicklung.jsx`
     )
 
-    _.each(result.data.allContentfulDeineEntwicklung.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/deine-entwicklung`,
-        component: slash(deineEntwicklungTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
+    var itemsProcessed = 0
 
-      console.log(
-        `created page ${edge.node.perspektive.name}/deine-entwicklung`
-      )
-    })
+    resultMainQuery.data.allContentfulSeiteDeineEntwicklung.edges.forEach(
+      (item, index, array) => {
+        graphql(
+          `
+        {
+        titelbildSharp: imageSharp(id: { regex: "/` +
+            item.node.titelbild.id +
+            `/" }) {
+          sizes(maxWidth: 2000, maxHeight: 1250, quality: 60, cropFocus: CENTER) {
+            src
+            srcSet
+            srcWebp
+            srcSetWebp
+            originalImg
+            originalName
+            base64
+            aspectRatio
+            sizes
+          }
+        }
+      }          
+    `
+        ).then(result => {
+          item.node.titelbildSharp = result.data.titelbildSharp
 
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+          itemsProcessed++
+          if (
+            itemsProcessed ===
+            resultMainQuery.data.allContentfulSeiteDeineEntwicklung.edges.length
+          ) {
+            console.log('finished titelbild processing deine entwicklung.')
+
+            _.each(
+              resultMainQuery.data.allContentfulSeiteDeineEntwicklung.edges,
+              edge => {
+                createPage({
+                  path: `${edge.node.perspektive.name}/deine-entwicklung`,
+                  component: slash(deineEntwicklungTemplate),
+                  context: {
+                    id: edge.node.id,
+                    titelbildSharp: edge.node.titelbildSharp,
+                  },
+                })
+
+                console.log(
+                  `created page ${edge.node.perspektive.name}/deine-entwicklung`
+                )
+              }
+            )
+
+            callback(
+              null,
+              graphql,
+              createPage,
+              createRedirect,
+              stellenAnzeigen,
+              news
+            )
+          }
+        })
+      }
+    )
   })
 }
 
@@ -562,7 +627,7 @@ function createStart(
   graphql(
     `
       {
-        allContentfulStartseitePerspektive(limit: 1000) {
+        allContentfulSeiteLandingPerspektive(limit: 1000) {
           edges {
             node {
               id
@@ -586,7 +651,7 @@ function createStart(
       }
     }
 
-    _.each(result.data.allContentfulStartseitePerspektive.edges, edge => {
+    _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
       createPage({
         path: `${edge.node.perspektive.name}/landing`,
         component: slash(landingTemplate),
@@ -615,7 +680,7 @@ function createGehaltBenefits(
   graphql(
     `
       {
-        allContentfulGehaltBenefits(limit: 1000) {
+        allContentfulSeiteGehaltBenefits(limit: 1000) {
           edges {
             node {
               id
@@ -632,7 +697,7 @@ function createGehaltBenefits(
       `./src/templates/gehalt-beteiligung.jsx`
     )
 
-    _.each(result.data.allContentfulGehaltBenefits.edges, edge => {
+    _.each(result.data.allContentfulSeiteGehaltBenefits.edges, edge => {
       createPage({
         path: `${edge.node.perspektive.name}/gehalt-beteiligung`,
         component: slash(gehaltBeteiligungTemplate),
@@ -661,7 +726,7 @@ function createWorkLife(
   graphql(
     `
       {
-        allContentfulWorkLife(limit: 1000) {
+        allContentfulSeiteWorkLife(limit: 1000) {
           edges {
             node {
               id
@@ -673,7 +738,7 @@ function createWorkLife(
   ).then(result => {
     const workLifeTemplate = path.resolve(`./src/templates/work-life.jsx`)
 
-    _.each(result.data.allContentfulWorkLife.edges, edge => {
+    _.each(result.data.allContentfulSeiteWorkLife.edges, edge => {
       createPage({
         path: `/work-life`,
         component: slash(workLifeTemplate),
@@ -700,7 +765,7 @@ function createJobsBewerbung(
   graphql(
     `
       {
-        allContentfulJobsBewerbung(limit: 1000) {
+        allContentfulSeiteJobsBewerbung(limit: 1000) {
           edges {
             node {
               id
@@ -712,7 +777,7 @@ function createJobsBewerbung(
   ).then(result => {
     const template = path.resolve(`./src/templates/jobs-bewerbung.jsx`)
 
-    _.each(result.data.allContentfulJobsBewerbung.edges, edge => {
+    _.each(result.data.allContentfulSeiteJobsBewerbung.edges, edge => {
       createPage({
         path: `/jobs-bewerbung`,
         component: slash(template),
@@ -740,7 +805,7 @@ function createStartseite(
   graphql(
     `
       {
-        allContentfulWahlDerKompetenz(limit: 1) {
+        allContentfulSeiteStartseiteKarriere(limit: 1) {
           edges {
             node {
               id
@@ -752,7 +817,7 @@ function createStartseite(
   ).then(result => {
     const template = path.resolve(`./src/templates/startseite.jsx`)
 
-    _.each(result.data.allContentfulWahlDerKompetenz.edges, edge => {
+    _.each(result.data.allContentfulSeiteStartseiteKarriere.edges, edge => {
       createPage({
         path: `/`,
         component: slash(template),
@@ -763,47 +828,6 @@ function createStartseite(
 
       console.log(`created page /index.jsx`)
     })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createRedirects(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        site {
-          siteMetadata {
-            redirects {
-              from
-              to
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    for (var i = 0; i < result.data.site.siteMetadata.redirects.length; ++i) {
-      createRedirect({
-        fromPath: pathPrefix + result.data.site.siteMetadata.redirects[i].from,
-        redirectInBrowser: true,
-        toPath: pathPrefix + result.data.site.siteMetadata.redirects[i].to,
-      })
-
-      console.log(
-        `created redirect from:` +
-          result.data.site.siteMetadata.redirects[i].from +
-          ' to:' +
-          result.data.site.siteMetadata.redirects[i].to
-      )
-    }
 
     callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
   })

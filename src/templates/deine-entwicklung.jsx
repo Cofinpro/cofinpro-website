@@ -21,7 +21,9 @@ class DeineEntwicklungTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulDeineEntwicklung
+    const graphQlResult = this.props.data.contentfulSeiteDeineEntwicklung
+
+    const titelbildSharp = this.props.pathContext.titelbildSharp
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -31,6 +33,7 @@ class DeineEntwicklungTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
+          titleImage={titelbildSharp}
           imageFile={graphQlResult.titelbild}
           imageSmall={graphQlResult.titelbildKlein}
         />
@@ -98,7 +101,7 @@ export default DeineEntwicklungTemplate
 
 export const pageQuery = graphql`
   query deineEntwicklungQuery($id: String!) {
-    contentfulDeineEntwicklung(id: { eq: $id }) {
+    contentfulSeiteDeineEntwicklung(id: { eq: $id }) {
       id
       perspektive {
         name

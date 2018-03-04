@@ -26,7 +26,7 @@ class JobsBewerbungTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulJobsBewerbung
+    const graphQlResult = this.props.data.contentfulSeiteJobsBewerbung
     const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
 
     const { location } = this.props
@@ -91,9 +91,7 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <h4>
-                        {graphQlResult.bewerbungsprozessSchritt1Titel}
-                      </h4>
+                      <h4>{graphQlResult.bewerbungsprozessSchritt1Titel}</h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -131,9 +129,7 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <h4>
-                        {graphQlResult.bewerbungsprozessSchritt3Titel}
-                      </h4>
+                      <h4>{graphQlResult.bewerbungsprozessSchritt3Titel}</h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -174,9 +170,7 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <h4>
-                        {graphQlResult.bewerbungsprozessSchritt2Titel}
-                      </h4>
+                      <h4>{graphQlResult.bewerbungsprozessSchritt2Titel}</h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -216,9 +210,7 @@ class JobsBewerbungTemplate extends React.Component {
                     </div>
 
                     <div className="col-12 col-md-8">
-                      <h4>
-                        {graphQlResult.bewerbungsprozessSchritt4Titel}
-                      </h4>
+                      <h4>{graphQlResult.bewerbungsprozessSchritt4Titel}</h4>
                     </div>
                     <div className="col-12 col-md-2" />
                   </div>
@@ -251,9 +243,7 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <h4>
-                    {graphQlResult.bewerbungsprozessSchritt1Titel}
-                  </h4>
+                  <h4>{graphQlResult.bewerbungsprozessSchritt1Titel}</h4>
                 </div>
               </div>
               <div className="row">
@@ -285,9 +275,7 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <h4>
-                    {graphQlResult.bewerbungsprozessSchritt3Titel}
-                  </h4>
+                  <h4>{graphQlResult.bewerbungsprozessSchritt3Titel}</h4>
                 </div>
               </div>
               <div className="row">
@@ -319,9 +307,7 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <h4>
-                    {graphQlResult.bewerbungsprozessSchritt2Titel}
-                  </h4>
+                  <h4>{graphQlResult.bewerbungsprozessSchritt2Titel}</h4>
                 </div>
               </div>
               <div className="row">
@@ -353,9 +339,7 @@ class JobsBewerbungTemplate extends React.Component {
                 </div>
 
                 <div className="col-10">
-                  <h4>
-                    {graphQlResult.bewerbungsprozessSchritt4Titel}
-                  </h4>
+                  <h4>{graphQlResult.bewerbungsprozessSchritt4Titel}</h4>
                 </div>
               </div>
               <div className="row">
@@ -422,7 +406,7 @@ export default JobsBewerbungTemplate
 
 export const pageQuery = graphql`
   query jobsBewerbungQuery($id: String!) {
-    contentfulJobsBewerbung(id: { eq: $id }) {
+    contentfulSeiteJobsBewerbung(id: { eq: $id }) {
       metaData {
         title
         keywords {

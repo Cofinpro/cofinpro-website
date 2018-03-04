@@ -22,7 +22,7 @@ class GehaltBeteiligungTemplate extends React.Component {
   }
 
   render() {
-    const graphQlResult = this.props.data.contentfulGehaltBenefits
+    const graphQlResult = this.props.data.contentfulSeiteGehaltBenefits
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -341,7 +341,7 @@ export default GehaltBeteiligungTemplate
 
 export const pageQuery = graphql`
   query gehaltBenefitsQuery($id: String!) {
-    contentfulGehaltBenefits(id: { eq: $id }) {
+    contentfulSeiteGehaltBenefits(id: { eq: $id }) {
       id
       metaData {
         id

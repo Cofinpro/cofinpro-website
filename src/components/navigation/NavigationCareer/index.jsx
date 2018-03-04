@@ -100,62 +100,86 @@ class NavigationCareer extends React.Component {
                   className="navbar"
                   hidden={locationUpdate === mainUrl ? true : false}
                 >
-                  <div className="d-flex w-100 justify-content-between justify-content-lg-end align-items-center">
+                  <div>
                     <a
+                      className="text-muted d-inline d-lg-none small-main-page-nav"
                       href="https://www.cofinpro.de"
-                      className="navbar-brand d-inline d-lg-none"
                     >
-                      <img
-                        className="cofinpro-logo"
-                        alt="Nächstes Bild"
-                        src={pathPrefix + '/svg/logo_cofinpro.svg'}
-                      />
+                      Zur Hauptseite
                     </a>
-                    <form className="form-inline">
-                      {/*<span className="title-perspective text-secondary d-none d-md-inline navbar-text">
+                  </div>
+                  <div className="d-flex w-100 justify-content-between align-items-center">
+                    <div>
+                      <a
+                        className="text-muted d-none d-lg-inline"
+                        href="https://www.cofinpro.de"
+                      >
+                        Zur Hauptseite
+                      </a>
+                      <a
+                        href="https://www.cofinpro.de"
+                        className="navbar-brand d-inline d-lg-none"
+                      >
+                        <img
+                          className="cofinpro-logo"
+                          alt="Nächstes Bild"
+                          src={pathPrefix + '/svg/logo_cofinpro.svg'}
+                        />
+                      </a>
+                    </div>
+
+                    <div />
+
+                    <div>
+                      <form className="form-inline">
+                        {/*<span className="title-perspective text-secondary d-none d-md-inline navbar-text">
                   {this.getPerspectiveTitle()}
                 </span>*/}
-                      <span className="title-perspective text-secondary d-inline navbar-text mr-sm-2">
-                        {this.getPerspectiveTitle()}
-                      </span>
-                      <button
-                        id="perspectiveNavbarToggler"
-                        className="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#nav-menu-competence"
-                        aria-controls="nav-menu-competence"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                      >
-                        <img
-                          alt="Menü Icon"
-                          src={
-                            pathPrefix +
-                            '/svg/icon_menu_perspektive_toggler.svg'
-                          }
-                        />
-                      </button>
-                      <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
-                        MENÜ
-                      </span>
-                      <button
-                        id="menuNavbarToggler"
-                        hidden={locationUpdate === mainUrl ? true : false}
-                        className="navbar-toggler d-inline d-lg-none"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                      >
-                        <img
-                          alt="Menü Icon"
-                          src={pathPrefix + '/svg/icon_menu_toggler.svg'}
-                        />
-                      </button>
-                    </form>
+                        <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-lg-inline">
+                          {this.getPerspectiveTitle()}
+                        </span>
+                        <span className="title-perspective text-secondary navbar-text mr-sm-2 d-inline d-lg-none">
+                          KOMPETENZ
+                        </span>
+                        <button
+                          id="perspectiveNavbarToggler"
+                          className="navbar-toggler"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#nav-menu-competence"
+                          aria-controls="nav-menu-competence"
+                          aria-expanded="false"
+                          aria-label="Toggle navigation"
+                        >
+                          <img
+                            alt="Menü Icon"
+                            src={
+                              pathPrefix +
+                              '/svg/icon_menu_perspektive_toggler.svg'
+                            }
+                          />
+                        </button>
+                        <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
+                          MENÜ
+                        </span>
+                        <button
+                          id="menuNavbarToggler"
+                          hidden={locationUpdate === mainUrl ? true : false}
+                          className="navbar-toggler d-inline d-lg-none"
+                          type="button"
+                          data-toggle="collapse"
+                          data-target="#navbarSupportedContent"
+                          aria-controls="navbarSupportedContent"
+                          aria-expanded="false"
+                          aria-label="Toggle navigation"
+                        >
+                          <img
+                            alt="Menü Icon"
+                            src={pathPrefix + '/svg/icon_menu_toggler.svg'}
+                          />
+                        </button>
+                      </form>
+                    </div>
                   </div>
                 </nav>
               </div>
