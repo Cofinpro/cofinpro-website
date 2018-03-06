@@ -1,5 +1,3 @@
-'use strict'
-
 const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
@@ -11,14 +9,9 @@ const axios = require('axios')
 
 var runWithTestData = false
 
-function refreshImages(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
+exports.refreshImages = function(graphql, callback) {
+  console.log('started image processing.')
+
   if (runWithTestData) {
     _.each(testDataAllContentfulAsset.data.allContentfulAsset.edges, edge => {
       var fileName = edge.node.file.fileName
@@ -36,7 +29,7 @@ function refreshImages(
       }
     })
 
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+    callback(null)
   } else {
     graphql(
       `
@@ -56,38 +49,55 @@ function refreshImages(
         }
       `
     ).then(result => {
+      var itemsProcessed = 0
+
       _.each(result.data.allContentfulAsset.edges, edge => {
         var fileName = edge.node.file.fileName
         var newFileName =
           edge.node.id +
           fileName.substring(fileName.lastIndexOf('.'), fileName.length)
-        var path = './../static/img/contentful/' + newFileName
+        var path = './static/img/contentful/' + newFileName
+
+        console.log('checking if image exists under:' + path)
 
         if (!existsAsset(path)) {
           console.log('asset for id:' + edge.node.id + ' not found.')
 
           var url = 'http:' + edge.node.file.url
 
-          getAndStoreAssetFromContentful(url, path)
+          console.log('getting file from url:' + url)
+          console.log('storing file under path:' + path)
+
+          axios({
+            method: 'get',
+            url: url,
+            responseType: 'stream',
+          }).then(function(response) {
+            response.data.pipe(fs.createWriteStream(path))
+            itemsProcessed++
+
+            if (
+              itemsProcessed === result.data.allContentfulAsset.edges.length
+            ) {
+              setTimeout(function() {
+                callback(null)
+                console.log('timeout completed')
+              }, 1000)
+            }
+          })
+        } else {
+          itemsProcessed++
+
+          if (itemsProcessed === result.data.allContentfulAsset.edges.length) {
+            setTimeout(function() {
+              callback(null)
+              console.log('timeout completed')
+            }, 1000)
+          }
         }
       })
-
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
     })
   }
-}
-
-function getAndStoreAssetFromContentful(_url, _path) {
-  console.log('getting file from url:' + _url)
-  console.log('storing file under path:' + _path)
-
-  axios({
-    method: 'get',
-    url: _url,
-    responseType: 'stream',
-  }).then(function(response) {
-    response.data.pipe(fs.createWriteStream(_path))
-  })
 }
 
 function existsAsset(_path) {
@@ -96,5 +106,3 @@ function existsAsset(_path) {
   }
   return false
 }
-
-exports.refreshImages

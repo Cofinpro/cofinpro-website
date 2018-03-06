@@ -33,6 +33,11 @@ class WorkLifeTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteWorkLife
 
+    const infoBoxLinksBilderSharp = this.props.pathContext
+      .infoBoxLinksBilderSharp
+    const infoboxRechtsBilderSharp = this.props.pathContext
+      .infoboxRechtsBilderSharp
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -73,6 +78,7 @@ class WorkLifeTemplate extends React.Component {
                     <ImageCarouselV2
                       carouselId="outtakes"
                       contentfulImages={graphQlResult.infoBoxLinksBilder}
+                      sharpImages={infoBoxLinksBilderSharp}
                       options="slide"
                     />
                   </div>
@@ -113,6 +119,7 @@ class WorkLifeTemplate extends React.Component {
                     <ImageCarouselV2
                       carouselId="adventsworkshop"
                       contentfulImages={graphQlResult.infoboxRechtsBilder}
+                      sharpImages={infoboxRechtsBilderSharp}
                       options="slide"
                     />
                   </div>

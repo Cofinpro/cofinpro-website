@@ -1,17 +1,14 @@
-'use strict'
+const _ = require(`lodash`)
+const path = require(`path`)
+const slash = require(`slash`)
 
-function create(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
+exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
+  console.log(`start query for page /jobs.`)
+
   graphql(
     `
       {
-        allContentfulStellenmarkt(limit: 1000) {
+        allContentfulSeiteStellenmarkt(limit: 1000) {
           edges {
             node {
               id
@@ -21,9 +18,11 @@ function create(
       }
     `
   ).then(result => {
+    console.log(`end query for page /jobs.`)
+
     const template = path.resolve(`./src/templates/stellenmarkt.jsx`)
 
-    _.each(result.data.allContentfulStellenmarkt.edges, edge => {
+    _.each(result.data.allContentfulSeiteStellenmarkt.edges, edge => {
       createPage({
         path: `/jobs`,
         component: slash(template),
@@ -36,8 +35,6 @@ function create(
       console.log(`created page /jobs.`)
     })
 
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+    callback(null)
   })
 }
-
-exports.create

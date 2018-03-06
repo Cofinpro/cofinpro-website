@@ -1,13 +1,8 @@
-'use strict'
+const _ = require(`lodash`)
+const path = require(`path`)
+const slash = require(`slash`)
 
-function create(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
+exports.create = function(createPage, news, callback) {
   const template = path.resolve(`./src/templates/news.jsx`)
 
   _.each(news, edge => {
@@ -28,7 +23,5 @@ function create(
     console.log(`created page pinnwand/${edge.node.id}.`)
   })
 
-  callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+  callback(null)
 }
-
-exports.create
