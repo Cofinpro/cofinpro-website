@@ -13,8 +13,6 @@ class ImageCarouselV2 extends React.Component {
   render() {
     const { carouselId, contentfulImages, sharpImages, options } = this.props
 
-    console.log(sharpImages)
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
