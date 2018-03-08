@@ -570,16 +570,6 @@ export const pageQuery = graphql`
         zitat {
           zitat
         }
-        bildTestimonial {
-          id
-          title
-          description
-          file {
-            url
-            fileName
-            contentType
-          }
-        }
         linkVonYouTubeVideo
         autor
         autorTitel
