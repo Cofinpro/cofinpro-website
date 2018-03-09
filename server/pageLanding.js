@@ -1,6 +1,8 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
+var async = require('async')
+
 
 exports.create = function(
   graphql,
@@ -19,6 +21,26 @@ exports.create = function(
               perspektive {
                 name
               }
+              titelbild {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              titelbildKlein {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
             }
           }
         }
@@ -35,21 +57,79 @@ exports.create = function(
         topNews.push(news[i])
       }
     }
+    var itemsProcessed = 0
 
     _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/landing`,
-        component: slash(landingTemplate),
-        context: {
-          id: edge.node.id,
-          anzeigen: stellenAnzeigen,
-          topNews: topNews,
+
+      async.parallel(
+        {
+          titelBildDesktop: async.apply(
+            createSharpImage,
+            graphql,
+            'quality: 90',
+            edge.node.titelbild
+          ),
+          titelBildMobile: async.apply(
+            createSharpImage,
+            graphql,
+            'quality: 90',
+            edge.node.titelbildKlein
+          ),
         },
-      })
+        function (err, results) {
 
-      console.log(`created page ${edge.node.perspektive.name}/landing`)
+          itemsProcessed++
+
+          createPage({
+            path: `${edge.node.perspektive.name}/landing`,
+            component: slash(landingTemplate),
+            context: {
+              id: edge.node.id,
+              anzeigen: stellenAnzeigen,
+              topNews: topNews,
+              titelBildDesktop: results.titelBildDesktop,
+              titelBildMobile: results.titelBildMobile
+            },
+          })
+
+          console.log(`created page ${edge.node.perspektive.name}/landing`)
+          
+          if (itemsProcessed === result.data.allContentfulSeiteLandingPerspektive.edges.length) {
+            callback(null)
+          }
+
+        }
+      )
+
     })
+  })
+}
 
-    callback()
+
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  graphql(
+    `
+      {
+      resultImage: imageSharp(id: { regex: "/` +
+    originalImg.id +
+    `/" }) {
+                            sizes(` +
+    sharpParameter +
+    `) {
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                        base64
+                        aspectRatio
+                        sizes
+                        }
+                    }
+                }          
+            `
+  ).then(result => {
+    callback(null, result.data.resultImage)
   })
 }

@@ -32,6 +32,9 @@ class JobsBewerbungTemplate extends React.Component {
 
     const { location } = this.props
 
+    const titelBildDesktop = this.props.pathContext.titelBildDesktop
+    const titelBildMobile = this.props.pathContext.titelBildMobile
+
     const erstesBildAnsprechpartnerBewerbungen = this.props.pathContext
       .erstesBildAnsprechpartnerBewerbungen
     const zweitesBildAnsprechpartnerBewerbungen = this.props.pathContext
@@ -45,8 +48,8 @@ class JobsBewerbungTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          imageFile={graphQlResult.titelbild}
-          imageSmall={graphQlResult.titelbildKlein}
+          titleImage={titelBildDesktop}
+          titleImageSmall={titelBildMobile}
         />
 
         <SiteHeaderContent

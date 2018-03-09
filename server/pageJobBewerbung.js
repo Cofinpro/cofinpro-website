@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
+exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
   graphql(
     `
       {
@@ -11,6 +11,26 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
           edges {
             node {
               id
+              titelbild {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              titelbildKlein {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
               erstesBildAnsprechpartnerBewerbungen {
                 id
                 title
@@ -54,8 +74,20 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
             'maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER',
             edge.node.zweitesBildAnsprechpartnerBewerbungen
           ),
+          titelBildDesktop: async.apply(
+            createSharpImage,
+            graphql,
+            'quality: 90',
+            edge.node.titelbild
+          ),
+          titelBildMobile: async.apply(
+            createSharpImage,
+            graphql,
+            'quality: 90',
+            edge.node.titelbildKlein
+          ),
         },
-        function(err, results) {
+        function (err, results) {
           // results is now equals to: {one: 1, two: 2}
 
           console.log('finished image processing jobs bewerbung.')
@@ -66,6 +98,8 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
             context: {
               id: edge.node.id,
               stellenAnzeigen: stellenAnzeigen,
+              titelBildDesktop: results.titelBildDesktop,
+              titelBildMobile: results.titelBildMobile,
               erstesBildAnsprechpartnerBewerbungen: results.imageOne,
               zweitesBildAnsprechpartnerBewerbungen: results.imageTwo,
             },
@@ -84,11 +118,11 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-      originalImg.id +
-      `/" }) {
+    originalImg.id +
+    `/" }) {
                             sizes(` +
-      sharpParameter +
-      `) {
+    sharpParameter +
+    `) {
                         src
                         srcSet
                         srcWebp
