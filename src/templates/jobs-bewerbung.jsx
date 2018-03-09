@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import CarrerOffersCarousel from '../components/CarrerOffersCarousel'
 import CarrerOfferCarouselBox from '../components/CarrerOfferCarouselBox'
@@ -30,6 +31,11 @@ class JobsBewerbungTemplate extends React.Component {
     const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
 
     const { location } = this.props
+
+    const erstesBildAnsprechpartnerBewerbungen = this.props.pathContext
+      .erstesBildAnsprechpartnerBewerbungen
+    const zweitesBildAnsprechpartnerBewerbungen = this.props.pathContext
+      .zweitesBildAnsprechpartnerBewerbungen
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -61,28 +67,40 @@ class JobsBewerbungTemplate extends React.Component {
 
         <div className="container margin-120-top">
           <div className="row">
-            <div className="col">
-              <h3 className="h2">{graphQlResult.ueberschriftAnsprechpartnerBewerbungen}</h3>
+            <div className="col-12 col-lg-10 offset-lg-1">
+              <h3 className="h2">
+                {graphQlResult.ueberschriftAnsprechpartnerBewerbungen}
+              </h3>
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-6">
-              <ContentfulImage
-                imageFile={graphQlResult.erstesBildAnsprechpartnerBewerbungen}
-                styleClasses="img-fluid"
+            <div className="col-12 col-md-6 col-lg-5 offset-lg-1">
+              <Img
+                sizes={
+                  erstesBildAnsprechpartnerBewerbungen != null
+                    ? erstesBildAnsprechpartnerBewerbungen.sizes
+                    : null
+                }
               />
             </div>
-            <div className="col-12 col-md-6">
-              <ContentfulImage
-                imageFile={graphQlResult.zweitesBildAnsprechpartnerBewerbungen}
-                styleClasses="img-fluid"
+            <div className="col-12 col-md-6 col-lg-5">
+              <div className="d-block d-md-none margin-20-top" />
+              <Img
+                sizes={
+                  zweitesBildAnsprechpartnerBewerbungen != null
+                    ? zweitesBildAnsprechpartnerBewerbungen.sizes
+                    : null
+                }
               />
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-10 col-lg-8 offset-lg-1">
               <ContentfulMarkdownText
-                text={graphQlResult.beschreibungAnsprechpartnerBewerbungen.beschreibungAnsprechpartnerBewerbungen}
+                text={
+                  graphQlResult.beschreibungAnsprechpartnerBewerbungen
+                    .beschreibungAnsprechpartnerBewerbungen
+                }
                 styleClasses="margin-20-top"
               />
             </div>

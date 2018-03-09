@@ -1,6 +1,7 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
+var async = require('async')
 
 exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
   graphql(
@@ -10,6 +11,26 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
           edges {
             node {
               id
+              erstesBildAnsprechpartnerBewerbungen {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              zweitesBildAnsprechpartnerBewerbungen {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
             }
           }
         }
@@ -19,18 +40,69 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
     const template = path.resolve(`./src/templates/jobs-bewerbung.jsx`)
 
     _.each(result.data.allContentfulSeiteJobsBewerbung.edges, edge => {
-      createPage({
-        path: `/jobs-bewerbung`,
-        component: slash(template),
-        context: {
-          id: edge.node.id,
-          stellenAnzeigen: stellenAnzeigen,
+      async.parallel(
+        {
+          imageOne: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER',
+            edge.node.erstesBildAnsprechpartnerBewerbungen
+          ),
+          imageTwo: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER',
+            edge.node.zweitesBildAnsprechpartnerBewerbungen
+          ),
         },
-      })
+        function(err, results) {
+          // results is now equals to: {one: 1, two: 2}
 
-      console.log(`created page /jobs-bewerbung`)
+          console.log('finished image processing jobs bewerbung.')
+
+          createPage({
+            path: `/jobs-bewerbung`,
+            component: slash(template),
+            context: {
+              id: edge.node.id,
+              stellenAnzeigen: stellenAnzeigen,
+              erstesBildAnsprechpartnerBewerbungen: results.imageOne,
+              zweitesBildAnsprechpartnerBewerbungen: results.imageTwo,
+            },
+          })
+
+          console.log(`created page /jobs-bewerbung`)
+          callback(null)
+        }
+      )
     })
+  })
+}
 
-    callback(null)
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  graphql(
+    `
+      {
+      resultImage: imageSharp(id: { regex: "/` +
+      originalImg.id +
+      `/" }) {
+                            sizes(` +
+      sharpParameter +
+      `) {
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                        base64
+                        aspectRatio
+                        sizes
+                        }
+                    }
+                }          
+            `
+  ).then(result => {
+    callback(null, result.data.resultImage)
   })
 }

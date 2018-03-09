@@ -44,9 +44,14 @@
   }
 
   .nav-item.active {
-
     a {
       border-bottom: 1px solid white;
+    }
+  }
+
+  .nav-item {
+    a {
+      border-bottom: 1px solid #847575;
     }
   }
 
