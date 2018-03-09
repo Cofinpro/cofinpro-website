@@ -116,7 +116,7 @@ class MenuCareer extends React.Component {
             <img
               className="cofinpro-logo"
               alt="Nächstes Bild"
-              src={pathPrefix + '/svg/logo_cofinpro.svg'}
+              src={pathPrefix + '/svg/karrierelogo.svg'}
             />
           </a>
         </div>

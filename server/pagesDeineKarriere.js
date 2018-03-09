@@ -38,3 +38,34 @@ exports.create = function(graphql, createPage, callback) {
     callback()
   })
 }
+
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  var itemsProcessed = 0
+  var resultImages = []
+
+  graphql(
+    `
+      {
+      resultImage: imageSharp(id: { regex: "/` +
+      originalImg.id +
+      `/" }) {
+                            sizes(` +
+      sharpParameter +
+      `) {
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                        base64
+                        aspectRatio
+                        sizes
+                        }
+                    }
+                }          
+            `
+  ).then(result => {
+    callback(null, result.data.resultImage)
+  })
+}
