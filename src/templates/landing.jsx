@@ -30,6 +30,8 @@ class LandingTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteLandingPerspektive
 
+    const titelBildDesktop = this.props.pathContext.titelBildDesktop
+    const titelBildMobile = this.props.pathContext.titelBildMobile
     const anzeigen = this.props.pathContext.anzeigen
 
     const site = get(this, 'props.data.site.siteMetadata')
@@ -47,8 +49,8 @@ class LandingTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          imageFile={graphQlResult.titelbild}
-          imageSmall={graphQlResult.titelbildKlein}
+          titleImage={titelBildDesktop}
+          titleImageSmall={titelBildMobile}
         />
 
         <SiteHeaderContent

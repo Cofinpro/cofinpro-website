@@ -98,10 +98,11 @@ class SiteHeader extends React.Component {
                   />
                 )}
                 {titleImageSmall !== undefined && titleImageSmall !== null ? (
-                  <Img
-                    imgStyle="d-block d-md-none"
-                    sizes={titleImageSmall.sizes}
-                  />
+                  <div className="d-block d-md-none">
+                    <Img
+                      sizes={titleImageSmall.sizes}
+                    />
+                  </div>
                 ) : (
                   <ContentfulImage
                     imageFile={imageSmall}
