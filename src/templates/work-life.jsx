@@ -38,6 +38,10 @@ class WorkLifeTemplate extends React.Component {
     const infoboxRechtsBilderSharp = this.props.pathContext
       .infoboxRechtsBilderSharp
 
+      const titelBildDesktop = this.props.pathContext.titelBildDesktop
+      const titelBildMobile = this.props.pathContext.titelBildMobile
+  
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -46,8 +50,8 @@ class WorkLifeTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          imageFile={graphQlResult.titelbild}
-          imageSmall={graphQlResult.titelbildKlein}
+          titleImage={titelBildDesktop}
+          titleImageSmall={titelBildMobile}
         />
 
         <SiteHeaderContent

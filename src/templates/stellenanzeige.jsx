@@ -52,28 +52,57 @@ class StellenanzeigeTemplate extends React.Component {
               </h2>
               <h1 className="h2">{stellenAnzeige.node.titel}</h1>
               <ContentfulMarkdownText
+                styleClasses="margin-40-bottom"
                 text={stellenAnzeige.node.absatzEins.absatzEins}
               />
             </div>
           </div>
         </div>
 
-        <div className="container">
-          <div className="row d-none d-md-block">
-            <div className="col">
+        <div className="container margin-40-bottom">
+          <div className="row">
+            <div className="col-4 col-md-2">
               <img
-                src={pathPrefix + '/img/stellenangebot_icons.png'}
-                className="img-fluid"
+                src={pathPrefix + '/img/stellenanzeige/icon_1.jpg'}
+                className="img-fluid padding-lg"
                 alt="Icons Stellenangebot"
               />
             </div>
-          </div>
-
-          <div className="row d-block d-md-none">
-            <div className="col-12 text-center padding-md-bottom">
+            <div className="col-4 col-md-2">
               <img
-                src={pathPrefix + '/img/stellenangebote_m.jpg'}
-                className="img-fluid"
+                src={pathPrefix + '/img/stellenanzeige/icon_2.jpg'}
+                className="img-fluid padding-lg"
+                alt="Icons Stellenangebot"
+              />
+            </div>
+            <div className="col-4 col-md-2">
+              <img
+                src={pathPrefix + '/img/stellenanzeige/icon_3.jpg'}
+                className="img-fluid padding-lg"
+                alt="Icons Stellenangebot"
+              />
+            </div>
+            <div className="col-4 col-md-2">
+              <div className="margin-20-top b-block d-md-none" />
+              <img
+                src={pathPrefix + '/img/stellenanzeige/icon_4.jpg'}
+                className="img-fluid padding-lg"
+                alt="Icons Stellenangebot"
+              />
+            </div>
+            <div className="col-4 col-md-2">
+              <div className="margin-20-top b-block d-md-none" />
+              <img
+                src={pathPrefix + '/img/stellenanzeige/icon_5.jpg'}
+                className="img-fluid padding-lg"
+                alt="Icons Stellenangebot"
+              />
+            </div>
+            <div className="col-4 col-md-2">
+              <div className="margin-20-top b-block d-md-none" />
+              <img
+                src={pathPrefix + '/img/stellenanzeige/icon_6.jpg'}
+                className="img-fluid padding-lg"
                 alt="Icons Stellenangebot"
               />
             </div>
@@ -131,7 +160,7 @@ class StellenanzeigeTemplate extends React.Component {
                 <p className="h4 text-primary">
                   Wir passen zu Deiner Wunschliste?
                 </p>
-                <p className="h4p-small">
+                <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
                   einen von sechs weiteren deutschen Standorten unter
                   <Link className="readmore" to={pathPrefix + '/jobs'}>

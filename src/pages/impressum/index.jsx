@@ -85,7 +85,7 @@ class Impressum extends React.Component {
               <p>
                 <span className="bold-font">Vorstand</span>
                 <br />Gerald Prior (Vorsitzender)
-                <br />Christine Naber
+                <br />Christine Martin
               </p>
             </div>
           </div>

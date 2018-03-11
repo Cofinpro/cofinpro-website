@@ -31,6 +31,26 @@ exports.create = function(graphql, createPage, callback) {
                   contentType
                 }
               }
+              titelbild {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              titelbildKlein {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
             }
           }
         }
@@ -58,6 +78,18 @@ exports.create = function(graphql, createPage, callback) {
             'maxWidth: 1200, maxHeight: 800, quality: 60, cropFocus: CENTER',
             edge.node.infoboxRechtsBilder
           ),
+          titelBildDesktop: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 1600, quality: 90',
+            edge.node.titelbild
+          ),
+          titelBildMobile: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 1600, quality: 90',
+            edge.node.titelbildKlein
+          ),
         },
         function(err, results) {
           // results is now equals to: {one: 1, two: 2}
@@ -71,6 +103,8 @@ exports.create = function(graphql, createPage, callback) {
               id: edge.node.id,
               infoBoxLinksBilderSharp: results.one,
               infoboxRechtsBilderSharp: results.two,
+              titelBildDesktop: results.titelBildDesktop,
+              titelBildMobile: results.titelBildMobile,
             },
           })
 
@@ -123,5 +157,35 @@ function createSharpImages(
         callback(null, resultImages)
       }
     })
+  })
+}
+
+
+
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  graphql(
+    `
+      {
+      resultImage: imageSharp(id: { regex: "/` +
+    originalImg.id +
+    `/" }) {
+                            sizes(` +
+    sharpParameter +
+    `) {
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                        base64
+                        aspectRatio
+                        sizes
+                        }
+                    }
+                }          
+            `
+  ).then(result => {
+    callback(null, result.data.resultImage)
   })
 }
