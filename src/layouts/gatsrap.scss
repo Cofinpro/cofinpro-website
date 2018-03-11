@@ -458,6 +458,16 @@ a:hover {
 .padding-sm {
   padding: 1rem;
 }
+.padding-lg {
+  padding: 0rem;
+
+  @include media-breakpoint-only(lg) {
+    padding: 1rem;
+  }
+  @include media-breakpoint-only(xl) {
+    padding: 1rem;
+  }
+}
 .padding-md {
   padding: 2rem;
 }
