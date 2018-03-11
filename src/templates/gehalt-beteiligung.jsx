@@ -24,6 +24,9 @@ class GehaltBeteiligungTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteGehaltBenefits
 
+    const titelBildDesktop = this.props.pathContext.titelBildDesktop
+    const titelBildMobile = this.props.pathContext.titelBildMobile
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -46,8 +49,8 @@ class GehaltBeteiligungTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          imageFile={graphQlResult.bildUnterHauptueberschrift}
-          imageSmall={graphQlResult.titelbildKlein}
+          titleImage={titelBildDesktop}
+          titleImageSmall={titelBildMobile}
         />
 
         <SiteHeaderContent

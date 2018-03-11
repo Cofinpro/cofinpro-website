@@ -1,6 +1,7 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
+var async = require('async')
 
 exports.create = function(graphql, createPage, callback) {
   graphql(
@@ -13,45 +14,94 @@ exports.create = function(graphql, createPage, callback) {
               perspektive {
                 name
               }
+              titelbild {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              titelbildKlein {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
             }
           }
         }
       }
     `
   ).then(result => {
+
     const deineKarriereTemplate = path.resolve(
       `./src/templates/deine-karriere.jsx`
     )
 
-    _.each(result.data.allContentfulSeiteDeineKarriere.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/deine-karriere`,
-        component: slash(deineKarriereTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
+    var itemsProcessed = 0
 
-      console.log(`created page ${edge.node.perspektive.name}/deine-karriere`)
+    _.each(result.data.allContentfulSeiteDeineKarriere.edges, edge => {
+
+      async.parallel(
+        {
+          titelBildDesktop: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 1600, quality: 90',
+            edge.node.titelbild
+          ),
+          titelBildMobile: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 1600, quality: 90',
+            edge.node.titelbildKlein
+          ),
+        },
+        function (err, results) {
+
+          itemsProcessed++
+
+          createPage({
+            path: `${edge.node.perspektive.name}/deine-karriere`,
+            component: slash(deineKarriereTemplate),
+            context: {
+              id: edge.node.id,
+              titelBildDesktop: results.titelBildDesktop,
+              titelBildMobile: results.titelBildMobile,
+            },
+          })
+    
+          console.log(`created page ${edge.node.perspektive.name}/deine-karriere`)
+          
+          if (itemsProcessed === result.data.allContentfulSeiteDeineKarriere.edges.length) {
+            callback(null)
+          }
+
+        }
+      )
+
     })
 
-    callback()
   })
 }
 
 function createSharpImage(graphql, sharpParameter, originalImg, callback) {
-  var itemsProcessed = 0
-  var resultImages = []
-
   graphql(
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-      originalImg.id +
-      `/" }) {
+    originalImg.id +
+    `/" }) {
                             sizes(` +
-      sharpParameter +
-      `) {
+    sharpParameter +
+    `) {
                         src
                         srcSet
                         srcWebp

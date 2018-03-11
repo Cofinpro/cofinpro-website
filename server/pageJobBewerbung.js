@@ -77,13 +77,13 @@ exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
           titelBildDesktop: async.apply(
             createSharpImage,
             graphql,
-            'quality: 90',
+            'maxWidth: 1600, quality: 90',
             edge.node.titelbild
           ),
           titelBildMobile: async.apply(
             createSharpImage,
             graphql,
-            'quality: 90',
+            'maxWidth: 1600, quality: 90',
             edge.node.titelbildKlein
           ),
         },

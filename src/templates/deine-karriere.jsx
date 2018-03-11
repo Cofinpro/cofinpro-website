@@ -23,6 +23,9 @@ class LaufbahnTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteDeineKarriere
 
+    const titelBildDesktop = this.props.pathContext.titelBildDesktop
+    const titelBildMobile = this.props.pathContext.titelBildMobile
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -31,8 +34,8 @@ class LaufbahnTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          imageFile={graphQlResult.titelbild}
-          imageSmall={graphQlResult.titelbildKlein}
+          titleImage={titelBildDesktop}
+          titleImageSmall={titelBildMobile}
         />
 
         <SiteHeaderContent
