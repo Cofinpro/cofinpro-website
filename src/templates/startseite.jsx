@@ -100,7 +100,7 @@ class StartseiteTemplate extends React.Component {
       }
     })
 
-    if (typeof localStorage !== 'undefined') {
+    /*if (typeof localStorage !== 'undefined') {
       if (StorageHelper.getFromSessionStorage('introPlayed') === undefined ||
         StorageHelper.getFromSessionStorage('introPlayed').length === 0) {
 
@@ -126,7 +126,8 @@ class StartseiteTemplate extends React.Component {
       } else {
         $('#lottie').hide()
       }
-    }
+    }*/
+    $('#lottie').hide()
   }
 
   getCurrentUrl() {
