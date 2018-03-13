@@ -19,14 +19,13 @@ class StartseiteTemplate extends React.Component {
   }
 
   componentDidMount() {
-
     $('#links-tech').hide()
     $('#links-fach').hide()
 
     $('#desktop-links-tech').hide()
     $('#desktop-links-fach').hide()
 
-    $('#desktop-wahl-fach').click(function () {
+    $('#desktop-wahl-fach').click(function() {
       $('#desktop-links-tech').hide()
       $('#desktop-links-fach').fadeIn(500)
 
@@ -38,7 +37,7 @@ class StartseiteTemplate extends React.Component {
       )
     })
 
-    $('#desktop-wahl-tech').click(function () {
+    $('#desktop-wahl-tech').click(function() {
       $('#desktop-links-fach').hide()
       $('#desktop-links-tech').fadeIn(500)
 
@@ -50,7 +49,7 @@ class StartseiteTemplate extends React.Component {
       )
     })
 
-    $('#img-wahl-tech').click(function () {
+    $('#img-wahl-tech').click(function() {
       $('#links-fach').hide()
       $('#links-tech').fadeIn(500)
 
@@ -62,7 +61,7 @@ class StartseiteTemplate extends React.Component {
       )
     })
 
-    $('#img-wahl-fach').click(function () {
+    $('#img-wahl-fach').click(function() {
       $('#links-tech').hide()
       $('#links-fach').fadeIn(500)
 
@@ -76,7 +75,7 @@ class StartseiteTemplate extends React.Component {
 
     $('#navbarToggleExternalContent').collapse({ toggle: false })
 
-    $('#button-startseite-collapse').click(function () {
+    $('#button-startseite-collapse').click(function() {
       $('#navbarToggleExternalContent').collapse('toggle')
 
       if (
@@ -100,34 +99,34 @@ class StartseiteTemplate extends React.Component {
       }
     })
 
-    /*if (typeof localStorage !== 'undefined') {
-      if (StorageHelper.getFromSessionStorage('introPlayed') === undefined ||
-        StorageHelper.getFromSessionStorage('introPlayed').length === 0) {
-
+    if (typeof localStorage !== 'undefined') {
+      if (
+        StorageHelper.getFromSessionStorage('introPlayed') === undefined ||
+        StorageHelper.getFromSessionStorage('introPlayed').length === 0
+      ) {
         const pathPrefix =
           process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-        const script2 = document.createElement("script");
+        const script2 = document.createElement('script')
 
-        script2.src = pathPrefix + '/js/introHeader.js';
-        script2.async = false;
+        script2.src = pathPrefix + '/js/introHeader.js'
+        script2.async = false
 
-        document.body.appendChild(script2);
+        document.body.appendChild(script2)
 
+        const script = document.createElement('script')
 
-        const script = document.createElement("script");
+        script.src = pathPrefix + '/js/intro.js'
+        script.async = false
 
-        script.src = pathPrefix + '/js/intro.js';
-        script.async = false;
+        document.body.appendChild(script)
 
-        document.body.appendChild(script);
-
-        StorageHelper.saveInSessionStorage('introPlayed', 'true');
+        StorageHelper.saveInSessionStorage('introPlayed', 'true')
       } else {
         $('#lottie').hide()
       }
-    }*/
-    $('#lottie').hide()
+    }
+    //$('#lottie').hide()
   }
 
   getCurrentUrl() {
@@ -149,7 +148,6 @@ class StartseiteTemplate extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-
       <div>
         <Helmet
           title={graphQlResult.metaData.title}
@@ -177,10 +175,9 @@ class StartseiteTemplate extends React.Component {
               content: `${graphQlResult.metaData.description.description}`,
             },
           ]}
-
         />
 
-        <div id="lottie"></div>
+        <div id="lottie" className="d-none d-md-block" />
 
         <div className="container margin-lg-top-bottom">
           <div className="row padding-sm-bottom">
