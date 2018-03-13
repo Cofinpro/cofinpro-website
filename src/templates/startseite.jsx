@@ -177,7 +177,7 @@ class StartseiteTemplate extends React.Component {
           ]}
         />
 
-        <div id="lottie" />
+        <div id="lottie" className="d-none d-md-block" />
 
         <div className="container margin-lg-top-bottom">
           <div className="row padding-sm-bottom">
