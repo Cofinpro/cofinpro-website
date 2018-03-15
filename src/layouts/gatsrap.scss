@@ -815,17 +815,26 @@ a:hover {
   font-family: apercu-bold-pro;
 }
 
-#lottie{
-  background-color:#fff;
-  width:100%;
-  height:100%;
-  display:block;
+#lottie {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: block;
   overflow: hidden;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
   text-align: center;
   opacity: 1;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 9000;
+}
+
+svg image[href$='img_20.jpg'] {
+  @include media-breakpoint-only(xs) {
+    visibility: hidden;
+  }
+  @include media-breakpoint-only(sm) {
+    visibility: hidden;
+  }
 }
