@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import './style.scss'
 
@@ -11,7 +12,7 @@ import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext
 
 class SocialMediaCarousel extends React.Component {
   render() {
-    const { carouselId, socialMediaPosts } = this.props
+    const { carouselId, socialMediaPosts, sharpImages } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -21,23 +22,34 @@ class SocialMediaCarousel extends React.Component {
         <div>
           <div
             id={'carousel-' + carouselId}
-            className="carousel slide socialMediaCarousel"
+            className="carousel  socialMediaCarousel"
             data-ride="carousel"
           >
             <div className="carousel-inner">
               {socialMediaPosts.map((mediaPost, i) => {
+
+                var imageSharp;
+
+                for (var j = 0; j < sharpImages.length; j++) {
+                  if (sharpImages[j].sizes.originalName.startsWith(mediaPost.bildDesPosts.id)) {
+                    console.log("true");
+                    imageSharp = sharpImages[j];
+                  }
+                }
+
+                console.log(imageSharp);
+
                 return (
                   <div
                     className={
                       'text-center carousel-item' + (i == 0 ? ' active' : '')
                     }
-                    key={'carousel-item-' + i}
+                    key={'carousel-item-' + i + '-' + carouselId}
                   >
                     <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank">
-                      <ContentfulImage
-                        imageFile={mediaPost.bildDesPosts}
-                        styleClasses="img-fluid social-media-image padding-sm-bottom"
-                        key={'carousel-item-image-big-' + i}
+                      <Img
+                        sizes={imageSharp.sizes}
+                        key={'carousel-item-image-big-' + i + imageSharp.sizes.originalName}
                       />
                     </a>
                     <ContentfulMarkdownText

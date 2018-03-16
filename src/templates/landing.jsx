@@ -32,6 +32,7 @@ class LandingTemplate extends React.Component {
 
     const titelBildDesktop = this.props.pathContext.titelBildDesktop
     const titelBildMobile = this.props.pathContext.titelBildMobile
+    const socialMediaPostBilder = this.props.pathContext.socialMediaPostBilder
     const anzeigen = this.props.pathContext.anzeigen
 
     const site = get(this, 'props.data.site.siteMetadata')
@@ -275,6 +276,7 @@ class LandingTemplate extends React.Component {
               <SocialMediaCarousel
                 carouselId={'social-media'}
                 socialMediaPosts={graphQlResult.socialMediaPosts}
+                sharpImages={socialMediaPostBilder}
               />
             </div>
           </div>

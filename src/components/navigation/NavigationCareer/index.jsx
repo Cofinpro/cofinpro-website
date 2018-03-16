@@ -102,7 +102,7 @@ class NavigationCareer extends React.Component {
                 >
                   <div>
                     <a
-                      className="text-muted d-inline d-lg-none small-main-page-nav"
+                      className="text-small text-muted d-inline d-lg-none small-main-page-nav"
                       href="https://www.cofinpro.de"
                     >
                       Zur Hauptseite

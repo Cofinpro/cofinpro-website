@@ -84,12 +84,12 @@ $container-max-widths: (
 );
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 main {
-  margin-top: 69px;
+  margin-top: 76px;
   @include media-breakpoint-only(lg) {
-    margin-top: 96px;
+    margin-top: 104px;
   }
   @include media-breakpoint-only(xl) {
-    margin-top: 96px;
+    margin-top: 104px; 
   }
 }
 .p-font-large-lg {
@@ -828,6 +828,10 @@ a:hover {
   left: 0;
   top: 0;
   z-index: 9000;
+}
+
+.text-small {
+  font-size: 12px;
 }
 
 svg image[href$='img_20.jpg'] {

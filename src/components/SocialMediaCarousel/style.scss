@@ -1,3 +1,7 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 .socialMediaCarousel {
   height: 560px;
 
@@ -31,14 +35,32 @@
   .carousel-item {
     height: 560px;
 
-    img {
-      /*padding-left: 3rem;
-            padding-right: 3rem;*/
-      max-width: 80%;
-    }
-  }
+    img, .gatsby-image-wrapper {
+      max-height: 380px;
+      max-width: 380px;
 
-  .social-media-image {
-    max-height: 380px;
+      padding-bottom: 1rem;
+    }
+
+    img {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .gatsby-image-wrapper {
+
+      margin-right: auto;
+      margin-left: auto;
+
+      @include media-breakpoint-only(xs) {
+        margin-right: 36px;
+        margin-left: 36px;
+      }
+
+      @include media-breakpoint-only(sm) {
+        margin-right: 36px;
+        margin-left: 36px;
+      }
+    }
   }
 }
