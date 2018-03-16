@@ -97,18 +97,27 @@ class SiteHeader extends React.Component {
                     styleClasses="img-fluid d-none d-md-block"
                   />
                 )}
+                {(titleImageSmall === undefined || titleImageSmall === null) &&
+                (titleImageSmall === undefined || titleImageSmall === null) &&
+                (titleImage !== undefined && titleImage !== null) ? (
+                  <div className="d-block d-md-none">
+                    {isOverlayActive !== undefined && isOverlayActive ? (
+                      <div className="image-overlay-gradient" />
+                    ) : null}
+                    <Img sizes={titleImage.sizes} />
+                  </div>
+                ) : null}
                 {titleImageSmall !== undefined && titleImageSmall !== null ? (
                   <div className="d-block d-md-none">
-                    <Img
-                      sizes={titleImageSmall.sizes}
-                    />
+                    <Img sizes={titleImageSmall.sizes} />
                   </div>
-                ) : (
+                ) : null}
+                {imageSmall !== undefined && imageSmall !== null ? (
                   <ContentfulImage
                     imageFile={imageSmall}
                     styleClasses="img-fluid d-block d-md-none"
                   />
-                )}
+                ) : null}
               </div>
             </div>
           ) : (
