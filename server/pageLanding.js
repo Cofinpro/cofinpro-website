@@ -41,6 +41,26 @@ exports.create = function(
                   contentType
                 }
               }
+              socialMediaPosts {
+                titel
+                headline
+                bildDesPosts {
+                  id
+                  title
+                  description
+                  file {
+                    url
+                    fileName
+                    contentType
+                  }
+                }
+                textDesPosts {
+                  textDesPosts
+                }
+                urlDesPosts {
+                  urlDesPosts
+                }
+              }
             }
           }
         }
@@ -59,6 +79,14 @@ exports.create = function(
     }
     var itemsProcessed = 0
 
+    var postBilder = [];
+
+    if(result.data.allContentfulSeiteLandingPerspektive.edges.length > 0) {
+      _.each(result.data.allContentfulSeiteLandingPerspektive.edges[0].node.socialMediaPosts, post => {
+        postBilder.push(post.bildDesPosts);
+      })
+    }
+
     _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
 
       async.parallel(
@@ -75,6 +103,12 @@ exports.create = function(
             'maxWidth: 1600, quality: 90',
             edge.node.titelbildKlein
           ),
+          socialMediaPostBilder: async.apply(
+            createSharpImages,
+            graphql,
+            'maxWidth: 800, maxHeight: 800, quality: 90, cropFocus: CENTER',
+            postBilder
+          ),
         },
         function (err, results) {
 
@@ -88,7 +122,8 @@ exports.create = function(
               anzeigen: stellenAnzeigen,
               topNews: topNews,
               titelBildDesktop: results.titelBildDesktop,
-              titelBildMobile: results.titelBildMobile
+              titelBildMobile: results.titelBildMobile,
+              socialMediaPostBilder: results.socialMediaPostBilder
             },
           })
 
@@ -131,5 +166,49 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
             `
   ).then(result => {
     callback(null, result.data.resultImage)
+  })
+}
+
+function createSharpImages(
+  graphql,
+  sharpParameter,
+  listOfInputImages,
+  callback
+) {
+  var itemsProcessed = 0
+  var resultImages = []
+
+  _.each(listOfInputImages, image => {
+    graphql(
+      `
+                {
+                resultImage: imageSharp(id: { regex: "/` +
+        image.id +
+        `/" }) {
+                        sizes(` +
+        sharpParameter +
+        `) {
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                        base64
+                        aspectRatio
+                        sizes
+                        }
+                    }
+                }          
+            `
+    ).then(result => {
+
+      resultImages.push(result.data.resultImage)
+
+      itemsProcessed++
+      if (itemsProcessed === listOfInputImages.length) {
+        callback(null, resultImages)
+      }
+    })
   })
 }
