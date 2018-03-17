@@ -518,47 +518,7 @@ export const pageQuery = graphql`
           contentType
         }
       }
-      bildFachProfessionalSmartphone {
-        id
-        title
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
-      bildFachAbsolventSmartphone {
-        id
-        title
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
       bildFuerPerspektiveTech {
-        id
-        title
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
-      bildTechnologieProfessionalSmartphone {
-        id
-        title
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
-      bildTechnologieAbsolventSmartphone {
         id
         title
         description
