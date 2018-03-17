@@ -1,6 +1,7 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
+var async = require('async')
 
 exports.create = function(graphql, createPage, callback) {
   graphql(
@@ -23,74 +24,89 @@ exports.create = function(graphql, createPage, callback) {
                   contentType
                 }
               }
+              titelbildKlein {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
             }
           }
         }
       }
     `
   ).then(result => {
-    var resultMainQuery = result
-
     const deineEntwicklungTemplate = path.resolve(
       `./src/templates/deine-entwicklung.jsx`
     )
 
-    var itemsProcessed = 0
+    _.each(result.data.allContentfulSeiteDeineEntwicklung.edges, edge => {
+      async.parallel(
+        {
+          titelBildDesktop: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 1600, quality: 90',
+            edge.node.titelbild
+          ),
+          titelBildMobile: async.apply(
+            createSharpImage,
+            graphql,
+            'maxWidth: 1600, quality: 90',
+            edge.node.titelbildKlein
+          ),
+        },
+        function(err, results) {
+          console.log('finished image processing deine entwicklung.')
 
-    resultMainQuery.data.allContentfulSeiteDeineEntwicklung.edges.forEach(
-      (item, index, array) => {
-        graphql(
-          `
-          {
-          titelbildSharp: imageSharp(id: { regex: "/` +
-            item.node.titelbild.id +
-            `/" }) {
-            sizes(maxWidth: 2000, maxHeight: 1250, quality: 60, cropFocus: CENTER) {
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              originalImg
-              originalName
-              base64
-              aspectRatio
-              sizes
-            }
-          }
-        }          
-      `
-        ).then(result => {
-          item.node.titelbildSharp = result.data.titelbildSharp
+          createPage({
+            path: `${edge.node.perspektive.name}/deine-entwicklung`,
+            component: slash(deineEntwicklungTemplate),
+            context: {
+              id: edge.node.id,
+              titelBildDesktop: results.titelBildDesktop,
+              titelBildMobile: results.titelBildMobile,
+            },
+          })
 
-          itemsProcessed++
-          if (
-            itemsProcessed ===
-            resultMainQuery.data.allContentfulSeiteDeineEntwicklung.edges.length
-          ) {
-            console.log('finished titelbild processing deine entwicklung.')
+          console.log(
+            `created page ${edge.node.perspektive.name}/deine-entwicklung`
+          )
+          callback(null)
+        }
+      )
+    })
+  })
+}
 
-            _.each(
-              resultMainQuery.data.allContentfulSeiteDeineEntwicklung.edges,
-              edge => {
-                createPage({
-                  path: `${edge.node.perspektive.name}/deine-entwicklung`,
-                  component: slash(deineEntwicklungTemplate),
-                  context: {
-                    id: edge.node.id,
-                    titelbildSharp: edge.node.titelbildSharp,
-                  },
-                })
-
-                console.log(
-                  `created page ${edge.node.perspektive.name}/deine-entwicklung`
-                )
-              }
-            )
-
-            callback()
-          }
-        })
-      }
-    )
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  graphql(
+    `
+      {
+      resultImage: imageSharp(id: { regex: "/` +
+      originalImg.id +
+      `/" }) {
+                            sizes(` +
+      sharpParameter +
+      `) {
+                        src
+                        srcSet
+                        srcWebp
+                        srcSetWebp
+                        originalImg
+                        originalName
+                        base64
+                        aspectRatio
+                        sizes
+                        }
+                    }
+                }          
+            `
+  ).then(result => {
+    callback(null, result.data.resultImage)
   })
 }
