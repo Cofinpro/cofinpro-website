@@ -338,7 +338,7 @@ class StartseiteTemplate extends React.Component {
                           imageFile={graphQlResult.bildFuerPerspektiveFach}
                           styleClasses="img-fluid img-consultant margin-20-bottom"
                         />
-                        <h3 className="h5 link-black">FACH-BERATER</h3>
+                        <h3 className="h5 link-black">FACHBERATER</h3>
                       </div>
                       <div id="links-fach">
                         <Link

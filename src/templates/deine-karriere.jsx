@@ -64,7 +64,7 @@ class LaufbahnTemplate extends React.Component {
                   {graphQlResult.titelLaufbahnBild}
                 </p>
               </div>
-              <div className="col-8 offset-2 col-md-12 offset-md-0">
+              <div className="col-8 col-md-12">
                 <ContentfulImage
                   imageFile={graphQlResult.bildFuerLaufbahn}
                   styleClasses="img-fluid d-none d-md-block"

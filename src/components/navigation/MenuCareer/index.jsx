@@ -121,7 +121,7 @@ class MenuCareer extends React.Component {
           </a>
         </div>
         <div className="d-block d-lg-none text-white margin-20-bottom">
-          <p className="d-inline menu-body-header">MENÜ</p>
+          <p className="h5 bold-font d-inline">MENÜ</p>
           <button
             id="close-button-menu"
             type="button"

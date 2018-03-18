@@ -61,20 +61,9 @@ class UeberUnsTemplate extends React.Component {
           }
         />
 
-        <div className="container margin-100-top">
-          <div className="row text-center">
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-8">
-              <p className="">{graphQlResult.ueberschriftVon3SpaltenTop}</p>
-            </div>
-            <div className="col-12 col-md-2" />
-          </div>
-
+        <div className="container margin-60-top">
           <div className="row justify-content-center text-center padding-md-top-bottom">
             <div className="col-6 col-md-4">
-              <h4 className="p padding-sm-bottom">
-                {graphQlResult.spaltenTopTitelLinks}
-              </h4>
               <ContentfulImage
                 imageFile={graphQlResult.spaltenTopBildLinks}
                 styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
@@ -83,14 +72,14 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildLinks}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
               />
+              <h4 className="p padding-sm-bottom">
+                {graphQlResult.spaltenTopTitelLinks}
+              </h4>
               <p className="">
                 {graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
               </p>
             </div>
             <div className="col-6 col-md-4">
-              <h4 className="p padding-sm-bottom">
-                {graphQlResult.spaltenTopTitelMitte}
-              </h4>
               <ContentfulImage
                 imageFile={graphQlResult.spaltenTopBildMitte}
                 styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
@@ -99,14 +88,14 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildMitte}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
               />
+              <h4 className="p padding-sm-bottom">
+                {graphQlResult.spaltenTopTitelMitte}
+              </h4>
               <p className="">
                 {graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
               </p>
             </div>
             <div className="col-6 col-md-4">
-              <h4 className="p padding-sm-bottom">
-                {graphQlResult.spaltenTopTitelRechts}
-              </h4>
               <ContentfulImage
                 imageFile={graphQlResult.spaltenTopBildRechts}
                 styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
@@ -115,6 +104,9 @@ class UeberUnsTemplate extends React.Component {
                 imageFile={graphQlResult.spaltenTopBildRechts}
                 styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
               />
+              <h4 className="p padding-sm-bottom">
+                {graphQlResult.spaltenTopTitelRechts}
+              </h4>
               <p className="">
                 {graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
               </p>
@@ -485,7 +477,6 @@ export const pageQuery = graphql`
       beschreibungAbsatz2 {
         beschreibungAbsatz2
       }
-      ueberschriftVon3SpaltenTop
       spaltenTopTitelLinks
       spaltenTopTextLinks {
         spaltenTopTextLinks

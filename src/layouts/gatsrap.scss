@@ -89,7 +89,7 @@ main {
     margin-top: 104px;
   }
   @include media-breakpoint-only(xl) {
-    margin-top: 104px; 
+    margin-top: 104px;
   }
 }
 .p-font-large-lg {
@@ -260,7 +260,7 @@ h6 {
   }
 }
 .h6 {
-  font-family: apercu-bold-pro;
+  font-family: apercu-regular-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
   }
@@ -628,30 +628,6 @@ a:hover {
 .padding-0 {
   padding: 0px;
 }
-.title-box {
-  position: relative;
-  left: 1rem;
-  top: 2.5rem;
-  z-index: 1000;
-  @include media-breakpoint-only(xs) {
-    position: relative;
-    left: 0rem;
-    top: 1.5rem;
-    z-index: 1000;
-  }
-  @include media-breakpoint-only(sm) {
-    position: relative;
-    left: 0rem;
-    top: 1.5rem;
-    z-index: 1000;
-  }
-  @include media-breakpoint-only(md) {
-    position: relative;
-    left: 0rem;
-    top: 1.5rem;
-    z-index: 1000;
-  }
-}
 .container-stellenanzeige-text ul {
   padding-left: 1rem;
   li {
@@ -812,7 +788,7 @@ a:hover {
   font-family: apercu-regular-pro;
 }
 .bold-font {
-  font-family: apercu-bold-pro;
+  font-family: apercu-bold-pro !important;
 }
 
 #lottie {
@@ -841,4 +817,9 @@ svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(sm) {
     visibility: hidden;
   }
+}
+
+#desktop-wahl-fach:hover,
+#desktop-wahl-tech:hover {
+  text-decoration: underline;
 }

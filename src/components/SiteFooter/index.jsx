@@ -33,13 +33,10 @@ class SiteFooter extends React.Component {
     if (locationUpdate === mainUrl) {
       return (
         <footer>
-          <div className="container margin-20-top padding-md-bottom">
+          <div className="container margin-20-top main">
             <div className="row">
               <div className="col-12 text-center">
-                <Link
-                  to={pathPrefix + '/impressum'}
-                  className="nav-link text-dark"
-                >
+                <Link to={pathPrefix + '/impressum'} className="text-dark">
                   IMPRESSUM
                 </Link>
               </div>
@@ -62,7 +59,10 @@ class SiteFooter extends React.Component {
                   <br />
                   Tel: +49 (0) 69-2 99 20 87 60
                   <br />
-                  E-Mail: <a className="text-white" href="mailto:welcome@cofinpro.de">welcome@cofinpro.de</a>
+                  E-Mail:{' '}
+                  <a className="text-white" href="mailto:welcome@cofinpro.de">
+                    welcome@cofinpro.de
+                  </a>
                 </p>
               </div>
 

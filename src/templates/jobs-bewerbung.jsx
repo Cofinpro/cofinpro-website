@@ -403,13 +403,16 @@ class JobsBewerbungTemplate extends React.Component {
         <div className="container bg-orange-light margin-100-top padding-md-top-bottom">
           <div className="row">
             <div className="col text-center">
+              <p className="h4 text-primary d-none d-md-block">
+                {graphQlResult.callToActionUntenUeberschrift}
+              </p>
               <ContentfulMarkdownText
                 text={graphQlResult.callToActionUntenText.callToActionUntenText}
-                styleClasses="h4 d-block d-md-none w-100"
+                styleClasses="d-block d-md-none w-100"
               />
               <ContentfulMarkdownText
                 text={graphQlResult.callToActionUntenText.callToActionUntenText}
-                styleClasses="h4 d-none d-md-block w-75 mx-auto"
+                styleClasses="d-none d-md-block w-75 mx-auto"
               />
               <div className="row">
                 <div className="col-12 col-md-1" />
@@ -575,6 +578,7 @@ export const pageQuery = graphql`
       textfeldKontaktdaten {
         textfeldKontaktdaten
       }
+      callToActionUntenUeberschrift
       callToActionUntenText {
         callToActionUntenText
       }
