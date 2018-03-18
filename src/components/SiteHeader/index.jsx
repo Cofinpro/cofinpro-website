@@ -76,7 +76,9 @@ class SiteHeader extends React.Component {
       <div>
         <div className="container">
           <div className="row title-box">
-            <div className="col-11 col-md-9 header-title">{titleElement}</div>
+            <div className="col-11 col-md-10 col-lg-9 header-title">
+              {titleElement}
+            </div>
             <div className="col-1 col-md-3" />
           </div>
         </div>
