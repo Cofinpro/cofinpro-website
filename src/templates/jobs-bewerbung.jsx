@@ -403,7 +403,7 @@ class JobsBewerbungTemplate extends React.Component {
         <div className="container bg-orange-light margin-100-top padding-md-top-bottom">
           <div className="row">
             <div className="col text-center">
-              <p className="h4 text-primary d-none d-md-block">
+              <p className="h4 text-primary">
                 {graphQlResult.callToActionUntenUeberschrift}
               </p>
               <ContentfulMarkdownText
