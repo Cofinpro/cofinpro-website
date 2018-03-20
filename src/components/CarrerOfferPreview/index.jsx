@@ -22,7 +22,9 @@ class CarrerOfferPreview extends React.Component {
     const additionalStyleClass = styleClass !== null ? styleClass : ''
 
     return (
-      <div className={'carrerOfferPreview ' + additionalStyleClass}>
+      <div
+        className={'carrerOfferPreview border-img-blue ' + additionalStyleClass}
+      >
         <Link
           to={pathPrefix + '/stellenanzeige/' + anzeigeId}
           className="text-dark"
