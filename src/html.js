@@ -54,6 +54,7 @@ export default class HTML extends React.Component {
             rel="stylesheet"
             href={pathPrefix + '/css/botui-theme-default.css'}
           />
+          <link rel="stylesheet" href={pathPrefix + '/css/other.css'} />
           <link
             rel="apple-touch-icon"
             sizes="57x57"

@@ -53,7 +53,7 @@ class StellenmarktTemplate extends React.Component {
           anzeigen={this.props.pathContext.stellenAnzeigen}
           boxTitle="JOBANGEBOTE FÜR FACHBERATER"
           filter={['fachlicher-professional', 'fachlicher-absolvent']}
-          boxStyle="jobangebote-fachberater-box"
+          boxStyle="border-img-blue"
           columnDefinition="col-12 col-md-10 col-lg-8"
           rowDefinition="row justify-content-start"
           borderStyleFallback="secondary"
@@ -77,7 +77,7 @@ class StellenmarktTemplate extends React.Component {
           anzeigen={this.props.pathContext.stellenAnzeigen}
           boxTitle="JOBANGEBOTE FÜR STUDENTEN"
           filter={['studenten']}
-          boxStyle="jobangebote-studenten-box"
+          boxStyle="border-img-blue"
           additionalColumn={<div className="col-12 col-md-1 col-lg-1" />}
           rowDefinition="row justify-content-start"
           borderStyleFallback="secondary"

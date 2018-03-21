@@ -5,7 +5,6 @@ import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
 import Facts from '../components/Facts'
-import SitePost from '../components/SitePost'
 import SiteHeader from '../components/SiteHeader'
 import SiteHeaderContent from '../components/SiteHeaderContent'
 import NewsPreview from '../components/NewsPreview'
@@ -175,7 +174,7 @@ class LandingTemplate extends React.Component {
             </div>
 
             <div className="col-12 col-md-5">
-              <div className="stellenangebote-box padding-md">
+              <div className="border-img-blue padding-md">
                 <div className="row">
                   <div className="col-12 col-md-12 col-lg-9">
                     <h2 className="h6">{graphQlResult.untertitelRechteBox}</h2>
