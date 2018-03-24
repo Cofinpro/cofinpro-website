@@ -3,16 +3,18 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import CarrerOffersCarousel from '../components/CarrerOffersCarousel'
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
-import CarrerOfferCarouselBox from '../components/CarrerOfferCarouselBox'
-import HtmlHeader from '../components/HtmlHeader'
-import ExternalLinkButton from '../components/buttons/ExternalLinkButton'
+import CarrerOffersCarousel from '../../components/CarrerOffersCarousel'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
+import HtmlHeader from '../../components/HtmlHeader'
+import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
-import RichTextParserHelper from '../utils/richTextParserHelper'
-import StorageHelper from '../utils/storageHelper'
+import RichTextParserHelper from '../../utils/richTextParserHelper'
+import StorageHelper from '../../utils/storageHelper'
+
+import './style.scss'
 
 class StellenanzeigeTemplate extends React.Component {
   getCurrentUrl() {

@@ -3,13 +3,13 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../components/Benefits'
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import Testimonial from '../components/Testimonial'
-import ContentfulImage from '../components/ContentfulImage'
-import HtmlHeader from '../components/HtmlHeader'
-import LinkButton from '../components/buttons/LinkButton'
+import Benefits from '../../components/Benefits'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import Testimonial from '../../components/Testimonial'
+import ContentfulImage from '../../components/ContentfulImage'
+import HtmlHeader from '../../components/HtmlHeader'
+import LinkButton from '../../components/buttons/LinkButton'
 
 class DeineEntwicklungTemplate extends React.Component {
   getCurrentUrl() {

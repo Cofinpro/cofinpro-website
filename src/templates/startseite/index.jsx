@@ -3,11 +3,13 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import ContentfulImage from '../components/ContentfulImage'
-import HtmlHeader from '../components/HtmlHeader'
-import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
+import ContentfulImage from '../../components/ContentfulImage'
+import HtmlHeader from '../../components/HtmlHeader'
+import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
-import StorageHelper from '../utils/storageHelper'
+import StorageHelper from '../../utils/storageHelper'
+
+import './style.scss'
 
 class StartseiteTemplate extends React.Component {
   getCurrentUrl() {

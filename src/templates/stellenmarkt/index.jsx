@@ -3,14 +3,14 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import HtmlHeader from '../components/HtmlHeader'
-import ExternalLinkButton from '../components/buttons/ExternalLinkButton'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import HtmlHeader from '../../components/HtmlHeader'
+import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
-import JobContainerBox from '../components/stellenmarkt/JobContainerBox'
+import JobContainerBox from '../../components/stellenmarkt/JobContainerBox'
 
-import StorageHelper from '../utils/storageHelper'
+import StorageHelper from '../../utils/storageHelper'
 
 class StellenmarktTemplate extends React.Component {
   constructor(props) {

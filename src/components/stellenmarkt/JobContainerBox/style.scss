@@ -1,1 +1,22 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
 
+.jobangebote-technologie-box {
+  border: 3px dashed $orange;
+}
+.jobangebote-studenten-box {
+  border: 3px solid $blue;
+}
+.jobangebote-andere-box {
+  border: 3px dashed $orange;
+}
+
+.btn-transparent,
+.btn-transparent:hover,
+.btn-transparent:focus {
+  background: none;
+  background-color: none;
+  border: none;
+  box-shadow: none;
+}

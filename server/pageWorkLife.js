@@ -57,7 +57,7 @@ exports.create = function(graphql, createPage, callback) {
       }
     `
   ).then(result => {
-    const workLifeTemplate = path.resolve(`./src/templates/work-life.jsx`)
+    const workLifeTemplate = path.resolve(`./src/templates/work-life/index.jsx`)
 
     console.log('finished query work life.')
 
@@ -160,18 +160,16 @@ function createSharpImages(
   })
 }
 
-
-
 function createSharpImage(graphql, sharpParameter, originalImg, callback) {
   graphql(
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-    originalImg.id +
-    `/" }) {
+      originalImg.id +
+      `/" }) {
                             sizes(` +
-    sharpParameter +
-    `) {
+      sharpParameter +
+      `) {
                         src
                         srcSet
                         srcWebp

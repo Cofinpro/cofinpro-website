@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 
 exports.create = function(createPage, news, callback) {
-  const template = path.resolve(`./src/templates/news.jsx`)
+  const template = path.resolve(`./src/templates/news/index.jsx`)
 
   _.each(news, edge => {
     var titelbildIdVar =

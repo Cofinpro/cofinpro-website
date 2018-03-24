@@ -3,14 +3,14 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../components/Benefits'
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import Testimonial from '../components/Testimonial'
-import ContentfulImage from '../components/ContentfulImage'
-import HtmlHeader from '../components/HtmlHeader'
-import ImageCarouselV2 from '../components/ImageCarouselV2'
-import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
+import Benefits from '../../components/Benefits'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import Testimonial from '../../components/Testimonial'
+import ContentfulImage from '../../components/ContentfulImage'
+import HtmlHeader from '../../components/HtmlHeader'
+import ImageCarouselV2 from '../../components/ImageCarouselV2'
+import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 class WorkLifeTemplate extends React.Component {
   componentDidMount() {
@@ -38,9 +38,8 @@ class WorkLifeTemplate extends React.Component {
     const infoboxRechtsBilderSharp = this.props.pathContext
       .infoboxRechtsBilderSharp
 
-      const titelBildDesktop = this.props.pathContext.titelBildDesktop
-      const titelBildMobile = this.props.pathContext.titelBildMobile
-  
+    const titelBildDesktop = this.props.pathContext.titelBildDesktop
+    const titelBildMobile = this.props.pathContext.titelBildMobile
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__

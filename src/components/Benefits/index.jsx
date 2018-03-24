@@ -4,8 +4,6 @@ import get from 'lodash/get'
 
 import ContentfulImage from '../ContentfulImage'
 
-import './style.scss'
-
 class Benefits extends React.Component {
   render() {
     const { title, img1, text1, img2, text2, img3, text3 } = this.props

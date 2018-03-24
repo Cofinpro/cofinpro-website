@@ -3,14 +3,14 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../components/Benefits'
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import Testimonial from '../components/Testimonial'
-import ContentfulImage from '../components/ContentfulImage'
-import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
-import ContentBoxStyleOne from '../components/ContentBoxStyleOne'
-import HtmlHeader from '../components/HtmlHeader'
+import Benefits from '../../components/Benefits'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import Testimonial from '../../components/Testimonial'
+import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import ContentBoxStyleOne from '../../components/ContentBoxStyleOne'
+import HtmlHeader from '../../components/HtmlHeader'
 
 class GehaltBeteiligungTemplate extends React.Component {
   getCurrentUrl() {

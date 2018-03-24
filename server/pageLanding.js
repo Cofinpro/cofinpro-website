@@ -3,7 +3,6 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-
 exports.create = function(
   graphql,
   createPage,
@@ -67,7 +66,7 @@ exports.create = function(
       }
     `
   ).then(result => {
-    const landingTemplate = path.resolve(`./src/templates/landing.jsx`)
+    const landingTemplate = path.resolve(`./src/templates/landing/index.jsx`)
 
     var topNews = []
     var numberOfTopsNews = 2
@@ -79,16 +78,19 @@ exports.create = function(
     }
     var itemsProcessed = 0
 
-    var postBilder = [];
+    var postBilder = []
 
-    if(result.data.allContentfulSeiteLandingPerspektive.edges.length > 0) {
-      _.each(result.data.allContentfulSeiteLandingPerspektive.edges[0].node.socialMediaPosts, post => {
-        postBilder.push(post.bildDesPosts);
-      })
+    if (result.data.allContentfulSeiteLandingPerspektive.edges.length > 0) {
+      _.each(
+        result.data.allContentfulSeiteLandingPerspektive.edges[0].node
+          .socialMediaPosts,
+        post => {
+          postBilder.push(post.bildDesPosts)
+        }
+      )
     }
 
     _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
-
       async.parallel(
         {
           titelBildDesktop: async.apply(
@@ -110,8 +112,7 @@ exports.create = function(
             postBilder
           ),
         },
-        function (err, results) {
-
+        function(err, results) {
           itemsProcessed++
 
           createPage({
@@ -123,34 +124,34 @@ exports.create = function(
               topNews: topNews,
               titelBildDesktop: results.titelBildDesktop,
               titelBildMobile: results.titelBildMobile,
-              socialMediaPostBilder: results.socialMediaPostBilder
+              socialMediaPostBilder: results.socialMediaPostBilder,
             },
           })
 
           console.log(`created page ${edge.node.perspektive.name}/landing`)
-          
-          if (itemsProcessed === result.data.allContentfulSeiteLandingPerspektive.edges.length) {
+
+          if (
+            itemsProcessed ===
+            result.data.allContentfulSeiteLandingPerspektive.edges.length
+          ) {
             callback(null)
           }
-
         }
       )
-
     })
   })
 }
-
 
 function createSharpImage(graphql, sharpParameter, originalImg, callback) {
   graphql(
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-    originalImg.id +
-    `/" }) {
+      originalImg.id +
+      `/" }) {
                             sizes(` +
-    sharpParameter +
-    `) {
+      sharpParameter +
+      `) {
                         src
                         srcSet
                         srcWebp
@@ -202,7 +203,6 @@ function createSharpImages(
                 }          
             `
     ).then(result => {
-
       resultImages.push(result.data.resultImage)
 
       itemsProcessed++

@@ -1,12 +1,3 @@
-// Colors
-//
-// Grayscale and brand colors for use across Bootstrap.
-
-// Start with assigning color names to specific hex values.
-//
-// Color system
-//
-
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -32,7 +23,6 @@ $teal: #009688 !default;
 $cyan: #00bcd4 !default;
 $brown: #847575 !default;
 
-// Reassign color vars to semantic color scheme
 $theme-colors: (
     primary: $orange,
     secondary: $blue,
@@ -82,7 +72,9 @@ $container-max-widths: (
   lg: 1060px,
   xl: 1240px
 );
+
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+
 main {
   margin-top: 76px;
   @include media-breakpoint-only(lg) {
@@ -428,18 +420,6 @@ a:hover {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-.space-button-left-right {
-  margin-right: 1rem;
-  margin-left: 1rem;
-  @include media-breakpoint-only(xs) {
-    margin-right: 0rem;
-    margin-left: 0rem;
-  }
-  @include media-breakpoint-only(sm) {
-    margin-right: 0rem;
-    margin-left: 0rem;
-  }
-}
 .inline-link {
   display: inline;
 }
@@ -448,9 +428,6 @@ a:hover {
 }
 .bg-orange-light {
   background-color: $orange-light;
-}
-.icon-social-media {
-  width: 2rem;
 }
 .img-md-padding {
   padding: 1.5rem;
@@ -592,18 +569,6 @@ a:hover {
     }
   }
 }
-.jobangebote-technologie-box {
-  border: 3px dashed $orange;
-}
-.jobangebote-studenten-box {
-  border: 3px solid $blue;
-}
-.jobangebote-andere-box {
-  border: 3px dashed $orange;
-}
-.cofinpro-logo-startseite {
-  margin-top: 24px;
-}
 #button-pinnwand-collapse,
 #button-startseite-collapse {
   background: none;
@@ -615,32 +580,11 @@ a:hover {
     font-size: 2rem;
   }
 }
-#button-startseite-collapse:focus {
-  outline: none;
-}
-.invisible {
-  visibility: hidden;
-  display: none;
-}
 .no-padding-left {
   padding-left: 0px;
 }
 .padding-0 {
   padding: 0px;
-}
-.container-stellenanzeige-text ul {
-  padding-left: 1rem;
-  li {
-    font-size: 14px;
-  }
-}
-.btn-transparent,
-.btn-transparent:hover,
-.btn-transparent:focus {
-  background: none;
-  background-color: none;
-  border: none;
-  box-shadow: none;
 }
 .margin-120-bottom {
   margin-bottom: 120px;
@@ -708,46 +652,11 @@ a:hover {
 .padding-20 {
   padding: 20px;
 }
-.stellenanzeige-call-to-action {
-  p.p-small {
-    font-size: 14px;
-  }
-}
 .line-black {
   color: black;
 }
-.img-consultant {
-  cursor: pointer;
-}
-#desktop-links-fach p,
-#desktop-links-tech p {
-  margin-bottom: 0.4rem;
-}
 .border-primary-dashed {
   border: 3px dashed $orange;
-}
-.link-style {
-  cursor: pointer;
-}
-.link-style:hover {
-  text-decoration: underline;
-}
-.two-column-text {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-}
-#desktop-links-fach {
-  display: none;
-}
-#desktop-links-tech {
-  display: none;
-}
-#links-fach {
-  display: none;
-}
-#links-tech {
-  display: none;
 }
 .close {
   opacity: 1;
@@ -782,8 +691,6 @@ a:hover {
     border-radius: 0px;
   }
 }
-.image-news-middle-part {
-}
 .normal-font {
   font-family: apercu-regular-pro;
 }
@@ -817,9 +724,4 @@ svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(sm) {
     visibility: hidden;
   }
-}
-
-#desktop-wahl-fach:hover,
-#desktop-wahl-tech:hover {
-  text-decoration: underline;
 }

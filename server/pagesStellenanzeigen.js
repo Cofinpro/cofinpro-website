@@ -10,7 +10,7 @@ exports.create = function(
 ) {
   console.log(`start create stellenanzeige.`)
 
-  const template = path.resolve(`./src/templates/stellenanzeige.jsx`)
+  const template = path.resolve(`./src/templates/stellenanzeige/index.jsx`)
 
   _.each(stellenAnzeigen, edge => {
     createPage({

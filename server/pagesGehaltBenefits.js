@@ -41,13 +41,12 @@ exports.create = function(graphql, createPage, callback) {
     `
   ).then(result => {
     const gehaltBeteiligungTemplate = path.resolve(
-      `./src/templates/gehalt-beteiligung.jsx`
+      `./src/templates/gehalt-beteiligung/index.jsx`
     )
 
     var itemsProcessed = 0
 
     _.each(result.data.allContentfulSeiteGehaltBenefits.edges, edge => {
-
       async.parallel(
         {
           titelBildDesktop: async.apply(
@@ -63,8 +62,7 @@ exports.create = function(graphql, createPage, callback) {
             edge.node.titelbildKlein
           ),
         },
-        function (err, results) {
-
+        function(err, results) {
           itemsProcessed++
 
           createPage({
@@ -76,35 +74,35 @@ exports.create = function(graphql, createPage, callback) {
               titelBildMobile: results.titelBildMobile,
             },
           })
-    
+
           console.log(
             `created page ${edge.node.perspektive.name}/gehalt-beteiligung`
           )
-          
-          if (itemsProcessed === result.data.allContentfulSeiteGehaltBenefits.edges.length) {
+
+          if (
+            itemsProcessed ===
+            result.data.allContentfulSeiteGehaltBenefits.edges.length
+          ) {
             callback(null)
           }
-
         }
       )
-
     })
 
     callback()
   })
 }
 
-
 function createSharpImage(graphql, sharpParameter, originalImg, callback) {
   graphql(
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-    originalImg.id +
-    `/" }) {
+      originalImg.id +
+      `/" }) {
                             sizes(` +
-    sharpParameter +
-    `) {
+      sharpParameter +
+      `) {
                         src
                         srcSet
                         srcWebp

@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
+exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
   graphql(
     `
       {
@@ -57,7 +57,7 @@ exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
       }
     `
   ).then(result => {
-    const template = path.resolve(`./src/templates/jobs-bewerbung.jsx`)
+    const template = path.resolve(`./src/templates/jobs-bewerbung/index.jsx`)
 
     _.each(result.data.allContentfulSeiteJobsBewerbung.edges, edge => {
       async.parallel(
@@ -87,7 +87,7 @@ exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
             edge.node.titelbildKlein
           ),
         },
-        function (err, results) {
+        function(err, results) {
           // results is now equals to: {one: 1, two: 2}
 
           console.log('finished image processing jobs bewerbung.')
@@ -118,11 +118,11 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-    originalImg.id +
-    `/" }) {
+      originalImg.id +
+      `/" }) {
                             sizes(` +
-    sharpParameter +
-    `) {
+      sharpParameter +
+      `) {
                         src
                         srcSet
                         srcWebp

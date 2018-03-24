@@ -37,12 +37,11 @@ exports.create = function(graphql, createPage, callback) {
       }
     `
   ).then(result => {
-    const ueberUnsTemplate = path.resolve(`./src/templates/ueber-uns.jsx`)
+    const ueberUnsTemplate = path.resolve(`./src/templates/ueber-uns/index.jsx`)
 
     var itemsProcessed = 0
 
     _.each(result.data.allContentfulSeiteUeberUns.edges, edge => {
-
       async.parallel(
         {
           titelBildDesktop: async.apply(
@@ -58,8 +57,7 @@ exports.create = function(graphql, createPage, callback) {
             edge.node.titelbildKlein
           ),
         },
-        function (err, results) {
-
+        function(err, results) {
           itemsProcessed++
 
           createPage({
@@ -71,32 +69,31 @@ exports.create = function(graphql, createPage, callback) {
               titelBildMobile: results.titelBildMobile,
             },
           })
-    
+
           console.log('created page ueber-uns.')
-          
-          if (itemsProcessed === result.data.allContentfulSeiteUeberUns.edges.length) {
+
+          if (
+            itemsProcessed ===
+            result.data.allContentfulSeiteUeberUns.edges.length
+          ) {
             callback(null)
           }
-
         }
       )
-
     })
-
   })
 }
-
 
 function createSharpImage(graphql, sharpParameter, originalImg, callback) {
   graphql(
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-    originalImg.id +
-    `/" }) {
+      originalImg.id +
+      `/" }) {
                             sizes(` +
-    sharpParameter +
-    `) {
+      sharpParameter +
+      `) {
                         src
                         srcSet
                         srcWebp

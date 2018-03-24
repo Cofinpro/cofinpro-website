@@ -41,7 +41,7 @@ exports.create = function(graphql, createPage, callback) {
     `
   ).then(result => {
     const deineEntwicklungTemplate = path.resolve(
-      `./src/templates/deine-entwicklung.jsx`
+      `./src/templates/deine-entwicklung/index.jsx`
     )
 
     _.each(result.data.allContentfulSeiteDeineEntwicklung.edges, edge => {

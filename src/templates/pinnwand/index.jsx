@@ -3,8 +3,10 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import NewsPreview from '../components/NewsPreview'
-import HtmlHeader from '../components/HtmlHeader'
+import NewsPreview from '../../components/NewsPreview'
+import HtmlHeader from '../../components/HtmlHeader'
+
+import './style.scss'
 
 class PinnwandTemplate extends React.Component {
   componentDidMount() {

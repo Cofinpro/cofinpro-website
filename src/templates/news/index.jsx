@@ -3,12 +3,12 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import ContentfulImage from '../components/ContentfulImage'
-import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
-import HtmlHeader from '../components/HtmlHeader'
-import LinkButton from '../components/buttons/LinkButton'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import HtmlHeader from '../../components/HtmlHeader'
+import LinkButton from '../../components/buttons/LinkButton'
 
 class NewsTemplate extends React.Component {
   getCurrentUrl() {
@@ -47,7 +47,7 @@ class NewsTemplate extends React.Component {
               />
               <ContentfulImage
                 imageFile={news.newsBild}
-                styleClasses="img-fluid margin-20-bottom news-image-2"
+                styleClasses="img-fluid margin-20-bottom"
               />
               <ContentfulMarkdownText
                 text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}

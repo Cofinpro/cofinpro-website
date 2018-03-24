@@ -20,7 +20,7 @@ exports.create = function(graphql, createPage, callback) {
   ).then(result => {
     console.log(`ended query for index.html`)
 
-    const template = path.resolve(`./src/templates/startseite.jsx`)
+    const template = path.resolve(`./src/templates/startseite/index.jsx`)
 
     _.each(result.data.allContentfulSeiteStartseiteKarriere.edges, edge => {
       createPage({

@@ -4,12 +4,12 @@ import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../components/Benefits'
-import SiteHeader from '../components/SiteHeader'
-import SiteHeaderContent from '../components/SiteHeaderContent'
-import Testimonial from '../components/Testimonial'
-import ContentfulImage from '../components/ContentfulImage'
-import HtmlHeader from '../components/HtmlHeader'
+import Benefits from '../../components/Benefits'
+import SiteHeader from '../../components/SiteHeader'
+import SiteHeaderContent from '../../components/SiteHeaderContent'
+import Testimonial from '../../components/Testimonial'
+import ContentfulImage from '../../components/ContentfulImage'
+import HtmlHeader from '../../components/HtmlHeader'
 
 class LaufbahnTemplate extends React.Component {
   getCurrentUrl() {

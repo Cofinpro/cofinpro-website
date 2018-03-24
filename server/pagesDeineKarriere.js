@@ -40,15 +40,13 @@ exports.create = function(graphql, createPage, callback) {
       }
     `
   ).then(result => {
-
     const deineKarriereTemplate = path.resolve(
-      `./src/templates/deine-karriere.jsx`
+      `./src/templates/deine-karriere/index.jsx`
     )
 
     var itemsProcessed = 0
 
     _.each(result.data.allContentfulSeiteDeineKarriere.edges, edge => {
-
       async.parallel(
         {
           titelBildDesktop: async.apply(
@@ -64,8 +62,7 @@ exports.create = function(graphql, createPage, callback) {
             edge.node.titelbildKlein
           ),
         },
-        function (err, results) {
-
+        function(err, results) {
           itemsProcessed++
 
           createPage({
@@ -77,18 +74,20 @@ exports.create = function(graphql, createPage, callback) {
               titelBildMobile: results.titelBildMobile,
             },
           })
-    
-          console.log(`created page ${edge.node.perspektive.name}/deine-karriere`)
-          
-          if (itemsProcessed === result.data.allContentfulSeiteDeineKarriere.edges.length) {
+
+          console.log(
+            `created page ${edge.node.perspektive.name}/deine-karriere`
+          )
+
+          if (
+            itemsProcessed ===
+            result.data.allContentfulSeiteDeineKarriere.edges.length
+          ) {
             callback(null)
           }
-
         }
       )
-
     })
-
   })
 }
 
@@ -97,11 +96,11 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
     `
       {
       resultImage: imageSharp(id: { regex: "/` +
-    originalImg.id +
-    `/" }) {
+      originalImg.id +
+      `/" }) {
                             sizes(` +
-    sharpParameter +
-    `) {
+      sharpParameter +
+      `) {
                         src
                         srcSet
                         srcWebp
