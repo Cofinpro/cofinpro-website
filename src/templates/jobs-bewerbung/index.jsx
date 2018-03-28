@@ -100,7 +100,7 @@ class JobsBewerbungTemplate extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-12 col-md-10 col-lg-8 offset-lg-1">
+            <div className="col-12 col-md-9 col-lg-5 offset-lg-1">
               <ContentfulMarkdownText
                 text={
                   graphQlResult.beschreibungAnsprechpartnerBewerbungen

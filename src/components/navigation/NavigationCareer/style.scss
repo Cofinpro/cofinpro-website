@@ -151,6 +151,18 @@
     color: black;
   }
 
+  a.link-nav-main-page {
+    padding-left: 10px;
+
+    @include media-breakpoint-only(xs) {
+      padding-left: 15px;
+    }
+
+    @include media-breakpoint-only(sm) {
+      padding-left: 15px;
+    }
+  }
+
   .navbar-brand {
     padding-top: 0px;
   }
