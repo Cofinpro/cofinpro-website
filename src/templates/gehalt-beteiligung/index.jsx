@@ -223,6 +223,7 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 0 ? (
                   <div className="">
+                    <div className="d-block d-md-none margin-30-top" />
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[0].ueberschrift}
                     </h4>
@@ -241,6 +242,7 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6 offset-md-6">
                 {graphQlResult.artenVonStudenten.length > 1 ? (
                   <div className="">
+                    <div className="d-block d-md-none margin-40-top" />
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[1].ueberschrift}
                     </h4>
@@ -259,6 +261,7 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 2 ? (
                   <div className="">
+                    <div className="d-block d-md-none margin-40-top" />
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[2].ueberschrift}
                     </h4>
@@ -277,6 +280,7 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6 offset-md-6">
                 {graphQlResult.artenVonStudenten.length > 3 ? (
                   <div className="">
+                    <div className="d-block d-md-none margin-40-top" />
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[3].ueberschrift}
                     </h4>
@@ -295,6 +299,7 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 4 ? (
                   <div className="">
+                    <div className="d-block d-md-none margin-40-top" />
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[4].ueberschrift}
                     </h4>
@@ -313,6 +318,7 @@ class GehaltBeteiligungTemplate extends React.Component {
               <div className="col-12 col-md-6 offset-md-6">
                 {graphQlResult.artenVonStudenten.length > 5 ? (
                   <div className="">
+                    <div className="d-block d-md-none margin-40-top" />
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[5].ueberschrift}
                     </h4>
