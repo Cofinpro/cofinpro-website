@@ -222,7 +222,7 @@ class GehaltBeteiligungTemplate extends React.Component {
             <div className="row">
               <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 0 ? (
-                  <div className="padding-md-top-bottom">
+                  <div className="">
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[0].ueberschrift}
                     </h4>
@@ -235,10 +235,12 @@ class GehaltBeteiligungTemplate extends React.Component {
                   </div>
                 ) : null}
               </div>
+            </div>
 
-              <div className="col-12 col-md-6">
+            <div className="row">
+              <div className="col-12 col-md-6 offset-md-6">
                 {graphQlResult.artenVonStudenten.length > 1 ? (
-                  <div className="padding-md-top-bottom">
+                  <div className="">
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[1].ueberschrift}
                     </h4>
@@ -250,8 +252,13 @@ class GehaltBeteiligungTemplate extends React.Component {
                     />
                   </div>
                 ) : null}
+              </div>
+            </div>
+
+            <div className="row">
+              <div className="col-12 col-md-6">
                 {graphQlResult.artenVonStudenten.length > 2 ? (
-                  <div className="padding-md-top-bottom">
+                  <div className="">
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[2].ueberschrift}
                     </h4>
@@ -267,9 +274,9 @@ class GehaltBeteiligungTemplate extends React.Component {
             </div>
 
             <div className="row">
-              <div className="col-12 col-md-6">
-                {graphQlResult.artenVonStudenten.length > 2 ? (
-                  <div className="padding-md-top-bottom">
+              <div className="col-12 col-md-6 offset-md-6">
+                {graphQlResult.artenVonStudenten.length > 3 ? (
+                  <div className="">
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[3].ueberschrift}
                     </h4>
@@ -282,10 +289,12 @@ class GehaltBeteiligungTemplate extends React.Component {
                   </div>
                 ) : null}
               </div>
+            </div>
 
+            <div className="row">
               <div className="col-12 col-md-6">
-                {graphQlResult.artenVonStudenten.length > 2 ? (
-                  <div className="padding-md-top-bottom">
+                {graphQlResult.artenVonStudenten.length > 4 ? (
+                  <div className="">
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[4].ueberschrift}
                     </h4>
@@ -301,9 +310,9 @@ class GehaltBeteiligungTemplate extends React.Component {
             </div>
 
             <div className="row">
-              <div className="col-12 col-md-6">
-                {graphQlResult.artenVonStudenten.length > 2 ? (
-                  <div className="padding-md-top">
+              <div className="col-12 col-md-6 offset-md-6">
+                {graphQlResult.artenVonStudenten.length > 5 ? (
+                  <div className="">
                     <h4 className="padding-sm-bottom">
                       {graphQlResult.artenVonStudenten[5].ueberschrift}
                     </h4>
@@ -316,13 +325,10 @@ class GehaltBeteiligungTemplate extends React.Component {
                   </div>
                 ) : null}
               </div>
-
-              <div className="col-12 col-md-6" />
             </div>
 
             <div className="row margin-120-top">
-              <div className="col-12 col-md-6" />
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-md-6 offset-md-6">
                 <Testimonial
                   title={graphQlResult.testimonial.ueberschrift}
                   text={graphQlResult.testimonial.zitat.zitat}
