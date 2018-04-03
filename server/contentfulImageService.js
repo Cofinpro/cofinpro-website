@@ -34,7 +34,7 @@ exports.refreshImages = function(graphql, callback) {
     graphql(
       `
         {
-          allContentfulAsset(limit: 2000) {
+          allContentfulAsset(limit: 3000) {
             edges {
               node {
                 id
@@ -56,9 +56,18 @@ exports.refreshImages = function(graphql, callback) {
         var newFileName =
           edge.node.id +
           fileName.substring(fileName.lastIndexOf('.'), fileName.length)
-        var path = './static/img/contentful/' + newFileName
 
-        console.log('checking if image exists under:' + path)
+        var path = ''
+
+        console.log('new file name:' + newFileName)
+
+        if (isImage(newFileName)) {
+          path = './static/img/contentful/' + newFileName
+        } else if (isPdf(newFileName)) {
+          path = './static/pdf/contentful/' + newFileName
+        }
+
+        console.log('checking if asset exists under:' + path)
 
         if (!existsAsset(path)) {
           console.log('asset for id:' + edge.node.id + ' not found.')
@@ -102,6 +111,25 @@ exports.refreshImages = function(graphql, callback) {
 
 function existsAsset(_path) {
   if (fs.existsSync(_path)) {
+    return true
+  }
+  return false
+}
+
+function isImage(_fileName) {
+  if (
+    _fileName.toLowerCase().endsWith('.jpg') ||
+    _fileName.toLowerCase().endsWith('.jpeg') ||
+    _fileName.toLowerCase().endsWith('.png') ||
+    _fileName.toLowerCase().endsWith('.ico')
+  ) {
+    return true
+  }
+  return false
+}
+
+function isPdf(_fileName) {
+  if (_fileName.toLowerCase().endsWith('.pdf')) {
     return true
   }
   return false
