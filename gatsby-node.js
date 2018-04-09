@@ -265,7 +265,7 @@ function getStellenanzeigen(callback) {
               befristung
               art
               titel
-              perspektiveLink {
+              zuordnungZuKompetenzen {
                 name
               }
               ueberschriftGanzOben

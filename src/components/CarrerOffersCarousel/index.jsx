@@ -59,17 +59,19 @@ class CarrerOffersCarousel extends React.Component {
       var buckets = []
       var tempBucket = []
 
-      for (var i = 1; i < itemsData.length; i++) {
-        if (
-          perspective == null ||
-          perspective.trim().length < 1 ||
-          itemsData[i - 1].node.perspektiveLink.name === perspective
-        ) {
+      for (var i = 0; i < itemsData.length; i++) {
+        for(var j = 0; j < itemsData[i].node.zuordnungZuKompetenzen.length; ++j) {
           if (
-            blacklistedItem == null ||
-            blacklistedItem !== itemsData[i - 1].node.id
+            perspective == null ||
+            perspective.trim().length < 1 ||
+            itemsData[i].node.zuordnungZuKompetenzen[j].name === perspective
           ) {
-            tempBucket.push(itemsData[i - 1])
+            if (
+              blacklistedItem == null ||
+              blacklistedItem !== itemsData[i].node.id
+            ) {
+              tempBucket.push(itemsData[i])
+            }
           }
         }
 

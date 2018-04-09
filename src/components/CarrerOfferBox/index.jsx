@@ -42,13 +42,15 @@ class CarrerOfferBox extends React.Component {
 
     var buckets = []
 
-    for (var i = 1; i < anzeigen.length; i++) {
-      if (
-        this.state.perspektive == null ||
-        this.state.perspektive.trim().length < 1 ||
-        anzeigen[i - 1].node.perspektiveLink.name === this.state.perspektive
-      ) {
-        buckets.push(anzeigen[i - 1])
+    for (var i = 0; i < anzeigen.length; i++) {
+      for(var j = 0; j < anzeigen[i].node.zuordnungZuKompetenzen.length; ++j) {
+        if (
+          this.state.perspektive == null ||
+          this.state.perspektive.trim().length < 1 ||
+          anzeigen[i].node.zuordnungZuKompetenzen[j].name === this.state.perspektive
+        ) {
+          buckets.push(anzeigen[i])
+        }
       }
     }
 

@@ -80,10 +80,14 @@ class JobContainerBox extends React.Component {
     var bucket = []
 
     for (var i = 0; i < anzeigen.length; ++i) {
-      if (filter.indexOf(anzeigen[i].node.perspektiveLink.name) > -1) {
-        bucket.push(anzeigen[i])
+      for(var j = 0; j < anzeigen[i].node.zuordnungZuKompetenzen.length; ++j) {
+        if (filter.indexOf(anzeigen[i].node.zuordnungZuKompetenzen[j].name) > -1) {
+          bucket.push(anzeigen[i])
+        }
       }
     }
+
+    console.log(bucket);
 
     var indexToCollapse = 0
 
