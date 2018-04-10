@@ -40,38 +40,29 @@ class SocialMediaCarousel extends React.Component {
                   }
                 }
 
-                console.log(imageSharp)
-
-                if (imageSharp === undefined) {
-                  return null
-                } else {
-                  return (
-                    <div
-                      className={
-                        'text-center carousel-item' + (i == 0 ? ' active' : '')
-                      }
-                      key={'carousel-item-' + i + '-' + carouselId}
-                    >
-                      <a
-                        href={mediaPost.urlDesPosts.urlDesPosts}
-                        target="_blank"
-                      >
-                        <Img
-                          sizes={imageSharp.sizes}
-                          key={
-                            'carousel-item-image-big-' +
-                            i +
-                            imageSharp.sizes.originalName
-                          }
-                        />
-                      </a>
-                      <ContentfulMarkdownText
-                        text={mediaPost.textDesPosts.textDesPosts}
-                        styleClasses="d-block w-75 mx-auto p-font-large-md"
+                return (
+                  <div
+                    className={
+                      'text-center carousel-item' + (i == 0 ? ' active' : '')
+                    }
+                    key={'carousel-item-' + i + '-' + carouselId}
+                  >
+                    <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank">
+                      <Img
+                        sizes={imageSharp.sizes}
+                        key={
+                          'carousel-item-image-big-' +
+                          i +
+                          imageSharp.sizes.originalName
+                        }
                       />
-                    </div>
-                  )
-                }
+                    </a>
+                    <ContentfulMarkdownText
+                      text={mediaPost.textDesPosts.textDesPosts}
+                      styleClasses="d-block w-75 mx-auto p-font-large-md"
+                    />
+                  </div>
+                )
               })}
             </div>
             <CarouselControlPrevNext sliderId={'carousel-' + carouselId} />

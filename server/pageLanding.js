@@ -41,6 +41,7 @@ exports.create = function(
                 }
               }
               socialMediaPosts {
+                id
                 titel
                 headline
                 bildDesPosts {
@@ -79,15 +80,17 @@ exports.create = function(
     var itemsProcessed = 0
 
     var postBilder = []
+    var alreadyAddedImages = []
 
     if (result.data.allContentfulSeiteLandingPerspektive.edges.length > 0) {
-      _.each(
-        result.data.allContentfulSeiteLandingPerspektive.edges[0].node
-          .socialMediaPosts,
-        post => {
-          postBilder.push(post.bildDesPosts)
-        }
-      )
+      _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
+        _.each(edge.node.socialMediaPosts, post => {
+          if (!alreadyAddedImages.includes(post.id)) {
+            postBilder.push(post.bildDesPosts)
+            alreadyAddedImages.push(post.id)
+          }
+        })
+      })
     }
 
     _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
