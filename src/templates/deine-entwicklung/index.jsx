@@ -23,19 +23,19 @@ class DeineEntwicklungTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteDeineEntwicklung
 
-    const titelBildDesktop = this.props.pathContext.titelBildDesktop
-    const titelBildMobile = this.props.pathContext.titelBildMobile
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    console.log(this.props.data.imageTitelBildSharp)
+
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          titleImage={titelBildDesktop}
-          titleImageSmall={titelBildMobile}
+          titleImage={this.props.data.imageTitelBildSharp}
+          titleImageSmall={this.props.data.imageTitelBildKleinSharp}
         />
 
         <SiteHeaderContent
@@ -100,7 +100,11 @@ class DeineEntwicklungTemplate extends React.Component {
 export default DeineEntwicklungTemplate
 
 export const pageQuery = graphql`
-  query deineEntwicklungQuery($id: String!) {
+  query deineEntwicklungQuery(
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+  ) {
     contentfulSeiteDeineEntwicklung(id: { eq: $id }) {
       id
       perspektive {
@@ -231,6 +235,16 @@ export const pageQuery = graphql`
           fileName
           contentType
         }
+      }
+    }
+    imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

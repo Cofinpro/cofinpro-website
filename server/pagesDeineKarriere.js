@@ -16,23 +16,9 @@ exports.create = function(graphql, createPage, callback) {
               }
               titelbild {
                 id
-                title
-                description
-                file {
-                  url
-                  fileName
-                  contentType
-                }
               }
               titelbildKlein {
                 id
-                title
-                description
-                file {
-                  url
-                  fileName
-                  contentType
-                }
               }
             }
           }
@@ -47,74 +33,26 @@ exports.create = function(graphql, createPage, callback) {
     var itemsProcessed = 0
 
     _.each(result.data.allContentfulSeiteDeineKarriere.edges, edge => {
-      async.parallel(
-        {
-          titelBildDesktop: async.apply(
-            createSharpImage,
-            graphql,
-            'maxWidth: 1600, quality: 90',
-            edge.node.titelbild
-          ),
-          titelBildMobile: async.apply(
-            createSharpImage,
-            graphql,
-            'maxWidth: 1600, quality: 90',
-            edge.node.titelbildKlein
-          ),
+      itemsProcessed++
+
+      createPage({
+        path: `${edge.node.perspektive.name}/deine-karriere`,
+        component: slash(deineKarriereTemplate),
+        context: {
+          id: edge.node.id,
+          titelbildId: '/' + edge.node.titelbild.id + '/',
+          titelbildKleinId: '/' + edge.node.titelbildKlein.id + '/',
         },
-        function(err, results) {
-          itemsProcessed++
+      })
 
-          createPage({
-            path: `${edge.node.perspektive.name}/deine-karriere`,
-            component: slash(deineKarriereTemplate),
-            context: {
-              id: edge.node.id,
-              titelBildDesktop: results.titelBildDesktop,
-              titelBildMobile: results.titelBildMobile,
-            },
-          })
+      console.log(`created page ${edge.node.perspektive.name}/deine-karriere`)
 
-          console.log(
-            `created page ${edge.node.perspektive.name}/deine-karriere`
-          )
-
-          if (
-            itemsProcessed ===
-            result.data.allContentfulSeiteDeineKarriere.edges.length
-          ) {
-            callback(null)
-          }
-        }
-      )
+      if (
+        itemsProcessed ===
+        result.data.allContentfulSeiteDeineKarriere.edges.length
+      ) {
+        callback(null)
+      }
     })
-  })
-}
-
-function createSharpImage(graphql, sharpParameter, originalImg, callback) {
-  graphql(
-    `
-      {
-      resultImage: imageSharp(id: { regex: "/` +
-      originalImg.id +
-      `/" }) {
-                            sizes(` +
-      sharpParameter +
-      `) {
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        originalImg
-                        originalName
-                        base64
-                        aspectRatio
-                        sizes
-                        }
-                    }
-                }          
-            `
-  ).then(result => {
-    callback(null, result.data.resultImage)
   })
 }
