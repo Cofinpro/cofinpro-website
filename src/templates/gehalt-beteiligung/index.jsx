@@ -24,9 +24,6 @@ class GehaltBeteiligungTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteGehaltBenefits
 
-    const titelBildDesktop = this.props.pathContext.titelBildDesktop
-    const titelBildMobile = this.props.pathContext.titelBildMobile
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -49,8 +46,8 @@ class GehaltBeteiligungTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          titleImage={titelBildDesktop}
-          titleImageSmall={titelBildMobile}
+          titleImage={this.props.data.imageTitelBildSharp}
+          titleImageSmall={this.props.data.imageTitelBildKleinSharp}
         />
 
         <SiteHeaderContent
@@ -355,7 +352,7 @@ class GehaltBeteiligungTemplate extends React.Component {
 export default GehaltBeteiligungTemplate
 
 export const pageQuery = graphql`
-  query gehaltBenefitsQuery($id: String!) {
+  query gehaltBenefitsQuery($id: String!, $titelbildId: String!, $titelbildKleinId: String!) {
     contentfulSeiteGehaltBenefits(id: { eq: $id }) {
       id
       metaData {
@@ -545,5 +542,18 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
   }
 `

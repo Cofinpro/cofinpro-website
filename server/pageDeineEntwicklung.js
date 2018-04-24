@@ -3,7 +3,10 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(graphql, createPage, callback) {
+exports.create = function (graphql, createPage, callback) {
+
+  console.log("start graphql query: allContentfulSeiteDeineEntwicklung.");
+
   graphql(
     `
       {
@@ -26,6 +29,9 @@ exports.create = function(graphql, createPage, callback) {
       }
     `
   ).then(result => {
+
+    console.log("end graphql query: allContentfulSeiteDeineEntwicklung.");
+
     const deineEntwicklungTemplate = path.resolve(
       `./src/templates/deine-entwicklung/index.jsx`
     )
@@ -46,7 +52,7 @@ exports.create = function(graphql, createPage, callback) {
       console.log(
         `created page ${edge.node.perspektive.name}/deine-entwicklung`
       )
-      callback(null)
     })
+    callback(null)
   })
 }

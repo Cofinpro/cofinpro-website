@@ -3,7 +3,10 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(graphql, createPage, callback) {
+exports.create = function (graphql, createPage, callback) {
+
+  console.log("start graphql query: allContentfulSeiteUeberUns.");
+
   graphql(
     `
       {
@@ -13,22 +16,18 @@ exports.create = function(graphql, createPage, callback) {
               id
               titelbild {
                 id
-                title
-                description
-                file {
-                  url
-                  fileName
-                  contentType
-                }
               }
               titelbildKlein {
                 id
-                title
-                description
-                file {
-                  url
-                  fileName
-                  contentType
+              }
+              karrieremagazin {
+                bild {
+                  id
+                }
+              }
+              projekte {
+                bild {
+                  id
                 }
               }
             }
@@ -37,77 +36,29 @@ exports.create = function(graphql, createPage, callback) {
       }
     `
   ).then(result => {
+
+    console.log("end graphql query: allContentfulSeiteUeberUns.");
+
     const ueberUnsTemplate = path.resolve(`./src/templates/ueber-uns/index.jsx`)
 
-    var itemsProcessed = 0
-
     _.each(result.data.allContentfulSeiteUeberUns.edges, edge => {
-      async.parallel(
-        {
-          titelBildDesktop: async.apply(
-            createSharpImage,
-            graphql,
-            'maxWidth: 1600, quality: 90',
-            edge.node.titelbild
-          ),
-          titelBildMobile: async.apply(
-            createSharpImage,
-            graphql,
-            'maxWidth: 1600, quality: 90',
-            edge.node.titelbildKlein
-          ),
+
+      createPage({
+        path: `/ueber-uns`,
+        component: slash(ueberUnsTemplate),
+        context: {
+          id: edge.node.id,
+          titelbildId: '/' + edge.node.titelbild.id + '/',
+          titelbildKleinId: '/' + edge.node.titelbildKlein.id + '/',
+          projektBildId: '/' + edge.node.projekte.bild.id + '/',
+          karrieremagazinId: '/' + edge.node.karrieremagazin.bild.id + '/',
         },
-        function(err, results) {
-          itemsProcessed++
+      })
 
-          createPage({
-            path: `/ueber-uns`,
-            component: slash(ueberUnsTemplate),
-            context: {
-              id: edge.node.id,
-              titelBildDesktop: results.titelBildDesktop,
-              titelBildMobile: results.titelBildMobile,
-            },
-          })
-
-          console.log('created page ueber-uns.')
-
-          if (
-            itemsProcessed ===
-            result.data.allContentfulSeiteUeberUns.edges.length
-          ) {
-            callback(null)
-          }
-        }
-      )
+      console.log('created page ueber-uns.')
     })
-  })
-}
 
-function createSharpImage(graphql, sharpParameter, originalImg, callback) {
-  graphql(
-    `
-      {
-      resultImage: imageSharp(id: { regex: "/` +
-      originalImg.id +
-      `/" }) {
-                            sizes(` +
-      sharpParameter +
-      `) {
-                        src
-                        srcSet
-                        srcWebp
-                        srcSetWebp
-                        originalImg
-                        originalName
-                        base64
-                        aspectRatio
-                        sizes
-                        }
-                    }
-                }          
-            `
-  ).then(result => {
-    callback(null, result.data.resultImage)
+    callback(null)
+
   })
 }

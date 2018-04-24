@@ -3,7 +3,10 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
+exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
+
+  console.log("start graphql query: allContentfulSeiteJobsBewerbung.");
+
   graphql(
     `
       {
@@ -29,6 +32,9 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
       }
     `
   ).then(result => {
+
+    console.log("end graphql query: allContentfulSeiteJobsBewerbung.");
+
     const template = path.resolve(`./src/templates/jobs-bewerbung/index.jsx`)
 
     _.each(result.data.allContentfulSeiteJobsBewerbung.edges, edge => {
@@ -50,7 +56,9 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
       })
 
       console.log(`created page /jobs-bewerbung`)
-      callback(null)
     })
+
+    callback(null);
+
   })
 }

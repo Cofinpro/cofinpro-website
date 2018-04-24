@@ -4,6 +4,9 @@ const slash = require(`slash`)
 var async = require('async')
 
 exports.create = function(graphql, createPage, callback) {
+
+  console.log("start graphql query: allContentfulSeiteDeineKarriere.");
+
   graphql(
     `
       {
@@ -26,6 +29,9 @@ exports.create = function(graphql, createPage, callback) {
       }
     `
   ).then(result => {
+
+    console.log("end graphql query: allContentfulSeiteDeineKarriere.");
+
     const deineKarriereTemplate = path.resolve(
       `./src/templates/deine-karriere/index.jsx`
     )
@@ -33,7 +39,7 @@ exports.create = function(graphql, createPage, callback) {
     var itemsProcessed = 0
 
     _.each(result.data.allContentfulSeiteDeineKarriere.edges, edge => {
-      itemsProcessed++
+
 
       createPage({
         path: `${edge.node.perspektive.name}/deine-karriere`,
@@ -46,13 +52,10 @@ exports.create = function(graphql, createPage, callback) {
       })
 
       console.log(`created page ${edge.node.perspektive.name}/deine-karriere`)
-
-      if (
-        itemsProcessed ===
-        result.data.allContentfulSeiteDeineKarriere.edges.length
-      ) {
-        callback(null)
-      }
+      
     })
+
+    callback(null)
+
   })
 }

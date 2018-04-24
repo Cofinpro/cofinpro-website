@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import Facts from '../../components/Facts'
 import SiteHeader from '../../components/SiteHeader'
@@ -31,9 +32,6 @@ class UeberUnsTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
-    const titelBildDesktop = this.props.pathContext.titelBildDesktop
-    const titelBildMobile = this.props.pathContext.titelBildMobile
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -42,8 +40,8 @@ class UeberUnsTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          titleImage={titelBildDesktop}
-          titleImageSmall={titelBildMobile}
+          titleImage={this.props.data.imageTitelBildSharp}
+          titleImageSmall={this.props.data.imageTitelBildKleinSharp}
         />
 
         <SiteHeaderContent
@@ -249,10 +247,7 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.karrieremagazin.untertitel}</h2>
               <h3 className="h2">{graphQlResult.karrieremagazin.titel}</h3>
-              <ContentfulImage
-                imageFile={graphQlResult.karrieremagazin.bild}
-                styleClasses="img-fluid"
-              />
+              <Img sizes={this.props.data.karrieremagazinSharp.sizes} />   
             </div>
             <div className="col-12 col-md-1" />
           </div>
@@ -375,12 +370,9 @@ class UeberUnsTemplate extends React.Component {
         <div className="container margin-100-top">
           <div className="row justify-content-end">
             <div className="col-12 col-md-8">
-              <h2 className="h6">{graphQlResult.projekteUntertitel}</h2>
-              <h3 className="h2">{graphQlResult.projekteTitel}</h3>
-              <ContentfulImage
-                imageFile={graphQlResult.projekteBild}
-                styleClasses="img-fluid"
-              />
+              <h2 className="h6">{graphQlResult.projekte.untertitel}</h2>
+              <h3 className="h2">{graphQlResult.projekte.titel}</h3>
+              <Img sizes={this.props.data.projektBildSharp.sizes} />   
             </div>
             <div className="col-12 col-md-1" />
           </div>
@@ -388,7 +380,7 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-3" />
             <div className="col-12 col-md-5">
               <ContentfulMarkdownText
-                text={graphQlResult.projekteBeschreibung.projekteBeschreibung}
+                text={graphQlResult.projekte.beschreibung.beschreibung}
                 {...this.props}
               />
             </div>
@@ -456,7 +448,13 @@ class UeberUnsTemplate extends React.Component {
 export default UeberUnsTemplate
 
 export const pageQuery = graphql`
-  query ueberUnsQuery($id: String!) {
+  query ueberUnsQuery(
+    $id: String!,
+    $titelbildId: String!,
+    $titelbildKleinId: String!,
+    $projektBildId: String!,
+    $karrieremagazinId: String!
+  ) {
     contentfulSeiteUeberUns(id: { eq: $id }) {
       id
       metaData {
@@ -610,20 +608,21 @@ export const pageQuery = graphql`
         buttonText
       }
       kollegenAuthorZitat
-      projekteUntertitel
-      projekteTitel
-      projekteBild {
-        id
-        title
-        description
-        file {
-          url
-          fileName
-          contentType
+      projekte {
+        untertitel
+        titel
+        bild {
+          id
+          title
+          file {
+            url
+            fileName
+            contentType
+          }
         }
-      }
-      projekteBeschreibung {
-        projekteBeschreibung
+        beschreibung {
+          beschreibung
+        }
       }
       faktenCofinpro {
         name
@@ -699,5 +698,30 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    projektBildSharp: imageSharp(id: { regex: $projektBildId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
+      sizes(maxWidth: 1600, quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
   }
 `
