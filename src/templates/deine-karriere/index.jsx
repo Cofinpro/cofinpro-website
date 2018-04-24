@@ -23,9 +23,6 @@ class LaufbahnTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteDeineKarriere
 
-    const titelBildDesktop = this.props.pathContext.titelBildDesktop
-    const titelBildMobile = this.props.pathContext.titelBildMobile
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -34,8 +31,8 @@ class LaufbahnTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          titleImage={titelBildDesktop}
-          titleImageSmall={titelBildMobile}
+          titleImage={this.props.data.imageTitelBildSharp}
+          titleImageSmall={this.props.data.imageTitelBildKleinSharp}
         />
 
         <SiteHeaderContent
@@ -163,7 +160,11 @@ class LaufbahnTemplate extends React.Component {
 export default LaufbahnTemplate
 
 export const pageQuery = graphql`
-  query deineKarriereQuery($id: String!) {
+  query deineKarriereQuery(
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+  ) {
     contentfulSeiteDeineKarriere(id: { eq: $id }) {
       id
       metaData {
@@ -322,6 +323,16 @@ export const pageQuery = graphql`
           fileName
           contentType
         }
+      }
+    }
+    imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

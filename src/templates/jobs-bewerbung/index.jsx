@@ -34,14 +34,6 @@ class JobsBewerbungTemplate extends React.Component {
 
     const { location } = this.props
 
-    const titelBildDesktop = this.props.pathContext.titelBildDesktop
-    const titelBildMobile = this.props.pathContext.titelBildMobile
-
-    const erstesBildAnsprechpartnerBewerbungen = this.props.pathContext
-      .erstesBildAnsprechpartnerBewerbungen
-    const zweitesBildAnsprechpartnerBewerbungen = this.props.pathContext
-      .zweitesBildAnsprechpartnerBewerbungen
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -50,8 +42,8 @@ class JobsBewerbungTemplate extends React.Component {
 
         <SiteHeader
           title={graphQlResult.hauptueberschrift}
-          titleImage={titelBildDesktop}
-          titleImageSmall={titelBildMobile}
+          titleImage={this.props.data.imageTitelBildSharp}
+          titleImageSmall={this.props.data.imageTitelBildKleinSharp}
         />
 
         <SiteHeaderContent
@@ -82,8 +74,8 @@ class JobsBewerbungTemplate extends React.Component {
             <div className="col-12 col-md-6 col-lg-5 offset-lg-1">
               <Img
                 sizes={
-                  erstesBildAnsprechpartnerBewerbungen != null
-                    ? erstesBildAnsprechpartnerBewerbungen.sizes
+                  this.props.data.ansprechpartnerEinsBildSharp != null
+                    ? this.props.data.ansprechpartnerEinsBildSharp.sizes
                     : null
                 }
               />
@@ -92,8 +84,8 @@ class JobsBewerbungTemplate extends React.Component {
               <div className="d-block d-md-none margin-20-top" />
               <Img
                 sizes={
-                  zweitesBildAnsprechpartnerBewerbungen != null
-                    ? zweitesBildAnsprechpartnerBewerbungen.sizes
+                  this.props.data.ansprechpartnerZweiBildSharp != null
+                    ? this.props.data.ansprechpartnerZweiBildSharp.sizes
                     : null
                 }
               />
@@ -450,7 +442,13 @@ class JobsBewerbungTemplate extends React.Component {
 export default JobsBewerbungTemplate
 
 export const pageQuery = graphql`
-  query jobsBewerbungQuery($id: String!) {
+  query jobsBewerbungQuery(
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+    $ansprechpartnerEinsBildId: String!
+    $ansprechpartnerZweiBildId: String!
+  ) {
     contentfulSeiteJobsBewerbung(id: { eq: $id }) {
       metaData {
         title
@@ -589,6 +587,30 @@ export const pageQuery = graphql`
         linkZurExternenQuelle {
           linkZurExternenQuelle
         }
+      }
+    }
+    imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
+      sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    ansprechpartnerEinsBildSharp: imageSharp(
+      id: { regex: $ansprechpartnerEinsBildId }
+    ) {
+      sizes(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    ansprechpartnerZweiBildSharp: imageSharp(
+      id: { regex: $ansprechpartnerZweiBildId }
+    ) {
+      sizes(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

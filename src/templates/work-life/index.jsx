@@ -128,6 +128,22 @@ class WorkLifeTemplate extends React.Component {
                   </div>
                 </div>
               </div>
+
+              <div className="row">
+                <div className="col-12">
+                  <div className="embed-responsive embed-responsive-16by9 margin-20-bottom">
+                    <iframe
+                      className="embed-responsive-item"
+                      src={graphQlResult.infoBoxRechtsVideo.replace(
+                        '/watch?v=',
+                        '/embed/'
+                      )}
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+
               <div className="row">
                 <div className="col-12 col-lg-8">
                   <ContentfulMarkdownText
@@ -269,19 +285,9 @@ export const pageQuery = graphql`
           contentType
         }
       }
+      infoBoxRechtsVideo
       infoboxRechtsBeschreibung {
         infoboxRechtsBeschreibung
-      }
-      testimonial {
-        titel
-        ueberschrift
-        zitat {
-          zitat
-        }
-        linkVonYouTubeVideo
-        autor
-        autorTitel
-        buttonText
       }
     }
   }
