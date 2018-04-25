@@ -73,10 +73,6 @@
       "prettier --write",
       "git add"
     ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
     "*.css": [
       "prettier --write",
       "git add"
