@@ -46,7 +46,8 @@ exports.create = function(graphql, createPage, callback) {
       console.log(
         `created page ${edge.node.perspektive.name}/deine-entwicklung`
       )
-      callback(null)
     })
+
+    callback(null)
   })
 }
