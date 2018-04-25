@@ -450,6 +450,7 @@ export const pageQuery = graphql`
     $ansprechpartnerZweiBildId: String!
   ) {
     contentfulSeiteJobsBewerbung(id: { eq: $id }) {
+      id
       metaData {
         title
         keywords {

@@ -1,0 +1,1198 @@
+{
+  "data": {
+    "allContentfulSeiteGehaltBenefits": {
+      "edges": [
+        {
+          "node": {
+            "id": "c20xbihHEOI2igccQQMyUUa",
+            "metaData": {
+              "id": "c6QMSu4ekRac4IESiA0ggok",
+              "title":
+                "Gehalt als Absolvent und fachlicher Junior-Consultant: Cofinpro ",
+              "keywords": {
+                "keywords": "Gehalt, Absolvent"
+              },
+              "description": {
+                "description":
+                  "Was wir Einsteigern bieten: Alles rund um Dein Gehalt als Junior-Unternehmensberater im Consulting bei Cofinpro an neun Standorten in Deutschland."
+              }
+            },
+            "perspektive": {
+              "name": "fachlicher-absolvent"
+            },
+            "parent": {
+              "id": "Seite - Gehalt & Benefits"
+            },
+            "titel": "GEHALT & BENEFITS - FACHLICHER ABSOLVENT",
+            "hauptueberschrift": "Lass Zahlen sprechen",
+            "bildUnterHauptueberschrift": {
+              "id": "c27rvT7A1KUw2kSGqceO6",
+              "title": "gehalt buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/27rvT7A1KUw2kSGqceO6/84d90a29722ef1f69e9ac355bd310666/gehalt_buehne_desktop.jpg",
+                "fileName": "gehalt_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c5Q1mBmIWLSeSWWqcKm6U4U",
+              "title": "gehalt buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5Q1mBmIWLSeSWWqcKm6U4U/58b97862306b6d9795cc0ea5285b3c51/gehalt_buehne_mobile.jpg",
+                "fileName": "gehalt_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "untertitelBeschreibung":
+              "DEIN GEHALT ALS FACHLICHER JUNIOR-CONSULTANT",
+            "titelBeschreibung": "Was wir Dir als Einsteiger bieten",
+            "absatz1Beschreibung": {
+              "absatz1Beschreibung":
+                "Das Gehaltsmodell besteht bei Cofinpro aus zwei Teilen: zum einen aus einem fixen Grundgehalt, zum anderen aus einem Anteil, der am Erfolg von Cofinpro bemessen wird, zu dem auch Du beiträgst. Darüber hinaus sorgen wir natürlich für Sonderleistungen, etwa Deine Unfallversicherung und Altersvorsorge. Und wir stellen Dir jährlich ein Budget zu Verfügung, für das Du Dir nach Lust und Laune noch mehr Benefits aussuchen kannst."
+            },
+            "absatz2Beschreibung": {
+              "absatz2Beschreibung":
+                "Da wäre zum Beispiel die Wahl Deines Fortbewegungsmittels (wir lieben diese E-Roller!), oder ob Du vielleicht Deinen Fitnessstudiobeitrag oder die Kinderbetreuung von uns bezuschussen lassen möchtest. Ganz wichtig: Die Rechnung für Dein erstes Business-Outfit geht selbstverständlich auf uns."
+            },
+            "vorteile": {
+              "titel": "VORTEILE FÜR JUNIOR-BERATER",
+              "textVorteil1": {
+                "textVorteil1": "Auto, Job-Bike oder E-Roller"
+              },
+              "bildVorteil1": {
+                "id": "vCja76QEbmAGaoIquCiqI",
+                "title": "cp icons neuZeichenfläche 23",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/vCja76QEbmAGaoIquCiqI/99c3e6ccf37a741211bdb033e8d22e4a/cp_icons_neuZeichenfla__che_23.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 23.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil2": {
+                "textVorteil2": "Aktienbeteiligung"
+              },
+              "bildVorteil2": {
+                "id": "c1lDhpM1yzqGsaE4QWMieCC",
+                "title": "cp icons neuZeichenfläche 21",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1lDhpM1yzqGsaE4QWMieCC/876aa734b3f2a981762cc63c41440356/cp_icons_neuZeichenfla__che_21.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 21.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil3": {
+                "textVorteil3": "individuelles Benefit-Budget"
+              },
+              "bildVorteil3": {
+                "id": "c5Yd6x6AIO4KQoicEaKGo6O",
+                "title": "cp icons neuZeichenfläche 22",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/5Yd6x6AIO4KQoicEaKGo6O/995fc4e946623b1877734acd8d607dc1/cp_icons_neuZeichenfla__che_22.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 22.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "infoboxLinksObenUntertitel":
+              "GEHALT: BEISPIEL FÜR FACHLICHE JUNIOR-BERATER",
+            "infoboxLinksObenTitel": "Erfolg zahlt sich aus",
+            "infoboxLinksObenBild": {
+              "id": "c26DTJr6KWw8EOIs688iUkm",
+              "title": "gehalt1",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/26DTJr6KWw8EOIs688iUkm/a7fc3854d43b37bf24242b209a1c6c3d/gehalt1.jpg",
+                "fileName": "gehalt1.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksObenBeschreibung": {
+              "infoboxLinksObenBeschreibung":
+                "Abhängig von Deinem Grundgehalt, berechnet sich auch der Gehaltsanteil, der vom Unternehmenserfolg abhängt. Dieser Anteil liegt zwischen 10 und 45 % Deines Grundgehalts. Wenn Dein fixes Grundgehalt bis zu EUR 40.000 beträgt, bekommst Du 10 % erfolgsabhängigen Gehaltsanteil oben drauf. Je EUR 2.000 höherem Grundgehalt steigt der Anteil linear um 1 %. Diesen erfolgsabhängigen Anteil Deines Gehalts zahlen wir Dir monatlich zu 1/24 aus, und die Differenz überweisen wir Dir direkt nach testiertem Jahresabschluss. Übrigens: Die Zielerreichung lag seit der Gründung von Cofinpro vor mehr als zehn Jahren kontinuierlich bei über 100 % – Du kannst also mit Deinem Zielgehalt planen."
+            },
+            "infoboxLinksObenBeschreibungAbsatz2": {
+              "infoboxLinksObenBeschreibungAbsatz2":
+                "__Dazu ein Beispiel:__ Beträgt das Jahresgrundgehalt EUR 40.000, beläuft sich der erfolgsabhängige Anteil auf EUR 4.000 (10 %), das Jahreszielgehalt auf EUR 44.000. Wenn das Jahresgrundgehalt EUR 60.000 beträgt, steigt der erfolgsabhängige Gehaltsanteil auf EUR 12.000 (20 %), das Jahreszielgehalt liegt demnach bei EUR 72.000."
+            },
+            "infoboxRechtsObenUntertitel": "GEHALT FÜR JUNIOR-FACHBERATER",
+            "infoboxRechtsObenTitel": "Mach doch, was Du willst",
+            "infoboxRechtsObenBild": {
+              "id": "i0N5YhNGSWSiIGYGuKwIW",
+              "title": "gehalt2",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i0N5YhNGSWSiIGYGuKwIW/1b75eb961f98cebd1798cb0257d6d29b/gehalt2.jpg",
+                "fileName": "gehalt2.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxRechtsObenBeschreibung": {
+              "infoboxRechtsObenBeschreibung":
+                "Ganz klar, dass Du von uns Deinen Wunsch-Laptop (Lenovo oder Apple) sowie Dein eigenes Smartphone bekommst. Allerdings kannst Du Dein Benefit-Budget, das wir Dir jedes Jahr einräumen, zusätzlich für viele andere Vorteile nutzen. Möchtest Du lieber mit dem Auto, Jobrad oder E-Roller zur Arbeit kommen? Oder Dir von uns den Sport mitfinanzieren lassen? Du könntest den Betrag auch in Deine Altersvorsorge investieren. Die Entscheidung liegt ganz bei Dir. "
+            },
+            "spaltenInfoUntertitel": "PRIVAT NUTZBARE SONDERLEISTUNGEN",
+            "spaltenInfoTitel":
+              "Die richtige Ausstattung für flexible Arbeitsplatzmodelle",
+            "spaltenInfoTextLinks": {
+              "spaltenInfoTextLinks": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildLinks": null,
+            "spaltenInfoTextMitte": {
+              "spaltenInfoTextMitte": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildMitte": null,
+            "spaltenInfoTextRechts": {
+              "spaltenInfoTextRechts": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildRechts": null,
+            "infoboxLinksUntenUntertitel":
+              "BERATER-GEHALT IN COFINPRO INVESTIEREN",
+            "infoboxLinksUntenTitel": "Plötzlich Aktionär",
+            "infoboxLinksUntenBild": {
+              "id": "c4v2uvMaobmCs8SC6Sy20sy",
+              "title": "gehalt3",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4v2uvMaobmCs8SC6Sy20sy/b35ffde75912c90754566b2c134d9d0a/gehalt3.jpg",
+                "fileName": "gehalt3.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksUntenBeschreibung": {
+              "infoboxLinksUntenBeschreibung":
+                "Wir sind eine selbstständige und unabhängige Aktiengesellschaft mit breiter Mitarbeiterbeteiligung. Und auch Du kannst ganz leicht am Unternehmen teilhaben, wenn Du möchtest: Dafür bieten wir Dir an, einen Teil Deines Gehalts in Mitarbeiteraktien umwandeln zu lassen. "
+            },
+            "testimonial": {
+              "titel": "TESTIMONIAL - Aljana Scharrer — Expert Consultant",
+              "ueberschrift": "DEINE NEUEN KOLLEGEN",
+              "zitat": {
+                "zitat":
+                  "»In meinen Kollegen habe ich Freunde gefunden, und wir haben bei der Arbeit einfach eine gute Zeit.«"
+              },
+              "linkVonYouTubeVideo":
+                "https://www.youtube.com/watch?v=bELJY_VooZg?rel=0&modestbranding=1&showinfo=0",
+              "autor": "Aljana Scharrer",
+              "autorTitel": "Expert Consultant",
+              "buttonText": "MEHR INTERVIEWS"
+            },
+            "artenVonStudenten": null
+          }
+        },
+        {
+          "node": {
+            "id": "c1GuR0A8eFmSy4kUaiMmYcS",
+            "metaData": {
+              "id": "c4mwS0JnzJKO4e6KaUaOkIk",
+              "title":
+                "Gehalt in der Unternehmensberatung: HR, F&C, Marketing, PR",
+              "keywords": {
+                "keywords": "Gehalt, Aktienbeteiligung, Zuschussmodellen"
+              },
+              "description": {
+                "description":
+                  "Hier erfährst Du alles über Deine Benefits bei Cofinpro: vom Gehalt über Aktienbeteiligung und Gadgets bis zu unseren Zuschussmodellen für Kinderbetreuung."
+              }
+            },
+            "perspektive": {
+              "name": "andere"
+            },
+            "parent": {
+              "id": "Seite - Gehalt & Benefits"
+            },
+            "titel": "GEHALT & BENEFITS - ANDERE",
+            "hauptueberschrift": "Lass Zahlen sprechen",
+            "bildUnterHauptueberschrift": {
+              "id": "c27rvT7A1KUw2kSGqceO6",
+              "title": "gehalt buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/27rvT7A1KUw2kSGqceO6/84d90a29722ef1f69e9ac355bd310666/gehalt_buehne_desktop.jpg",
+                "fileName": "gehalt_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c5Q1mBmIWLSeSWWqcKm6U4U",
+              "title": "gehalt buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5Q1mBmIWLSeSWWqcKm6U4U/58b97862306b6d9795cc0ea5285b3c51/gehalt_buehne_mobile.jpg",
+                "fileName": "gehalt_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "untertitelBeschreibung":
+              "GEHALT: KARRIERE IN DER UNTERNEHMENSBERATUNG",
+            "titelBeschreibung": "Was wir unseren Team-Mitgliedern bieten",
+            "absatz1Beschreibung": {
+              "absatz1Beschreibung":
+                "Unser Gehaltsmodell bei Cofinpro haben wir zweiteilig organisiert: Dein Gehalt setzt sich zusammen aus einem fixen Grundgehalt und einem Anteil, der sich am Erfolg von Cofinpro orientiert. Natürlich kümmern wir uns von Beginn an um Sonderleistungen wie Deine Unfallversicherung und Altersvorsorge. "
+            },
+            "absatz2Beschreibung": {
+              "absatz2Beschreibung":
+                "Darüber hinaus bekommst Du jährlich von uns ein Budget, das Du in viele weitere Benefits eintauschen kannst. Dazu gehört die Wahl Deines Fortbewegungsmittels (unser Favorit: der E-Roller!) – und auch ein Zuschuss für Deinen Lieblingssport oder die Betreuung Deiner Kinder sind eine Option.  "
+            },
+            "vorteile": {
+              "titel": "VORTEILE FÜR COFINPRO-MITARBEITER",
+              "textVorteil1": {
+                "textVorteil1": "Auto, Job-Bike oder E-Roller"
+              },
+              "bildVorteil1": {
+                "id": "vCja76QEbmAGaoIquCiqI",
+                "title": "cp icons neuZeichenfläche 23",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/vCja76QEbmAGaoIquCiqI/99c3e6ccf37a741211bdb033e8d22e4a/cp_icons_neuZeichenfla__che_23.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 23.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil2": {
+                "textVorteil2": "   individuelles Benefit-Budget"
+              },
+              "bildVorteil2": {
+                "id": "c1lDhpM1yzqGsaE4QWMieCC",
+                "title": "cp icons neuZeichenfläche 21",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1lDhpM1yzqGsaE4QWMieCC/876aa734b3f2a981762cc63c41440356/cp_icons_neuZeichenfla__che_21.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 21.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil3": {
+                "textVorteil3": "Aktienbeteiligung"
+              },
+              "bildVorteil3": {
+                "id": "c5Yd6x6AIO4KQoicEaKGo6O",
+                "title": "cp icons neuZeichenfläche 22",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/5Yd6x6AIO4KQoicEaKGo6O/995fc4e946623b1877734acd8d607dc1/cp_icons_neuZeichenfla__che_22.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 22.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "infoboxLinksObenUntertitel":
+              "GEHALT: BEISPIEL FÜR DEINEN JOB IN DER BERATUNG",
+            "infoboxLinksObenTitel": "Erfolg zahlt sich aus",
+            "infoboxLinksObenBild": {
+              "id": "c26DTJr6KWw8EOIs688iUkm",
+              "title": "gehalt1",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/26DTJr6KWw8EOIs688iUkm/a7fc3854d43b37bf24242b209a1c6c3d/gehalt1.jpg",
+                "fileName": "gehalt1.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksObenBeschreibung": {
+              "infoboxLinksObenBeschreibung":
+                "Abhängig von Deinem Grundgehalt wird auch der Gehaltsanteil berechnet, der vom Unternehmenserfolg abhängt. Er liegt immer zwischen 10 und 45 % Deines Grundgehalts. Beträgt Dein Grundgehalt beispielsweise bis zu EUR 40.000, so zahlen wir 10 % erfolgsabhängigen Gehaltsanteil zusätzlich dazu. Je EUR 2.000, die das Grundgehalt steigt, steigt auch der erfolgsabhängige Gehaltsanteil linear um 1 %. Diesen Anteil zahlen wir Dir monatlich zu 1/24 aus, am Ende des Jahres erhältst Du die Differenz, gleich nach testiertem Jahresabschluss. Wichtig: Seit der Gründung von Cofinpro 2007 liegt die Zielerreichung dauerhaft bei mehr als 100 % – mit Deinem Zielgehalt kannst Du also solide rechnen."
+            },
+            "infoboxLinksObenBeschreibungAbsatz2": {
+              "infoboxLinksObenBeschreibungAbsatz2":
+                "__Hier ein Beispiel dazu:__ Liegt das Jahresgrundgehalt bei EUR 40.000, beträgt der erfolgsabhängige Anteil EUR 4.000 (10 %) und das Jahreszielgehalt EUR 44.000. Steigt das Jahresgrundgehalt beispielsweise auf EUR 60.000, steigt der erfolgsabhängige Gehaltsanteil auf EUR 12.000 (20 %) an – und das Jahreszielgehalt beträgt EUR 72.000.\n"
+            },
+            "infoboxRechtsObenUntertitel": "GEHALT IN DER UNTERNEHMENSBERATUNG",
+            "infoboxRechtsObenTitel": "Mach doch, was Du willst",
+            "infoboxRechtsObenBild": {
+              "id": "i0N5YhNGSWSiIGYGuKwIW",
+              "title": "gehalt2",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i0N5YhNGSWSiIGYGuKwIW/1b75eb961f98cebd1798cb0257d6d29b/gehalt2.jpg",
+                "fileName": "gehalt2.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxRechtsObenBeschreibung": {
+              "infoboxRechtsObenBeschreibung":
+                "Selbstverständlich bekommst Du von uns einen Laptop (Lenovo oder Apple) und Dein persönliches Smartphone. Für viele weitere Vorteile kannst Du zudem Dein jährliches Benefit-Budget einsetzen. Da wäre etwa die Entscheidung, ob Du lieber mit Deinem eigenen Auto, Jobrad oder mit einem unserer E-Roller zur Arbeit fahren möchtest. Ob der Betrag Deiner Altersvorsorge zugutekommen soll oder Du Dir von uns den Sport mitfinanzieren lassen willst. Du bist völlig frei, das zu entscheiden."
+            },
+            "spaltenInfoUntertitel": "PRIVAT NUTZBARE SONDERLEISTUNGEN",
+            "spaltenInfoTitel":
+              "Die richtige Ausstattung für flexible Arbeitsplatzmodelle",
+            "spaltenInfoTextLinks": {
+              "spaltenInfoTextLinks": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildLinks": {
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5ni8BBWGRimYwiuuS4EGw6/9a410f65a690333f9bd685b678715013/icon_hand_star_fixed.png",
+                "fileName": "icon_hand_star_fixed.png",
+                "contentType": "image/png"
+              }
+            },
+            "spaltenInfoTextMitte": {
+              "spaltenInfoTextMitte": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildMitte": {
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/1zMlS70qO4KkGEY88GsK2U/a7789da2eecd3586263c6c65d3875b10/icon_3_house_fixed.png",
+                "fileName": "icon_3_house_fixed.png",
+                "contentType": "image/png"
+              }
+            },
+            "spaltenInfoTextRechts": {
+              "spaltenInfoTextRechts": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildRechts": {
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/Rwu2NxNO4m80Oi6mEyEAC/53b8a961235ce008391aaa8475bbbcab/icon_3_people_fixed.png",
+                "fileName": "icon_3_people_fixed.png",
+                "contentType": "image/png"
+              }
+            },
+            "infoboxLinksUntenUntertitel":
+              "DEIN GEHALT IN COFINPRO INVESTIEREN",
+            "infoboxLinksUntenTitel": "Plötzlich Aktionär",
+            "infoboxLinksUntenBild": {
+              "id": "c4v2uvMaobmCs8SC6Sy20sy",
+              "title": "gehalt3",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4v2uvMaobmCs8SC6Sy20sy/b35ffde75912c90754566b2c134d9d0a/gehalt3.jpg",
+                "fileName": "gehalt3.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksUntenBeschreibung": {
+              "infoboxLinksUntenBeschreibung":
+                "Da wir eine selbstständige und unabhängige Aktiengesellschaft sind, die sich unter anderem durch eine hohe Mitarbeiterbeteiligung auszeichnet, kannst auch Du zum Teilhaber werden:  Das bedeutet: Auf Wunsch kannst Du einen Teil Deines Gehalts ganz einfach in Mitarbeiteraktien umwandeln lassen. "
+            },
+            "testimonial": {
+              "titel": "TESTIMONIAL - Stefan Graß — Partner",
+              "ueberschrift": "DEINE NEUEN KOLLEGEN",
+              "zitat": {
+                "zitat":
+                  "»Mit dieser Crew ist ein Wunsch in Erfüllung gegangen. Die letzten Jahre waren so fantastisch, ich möchte nichts davon missen.«"
+              },
+              "linkVonYouTubeVideo":
+                "https://www.youtube.com/watch?v=77oLuOq6-Eo?rel=0&modestbranding=1&showinfo=0",
+              "autor": "Stefan Graß",
+              "autorTitel": "Partner",
+              "buttonText": "MEHR INTERVIEWS"
+            },
+            "artenVonStudenten": null
+          }
+        },
+        {
+          "node": {
+            "id": "c3t6Xy86tgs48QswSaqwyUA",
+            "metaData": {
+              "id": "c480Feay5zyWYEa2M88Yaei",
+              "title":
+                "Gehalt und Vergütung für Studenten im dualen Studium bei Cofinpro",
+              "keywords": {
+                "keywords": "Gehalt, Vergütung, Studenten"
+              },
+              "description": {
+                "description":
+                  "Gehalt und Vergütung für Studenten im dualen Studium bei Cofinpro"
+              }
+            },
+            "perspektive": {
+              "name": "studenten"
+            },
+            "parent": {
+              "id": "Seite - Gehalt & Benefits"
+            },
+            "titel": "GEHALT & BENEFITS - STUDENT",
+            "hauptueberschrift": "Lass Zahlen sprechen",
+            "bildUnterHauptueberschrift": {
+              "id": "c27rvT7A1KUw2kSGqceO6",
+              "title": "gehalt buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/27rvT7A1KUw2kSGqceO6/84d90a29722ef1f69e9ac355bd310666/gehalt_buehne_desktop.jpg",
+                "fileName": "gehalt_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c5Q1mBmIWLSeSWWqcKm6U4U",
+              "title": "gehalt buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5Q1mBmIWLSeSWWqcKm6U4U/58b97862306b6d9795cc0ea5285b3c51/gehalt_buehne_mobile.jpg",
+                "fileName": "gehalt_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "untertitelBeschreibung": "VERGÜTUNG ALS STUDENT BEI COFINPRO",
+            "titelBeschreibung": "Was wir Einsteigern bieten",
+            "absatz1Beschreibung": {
+              "absatz1Beschreibung":
+                "Auch als Neueinsteiger in der Unternehmensberatung wirst Du von uns fair bezahlt: Schließlich bringst Du für Cofinpro Deine Talente ein – und wir würden uns freuen, wenn wir uns auch nach Deinem Abschluss wiedersehen. "
+            },
+            "absatz2Beschreibung": null,
+            "vorteile": {
+              "titel": "VORTEILE FÜR STUDENTEN IM CONSULTING",
+              "textVorteil1": {
+                "textVorteil1": "eigene Gadgets"
+              },
+              "bildVorteil1": {
+                "id": "c7LzNTZEE2QcGCIq2QA6IIC",
+                "title": "cp icons neuZeichenfläche 25",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/7LzNTZEE2QcGCIq2QA6IIC/3f22f2c83a5ff75c9effd27581841408/cp_icons_neuZeichenfla__che_25.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 25.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil2": {
+                "textVorteil2": "faire Vergütung"
+              },
+              "bildVorteil2": {
+                "id": "c1e4YHPZrx6MQEyYuGmCgEk",
+                "title": "cp icons neuZeichenfläche 26",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1e4YHPZrx6MQEyYuGmCgEk/7e3d7dc06403fa8c787f886fb866bab6/cp_icons_neuZeichenfla__che_26.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 26.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil3": {
+                "textVorteil3": "Entwicklung in Experten-Teams"
+              },
+              "bildVorteil3": {
+                "id": "c3s0wHT460gMsWCqqs4seaI",
+                "title": "cp icons neuZeichenfläche 24",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/3s0wHT460gMsWCqqs4seaI/7f9de1635fa679992ae455a77f6ea29f/cp_icons_neuZeichenfla__che_24.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 24.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "infoboxLinksObenUntertitel": "nicht verwendet",
+            "infoboxLinksObenTitel": "nicht verwendet",
+            "infoboxLinksObenBild": {
+              "id": "c26DTJr6KWw8EOIs688iUkm",
+              "title": "gehalt1",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/26DTJr6KWw8EOIs688iUkm/a7fc3854d43b37bf24242b209a1c6c3d/gehalt1.jpg",
+                "fileName": "gehalt1.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksObenBeschreibung": {
+              "infoboxLinksObenBeschreibung": "nicht verwendet"
+            },
+            "infoboxLinksObenBeschreibungAbsatz2": {
+              "infoboxLinksObenBeschreibungAbsatz2": "nicht verwendet"
+            },
+            "infoboxRechtsObenUntertitel": "nicht verwendet",
+            "infoboxRechtsObenTitel": "nicht verwendet",
+            "infoboxRechtsObenBild": {
+              "id": "i0N5YhNGSWSiIGYGuKwIW",
+              "title": "gehalt2",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i0N5YhNGSWSiIGYGuKwIW/1b75eb961f98cebd1798cb0257d6d29b/gehalt2.jpg",
+                "fileName": "gehalt2.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxRechtsObenBeschreibung": {
+              "infoboxRechtsObenBeschreibung": "nicht verwendet"
+            },
+            "spaltenInfoUntertitel": "nicht verwendet",
+            "spaltenInfoTitel": "nicht verwendet",
+            "spaltenInfoTextLinks": {
+              "spaltenInfoTextLinks": "nicht verwendet"
+            },
+            "spaltenInfoBildLinks": null,
+            "spaltenInfoTextMitte": {
+              "spaltenInfoTextMitte": "nicht verwendet"
+            },
+            "spaltenInfoBildMitte": null,
+            "spaltenInfoTextRechts": {
+              "spaltenInfoTextRechts": "nicht verwendet"
+            },
+            "spaltenInfoBildRechts": null,
+            "infoboxLinksUntenUntertitel": "nicht verwendet",
+            "infoboxLinksUntenTitel": "nicht verwendet",
+            "infoboxLinksUntenBild": {
+              "id": "c4v2uvMaobmCs8SC6Sy20sy",
+              "title": "gehalt3",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4v2uvMaobmCs8SC6Sy20sy/b35ffde75912c90754566b2c134d9d0a/gehalt3.jpg",
+                "fileName": "gehalt3.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksUntenBeschreibung": {
+              "infoboxLinksUntenBeschreibung": "nicht verwendet"
+            },
+            "testimonial": {
+              "titel": "TESTIMONIAL - Majlen Herrmann — Stipendiatin",
+              "ueberschrift": "DEINE NEUEN KOLLEGEN",
+              "zitat": {
+                "zitat":
+                  "»Ich wollte voll ins Team integriert und unterstützt werden. Es war gleich klar, dass beiden Seiten die Zusammenarbeit wichtig ist.«"
+              },
+              "linkVonYouTubeVideo":
+                "https://www.youtube.com/watch?v=zrMMfkrmtGc?rel=0&modestbranding=1&showinfo=0",
+              "autor": "Majlen Herrmann",
+              "autorTitel": "Stipendiatin",
+              "buttonText": "MEHR INTERVIEWS"
+            },
+            "artenVonStudenten": [
+              {
+                "titelContentful": "DUALE STUDENTEN",
+                "ueberschrift": "DUALE STUDENTEN",
+                "beschreibung": {
+                  "beschreibung":
+                    "Als dualer Student der Wirtschaftsinformatik in Kooperation mit der DHBW Karlsruhe erhältst Du neben der Vergütung von EUR 1.000/1.100/1.200 brutto für drei Ausbildungsjahre auch ein jährliches Wohngeldbudget von EUR 3.000 brutto, Büchergeld von EUR 250 und ein Businessoutfit pro Jahr. Auch Deine Wochenendheimfahrten, die Studiengebühren sowie das Studententicket am Studienort gehen auf unsere Rechnung."
+                }
+              },
+              {
+                "titelContentful": "STIPENDIATEN",
+                "ueberschrift": "STIPENDIATEN",
+                "beschreibung": {
+                  "beschreibung":
+                    "Als Stipendiat bei Cofinpro statten wir Dich mit einem iPad Mini aus und unterstützen Dich außerdem mit EUR 250 im Monat."
+                }
+              },
+              {
+                "titelContentful": "WERKSTUDENTEN",
+                "ueberschrift": "WERKSTUDENTEN",
+                "beschreibung": {
+                  "beschreibung":
+                    "Als Werkstudent kannst Du bei uns mit einem Stundenlohn zwischen EUR 12 und 14 brutto rechnen."
+                }
+              },
+              {
+                "titelContentful": "PRAKTIKANTEN",
+                "ueberschrift": "PRAKTIKANTEN",
+                "beschreibung": {
+                  "beschreibung":
+                    "Das Schnupperpraktikum (zwei Wochen bis drei Monate) wird bei uns mit monatlich EUR 750 brutto vergütet. Studenten, die länger bleiben, erhalten EUR 1.500 brutto im Monat."
+                }
+              },
+              {
+                "titelContentful": "ABSCHLUSSARBEITEN",
+                "ueberschrift": "ABSCHLUSSARBEITEN",
+                "beschreibung": {
+                  "beschreibung":
+                    "Du willst mit uns für Deine Bachelor- oder Masterthesis zusammenarbeiten? Das unterstützen wir monatlich mit EUR 250."
+                }
+              },
+              {
+                "titelContentful": "BERUFSBEGLEITENDES MASTERPROGRAMM",
+                "ueberschrift": "BERUFSBEGLEITENDES MASTERPROGRAMM",
+                "beschreibung": {
+                  "beschreibung":
+                    "Wenn Du Deinen Bachelor in der Tasche hast und bei uns berufsbegleitend den Master absolvierst, zahlen wir Dir unsere übliche Einsteigervergütung."
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "id": "c52O2QElgB2wu4qWg4SMmYg",
+            "metaData": {
+              "id": "c1pKqYndmC4M8kQkM4E86gi",
+              "title":
+                "Gehalt für Senior-Consultants in der Beratung bei Cofinpro",
+              "keywords": {
+                "keywords": "Aktienbeteiligung, Gehalt"
+              },
+              "description": {
+                "description":
+                  "Aktienbeteiligung, Gehalt & Benefit-Budget: Hier stellen wir vor, was Dich als Senior-Berater, Manager oder Director bei Cofinpro erwartet. "
+              }
+            },
+            "perspektive": {
+              "name": "fachlicher-professional"
+            },
+            "parent": {
+              "id": "Seite - Gehalt & Benefits"
+            },
+            "titel": "GEHALT & BENEFITS - FACHLICHER PROFESSIONAL",
+            "hauptueberschrift": "Lass Zahlen sprechen",
+            "bildUnterHauptueberschrift": {
+              "id": "c27rvT7A1KUw2kSGqceO6",
+              "title": "gehalt buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/27rvT7A1KUw2kSGqceO6/84d90a29722ef1f69e9ac355bd310666/gehalt_buehne_desktop.jpg",
+                "fileName": "gehalt_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c5Q1mBmIWLSeSWWqcKm6U4U",
+              "title": "gehalt buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5Q1mBmIWLSeSWWqcKm6U4U/58b97862306b6d9795cc0ea5285b3c51/gehalt_buehne_mobile.jpg",
+                "fileName": "gehalt_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "untertitelBeschreibung":
+              "DEIN GEHALT ALS FACHBERATER SENIOR, MANAGER, DIRECTOR, PARTNER",
+            "titelBeschreibung": "Was wir Professionals bieten",
+            "absatz1Beschreibung": {
+              "absatz1Beschreibung":
+                "Unser Gehaltsmodell setzt sich zweiteilig zusammen: Es besteht aus einem fixen Grundgehalt sowie einem Anteil, der am Erfolg von Cofinpro bemessen wird, zu dem auch Du viel beiträgst. Dass wir für Sonderleistungen sorgen, etwa Deine Unfallversicherung und Altersvorsorge, ist selbstverständlich. Außerdem kannst Du ein Budget, das wir Dir jedes Jahr zur Verfügung stellen, in weitere Benefits einlösen."
+            },
+            "absatz2Beschreibung": {
+              "absatz2Beschreibung":
+                "Was darf es denn sein? Dein persönliches Lieblingsfortbewegungsmittel – Auto, Bike oder E-Roller –, ein Zuschuss fürs Fitnessstudio oder Unterstützung für die Kinderbetreuung? Du hast jedes Jahr aufs Neue die Freiheit, aus einem Sammelsurium der Möglichkeiten auszuwählen."
+            },
+            "vorteile": {
+              "titel": "VORTEILE FÜR FACHLICHE CONSULTANTS",
+              "textVorteil1": {
+                "textVorteil1": "Auto, Job-Bike oder E-Roller"
+              },
+              "bildVorteil1": {
+                "id": "vCja76QEbmAGaoIquCiqI",
+                "title": "cp icons neuZeichenfläche 23",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/vCja76QEbmAGaoIquCiqI/99c3e6ccf37a741211bdb033e8d22e4a/cp_icons_neuZeichenfla__che_23.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 23.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil2": {
+                "textVorteil2": "individuelles Benefit-Budget"
+              },
+              "bildVorteil2": {
+                "id": "c1lDhpM1yzqGsaE4QWMieCC",
+                "title": "cp icons neuZeichenfläche 21",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1lDhpM1yzqGsaE4QWMieCC/876aa734b3f2a981762cc63c41440356/cp_icons_neuZeichenfla__che_21.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 21.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil3": {
+                "textVorteil3": "Aktienbeteiligung"
+              },
+              "bildVorteil3": {
+                "id": "c5Yd6x6AIO4KQoicEaKGo6O",
+                "title": "cp icons neuZeichenfläche 22",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/5Yd6x6AIO4KQoicEaKGo6O/995fc4e946623b1877734acd8d607dc1/cp_icons_neuZeichenfla__che_22.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 22.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "infoboxLinksObenUntertitel": "GEHALT: BEISPIEL FÜR SENIOR-BERATER",
+            "infoboxLinksObenTitel": "Erfolg zahlt sich aus",
+            "infoboxLinksObenBild": {
+              "id": "c26DTJr6KWw8EOIs688iUkm",
+              "title": "gehalt1",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/26DTJr6KWw8EOIs688iUkm/a7fc3854d43b37bf24242b209a1c6c3d/gehalt1.jpg",
+                "fileName": "gehalt1.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksObenBeschreibung": {
+              "infoboxLinksObenBeschreibung":
+                "Abhängig von der Höhe Deines Grundgehalts wird auch der erfolgsabhängige Gehaltsanteil kalkuliert. Dieser liegt zwischen 10 und 45 % Deines Grundgehalts und beträgt bis zu einem fixen Grundgehalt von EUR 40.000 10 % zusätzlich. Über EUR 40.000 steigt er je EUR 2.000 mehr linear um 1 % an. Die Auszahlung Deines erfolgsabhängigen Gehaltsanteils zahlen wir Dir zu 1/24 jeden Monat aus, hingegen landet der Differenzbetrag gleich nach testiertem Jahresabschluss auf Deinem Konto. By the way: Unsere Zielerreichung lag seit der Gründung von Cofinpro 2007 immer bei mehr als 100 % – Du kannst also solide mit Deinem Zielgehalt planen."
+            },
+            "infoboxLinksObenBeschreibungAbsatz2": {
+              "infoboxLinksObenBeschreibungAbsatz2":
+                "__Dazu ein Exempel:__ Beläuft sich das Jahresgrundgehalt auf EUR 40.000, so beträgt der erfolgsabhängige Gehaltsanteil EUR 4.000 (10 %), das Jahreszielgehalt beträgt EUR 44.000. Wenn die Höhe des Jahresgrundgehalts bei EUR 60.000 liegt, beläuft sich der erfolgsabhängige Gehaltsanteil dagegen auf EUR 12.000 (20 %). Das Jahreszielgehalt beträgt in diesem Fall EUR 72.000."
+            },
+            "infoboxRechtsObenUntertitel": "GEHALT FÜR SENIOR-FACHBERATER",
+            "infoboxRechtsObenTitel": "Mach doch, was Du willst",
+            "infoboxRechtsObenBild": {
+              "id": "i0N5YhNGSWSiIGYGuKwIW",
+              "title": "gehalt2",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i0N5YhNGSWSiIGYGuKwIW/1b75eb961f98cebd1798cb0257d6d29b/gehalt2.jpg",
+                "fileName": "gehalt2.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxRechtsObenBeschreibung": {
+              "infoboxRechtsObenBeschreibung":
+                "Es versteht sich von selbst, dass Du bei Cofinpro gleich Dein eigenes Smartphone und einen Laptop (von Lenovo oder Apple) bekommst. Doch da ist noch viel mehr: Denn mit Deinem Benefit-Budget, das wir Dir jedes Jahr zur Verfügung stellen, kannst Du Dir noch viele andere Vorteile aussuchen, die zu Dir passen. Dazu gehört die Wahl, wie Du am liebsten zur Arbeit fahren willst (wir sind ganz verliebt in die E-Roller) oder ob wir das Fitnessstudio für Dich mitbezahlen sollen. Natürlich kannst Du den Betrag auch in Deine Altersvorsorge anlegen – wir reden Dir da nicht rein."
+            },
+            "spaltenInfoUntertitel": "PRIVAT NUTZBARE SONDERLEISTUNGEN",
+            "spaltenInfoTitel":
+              "Die richtige Ausstattung für flexible Arbeitsplatzmodelle",
+            "spaltenInfoTextLinks": {
+              "spaltenInfoTextLinks": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildLinks": null,
+            "spaltenInfoTextMitte": {
+              "spaltenInfoTextMitte": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildMitte": null,
+            "spaltenInfoTextRechts": {
+              "spaltenInfoTextRechts": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildRechts": null,
+            "infoboxLinksUntenUntertitel": "DEIN BERATER-GEHALT INVESTIEREN",
+            "infoboxLinksUntenTitel": "Plötzlich Aktionär",
+            "infoboxLinksUntenBild": {
+              "id": "c4v2uvMaobmCs8SC6Sy20sy",
+              "title": "gehalt3",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4v2uvMaobmCs8SC6Sy20sy/b35ffde75912c90754566b2c134d9d0a/gehalt3.jpg",
+                "fileName": "gehalt3.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksUntenBeschreibung": {
+              "infoboxLinksUntenBeschreibung":
+                "Cofinpro ist stolz darauf, eine selbstständige, unabhängige Aktiengesellschaft zu sein, die eine breite Mitarbeiterbeteiligung vorweisen kann. Das heißt im Klartext: Auf Wunsch kannst Du ebenfalls einer unserer Teilhaber werden und einen Teil Deines Gehalts in Mitarbeiteraktien umwandeln lassen."
+            },
+            "testimonial": {
+              "titel": "TESTIMONIAL - Stefan Graß — Partner",
+              "ueberschrift": "DEINE NEUEN KOLLEGEN",
+              "zitat": {
+                "zitat":
+                  "»Mit dieser Crew ist ein Wunsch in Erfüllung gegangen. Die letzten Jahre waren so fantastisch, ich möchte nichts davon missen.«"
+              },
+              "linkVonYouTubeVideo":
+                "https://www.youtube.com/watch?v=77oLuOq6-Eo?rel=0&modestbranding=1&showinfo=0",
+              "autor": "Stefan Graß",
+              "autorTitel": "Partner",
+              "buttonText": "MEHR INTERVIEWS"
+            },
+            "artenVonStudenten": null
+          }
+        },
+        {
+          "node": {
+            "id": "c4FpTXdOizSM8gO0CmIQw4y",
+            "metaData": {
+              "id": "c1oYRDUcIe0Eu8GYSUkc0q8",
+              "title":
+                "Gehalt als Senior Technical Consultant in der Beratung bei Cofinpro",
+              "keywords": {
+                "keywords": "Gehalt, Aktienbeteiligung"
+              },
+              "description": {
+                "description":
+                  "Eigenes Benefit-Budget, Aktienbeteiligung & Gehalt: Deine Vorteile als technologischer Senior-Berater, Manager oder Director bei Cofinpro. "
+              }
+            },
+            "perspektive": {
+              "name": "technologischer-professional"
+            },
+            "parent": {
+              "id": "Seite - Gehalt & Benefits"
+            },
+            "titel": "GEHALT & BENEFITS - TECHNOLOGISCHER PROFESSIONAL",
+            "hauptueberschrift": "Lass Zahlen sprechen",
+            "bildUnterHauptueberschrift": {
+              "id": "c27rvT7A1KUw2kSGqceO6",
+              "title": "gehalt buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/27rvT7A1KUw2kSGqceO6/84d90a29722ef1f69e9ac355bd310666/gehalt_buehne_desktop.jpg",
+                "fileName": "gehalt_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c5Q1mBmIWLSeSWWqcKm6U4U",
+              "title": "gehalt buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5Q1mBmIWLSeSWWqcKm6U4U/58b97862306b6d9795cc0ea5285b3c51/gehalt_buehne_mobile.jpg",
+                "fileName": "gehalt_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "untertitelBeschreibung":
+              "GEHALT FÜR TECHNOLOGIE-BERATER SENIOR, MANAGER, DIRECTOR, PARTNER",
+            "titelBeschreibung": "Was wir Professionals bieten",
+            "absatz1Beschreibung": {
+              "absatz1Beschreibung":
+                "Das Cofinpro-Gehaltsmodell haben wir in zwei Teile strukturiert: Es setzt sich zusammen aus einem fixen Grundgehalt und einem zweiten Anteil, der sich am Erfolg von Cofinpro bemisst – für den ja auch Du verantwortlich bist. Klar, dass wir uns um Sonderleistungen kümmern und zum Beispiel Deine Unfallversicherung und Altersvorsorge übernehmen. Daneben stellen wir Dir jedes Jahr aufs Neue ein Budget zur Verfügung, dass Du in zahlreiche weitere Benefits eintauschen kannst."
+            },
+            "absatz2Beschreibung": {
+              "absatz2Beschreibung":
+                "Das heißt, dass Du etwa wählen kannst, welches Dein persönliches Lieblingsfortbewegungsmittel ist – darf es ein Auto, Bike oder E-Roller sein? Oder ob wir Dir den Sport bezuschussen sollen, den Du nach Feierabend einfach brauchst. Vielleicht soll es auch ein Anteil an der Kinderbetreuung sein. Du entscheidest selbst, welche Benefits Du gerne von uns hättest."
+            },
+            "vorteile": {
+              "titel": "VORTEILE FÜR TECHNOLOGISCHE CONSULTANTS",
+              "textVorteil1": {
+                "textVorteil1": "Auto, Job-Bike oder E-Roller"
+              },
+              "bildVorteil1": {
+                "id": "vCja76QEbmAGaoIquCiqI",
+                "title": "cp icons neuZeichenfläche 23",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/vCja76QEbmAGaoIquCiqI/99c3e6ccf37a741211bdb033e8d22e4a/cp_icons_neuZeichenfla__che_23.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 23.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil2": {
+                "textVorteil2": "   individuelles Benefit-Budget"
+              },
+              "bildVorteil2": {
+                "id": "c1lDhpM1yzqGsaE4QWMieCC",
+                "title": "cp icons neuZeichenfläche 21",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1lDhpM1yzqGsaE4QWMieCC/876aa734b3f2a981762cc63c41440356/cp_icons_neuZeichenfla__che_21.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 21.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil3": {
+                "textVorteil3": "Aktienbeteiligung"
+              },
+              "bildVorteil3": {
+                "id": "c5Yd6x6AIO4KQoicEaKGo6O",
+                "title": "cp icons neuZeichenfläche 22",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/5Yd6x6AIO4KQoicEaKGo6O/995fc4e946623b1877734acd8d607dc1/cp_icons_neuZeichenfla__che_22.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 22.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "infoboxLinksObenUntertitel": "GEHALT: BEISPIEL FÜR SENIOR-BERATER",
+            "infoboxLinksObenTitel": "Erfolg zahlt sich aus",
+            "infoboxLinksObenBild": {
+              "id": "c26DTJr6KWw8EOIs688iUkm",
+              "title": "gehalt1",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/26DTJr6KWw8EOIs688iUkm/a7fc3854d43b37bf24242b209a1c6c3d/gehalt1.jpg",
+                "fileName": "gehalt1.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksObenBeschreibung": {
+              "infoboxLinksObenBeschreibung":
+                "Je nachdem, wie hoch Dein Grundgehalt ist, berechnet sich der erfolgsabhängige Anteil mit 10 bis 45 %. Wenn das fixe Grundgehalt beispielsweise bis zu EUR 40.000 beträgt, beläuft sich der zweite Anteil auf 10 % zusätzlich. Bei einem Grundgehalt von mehr als EUR 40.000 steigt der erfolgsabhängige Anteil je EUR 2.000 mehr linear um 1 %. Den erfolgsabhängigen Gehaltsanteil bekommst Du übrigens zu 1/24 monatlich, wohingegen der Differenzbetrag nach testiertem Jahresabschluss auf Deinem Konto landet. Gut zu wissen: Die Zielerreichung von Cofinpro lag seit unserer Gründung 2007 ohne Ausnahme bei über 100 % – mit Deinem Zielgehalt kannst Du also getrost planen."
+            },
+            "infoboxLinksObenBeschreibungAbsatz2": {
+              "infoboxLinksObenBeschreibungAbsatz2":
+                "__Dazu ein Beispiel:__ Wenn das Jahresgrundgehalt EUR 40.000 beträgt, liegt der erfolgsabhängige Gehaltsanteil bei EUR 4.000 (10 %) und das Jahreszielgehalt bei EUR 44.000. Beträgt das Jahresgrundgehalt dagegen EUR 60.000, ändert sich der erfolgsabhängige Gehaltsanteil auf EUR 12.000 (20 %). In diesem Fall beläuft sich das Jahreszielgehalt auf EUR 72.000."
+            },
+            "infoboxRechtsObenUntertitel":
+              "GEHALT FÜR TECHNOLOGISCHE SENIOR-BERATER",
+            "infoboxRechtsObenTitel": "Mach doch, was Du willst",
+            "infoboxRechtsObenBild": {
+              "id": "i0N5YhNGSWSiIGYGuKwIW",
+              "title": "gehalt2",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i0N5YhNGSWSiIGYGuKwIW/1b75eb961f98cebd1798cb0257d6d29b/gehalt2.jpg",
+                "fileName": "gehalt2.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxRechtsObenBeschreibung": {
+              "infoboxRechtsObenBeschreibung":
+                "Keine Frage: Nach Deinem Einstieg bei Cofinpro bekommst Du natürlich Dein eigenes Smartphone und Deinen Wunsch-Laptop (Lenovo oder Apple). Das ist aber längst nicht alles: Für Dein jährliches Benefit-Budget kannst Du Dir jede Menge weiterer Vorteile dazuholen. Wähle einfach, was am besten zu Dir passt: Du entscheidest, mit welchem Gefährt Du zur Arbeit fahren willst (wir haben uns ja in diese E-Roller verliebt), oder ob der Betrag in Deine Altersvorsorge einfließen soll. Wir können aber auch Deine Rechnung fürs Fitnessstudio bezuschussen – Du hast die Wahl aus einer langen Liste von Möglichkeiten."
+            },
+            "spaltenInfoUntertitel": "PRIVAT NUTZBARE SONDERLEISTUNGEN",
+            "spaltenInfoTitel":
+              "Die richtige Ausstattung für flexible Arbeitsplatzmodelle",
+            "spaltenInfoTextLinks": {
+              "spaltenInfoTextLinks": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildLinks": null,
+            "spaltenInfoTextMitte": {
+              "spaltenInfoTextMitte": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildMitte": null,
+            "spaltenInfoTextRechts": {
+              "spaltenInfoTextRechts": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildRechts": null,
+            "infoboxLinksUntenUntertitel": "DEIN BERATER-GEHALT INVESTIEREN",
+            "infoboxLinksUntenTitel": "Plötzlich Aktionär",
+            "infoboxLinksUntenBild": {
+              "id": "c4v2uvMaobmCs8SC6Sy20sy",
+              "title": "gehalt3",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4v2uvMaobmCs8SC6Sy20sy/b35ffde75912c90754566b2c134d9d0a/gehalt3.jpg",
+                "fileName": "gehalt3.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksUntenBeschreibung": {
+              "infoboxLinksUntenBeschreibung":
+                "Wir sind stolz, dass Cofinpro eine selbstständige, unabhängige Aktiengesellschaft ist und sich durch eine breite Mitarbeiterbeteiligung auszeichnet. Das bedeutet, dass auch Du zum Teilhaber an unserem Unternehmen werden kannst. Wenn Du möchtest, können wir einen Teil Deines Gehalts in Mitarbeiteraktien umwandeln – sprich uns einfach darauf an."
+            },
+            "testimonial": {
+              "titel": "TESTIMONIAL - Michael Heck — Manager",
+              "ueberschrift": "DEINE NEUEN KOLLEGEN",
+              "zitat": {
+                "zitat":
+                  "»Ich wollte kein kleines Rädchen in einem großen Konzern sein und immer dasselbe tun, sondern größtmögliche Abwechslung im Job.«"
+              },
+              "linkVonYouTubeVideo":
+                "https://www.youtube.com/watch?v=uZXQ6OSsDGk?rel=0&modestbranding=1&showinfo=0",
+              "autor": "Michael Heck",
+              "autorTitel": "Manager",
+              "buttonText": "MEHR INTERVIEWS"
+            },
+            "artenVonStudenten": null
+          }
+        },
+        {
+          "node": {
+            "id": "c4LUJPBUKDCWuUg8gyi2Uqw",
+            "metaData": {
+              "id": "c125m09meEICIKwwG8w8aSS",
+              "title":
+                "Gehalt als Absolvent und Junior Technical Consultant bei Cofinpro ",
+              "keywords": {
+                "keywords": "Gehalt, Absolvent "
+              },
+              "description": {
+                "description":
+                  "Lass Zahlen sprechen: Hier erfährst Du, welche Benefits Dich als Junior-Consultant in der Technologieberatung für die Finanzbranche bei Cofinpro erwarten. "
+              }
+            },
+            "perspektive": {
+              "name": "technologischer-absolvent"
+            },
+            "parent": {
+              "id": "Seite - Gehalt & Benefits"
+            },
+            "titel": "GEHALT & BENEFITS - TECHNOLOGISCHER ABSOLVENT",
+            "hauptueberschrift": "Lass Zahlen sprechen",
+            "bildUnterHauptueberschrift": {
+              "id": "c27rvT7A1KUw2kSGqceO6",
+              "title": "gehalt buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/27rvT7A1KUw2kSGqceO6/84d90a29722ef1f69e9ac355bd310666/gehalt_buehne_desktop.jpg",
+                "fileName": "gehalt_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c5Q1mBmIWLSeSWWqcKm6U4U",
+              "title": "gehalt buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/5Q1mBmIWLSeSWWqcKm6U4U/58b97862306b6d9795cc0ea5285b3c51/gehalt_buehne_mobile.jpg",
+                "fileName": "gehalt_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "untertitelBeschreibung": "GEHALT: DEINE KARRIERE ALS TECHNOLOGE",
+            "titelBeschreibung": "Was wir Dir als Einsteiger bieten",
+            "absatz1Beschreibung": {
+              "absatz1Beschreibung":
+                "Das Cofinpro-Gehaltsmodell setzt sich aus zwei Teilen zusammen: einem fixen Grundgehalt und einem Anteil, der sich am Erfolg von Cofinpro bemisst, zu dem Du ja beiträgst. Selbstverständlich sorgen wir auch für Sonderleistungen wie Deine Unfallversicherung und Altersvorsorge. Dazu kommt ein jährliches Budget, das Du in Benefits Deiner Wahl einlösen kannst."
+            },
+            "absatz2Beschreibung": {
+              "absatz2Beschreibung":
+                "Zum Beispiel kannst Du Dir Dein persönliches Fortbewegungsmittel aussuchen (wir lieben unsere E-Roller!) oder Dir einen Zuschuss für Deinen Lieblingssport zahlen lassen. Und überlasse uns doch bitte auch finanzielle Hürden wie Dein erstes Business-Outfit."
+            },
+            "vorteile": {
+              "titel": "VORTEILE FÜR TECHNOLOGISCHE JUNIOR-CONSULTANTS",
+              "textVorteil1": {
+                "textVorteil1": "Auto, Job-Bike oder E-Roller"
+              },
+              "bildVorteil1": {
+                "id": "vCja76QEbmAGaoIquCiqI",
+                "title": "cp icons neuZeichenfläche 23",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/vCja76QEbmAGaoIquCiqI/99c3e6ccf37a741211bdb033e8d22e4a/cp_icons_neuZeichenfla__che_23.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 23.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil2": {
+                "textVorteil2": "individuelles Benefit-Budget    "
+              },
+              "bildVorteil2": {
+                "id": "c1lDhpM1yzqGsaE4QWMieCC",
+                "title": "cp icons neuZeichenfläche 21",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1lDhpM1yzqGsaE4QWMieCC/876aa734b3f2a981762cc63c41440356/cp_icons_neuZeichenfla__che_21.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 21.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "textVorteil3": {
+                "textVorteil3": "Aktienbeteiligung"
+              },
+              "bildVorteil3": {
+                "id": "c5Yd6x6AIO4KQoicEaKGo6O",
+                "title": "cp icons neuZeichenfläche 22",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/5Yd6x6AIO4KQoicEaKGo6O/995fc4e946623b1877734acd8d607dc1/cp_icons_neuZeichenfla__che_22.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 22.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "infoboxLinksObenUntertitel":
+              "GEHALT: BEISPIEL FÜR TECH-CONSULTANTS",
+            "infoboxLinksObenTitel": "Erfolg zahlt sich aus",
+            "infoboxLinksObenBild": {
+              "id": "c26DTJr6KWw8EOIs688iUkm",
+              "title": "gehalt1",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/26DTJr6KWw8EOIs688iUkm/a7fc3854d43b37bf24242b209a1c6c3d/gehalt1.jpg",
+                "fileName": "gehalt1.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksObenBeschreibung": {
+              "infoboxLinksObenBeschreibung":
+                "Je nachdem, wie hoch Dein Grundgehalt ist, wird der erfolgsabhängige Gehaltsanteil berechnet. Er liegt zwischen 10 und 45 % Deines Grundgehalts. Bis zu einem fixen Grundgehalt von EUR 40.000 bekommst Du 10 % zusätzlichen erfolgsabhängigen Gehaltsanteil. Über diesem Betrag steigt er je EUR 2.000 linear um 1 % an. Den erfolgsabhängigen Anteil zahlen wir Dir zu 1/24 monatlich aus, während der Differenzbetrag nach testiertem Jahresabschluss auf Deinem Konto landet. Übrigens lag unsere Zielerreichung seit der Gründung vor mehr als zehn Jahren durchgehend bei über 100 % – mit dem Zielgehalt kannst Du also planen.\n"
+            },
+            "infoboxLinksObenBeschreibungAbsatz2": {
+              "infoboxLinksObenBeschreibungAbsatz2":
+                "__Zum Beispiel:__ Wenn das Jahresgrundgehalt EUR 40.000 beträgt, dann beläuft sich der erfolgsabhängige Gehaltsanteil auf EUR 4.000 (10 %) und das Jahreszielgehalt somit auf EUR 44.000. Beträgt das Jahresgrundgehalt hingegen EUR 60.000, beläuft sich der erfolgsabhängige Gehaltsanteil auf EUR 12.000 (20 %), sodass das Jahreszielgehalt bei EUR 72.000 liegt."
+            },
+            "infoboxRechtsObenUntertitel":
+              "GEHALT FÜR TECHNOLOGISCHE CONSULTANTS ",
+            "infoboxRechtsObenTitel": "Mach doch, was Du willst",
+            "infoboxRechtsObenBild": {
+              "id": "i0N5YhNGSWSiIGYGuKwIW",
+              "title": "gehalt2",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i0N5YhNGSWSiIGYGuKwIW/1b75eb961f98cebd1798cb0257d6d29b/gehalt2.jpg",
+                "fileName": "gehalt2.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxRechtsObenBeschreibung": {
+              "infoboxRechtsObenBeschreibung":
+                "Dass Du von uns Dein eigenes Smartphone und Deinen Wunsch-Laptop (von Lenovo oder Apple) erhältst, versteht sich von selbst. Mit Deinem jährlichen Benefit-Budget, das Du von uns bekommst, kannst Du Dir aber noch viele andere Vorteile dazuholen. Da wäre zum Beispiel die Wahl, ob Du lieber ein Auto, ein Job-Bike oder einen E-Roller fahren möchtest. Oder die Frage, ob wir vielleicht die Kinderbetreuung bezuschussen sollen oder Du lieber in Altersvorsorge investieren willst. Du entscheidest, was Dir wichtig ist."
+            },
+            "spaltenInfoUntertitel": "PRIVAT NUTZBARE SONDERLEISTUNGEN",
+            "spaltenInfoTitel":
+              "Die richtige Ausstattung für flexible Arbeitsplatzmodelle",
+            "spaltenInfoTextLinks": {
+              "spaltenInfoTextLinks": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildLinks": null,
+            "spaltenInfoTextMitte": {
+              "spaltenInfoTextMitte": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildMitte": null,
+            "spaltenInfoTextRechts": {
+              "spaltenInfoTextRechts": "Lorem ipsum dolor sit amet, consetetur"
+            },
+            "spaltenInfoBildRechts": null,
+            "infoboxLinksUntenUntertitel":
+              "BERATER-GEHALT IN COFINPRO INVESTIEREN",
+            "infoboxLinksUntenTitel": "Plötzlich Aktionär",
+            "infoboxLinksUntenBild": {
+              "id": "c4v2uvMaobmCs8SC6Sy20sy",
+              "title": "gehalt3",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4v2uvMaobmCs8SC6Sy20sy/b35ffde75912c90754566b2c134d9d0a/gehalt3.jpg",
+                "fileName": "gehalt3.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "infoboxLinksUntenBeschreibung": {
+              "infoboxLinksUntenBeschreibung":
+                "Cofinpro ist eine selbstständige, unabhängige Aktiengesellschaft – mit der Besonderheit, dass wir eine breite Mitarbeiterbeteiligung haben. Im Klartext heißt das: Wenn Du willst, wirst Du ebenfalls Teilhaber am Unternehmen. Um Mitarbeiteraktien zu erwerben, kannst Du einfach einen Teil Deines Gehalts umwandeln lassen. "
+            },
+            "testimonial": {
+              "titel": "TESTIMONIAL - Daniel Eichsteller — Expert Consultant",
+              "ueberschrift": "DEINE NEUEN KOLLEGEN",
+              "zitat": {
+                "zitat":
+                  "»Ich wollte nicht nur eine Nummer sein, sondern von Anfang an mitentscheiden können und Verantwortung übernehmen. Das hat geklappt.«"
+              },
+              "linkVonYouTubeVideo":
+                "https://www.youtube.com/embed/qAKhHDswiAU?rel=0&modestbranding=1&showinfo=0",
+              "autor": "Daniel Eichsteller",
+              "autorTitel": "Expert Consultant",
+              "buttonText": "MEHR INTERVIEWS"
+            },
+            "artenVonStudenten": null
+          }
+        }
+      ]
+    }
+  }
+}
