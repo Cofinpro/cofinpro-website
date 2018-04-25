@@ -245,6 +245,30 @@ class UeberUnsTemplate extends React.Component {
         </div>
 
         <div className="container margin-100-top">
+          <div className="row justify-content-end">
+            <div className="col-12 col-md-8">
+              <h2 className="h6">{graphQlResult.karrieremagazin.untertitel}</h2>
+              <h3 className="h2">{graphQlResult.karrieremagazin.titel}</h3>
+              <ContentfulImage
+                imageFile={graphQlResult.karrieremagazin.bild}
+                styleClasses="img-fluid"
+              />
+            </div>
+            <div className="col-12 col-md-1" />
+          </div>
+          <div className="row margin-20-top">
+            <div className="col-12 col-md-3 col-lg-3" />
+            <div className="col-12 col-md-6 col-lg-5">
+              <ContentfulMarkdownText
+                text={graphQlResult.karrieremagazin.beschreibung.beschreibung}
+                {...this.props}
+              />
+            </div>
+            <div className="col-12 col-md-1" />
+          </div>
+        </div>
+
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-1" />
             <div className="col-12 col-md-8">
@@ -258,8 +282,8 @@ class UeberUnsTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-20-top">
-            <div className="col-12 col-md-1" />
-            <div className="col-12 col-md-5">
+            <div className="col-12 col-md-1 col-lg-1" />
+            <div className="col-12 col-md-6 col-lg-5">
               <ContentfulMarkdownText
                 text={
                   graphQlResult.raeumlichkeitenBeschreibung
@@ -533,6 +557,22 @@ export const pageQuery = graphql`
       dritteTextboxTitel
       dritteTextboxInhalt {
         dritteTextboxInhalt
+      }
+      karrieremagazin {
+        untertitel
+        titel
+        bild {
+          id
+          title
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
+        beschreibung {
+          beschreibung
+        }
       }
       raeumlichkeitenUntertitel
       raeumlichkeitenTitel
