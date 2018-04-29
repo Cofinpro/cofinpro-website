@@ -7,7 +7,6 @@ exports.create = function(
   graphql,
   createPage,
   news,
-  stellenAnzeigen,
   callback
 ) {
   graphql(
@@ -123,7 +122,6 @@ exports.create = function(
             component: slash(landingTemplate),
             context: {
               id: edge.node.id,
-              anzeigen: stellenAnzeigen,
               topNews: topNews,
               titelBildDesktop: results.titelBildDesktop,
               titelBildMobile: results.titelBildMobile,

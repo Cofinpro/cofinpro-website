@@ -29,10 +29,11 @@ class LandingTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteLandingPerspektive
 
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+
     const titelBildDesktop = this.props.pathContext.titelBildDesktop
     const titelBildMobile = this.props.pathContext.titelBildMobile
     const socialMediaPostBilder = this.props.pathContext.socialMediaPostBilder
-    const anzeigen = this.props.pathContext.anzeigen
 
     const site = get(this, 'props.data.site.siteMetadata')
 
@@ -181,7 +182,7 @@ class LandingTemplate extends React.Component {
                     <h3 className="h2">{graphQlResult.titelRechteBox}</h3>
                   </div>
                 </div>
-                <CarrerOfferBox anzeigen={anzeigen} {...this.props} />
+                <CarrerOfferBox anzeigen={stellenAnzeigen} {...this.props} />
 
                 <div className="row padding-sm-top">
                   <div className="col-12 col-md-9">
@@ -438,5 +439,60 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    allContentfulSeiteStellenanzeige {
+      edges {
+        node {
+          id
+          url
+          metaData {
+            title
+            keywords {
+              keywords
+            }
+            description {
+              description
+            }
+          }
+          ort
+          befristung
+          art
+          titel
+          zuordnungZuKompetenzen {
+            name
+          }
+          ueberschriftGanzOben
+          bildStellenanzeige {
+            id
+            title
+            description
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          absatzEins {
+            absatzEins
+          }
+          spaltenInfoTitelLinks
+          spaltenInfoBeschreibungLinksLang {
+            spaltenInfoBeschreibungLinksLang
+          }
+          spaltenInfoTitelMitte
+          spaltenInfoBeschreibungMitte {
+            spaltenInfoBeschreibungMitte
+          }
+          spaltenInfoTitelRechts
+          spaltenInfoBeschreibungRechts {
+            spaltenInfoBeschreibungRechts
+          }
+          uMantis {
+            uMantis
+          }
+        }
+      }
+    }
+
   }
 `

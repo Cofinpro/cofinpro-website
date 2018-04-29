@@ -12,6 +12,18 @@ exports.create = function(graphql, createPage, callback) {
           edges {
             node {
               id
+              bildFuerPerspektiveFach {
+                id
+              }
+              bildFuerPerspektiveTech {
+                id
+              }
+              bildFuerPerspektiveStudent {
+                id
+              }
+              bildFuerPerspektiveAndere {
+                id
+              }
             }
           }
         }
@@ -28,6 +40,10 @@ exports.create = function(graphql, createPage, callback) {
         component: slash(template),
         context: {
           id: edge.node.id,
+          bildFuerPerspektiveFachId: '/' + edge.node.bildFuerPerspektiveFach.id + '/',
+          bildFuerPerspektiveTechId: '/' + edge.node.bildFuerPerspektiveTech.id + '/',
+          bildFuerPerspektiveStudentId: '/' + edge.node.bildFuerPerspektiveStudent.id + '/',
+          bildFuerPerspektiveAndereId: '/' + edge.node.bildFuerPerspektiveAndere.id + '/',
         },
       })
 

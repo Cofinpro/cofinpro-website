@@ -26,24 +26,25 @@ class StellenanzeigeTemplate extends React.Component {
   }
 
   render() {
-    const { location } = this.props
+    const { location } = this.props;
 
-    const stellenAnzeige = this.props.pathContext.stellenAnzeige
-    const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
+    const graphQlResult = this.props.data.contentfulSeiteStellenanzeige;
+
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
       <div>
         <HtmlHeader
-          dataFromCms={stellenAnzeige.node.metaData}
+          dataFromCms={graphQlResult.metaData}
           {...this.props}
         />
 
         <SiteHeader
-          title={stellenAnzeige.node.ueberschriftGanzOben}
-          imageFile={stellenAnzeige.node.bildStellenanzeige}
-          imageSmall={stellenAnzeige.node.bildStellenanzeige}
+          title={graphQlResult.ueberschriftGanzOben}
+          titleImage={this.props.data.bildStellenanzeigeSharp}
+          titleImageSmall={this.props.data.bildStellenanzeigeSharp}
         />
 
         <div className="container margin-60-top">
@@ -52,10 +53,10 @@ class StellenanzeigeTemplate extends React.Component {
               <h2 className="h2 text-primary">
                 Wir wünschen uns einfach Dich!
               </h2>
-              <h1 className="h2">{stellenAnzeige.node.titel}</h1>
+              <h1 className="h2">{graphQlResult.titel}</h1>
               <ContentfulMarkdownText
                 styleClasses="margin-40-bottom"
-                text={stellenAnzeige.node.absatzEins.absatzEins}
+                text={graphQlResult.absatzEins.absatzEins}
               />
             </div>
           </div>
@@ -115,11 +116,11 @@ class StellenanzeigeTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-4">
               <h3 className="h4 margin-10-bottom">
-                {stellenAnzeige.node.spaltenInfoTitelLinks}
+                {graphQlResult.spaltenInfoTitelLinks}
               </h3>
               <ContentfulMarkdownText
                 text={
-                  stellenAnzeige.node.spaltenInfoBeschreibungLinksLang
+                  graphQlResult.spaltenInfoBeschreibungLinksLang
                     .spaltenInfoBeschreibungLinksLang
                 }
               />
@@ -129,11 +130,11 @@ class StellenanzeigeTemplate extends React.Component {
             </div>
             <div className="col-12 col-md-4">
               <h3 className="h4 margin-10-bottom">
-                {stellenAnzeige.node.spaltenInfoTitelMitte}
+                {graphQlResult.spaltenInfoTitelMitte}
               </h3>
               <ContentfulMarkdownText
                 text={
-                  stellenAnzeige.node.spaltenInfoBeschreibungMitte
+                  graphQlResult.spaltenInfoBeschreibungMitte
                     .spaltenInfoBeschreibungMitte
                 }
               />
@@ -143,11 +144,11 @@ class StellenanzeigeTemplate extends React.Component {
             </div>
             <div className="col-12 col-md-4">
               <h3 className="h4 margin-10-bottom">
-                {stellenAnzeige.node.spaltenInfoTitelRechts}
+                {graphQlResult.spaltenInfoTitelRechts}
               </h3>
               <ContentfulMarkdownText
                 text={
-                  stellenAnzeige.node.spaltenInfoBeschreibungRechts
+                  graphQlResult.spaltenInfoBeschreibungRechts
                     .spaltenInfoBeschreibungRechts
                 }
               />
@@ -214,7 +215,7 @@ class StellenanzeigeTemplate extends React.Component {
               </div>
               <ExternalLinkButton
                 text="JETZT BEWERBEN"
-                _href={stellenAnzeige.node.uMantis.uMantis}
+                _href={graphQlResult.uMantis.uMantis}
                 _target="_blank"
               />
             </div>
@@ -226,7 +227,7 @@ class StellenanzeigeTemplate extends React.Component {
             titel={'WEITERE JOBANZEIGEN'}
             stellenAnzeigen={stellenAnzeigen}
             buttonText={'ALLE JOBS'}
-            blacklistedItem={stellenAnzeige.node.id}
+            blacklistedItem={graphQlResult.id}
             {...this.props}
           />
         </div>
@@ -236,3 +237,120 @@ class StellenanzeigeTemplate extends React.Component {
 }
 
 export default StellenanzeigeTemplate
+
+export const pageQuery = graphql`
+  query stellenanzeigeQuery($id: String!, $bildStellenanzeigeId: String!) {
+
+    contentfulSeiteStellenanzeige(id: { eq: $id }) {
+      id
+      url
+      metaData {
+        title
+        keywords {
+          keywords
+        }
+        description {
+          description
+        }
+      }
+      ort
+      befristung
+      art
+      titel
+      zuordnungZuKompetenzen {
+        name
+      }
+      ueberschriftGanzOben
+      bildStellenanzeige {
+        id
+        title
+        description
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      absatzEins {
+        absatzEins
+      }
+      spaltenInfoTitelLinks
+      spaltenInfoBeschreibungLinksLang {
+        spaltenInfoBeschreibungLinksLang
+      }
+      spaltenInfoTitelMitte
+      spaltenInfoBeschreibungMitte {
+        spaltenInfoBeschreibungMitte
+      }
+      spaltenInfoTitelRechts
+      spaltenInfoBeschreibungRechts {
+        spaltenInfoBeschreibungRechts
+      }
+      uMantis {
+        uMantis
+      }
+    }
+
+    allContentfulSeiteStellenanzeige {
+      edges {
+        node {
+          id
+          url
+          metaData {
+            title
+            keywords {
+              keywords
+            }
+            description {
+              description
+            }
+          }
+          ort
+          befristung
+          art
+          titel
+          zuordnungZuKompetenzen {
+            name
+          }
+          ueberschriftGanzOben
+          bildStellenanzeige {
+            id
+            title
+            description
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          absatzEins {
+            absatzEins
+          }
+          spaltenInfoTitelLinks
+          spaltenInfoBeschreibungLinksLang {
+            spaltenInfoBeschreibungLinksLang
+          }
+          spaltenInfoTitelMitte
+          spaltenInfoBeschreibungMitte {
+            spaltenInfoBeschreibungMitte
+          }
+          spaltenInfoTitelRechts
+          spaltenInfoBeschreibungRechts {
+            spaltenInfoBeschreibungRechts
+          }
+          uMantis {
+            uMantis
+          }
+        }
+      }
+    }
+    
+    bildStellenanzeigeSharp: imageSharp(id: { regex: $bildStellenanzeigeId }) {
+      sizes(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+  }
+`
+

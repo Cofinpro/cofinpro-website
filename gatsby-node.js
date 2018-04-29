@@ -32,7 +32,6 @@ let globalGraphql = null
 let globalCreatePage = null
 let globalCreateRedirect = null
 
-let globalStellenAnzeigen = []
 let globalNews = []
 
 // Implement the Gatsby API “createPages”. This is called after the Gatsby
@@ -51,7 +50,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     async.waterfall(
       [
         async.apply(contentfulImageService.refreshImages, globalGraphql),
-        getStellenanzeigen,
         getNews,
         createPages,
       ],
@@ -70,9 +68,9 @@ function createPages(callback) {
   asyncTasks.push(
     async.apply(
       pagesStellenanzeigen.create,
+      globalGraphql,
       globalCreatePage,
-      globalCreateRedirect,
-      globalStellenAnzeigen
+      globalCreateRedirect
     )
   )
   asyncTasks.push(
@@ -83,8 +81,7 @@ function createPages(callback) {
     async.apply(
       pageStellenmarkt.create,
       globalGraphql,
-      globalCreatePage,
-      globalStellenAnzeigen
+      globalCreatePage
     )
   )
   asyncTasks.push(
@@ -101,8 +98,7 @@ function createPages(callback) {
       pageLanding.create,
       globalGraphql,
       globalCreatePage,
-      globalNews,
-      globalStellenAnzeigen
+      globalNews
     )
   )
   asyncTasks.push(
@@ -115,8 +111,7 @@ function createPages(callback) {
     async.apply(
       pageJobBewerbung.create,
       globalGraphql,
-      globalCreatePage,
-      globalStellenAnzeigen
+      globalCreatePage
     )
   )
   asyncTasks.push(
@@ -240,72 +235,4 @@ function getNews(callback) {
       })
     })
   }
-}
-
-function getStellenanzeigen(callback) {
-  console.log('starting graphql query for stellenanezigen.')
-
-  globalGraphql(`
-      {
-        allContentfulSeiteStellenanzeige {
-          edges {
-            node {
-              id
-              url
-              metaData {
-                title
-                keywords {
-                  keywords
-                }
-                description {
-                  description
-                }
-              }
-              ort
-              befristung
-              art
-              titel
-              zuordnungZuKompetenzen {
-                name
-              }
-              ueberschriftGanzOben
-              bildStellenanzeige {
-                id
-                title
-                description
-                file {
-                  url
-                  fileName
-                  contentType
-                }
-              }
-              absatzEins {
-                absatzEins
-              }
-              spaltenInfoTitelLinks
-              spaltenInfoBeschreibungLinksLang {
-                spaltenInfoBeschreibungLinksLang
-              }
-              spaltenInfoTitelMitte
-              spaltenInfoBeschreibungMitte {
-                spaltenInfoBeschreibungMitte
-              }
-              spaltenInfoTitelRechts
-              spaltenInfoBeschreibungRechts {
-                spaltenInfoBeschreibungRechts
-              }
-              uMantis {
-                uMantis
-              }
-            }
-          }
-        }
-      }
-    `).then(result => {
-    globalStellenAnzeigen = result.data.allContentfulSeiteStellenanzeige.edges
-
-    console.log('finished graphql query for stellenanezigen.')
-
-    callback(null)
-  })
 }

@@ -22,7 +22,7 @@ class StellenmarktTemplate extends React.Component {
 
     const graphQlResult = this.props.data.contentfulSeiteStellenmarkt
 
-    const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
 
     return (
       <div>
@@ -50,7 +50,7 @@ class StellenmarktTemplate extends React.Component {
 
         <JobContainerBox
           id="FACHBERATER"
-          anzeigen={this.props.pathContext.stellenAnzeigen}
+          anzeigen={stellenAnzeigen}
           boxTitle="JOBANGEBOTE FÜR FACHBERATER"
           filter={['fachlicher-professional', 'fachlicher-absolvent']}
           boxStyle="border-img-blue"
@@ -62,7 +62,7 @@ class StellenmarktTemplate extends React.Component {
 
         <JobContainerBox
           id="TECHI"
-          anzeigen={this.props.pathContext.stellenAnzeigen}
+          anzeigen={stellenAnzeigen}
           boxTitle="JOBANGEBOTE FÜR TECHNOLOGIE-BERATER"
           filter={['technologischer-professional', 'technologischer-absolvent']}
           boxStyle="jobangebote-technologie-box"
@@ -74,7 +74,7 @@ class StellenmarktTemplate extends React.Component {
 
         <JobContainerBox
           id="STUDI"
-          anzeigen={this.props.pathContext.stellenAnzeigen}
+          anzeigen={stellenAnzeigen}
           boxTitle="JOBANGEBOTE FÜR STUDENTEN"
           filter={['studenten']}
           boxStyle="border-img-blue"
@@ -86,7 +86,7 @@ class StellenmarktTemplate extends React.Component {
 
         <JobContainerBox
           id="ANDERE"
-          anzeigen={this.props.pathContext.stellenAnzeigen}
+          anzeigen={stellenAnzeigen}
           boxTitle="JOBANGEBOTE FÜR ANDERE EXPERTISEN"
           filter={['andere']}
           boxStyle="jobangebote-andere-box"
@@ -121,6 +121,7 @@ export default StellenmarktTemplate
 
 export const pageQuery = graphql`
   query stellenmarktQuery($id: String!) {
+
     contentfulSeiteStellenmarkt(id: { eq: $id }) {
       id
       metaData {
@@ -176,5 +177,61 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    allContentfulSeiteStellenanzeige {
+      edges {
+        node {
+          id
+          url
+          metaData {
+            title
+            keywords {
+              keywords
+            }
+            description {
+              description
+            }
+          }
+          ort
+          befristung
+          art
+          titel
+          zuordnungZuKompetenzen {
+            name
+          }
+          ueberschriftGanzOben
+          bildStellenanzeige {
+            id
+            title
+            description
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          absatzEins {
+            absatzEins
+          }
+          spaltenInfoTitelLinks
+          spaltenInfoBeschreibungLinksLang {
+            spaltenInfoBeschreibungLinksLang
+          }
+          spaltenInfoTitelMitte
+          spaltenInfoBeschreibungMitte {
+            spaltenInfoBeschreibungMitte
+          }
+          spaltenInfoTitelRechts
+          spaltenInfoBeschreibungRechts {
+            spaltenInfoBeschreibungRechts
+          }
+          uMantis {
+            uMantis
+          }
+        }
+      }
+    }
+    
+
   }
 `
