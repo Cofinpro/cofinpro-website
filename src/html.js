@@ -135,9 +135,9 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src="https://code.jquery.com/jquery-3.2.1.min.js" />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" />
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" />
+          <script src={pathPrefix + '/js/jquery-3.2.1.min.js'} />
+          <script src={pathPrefix + '/js/popper.min.js'} />
+          <script src={pathPrefix + '/js/bootstrap.min.js'} />
           <script src={pathPrefix + '/js/ApiAi.min.js'} />
         </body>
       </html>
