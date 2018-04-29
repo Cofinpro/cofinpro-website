@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
@@ -206,10 +207,7 @@ class StartseiteTemplate extends React.Component {
                   <div className="row text-center">
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-fach">
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveFach}
-                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant padding-sm-top-bottom" />
                         <h3 className="h5 link-black link-style">
                           FACHBERATER
                         </h3>
@@ -217,10 +215,7 @@ class StartseiteTemplate extends React.Component {
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-tech">
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveTech}
-                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant padding-sm-top-bottom" />
                         <h3 className="h5 link-black link-style">
                           TECHNOLOGISCHER BERATER
                         </h3>
@@ -237,10 +232,7 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveStudent}
-                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes} className="img-consultant padding-sm-top-bottom" />
                         <h3 className="h5 link-black">STUDENT</h3>
                       </Link>
                     </div>
@@ -255,10 +247,7 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveAndere}
-                          styleClasses="img-fluid img-consultant padding-sm-top-bottom"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes} className="img-consultant padding-sm-top-bottom" />
                         <h3 className="h5 link-black">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
@@ -336,10 +325,7 @@ class StartseiteTemplate extends React.Component {
                   <div className="row d-flex-inline d-md-none margin-20-bottom">
                     <div className="col-6 text-center">
                       <div id="img-wahl-fach">
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveFach}
-                          styleClasses="img-fluid img-consultant margin-20-bottom"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant margin-20-bottom" />
                         <h3 className="h5 link-black">FACHBERATER</h3>
                       </div>
                       <div id="links-fach">
@@ -371,10 +357,7 @@ class StartseiteTemplate extends React.Component {
                     </div>
                     <div className="col-6 text-center">
                       <div id="img-wahl-tech">
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveTech}
-                          styleClasses="img-fluid img-consultant margin-20-bottom"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant margin-20-bottom" />
                         <h3 className="h5 link-black">TECHNOLOGIE-BERATER</h3>
                       </div>
                       <div id="links-tech">
@@ -420,10 +403,7 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveStudent}
-                          styleClasses="img-fluid img-consultant margin-20-bottom img-wahl-student"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes} className="img-consultant margin-20-bottom img-wahl-student" />
                         <h3 className="h5">STUDENT</h3>
                       </Link>
                     </div>
@@ -438,10 +418,7 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <ContentfulImage
-                          imageFile={graphQlResult.bildFuerPerspektiveAndere}
-                          styleClasses="img-fluid img-consultant margin-20-bottom img-wahl-andere"
-                        />
+                        <Img sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes} className="img-consultant margin-20-bottom img-wahl-andere" />
                         <h3 className="h5">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
@@ -493,7 +470,7 @@ class StartseiteTemplate extends React.Component {
 export default StartseiteTemplate
 
 export const pageQuery = graphql`
-  query seiteStartseiteKarriereQuery($id: String!) {
+  query seiteStartseiteKarriereQuery($id: String!, $bildFuerPerspektiveFachId: String!, $bildFuerPerspektiveTechId: String!, $bildFuerPerspektiveStudentId: String!, $bildFuerPerspektiveAndereId: String!) {
     contentfulSeiteStartseiteKarriere(id: { eq: $id }) {
       id
       metaData {
@@ -554,5 +531,30 @@ export const pageQuery = graphql`
         seoTextFeld
       }
     }
+
+    bildFuerPerspektiveFachSharp: imageSharp(id: { regex: $bildFuerPerspektiveFachId }) {
+      sizes(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    bildFuerPerspektiveTechSharp: imageSharp(id: { regex: $bildFuerPerspektiveTechId }) {
+      sizes(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    bildFuerPerspektiveStudentSharp: imageSharp(id: { regex: $bildFuerPerspektiveStudentId }) {
+      sizes(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    bildFuerPerspektiveAndereSharp: imageSharp(id: { regex: $bildFuerPerspektiveAndereId }) {
+      sizes(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
   }
 `

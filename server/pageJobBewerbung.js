@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
+exports.create = function (graphql, createPage, callback) {
 
   console.log("start graphql query: allContentfulSeiteJobsBewerbung.");
 
@@ -45,7 +45,6 @@ exports.create = function (graphql, createPage, stellenAnzeigen, callback) {
         component: slash(template),
         context: {
           id: edge.node.id,
-          stellenAnzeigen: stellenAnzeigen,
           titelbildId: '/' + edge.node.titelbild.id + '/',
           titelbildKleinId: '/' + edge.node.titelbildKlein.id + '/',
           ansprechpartnerEinsBildId:

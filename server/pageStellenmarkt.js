@@ -2,7 +2,7 @@ const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
 
-exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
+exports.create = function(graphql, createPage, callback) {
   console.log(`start query for page /jobs.`)
 
   graphql(
@@ -28,7 +28,6 @@ exports.create = function(graphql, createPage, stellenAnzeigen, callback) {
         component: slash(template),
         context: {
           id: edge.node.id,
-          stellenAnzeigen: stellenAnzeigen,
         },
       })
 

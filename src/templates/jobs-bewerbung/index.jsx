@@ -30,7 +30,7 @@ class JobsBewerbungTemplate extends React.Component {
 
   render() {
     const graphQlResult = this.props.data.contentfulSeiteJobsBewerbung
-    const stellenAnzeigen = this.props.pathContext.stellenAnzeigen
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
 
     const { location } = this.props
 
@@ -450,6 +450,7 @@ export const pageQuery = graphql`
     $ansprechpartnerZweiBildId: String!
   ) {
     contentfulSeiteJobsBewerbung(id: { eq: $id }) {
+      id
       metaData {
         title
         keywords {
@@ -589,6 +590,61 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    allContentfulSeiteStellenanzeige {
+      edges {
+        node {
+          id
+          url
+          metaData {
+            title
+            keywords {
+              keywords
+            }
+            description {
+              description
+            }
+          }
+          ort
+          befristung
+          art
+          titel
+          zuordnungZuKompetenzen {
+            name
+          }
+          ueberschriftGanzOben
+          bildStellenanzeige {
+            id
+            title
+            description
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          absatzEins {
+            absatzEins
+          }
+          spaltenInfoTitelLinks
+          spaltenInfoBeschreibungLinksLang {
+            spaltenInfoBeschreibungLinksLang
+          }
+          spaltenInfoTitelMitte
+          spaltenInfoBeschreibungMitte {
+            spaltenInfoBeschreibungMitte
+          }
+          spaltenInfoTitelRechts
+          spaltenInfoBeschreibungRechts {
+            spaltenInfoBeschreibungRechts
+          }
+          uMantis {
+            uMantis
+          }
+        }
+      }
+    }
+
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
