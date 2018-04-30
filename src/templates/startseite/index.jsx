@@ -208,7 +208,7 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-fach">
                         <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant padding-sm-top-bottom" />
-                        <h3 className="h5 link-black link-style">
+                        <h3 className="h5 link-black link-style padding-sm-top-bottom">
                           FACHBERATER
                         </h3>
                       </div>
@@ -216,7 +216,7 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-tech">
                         <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant padding-sm-top-bottom" />
-                        <h3 className="h5 link-black link-style">
+                        <h3 className="h5 link-black link-style padding-sm-top-bottom">
                           TECHNOLOGISCHER BERATER
                         </h3>
                       </div>
@@ -233,7 +233,7 @@ class StartseiteTemplate extends React.Component {
                         }}
                       >
                         <Img sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes} className="img-consultant padding-sm-top-bottom" />
-                        <h3 className="h5 link-black">STUDENT</h3>
+                        <h3 className="h5 link-black padding-sm-top-bottom">STUDENT</h3>
                       </Link>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
@@ -248,7 +248,7 @@ class StartseiteTemplate extends React.Component {
                         }}
                       >
                         <Img sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes} className="img-consultant padding-sm-top-bottom" />
-                        <h3 className="h5 link-black">ANDERE EXPERTISE</h3>
+                        <h3 className="h5 link-black padding-sm-top-bottom">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
                   </div>
