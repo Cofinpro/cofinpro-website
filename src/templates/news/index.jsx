@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
@@ -45,10 +46,13 @@ class NewsTemplate extends React.Component {
                 text={news.absatz1 !== null ? news.absatz1.absatz1 : ''}
                 {...this.props}
               />
-              <ContentfulImage
-                imageFile={news.newsBild}
-                styleClasses="img-fluid margin-20-bottom"
-              />
+              {news.newsBildSharp !== undefined &&
+              news.newsBildSharp !== null ? (
+                <Img
+                  sizes={news.newsBildSharp.sizes}
+                  className="margin-20-bottom"
+                />
+              ) : null}
               <ContentfulMarkdownText
                 text={news.absatz2 !== null ? news.absatz2.absatz2 : ''}
                 {...this.props}

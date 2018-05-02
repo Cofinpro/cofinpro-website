@@ -78,11 +78,7 @@ function createPages(callback) {
   )
   asyncTasks.push(async.apply(pagesNews.create, globalCreatePage, globalNews))
   asyncTasks.push(
-    async.apply(
-      pageStellenmarkt.create,
-      globalGraphql,
-      globalCreatePage
-    )
+    async.apply(pageStellenmarkt.create, globalGraphql, globalCreatePage)
   )
   asyncTasks.push(
     async.apply(pagesUeberUns.create, globalGraphql, globalCreatePage)
@@ -94,12 +90,7 @@ function createPages(callback) {
     async.apply(pageDeineEntwicklung.create, globalGraphql, globalCreatePage)
   )
   asyncTasks.push(
-    async.apply(
-      pageLanding.create,
-      globalGraphql,
-      globalCreatePage,
-      globalNews
-    )
+    async.apply(pageLanding.create, globalGraphql, globalCreatePage, globalNews)
   )
   asyncTasks.push(
     async.apply(pagesGehaltBenefits.create, globalGraphql, globalCreatePage)
@@ -108,11 +99,7 @@ function createPages(callback) {
     async.apply(pageWorkLife.create, globalGraphql, globalCreatePage)
   )
   asyncTasks.push(
-    async.apply(
-      pageJobBewerbung.create,
-      globalGraphql,
-      globalCreatePage
-    )
+    async.apply(pageJobBewerbung.create, globalGraphql, globalCreatePage)
   )
   asyncTasks.push(
     async.apply(pageStartseiteKarriere.create, globalGraphql, globalCreatePage)
@@ -124,15 +111,40 @@ function createPages(callback) {
   })
 }
 
-function getNews(callback) {
-  var isTest = false
-
-  if (isTest) {
-    globalNews = stellenAnzeigenJson
-
-    callback(null)
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  if (originalImg === undefined || originalImg === null) {
+    callback(null, null)
   } else {
-    globalGraphql(`
+    graphql(
+      `
+        {
+        resultImage: imageSharp(id: { regex: "/` +
+        originalImg.id +
+        `/" }) {
+                              sizes(` +
+        sharpParameter +
+        `) {
+                          src
+                          srcSet
+                          srcWebp
+                          srcSetWebp
+                          originalImg
+                          originalName
+                          base64
+                          aspectRatio
+                          sizes
+                          }
+                      }
+                  }          
+              `
+    ).then(result => {
+      callback(null, result.data.resultImage)
+    })
+  }
+}
+
+function getNews(callback) {
+  globalGraphql(`
       {
         allContentfulSeiteNews(
           sort: { fields: [datumFuerDieAnzeige], order: DESC }
@@ -190,49 +202,48 @@ function getNews(callback) {
         }
       }
     `).then(result => {
-      globalNews = result.data.allContentfulSeiteNews.edges
+    globalNews = result.data.allContentfulSeiteNews.edges
 
-      globalNews.forEach(function(object, index) {
-        if (object.node.datumFuerDieAnzeige != null) {
-          object.node.datumFuerDieAnzeige = moment(
-            object.node.datumFuerDieAnzeige,
-            'YYYY-MM-DD'
-          ).format('L')
-        }
-      })
+    globalNews.forEach(function(object, index) {
+      if (object.node.datumFuerDieAnzeige != null) {
+        object.node.datumFuerDieAnzeige = moment(
+          object.node.datumFuerDieAnzeige,
+          'YYYY-MM-DD'
+        ).format('L')
+      }
+    })
 
-      var itemsProcessed = 0
+    var itemsProcessed = 0
 
-      globalNews.forEach((item, index, array) => {
-        globalGraphql(
-          `
-            {
-            titelbildSharp: imageSharp(id: { regex: "/` +
-            item.node.titelbild.id +
-            `/" }) {
-              sizes(maxWidth: 2000, maxHeight: 1250, quality: 60, cropFocus: CENTER) {
-                src
-                srcSet
-                srcWebp
-                srcSetWebp
-                originalImg
-                originalName
-                base64
-                aspectRatio
-                sizes
-              }
-            }
-          }          
-        `
-        ).then(result => {
-          item.node.titelbildSharp = result.data.titelbildSharp
+    globalNews.forEach((item, index, array) => {
+      console.log('creating sharp images for news:' + item.node.titel)
 
+      async.parallel(
+        {
+          titelBild: async.apply(
+            createSharpImage,
+            globalGraphql,
+            'maxWidth: 2000, maxHeight: 1250, quality: 60, cropFocus: CENTER',
+            item.node.titelbild
+          ),
+          newsBild: async.apply(
+            createSharpImage,
+            globalGraphql,
+            'maxWidth: 1800, quality: 60',
+            item.node.newsBild
+          ),
+        },
+        function(err, results) {
           itemsProcessed++
+
+          item.node.titelbildSharp = results.titelBild
+          item.node.newsBildSharp = results.newsBild
+
           if (itemsProcessed === globalNews.length) {
             callback(null)
           }
-        })
-      })
+        }
+      )
     })
-  }
+  })
 }
