@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import Facts from '../../components/Facts'
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
+import ManagementBoardMitglied from '../../components/ManagementBoardMitglied'
 import ImageCarousel from '../../components/ImageCarousel'
 import ImageCarouselV2 from '../../components/ImageCarouselV2'
 import ContentfulImage from '../../components/ContentfulImage'
@@ -364,6 +365,69 @@ class UeberUnsTemplate extends React.Component {
                 />
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="container margin-100-top">
+          <div className="row justify-content-end">
+            {graphQlResult.managementBoardMitglieder.map(function(
+              mitglied,
+              index
+            ) {
+              if (index < 3) {
+                return (
+                  <div className="col-3 " key={'column-mitglied-' + index}>
+                    <ManagementBoardMitglied
+                      key={'mitglied-mb-' + index}
+                      mitglied={mitglied}
+                      postfixIdToggle={index}
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
+          </div>
+          <div className="row justify-content-start margin-40-top">
+            {graphQlResult.managementBoardMitglieder.map(function(
+              mitglied,
+              index
+            ) {
+              if (index >= 3 && index < 6) {
+                return (
+                  <div className="col-3 " key={'column-mitglied-' + index}>
+                    <ManagementBoardMitglied
+                      key={'mitglied-mb-' + index}
+                      mitglied={mitglied}
+                      postfixIdToggle={index}
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
+          </div>
+          <div className="row justify-content-end margin-40-top">
+            {graphQlResult.managementBoardMitglieder.map(function(
+              mitglied,
+              index
+            ) {
+              if (index >= 6) {
+                return (
+                  <div className="col-3 " key={'column-mitglied-' + index}>
+                    <ManagementBoardMitglied
+                      key={'mitglied-mb-' + index}
+                      mitglied={mitglied}
+                      postfixIdToggle={index}
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
           </div>
         </div>
 
