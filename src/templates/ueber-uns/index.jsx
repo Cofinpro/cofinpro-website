@@ -369,7 +369,7 @@ class UeberUnsTemplate extends React.Component {
         </div>
 
         <div className="container margin-100-top">
-          <div className="row justify-content-end">
+          <div className="row justify-content-end margin-40-top">
             {graphQlResult.managementBoardMitglieder.map(function(
               mitglied,
               index
