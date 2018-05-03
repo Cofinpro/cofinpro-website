@@ -382,7 +382,7 @@ class UeberUnsTemplate extends React.Component {
             </div>
             <div className="col-12 col-md-6 col-lg-5" />
           </div>
-          <div className="row justify-content-end">
+          <div className="row justify-content-end margin-40-top">
             {graphQlResult.managementBoardMitglieder.map(function(
               mitglied,
               index
