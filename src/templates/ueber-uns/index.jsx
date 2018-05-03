@@ -247,7 +247,7 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.karrieremagazin.untertitel}</h2>
               <h3 className="h2">{graphQlResult.karrieremagazin.titel}</h3>
-              <Img sizes={this.props.data.karrieremagazinSharp.sizes} />   
+              <Img sizes={this.props.data.karrieremagazinSharp.sizes} />
             </div>
             <div className="col-12 col-md-1" />
           </div>
@@ -372,7 +372,7 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-8">
               <h2 className="h6">{graphQlResult.projekte.untertitel}</h2>
               <h3 className="h2">{graphQlResult.projekte.titel}</h3>
-              <Img sizes={this.props.data.projektBildSharp.sizes} />   
+              <Img sizes={this.props.data.projektBildSharp.sizes} />
             </div>
             <div className="col-12 col-md-1" />
           </div>
@@ -449,10 +449,10 @@ export default UeberUnsTemplate
 
 export const pageQuery = graphql`
   query ueberUnsQuery(
-    $id: String!,
-    $titelbildId: String!,
-    $titelbildKleinId: String!,
-    $projektBildId: String!,
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+    $projektBildId: String!
     $karrieremagazinId: String!
   ) {
     contentfulSeiteUeberUns(id: { eq: $id }) {
@@ -608,6 +608,28 @@ export const pageQuery = graphql`
         buttonText
       }
       kollegenAuthorZitat
+      managementBoardUntertitel
+      managementBoardTitel
+      managementBoardBeschreibung {
+        managementBoardBeschreibung
+      }
+      managementBoardMitglieder {
+        id
+        untertitel
+        titel
+        bild {
+          id
+          title
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
+        beschreibung {
+          beschreibung
+        }
+      }
       projekte {
         untertitel
         titel
@@ -698,30 +720,25 @@ export const pageQuery = graphql`
         }
       }
     }
-
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     projektBildSharp: imageSharp(id: { regex: $projektBildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
       sizes(maxWidth: 1600, quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `
