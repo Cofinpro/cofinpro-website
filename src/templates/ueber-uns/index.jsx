@@ -369,6 +369,19 @@ class UeberUnsTemplate extends React.Component {
         </div>
 
         <div className="container margin-100-top">
+          <div className="row">
+            <div className="col-12 col-md-6 col-lg-5">
+              <h6 className="h6">{graphQlResult.managementBoardUntertitel}</h6>
+              <h2 className="h2">{graphQlResult.managementBoardTitel}</h2>
+              <p>
+                {
+                  graphQlResult.managementBoardBeschreibung
+                    .managementBoardBeschreibung
+                }
+              </p>
+            </div>
+            <div className="col-12 col-md-6 col-lg-5" />
+          </div>
           <div className="row justify-content-end">
             {graphQlResult.managementBoardMitglieder.map(function(
               mitglied,
