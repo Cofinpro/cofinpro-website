@@ -382,7 +382,7 @@ class UeberUnsTemplate extends React.Component {
             </div>
             <div className="col-12 col-md-6 col-lg-5" />
           </div>
-          <div className="row justify-content-end margin-40-top">
+          <div className="row d-none d-md-flex justify-content-end margin-40-top">
             {graphQlResult.managementBoardMitglieder.map(function(
               mitglied,
               index
@@ -402,7 +402,7 @@ class UeberUnsTemplate extends React.Component {
               }
             })}
           </div>
-          <div className="row justify-content-start margin-40-top">
+          <div className="row d-none d-md-flex justify-content-start margin-40-top">
             {graphQlResult.managementBoardMitglieder.map(function(
               mitglied,
               index
@@ -422,7 +422,7 @@ class UeberUnsTemplate extends React.Component {
               }
             })}
           </div>
-          <div className="row justify-content-end margin-40-top">
+          <div className="row d-none d-md-flex justify-content-end margin-40-top">
             {graphQlResult.managementBoardMitglieder.map(function(
               mitglied,
               index
@@ -441,6 +441,11 @@ class UeberUnsTemplate extends React.Component {
                 return null
               }
             })}
+          </div>
+          <div className="row d-flex d-md-none margin-40-top">
+            <div className="col">
+              <p>Mobile here</p>
+            </div>
           </div>
         </div>
 
