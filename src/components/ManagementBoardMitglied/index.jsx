@@ -1,22 +1,56 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
-import ContentfulImage from '../ContentfulImage'
 import ContentfulMarkdownText from '../ContentfulMarkdownText'
 
 class ManagementBoardMitglied extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {}
+ }
+
+  componentDidMount() {
+
+    const postFix = this.props.index;
+
+    $('#toggleMitgliedBeschreibung' + postFix).collapse({ toggle: false })
+
+    $('#button-mb-collapse' + postFix).click(function() {
+      $('#toggleMitgliedBeschreibung' + postFix).collapse('toggle')
+
+      if (
+        $('#button-mb-collapse' + postFix + '>img.collapse-icon-down').hasClass(
+          'd-none'
+        )
+      ) {
+        $('#button-mb-collapse' + postFix + '>img.collapse-icon-up').addClass('d-none')
+        $('#button-mb-collapse' + postFix + '>img.collapse-icon-down').removeClass(
+          'd-none'
+        )
+      } else if (
+        $('#button-mb-collapse' + postFix + '>img.collapse-icon-up').hasClass('d-none')
+      ) {
+        $('#button-mb-collapse' + postFix + '>img.collapse-icon-down').addClass(
+          'd-none'
+        )
+        $('#button-mb-collapse' + postFix + '>img.collapse-icon-up').removeClass(
+          'd-none'
+        )
+      }
+    })
+  }
+
   render() {
-    const { mitglied, postfixIdToggle } = this.props
+    const { mitglied, index, imageMap } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
       <div>
-        <ContentfulImage
-          imageFile={mitglied.bild}
-          styleClasses="img-fluid margin-20-bottom"
-        />
+        <Img sizes={imageMap[mitglied.bild.id + ".jpg"].sizes} className="margin-20-bottom"/>
         <div className="row">
           <div className="col-8">
             <p className="h5">
@@ -26,12 +60,12 @@ class ManagementBoardMitglied extends React.Component {
           </div>
           <div className="col-4 d-flex justify-content-end">
             <button
-              id={'button-mb-collapse' + postfixIdToggle}
-              className="btn btn-light text-white inline"
+              id={'button-mb-collapse' + index}
+              className="btn btn-light text-white align-self-start"
               type="button"
               data-toggle="collapse"
-              data-target={'#toggleMitgliedBeschreibung' + postfixIdToggle}
-              aria-controls={'#toggleMitgliedBeschreibung' + postfixIdToggle}
+              data-target={'#toggleMitgliedBeschreibung' + index}
+              aria-controls={'#toggleMitgliedBeschreibung' + index}
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
@@ -51,7 +85,7 @@ class ManagementBoardMitglied extends React.Component {
 
         <div
           className="collapse"
-          id={'toggleMitgliedBeschreibung' + postfixIdToggle}
+          id={'toggleMitgliedBeschreibung' + index}
         >
           <ContentfulMarkdownText text={mitglied.beschreibung.beschreibung} />
         </div>

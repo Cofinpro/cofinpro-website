@@ -33,6 +33,8 @@ class UeberUnsTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
+    const mbImagesSharp = this.props.pathContext.mbImagesSharp
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -373,12 +375,8 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-6 col-lg-5">
               <h6 className="h6">{graphQlResult.managementBoardUntertitel}</h6>
               <h2 className="h2">{graphQlResult.managementBoardTitel}</h2>
-              <p>
-                {
-                  graphQlResult.managementBoardBeschreibung
-                    .managementBoardBeschreibung
-                }
-              </p>
+              <ContentfulMarkdownText text={graphQlResult.managementBoardBeschreibung
+                    .managementBoardBeschreibung} />
             </div>
             <div className="col-12 col-md-6 col-lg-5" />
           </div>
@@ -393,7 +391,8 @@ class UeberUnsTemplate extends React.Component {
                     <ManagementBoardMitglied
                       key={'mitglied-mb-' + index}
                       mitglied={mitglied}
-                      postfixIdToggle={index}
+                      index={index}
+                      imageMap={mbImagesSharp}
                     />
                   </div>
                 )
@@ -413,7 +412,8 @@ class UeberUnsTemplate extends React.Component {
                     <ManagementBoardMitglied
                       key={'mitglied-mb-' + index}
                       mitglied={mitglied}
-                      postfixIdToggle={index}
+                      index={index}
+                      imageMap={mbImagesSharp}
                     />
                   </div>
                 )
@@ -433,7 +433,8 @@ class UeberUnsTemplate extends React.Component {
                     <ManagementBoardMitglied
                       key={'mitglied-mb-' + index}
                       mitglied={mitglied}
-                      postfixIdToggle={index}
+                      index={index}
+                      imageMap={mbImagesSharp}
                     />
                   </div>
                 )
