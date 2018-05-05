@@ -107,7 +107,7 @@ class MenuCareer extends React.Component {
 
     return (
       <div
-        className="collapse navbar-collapse"
+        className="collapse navbar-collapse main-navigation-bar"
         id="navbarSupportedContent"
         hidden={locationUpdate === mainUrl ? true : false}
       >
@@ -129,7 +129,7 @@ class MenuCareer extends React.Component {
             aria-label="Close"
           >
             <img
-              className="close-button-img"
+              className="main-navigation-bar__img-close-button"
               alt="Menü schließen"
               src={pathPrefix + '/svg/icon_close.svg'}
             />
@@ -164,12 +164,12 @@ class MenuCareer extends React.Component {
                     <img
                       key={'dottedLineMenuCarrer-' + i}
                       src={pathPrefix + '/img/nav-line.png'}
-                      className="d-inline d-lg-inline nav-dotted-line"
+                      className="d-inline d-lg-inline main-navigation-bar__dotted-line-horizontal"
                     />
                     <img
                       key={'dottedLineVerticalMenuCarrer-' + i}
                       src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                      className="d-block d-lg-none nav-dotted-line-vertical"
+                      className="d-block d-lg-none main-navigation-bar__dotted-line-vertical"
                     />
                   </div>
                 )}

@@ -5,9 +5,9 @@ import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../ContentfulImage'
+import ContentfulImage from '../../ContentfulImage'
 
-import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
 class ImageCarouselV2 extends React.Component {
   render() {

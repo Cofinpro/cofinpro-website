@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import CarrerOffersCarousel from '../../components/CarrerOffersCarousel'
+import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'

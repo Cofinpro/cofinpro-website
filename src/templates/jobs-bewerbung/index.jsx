@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import CarrerOffersCarousel from '../../components/CarrerOffersCarousel'
+import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'

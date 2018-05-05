@@ -8,12 +8,13 @@ import Facts from '../../components/Facts'
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ManagementBoardMitglied from '../../components/ManagementBoardMitglied'
-import ImageCarousel from '../../components/ImageCarousel'
-import ImageCarouselV2 from '../../components/ImageCarouselV2'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-import TestimonialCarousel from '../../components/TestimonialCarousel'
 import HtmlHeader from '../../components/HtmlHeader'
+
+import ImageCarousel from '../../components/carousels/ImageCarousel'
+import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
+import TestimonialCarousel from '../../components/carousels/TestimonialCarousel'
 
 class UeberUnsTemplate extends React.Component {
   componentDidMount() {

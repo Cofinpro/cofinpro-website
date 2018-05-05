@@ -9,7 +9,7 @@ import SiteHeaderContent from '../../components/SiteHeaderContent'
 import Testimonial from '../../components/Testimonial'
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
-import ImageCarouselV2 from '../../components/ImageCarouselV2'
+import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 class WorkLifeTemplate extends React.Component {
