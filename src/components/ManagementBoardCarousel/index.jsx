@@ -8,14 +8,14 @@ import ContentfulImage from '../ContentfulImage'
 import Testimonial from '../Testimonial'
 import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
 
-class TestimonialCarousel extends React.Component {
+class ManagementBoardCarousel extends React.Component {
   render() {
-    const { carouselId, testimonials } = this.props
+    const { carouselId, mitglieder } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    if (testimonials != null && testimonials.length > 0) {
+    if (mitglieder != null && mitglieder.length > 0) {
       return (
         <div
           id={'carousel-' + carouselId}
@@ -24,22 +24,25 @@ class TestimonialCarousel extends React.Component {
           data-interval="false"
         >
           <div className="carousel-inner">
-            {testimonials.map((testimonial, i) => {
+            {mitglieder.map((mitglied, i) => {
               return (
                 <div
                   className={'carousel-item' + (i == 0 ? ' active' : '')}
                   key={'carousel-item-t-' + i}
                 >
-                  <Testimonial
-                    key={'carousel-item-testimonial-' + i}
-                    text={testimonial.zitat.zitat}
-                    author={testimonial.autor}
-                    authorTitle={testimonial.autorTitel}
-                    videoUrl={testimonial.linkVonYouTubeVideo}
-                    imageFile={testimonial.bildTestimonial}
-                    showCarouselSliderIcons={true}
-                    carouselId={carouselId}
-                  />
+                  <div key={'carousel-wrapper-t-' + i}>
+                    <p key={'carousel-p-t-' + i}>Test</p>
+                    <div
+                      key={'carousel-control-wraper-t-' + i}
+                      className="d-block d-md-none margin-20-bottom"
+                    >
+                      <CarouselControlPrevNext
+                        key={'carousel-controll-t-' + i}
+                        sliderId={'carousel-' + carouselId}
+                        version={2}
+                      />
+                    </div>
+                  </div>
                 </div>
               )
             })}
@@ -55,4 +58,4 @@ class TestimonialCarousel extends React.Component {
   }
 }
 
-export default TestimonialCarousel
+export default ManagementBoardCarousel

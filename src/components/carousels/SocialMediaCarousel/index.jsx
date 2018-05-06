@@ -5,10 +5,10 @@ import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../ContentfulImage'
-import ContentfulMarkdownText from '../ContentfulMarkdownText'
+import ContentfulImage from '../../ContentfulImage'
+import ContentfulMarkdownText from '../../ContentfulMarkdownText'
 
-import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
 class SocialMediaCarousel extends React.Component {
   render() {

@@ -2,7 +2,7 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-.image-overlay-gradient {
+.hero-image__image-overlay-gradient {
   z-index: 2;
   position: absolute;
   background-image: linear-gradient(
@@ -14,7 +14,7 @@
   width: 100%;
 }
 
-.title-box {
+.hero-image__title-box {
   position: relative;
   left: 0rem;
   top: 2.5rem;

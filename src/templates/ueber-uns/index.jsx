@@ -4,15 +4,20 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import Facts from '../../components/Facts'
-import SiteHeader from '../../components/SiteHeader'
+import FactsLayout from '../../components/layouts/FactsLayout'
+import SubtitleTitelImageTextLayout from '../../components/layouts/SubtitleTitelImageTextLayout'
+import ThreeIconsWithTitleAndTextLayout from '../../components/layouts/ThreeIconsWithTitleAndTextLayout'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
+import ImageTitleCollapseTextLayout from '../../components/layouts/ImageTitleCollapseTextLayout'
+
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ImageCarousel from '../../components/ImageCarousel'
-import ImageCarouselV2 from '../../components/ImageCarouselV2'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-import TestimonialCarousel from '../../components/TestimonialCarousel'
 import HtmlHeader from '../../components/HtmlHeader'
+
+import ImageCarousel from '../../components/carousels/ImageCarousel'
+import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
+import TestimonialCarousel from '../../components/carousels/TestimonialCarousel'
 
 class UeberUnsTemplate extends React.Component {
   componentDidMount() {
@@ -32,13 +37,15 @@ class UeberUnsTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
+    const mbImagesSharp = this.props.pathContext.mbImagesSharp
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={this.props.data.imageTitelBildSharp}
           titleImageSmall={this.props.data.imageTitelBildKleinSharp}
@@ -59,58 +66,18 @@ class UeberUnsTemplate extends React.Component {
           }
         />
 
-        <div className="container margin-60-top">
-          <div className="row justify-content-center text-center padding-md-top-bottom">
-            <div className="col-6 col-md-4">
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildLinks}
-                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildLinks}
-                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
-              />
-              <h4 className="p padding-sm-bottom">
-                {graphQlResult.spaltenTopTitelLinks}
-              </h4>
-              <p className="">
-                {graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
-              </p>
-            </div>
-            <div className="col-6 col-md-4">
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildMitte}
-                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildMitte}
-                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
-              />
-              <h4 className="p padding-sm-bottom">
-                {graphQlResult.spaltenTopTitelMitte}
-              </h4>
-              <p className="">
-                {graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
-              </p>
-            </div>
-            <div className="col-6 col-md-4">
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildRechts}
-                styleClasses="img-fluid d-block d-md-none w-100 mx-auto padding-sm-bottom"
-              />
-              <ContentfulImage
-                imageFile={graphQlResult.spaltenTopBildRechts}
-                styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
-              />
-              <h4 className="p padding-sm-bottom">
-                {graphQlResult.spaltenTopTitelRechts}
-              </h4>
-              <p className="">
-                {graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
-              </p>
-            </div>
-          </div>
-        </div>
+        <ThreeIconsWithTitleAndTextLayout
+          iconLeft={graphQlResult.spaltenTopBildLinks}
+          titleLeft={graphQlResult.spaltenTopTitelLinks}
+          textLeft={graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
+          iconMiddle={graphQlResult.spaltenTopBildMitte}
+          titleMiddle={graphQlResult.spaltenTopTitelMitte}
+          textMiddle={graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
+          iconRight={graphQlResult.spaltenTopBildRechts}
+          titleRight={graphQlResult.spaltenTopTitelRechts}
+          textRight={graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
+          containerStyle="margin-60-top"
+        />
 
         <div className="container">
           <div className="row">
@@ -242,26 +209,15 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top">
-          <div className="row justify-content-end">
-            <div className="col-12 col-md-8">
-              <h2 className="h6">{graphQlResult.karrieremagazin.untertitel}</h2>
-              <h3 className="h2">{graphQlResult.karrieremagazin.titel}</h3>
-              <Img sizes={this.props.data.karrieremagazinSharp.sizes} />   
-            </div>
-            <div className="col-12 col-md-1" />
-          </div>
-          <div className="row margin-20-top">
-            <div className="col-12 col-md-3 col-lg-3" />
-            <div className="col-12 col-md-6 col-lg-5">
-              <ContentfulMarkdownText
-                text={graphQlResult.karrieremagazin.beschreibung.beschreibung}
-                {...this.props}
-              />
-            </div>
-            <div className="col-12 col-md-1" />
-          </div>
-        </div>
+        <SubtitleTitelImageTextLayout 
+          subtitle={graphQlResult.karrieremagazin.untertitel} 
+          title={graphQlResult.karrieremagazin.titel} 
+          image={this.props.data.karrieremagazinSharp} 
+          text={graphQlResult.karrieremagazin.beschreibung.beschreibung} 
+          containerStyle="margin-100-top"
+          rowOneStyle="justify-content-end"
+          rowTwoStyle="justify-content-end margin-20-top" 
+          {...this.props} />
 
         <div className="container margin-100-top">
           <div className="row">
@@ -367,26 +323,105 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top">
-          <div className="row justify-content-end">
-            <div className="col-12 col-md-8">
-              <h2 className="h6">{graphQlResult.projekte.untertitel}</h2>
-              <h3 className="h2">{graphQlResult.projekte.titel}</h3>
-              <Img sizes={this.props.data.projektBildSharp.sizes} />   
-            </div>
-            <div className="col-12 col-md-1" />
-          </div>
-          <div className="row margin-20-top">
-            <div className="col-12 col-md-3" />
-            <div className="col-12 col-md-5">
+        <div className="container margin-100-top d-none">
+          <div className="row">
+            <div className="col-12 col-md-6 col-lg-5">
+              <h6 className="h6">{graphQlResult.managementBoardUntertitel}</h6>
+              <h2 className="h2">{graphQlResult.managementBoardTitel}</h2>
               <ContentfulMarkdownText
-                text={graphQlResult.projekte.beschreibung.beschreibung}
-                {...this.props}
+                text={
+                  graphQlResult.managementBoardBeschreibung
+                    .managementBoardBeschreibung
+                }
               />
             </div>
-            <div className="col-12 col-md-1" />
+            <div className="col-12 col-md-6 col-lg-5" />
+          </div>
+          <div className="row d-none d-md-flex justify-content-end margin-40-top">
+            {graphQlResult.managementBoardMitglieder.map(function(
+              mitglied,
+              index
+            ) {
+              if (index < 3) {
+                return (
+                  <div className="col-3 " key={'column-mitglied-' + index}>
+                    <ImageTitleCollapseTextLayout
+                      key={'mitglied-mb-' + index}
+                      id={index}
+                      title={mitglied.titel}
+                      subtitle={mitglied.untertitel}
+                      text={mitglied.beschreibung.beschreibung}
+                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
+          </div>
+          <div className="row d-none d-md-flex justify-content-start margin-40-top">
+            {graphQlResult.managementBoardMitglieder.map(function(
+              mitglied,
+              index
+            ) {
+              if (index >= 3 && index < 6) {
+                return (
+                  <div className="col-3 " key={'column-mitglied-' + index}>
+                    <ImageTitleCollapseTextLayout
+                      key={'mitglied-mb-' + index}
+                      id={index}
+                      title={mitglied.titel}
+                      subtitle={mitglied.untertitel}
+                      text={mitglied.beschreibung.beschreibung}
+                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
+          </div>
+          <div className="row d-none d-md-flex justify-content-end margin-40-top">
+            {graphQlResult.managementBoardMitglieder.map(function(
+              mitglied,
+              index
+            ) {
+              if (index >= 6) {
+                return (
+                  <div className="col-3 " key={'column-mitglied-' + index}>
+                    <ImageTitleCollapseTextLayout
+                      key={'mitglied-mb-' + index}
+                      id={index}
+                      title={mitglied.titel}
+                      subtitle={mitglied.untertitel}
+                      text={mitglied.beschreibung.beschreibung}
+                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
+          </div>
+          <div className="row d-flex d-md-none margin-40-top">
+            <div className="col">
+              <p>Mobile here</p>
+            </div>
           </div>
         </div>
+
+        <SubtitleTitelImageTextLayout 
+          subtitle={graphQlResult.projekte.untertitel} 
+          title={graphQlResult.projekte.titel} 
+          image={this.props.data.projektBildSharp} 
+          text={graphQlResult.projekte.beschreibung.beschreibung} 
+          containerStyle="margin-100-top"
+          rowOneStyle="justify-content-end"
+          rowTwoStyle="justify-content-end margin-20-top" 
+          {...this.props} />
 
         <div className="container margin-120-top">
           <div className="row">
@@ -396,7 +431,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <Facts
+        <FactsLayout
           fakt1Titel={graphQlResult.faktenCofinpro.fakt1Titel}
           fakt1Text={graphQlResult.faktenCofinpro.fakt1Text}
           fakt1Image={graphQlResult.faktenCofinpro.fakt1Bild}
@@ -449,10 +484,10 @@ export default UeberUnsTemplate
 
 export const pageQuery = graphql`
   query ueberUnsQuery(
-    $id: String!,
-    $titelbildId: String!,
-    $titelbildKleinId: String!,
-    $projektBildId: String!,
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+    $projektBildId: String!
     $karrieremagazinId: String!
   ) {
     contentfulSeiteUeberUns(id: { eq: $id }) {
@@ -608,6 +643,28 @@ export const pageQuery = graphql`
         buttonText
       }
       kollegenAuthorZitat
+      managementBoardUntertitel
+      managementBoardTitel
+      managementBoardBeschreibung {
+        managementBoardBeschreibung
+      }
+      managementBoardMitglieder {
+        id
+        untertitel
+        titel
+        bild {
+          id
+          title
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
+        beschreibung {
+          beschreibung
+        }
+      }
       projekte {
         untertitel
         titel
@@ -698,30 +755,25 @@ export const pageQuery = graphql`
         }
       }
     }
-
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     projektBildSharp: imageSharp(id: { regex: $projektBildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
       sizes(maxWidth: 1600, quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `

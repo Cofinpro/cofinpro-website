@@ -6,7 +6,7 @@ import PubSub from 'pubsub-js'
 import CarrerOfferPreview from '../CarrerOfferPreview'
 import LinkButton from '../buttons/LinkButton'
 
-import CarrerOffersCarousel from '../CarrerOffersCarousel'
+import CarrerOffersCarousel from '../carousels/CarrerOffersCarousel'
 
 import StorageHelper from '../../utils/storageHelper'
 

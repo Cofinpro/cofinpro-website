@@ -4,14 +4,15 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
-import Facts from '../../components/Facts'
-import SiteHeader from '../../components/SiteHeader'
+import FactsLayout from '../../components/layouts/FactsLayout'
+import TestimonialLayout from '../../components/layouts/TestimonialLayout'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
+
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import NewsPreview from '../../components/NewsPreview'
 import ContentfulImage from '../../components/ContentfulImage'
-import SocialMediaCarousel from '../../components/SocialMediaCarousel'
+import SocialMediaCarousel from '../../components/carousels/SocialMediaCarousel'
 import CarrerOfferBox from '../../components/CarrerOfferBox'
-import Testimonial from '../../components/Testimonial'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
 
@@ -29,7 +30,8 @@ class LandingTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteLandingPerspektive
 
-    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
+      .edges
 
     const titelBildDesktop = this.props.pathContext.titelBildDesktop
     const titelBildMobile = this.props.pathContext.titelBildMobile
@@ -48,7 +50,7 @@ class LandingTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={titelBildDesktop}
           titleImageSmall={titelBildMobile}
@@ -69,7 +71,7 @@ class LandingTemplate extends React.Component {
           </div>
         </div>
 
-        <Facts
+        <FactsLayout
           fakt1Titel={graphQlResult.faktenCofinpro.fakt1Titel}
           fakt1Text={graphQlResult.faktenCofinpro.fakt1Text}
           fakt1Image={graphQlResult.faktenCofinpro.fakt1Bild}
@@ -153,7 +155,7 @@ class LandingTemplate extends React.Component {
               </div>
               {graphQlResult.testimonialLinkeBox !== null &&
               graphQlResult.testimonialLinkeBox.length > 0 ? (
-                <Testimonial
+                <TestimonialLayout
                   title={graphQlResult.testimonialLinkeBox[0].ueberschrift}
                   text={graphQlResult.testimonialLinkeBox[0].zitat.zitat}
                   author={graphQlResult.testimonialLinkeBox[0].autor}
@@ -439,7 +441,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allContentfulSeiteStellenanzeige {
       edges {
         node {
@@ -493,6 +494,5 @@ export const pageQuery = graphql`
         }
       }
     }
-
   }
 `

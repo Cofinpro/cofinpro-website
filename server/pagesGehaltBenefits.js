@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, callback) {
+exports.create = function (graphql, createPage, createRedirect, callback) {
 
   console.log("start graphql query: allContentfulSeiteGehaltBenefits.");
 
@@ -33,6 +33,12 @@ exports.create = function (graphql, createPage, callback) {
     console.log("end graphql query: allContentfulSeiteGehaltBenefits.");
 
     const gehaltBeteiligungTemplate = path.resolve(`./src/templates/gehalt-beteiligung/index.jsx`);
+    
+    createRedirect({
+      fromPath: `/gehalt-beteiligung`,
+      redirectInBrowser: true,
+      toPath: `/`,
+    })
 
     _.each(result.data.allContentfulSeiteGehaltBenefits.edges, edge => {
 

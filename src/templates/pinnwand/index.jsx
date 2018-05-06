@@ -5,33 +5,11 @@ import get from 'lodash/get'
 
 import NewsPreview from '../../components/NewsPreview'
 import HtmlHeader from '../../components/HtmlHeader'
+import ToggleButton from '../../components/buttons/ToggleButton'
 
 import './style.scss'
 
 class PinnwandTemplate extends React.Component {
-  componentDidMount() {
-    $('#oldNewsContent').collapse({ toggle: false })
-
-    $('#button-pinnwand-collapse').click(function() {
-      if ($('#button-pinnwand-collapse>i').hasClass('fa')) {
-        $('#oldNewsContent').collapse('toggle')
-
-        $('#button-pinnwand-collapse>i').toggleClass('fa-chevron-down')
-        $('#button-pinnwand-collapse>i').toggleClass('fa-chevron-up')
-      }
-
-      if ($('#button-pinnwand-collapse>i').hasClass('material-icons')) {
-        $('#oldNewsContent').collapse('toggle')
-
-        $('#button-pinnwand-collapse>i').text(function(i, old) {
-          return old == 'keyboard_arrow_down'
-            ? 'keyboard_arrow_up'
-            : 'keyboard_arrow_down'
-        })
-      }
-    })
-  }
-
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -40,31 +18,9 @@ class PinnwandTemplate extends React.Component {
     }
   }
 
-  handleToggle() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn,
-    }))
-    console.log('handleToggle:' + this.state.isToggleOn)
-  }
-
   constructor(props) {
     super(props)
-    this.handleToggle = this.handleToggle.bind(this)
-    this.state = {
-      isToggleOn: false,
-    }
     this.threshold = 8
-
-    var tempIsToggleOn = false
-
-    if (props.pathContext.allNews.length > this.threshold) {
-      tempIsToggleOn = true
-    }
-
-    this.state = {
-      isToggleOn: tempIsToggleOn,
-    }
-    console.log(this.state.isToggleOn)
   }
 
   render() {
@@ -204,24 +160,11 @@ class PinnwandTemplate extends React.Component {
         >
           <div className="row margin-md-top-bottom">
             <div className="col-12 text-center">
-              <button
-                id="button-pinnwand-collapse"
-                className="btn btn-light text-white"
-                type="button"
-                data-toggle="collapse"
-                data-target="#oldNewsContent"
-                aria-controls="navbarToggleExternalContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <i
-                  className="fa fa-chevron-down text-primary"
-                  aria-hidden="true"
-                />
-              </button>
+              <ToggleButton id="pinnwand" dataTarget={'oldNewsContent'} />
             </div>
           </div>
         </div>
+        
       </div>
     )
   }

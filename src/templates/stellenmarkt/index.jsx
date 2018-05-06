@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import SiteHeader from '../../components/SiteHeader'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import HtmlHeader from '../../components/HtmlHeader'
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
@@ -28,7 +28,7 @@ class StellenmarktTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           imageFile={graphQlResult.titelbild}
           imageSmall={graphQlResult.titelbildKlein}

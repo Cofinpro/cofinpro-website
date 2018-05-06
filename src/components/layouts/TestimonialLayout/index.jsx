@@ -4,10 +4,10 @@ import get from 'lodash/get'
 
 import './style.scss'
 
-import ContentfulImage from '../ContentfulImage'
-import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+import ContentfulImage from '../../ContentfulImage'
+import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
-class Testimonial extends React.Component {
+class TestimonialLayout extends React.Component {
   componentDidMount() {
     $('button.ytp-large-play-button.ytp-button').hide()
   }
@@ -68,7 +68,7 @@ class Testimonial extends React.Component {
             className="embed-responsive-item"
             src={videoUrl.replace('/watch?v=', '/embed/')}
             allowFullScreen
-          /> 
+          />
         </div>
         {sliderIcons}
         <p className="h4">{text}</p>
@@ -80,4 +80,4 @@ class Testimonial extends React.Component {
   }
 }
 
-export default Testimonial
+export default TestimonialLayout

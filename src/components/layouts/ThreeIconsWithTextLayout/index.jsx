@@ -1,12 +1,18 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 
-import ContentfulImage from '../ContentfulImage'
+import ContentfulImage from '../../ContentfulImage'
 
-class Benefits extends React.Component {
+class ThreeIconsWithTextLayout extends React.Component {
   render() {
-    const { title, img1, text1, img2, text2, img3, text3 } = this.props
+    const {
+      title,
+      iconLeft,
+      textLeft,
+      iconMiddle,
+      textMiddle,
+      iconRight,
+      textRight,
+    } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -20,36 +26,36 @@ class Benefits extends React.Component {
         <div className="row justify-content-center">
           <div className="col-6 col-md-4">
             <ContentfulImage
-              imageFile={img1}
+              imageFile={iconLeft}
               styleClasses="img-fluid d-block d-md-none w-100 mx-auto"
             />
             <ContentfulImage
-              imageFile={img1}
+              imageFile={iconLeft}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
-            <p className="padding-sm-top p-font-large-md">{text1}</p>
+            <p className="padding-sm-top p-font-large-md">{textLeft}</p>
           </div>
           <div className="col-6 col-md-4">
             <ContentfulImage
-              imageFile={img2}
+              imageFile={iconMiddle}
               styleClasses="img-fluid d-block d-md-none w-100 mx-auto"
             />
             <ContentfulImage
-              imageFile={img2}
+              imageFile={iconMiddle}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
-            <p className="padding-sm-top p-font-large-md">{text2}</p>
+            <p className="padding-sm-top p-font-large-md">{textMiddle}</p>
           </div>
           <div className="col-6 col-md-4">
             <ContentfulImage
-              imageFile={img3}
+              imageFile={iconRight}
               styleClasses="img-fluid d-block d-md-none w-100 mx-auto"
             />
             <ContentfulImage
-              imageFile={img3}
+              imageFile={iconRight}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
-            <p className="padding-sm-top p-font-large-md">{text3}</p>
+            <p className="padding-sm-top p-font-large-md">{textRight}</p>
           </div>
         </div>
       </div>
@@ -57,4 +63,4 @@ class Benefits extends React.Component {
   }
 }
 
-export default Benefits
+export default ThreeIconsWithTextLayout

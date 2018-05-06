@@ -4,11 +4,15 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import CarrerOffersCarousel from '../../components/CarrerOffersCarousel'
+import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
+
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
-import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import TestimonialLarge from '../../components/TestimonialLarge'
+
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
+import FourStepsLayout from '../../components/layouts/FourStepsLayout'
+import SubtitleTitelTwoImagesTextLayout from '../../components/layouts/SubtitleTitelTwoImagesTextLayout'
+
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
@@ -30,7 +34,8 @@ class JobsBewerbungTemplate extends React.Component {
 
   render() {
     const graphQlResult = this.props.data.contentfulSeiteJobsBewerbung
-    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
+      .edges
 
     const { location } = this.props
 
@@ -40,7 +45,7 @@ class JobsBewerbungTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={this.props.data.imageTitelBildSharp}
           titleImageSmall={this.props.data.imageTitelBildKleinSharp}
@@ -62,337 +67,46 @@ class JobsBewerbungTemplate extends React.Component {
           />
         </div>
 
-        <div className="container margin-120-top">
-          <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1">
-              <h3 className="h2">
-                {graphQlResult.ueberschriftAnsprechpartnerBewerbungen}
-              </h3>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12 col-md-6 col-lg-5 offset-lg-1">
-              <Img
-                sizes={
-                  this.props.data.ansprechpartnerEinsBildSharp != null
-                    ? this.props.data.ansprechpartnerEinsBildSharp.sizes
-                    : null
-                }
-              />
-            </div>
-            <div className="col-12 col-md-6 col-lg-5">
-              <div className="d-block d-md-none margin-20-top" />
-              <Img
-                sizes={
-                  this.props.data.ansprechpartnerZweiBildSharp != null
-                    ? this.props.data.ansprechpartnerZweiBildSharp.sizes
-                    : null
-                }
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12 col-md-9 col-lg-5 offset-lg-1">
-              <ContentfulMarkdownText
-                text={
-                  graphQlResult.beschreibungAnsprechpartnerBewerbungen
-                    .beschreibungAnsprechpartnerBewerbungen
-                }
-                styleClasses="margin-20-top"
-              />
-            </div>
-          </div>
-        </div>
+        <SubtitleTitelTwoImagesTextLayout
+          title={graphQlResult.ueberschriftAnsprechpartnerBewerbungen}
+          imageLeft={this.props.data.ansprechpartnerEinsBildSharp}
+          imageRight={this.props.data.ansprechpartnerZweiBildSharp}
+          text={
+            graphQlResult.beschreibungAnsprechpartnerBewerbungen
+              .beschreibungAnsprechpartnerBewerbungen
+          }
+          containerStyle="margin-120-top"
+        />
 
-        <div className="container margin-100-top">
-          <div className="row">
-            <div className="col">
-              <h2 className="h6">
-                {graphQlResult.bewerbungsprozessUntertitel}
-              </h2>
-              <h3 className="h2 margin-40-bottom">
-                {graphQlResult.bewerbungsprozessTitel}
-              </h3>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12 col-md-6 d-none d-md-block">
-              <div className="row">
-                <div className="col-12 col-md-10 order-1">
-                  <div className="row d-flex align-items-center">
-                    <div className="col-2">
-                      <p className="display-3 text-info bold-font">1</p>
-                    </div>
-
-                    <div className="col-12 col-md-8">
-                      <h4>{graphQlResult.bewerbungsprozessSchritt1Titel}</h4>
-                    </div>
-                    <div className="col-12 col-md-2" />
-                  </div>
-                  <div className="row">
-                    <div className="col-12 col-md-10">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bewerbungsprozessSchritt1Bild}
-                        styleClasses="img-fluid padding-sm-top-bottom"
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12">
-                      <p>
-                        {
-                          graphQlResult.bewerbungsprozessSchritt1Beschreibung
-                            .bewerbungsprozessSchritt1Beschreibung
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-2 order-2" />
-                <div className="col-12 col-md-2 order-2" />
-                <div className="col-12 col-md-10 order-3 justify-content-end">
-                  <div className="row d-none d-md-block filler-box-two">
-                    <div className="col">
-                      <p className="filler" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-2">
-                      <p className="display-3 text-info bold-font">3</p>
-                    </div>
-
-                    <div className="col-12 col-md-8">
-                      <h4>{graphQlResult.bewerbungsprozessSchritt3Titel}</h4>
-                    </div>
-                    <div className="col-12 col-md-2" />
-                  </div>
-                  <div className="row">
-                    <div className="col-12 col-md-10">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bewerbungsprozessSchritt3Bild}
-                        styleClasses="img-fluid padding-sm-top-bottom"
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12">
-                      <p>
-                        {
-                          graphQlResult.bewerbungsprozessSchritt3Beschreibung
-                            .bewerbungsprozessSchritt3Beschreibung
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 col-md-6 d-none d-md-block">
-              <div className="row">
-                <div className="col-12 col-md-10 order-2">
-                  <div className="row d-none d-md-block filler-box">
-                    <div className="col">
-                      <p className="filler" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-2">
-                      <p className="display-3 text-info bold-font">2</p>
-                    </div>
-
-                    <div className="col-12 col-md-8">
-                      <h4>{graphQlResult.bewerbungsprozessSchritt2Titel}</h4>
-                    </div>
-                    <div className="col-12 col-md-2" />
-                  </div>
-                  <div className="row">
-                    <div className="col-12 col-md-10">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bewerbungsprozessSchritt2Bild}
-                        styleClasses="img-fluid padding-sm-top-bottom"
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12">
-                      <p>
-                        {
-                          graphQlResult.bewerbungsprozessSchritt2Beschreibung
-                            .bewerbungsprozessSchritt2Beschreibung
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="col-12 col-md-2 order-3" />
-                <div className="col-12 col-md-2 order-3" />
-
-                <div className="col-12 col-md-10 order-4">
-                  <div className="row d-none d-md-block filler-box-two">
-                    <div className="col">
-                      <p className="filler" />
-                    </div>
-                  </div>
-
-                  <div className="row">
-                    <div className="col-2">
-                      <p className="display-3 text-info bold-font">4</p>
-                    </div>
-
-                    <div className="col-12 col-md-8">
-                      <h4>{graphQlResult.bewerbungsprozessSchritt4Titel}</h4>
-                    </div>
-                    <div className="col-12 col-md-2" />
-                  </div>
-                  <div className="row">
-                    <div className="col-12 col-md-10">
-                      <ContentfulImage
-                        imageFile={graphQlResult.bewerbungsprozessSchritt4Bild}
-                        styleClasses="img-fluid padding-sm-top-bottom"
-                      />
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-12">
-                      <p>
-                        {
-                          graphQlResult.bewerbungsprozessSchritt4Beschreibung
-                            .bewerbungsprozessSchritt4Beschreibung
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 order-1 d-block d-md-none">
-              <div className="row d-flex align-items-center">
-                <div className="col-2">
-                  <p className="display-3 text-info bold-font">1</p>
-                </div>
-
-                <div className="col-10">
-                  <h4>{graphQlResult.bewerbungsprozessSchritt1Titel}</h4>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <ContentfulImage
-                    imageFile={graphQlResult.bewerbungsprozessSchritt1Bild}
-                    styleClasses="img-fluid padding-sm-top-bottom"
-                  />
-                  <p>
-                    {
-                      graphQlResult.bewerbungsprozessSchritt1Beschreibung
-                        .bewerbungsprozessSchritt1Beschreibung
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 order-3 d-block d-md-none margin-60-top">
-              <div className="row d-none d-md-block filler-box-two">
-                <div className="col">
-                  <p className="filler" />
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-2">
-                  <p className="display-3 text-info bold-font">3</p>
-                </div>
-
-                <div className="col-10">
-                  <h4>{graphQlResult.bewerbungsprozessSchritt3Titel}</h4>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <ContentfulImage
-                    imageFile={graphQlResult.bewerbungsprozessSchritt3Bild}
-                    styleClasses="img-fluid padding-sm-top-bottom"
-                  />
-                  <p>
-                    {
-                      graphQlResult.bewerbungsprozessSchritt3Beschreibung
-                        .bewerbungsprozessSchritt3Beschreibung
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 order-2 d-block d-md-none margin-60-top">
-              <div className="row d-none d-md-block filler-box">
-                <div className="col">
-                  <p className="filler" />
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-2">
-                  <p className="display-3 text-info bold-font">2</p>
-                </div>
-
-                <div className="col-10">
-                  <h4>{graphQlResult.bewerbungsprozessSchritt2Titel}</h4>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <ContentfulImage
-                    imageFile={graphQlResult.bewerbungsprozessSchritt2Bild}
-                    styleClasses="img-fluid padding-sm-top-bottom"
-                  />
-                  <p>
-                    {
-                      graphQlResult.bewerbungsprozessSchritt2Beschreibung
-                        .bewerbungsprozessSchritt2Beschreibung
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 order-4 d-block d-md-none margin-60-top">
-              <div className="row d-none d-md-block filler-box-two">
-                <div className="col">
-                  <p className="filler" />
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col-2">
-                  <p className="display-3 text-info bold-font">4</p>
-                </div>
-
-                <div className="col-10">
-                  <h4>{graphQlResult.bewerbungsprozessSchritt4Titel}</h4>
-                </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <ContentfulImage
-                    imageFile={graphQlResult.bewerbungsprozessSchritt4Bild}
-                    styleClasses="img-fluid padding-sm-top-bottom"
-                  />
-                  <p>
-                    {
-                      graphQlResult.bewerbungsprozessSchritt4Beschreibung
-                        .bewerbungsprozessSchritt4Beschreibung
-                    }
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FourStepsLayout
+          subtitle={graphQlResult.bewerbungsprozessUntertitel}
+          title={graphQlResult.bewerbungsprozessTitel}
+          stepOneTitle={graphQlResult.bewerbungsprozessSchritt1Titel}
+          stepOneImage={graphQlResult.bewerbungsprozessSchritt1Bild}
+          stepOneText={
+            graphQlResult.bewerbungsprozessSchritt1Beschreibung
+              .bewerbungsprozessSchritt1Beschreibung
+          }
+          stepTwoTitle={graphQlResult.bewerbungsprozessSchritt2Titel}
+          stepTwoImage={graphQlResult.bewerbungsprozessSchritt2Bild}
+          stepTwoText={
+            graphQlResult.bewerbungsprozessSchritt2Beschreibung
+              .bewerbungsprozessSchritt2Beschreibung
+          }
+          stepThreeTitle={graphQlResult.bewerbungsprozessSchritt3Titel}
+          stepThreeImage={graphQlResult.bewerbungsprozessSchritt3Bild}
+          stepThreeText={
+            graphQlResult.bewerbungsprozessSchritt3Beschreibung
+              .bewerbungsprozessSchritt3Beschreibung
+          }
+          stepFourTitle={graphQlResult.bewerbungsprozessSchritt4Titel}
+          stepFourImage={graphQlResult.bewerbungsprozessSchritt4Bild}
+          stepFourText={
+            graphQlResult.bewerbungsprozessSchritt4Beschreibung
+              .bewerbungsprozessSchritt4Beschreibung
+          }
+          containerStyle="margin-100-top"
+        />
 
         <div className="container bg-orange-light margin-100-top padding-md-top-bottom">
           <div className="row">
@@ -590,7 +304,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allContentfulSeiteStellenanzeige {
       edges {
         node {
@@ -644,7 +357,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes

@@ -3,13 +3,13 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../../components/Benefits'
-import SiteHeader from '../../components/SiteHeader'
+import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTextLayout'
+import TestimonialLayout from '../../components/layouts/TestimonialLayout'
+
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import Testimonial from '../../components/Testimonial'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-import ContentBoxStyleOne from '../../components/ContentBoxStyleOne'
 import HtmlHeader from '../../components/HtmlHeader'
 
 class GehaltBeteiligungTemplate extends React.Component {
@@ -44,7 +44,7 @@ class GehaltBeteiligungTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={this.props.data.imageTitelBildSharp}
           titleImageSmall={this.props.data.imageTitelBildKleinSharp}
@@ -65,14 +65,14 @@ class GehaltBeteiligungTemplate extends React.Component {
           }
         />
 
-        <Benefits
+        <ThreeIconsWithTextLayout
           title={graphQlResult.vorteile.titel}
-          img1={graphQlResult.vorteile.bildVorteil1}
-          text1={graphQlResult.vorteile.textVorteil1.textVorteil1}
-          img2={graphQlResult.vorteile.bildVorteil2}
-          text2={graphQlResult.vorteile.textVorteil2.textVorteil2}
-          img3={graphQlResult.vorteile.bildVorteil3}
-          text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
+          iconLeft={graphQlResult.vorteile.bildVorteil1}
+          textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
+          iconMiddle={graphQlResult.vorteile.bildVorteil2}
+          textMiddle={graphQlResult.vorteile.textVorteil2.textVorteil2}
+          iconRight={graphQlResult.vorteile.bildVorteil3}
+          textRight={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
         {graphQlResult.artenVonStudenten == null ||
@@ -192,23 +192,7 @@ class GehaltBeteiligungTemplate extends React.Component {
 
               <div className="col-12 col-md-1 col-lg-2" />
 
-              <div className="col-12 col-md-5">
-                <div className="d-none d-md-block filler-box-320">
-                  <p className="filler" />
-                </div>
-                <div className="d-block d-md-none margin-60-top">
-                  <p className="filler" />
-                </div>
-
-                <Testimonial
-                  title={graphQlResult.testimonial.ueberschrift}
-                  text={graphQlResult.testimonial.zitat.zitat}
-                  author={graphQlResult.testimonial.autor}
-                  authorTitle={graphQlResult.testimonial.autorTitel}
-                  videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-                  imageFile={graphQlResult.testimonial.bildTestimonial}
-                />
-              </div>
+              <div className="col-12 col-md-5" />
             </div>
           </div>
         ) : null}
@@ -329,21 +313,23 @@ class GehaltBeteiligungTemplate extends React.Component {
                 ) : null}
               </div>
             </div>
-
-            <div className="row margin-120-top">
-              <div className="col-12 col-md-6 offset-md-6">
-                <Testimonial
-                  title={graphQlResult.testimonial.ueberschrift}
-                  text={graphQlResult.testimonial.zitat.zitat}
-                  author={graphQlResult.testimonial.autor}
-                  authorTitle={graphQlResult.testimonial.autorTitel}
-                  videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-                  imageFile={graphQlResult.testimonial.bildTestimonial}
-                />
-              </div>
-            </div>
           </div>
         ) : null}
+
+        <div className="container margin-120-top">
+          <div className="row">
+            <div className="col-12 col-md-6 offset-md-6">
+              <TestimonialLayout
+                title={graphQlResult.testimonial.ueberschrift}
+                text={graphQlResult.testimonial.zitat.zitat}
+                author={graphQlResult.testimonial.autor}
+                authorTitle={graphQlResult.testimonial.autorTitel}
+                videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
+                imageFile={graphQlResult.testimonial.bildTestimonial}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -352,7 +338,11 @@ class GehaltBeteiligungTemplate extends React.Component {
 export default GehaltBeteiligungTemplate
 
 export const pageQuery = graphql`
-  query gehaltBenefitsQuery($id: String!, $titelbildId: String!, $titelbildKleinId: String!) {
+  query gehaltBenefitsQuery(
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+  ) {
     contentfulSeiteGehaltBenefits(id: { eq: $id }) {
       id
       metaData {
@@ -542,18 +532,15 @@ export const pageQuery = graphql`
         }
       }
     }
-
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `

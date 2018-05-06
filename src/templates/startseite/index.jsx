@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import ToggleButton from '../../components/buttons/ToggleButton'
 
 import StorageHelper from '../../utils/storageHelper'
 
@@ -74,32 +75,6 @@ class StartseiteTemplate extends React.Component {
         },
         600
       )
-    })
-
-    $('#navbarToggleExternalContent').collapse({ toggle: false })
-
-    $('#button-startseite-collapse').click(function() {
-      $('#navbarToggleExternalContent').collapse('toggle')
-
-      if (
-        $('#button-startseite-collapse>img.collapse-icon-down').hasClass(
-          'd-none'
-        )
-      ) {
-        $('#button-startseite-collapse>img.collapse-icon-up').addClass('d-none')
-        $('#button-startseite-collapse>img.collapse-icon-down').removeClass(
-          'd-none'
-        )
-      } else if (
-        $('#button-startseite-collapse>img.collapse-icon-up').hasClass('d-none')
-      ) {
-        $('#button-startseite-collapse>img.collapse-icon-down').addClass(
-          'd-none'
-        )
-        $('#button-startseite-collapse>img.collapse-icon-up').removeClass(
-          'd-none'
-        )
-      }
     })
 
     if (typeof localStorage !== 'undefined') {
@@ -430,30 +405,10 @@ class StartseiteTemplate extends React.Component {
 
           <div className="row padding-lg-top-bottom">
             <div className="col-12">
-              <button
-                id="button-startseite-collapse"
-                className="btn btn-light text-white"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <img
-                  className="collapse-icon-down"
-                  alt="Mehr Jobs zeigen"
-                  src={pathPrefix + '/svg/icon_arrow_dotted_down_orange.svg'}
-                />
-                <img
-                  className="d-none collapse-icon-up"
-                  alt="Weniger Jobs zeigen"
-                  src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
-                />
-              </button>
+              <ToggleButton id="startseite" dataTarget="collapse-startseite-seo"/>
               <div
                 className="collapse margin-20-top two-column-text"
-                id="navbarToggleExternalContent"
+                id="collapse-startseite-seo"
               >
                 <ContentfulMarkdownText
                   text={graphQlResult.seoTextFeld.seoTextFeld}

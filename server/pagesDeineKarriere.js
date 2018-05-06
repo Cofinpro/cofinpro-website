@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(graphql, createPage, callback) {
+exports.create = function(graphql, createPage, createRedirect, callback) {
 
   console.log("start graphql query: allContentfulSeiteDeineKarriere.");
 
@@ -35,6 +35,12 @@ exports.create = function(graphql, createPage, callback) {
     const deineKarriereTemplate = path.resolve(
       `./src/templates/deine-karriere/index.jsx`
     )
+
+    createRedirect({
+      fromPath: `/deine-karriere`,
+      redirectInBrowser: true,
+      toPath: `/`,
+    })
 
     var itemsProcessed = 0
 

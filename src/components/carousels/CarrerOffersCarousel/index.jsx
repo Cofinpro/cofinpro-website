@@ -5,12 +5,12 @@ import PubSub from 'pubsub-js'
 
 import './style.scss'
 
-import CarrerOfferPreview from '../CarrerOfferPreview'
-import CarrerOfferPreviewFallback from '../CarrerOfferPreviewFallback'
+import CarrerOfferPreview from '../../CarrerOfferPreview'
+import CarrerOfferPreviewFallback from '../../CarrerOfferPreviewFallback'
 
-import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
-import StorageHelper from '../../utils/storageHelper'
+import StorageHelper from '../../../utils/storageHelper'
 
 class CarrerOffersCarousel extends React.Component {
   constructor(props) {

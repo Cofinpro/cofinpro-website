@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import CarrerOffersCarousel from '../../components/CarrerOffersCarousel'
-import SiteHeader from '../../components/SiteHeader'
+import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
@@ -41,7 +41,7 @@ class StellenanzeigeTemplate extends React.Component {
           {...this.props}
         />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.ueberschriftGanzOben}
           titleImage={this.props.data.bildStellenanzeigeSharp}
           titleImageSmall={this.props.data.bildStellenanzeigeSharp}
