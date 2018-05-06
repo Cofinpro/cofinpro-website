@@ -4,10 +4,11 @@ import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../../components/Benefits'
+import ThreeIconsWithText from '../../components/layouts/ThreeIconsWithText'
+import Testimonial from '../../components/layouts/Testimonial'
+
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import Testimonial from '../../components/Testimonial'
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 
@@ -42,14 +43,14 @@ class LaufbahnTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <Benefits
+        <ThreeIconsWithText
           title={graphQlResult.vorteile.titel}
-          img1={graphQlResult.vorteile.bildVorteil1}
-          text1={graphQlResult.vorteile.textVorteil1.textVorteil1}
-          img2={graphQlResult.vorteile.bildVorteil2}
-          text2={graphQlResult.vorteile.textVorteil2.textVorteil2}
-          img3={graphQlResult.vorteile.bildVorteil3}
-          text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
+          iconLeft={graphQlResult.vorteile.bildVorteil1}
+          textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
+          iconMiddle={graphQlResult.vorteile.bildVorteil2}
+          textMiddle={graphQlResult.vorteile.textVorteil2.textVorteil2}
+          iconRight={graphQlResult.vorteile.bildVorteil3}
+          textRight={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
         {graphQlResult.perspektive.name == null ||

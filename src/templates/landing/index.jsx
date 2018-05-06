@@ -4,14 +4,15 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
-import Facts from '../../components/Facts'
+import Facts from '../../components/layouts/Facts'
+import Testimonial from '../../components/layouts/Testimonial'
+
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import NewsPreview from '../../components/NewsPreview'
 import ContentfulImage from '../../components/ContentfulImage'
 import SocialMediaCarousel from '../../components/carousels/SocialMediaCarousel'
 import CarrerOfferBox from '../../components/CarrerOfferBox'
-import Testimonial from '../../components/Testimonial'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
 
@@ -29,7 +30,8 @@ class LandingTemplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteLandingPerspektive
 
-    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
+      .edges
 
     const titelBildDesktop = this.props.pathContext.titelBildDesktop
     const titelBildMobile = this.props.pathContext.titelBildMobile
@@ -439,7 +441,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allContentfulSeiteStellenanzeige {
       edges {
         node {
@@ -493,6 +494,5 @@ export const pageQuery = graphql`
         }
       }
     }
-
   }
 `

@@ -5,10 +5,13 @@ import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
+
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import TestimonialLarge from '../../components/TestimonialLarge'
+
+import TestimonialLarge from '../../components/layouts/TestimonialLarge'
+
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
@@ -30,7 +33,8 @@ class JobsBewerbungTemplate extends React.Component {
 
   render() {
     const graphQlResult = this.props.data.contentfulSeiteJobsBewerbung
-    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
+      .edges
 
     const { location } = this.props
 
@@ -590,7 +594,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allContentfulSeiteStellenanzeige {
       edges {
         node {
@@ -644,7 +647,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes

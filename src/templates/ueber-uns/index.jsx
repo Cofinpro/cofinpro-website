@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import Facts from '../../components/Facts'
+import Facts from '../../components/layouts/Facts'
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ManagementBoardMitglied from '../../components/ManagementBoardMitglied'
@@ -376,8 +376,12 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-6 col-lg-5">
               <h6 className="h6">{graphQlResult.managementBoardUntertitel}</h6>
               <h2 className="h2">{graphQlResult.managementBoardTitel}</h2>
-              <ContentfulMarkdownText text={graphQlResult.managementBoardBeschreibung
-                    .managementBoardBeschreibung} />
+              <ContentfulMarkdownText
+                text={
+                  graphQlResult.managementBoardBeschreibung
+                    .managementBoardBeschreibung
+                }
+              />
             </div>
             <div className="col-12 col-md-6 col-lg-5" />
           </div>

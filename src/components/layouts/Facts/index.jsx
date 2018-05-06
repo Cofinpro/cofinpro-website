@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import ContentfulImage from '../ContentfulImage'
+import ContentfulImage from '../../ContentfulImage'
 
 class Facts extends React.Component {
   render() {

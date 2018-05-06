@@ -3,13 +3,14 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../../components/Benefits'
+import ThreeIconsWithText from '../../components/layouts/ThreeIconsWithText'
+import Testimonial from '../../components/layouts/Testimonial'
+import ContentBoxStyleOne from '../../components/layouts/ContentBoxStyleOne'
+
 import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import Testimonial from '../../components/Testimonial'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-import ContentBoxStyleOne from '../../components/ContentBoxStyleOne'
 import HtmlHeader from '../../components/HtmlHeader'
 
 class GehaltBeteiligungTemplate extends React.Component {
@@ -65,14 +66,14 @@ class GehaltBeteiligungTemplate extends React.Component {
           }
         />
 
-        <Benefits
+        <ThreeIconsWithText
           title={graphQlResult.vorteile.titel}
-          img1={graphQlResult.vorteile.bildVorteil1}
-          text1={graphQlResult.vorteile.textVorteil1.textVorteil1}
-          img2={graphQlResult.vorteile.bildVorteil2}
-          text2={graphQlResult.vorteile.textVorteil2.textVorteil2}
-          img3={graphQlResult.vorteile.bildVorteil3}
-          text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
+          iconLeft={graphQlResult.vorteile.bildVorteil1}
+          textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
+          iconMiddle={graphQlResult.vorteile.bildVorteil2}
+          textMiddle={graphQlResult.vorteile.textVorteil2.textVorteil2}
+          iconRight={graphQlResult.vorteile.bildVorteil3}
+          textRight={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
         {graphQlResult.artenVonStudenten == null ||
@@ -352,7 +353,11 @@ class GehaltBeteiligungTemplate extends React.Component {
 export default GehaltBeteiligungTemplate
 
 export const pageQuery = graphql`
-  query gehaltBenefitsQuery($id: String!, $titelbildId: String!, $titelbildKleinId: String!) {
+  query gehaltBenefitsQuery(
+    $id: String!
+    $titelbildId: String!
+    $titelbildKleinId: String!
+  ) {
     contentfulSeiteGehaltBenefits(id: { eq: $id }) {
       id
       metaData {
@@ -542,18 +547,15 @@ export const pageQuery = graphql`
         }
       }
     }
-
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `
