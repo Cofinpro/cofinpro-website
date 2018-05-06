@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import SiteHeader from '../../components/SiteHeader'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
@@ -30,7 +30,7 @@ class NewsTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={news.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={news.ueberschrift}
           imageFile={news.titelbild}
           titleImage={news.titelbildSharp}

@@ -1,10 +1,8 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 
 import ContentfulImage from '../../ContentfulImage'
 
-class ThreeIconsWithText extends React.Component {
+class ThreeIconsWithTextLayout extends React.Component {
   render() {
     const {
       title,
@@ -65,4 +63,4 @@ class ThreeIconsWithText extends React.Component {
   }
 }
 
-export default ThreeIconsWithText
+export default ThreeIconsWithTextLayout

@@ -7,7 +7,7 @@ import './style.scss'
 import ContentfulImage from '../../ContentfulImage'
 import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
-class Testimonial extends React.Component {
+class TestimonialLayout extends React.Component {
   componentDidMount() {
     $('button.ytp-large-play-button.ytp-button').hide()
   }
@@ -80,4 +80,4 @@ class Testimonial extends React.Component {
   }
 }
 
-export default Testimonial
+export default TestimonialLayout

@@ -2,11 +2,9 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 
-import './style.scss'
-
 import ContentfulImage from '../../ContentfulImage'
 
-class TestimonialLarge extends React.Component {
+class TestimonialLargeLayout extends React.Component {
   render() {
     const {
       title,
@@ -52,4 +50,4 @@ class TestimonialLarge extends React.Component {
   }
 }
 
-export default TestimonialLarge
+export default TestimonialLargeLayout

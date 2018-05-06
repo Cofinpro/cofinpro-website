@@ -3,11 +3,10 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import ThreeIconsWithText from '../../components/layouts/ThreeIconsWithText'
-import Testimonial from '../../components/layouts/Testimonial'
-import ContentBoxStyleOne from '../../components/layouts/ContentBoxStyleOne'
+import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTextLayout'
+import TestimonialLayout from '../../components/layouts/TestimonialLayout'
 
-import SiteHeader from '../../components/SiteHeader'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
@@ -45,7 +44,7 @@ class GehaltBeteiligungTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={this.props.data.imageTitelBildSharp}
           titleImageSmall={this.props.data.imageTitelBildKleinSharp}
@@ -66,7 +65,7 @@ class GehaltBeteiligungTemplate extends React.Component {
           }
         />
 
-        <ThreeIconsWithText
+        <ThreeIconsWithTextLayout
           title={graphQlResult.vorteile.titel}
           iconLeft={graphQlResult.vorteile.bildVorteil1}
           textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
@@ -193,23 +192,7 @@ class GehaltBeteiligungTemplate extends React.Component {
 
               <div className="col-12 col-md-1 col-lg-2" />
 
-              <div className="col-12 col-md-5">
-                <div className="d-none d-md-block filler-box-320">
-                  <p className="filler" />
-                </div>
-                <div className="d-block d-md-none margin-60-top">
-                  <p className="filler" />
-                </div>
-
-                <Testimonial
-                  title={graphQlResult.testimonial.ueberschrift}
-                  text={graphQlResult.testimonial.zitat.zitat}
-                  author={graphQlResult.testimonial.autor}
-                  authorTitle={graphQlResult.testimonial.autorTitel}
-                  videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-                  imageFile={graphQlResult.testimonial.bildTestimonial}
-                />
-              </div>
+              <div className="col-12 col-md-5" />
             </div>
           </div>
         ) : null}
@@ -330,21 +313,23 @@ class GehaltBeteiligungTemplate extends React.Component {
                 ) : null}
               </div>
             </div>
-
-            <div className="row margin-120-top">
-              <div className="col-12 col-md-6 offset-md-6">
-                <Testimonial
-                  title={graphQlResult.testimonial.ueberschrift}
-                  text={graphQlResult.testimonial.zitat.zitat}
-                  author={graphQlResult.testimonial.autor}
-                  authorTitle={graphQlResult.testimonial.autorTitel}
-                  videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-                  imageFile={graphQlResult.testimonial.bildTestimonial}
-                />
-              </div>
-            </div>
           </div>
         ) : null}
+
+        <div className="container margin-120-top">
+          <div className="row">
+            <div className="col-12 col-md-6 offset-md-6">
+              <TestimonialLayout
+                title={graphQlResult.testimonial.ueberschrift}
+                text={graphQlResult.testimonial.zitat.zitat}
+                author={graphQlResult.testimonial.autor}
+                authorTitle={graphQlResult.testimonial.autorTitel}
+                videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
+                imageFile={graphQlResult.testimonial.bildTestimonial}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

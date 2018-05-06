@@ -3,10 +3,9 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import ThreeIconsWithText from '../../components/layouts/ThreeIconsWithText'
-import Testimonial from '../../components/layouts/Testimonial'
+import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTextLayout'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
-import SiteHeader from '../../components/SiteHeader'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
@@ -45,7 +44,7 @@ class WorkLifeTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={this.props.data.imageTitelBildSharp}
           titleImageSmall={this.props.data.imageTitelBildKleinSharp}
@@ -58,7 +57,7 @@ class WorkLifeTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <ThreeIconsWithText
+        <ThreeIconsWithTextLayout
           title={graphQlResult.vorteile.titel}
           iconLeft={graphQlResult.vorteile.bildVorteil1}
           textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}

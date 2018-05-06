@@ -1,13 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../ContentfulImage'
+import ContentfulImage from '../../ContentfulImage'
 
-class SiteHeader extends React.Component {
+class HeroImageLayout extends React.Component {
   render() {
     const {
       title,
@@ -73,10 +71,10 @@ class SiteHeader extends React.Component {
     }
 
     return (
-      <div>
+      <div className="hero-image">
         <div className="container">
-          <div className="row title-box">
-            <div className="col-11 col-md-10 col-lg-9 header-title">
+          <div className="row hero-image__title-box">
+            <div className="col-11 col-md-10 col-lg-9">
               {titleElement}
             </div>
             <div className="col-1 col-md-3" />
@@ -89,7 +87,7 @@ class SiteHeader extends React.Component {
                 {titleImage !== undefined && titleImage !== null ? (
                   <div className="d-none d-md-block">
                     {isOverlayActive !== undefined && isOverlayActive ? (
-                      <div className="image-overlay-gradient" />
+                      <div className="hero-image__image-overlay-gradient" />
                     ) : null}
                     <Img sizes={titleImage.sizes} />
                   </div>
@@ -139,4 +137,4 @@ class SiteHeader extends React.Component {
   }
 }
 
-export default SiteHeader
+export default HeroImageLayout

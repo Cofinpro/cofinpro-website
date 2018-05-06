@@ -4,7 +4,7 @@ import get from 'lodash/get'
 
 import ContentfulImage from '../../ContentfulImage'
 
-class Facts extends React.Component {
+class FactsLayout extends React.Component {
   render() {
     const {
       fakt1Titel,
@@ -68,4 +68,4 @@ class Facts extends React.Component {
   }
 }
 
-export default Facts
+export default FactsLayout

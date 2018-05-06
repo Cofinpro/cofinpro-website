@@ -5,7 +5,7 @@ import get from 'lodash/get'
 import './style.scss'
 
 import ContentfulImage from '../../ContentfulImage'
-import Testimonial from '../../layouts/Testimonial'
+import TestimonialLayout from '../../layouts/TestimonialLayout'
 import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
 class TestimonialCarousel extends React.Component {
@@ -30,7 +30,7 @@ class TestimonialCarousel extends React.Component {
                   className={'carousel-item' + (i == 0 ? ' active' : '')}
                   key={'carousel-item-t-' + i}
                 >
-                  <Testimonial
+                  <TestimonialLayout
                     key={'carousel-item-testimonial-' + i}
                     text={testimonial.zitat.zitat}
                     author={testimonial.autor}
