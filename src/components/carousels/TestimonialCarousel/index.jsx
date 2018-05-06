@@ -5,7 +5,7 @@ import get from 'lodash/get'
 import './style.scss'
 
 import ContentfulImage from '../../ContentfulImage'
-import Testimonial from '../../Testimonial'
+import Testimonial from '../../layouts/Testimonial'
 import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
 class TestimonialCarousel extends React.Component {
