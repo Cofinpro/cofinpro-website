@@ -209,15 +209,16 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <SubtitleTitelImageTextLayout 
-          subtitle={graphQlResult.karrieremagazin.untertitel} 
-          title={graphQlResult.karrieremagazin.titel} 
-          image={this.props.data.karrieremagazinSharp} 
-          text={graphQlResult.karrieremagazin.beschreibung.beschreibung} 
+        <SubtitleTitelImageTextLayout
+          subtitle={graphQlResult.karrieremagazin.untertitel}
+          title={graphQlResult.karrieremagazin.titel}
+          image={this.props.data.karrieremagazinSharp}
+          text={graphQlResult.karrieremagazin.beschreibung.beschreibung}
           containerStyle="margin-100-top"
           rowOneStyle="justify-content-end"
-          rowTwoStyle="justify-content-end margin-20-top" 
-          {...this.props} />
+          rowTwoStyle="justify-content-end margin-20-top"
+          {...this.props}
+        />
 
         <div className="container margin-100-top">
           <div className="row">
@@ -323,7 +324,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top d-none">
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-5">
               <h6 className="h6">{graphQlResult.managementBoardUntertitel}</h6>
@@ -351,7 +352,7 @@ class UeberUnsTemplate extends React.Component {
                       title={mitglied.titel}
                       subtitle={mitglied.untertitel}
                       text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
                     />
                   </div>
                 )
@@ -374,7 +375,7 @@ class UeberUnsTemplate extends React.Component {
                       title={mitglied.titel}
                       subtitle={mitglied.untertitel}
                       text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
                     />
                   </div>
                 )
@@ -397,7 +398,7 @@ class UeberUnsTemplate extends React.Component {
                       title={mitglied.titel}
                       subtitle={mitglied.untertitel}
                       text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
                     />
                   </div>
                 )
@@ -413,15 +414,16 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <SubtitleTitelImageTextLayout 
-          subtitle={graphQlResult.projekte.untertitel} 
-          title={graphQlResult.projekte.titel} 
-          image={this.props.data.projektBildSharp} 
-          text={graphQlResult.projekte.beschreibung.beschreibung} 
+        <SubtitleTitelImageTextLayout
+          subtitle={graphQlResult.projekte.untertitel}
+          title={graphQlResult.projekte.titel}
+          image={this.props.data.projektBildSharp}
+          text={graphQlResult.projekte.beschreibung.beschreibung}
           containerStyle="margin-100-top"
           rowOneStyle="justify-content-end"
-          rowTwoStyle="justify-content-end margin-20-top" 
-          {...this.props} />
+          rowTwoStyle="justify-content-end margin-20-top"
+          {...this.props}
+        />
 
         <div className="container margin-120-top">
           <div className="row">
