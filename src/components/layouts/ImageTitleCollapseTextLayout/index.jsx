@@ -17,8 +17,8 @@ class ImageTitleCollapseTextLayout extends React.Component {
           <div className="col-8">
             <p className="h5">
               {title} <br />
-              {subtitle}
             </p>
+            <p className="h6">{subtitle}</p>
           </div>
           <div className="col-4 d-flex justify-content-end">
             <ToggleButton
