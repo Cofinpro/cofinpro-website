@@ -14,13 +14,13 @@ class ImageTitleCollapseTextLayout extends React.Component {
       <div>
         <Img sizes={image.sizes} className="margin-20-bottom" />
         <div className="row">
-          <div className="col-8">
+          <div className="col-9">
             <p className="h5">
               {title} <br />
             </p>
             <p className="h6">{subtitle}</p>
           </div>
-          <div className="col-4 d-flex justify-content-end">
+          <div className="col-3 d-flex justify-content-end">
             <ToggleButton
               id={id}
               dataTarget={'toggleMitgliedBeschreibung' + id}
