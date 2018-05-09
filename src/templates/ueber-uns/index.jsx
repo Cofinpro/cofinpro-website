@@ -220,33 +220,6 @@ class UeberUnsTemplate extends React.Component {
           {...this.props}
         />
 
-        <div className="container margin-100-top">
-          <div className="row">
-            <div className="col-12 col-md-1" />
-            <div className="col-12 col-md-8">
-              <h2 className="h6">{graphQlResult.raeumlichkeitenUntertitel}</h2>
-              <h3 className="h2">{graphQlResult.raeumlichkeitenTitel}</h3>
-              <ImageCarouselV2
-                carouselId="workplace"
-                contentfulImages={graphQlResult.raeumlichkeitenBilder}
-                options="slide"
-              />
-            </div>
-          </div>
-          <div className="row margin-20-top">
-            <div className="col-12 col-md-1 col-lg-1" />
-            <div className="col-12 col-md-6 col-lg-5">
-              <ContentfulMarkdownText
-                text={
-                  graphQlResult.raeumlichkeitenBeschreibung
-                    .raeumlichkeitenBeschreibung
-                }
-                {...this.props}
-              />
-            </div>
-          </div>
-        </div>
-
         <div className="container margin-100-top d-block d-md-none">
           <div className="row">
             <div className="col">
@@ -320,6 +293,33 @@ class UeberUnsTemplate extends React.Component {
                   allowFullScreen
                 />
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-100-top">
+          <div className="row">
+            <div className="col-12 col-md-1" />
+            <div className="col-12 col-md-8">
+              <h2 className="h6">{graphQlResult.raeumlichkeitenUntertitel}</h2>
+              <h3 className="h2">{graphQlResult.raeumlichkeitenTitel}</h3>
+              <ImageCarouselV2
+                carouselId="workplace"
+                contentfulImages={graphQlResult.raeumlichkeitenBilder}
+                options="slide"
+              />
+            </div>
+          </div>
+          <div className="row margin-20-top">
+            <div className="col-12 col-md-1 col-lg-1" />
+            <div className="col-12 col-md-6 col-lg-5">
+              <ContentfulMarkdownText
+                text={
+                  graphQlResult.raeumlichkeitenBeschreibung
+                    .raeumlichkeitenBeschreibung
+                }
+                {...this.props}
+              />
             </div>
           </div>
         </div>
