@@ -759,22 +759,22 @@ export const pageQuery = graphql`
     }
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_noBase64
       }
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_noBase64
       }
     }
     projektBildSharp: imageSharp(id: { regex: $projektBildId }) {
       sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_noBase64
       }
     }
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
       sizes(maxWidth: 1600, quality: 60) {
-        ...GatsbyImageSharpSizes
+        ...GatsbyImageSharpSizes_noBase64
       }
     }
   }
