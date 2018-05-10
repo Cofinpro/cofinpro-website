@@ -3,8 +3,8 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import CarrerOffersCarousel from '../../components/CarrerOffersCarousel'
-import SiteHeader from '../../components/SiteHeader'
+import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
@@ -26,22 +26,20 @@ class StellenanzeigeTemplate extends React.Component {
   }
 
   render() {
-    const { location } = this.props;
+    const { location } = this.props
 
-    const graphQlResult = this.props.data.contentfulSeiteStellenanzeige;
+    const graphQlResult = this.props.data.contentfulSeiteStellenanzeige
 
-    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
+      .edges
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
       <div>
-        <HtmlHeader
-          dataFromCms={graphQlResult.metaData}
-          {...this.props}
-        />
+        <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.ueberschriftGanzOben}
           titleImage={this.props.data.bildStellenanzeigeSharp}
           titleImageSmall={this.props.data.bildStellenanzeigeSharp}
@@ -240,7 +238,6 @@ export default StellenanzeigeTemplate
 
 export const pageQuery = graphql`
   query stellenanzeigeQuery($id: String!, $bildStellenanzeigeId: String!) {
-
     contentfulSeiteStellenanzeige(id: { eq: $id }) {
       id
       url
@@ -290,7 +287,6 @@ export const pageQuery = graphql`
         uMantis
       }
     }
-
     allContentfulSeiteStellenanzeige {
       edges {
         node {
@@ -344,13 +340,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    
     bildStellenanzeigeSharp: imageSharp(id: { regex: $bildStellenanzeigeId }) {
       sizes(maxWidth: 1600, quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `
-

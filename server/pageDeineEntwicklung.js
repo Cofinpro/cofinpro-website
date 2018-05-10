@@ -3,9 +3,8 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, callback) {
-
-  console.log("start graphql query: allContentfulSeiteDeineEntwicklung.");
+exports.create = function(graphql, createPage, createRedirect, callback) {
+  console.log('start graphql query: allContentfulSeiteDeineEntwicklung.')
 
   graphql(
     `
@@ -29,12 +28,17 @@ exports.create = function (graphql, createPage, callback) {
       }
     `
   ).then(result => {
-
-    console.log("end graphql query: allContentfulSeiteDeineEntwicklung.");
+    console.log('end graphql query: allContentfulSeiteDeineEntwicklung.')
 
     const deineEntwicklungTemplate = path.resolve(
       `./src/templates/deine-entwicklung/index.jsx`
     )
+
+    createRedirect({
+      fromPath: `/deine-entwicklung`,
+      redirectInBrowser: true,
+      toPath: `/`,
+    })
 
     _.each(result.data.allContentfulSeiteDeineEntwicklung.edges, edge => {
       console.log('finished image processing deine entwicklung.')

@@ -3,9 +3,8 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, callback) {
-
-  console.log("start graphql query: allContentfulSeiteGehaltBenefits.");
+exports.create = function(graphql, createPage, createRedirect, callback) {
+  console.log('start graphql query: allContentfulSeiteGehaltBenefits.')
 
   graphql(
     `
@@ -29,13 +28,19 @@ exports.create = function (graphql, createPage, callback) {
       }
     `
   ).then(result => {
+    console.log('end graphql query: allContentfulSeiteGehaltBenefits.')
 
-    console.log("end graphql query: allContentfulSeiteGehaltBenefits.");
+    const gehaltBeteiligungTemplate = path.resolve(
+      `./src/templates/gehalt-beteiligung/index.jsx`
+    )
 
-    const gehaltBeteiligungTemplate = path.resolve(`./src/templates/gehalt-beteiligung/index.jsx`);
+    createRedirect({
+      fromPath: `/gehalt-beteiligung`,
+      redirectInBrowser: true,
+      toPath: `/`,
+    })
 
     _.each(result.data.allContentfulSeiteGehaltBenefits.edges, edge => {
-
       createPage({
         path: `${edge.node.perspektive.name}/gehalt-beteiligung`,
         component: slash(gehaltBeteiligungTemplate),
@@ -45,9 +50,11 @@ exports.create = function (graphql, createPage, callback) {
           titelbildKleinId: '/' + edge.node.titelbildKlein.id + '/',
         },
       })
-      console.log(`created page ${edge.node.perspektive.name}/gehalt-beteiligung`);
+      console.log(
+        `created page ${edge.node.perspektive.name}/gehalt-beteiligung`
+      )
     })
 
-    callback(null);
+    callback(null)
   })
 }

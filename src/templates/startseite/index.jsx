@@ -7,6 +7,7 @@ import Img from 'gatsby-image'
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import ToggleButton from '../../components/buttons/ToggleButton'
 
 import StorageHelper from '../../utils/storageHelper'
 
@@ -74,32 +75,6 @@ class StartseiteTemplate extends React.Component {
         },
         600
       )
-    })
-
-    $('#navbarToggleExternalContent').collapse({ toggle: false })
-
-    $('#button-startseite-collapse').click(function() {
-      $('#navbarToggleExternalContent').collapse('toggle')
-
-      if (
-        $('#button-startseite-collapse>img.collapse-icon-down').hasClass(
-          'd-none'
-        )
-      ) {
-        $('#button-startseite-collapse>img.collapse-icon-up').addClass('d-none')
-        $('#button-startseite-collapse>img.collapse-icon-down').removeClass(
-          'd-none'
-        )
-      } else if (
-        $('#button-startseite-collapse>img.collapse-icon-up').hasClass('d-none')
-      ) {
-        $('#button-startseite-collapse>img.collapse-icon-down').addClass(
-          'd-none'
-        )
-        $('#button-startseite-collapse>img.collapse-icon-up').removeClass(
-          'd-none'
-        )
-      }
     })
 
     if (typeof localStorage !== 'undefined') {
@@ -207,7 +182,12 @@ class StartseiteTemplate extends React.Component {
                   <div className="row text-center">
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-fach">
-                        <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant padding-sm-top-bottom" />
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveFachSharp.sizes
+                          }
+                          className="img-consultant padding-sm-top-bottom"
+                        />
                         <h3 className="h5 link-black link-style padding-sm-top-bottom">
                           FACHBERATER
                         </h3>
@@ -215,7 +195,12 @@ class StartseiteTemplate extends React.Component {
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-tech">
-                        <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant padding-sm-top-bottom" />
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveTechSharp.sizes
+                          }
+                          className="img-consultant padding-sm-top-bottom"
+                        />
                         <h3 className="h5 link-black link-style padding-sm-top-bottom">
                           TECHNOLOGISCHER BERATER
                         </h3>
@@ -232,8 +217,16 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <Img sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes} className="img-consultant padding-sm-top-bottom" />
-                        <h3 className="h5 link-black padding-sm-top-bottom">STUDENT</h3>
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveStudentSharp
+                              .sizes
+                          }
+                          className="img-consultant padding-sm-top-bottom"
+                        />
+                        <h3 className="h5 link-black padding-sm-top-bottom">
+                          STUDENT
+                        </h3>
                       </Link>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
@@ -247,8 +240,15 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <Img sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes} className="img-consultant padding-sm-top-bottom" />
-                        <h3 className="h5 link-black padding-sm-top-bottom">ANDERE EXPERTISE</h3>
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveAndereSharp.sizes
+                          }
+                          className="img-consultant padding-sm-top-bottom"
+                        />
+                        <h3 className="h5 link-black padding-sm-top-bottom">
+                          ANDERE EXPERTISE
+                        </h3>
                       </Link>
                     </div>
                   </div>
@@ -325,7 +325,12 @@ class StartseiteTemplate extends React.Component {
                   <div className="row d-flex-inline d-md-none margin-20-bottom">
                     <div className="col-6 text-center">
                       <div id="img-wahl-fach">
-                        <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant margin-20-bottom" />
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveFachSharp.sizes
+                          }
+                          className="img-consultant margin-20-bottom"
+                        />
                         <h3 className="h5 link-black">FACHBERATER</h3>
                       </div>
                       <div id="links-fach">
@@ -357,7 +362,12 @@ class StartseiteTemplate extends React.Component {
                     </div>
                     <div className="col-6 text-center">
                       <div id="img-wahl-tech">
-                        <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant margin-20-bottom" />
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveTechSharp.sizes
+                          }
+                          className="img-consultant margin-20-bottom"
+                        />
                         <h3 className="h5 link-black">TECHNOLOGIE-BERATER</h3>
                       </div>
                       <div id="links-tech">
@@ -403,7 +413,13 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <Img sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes} className="img-consultant margin-20-bottom img-wahl-student" />
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveStudentSharp
+                              .sizes
+                          }
+                          className="img-consultant margin-20-bottom img-wahl-student"
+                        />
                         <h3 className="h5">STUDENT</h3>
                       </Link>
                     </div>
@@ -418,7 +434,12 @@ class StartseiteTemplate extends React.Component {
                           )
                         }}
                       >
-                        <Img sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes} className="img-consultant margin-20-bottom img-wahl-andere" />
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveAndereSharp.sizes
+                          }
+                          className="img-consultant margin-20-bottom img-wahl-andere"
+                        />
                         <h3 className="h5">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
@@ -430,30 +451,13 @@ class StartseiteTemplate extends React.Component {
 
           <div className="row padding-lg-top-bottom">
             <div className="col-12">
-              <button
-                id="button-startseite-collapse"
-                className="btn btn-light text-white"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarToggleExternalContent"
-                aria-controls="navbarToggleExternalContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <img
-                  className="collapse-icon-down"
-                  alt="Mehr Jobs zeigen"
-                  src={pathPrefix + '/svg/icon_arrow_dotted_down_orange.svg'}
-                />
-                <img
-                  className="d-none collapse-icon-up"
-                  alt="Weniger Jobs zeigen"
-                  src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
-                />
-              </button>
+              <ToggleButton
+                id="startseite"
+                dataTarget="collapse-startseite-seo"
+              />
               <div
                 className="collapse margin-20-top two-column-text"
-                id="navbarToggleExternalContent"
+                id="collapse-startseite-seo"
               >
                 <ContentfulMarkdownText
                   text={graphQlResult.seoTextFeld.seoTextFeld}
@@ -470,7 +474,13 @@ class StartseiteTemplate extends React.Component {
 export default StartseiteTemplate
 
 export const pageQuery = graphql`
-  query seiteStartseiteKarriereQuery($id: String!, $bildFuerPerspektiveFachId: String!, $bildFuerPerspektiveTechId: String!, $bildFuerPerspektiveStudentId: String!, $bildFuerPerspektiveAndereId: String!) {
+  query seiteStartseiteKarriereQuery(
+    $id: String!
+    $bildFuerPerspektiveFachId: String!
+    $bildFuerPerspektiveTechId: String!
+    $bildFuerPerspektiveStudentId: String!
+    $bildFuerPerspektiveAndereId: String!
+  ) {
     contentfulSeiteStartseiteKarriere(id: { eq: $id }) {
       id
       metaData {
@@ -531,30 +541,33 @@ export const pageQuery = graphql`
         seoTextFeld
       }
     }
-
-    bildFuerPerspektiveFachSharp: imageSharp(id: { regex: $bildFuerPerspektiveFachId }) {
+    bildFuerPerspektiveFachSharp: imageSharp(
+      id: { regex: $bildFuerPerspektiveFachId }
+    ) {
       sizes(maxWidth: 1600, quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
-
-    bildFuerPerspektiveTechSharp: imageSharp(id: { regex: $bildFuerPerspektiveTechId }) {
+    bildFuerPerspektiveTechSharp: imageSharp(
+      id: { regex: $bildFuerPerspektiveTechId }
+    ) {
       sizes(maxWidth: 1600, quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
-
-    bildFuerPerspektiveStudentSharp: imageSharp(id: { regex: $bildFuerPerspektiveStudentId }) {
+    bildFuerPerspektiveStudentSharp: imageSharp(
+      id: { regex: $bildFuerPerspektiveStudentId }
+    ) {
       sizes(maxWidth: 1600, quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
-
-    bildFuerPerspektiveAndereSharp: imageSharp(id: { regex: $bildFuerPerspektiveAndereId }) {
+    bildFuerPerspektiveAndereSharp: imageSharp(
+      id: { regex: $bildFuerPerspektiveAndereId }
+    ) {
       sizes(maxWidth: 1600, quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `

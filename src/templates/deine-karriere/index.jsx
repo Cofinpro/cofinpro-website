@@ -4,10 +4,11 @@ import * as PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
-import Benefits from '../../components/Benefits'
-import SiteHeader from '../../components/SiteHeader'
+import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTextLayout'
+import TestimonialLayout from '../../components/layouts/TestimonialLayout'
+
+import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import Testimonial from '../../components/Testimonial'
 import ContentfulImage from '../../components/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 
@@ -29,7 +30,7 @@ class LaufbahnTemplate extends React.Component {
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
-        <SiteHeader
+        <HeroImageLayout
           title={graphQlResult.hauptueberschrift}
           titleImage={this.props.data.imageTitelBildSharp}
           titleImageSmall={this.props.data.imageTitelBildKleinSharp}
@@ -42,14 +43,14 @@ class LaufbahnTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <Benefits
+        <ThreeIconsWithTextLayout
           title={graphQlResult.vorteile.titel}
-          img1={graphQlResult.vorteile.bildVorteil1}
-          text1={graphQlResult.vorteile.textVorteil1.textVorteil1}
-          img2={graphQlResult.vorteile.bildVorteil2}
-          text2={graphQlResult.vorteile.textVorteil2.textVorteil2}
-          img3={graphQlResult.vorteile.bildVorteil3}
-          text3={graphQlResult.vorteile.textVorteil3.textVorteil3}
+          iconLeft={graphQlResult.vorteile.bildVorteil1}
+          textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
+          iconMiddle={graphQlResult.vorteile.bildVorteil2}
+          textMiddle={graphQlResult.vorteile.textVorteil2.textVorteil2}
+          iconRight={graphQlResult.vorteile.bildVorteil3}
+          textRight={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
         {graphQlResult.perspektive.name == null ||
@@ -120,7 +121,7 @@ class LaufbahnTemplate extends React.Component {
             </div>
 
             <div className="col-12 col-md-5">
-              <Testimonial
+              <TestimonialLayout
                 title={graphQlResult.testimonial.ueberschrift}
                 text={graphQlResult.testimonial.zitat.zitat}
                 author={graphQlResult.testimonial.autor}

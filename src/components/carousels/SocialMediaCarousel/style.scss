@@ -1,0 +1,66 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+.socialMediaCarousel {
+  height: 560px;
+
+  /*background-color: #F2EEEE;*/
+
+  .carousel-indicators .active {
+    background-color: black;
+  }
+
+  .carousel-inner {
+    /*background-color: #F2EEEE;*/
+  }
+
+  .carousel-indicators li {
+    background-color: rgb(175, 175, 175);
+  }
+
+  .carousel-control-prev > i,
+  .carousel-control-next > i {
+    font-size: 2rem;
+    color: #ec7b1a !important;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    font-size: 2rem;
+    color: #ec7b1a !important;
+    width: 10%;
+  }
+
+  .carousel-item {
+    height: 560px;
+
+    img,
+    .gatsby-image-wrapper {
+      max-height: 380px;
+      max-width: 380px;
+
+      padding-bottom: 1rem;
+    }
+
+    img {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .gatsby-image-wrapper {
+      margin-right: auto;
+      margin-left: auto;
+
+      @include media-breakpoint-only(xs) {
+        margin-right: 36px;
+        margin-left: 36px;
+      }
+
+      @include media-breakpoint-only(sm) {
+        margin-right: 36px;
+        margin-left: 36px;
+      }
+    }
+  }
+}

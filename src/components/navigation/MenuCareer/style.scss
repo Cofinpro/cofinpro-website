@@ -2,12 +2,37 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-.close-button-img {
-  width: 18px;
-}
+.main-navigation-bar {
+  opacity: 0.95;
 
-#navbarSupportedContent {
-  a {
+  @include media-breakpoint-only(xs) {
+    background-color: $orange;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-only(sm) {
+    background-color: $orange;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-only(md) {
+    background-color: $orange;
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+  @include media-breakpoint-only(lg) {
+    background-color: white;
+  }
+  @include media-breakpoint-only(xl) {
+    background-color: white;
+  }
+
+  .main-navigation-bar__img-close-button {
+    width: 18px;
+  }
+
+  .nav-link,
+  .navbar-brand {
     padding-bottom: 0px;
     padding-right: 0px;
     padding-left: 0px;
@@ -21,22 +46,20 @@
     padding-top: 0px;
   }
 
-  .nav-dotted-line {
+  .main-navigation-bar__dotted-line-horizontal {
     width: 15px;
     margin-right: 0.3rem;
     margin-left: 0.3rem;
   }
 
-  .nav-dotted-line-vertical {
+  .main-navigation-bar__dotted-line-vertical {
     height: 15px;
     margin-right: 0.3rem;
     margin-left: 0.3rem;
   }
 
-  .nav-item.active {
-    a {
-      border-bottom: 1px solid black;
-    }
+  .nav-item.active > a {
+    border-bottom: 1px solid black;
   }
 }
 

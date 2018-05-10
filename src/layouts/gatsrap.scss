@@ -335,30 +335,6 @@ a:hover {
 .news-content {
   margin-top: 1rem;
 }
-#navbarSupportedContent {
-  opacity: 0.95;
-  @include media-breakpoint-only(xs) {
-    background-color: $orange;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
-  @include media-breakpoint-only(sm) {
-    background-color: $orange;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
-  @include media-breakpoint-only(md) {
-    background-color: $orange;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
-  @include media-breakpoint-only(lg) {
-    background-color: white;
-  }
-  @include media-breakpoint-only(xl) {
-    background-color: white;
-  }
-}
 #nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
@@ -419,9 +395,6 @@ a:hover {
 .filler-box-two {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-.inline-link {
-  display: inline;
 }
 .bg-brown {
   background-color: #847575;
@@ -522,19 +495,8 @@ a:hover {
 .no-margin-bottom {
   margin-bottom: 0rem;
 }
-.no-padding-bottom {
-  padding-bottom: 0rem;
-}
-.no-padding {
-  padding: 0rem;
-}
 .stellenangebote-box {
   border: 3px solid #a9c5e8;
-}
-.nav-dotted-line-vertical {
-  height: 15px;
-  margin-right: 0.3rem;
-  margin-left: 0.3rem;
 }
 #carouselCaptionsArbeitsplatz,
 .imageCarousel,
@@ -579,12 +541,6 @@ a:hover {
     color: $orange;
     font-size: 2rem;
   }
-}
-.no-padding-left {
-  padding-left: 0px;
-}
-.padding-0 {
-  padding: 0px;
 }
 .margin-120-bottom {
   margin-bottom: 120px;

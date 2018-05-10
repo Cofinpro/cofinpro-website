@@ -3,12 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(
-  graphql,
-  createPage,
-  news,
-  callback
-) {
+exports.create = function(graphql, createPage, createRedirect, news, callback) {
   graphql(
     `
       {
@@ -67,6 +62,12 @@ exports.create = function(
     `
   ).then(result => {
     const landingTemplate = path.resolve(`./src/templates/landing/index.jsx`)
+
+    createRedirect({
+      fromPath: `/landing`,
+      redirectInBrowser: true,
+      toPath: `/`,
+    })
 
     var topNews = []
     var numberOfTopsNews = 2
