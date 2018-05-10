@@ -1,16 +1,17 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
+import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../ContentfulImage'
-import Testimonial from '../Testimonial'
-import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext'
+import ContentfulImage from '../../ContentfulImage'
+import ContentfulMarkdownText from '../../ContentfulMarkdownText'
+import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
 class ManagementBoardCarousel extends React.Component {
   render() {
-    const { carouselId, mitglieder } = this.props
+    const { carouselId, mitglieder, mbImagesSharp } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -19,7 +20,7 @@ class ManagementBoardCarousel extends React.Component {
       return (
         <div
           id={'carousel-' + carouselId}
-          className="carousel slide testimonialCarousel"
+          className="carousel slide mbCarousel"
           data-ride="carousel"
           data-interval="false"
         >
@@ -31,7 +32,11 @@ class ManagementBoardCarousel extends React.Component {
                   key={'carousel-item-t-' + i}
                 >
                   <div key={'carousel-wrapper-t-' + i}>
-                    <p key={'carousel-p-t-' + i}>Test</p>
+                    <Img
+                      key={'carousel-inner-image' + i}
+                      sizes={mbImagesSharp[mitglied.bild.id + '.jpg'].sizes}
+                      className="margin-20-bottom"
+                    />
                     <div
                       key={'carousel-control-wraper-t-' + i}
                       className="d-block d-md-none margin-20-bottom"
@@ -42,6 +47,16 @@ class ManagementBoardCarousel extends React.Component {
                         version={2}
                       />
                     </div>
+                    <p key={'carousel-inner-title' + i} className="h5">
+                      {mitglied.titel} <br />
+                    </p>
+                    <p key={'carousel-inner-subtitle' + i} className="h6">
+                      {mitglied.untertitel}
+                    </p>
+                    <ContentfulMarkdownText
+                      key={'carousel-inner-text' + i}
+                      text={mitglied.beschreibung.beschreibung}
+                    />
                   </div>
                 </div>
               )

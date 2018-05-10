@@ -274,7 +274,7 @@ class LandingTemplate extends React.Component {
           </div>
 
           <div className="row justify-content-center padding-md-top">
-            <div className="col-12 col-md-10 col-lg-8 mx-auto">
+            <div className="col-12 col-md-10 col-lg-8">
               <SocialMediaCarousel
                 carouselId={'social-media'}
                 socialMediaPosts={graphQlResult.socialMediaPosts}

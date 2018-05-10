@@ -18,6 +18,7 @@ import HtmlHeader from '../../components/HtmlHeader'
 import ImageCarousel from '../../components/carousels/ImageCarousel'
 import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
 import TestimonialCarousel from '../../components/carousels/TestimonialCarousel'
+import ManagementBoardCarousel from '../../components/carousels/ManagementBoardCarousel'
 
 class UeberUnsTemplate extends React.Component {
   componentDidMount() {
@@ -35,12 +36,14 @@ class UeberUnsTemplate extends React.Component {
   }
 
   render() {
+
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
     const mbImagesSharp = this.props.pathContext.mbImagesSharp
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
@@ -209,42 +212,16 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <SubtitleTitelImageTextLayout 
-          subtitle={graphQlResult.karrieremagazin.untertitel} 
-          title={graphQlResult.karrieremagazin.titel} 
-          image={this.props.data.karrieremagazinSharp} 
-          text={graphQlResult.karrieremagazin.beschreibung.beschreibung} 
+        <SubtitleTitelImageTextLayout
+          subtitle={graphQlResult.karrieremagazin.untertitel}
+          title={graphQlResult.karrieremagazin.titel}
+          image={this.props.data.karrieremagazinSharp}
+          text={graphQlResult.karrieremagazin.beschreibung.beschreibung}
           containerStyle="margin-100-top"
           rowOneStyle="justify-content-end"
-          rowTwoStyle="justify-content-end margin-20-top" 
-          {...this.props} />
-
-        <div className="container margin-100-top">
-          <div className="row">
-            <div className="col-12 col-md-1" />
-            <div className="col-12 col-md-8">
-              <h2 className="h6">{graphQlResult.raeumlichkeitenUntertitel}</h2>
-              <h3 className="h2">{graphQlResult.raeumlichkeitenTitel}</h3>
-              <ImageCarouselV2
-                carouselId="workplace"
-                contentfulImages={graphQlResult.raeumlichkeitenBilder}
-                options="slide"
-              />
-            </div>
-          </div>
-          <div className="row margin-20-top">
-            <div className="col-12 col-md-1 col-lg-1" />
-            <div className="col-12 col-md-6 col-lg-5">
-              <ContentfulMarkdownText
-                text={
-                  graphQlResult.raeumlichkeitenBeschreibung
-                    .raeumlichkeitenBeschreibung
-                }
-                {...this.props}
-              />
-            </div>
-          </div>
-        </div>
+          rowTwoStyle="justify-content-end margin-20-top"
+          {...this.props}
+        />
 
         <div className="container margin-100-top d-block d-md-none">
           <div className="row">
@@ -323,7 +300,34 @@ class UeberUnsTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top d-none">
+        <div className="container margin-100-top">
+          <div className="row">
+            <div className="col-12 col-md-1" />
+            <div className="col-12 col-md-8">
+              <h2 className="h6">{graphQlResult.raeumlichkeitenUntertitel}</h2>
+              <h3 className="h2">{graphQlResult.raeumlichkeitenTitel}</h3>
+              <ImageCarouselV2
+                carouselId="workplace"
+                contentfulImages={graphQlResult.raeumlichkeitenBilder}
+                options="slide"
+              />
+            </div>
+          </div>
+          <div className="row margin-20-top">
+            <div className="col-12 col-md-1 col-lg-1" />
+            <div className="col-12 col-md-6 col-lg-5">
+              <ContentfulMarkdownText
+                text={
+                  graphQlResult.raeumlichkeitenBeschreibung
+                    .raeumlichkeitenBeschreibung
+                }
+                {...this.props}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-100-top">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-5">
               <h6 className="h6">{graphQlResult.managementBoardUntertitel}</h6>
@@ -351,7 +355,7 @@ class UeberUnsTemplate extends React.Component {
                       title={mitglied.titel}
                       subtitle={mitglied.untertitel}
                       text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
                     />
                   </div>
                 )
@@ -374,7 +378,7 @@ class UeberUnsTemplate extends React.Component {
                       title={mitglied.titel}
                       subtitle={mitglied.untertitel}
                       text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
                     />
                   </div>
                 )
@@ -397,7 +401,7 @@ class UeberUnsTemplate extends React.Component {
                       title={mitglied.titel}
                       subtitle={mitglied.untertitel}
                       text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + ".jpg"]}
+                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
                     />
                   </div>
                 )
@@ -408,20 +412,21 @@ class UeberUnsTemplate extends React.Component {
           </div>
           <div className="row d-flex d-md-none margin-40-top">
             <div className="col">
-              <p>Mobile here</p>
+              <ManagementBoardCarousel carouselId="management-board" mitglieder={graphQlResult.managementBoardMitglieder} mbImagesSharp={mbImagesSharp} />
             </div>
           </div>
         </div>
 
-        <SubtitleTitelImageTextLayout 
-          subtitle={graphQlResult.projekte.untertitel} 
-          title={graphQlResult.projekte.titel} 
-          image={this.props.data.projektBildSharp} 
-          text={graphQlResult.projekte.beschreibung.beschreibung} 
+        <SubtitleTitelImageTextLayout
+          subtitle={graphQlResult.projekte.untertitel}
+          title={graphQlResult.projekte.titel}
+          image={this.props.data.projektBildSharp}
+          text={graphQlResult.projekte.beschreibung.beschreibung}
           containerStyle="margin-100-top"
           rowOneStyle="justify-content-end"
-          rowTwoStyle="justify-content-end margin-20-top" 
-          {...this.props} />
+          rowTwoStyle="justify-content-end margin-20-top"
+          {...this.props}
+        />
 
         <div className="container margin-120-top">
           <div className="row">
@@ -775,5 +780,6 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
+
   }
 `

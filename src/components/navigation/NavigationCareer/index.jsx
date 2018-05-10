@@ -14,6 +14,7 @@ import './style.scss'
 import Kompetenzen from '../../../../data/Kompetenzen'
 
 class NavigationCareer extends React.Component {
+
   componentDidMount() {
     $('#perspectiveNavbarToggler').click(function() {
       $('#navbarSupportedContent').collapse('hide')

@@ -1,0 +1,32 @@
+
+.mbCarousel {
+    
+    .carousel-indicators .active {
+        background-color: black;
+    }
+
+    .carousel-inner {
+
+    }
+  
+    .carousel-indicators li {
+        background-color: rgb(175, 175, 175);
+    } 
+
+    .carousel-control-prev>i,
+    .carousel-control-next>i {
+        font-size: 3rem;
+        color: #EC7B1A !important;
+    }
+
+    .carousel-item{ 
+        img {
+            /*padding-left: 3rem;
+            padding-right: 3rem;*/
+        }
+    }
+
+    .social-media-image {
+        
+    }
+}

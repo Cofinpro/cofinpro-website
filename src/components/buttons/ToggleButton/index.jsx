@@ -1,7 +1,6 @@
 import React from 'react'
 
 class ToggleButton extends React.Component {
-    
   constructor(props) {
     super(props)
     this.state = {}
@@ -47,13 +46,13 @@ class ToggleButton extends React.Component {
     return (
       <button
         id={'button-collapse-' + id}
-        className={"btn btn-light text-white " + style}
+        className={'btn btn-link text-white ' + style}
         type="button"
         data-toggle="collapse"
         data-target={'#' + dataTarget}
         aria-controls={'' + dataTarget}
         aria-expanded="false"
-        aria-label={"Toggle " + id}
+        aria-label={'Toggle ' + id}
       >
         <img
           className="collapse-icon-down"

@@ -31,9 +31,9 @@ class SocialMediaCarousel extends React.Component {
 
                 for (var j = 0; j < sharpImages.length; j++) {
                   if (
-                    sharpImages[j].sizes.originalName.startsWith(
+                    sharpImages[j].sizes.originalName.indexOf(
                       mediaPost.bildDesPosts.id
-                    )
+                    ) !== -1
                   ) {
                     console.log('true')
                     imageSharp = sharpImages[j]
