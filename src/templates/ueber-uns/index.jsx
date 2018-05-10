@@ -35,12 +35,14 @@ class UeberUnsTemplate extends React.Component {
   }
 
   render() {
+
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
     const mbImagesSharp = this.props.pathContext.mbImagesSharp
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
@@ -759,23 +761,24 @@ export const pageQuery = graphql`
     }
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
       sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes_noBase64
+        ...GatsbyImageSharpSizes
       }
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes_noBase64
+        ...GatsbyImageSharpSizes
       }
     }
     projektBildSharp: imageSharp(id: { regex: $projektBildId }) {
       sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes_noBase64
+        ...GatsbyImageSharpSizes
       }
     }
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
       sizes(maxWidth: 1600, quality: 60) {
-        ...GatsbyImageSharpSizes_noBase64
+        ...GatsbyImageSharpSizes
       }
     }
+
   }
 `

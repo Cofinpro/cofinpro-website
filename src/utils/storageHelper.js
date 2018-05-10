@@ -1,3 +1,5 @@
+import Cookies from 'universal-cookie';
+
 class StorageHelper {
 
     static saveInLocalStorage(itemName, item) {
@@ -20,24 +22,23 @@ class StorageHelper {
     }
 
     static saveInSessionStorage(itemName, item) {
-        if (typeof sessionStorage !== 'undefined') {
-            sessionStorage.setItem(itemName, JSON.stringify(item));
 
-            console.log('saved item:' + item + ", in session storage");
-        }
+        var cookies = new Cookies();
+
+        cookies.set(itemName, item, { path: '/' });
+
+        console.log('saved item:' + item + ", in session storage");
     }
 
     static getFromSessionStorage(itemName) {
-        if(typeof itemName !== 'string') {
-            throw "der itemName muss ein String sein. Bitte geben Sie einen String an.";
+
+        var cookies = new Cookies();
+
+        if(  cookies.get(itemName) === undefined || cookies.get(itemName) === null) {
+            return '';
         }
-        if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(itemName)) {
-            if(sessionStorage.getItem(itemName) == null) {
-                return "";
-            }
-            return JSON.parse(sessionStorage.getItem(itemName));
-        }
-        return '';
+        console.log('load item:' + itemName + ", from session storage");
+        return cookies.get(itemName);
     }
 
 } /* 'perspective' */
