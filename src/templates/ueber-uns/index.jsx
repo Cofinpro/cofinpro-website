@@ -14,6 +14,7 @@ import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import TestimonialCarousel from '../../components/TestimonialCarousel'
 import HtmlHeader from '../../components/HtmlHeader'
+import ManagementBoardCarousel from '../../components/ManagementBoardCarousel'
 
 class UeberUnsTemplate extends React.Component {
   componentDidMount() {
@@ -443,8 +444,12 @@ class UeberUnsTemplate extends React.Component {
             })}
           </div>
           <div className="row d-flex d-md-none margin-40-top">
-            <div className="col">
-              <p>Mobile here</p>
+            <div className="col-6 " key={'column-mitglied-' + 12}>
+              <ManagementBoardCarousel
+                key={'column-mitglied-' + 12}
+                mitglieder={graphQlResult.managementBoardMitglieder}
+                carouselId={12}
+              />
             </div>
           </div>
         </div>

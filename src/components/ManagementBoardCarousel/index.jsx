@@ -10,10 +10,10 @@ import CarouselControlPrevNext from '../bootstrap-custom/CarouselControlPrevNext
 
 class ManagementBoardCarousel extends React.Component {
   render() {
-    const { carouselId, mitglieder } = this.props
+    const { mitglieder, carouselId } = this.props
 
     const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__x
 
     if (mitglieder != null && mitglieder.length > 0) {
       return (
@@ -31,7 +31,12 @@ class ManagementBoardCarousel extends React.Component {
                   key={'carousel-item-t-' + i}
                 >
                   <div key={'carousel-wrapper-t-' + i}>
-                    <p key={'carousel-p-t-' + i}>Test</p>
+                    <p key={'carousel-p-t-' + i}>
+                      <ContentfulImage
+                        imageFile={mitglied.bild}
+                        styleClasses="img-fluid margin-20-bottom"
+                      />
+                    </p>
                     <div
                       key={'carousel-control-wraper-t-' + i}
                       className="d-block d-md-none margin-20-bottom"
