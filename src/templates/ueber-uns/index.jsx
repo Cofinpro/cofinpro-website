@@ -14,7 +14,6 @@ import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulImage from '../../components/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
-import ManagementBoardCarousel from '../../components/ManagementBoardCarousel'
 
 import ImageCarousel from '../../components/carousels/ImageCarousel'
 import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
