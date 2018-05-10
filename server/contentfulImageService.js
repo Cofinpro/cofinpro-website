@@ -101,7 +101,7 @@ exports.refreshImages = function(graphql, callback) {
             setTimeout(function() {
               callback(null)
               console.log('timeout completed')
-            }, 1000)
+            }, 5000)
           }
         }
       })
