@@ -18,6 +18,7 @@ import HtmlHeader from '../../components/HtmlHeader'
 import ImageCarousel from '../../components/carousels/ImageCarousel'
 import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
 import TestimonialCarousel from '../../components/carousels/TestimonialCarousel'
+import ManagementBoardCarousel from '../../components/carousels/ManagementBoardCarousel'
 
 class UeberUnsTemplate extends React.Component {
   componentDidMount() {
@@ -411,7 +412,7 @@ class UeberUnsTemplate extends React.Component {
           </div>
           <div className="row d-flex d-md-none margin-40-top">
             <div className="col">
-              <p>Mobile here</p>
+              <ManagementBoardCarousel carouselId="management-board" mitglieder={graphQlResult.managementBoardMitglieder} mbImagesSharp={mbImagesSharp} />
             </div>
           </div>
         </div>
