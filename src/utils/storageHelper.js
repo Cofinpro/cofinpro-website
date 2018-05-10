@@ -37,7 +37,7 @@ class StorageHelper {
         if(  cookies.get(itemName) === undefined || cookies.get(itemName) === null) {
             return '';
         }
-        console.log('load item:' + itemName + ", from session storage");
+        console.log('load item:' + itemName + ", from session storage:" + cookies.get(itemName));
         return cookies.get(itemName);
     }
 
