@@ -3,9 +3,8 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, callback) {
-
-  console.log("start graphql query: allContentfulSeiteUeberUns.");
+exports.create = function(graphql, createPage, callback) {
+  console.log('start graphql query: allContentfulSeiteUeberUns.')
 
   graphql(
     `
@@ -41,19 +40,21 @@ exports.create = function (graphql, createPage, callback) {
       }
     `
   ).then(result => {
-
-    console.log("end graphql query: allContentfulSeiteUeberUns.");
+    console.log('end graphql query: allContentfulSeiteUeberUns.')
 
     const ueberUnsTemplate = path.resolve(`./src/templates/ueber-uns/index.jsx`)
 
-    const managementBoardMitgliederImages = [];
+    const managementBoardMitgliederImages = []
 
-    _.each(result.data.allContentfulSeiteUeberUns.edges[0].node.managementBoardMitglieder, item => {
-      managementBoardMitgliederImages.push(item.bild);
-    });
+    _.each(
+      result.data.allContentfulSeiteUeberUns.edges[0].node
+        .managementBoardMitglieder,
+      item => {
+        managementBoardMitgliederImages.push(item.bild)
+      }
+    )
 
     _.each(result.data.allContentfulSeiteUeberUns.edges, edge => {
-
       async.parallel(
         {
           mbImages: async.apply(
@@ -64,14 +65,13 @@ exports.create = function (graphql, createPage, callback) {
           ),
         },
         function(err, results) {
-
           console.log('finished image processing ueber uns.')
 
-          var imageMap = new Object();
+          var imageMap = new Object()
 
           _.each(results.mbImages, image => {
-            imageMap[image.sizes.originalName] = image;
-          });
+            imageMap[image.sizes.originalName] = image
+          })
 
           createPage({
             path: `/ueber-uns`,
@@ -85,16 +85,13 @@ exports.create = function (graphql, createPage, callback) {
               mbImagesSharp: imageMap,
             },
           })
-    
+
           console.log('created page ueber-uns.')
 
           callback()
         }
       )
-
-
     })
-
   })
 }
 

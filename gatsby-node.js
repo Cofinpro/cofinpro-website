@@ -84,16 +84,37 @@ function createPages(callback) {
     async.apply(pagesUeberUns.create, globalGraphql, globalCreatePage)
   )
   asyncTasks.push(
-    async.apply(pagesDeineKarriere.create, globalGraphql, globalCreatePage, globalCreateRedirect)
+    async.apply(
+      pagesDeineKarriere.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
   )
   asyncTasks.push(
-    async.apply(pageDeineEntwicklung.create, globalGraphql, globalCreatePage, globalCreateRedirect)
+    async.apply(
+      pageDeineEntwicklung.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
   )
   asyncTasks.push(
-    async.apply(pageLanding.create, globalGraphql, globalCreatePage, globalCreateRedirect, globalNews)
+    async.apply(
+      pageLanding.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect,
+      globalNews
+    )
   )
   asyncTasks.push(
-    async.apply(pagesGehaltBenefits.create, globalGraphql, globalCreatePage, globalCreateRedirect)
+    async.apply(
+      pagesGehaltBenefits.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
   )
   asyncTasks.push(
     async.apply(pageWorkLife.create, globalGraphql, globalCreatePage)

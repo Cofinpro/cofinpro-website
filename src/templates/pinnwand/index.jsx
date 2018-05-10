@@ -164,7 +164,6 @@ class PinnwandTemplate extends React.Component {
             </div>
           </div>
         </div>
-        
       </div>
     )
   }

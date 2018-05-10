@@ -14,7 +14,7 @@ class ManagementBoardCarousel extends React.Component {
     const { carouselId, mitglieder, mbImagesSharp } = this.props
 
     const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__x
 
     if (mitglieder != null && mitglieder.length > 0) {
       return (

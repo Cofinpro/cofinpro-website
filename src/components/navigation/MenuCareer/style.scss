@@ -3,7 +3,6 @@
 @import 'node_modules/bootstrap/scss/mixins';
 
 .main-navigation-bar {
-
   opacity: 0.95;
 
   @include media-breakpoint-only(xs) {
@@ -59,10 +58,9 @@
     margin-left: 0.3rem;
   }
 
-  .nav-item.active>a {
+  .nav-item.active > a {
     border-bottom: 1px solid black;
   }
-
 }
 
 ul.navbar-nav {

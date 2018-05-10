@@ -3,13 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function(
-  graphql,
-  createPage,
-  createRedirect,
-  news,
-  callback
-) {
+exports.create = function(graphql, createPage, createRedirect, news, callback) {
   graphql(
     `
       {

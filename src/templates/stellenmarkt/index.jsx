@@ -22,7 +22,8 @@ class StellenmarktTemplate extends React.Component {
 
     const graphQlResult = this.props.data.contentfulSeiteStellenmarkt
 
-    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
+    const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
+      .edges
 
     return (
       <div>
@@ -121,7 +122,6 @@ export default StellenmarktTemplate
 
 export const pageQuery = graphql`
   query stellenmarktQuery($id: String!) {
-
     contentfulSeiteStellenmarkt(id: { eq: $id }) {
       id
       metaData {
@@ -177,7 +177,6 @@ export const pageQuery = graphql`
         }
       }
     }
-
     allContentfulSeiteStellenanzeige {
       edges {
         node {
@@ -231,7 +230,5 @@ export const pageQuery = graphql`
         }
       }
     }
-    
-
   }
 `

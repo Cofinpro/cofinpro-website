@@ -35,7 +35,8 @@
   .carousel-item {
     height: 560px;
 
-    img, .gatsby-image-wrapper {
+    img,
+    .gatsby-image-wrapper {
       max-height: 380px;
       max-width: 380px;
 
@@ -48,7 +49,6 @@
     }
 
     .gatsby-image-wrapper {
-
       margin-right: auto;
       margin-left: auto;
 

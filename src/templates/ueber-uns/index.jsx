@@ -36,7 +36,6 @@ class UeberUnsTemplate extends React.Component {
   }
 
   render() {
-
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
     const mbImagesSharp = this.props.pathContext.mbImagesSharp
@@ -412,7 +411,11 @@ class UeberUnsTemplate extends React.Component {
           </div>
           <div className="row d-flex d-md-none margin-40-top">
             <div className="col">
-              <ManagementBoardCarousel carouselId="management-board" mitglieder={graphQlResult.managementBoardMitglieder} mbImagesSharp={mbImagesSharp} />
+              <ManagementBoardCarousel
+                carouselId="management-board"
+                mitglieder={graphQlResult.managementBoardMitglieder}
+                mbImagesSharp={mbImagesSharp}
+              />
             </div>
           </div>
         </div>
@@ -780,6 +783,5 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `

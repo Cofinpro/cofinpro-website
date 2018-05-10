@@ -1,32 +1,28 @@
-
 .mbCarousel {
-    
-    .carousel-indicators .active {
-        background-color: black;
-    }
+  .carousel-indicators .active {
+    background-color: black;
+  }
 
-    .carousel-inner {
+  .carousel-inner {
+  }
 
-    }
-  
-    .carousel-indicators li {
-        background-color: rgb(175, 175, 175);
-    } 
+  .carousel-indicators li {
+    background-color: rgb(175, 175, 175);
+  }
 
-    .carousel-control-prev>i,
-    .carousel-control-next>i {
-        font-size: 3rem;
-        color: #EC7B1A !important;
-    }
+  .carousel-control-prev > i,
+  .carousel-control-next > i {
+    font-size: 3rem;
+    color: #ec7b1a !important;
+  }
 
-    .carousel-item{ 
-        img {
-            /*padding-left: 3rem;
+  .carousel-item {
+    img {
+      /*padding-left: 3rem;
             padding-right: 3rem;*/
-        }
     }
+  }
 
-    .social-media-image {
-        
-    }
+  .social-media-image {
+  }
 }

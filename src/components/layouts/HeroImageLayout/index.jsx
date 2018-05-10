@@ -74,9 +74,7 @@ class HeroImageLayout extends React.Component {
       <div className="hero-image">
         <div className="container">
           <div className="row hero-image__title-box">
-            <div className="col-11 col-md-10 col-lg-9">
-              {titleElement}
-            </div>
+            <div className="col-11 col-md-10 col-lg-9">{titleElement}</div>
             <div className="col-1 col-md-3" />
           </div>
         </div>

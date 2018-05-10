@@ -60,7 +60,11 @@ class CarrerOffersCarousel extends React.Component {
       var tempBucket = []
 
       for (var i = 0; i < itemsData.length; i++) {
-        for(var j = 0; j < itemsData[i].node.zuordnungZuKompetenzen.length; ++j) {
+        for (
+          var j = 0;
+          j < itemsData[i].node.zuordnungZuKompetenzen.length;
+          ++j
+        ) {
           if (
             perspective == null ||
             perspective.trim().length < 1 ||
