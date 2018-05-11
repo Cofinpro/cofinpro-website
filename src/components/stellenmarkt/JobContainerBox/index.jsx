@@ -32,8 +32,6 @@ class JobContainerBox extends React.Component {
   componentDidMount() {
     var componentId = this.id
 
-    console.log('did mount with id:' + componentId)
-
     $('#stellenmarkt-box-' + componentId + '-collapse-area').collapse({
       toggle: false,
     })
@@ -59,7 +57,6 @@ class JobContainerBox extends React.Component {
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn,
     }))
-    console.log('handleToggle:' + this.state.isToggleOn)
   }
 
   render() {
@@ -86,8 +83,6 @@ class JobContainerBox extends React.Component {
         }
       }
     }
-
-    console.log(bucket);
 
     var indexToCollapse = 0
 

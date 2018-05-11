@@ -35,7 +35,6 @@ class SocialMediaCarousel extends React.Component {
                       mediaPost.bildDesPosts.id
                     ) !== -1
                   ) {
-                    console.log('true')
                     imageSharp = sharpImages[j]
                   }
                 }

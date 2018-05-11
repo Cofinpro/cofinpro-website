@@ -5,11 +5,6 @@ import get from 'lodash/get'
 import './style.scss'
 
 class SiteFooter extends React.Component {
-  componentDidMount() {
-    $('#back-to-top').click(function() {
-      console.log('test')
-    })
-  }
 
   render() {
     const data = this.props.data
