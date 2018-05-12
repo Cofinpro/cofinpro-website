@@ -21,13 +21,13 @@ class SubtitleTitelImageTextLayout extends React.Component {
               sourceType={SOURCE_TYP_SHARP}
             />
           </div>
-          <div className={'col-12 ' + headerFillerColumnWidth} />
+          <div className="col-12 col-md-1" />
         </div>
         <div className={style ? 'row ' + style.rowTwo : 'row'}>
           <div className="col-12 col-md-6 col-lg-5">
             <ContentfulMarkdownText text={content.text} {...this.props} />
           </div>
-          <div className={'col-12' + textFillerColumnWidth} />
+          <div className="col-12 col-md-3 col-lg-4" />
         </div>
       </div>
     )
