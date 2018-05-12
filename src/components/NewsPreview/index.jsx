@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../ContentfulImage'
+import ContentfulImage from '../images/ContentfulImage'
 
 class NewsPreview extends React.Component {
   render() {

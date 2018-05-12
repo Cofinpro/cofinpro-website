@@ -1,9 +1,12 @@
 import React from 'react'
-import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../../ContentfulImage'
+import {
+  ImageWrapper,
+  SOURCE_TYP_CONTENTFUL,
+  SOURCE_TYP_SHARP,
+} from '../../images/ImageWrapper'
 
 class HeroImageLayout extends React.Component {
   render() {
@@ -87,11 +90,15 @@ class HeroImageLayout extends React.Component {
                     {isOverlayActive !== undefined && isOverlayActive ? (
                       <div className="hero-image__image-overlay-gradient" />
                     ) : null}
-                    <Img sizes={titleImage.sizes} />
+                    <ImageWrapper
+                      source={titleImage}
+                      sourceType={SOURCE_TYP_SHARP}
+                    />
                   </div>
                 ) : (
-                  <ContentfulImage
-                    imageFile={imageFile}
+                  <ImageWrapper
+                    source={imageFile}
+                    sourceType={SOURCE_TYP_CONTENTFUL}
                     styleClasses="img-fluid d-none d-md-block"
                   />
                 )}
@@ -102,17 +109,24 @@ class HeroImageLayout extends React.Component {
                     {isOverlayActive !== undefined && isOverlayActive ? (
                       <div className="image-overlay-gradient" />
                     ) : null}
-                    <Img sizes={titleImage.sizes} />
+                    <ImageWrapper
+                      source={titleImage}
+                      sourceType={SOURCE_TYP_SHARP}
+                    />
                   </div>
                 ) : null}
                 {titleImageSmall !== undefined && titleImageSmall !== null ? (
                   <div className="d-block d-md-none">
-                    <Img sizes={titleImageSmall.sizes} />
+                    <ImageWrapper
+                      source={titleImageSmall}
+                      sourceType={SOURCE_TYP_SHARP}
+                    />
                   </div>
                 ) : null}
                 {imageSmall !== undefined && imageSmall !== null ? (
-                  <ContentfulImage
-                    imageFile={imageSmall}
+                  <ImageWrapper
+                    source={imageSmall}
+                    sourceType={SOURCE_TYP_CONTENTFUL}
                     styleClasses="img-fluid d-block d-md-none"
                   />
                 ) : null}
@@ -122,9 +136,16 @@ class HeroImageLayout extends React.Component {
             <div className="row">
               <div className="col">
                 {titleImage !== undefined && titleImage !== null ? (
-                  <Img sizes={titleImage.sizes} />
+                  <ImageWrapper
+                    source={titleImage}
+                    sourceType={SOURCE_TYP_SHARP}
+                  />
                 ) : (
-                  <ContentfulImage imageFile={imageFile} />
+                  <ImageWrapper
+                    source={imageFile}
+                    sourceType={SOURCE_TYP_CONTENTFUL}
+                    styleClasses="img-fluid d-block d-md-none"
+                  />
                 )}
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContentfulImage from '../../ContentfulImage'
+import ContentfulImage from '../../images/ContentfulImage'
 
 class ThreeIconsWithTitleAndTextLayout extends React.Component {
   render() {

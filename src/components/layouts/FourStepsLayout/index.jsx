@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContentfulImage from '../../ContentfulImage'
+import { ImageWrapper, SOURCE_TYP_CONTENTFUL } from '../../images/ImageWrapper'
 
 class FourStepsLayout extends React.Component {
   render() {
@@ -48,8 +48,9 @@ class FourStepsLayout extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-12 col-md-10">
-                    <ContentfulImage
-                      imageFile={stepOneImage}
+                    <ImageWrapper
+                      source={stepOneImage}
+                      sourceType={SOURCE_TYP_CONTENTFUL}
                       styleClasses="img-fluid padding-sm-top-bottom"
                     />
                   </div>
@@ -81,8 +82,9 @@ class FourStepsLayout extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-12 col-md-10">
-                    <ContentfulImage
-                      imageFile={stepThreeImage}
+                    <ImageWrapper
+                      source={stepThreeImage}
+                      sourceType={SOURCE_TYP_CONTENTFUL}
                       styleClasses="img-fluid padding-sm-top-bottom"
                     />
                   </div>
@@ -117,8 +119,9 @@ class FourStepsLayout extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-12 col-md-10">
-                    <ContentfulImage
-                      imageFile={stepTwoImage}
+                    <ImageWrapper
+                      source={stepTwoImage}
+                      sourceType={SOURCE_TYP_CONTENTFUL}
                       styleClasses="img-fluid padding-sm-top-bottom"
                     />
                   </div>
@@ -152,8 +155,9 @@ class FourStepsLayout extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-12 col-md-10">
-                    <ContentfulImage
-                      imageFile={stepFourImage}
+                    <ImageWrapper
+                      source={stepFourImage}
+                      sourceType={SOURCE_TYP_CONTENTFUL}
                       styleClasses="img-fluid padding-sm-top-bottom"
                     />
                   </div>
@@ -179,8 +183,9 @@ class FourStepsLayout extends React.Component {
             </div>
             <div className="row">
               <div className="col">
-                <ContentfulImage
-                  imageFile={stepOneImage}
+                <ImageWrapper
+                  source={stepOneImage}
+                  sourceType={SOURCE_TYP_CONTENTFUL}
                   styleClasses="img-fluid padding-sm-top-bottom"
                 />
                 <p>{stepOneText}</p>
@@ -206,8 +211,9 @@ class FourStepsLayout extends React.Component {
             </div>
             <div className="row">
               <div className="col">
-                <ContentfulImage
-                  imageFile={stepThreeImage}
+                <ImageWrapper
+                  source={stepThreeImage}
+                  sourceType={SOURCE_TYP_CONTENTFUL}
                   styleClasses="img-fluid padding-sm-top-bottom"
                 />
                 <p>{stepThreeText}</p>
@@ -233,8 +239,9 @@ class FourStepsLayout extends React.Component {
             </div>
             <div className="row">
               <div className="col">
-                <ContentfulImage
-                  imageFile={stepTwoImage}
+                <ImageWrapper
+                  source={stepTwoImage}
+                  sourceType={SOURCE_TYP_CONTENTFUL}
                   styleClasses="img-fluid padding-sm-top-bottom"
                 />
                 <p>{stepTwoText}</p>
@@ -260,8 +267,9 @@ class FourStepsLayout extends React.Component {
             </div>
             <div className="row">
               <div className="col">
-                <ContentfulImage
-                  imageFile={stepFourImage}
+                <ImageWrapper
+                  source={stepFourImage}
+                  sourceType={SOURCE_TYP_CONTENTFUL}
                   styleClasses="img-fluid padding-sm-top-bottom"
                 />
                 <p>{stepFourText}</p>

@@ -4,13 +4,13 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
-import FactsLayout from '../../components/layouts/FactsLayout'
+import FourFactsLayout from '../../components/layouts/FourFactsLayout'
 import TestimonialLayout from '../../components/layouts/TestimonialLayout'
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import NewsPreview from '../../components/NewsPreview'
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import SocialMediaCarousel from '../../components/carousels/SocialMediaCarousel'
 import CarrerOfferBox from '../../components/CarrerOfferBox'
 import HtmlHeader from '../../components/HtmlHeader'
@@ -63,27 +63,33 @@ class LandingTemplate extends React.Component {
           text2={graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2}
         />
 
-        <div className="container margin-100-top">
-          <div className="row">
-            <div className="col text-center">
-              <h2>{graphQlResult.faktenCofinpro.titel}</h2>
-            </div>
-          </div>
-        </div>
-
-        <FactsLayout
-          fakt1Titel={graphQlResult.faktenCofinpro.fakt1Titel}
-          fakt1Text={graphQlResult.faktenCofinpro.fakt1Text}
-          fakt1Image={graphQlResult.faktenCofinpro.fakt1Bild}
-          fakt2Titel={graphQlResult.faktenCofinpro.fakt2Titel}
-          fakt2Text={graphQlResult.faktenCofinpro.fakt2Text}
-          fakt2Image={graphQlResult.faktenCofinpro.fakt2Bild}
-          fakt3Titel={graphQlResult.faktenCofinpro.fakt3Titel}
-          fakt3Text={graphQlResult.faktenCofinpro.fakt3Text}
-          fakt3Image={graphQlResult.faktenCofinpro.fakt3Bild}
-          fakt4Titel={graphQlResult.faktenCofinpro.fakt4Titel}
-          fakt4Text={graphQlResult.faktenCofinpro.fakt4Text}
-          fakt4Image={graphQlResult.faktenCofinpro.fakt4Bild}
+        <FourFactsLayout
+          content={{
+            title: graphQlResult.faktenCofinpro.titel,
+            columns: [
+              {
+                fact: graphQlResult.faktenCofinpro.fakt1Text,
+                text: graphQlResult.faktenCofinpro.fakt1Titel,
+                icon: graphQlResult.faktenCofinpro.fakt1Bild,
+              },
+              {
+                fact: graphQlResult.faktenCofinpro.fakt2Text,
+                text: graphQlResult.faktenCofinpro.fakt2Titel,
+                icon: graphQlResult.faktenCofinpro.fakt2Bild,
+              },
+              {
+                fact: graphQlResult.faktenCofinpro.fakt3Text,
+                text: graphQlResult.faktenCofinpro.fakt3Titel,
+                icon: graphQlResult.faktenCofinpro.fakt3Bild,
+              },
+              {
+                fact: graphQlResult.faktenCofinpro.fakt4Text,
+                text: graphQlResult.faktenCofinpro.fakt4Titel,
+                icon: graphQlResult.faktenCofinpro.fakt4Bild,
+              },
+            ],
+          }}
+          isHeaderCentered={true}
         />
 
         <div className="container margin-60-top">

@@ -4,14 +4,14 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import FactsLayout from '../../components/layouts/FactsLayout'
+import FourFactsLayout from '../../components/layouts/FourFactsLayout'
 import SubtitleTitelImageTextLayout from '../../components/layouts/SubtitleTitelImageTextLayout'
 import ThreeIconsWithTitleAndTextLayout from '../../components/layouts/ThreeIconsWithTitleAndTextLayout'
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import ImageTitleCollapseTextLayout from '../../components/layouts/ImageTitleCollapseTextLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
 
@@ -36,13 +36,14 @@ class UeberUnsTemplate extends React.Component {
   }
 
   render() {
-
     const graphQlResult = this.props.data.contentfulSeiteUeberUns
 
     const mbImagesSharp = this.props.pathContext.mbImagesSharp
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    console.log(this.props.data.imageTitelBildSharp)
 
     return (
       <div>
@@ -213,13 +214,17 @@ class UeberUnsTemplate extends React.Component {
         </div>
 
         <SubtitleTitelImageTextLayout
-          subtitle={graphQlResult.karrieremagazin.untertitel}
-          title={graphQlResult.karrieremagazin.titel}
-          image={this.props.data.karrieremagazinSharp}
-          text={graphQlResult.karrieremagazin.beschreibung.beschreibung}
-          containerStyle="margin-100-top"
-          rowOneStyle="justify-content-end"
-          rowTwoStyle="justify-content-end margin-20-top"
+          content={{
+            subtitle: graphQlResult.karrieremagazin.untertitel,
+            title: graphQlResult.karrieremagazin.titel,
+            image: this.props.data.karrieremagazinSharp,
+            text: graphQlResult.karrieremagazin.beschreibung.beschreibung,
+          }}
+          style={{
+            container: 'margin-100-top',
+            rowOne: 'justify-content-end',
+            rowTwo: 'justify-content-end margin-20-top',
+          }}
           {...this.props}
         />
 
@@ -352,10 +357,12 @@ class UeberUnsTemplate extends React.Component {
                     <ImageTitleCollapseTextLayout
                       key={'mitglied-mb-' + index}
                       id={index}
-                      title={mitglied.titel}
-                      subtitle={mitglied.untertitel}
-                      text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
+                      content={{
+                        title: mitglied.titel,
+                        subtitle: mitglied.untertitel,
+                        text: mitglied.beschreibung.beschreibung,
+                        image: mbImagesSharp[mitglied.bild.id + '.jpg'],
+                      }}
                     />
                   </div>
                 )
@@ -375,10 +382,12 @@ class UeberUnsTemplate extends React.Component {
                     <ImageTitleCollapseTextLayout
                       key={'mitglied-mb-' + index}
                       id={index}
-                      title={mitglied.titel}
-                      subtitle={mitglied.untertitel}
-                      text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
+                      content={{
+                        title: mitglied.titel,
+                        subtitle: mitglied.untertitel,
+                        text: mitglied.beschreibung.beschreibung,
+                        image: mbImagesSharp[mitglied.bild.id + '.jpg'],
+                      }}
                     />
                   </div>
                 )
@@ -398,10 +407,12 @@ class UeberUnsTemplate extends React.Component {
                     <ImageTitleCollapseTextLayout
                       key={'mitglied-mb-' + index}
                       id={index}
-                      title={mitglied.titel}
-                      subtitle={mitglied.untertitel}
-                      text={mitglied.beschreibung.beschreibung}
-                      image={mbImagesSharp[mitglied.bild.id + '.jpg']}
+                      content={{
+                        title: mitglied.titel,
+                        subtitle: mitglied.untertitel,
+                        text: mitglied.beschreibung.beschreibung,
+                        image: mbImagesSharp[mitglied.bild.id + '.jpg'],
+                      }}
                     />
                   </div>
                 )
@@ -412,43 +423,57 @@ class UeberUnsTemplate extends React.Component {
           </div>
           <div className="row d-flex d-md-none margin-40-top">
             <div className="col">
-              <ManagementBoardCarousel carouselId="management-board" mitglieder={graphQlResult.managementBoardMitglieder} mbImagesSharp={mbImagesSharp} />
+              <ManagementBoardCarousel
+                carouselId="management-board"
+                mitglieder={graphQlResult.managementBoardMitglieder}
+                mbImagesSharp={mbImagesSharp}
+              />
             </div>
           </div>
         </div>
 
         <SubtitleTitelImageTextLayout
-          subtitle={graphQlResult.projekte.untertitel}
-          title={graphQlResult.projekte.titel}
-          image={this.props.data.projektBildSharp}
-          text={graphQlResult.projekte.beschreibung.beschreibung}
-          containerStyle="margin-100-top"
-          rowOneStyle="justify-content-end"
-          rowTwoStyle="justify-content-end margin-20-top"
+          content={{
+            subtitle: graphQlResult.projekte.untertitel,
+            title: graphQlResult.projekte.titel,
+            image: this.props.data.projektBildSharp,
+            text: graphQlResult.projekte.beschreibung.beschreibung,
+          }}
+          style={{
+            container: 'margin-100-top',
+            rowOne: 'justify-content-end',
+            rowTwo: 'justify-content-end margin-20-top',
+          }}
           {...this.props}
         />
 
-        <div className="container margin-120-top">
-          <div className="row">
-            <div className="col">
-              <h2>{graphQlResult.faktenCofinpro.titel}</h2>
-            </div>
-          </div>
-        </div>
-
-        <FactsLayout
-          fakt1Titel={graphQlResult.faktenCofinpro.fakt1Titel}
-          fakt1Text={graphQlResult.faktenCofinpro.fakt1Text}
-          fakt1Image={graphQlResult.faktenCofinpro.fakt1Bild}
-          fakt2Titel={graphQlResult.faktenCofinpro.fakt2Titel}
-          fakt2Text={graphQlResult.faktenCofinpro.fakt2Text}
-          fakt2Image={graphQlResult.faktenCofinpro.fakt2Bild}
-          fakt3Titel={graphQlResult.faktenCofinpro.fakt3Titel}
-          fakt3Text={graphQlResult.faktenCofinpro.fakt3Text}
-          fakt3Image={graphQlResult.faktenCofinpro.fakt3Bild}
-          fakt4Titel={graphQlResult.faktenCofinpro.fakt4Titel}
-          fakt4Text={graphQlResult.faktenCofinpro.fakt4Text}
-          fakt4Image={graphQlResult.faktenCofinpro.fakt4Bild}
+        <FourFactsLayout
+          content={{
+            title: graphQlResult.faktenCofinpro.titel,
+            columns: [
+              {
+                fact: graphQlResult.faktenCofinpro.fakt1Text,
+                text: graphQlResult.faktenCofinpro.fakt1Titel,
+                icon: graphQlResult.faktenCofinpro.fakt1Bild,
+              },
+              {
+                fact: graphQlResult.faktenCofinpro.fakt2Text,
+                text: graphQlResult.faktenCofinpro.fakt2Titel,
+                icon: graphQlResult.faktenCofinpro.fakt2Bild,
+              },
+              {
+                fact: graphQlResult.faktenCofinpro.fakt3Text,
+                text: graphQlResult.faktenCofinpro.fakt3Titel,
+                icon: graphQlResult.faktenCofinpro.fakt3Bild,
+              },
+              {
+                fact: graphQlResult.faktenCofinpro.fakt4Text,
+                text: graphQlResult.faktenCofinpro.fakt4Titel,
+                icon: graphQlResult.faktenCofinpro.fakt4Bild,
+              },
+            ],
+          }}
+          isHeaderCentered={false}
         />
 
         <div className="container margin-40-top">
@@ -780,6 +805,5 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-
   }
 `
