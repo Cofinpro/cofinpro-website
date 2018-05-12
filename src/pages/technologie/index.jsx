@@ -8,7 +8,7 @@ import SubtitleTitelImageTextLayout from '../../components/layouts/SubtitleTitel
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
 
@@ -42,55 +42,6 @@ class Technologie extends React.Component {
           text1="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
           text2="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
         />
-
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <SubtitleTitelImageTextLayout
-                subtitle="PERSÖNLICHE GRENZEN UND MÖGLICHKEITEN TEST"
-                title="Coding Dojo"
-                image={null}
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,"
-                containerStyle="margin-100-top"
-                fullWidth={true}
-                {...this.props}
-              />
-            </div>
-            <div className="col-6">
-              <SubtitleTitelImageTextLayout
-                subtitle="PERSÖNLICHE GRENZEN UND MÖGLICHKEITEN TEST"
-                title="Coding Dojo"
-                image={null}
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,"
-                containerStyle="margin-100-top"
-                fullWidth={true}
-                {...this.props}
-              />
-            </div>
-            <div className="col-6">
-              <SubtitleTitelImageTextLayout
-                subtitle="PERSÖNLICHE GRENZEN UND MÖGLICHKEITEN TEST"
-                title="Coding Dojo"
-                image={null}
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,"
-                containerStyle="margin-100-top"
-                fullWidth={true}
-                {...this.props}
-              />
-            </div>
-            <div className="col-6">
-              <SubtitleTitelImageTextLayout
-                subtitle="PERSÖNLICHE GRENZEN UND MÖGLICHKEITEN TEST"
-                title="Coding Dojo"
-                image={null}
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,"
-                containerStyle="margin-100-top"
-                fullWidth={true}
-                {...this.props}
-              />
-            </div>
-          </div>
-        </div>
       </div>
     )
   }
