@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../../ContentfulImage'
+import ContentfulImage from '../../images/ContentfulImage'
 import ContentfulMarkdownText from '../../ContentfulMarkdownText'
 import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 

@@ -7,7 +7,7 @@ import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTex
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'

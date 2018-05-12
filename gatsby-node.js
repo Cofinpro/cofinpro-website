@@ -145,15 +145,15 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
                               sizes(` +
         sharpParameter +
         `) {
-                          src
-                          srcSet
-                          srcWebp
-                          srcSetWebp
-                          originalImg
-                          originalName
-                          base64
-                          aspectRatio
-                          sizes
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
                           }
                       }
                   }          
@@ -261,6 +261,8 @@ function getNews(callback) {
           item.node.newsBildSharp = results.newsBild
 
           if (itemsProcessed === globalNews.length) {
+            console.log('finished sharp images for all news.')
+
             callback(null)
           }
         }

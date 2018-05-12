@@ -9,7 +9,7 @@ import TestimonialLayout from '../../components/layouts/TestimonialLayout'
 
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 
 class LaufbahnTemplate extends React.Component {

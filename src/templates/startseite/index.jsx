@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import ToggleButton from '../../components/buttons/ToggleButton'

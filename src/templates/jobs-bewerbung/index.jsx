@@ -13,7 +13,7 @@ import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import FourStepsLayout from '../../components/layouts/FourStepsLayout'
 import SubtitleTitelTwoImagesTextLayout from '../../components/layouts/SubtitleTitelTwoImagesTextLayout'
 
-import ContentfulImage from '../../components/ContentfulImage'
+import ContentfulImage from '../../components/images/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
@@ -68,14 +68,17 @@ class JobsBewerbungTemplate extends React.Component {
         </div>
 
         <SubtitleTitelTwoImagesTextLayout
-          title={graphQlResult.ueberschriftAnsprechpartnerBewerbungen}
-          imageLeft={this.props.data.ansprechpartnerEinsBildSharp}
-          imageRight={this.props.data.ansprechpartnerZweiBildSharp}
-          text={
-            graphQlResult.beschreibungAnsprechpartnerBewerbungen
-              .beschreibungAnsprechpartnerBewerbungen
-          }
-          containerStyle="margin-120-top"
+          content={{
+            title: graphQlResult.ueberschriftAnsprechpartnerBewerbungen,
+            imageLeft: this.props.data.ansprechpartnerEinsBildSharp,
+            imageRight: this.props.data.ansprechpartnerZweiBildSharp,
+            text:
+              graphQlResult.beschreibungAnsprechpartnerBewerbungen
+                .beschreibungAnsprechpartnerBewerbungen,
+          }}
+          style={{
+            container: 'margin-120-top',
+          }}
         />
 
         <FourStepsLayout
