@@ -14,9 +14,9 @@ class SubtitleTitelTwoImagesTextLayout extends React.Component {
       <div className={style ? 'container ' + style.container : 'container'}>
         <div className="row">
           <div className="col-12 col-lg-10 offset-lg-1">
-            {content.subtitle !== undefined ? (
+            {content.subtitle !== undefined && (
               <h2 className="h6">{content.subtitle}</h2>
-            ) : null}
+            )}
             <h3 className="h2">{content.title}</h3>
           </div>
         </div>

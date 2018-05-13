@@ -43,11 +43,12 @@ class CarrerOfferBox extends React.Component {
     var buckets = []
 
     for (var i = 0; i < anzeigen.length; i++) {
-      for(var j = 0; j < anzeigen[i].node.zuordnungZuKompetenzen.length; ++j) {
+      for (var j = 0; j < anzeigen[i].node.zuordnungZuKompetenzen.length; ++j) {
         if (
           this.state.perspektive == null ||
           this.state.perspektive.trim().length < 1 ||
-          anzeigen[i].node.zuordnungZuKompetenzen[j].name === this.state.perspektive
+          anzeigen[i].node.zuordnungZuKompetenzen[j].name ===
+            this.state.perspektive
         ) {
           buckets.push(anzeigen[i])
         }
@@ -57,54 +58,53 @@ class CarrerOfferBox extends React.Component {
     if (buckets.length > 0) {
       return (
         <div className="carrer-offer-box">
-          {buckets.length > 0
-            ? buckets.map((anzeige, i) => {
-                if (i < 3) {
-                  return (
-                    <Link
-                      to={pathPrefix + '/stellenanzeige/' + anzeige.node.url}
-                      className="text-dark"
-                      key={'anzeige-link-' + i}
+          {buckets.length > 0 &&
+            buckets.map((anzeige, i) => {
+              if (i < 3) {
+                return (
+                  <Link
+                    to={pathPrefix + '/stellenanzeige/' + anzeige.node.url}
+                    className="text-dark"
+                    key={'anzeige-link-' + i}
+                  >
+                    <div
+                      className="row padding-sm-top"
+                      key={'anzeige-row-' + i}
                     >
                       <div
-                        className="row padding-sm-top"
-                        key={'anzeige-row-' + i}
+                        className="col-10 col-md-10 col-lg-10"
+                        key={'anzeige-col-' + i}
                       >
-                        <div
-                          className="col-10 col-md-10 col-lg-10"
-                          key={'anzeige-col-' + i}
-                        >
-                          <div className="" key={'anzeige-padding-' + i}>
-                            <p
-                              className="no-margin-bottom text-left"
-                              key={'anzeige-text-' + i}
-                            >
-                              {anzeige.node.titel}
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          className="col-2 col-md-2 col-lg-2 align-self-center"
-                          key={'anzeige-col-arrow-' + i}
-                        >
-                          <div
-                            className="text-primary"
-                            key={'anzeige-arrow-box-' + i}
+                        <div className="" key={'anzeige-padding-' + i}>
+                          <p
+                            className="no-margin-bottom text-left"
+                            key={'anzeige-text-' + i}
                           >
-                            <span
-                              className="h4 text-primary font-weight-bold stellenanzeige-link"
-                              key={'anzeige-arrow-box-icon-' + i}
-                            >
-                              >
-                            </span>
-                          </div>
+                            {anzeige.node.titel}
+                          </p>
                         </div>
                       </div>
-                    </Link>
-                  )
-                }
-              })
-            : null}
+                      <div
+                        className="col-2 col-md-2 col-lg-2 align-self-center"
+                        key={'anzeige-col-arrow-' + i}
+                      >
+                        <div
+                          className="text-primary"
+                          key={'anzeige-arrow-box-' + i}
+                        >
+                          <span
+                            className="h4 text-primary font-weight-bold stellenanzeige-link"
+                            key={'anzeige-arrow-box-icon-' + i}
+                          >
+                            >
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                )
+              }
+            })}
         </div>
       )
     } else {

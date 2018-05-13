@@ -26,7 +26,7 @@ class NewsPreview extends React.Component {
       <div>
         <Link to={pathPrefix + '/pinnwand/' + url}>
           {imageFileSharp !== undefined && imageFileSharp !== null ? (
-            <Img sizes={imageFileSharp != null ? imageFileSharp.sizes : null} />
+            <Img sizes={imageFileSharp != null && imageFileSharp.sizes} />
           ) : (
             <ContentfulImage imageFile={imageFile} styleClasses="img-fluid" />
           )}

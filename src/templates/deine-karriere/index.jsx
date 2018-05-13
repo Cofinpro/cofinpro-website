@@ -85,33 +85,32 @@ class LaufbahnTemplate extends React.Component {
               <h2 className="h6">{graphQlResult.skillUntertitel}</h2>
               <h3 className="h2">{graphQlResult.skillsTitel}</h3>
               <p>{graphQlResult.skillsBeschreibung.skillsBeschreibung}</p>
-              {graphQlResult.skills.length > 0
-                ? graphQlResult.skills.map((skill, i) => {
-                    var colorHeader
+              {graphQlResult.skills.length > 0 &&
+                graphQlResult.skills.map((skill, i) => {
+                  var colorHeader
 
-                    if (i == 0) {
-                      colorHeader = 'text-primary'
-                    } else if (i == 1) {
-                      colorHeader = 'text-secondary'
-                    } else if (i == 2) {
-                      colorHeader = 'text-primary'
-                    } else {
-                      colorHeader = 'text-dark'
-                    }
+                  if (i == 0) {
+                    colorHeader = 'text-primary'
+                  } else if (i == 1) {
+                    colorHeader = 'text-secondary'
+                  } else if (i == 2) {
+                    colorHeader = 'text-primary'
+                  } else {
+                    colorHeader = 'text-dark'
+                  }
 
-                    return (
-                      <p
-                        key={'skill-' + i}
-                        hidden={skill.ueberschrift == null ? true : false}
-                      >
-                        <span className={colorHeader}>
-                          {skill.ueberschrift}&nbsp;
-                        </span>
-                        {skill.text ? skill.text.text : null}
-                      </p>
-                    )
-                  })
-                : null}
+                  return (
+                    <p
+                      key={'skill-' + i}
+                      hidden={skill.ueberschrift == null ? true : false}
+                    >
+                      <span className={colorHeader}>
+                        {skill.ueberschrift}&nbsp;
+                      </span>
+                      {skill.text && skill.text.text}
+                    </p>
+                  )
+                })}
             </div>
 
             <div className="col-12 col-md-2">
@@ -134,25 +133,25 @@ class LaufbahnTemplate extends React.Component {
         </div>
 
         {graphQlResult.perspektive.name == null ||
-        graphQlResult.perspektive.name !== 'andere' ? (
-          <div className="container margin-100-top">
-            <div className="row">
-              <div className="col">
-                <p className="h2 text-primary">
-                  {graphQlResult.titelKompetenzen}
-                </p>
-                <ContentfulImage
-                  imageFile={graphQlResult.bildKompetenzen}
-                  styleClasses="img-fluid d-none d-md-block padding-sm-top"
-                />
-                <ContentfulImage
-                  imageFile={graphQlResult.bildKompetenzenSmartphone}
-                  styleClasses="img-fluid d-block d-md-none padding-sm-top"
-                />
+          (graphQlResult.perspektive.name !== 'andere' && (
+            <div className="container margin-100-top">
+              <div className="row">
+                <div className="col">
+                  <p className="h2 text-primary">
+                    {graphQlResult.titelKompetenzen}
+                  </p>
+                  <ContentfulImage
+                    imageFile={graphQlResult.bildKompetenzen}
+                    styleClasses="img-fluid d-none d-md-block padding-sm-top"
+                  />
+                  <ContentfulImage
+                    imageFile={graphQlResult.bildKompetenzenSmartphone}
+                    styleClasses="img-fluid d-block d-md-none padding-sm-top"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ) : null}
+          ))}
       </div>
     )
   }

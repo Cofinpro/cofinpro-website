@@ -59,14 +59,12 @@ class UeberUnsTemplate extends React.Component {
           title={graphQlResult.beschreibungTitel}
           subtitle={graphQlResult.beschreibungUntertitel}
           text1={
-            graphQlResult.beschreibungAbsatz1
-              ? graphQlResult.beschreibungAbsatz1.beschreibungAbsatz1
-              : null
+            graphQlResult.beschreibungAbsatz1 &&
+            graphQlResult.beschreibungAbsatz1.beschreibungAbsatz1
           }
           text2={
-            graphQlResult.beschreibungAbsatz2
-              ? graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2
-              : null
+            graphQlResult.beschreibungAbsatz2 &&
+            graphQlResult.beschreibungAbsatz2.beschreibungAbsatz2
           }
         />
 
@@ -98,7 +96,6 @@ class UeberUnsTemplate extends React.Component {
                         text={
                           graphQlResult.ersteTextboxInhalt.ersteTextboxInhalt
                         }
-                        {...this.props}
                       />
                     </div>
                   </div>
@@ -121,7 +118,6 @@ class UeberUnsTemplate extends React.Component {
                         text={
                           graphQlResult.dritteTextboxInhalt.dritteTextboxInhalt
                         }
-                        {...this.props}
                       />
                     </div>
                   </div>
@@ -148,7 +144,6 @@ class UeberUnsTemplate extends React.Component {
                         text={
                           graphQlResult.zweiteTextboxInhalt.zweiteTextboxInhalt
                         }
-                        {...this.props}
                       />
                     </div>
                   </div>
@@ -163,7 +158,6 @@ class UeberUnsTemplate extends React.Component {
                   <h3 className="h2">{graphQlResult.ersteTextboxTitel}</h3>
                   <ContentfulMarkdownText
                     text={graphQlResult.ersteTextboxInhalt.ersteTextboxInhalt}
-                    {...this.props}
                   />
                 </div>
               </div>
@@ -184,7 +178,6 @@ class UeberUnsTemplate extends React.Component {
                   <h3 className="h2">{graphQlResult.dritteTextboxTitel}</h3>
                   <ContentfulMarkdownText
                     text={graphQlResult.dritteTextboxInhalt.dritteTextboxInhalt}
-                    {...this.props}
                   />
                 </div>
               </div>
@@ -205,7 +198,6 @@ class UeberUnsTemplate extends React.Component {
                   <h3 className="h2">{graphQlResult.zweiteTextboxTitel}</h3>
                   <ContentfulMarkdownText
                     text={graphQlResult.zweiteTextboxInhalt.zweiteTextboxInhalt}
-                    {...this.props}
                   />
                 </div>
               </div>
@@ -225,7 +217,6 @@ class UeberUnsTemplate extends React.Component {
             rowOne: 'justify-content-end',
             rowTwo: 'justify-content-end margin-20-top',
           }}
-          {...this.props}
         />
 
         <div className="container margin-100-top d-block d-md-none">
@@ -326,7 +317,6 @@ class UeberUnsTemplate extends React.Component {
                   graphQlResult.raeumlichkeitenBeschreibung
                     .raeumlichkeitenBeschreibung
                 }
-                {...this.props}
               />
             </div>
           </div>
@@ -444,7 +434,6 @@ class UeberUnsTemplate extends React.Component {
             rowOne: 'justify-content-end',
             rowTwo: 'justify-content-end margin-20-top',
           }}
-          {...this.props}
         />
 
         <FourFactsLayout

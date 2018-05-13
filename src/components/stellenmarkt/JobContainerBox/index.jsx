@@ -77,8 +77,10 @@ class JobContainerBox extends React.Component {
     var bucket = []
 
     for (var i = 0; i < anzeigen.length; ++i) {
-      for(var j = 0; j < anzeigen[i].node.zuordnungZuKompetenzen.length; ++j) {
-        if (filter.indexOf(anzeigen[i].node.zuordnungZuKompetenzen[j].name) > -1) {
+      for (var j = 0; j < anzeigen[i].node.zuordnungZuKompetenzen.length; ++j) {
+        if (
+          filter.indexOf(anzeigen[i].node.zuordnungZuKompetenzen[j].name) > -1
+        ) {
           bucket.push(anzeigen[i])
         }
       }
@@ -118,11 +120,39 @@ class JobContainerBox extends React.Component {
           <div className="col-12 col-md-10 col-lg-8">
             <h3>{boxTitle}</h3>
             <div className="row d-flex-inline d-md-none">
-              {bucket.length > 0
-                ? bucket.map((item, i) => {
+              {bucket.length > 0 &&
+                bucket.map((item, i) => {
+                  var stellenAnzeige = item.node
+
+                  if (i < 3) {
+                    return (
+                      <div
+                        className="col-12 col-md-6 padding-sm-top-bottom"
+                        key={'column-' + id + '-' + i}
+                      >
+                        <CarrerOfferPreview
+                          key={'CarrerOfferPreview-' + id + '-' + i}
+                          title={stellenAnzeige.titel}
+                          employmentType={stellenAnzeige.art}
+                          expiration={stellenAnzeige.befristung}
+                          locationEmployee={stellenAnzeige.ort}
+                          anzeigeId={stellenAnzeige.url}
+                          styleClass={boxStyle}
+                          {...this.props}
+                        />
+                      </div>
+                    )
+                  }
+                })}
+              <div
+                className="collapse"
+                id={'stellenmarkt-box-' + id + '-collapse-area'}
+              >
+                {bucket.length > 0 &&
+                  bucket.map((item, i) => {
                     var stellenAnzeige = item.node
 
-                    if (i < 3) {
+                    if (i >= 3) {
                       return (
                         <div
                           className="col-12 col-md-6 padding-sm-top-bottom"
@@ -141,38 +171,7 @@ class JobContainerBox extends React.Component {
                         </div>
                       )
                     }
-                  })
-                : null}
-
-              <div
-                className="collapse"
-                id={'stellenmarkt-box-' + id + '-collapse-area'}
-              >
-                {bucket.length > 0
-                  ? bucket.map((item, i) => {
-                      var stellenAnzeige = item.node
-
-                      if (i >= 3) {
-                        return (
-                          <div
-                            className="col-12 col-md-6 padding-sm-top-bottom"
-                            key={'column-' + id + '-' + i}
-                          >
-                            <CarrerOfferPreview
-                              key={'CarrerOfferPreview-' + id + '-' + i}
-                              title={stellenAnzeige.titel}
-                              employmentType={stellenAnzeige.art}
-                              expiration={stellenAnzeige.befristung}
-                              locationEmployee={stellenAnzeige.ort}
-                              anzeigeId={stellenAnzeige.url}
-                              styleClass={boxStyle}
-                              {...this.props}
-                            />
-                          </div>
-                        )
-                      }
-                    })
-                  : null}
+                  })}
               </div>
               <div className="col-12 text-center">
                 <button
@@ -204,11 +203,14 @@ class JobContainerBox extends React.Component {
                 ? bucket.map((item, i) => {
                     var stellenAnzeige = item.node
 
-                    var columnWidth = bucket.length === 1 ? "col-md-12" : "col-md-6";
+                    var columnWidth =
+                      bucket.length === 1 ? 'col-md-12' : 'col-md-6'
 
                     return (
                       <div
-                        className={"col-12 " + columnWidth + " padding-sm-top-bottom"}
+                        className={
+                          'col-12 ' + columnWidth + ' padding-sm-top-bottom'
+                        }
                         key={'column-' + id + '-' + i}
                       >
                         <CarrerOfferPreview
