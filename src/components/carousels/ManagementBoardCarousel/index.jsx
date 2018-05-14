@@ -31,30 +31,22 @@ class ManagementBoardCarousel extends React.Component {
                   className={'carousel-item' + (i == 0 ? ' active' : '')}
                   key={'carousel-item-t-' + i}
                 >
-                  <div key={'carousel-wrapper-t-' + i}>
+                  <div>
                     <Img
-                      key={'carousel-inner-image' + i}
                       sizes={mbImagesSharp[mitglied.bild.id + '.jpg'].sizes}
                       className="margin-20-bottom"
                     />
-                    <div
-                      key={'carousel-control-wraper-t-' + i}
-                      className="d-block d-md-none margin-20-bottom"
-                    >
+                    <div className="d-block d-md-none margin-20-bottom">
                       <CarouselControlPrevNext
-                        key={'carousel-controll-t-' + i}
                         sliderId={'carousel-' + carouselId}
                         version={2}
                       />
                     </div>
-                    <p key={'carousel-inner-title' + i} className="h5">
+                    <p className="h5">
                       {mitglied.titel} <br />
                     </p>
-                    <p key={'carousel-inner-subtitle' + i} className="h6">
-                      {mitglied.untertitel}
-                    </p>
+                    <p className="h6">{mitglied.untertitel}</p>
                     <ContentfulMarkdownText
-                      key={'carousel-inner-text' + i}
                       text={mitglied.beschreibung.beschreibung}
                     />
                   </div>
