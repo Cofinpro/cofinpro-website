@@ -29,7 +29,7 @@ class ManagementBoardCarousel extends React.Component {
               return (
                 <div
                   className={'carousel-item' + (i == 0 ? ' active' : '')}
-                  key={'carousel-item-t-' + i}
+                  key={'carousel-item-t-' + mitglied.id}
                 >
                   <div>
                     <Img
