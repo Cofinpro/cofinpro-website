@@ -3,9 +3,8 @@ const path = require(`path`)
 const slash = require(`slash`)
 var async = require('async')
 
-exports.create = function (graphql, createPage, callback) {
-
-  console.log("start graphql query: allContentfulSeiteJobsBewerbung.");
+exports.create = function(graphql, createPage, callback) {
+  console.log('start graphql query: allContentfulSeiteJobsBewerbung.')
 
   graphql(
     `
@@ -26,14 +25,18 @@ exports.create = function (graphql, createPage, callback) {
               zweitesBildAnsprechpartnerBewerbungen {
                 id
               }
+              gptw {
+                bild {
+                  id
+                }
+              }
             }
           }
         }
       }
     `
   ).then(result => {
-
-    console.log("end graphql query: allContentfulSeiteJobsBewerbung.");
+    console.log('end graphql query: allContentfulSeiteJobsBewerbung.')
 
     const template = path.resolve(`./src/templates/jobs-bewerbung/index.jsx`)
 
@@ -51,13 +54,13 @@ exports.create = function (graphql, createPage, callback) {
             '/' + edge.node.erstesBildAnsprechpartnerBewerbungen.id + '/',
           ansprechpartnerZweiBildId:
             '/' + edge.node.zweitesBildAnsprechpartnerBewerbungen.id + '/',
+          gptwId: '/' + edge.node.gptw.bild.id + '/',
         },
       })
 
       console.log(`created page /jobs-bewerbung`)
     })
 
-    callback(null);
-
+    callback(null)
   })
 }

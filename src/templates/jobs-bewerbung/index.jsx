@@ -9,6 +9,7 @@ import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarouse
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 
+import SubtitleTitelImageTextLayout from '../../components/layouts/SubtitleTitelImageTextLayout'
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import FourStepsLayout from '../../components/layouts/FourStepsLayout'
 import SubtitleTitelTwoImagesTextLayout from '../../components/layouts/SubtitleTitelTwoImagesTextLayout'
@@ -66,6 +67,20 @@ class JobsBewerbungTemplate extends React.Component {
             {...this.props}
           />
         </div>
+
+        <SubtitleTitelImageTextLayout
+          content={{
+            subtitle: graphQlResult.gptw.untertitel,
+            title: graphQlResult.gptw.titel,
+            image: this.props.data.gptwSharp,
+            text: graphQlResult.gptw.beschreibung.beschreibung,
+          }}
+          style={{
+            container: 'margin-120-top',
+            rowOne: 'justify-content-end',
+            rowTwo: 'justify-content-end margin-20-top',
+          }}
+        />
 
         <SubtitleTitelTwoImagesTextLayout
           content={{
@@ -165,6 +180,7 @@ export const pageQuery = graphql`
     $titelbildKleinId: String!
     $ansprechpartnerEinsBildId: String!
     $ansprechpartnerZweiBildId: String!
+    $gptwId: String!
   ) {
     contentfulSeiteJobsBewerbung(id: { eq: $id }) {
       id
@@ -234,6 +250,22 @@ export const pageQuery = graphql`
       }
       beschreibungAnsprechpartnerBewerbungen {
         beschreibungAnsprechpartnerBewerbungen
+      }
+      gptw {
+        untertitel
+        titel
+        bild {
+          id
+          title
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
+        beschreibung {
+          beschreibung
+        }
       }
       bewerbungsprozessUntertitel
       bewerbungsprozessTitel
@@ -381,6 +413,11 @@ export const pageQuery = graphql`
       id: { regex: $ansprechpartnerZweiBildId }
     ) {
       sizes(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    gptwSharp: imageSharp(id: { regex: $gptwId }) {
+      sizes(maxWidth: 1600, quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }
