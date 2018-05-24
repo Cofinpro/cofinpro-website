@@ -5,7 +5,6 @@ import get from 'lodash/get'
 import './style.scss'
 
 class SiteFooter extends React.Component {
-
   render() {
     const data = this.props.data
 
@@ -182,6 +181,36 @@ class SiteFooter extends React.Component {
                         >
                           KONTAKT
                         </Link>
+                      </li>
+                      <li
+                        className={
+                          location.pathname === '/datenschutz'
+                            ? 'nav-item active'
+                            : 'nav-item'
+                        }
+                      >
+                        <a
+                          href="https://cofinpro.de/datenschutz/"
+                          target="_blank"
+                          className="nav-link text-white"
+                        >
+                          DATENSCHUTZ
+                        </a>
+                      </li>
+                      <li
+                        className={
+                          location.pathname === '/agb'
+                            ? 'nav-item active'
+                            : 'nav-item'
+                        }
+                      >
+                        <a
+                          href="https://cofinpro.de/agb/"
+                          target="_blank"
+                          className="nav-link text-white"
+                        >
+                          AGB
+                        </a>
                       </li>
                       <li
                         className={
