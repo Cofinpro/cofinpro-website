@@ -30,9 +30,27 @@ class SiteFooter extends React.Component {
           <div className="container margin-20-top main">
             <div className="row">
               <div className="col-12 text-center">
-                <Link to={pathPrefix + '/impressum'} className="text-dark">
+                <Link
+                  to={pathPrefix + '/impressum'}
+                  className="text-dark link-with-space"
+                >
                   IMPRESSUM
                 </Link>
+                <a
+                  href="https://cofinpro.de/datenschutz/"
+                  target="_blank"
+                  className="text-dark link-with-space"
+                >
+                  DATENSCHUTZ
+                </a>
+
+                <a
+                  href="https://cofinpro.de/agb/"
+                  target="_blank"
+                  className="text-dark link-with-space"
+                >
+                  AGB
+                </a>
               </div>
             </div>
           </div>
