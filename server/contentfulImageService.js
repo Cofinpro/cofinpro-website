@@ -91,7 +91,7 @@ exports.refreshImages = function(graphql, callback) {
               setTimeout(function() {
                 callback(null)
                 console.log('timeout completed')
-              }, 3000)
+              }, 5000)
             }
           })
         } else {
@@ -101,7 +101,7 @@ exports.refreshImages = function(graphql, callback) {
             setTimeout(function() {
               callback(null)
               console.log('timeout completed')
-            }, 3000)
+            }, 5000)
           }
         }
       })
