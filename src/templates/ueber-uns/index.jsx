@@ -43,8 +43,6 @@ class UeberUnsTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    console.log(this.props.data.imageTitelBildSharp)
-
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
