@@ -92,7 +92,7 @@ class JobsBewerbungTemplate extends React.Component {
                 .beschreibungAnsprechpartnerBewerbungen,
           }}
           style={{
-            container: 'margin-120-top',
+            container: 'margin-80-top',
           }}
         />
 
