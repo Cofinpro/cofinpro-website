@@ -28,3 +28,7 @@ Die Redirects befinden sich in der Datei _redirects unter /static.
 Bilder finden sich unter static/img.
 
 Im img Ordner selbst liegen die statischen Bilder der Webseite. Der Ordner contentful beinhaltet alle Bilder die aus dem CMS stammen. Diese wurden beim bauen der Seite per "gatsby  build" heruntergeladen und in diesem Ordner gespeichert. 
+
+## CSS Styling Konventions
+
+Wir arbeiten nach BEM: http://getbem.com/naming/
