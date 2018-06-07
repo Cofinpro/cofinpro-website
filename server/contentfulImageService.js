@@ -52,37 +52,50 @@ exports.refreshImages = function(graphql, callback) {
       var itemsProcessed = 0
 
       _.each(result.data.allContentfulAsset.edges, edge => {
-        var fileName = edge.node.file.fileName
-        var newFileName =
-          edge.node.id +
-          fileName.substring(fileName.lastIndexOf('.'), fileName.length)
+        if (edge.node.file !== undefined && edge.node.file !== null) {
+          var fileName = edge.node.file.fileName
+          var newFileName =
+            edge.node.id +
+            fileName.substring(fileName.lastIndexOf('.'), fileName.length)
 
-        var path = ''
+          var path = ''
 
-        console.log('new file name:' + newFileName)
+          console.log('new file name:' + newFileName)
 
-        if (isImage(newFileName)) {
-          path = './static/img/contentful/' + newFileName
-        } else if (isPdf(newFileName)) {
-          path = './static/pdf/contentful/' + newFileName
-        }
+          if (isImage(newFileName)) {
+            path = './static/img/contentful/' + newFileName
+          } else if (isPdf(newFileName)) {
+            path = './static/pdf/contentful/' + newFileName
+          }
 
-        console.log('checking if asset exists under:' + path)
+          console.log('checking if asset exists under:' + path)
 
-        if (!existsAsset(path)) {
-          console.log('asset for id:' + edge.node.id + ' not found.')
+          if (path !== '' && !existsAsset(path)) {
+            console.log('asset for id:' + edge.node.id + ' not found.')
 
-          var url = 'http:' + edge.node.file.url
+            var url = 'http:' + edge.node.file.url
 
-          console.log('getting file from url:' + url)
-          console.log('storing file under path:' + path)
+            console.log('getting file from url:' + url)
+            console.log('storing file under path:' + path)
 
-          axios({
-            method: 'get',
-            url: url,
-            responseType: 'stream',
-          }).then(function(response) {
-            response.data.pipe(fs.createWriteStream(path))
+            axios({
+              method: 'get',
+              url: url,
+              responseType: 'stream',
+            }).then(function(response) {
+              response.data.pipe(fs.createWriteStream(path))
+              itemsProcessed++
+
+              if (
+                itemsProcessed === result.data.allContentfulAsset.edges.length
+              ) {
+                setTimeout(function() {
+                  callback(null)
+                  console.log('timeout completed')
+                }, 5000)
+              }
+            })
+          } else {
             itemsProcessed++
 
             if (
@@ -93,15 +106,6 @@ exports.refreshImages = function(graphql, callback) {
                 console.log('timeout completed')
               }, 5000)
             }
-          })
-        } else {
-          itemsProcessed++
-
-          if (itemsProcessed === result.data.allContentfulAsset.edges.length) {
-            setTimeout(function() {
-              callback(null)
-              console.log('timeout completed')
-            }, 5000)
           }
         }
       })
