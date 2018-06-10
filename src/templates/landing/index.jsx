@@ -2,14 +2,13 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
-import PubSub from 'pubsub-js'
 
 import FourFactsLayout from '../../components/layouts/FourFactsLayout'
 import TestimonialLayout from '../../components/layouts/TestimonialLayout'
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import NewsPreview from '../../components/NewsPreview'
+import NewsPreviewNewest from '../../components/NewsPreviewNewest'
 import ContentfulImage from '../../components/images/ContentfulImage'
 import SocialMediaCarousel from '../../components/carousels/SocialMediaCarousel'
 import CarrerOfferBox from '../../components/CarrerOfferBox'
@@ -104,54 +103,14 @@ class LandingTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top">
-          <div className="row">
-            <div className="col-12 col-md-10 mx-auto">
-              <h2 className="h6">{graphQlResult.newsUntertitel}</h2>
-              <h3 className="h2">{graphQlResult.newsTitel}</h3>
-              <p className="margin-20-bottom d-block w-100 d-lg-none p-font-large-md">
-                {graphQlResult.newsBeschreibung.newsBeschreibung}
-              </p>
-              <p className="margin-20-bottom d-none d-lg-block w-75 p-font-large-md">
-                {graphQlResult.newsBeschreibung.newsBeschreibung}
-              </p>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12 col-md-1" />
-            {topNews.length > 0
-              ? topNews.map((news, i) => {
-                  return (
-                    <div className="col-12 col-md-5" key={'news-column-' + i}>
-                      <NewsPreview
-                        key={'news-NewsPreview-' + i}
-                        createdAt={news.node.datumFuerDieAnzeige}
-                        title={news.node.ueberschrift}
-                        description={
-                          news.node.kurzeBeschreibung.kurzeBeschreibung
-                        }
-                        newsId={news.node.id}
-                        imageFile={news.node.titelbild}
-                        imageFileSharp={news.node.titelbildSharp}
-                        url={news.node.url}
-                        {...this.props}
-                      />
-                    </div>
-                  )
-                })
-              : null}
-            <div className="col-12 col-md-1" />
-          </div>
-          <div className="row margin-40-top">
-            <div className="col-12 col-md-10 mx-auto">
-              <LinkButton
-                text="ZUR PINNWAND"
-                path="/pinnwand"
-                {...this.props}
-              />
-            </div>
-          </div>
-        </div>
+        <NewsPreviewNewest
+          content={{
+            untertitel: graphQlResult.newsUntertitel,
+            titel: graphQlResult.newsTitel,
+            beschreibung: graphQlResult.newsBeschreibung.newsBeschreibung,
+            news: topNews,
+          }}
+        />
 
         <div className="container margin-120-top">
           <div className="row">

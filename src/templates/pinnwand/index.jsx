@@ -2,14 +2,25 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import PubSub from 'pubsub-js'
 
 import NewsPreview from '../../components/NewsPreview'
 import HtmlHeader from '../../components/HtmlHeader'
 import ToggleButton from '../../components/buttons/ToggleButton'
 
+import StorageHelper from '../../utils/storageHelper'
+
 import './style.scss'
 
 class PinnwandTemplate extends React.Component {
+  constructor(props) {
+    super(props)
+    this.threshold = 8
+    this.state = {
+      perspektive: StorageHelper.getFromSessionStorage('perspective'),
+    }
+  }
+
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -18,9 +29,23 @@ class PinnwandTemplate extends React.Component {
     }
   }
 
-  constructor(props) {
-    super(props)
-    this.threshold = 8
+  componentWillMount() {
+    this.token = PubSub.subscribe(
+      'perspectiveChange',
+      this.subscriber.bind(this)
+    )
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.token)
+  }
+
+  subscriber(msg, data) {
+    if (this.state.perspektive !== data) {
+      this.setState({
+        perspektive: data,
+      })
+    }
   }
 
   render() {
