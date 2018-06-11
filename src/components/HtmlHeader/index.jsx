@@ -40,11 +40,19 @@ class HtmlHeader extends React.Component {
             },
             {
               property: 'Description',
-              content: `${dataFromCms.description.description}`,
+              content: `${
+                dataFromCms.description !== null
+                  ? dataFromCms.description.description
+                  : null
+              }`,
             },
             {
               property: 'og:description',
-              content: `${dataFromCms.description.description}`,
+              content: `${
+                dataFromCms.description !== null
+                  ? dataFromCms.description.description
+                  : null
+              }`,
             },
           ]}
         />
