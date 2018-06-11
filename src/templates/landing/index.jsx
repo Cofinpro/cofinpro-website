@@ -43,7 +43,7 @@ class LandingTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const topNews = this.props.pathContext.topNews
+    const cofinproNews = this.props.pathContext.cofinproNews
 
     return (
       <div>
@@ -108,7 +108,7 @@ class LandingTemplate extends React.Component {
             untertitel: graphQlResult.newsUntertitel,
             titel: graphQlResult.newsTitel,
             beschreibung: graphQlResult.newsBeschreibung.newsBeschreibung,
-            news: topNews,
+            news: cofinproNews,
           }}
         />
 

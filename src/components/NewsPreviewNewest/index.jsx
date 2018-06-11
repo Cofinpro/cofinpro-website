@@ -40,6 +40,32 @@ class NewsPreviewNewest extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    var filteredNews = []
+
+    for (var i = 0; i < content.news.length; i++) {
+      var perspektiven = []
+
+      for (
+        var j = 0;
+        j < content.news[i].node.zugeordnetePerspektivenKompetenz.length;
+        ++j
+      ) {
+        perspektiven.push(
+          content.news[i].node.zugeordnetePerspektivenKompetenz[j].name
+        )
+      }
+
+      if (
+        this.state.perspektive === null ||
+        this.state.perspektive.trim().length < 1 ||
+        perspektiven.indexOf(this.state.perspektive) > -1
+      ) {
+        if (filteredNews.length < 2) {
+          filteredNews.push(content.news[i])
+        }
+      }
+    }
+
     return (
       <div className="container margin-120-top">
         <div className="row">
@@ -56,8 +82,8 @@ class NewsPreviewNewest extends React.Component {
         </div>
         <div className="row">
           <div className="col-12 col-md-1" />
-          {content.news.length > 0
-            ? content.news.map((news, i) => {
+          {filteredNews.length > 0
+            ? filteredNews.map((news, i) => {
                 return (
                   <div className="col-12 col-md-5" key={'news-column-' + i}>
                     <NewsPreview

@@ -186,6 +186,9 @@ function getNews(callback) {
                 id
               }
               url
+              zugeordnetePerspektivenKompetenz  {
+                name
+              }
               titel
               titelbild {
                 id

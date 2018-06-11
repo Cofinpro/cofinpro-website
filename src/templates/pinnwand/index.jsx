@@ -62,6 +62,30 @@ class PinnwandTemplate extends React.Component {
       oldNewsExists = true
     }
 
+    var filteredNews = []
+
+    for (var i = 0; i < allNews.length; i++) {
+      var perspektiven = []
+
+      for (
+        var j = 0;
+        j < allNews[i].node.zugeordnetePerspektivenKompetenz.length;
+        ++j
+      ) {
+        perspektiven.push(
+          allNews[i].node.zugeordnetePerspektivenKompetenz[j].name
+        )
+      }
+
+      if (
+        this.state.perspektive === null ||
+        this.state.perspektive.trim().length < 1 ||
+        perspektiven.indexOf(this.state.perspektive) > -1
+      ) {
+        filteredNews.push(allNews[i])
+      }
+    }
+
     function OldNews(props) {
       if (!props.oldNewsExists) {
         return null
@@ -141,8 +165,8 @@ class PinnwandTemplate extends React.Component {
           </div>
 
           <div className="row">
-            {allNews != null && allNews.length > 0
-              ? allNews.map((edge, i) => {
+            {filteredNews != null && filteredNews.length > 0
+              ? filteredNews.map((edge, i) => {
                   if (i < threshold) {
                     return (
                       <div
@@ -174,7 +198,7 @@ class PinnwandTemplate extends React.Component {
 
         <OldNews
           oldNewsExists={oldNewsExists}
-          allNews={allNews}
+          allNews={filteredNews}
           {...this.props}
         />
 

@@ -69,14 +69,6 @@ exports.create = function(graphql, createPage, createRedirect, news, callback) {
       toPath: `/`,
     })
 
-    var topNews = []
-    var numberOfTopsNews = 2
-
-    for (var i = 0; i < news.length; ++i) {
-      if (i < numberOfTopsNews) {
-        topNews.push(news[i])
-      }
-    }
     var itemsProcessed = 0
 
     var postBilder = []
@@ -123,7 +115,7 @@ exports.create = function(graphql, createPage, createRedirect, news, callback) {
             component: slash(landingTemplate),
             context: {
               id: edge.node.id,
-              topNews: topNews,
+              cofinproNews: news,
               titelBildDesktop: results.titelBildDesktop,
               titelBildMobile: results.titelBildMobile,
               socialMediaPostBilder: results.socialMediaPostBilder,
