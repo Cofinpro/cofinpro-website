@@ -91,7 +91,9 @@ class NewsPreviewNewest extends React.Component {
                       createdAt={news.node.datumFuerDieAnzeige}
                       title={news.node.ueberschrift}
                       description={
-                        news.node.kurzeBeschreibung.kurzeBeschreibung
+                        news.node.kurzeBeschreibung !== null
+                          ? news.node.kurzeBeschreibung.kurzeBeschreibung
+                          : null
                       }
                       newsId={news.node.id}
                       imageFile={news.node.titelbild}

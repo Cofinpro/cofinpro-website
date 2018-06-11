@@ -107,7 +107,9 @@ class PinnwandTemplate extends React.Component {
                             createdAt={edge.node.datumFuerDieAnzeige}
                             title={edge.node.ueberschrift}
                             description={
-                              edge.node.kurzeBeschreibung.kurzeBeschreibung
+                              edge.node.kurzeBeschreibung !== null
+                                ? edge.node.kurzeBeschreibung.kurzeBeschreibung
+                                : null
                             }
                             newsId={edge.node.id}
                             imageFile={edge.node.titelbild}
@@ -178,7 +180,9 @@ class PinnwandTemplate extends React.Component {
                           createdAt={edge.node.datumFuerDieAnzeige}
                           title={edge.node.ueberschrift}
                           description={
-                            edge.node.kurzeBeschreibung.kurzeBeschreibung
+                            edge.node.kurzeBeschreibung !== null
+                              ? edge.node.kurzeBeschreibung.kurzeBeschreibung
+                              : null
                           }
                           newsId={edge.node.id}
                           imageFile={edge.node.titelbild}
