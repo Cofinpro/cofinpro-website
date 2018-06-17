@@ -135,6 +135,10 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
+          <script
+            type="application/ld+json"
+            src={pathPrefix + '/structured_data.json'}
+          />
           <script src={pathPrefix + '/js/jquery-3.2.1.min.js'} />
           <script src={pathPrefix + '/js/popper.min.js'} />
           <script src={pathPrefix + '/js/bootstrap.min.js'} />
