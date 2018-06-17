@@ -135,48 +135,6 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script type="application/ld+json">
-            {{
-              '@context': 'http://schema.org',
-              '@type': 'Organization',
-              name: 'Cofinpro',
-              legalName: 'Cofinpro AG',
-              leiCode: 'HRB 10 29 30 Amtsgericht Frankfurt am Main',
-              url: 'https://cofinpro.de',
-              email: 'welcome@cofinpro.de',
-              telephone: '+49 (0) 69-2 99 20 87 60',
-              faxNumber: '+49 (0) 69-2 99 20 87 61',
-              logo:
-                'https://cofinpro.de/wp-content/themes/cofinpro/assets/img/cofinpro-logo.jpg',
-              foundingDate: '2007',
-              taxID: 'DE 814 878 661',
-              awards: [
-                'FAIR Company 2018 - karriere.de',
-                'Kununu Fair Company',
-                'Kununu Open Company',
-                'Kununu Top Company',
-                'GREAT PLACE TO WORK 2018',
-                'Vielfalt Unternehmen 2017',
-              ],
-              address: {
-                '@type': 'PostalAddress',
-                streetAddress: 'Untermainkai 27-28',
-                addressLocality: 'Frankfurt am Main',
-                addressRegion: 'Hessen',
-                postalCode: '60329',
-                addressCountry: 'DE',
-              },
-              sameAs: [
-                'https://www.facebook.com/Cofinpro/',
-                'https://www.instagram.com/cofinpro_ag/',
-                'https://twitter.com/cofinpro_ag',
-                'https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ',
-                'https://www.linkedin.com/company/846504/',
-                'https://www.xing.com/companies/cofinproag',
-                'https://medium.com/cofinpro',
-              ],
-            }}
-          </script>
           <script src={pathPrefix + '/js/jquery-3.2.1.min.js'} />
           <script src={pathPrefix + '/js/popper.min.js'} />
           <script src={pathPrefix + '/js/bootstrap.min.js'} />
