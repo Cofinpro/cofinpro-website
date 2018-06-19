@@ -58,4 +58,10 @@ Anschließend ist die Webseite unter localhost:8000 aufrufbar.
 * **package.json** - Konfigurationsdatei für NPM. Erklärung: All npm packages contain a file, usually in the project root, called package.json - this file holds various metadata relevant to the project. This file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both npm and to the end users of the package. The package.json file is normally located at the root directory of a Node.js project. [Doku](https://docs.npmjs.com/files/package.json)
 * **runtime.txt** - Konfigurationsdatei für Netlify. Gibt die Python Version an die zum bauen der Seite verwendet werden soll. [Doku Build Settings Netlify](https://www.netlify.com/docs/build-settings/)
 
+## Performance Optimierungen
+
+### Controlling Font Performance with font-display
+
+https://developers.google.com/web/updates/2016/02/font-display
+
 
