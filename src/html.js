@@ -23,6 +23,42 @@ export default class HTML extends React.Component {
       )
     }
 
+    let apercuFontFile = require('!raw-loader!../static/css/apercu-regular.css')
+
+    let apercuFontCss = (
+      <style
+        id="gatsby-apercu-font-css"
+        dangerouslySetInnerHTML={{ __html: apercuFontFile }}
+      />
+    )
+
+    let botuiThemeDefaultFile = require('!raw-loader!../static/css/botui-theme-default.css')
+
+    let abotuiThemeDefaultCss = (
+      <style
+        id="gatsby-apercu-font-css"
+        dangerouslySetInnerHTML={{ __html: botuiThemeDefaultFile }}
+      />
+    )
+
+    let fontAwesomeFile = require('!raw-loader!../static/css/font-awesome.min.css')
+
+    let fontAwesomeCss = (
+      <style
+        id="gatsby-apercu-font-css"
+        dangerouslySetInnerHTML={{ __html: fontAwesomeFile }}
+      />
+    )
+
+    let otherCssFile = require('!raw-loader!../static/css/other.css')
+
+    let OtherCssCss = (
+      <style
+        id="gatsby-apercu-font-css"
+        dangerouslySetInnerHTML={{ __html: otherCssFile }}
+      />
+    )
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -36,25 +72,11 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          {css}
           <link
             href={pathPrefix + '/favicon/favicon.ico'}
             rel="icon"
             type="image/x-icon"
           />
-          <link
-            rel="stylesheet"
-            href={pathPrefix + '/css/font-awesome.min.css'}
-          />
-          <link
-            rel="stylesheet"
-            href={pathPrefix + '/css/apercu-regular.css'}
-          />
-          <link
-            rel="stylesheet"
-            href={pathPrefix + '/css/botui-theme-default.css'}
-          />
-          <link rel="stylesheet" href={pathPrefix + '/css/other.css'} />
           <link
             rel="apple-touch-icon"
             sizes="57x57"
@@ -128,6 +150,11 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
+          {css}
+          {apercuFontCss}
+          {abotuiThemeDefaultCss}
+          {fontAwesomeCss}
+          {OtherCssCss}
         </head>
         <body>
           <div
