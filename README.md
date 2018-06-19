@@ -23,7 +23,7 @@ Die Redirects befinden sich in der Datei _redirects unter /static.
 
 ## Was liegt wo im Projekt?
 
-# Bilder
+### Bilder
 
 Bilder finden sich unter static/img.
 
@@ -33,7 +33,7 @@ Im img Ordner selbst liegen die statischen Bilder der Webseite. Der Ordner conte
 
 Wir arbeiten nach BEM: http://getbem.com/naming/
 
-## Starten eines Dev Servers zum testen/bauen
+## Wie starte ich einen Dev Server zum testen bzw. Seite anschauen
 
 In die Console folgenden Befehl eingeben: 
 
