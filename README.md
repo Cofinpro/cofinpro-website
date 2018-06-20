@@ -60,6 +60,10 @@ Anschließend ist die Webseite unter localhost:8000 aufrufbar.
 
 ## Performance Optimierungen
 
+### Inline CSS
+
+Jede CSS Datei wird inline eingebunden. 
+
 ### Controlling Font Performance with font-display
 
 https://developers.google.com/web/updates/2016/02/font-display
