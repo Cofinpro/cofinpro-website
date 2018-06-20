@@ -40,8 +40,6 @@ class GehaltBeteiligungTemplate extends React.Component {
       }
     }
 
-    console.log(this.props.data)
-
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
