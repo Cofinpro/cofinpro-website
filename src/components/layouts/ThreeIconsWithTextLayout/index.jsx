@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ContentfulImage from '../../images/ContentfulImage'
+import { ImageWrapper, SOURCE_TYP_SHARP } from '../../images/ImageWrapper'
 
 class ThreeIconsWithTextLayout extends React.Component {
   render() {
@@ -25,34 +25,40 @@ class ThreeIconsWithTextLayout extends React.Component {
         </div>
         <div className="row justify-content-center">
           <div className="col-6 col-md-4">
-            <ContentfulImage
-              imageFile={iconLeft}
+            <ImageWrapper
+              source={iconLeft}
+              sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-block d-md-none w-100 mx-auto"
             />
-            <ContentfulImage
-              imageFile={iconLeft}
+            <ImageWrapper
+              source={iconLeft}
+              sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
             <p className="padding-sm-top p-font-large-md">{textLeft}</p>
           </div>
           <div className="col-6 col-md-4">
-            <ContentfulImage
-              imageFile={iconMiddle}
+            <ImageWrapper
+              source={iconMiddle}
+              sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-block d-md-none w-100 mx-auto"
             />
-            <ContentfulImage
-              imageFile={iconMiddle}
+            <ImageWrapper
+              source={iconMiddle}
+              sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
             <p className="padding-sm-top p-font-large-md">{textMiddle}</p>
           </div>
           <div className="col-6 col-md-4">
-            <ContentfulImage
-              imageFile={iconRight}
+            <ImageWrapper
+              source={iconRight}
+              sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-block d-md-none w-100 mx-auto"
             />
-            <ContentfulImage
-              imageFile={iconRight}
+            <ImageWrapper
+              source={iconRight}
+              sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto"
             />
             <p className="padding-sm-top p-font-large-md">{textRight}</p>
