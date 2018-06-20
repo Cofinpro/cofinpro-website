@@ -1,6 +1,15 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+let stylesStr
+if (process.env.NODE_ENV === 'production') {
+  try {
+    stylesStr = require('!raw-loader!../public/styles.css')
+  } catch (e) {
+    console.log(e)
+  }
+}
+
 export default class HTML extends React.Component {
   renderFontStylesheet() {
     let apercuFontFile = require('!raw-loader!../static/css/apercu-regular.css')
@@ -52,6 +61,15 @@ export default class HTML extends React.Component {
 
   render() {
     const head = Helmet.rewind()
+    let css
+    if (process.env.NODE_ENV === 'production') {
+      css = (
+        <style
+          id="gatsby-inlined-css"
+          dangerouslySetInnerHTML={{ __html: stylesStr }}
+        />
+      )
+    }
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -144,6 +162,7 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
+          {css}
           {this.renderFontStylesheet()}
           {this.renderBotUiThemeCss()}
           {this.renderFontAwesomeCss()}
