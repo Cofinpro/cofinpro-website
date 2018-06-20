@@ -108,6 +108,7 @@ class SiteFooter extends React.Component {
                     >
                       <img
                         src={pathPrefix + '/img/icons/facebook_white.png'}
+                        alt="cofinpro facebook profile"
                         className="social-media-icon-carousel"
                       />
                     </a>
@@ -120,6 +121,7 @@ class SiteFooter extends React.Component {
                     >
                       <img
                         src={pathPrefix + '/img/icons/instagram_white.png'}
+                        alt="cofinpro instagram profile"
                         className="social-media-icon-carousel"
                       />
                     </a>
@@ -132,6 +134,7 @@ class SiteFooter extends React.Component {
                     >
                       <img
                         src={pathPrefix + '/img/icons/twitter_white.png'}
+                        alt="cofinpro twitter profile"
                         className="social-media-icon-carousel"
                       />
                     </a>
@@ -144,6 +147,7 @@ class SiteFooter extends React.Component {
                     >
                       <img
                         src={pathPrefix + '/img/icons/youtube_white.png'}
+                        alt="cofinpro youtube profile"
                         className="social-media-icon-carousel"
                       />
                     </a>
@@ -156,6 +160,7 @@ class SiteFooter extends React.Component {
                     >
                       <img
                         src={pathPrefix + '/img/icons/linkedin_white.png'}
+                        alt="cofinpro linkedin profile"
                         className="social-media-icon-carousel"
                       />
                     </a>
@@ -168,6 +173,7 @@ class SiteFooter extends React.Component {
                     >
                       <img
                         src={pathPrefix + '/img/icons/xing_white.png'}
+                        alt="cofinpro xing profile"
                         className="social-media-icon-carousel"
                       />
                     </a>
