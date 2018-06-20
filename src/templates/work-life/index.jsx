@@ -131,6 +131,7 @@ class WorkLifeTemplate extends React.Component {
                   <div className="embed-responsive embed-responsive-16by9 margin-20-bottom">
                     <iframe
                       className="embed-responsive-item"
+                      title="Adventsworkshop in Budapest"
                       src={graphQlResult.infoBoxRechtsVideo.replace(
                         '/watch?v=',
                         '/embed/'

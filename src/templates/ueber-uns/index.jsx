@@ -246,6 +246,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink1.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -265,6 +266,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink2.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -274,6 +276,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink3.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -286,6 +289,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink4.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />

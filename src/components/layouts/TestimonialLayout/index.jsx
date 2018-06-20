@@ -66,6 +66,7 @@ class TestimonialLayout extends React.Component {
         >
           <iframe
             className="embed-responsive-item"
+            title="Testimonial eines Mitarbeiters"
             src={videoUrl.replace('/watch?v=', '/embed/')}
             allowFullScreen
           />
