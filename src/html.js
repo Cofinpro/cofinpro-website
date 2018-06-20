@@ -1,28 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-let stylesStr
-if (process.env.NODE_ENV === 'production') {
-  try {
-    stylesStr = require('!raw-loader!../public/styles.css')
-  } catch (e) {
-    console.log(e)
-  }
-}
-
 export default class HTML extends React.Component {
-  render() {
-    const head = Helmet.rewind()
-    let css
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{ __html: stylesStr }}
-        />
-      )
-    }
-
+  renderFontStylesheet() {
     let apercuFontFile = require('!raw-loader!../static/css/apercu-regular.css')
 
     let apercuFontCss = (
@@ -31,7 +11,10 @@ export default class HTML extends React.Component {
         dangerouslySetInnerHTML={{ __html: apercuFontFile }}
       />
     )
+    return apercuFontCss
+  }
 
+  renderBotUiThemeCss() {
     let botuiThemeDefaultFile = require('!raw-loader!../static/css/botui-theme-default.css')
 
     let abotuiThemeDefaultCss = (
@@ -40,7 +23,10 @@ export default class HTML extends React.Component {
         dangerouslySetInnerHTML={{ __html: botuiThemeDefaultFile }}
       />
     )
+    return abotuiThemeDefaultCss
+  }
 
+  renderFontAwesomeCss() {
     let fontAwesomeFile = require('!raw-loader!../static/css/font-awesome.min.css')
 
     let fontAwesomeCss = (
@@ -49,15 +35,23 @@ export default class HTML extends React.Component {
         dangerouslySetInnerHTML={{ __html: fontAwesomeFile }}
       />
     )
+    return fontAwesomeCss
+  }
 
+  renderOtherCss() {
     let otherCssFile = require('!raw-loader!../static/css/other.css')
 
-    let OtherCssCss = (
+    let otherCssCss = (
       <style
         id="gatsby-other-css"
         dangerouslySetInnerHTML={{ __html: otherCssFile }}
       />
     )
+    return otherCssCss
+  }
+
+  render() {
+    const head = Helmet.rewind()
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -150,11 +144,10 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
-          {css}
-          {apercuFontCss}
-          {abotuiThemeDefaultCss}
-          {fontAwesomeCss}
-          {OtherCssCss}
+          {this.renderFontStylesheet()}
+          {this.renderBotUiThemeCss()}
+          {this.renderFontAwesomeCss()}
+          {this.renderOtherCss()}
         </head>
         <body>
           <div
