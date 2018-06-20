@@ -111,8 +111,8 @@ class CarrerOfferBox extends React.Component {
       return (
         <a
           className="text-dark d-block padding-sm-bottom"
-          rel="noopener"
           target="_blank"
+          rel="noopener"
           href="https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
         >
           <p className="no-margin-bottom text-left padding-sm-bottom">
