@@ -46,7 +46,11 @@ class SocialMediaCarousel extends React.Component {
                     }
                     key={'carousel-item-' + i + '-' + carouselId}
                   >
-                    <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank">
+                    <a
+                      href={mediaPost.urlDesPosts.urlDesPosts}
+                      target="_blank"
+                      rel="noopener"
+                    >
                       <Img
                         sizes={imageSharp.sizes}
                         key={
