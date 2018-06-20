@@ -183,6 +183,7 @@ class LandingTemplate extends React.Component {
               >
                 <img
                   src={pathPrefix + '/img/icons/facebook.png'}
+                  alt="cofinpro facebook profile"
                   className="social-media-icon-carousel"
                 />
               </a>
@@ -194,6 +195,7 @@ class LandingTemplate extends React.Component {
               >
                 <img
                   src={pathPrefix + '/img/icons/instagram.png'}
+                  alt="cofinpro instagram profile"
                   className="social-media-icon-carousel"
                 />
               </a>
@@ -205,6 +207,7 @@ class LandingTemplate extends React.Component {
               >
                 <img
                   src={pathPrefix + '/img/icons/twitter.png'}
+                  alt="cofinpro twitter profile"
                   className="social-media-icon-carousel"
                 />
               </a>
@@ -216,6 +219,7 @@ class LandingTemplate extends React.Component {
               >
                 <img
                   src={pathPrefix + '/img/icons/youtube.png'}
+                  alt="cofinpro youtube profile"
                   className="social-media-icon-carousel"
                 />
               </a>
@@ -227,6 +231,7 @@ class LandingTemplate extends React.Component {
               >
                 <img
                   src={pathPrefix + '/img/icons/linkedin.png'}
+                  alt="cofinpro linkedin profile"
                   className="social-media-icon-carousel"
                 />
               </a>
@@ -238,6 +243,7 @@ class LandingTemplate extends React.Component {
               >
                 <img
                   src={pathPrefix + '/img/icons/xing.png'}
+                  alt="cofinpro xing profile"
                   className="social-media-icon-carousel"
                 />
               </a>
