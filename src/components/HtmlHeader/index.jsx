@@ -35,11 +35,11 @@ class HtmlHeader extends React.Component {
               content: `${dataFromCms.title}`,
             },
             {
-              property: 'Keywords',
+              name: 'keywords',
               content: `${dataFromCms.keywords.keywords}`,
             },
             {
-              property: 'Description',
+              name: 'description',
               content: `${
                 dataFromCms.description !== null
                   ? dataFromCms.description.description
