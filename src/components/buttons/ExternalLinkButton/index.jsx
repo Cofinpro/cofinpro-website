@@ -8,7 +8,7 @@ class ExternalLinkButton extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-      <a className={'link-button ' + styleLink} href={_href} target={_target}>
+      <a className={'link-button ' + styleLink} href={_href} rel="noopener">
         <span className={'btn btn-outline-primary ' + styleSpan}>{text}</span>
       </a>
     )
