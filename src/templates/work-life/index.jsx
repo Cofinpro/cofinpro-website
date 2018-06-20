@@ -59,11 +59,11 @@ class WorkLifeTemplate extends React.Component {
 
         <ThreeIconsWithTextLayout
           title={graphQlResult.vorteile.titel}
-          iconLeft={graphQlResult.vorteile.bildVorteil1}
+          iconLeft={this.props.data.iconVorteilLinksSharp}
           textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
-          iconMiddle={graphQlResult.vorteile.bildVorteil2}
+          iconMiddle={this.props.data.iconVorteilMitteSharp}
           textMiddle={graphQlResult.vorteile.textVorteil2.textVorteil2}
-          iconRight={graphQlResult.vorteile.bildVorteil3}
+          iconRight={this.props.data.iconVorteilRechtsSharp}
           textRight={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
@@ -170,6 +170,9 @@ export const pageQuery = graphql`
     $id: String!
     $titelbildId: String!
     $titelbildKleinId: String!
+    $vorteilIconLinksId: String!
+    $vorteilIconMitteId: String!
+    $vorteilIconRechtsId: String!
   ) {
     contentfulSeiteWorkLife(id: { eq: $id }) {
       metaData {
@@ -299,6 +302,21 @@ export const pageQuery = graphql`
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
+      sizes(quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
+      sizes(quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }

@@ -67,13 +67,13 @@ class UeberUnsTemplate extends React.Component {
         />
 
         <ThreeIconsWithTitleAndTextLayout
-          iconLeft={graphQlResult.spaltenTopBildLinks}
+          iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft={graphQlResult.spaltenTopTitelLinks}
           textLeft={graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
-          iconMiddle={graphQlResult.spaltenTopBildMitte}
+          iconMiddle={this.props.data.iconVorteilMitteSharp}
           titleMiddle={graphQlResult.spaltenTopTitelMitte}
           textMiddle={graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
-          iconRight={graphQlResult.spaltenTopBildRechts}
+          iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight={graphQlResult.spaltenTopTitelRechts}
           textRight={graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
           containerStyle="margin-60-top"
@@ -510,6 +510,9 @@ export const pageQuery = graphql`
     $titelbildKleinId: String!
     $projektBildId: String!
     $karrieremagazinId: String!
+    $vorteilIconLinksId: String!
+    $vorteilIconMitteId: String!
+    $vorteilIconRechtsId: String!
   ) {
     contentfulSeiteUeberUns(id: { eq: $id }) {
       id
@@ -793,6 +796,21 @@ export const pageQuery = graphql`
     }
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
       sizes(maxWidth: 1600, quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
+      sizes(quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
+      sizes(quality: 80) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }

@@ -11,6 +11,17 @@ exports.create = function(graphql, createPage, callback) {
           edges {
             node {
               id
+              vorteile {
+                bildVorteil1 {
+                  id
+                }
+                bildVorteil2 {
+                  id
+                }
+                bildVorteil3 {
+                  id
+                }
+              }
               infoBoxLinksBilder {
                 id
                 title
@@ -48,7 +59,9 @@ exports.create = function(graphql, createPage, callback) {
     console.log('finished query work life.')
 
     _.each(result.data.allContentfulSeiteWorkLife.edges, edge => {
-      console.log('loop.' + edge.node.id)
+      const vorteilIconLinksIdTemp = edge.node.vorteile.bildVorteil1.id
+      const vorteilIconMitteIdTemp = edge.node.vorteile.bildVorteil2.id
+      const vorteilIconRechtsIdTemp = edge.node.vorteile.bildVorteil3.id
 
       async.parallel(
         {
@@ -79,6 +92,9 @@ exports.create = function(graphql, createPage, callback) {
               titelbildKleinId: '/' + edge.node.titelbildKlein.id + '/',
               infoBoxLinksBilderSharp: results.one,
               infoboxRechtsBilderSharp: results.two,
+              vorteilIconLinksId: '/' + vorteilIconLinksIdTemp + '/',
+              vorteilIconMitteId: '/' + vorteilIconMitteIdTemp + '/',
+              vorteilIconRechtsId: '/' + vorteilIconRechtsIdTemp + '/',
             },
           })
 

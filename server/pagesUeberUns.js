@@ -13,6 +13,15 @@ exports.create = function(graphql, createPage, callback) {
           edges {
             node {
               id
+              spaltenTopBildLinks {
+                id
+              }
+              spaltenTopBildMitte {
+                id
+              }
+              spaltenTopBildRechts {
+                id
+              }
               titelbild {
                 id
               }
@@ -55,6 +64,10 @@ exports.create = function(graphql, createPage, callback) {
     )
 
     _.each(result.data.allContentfulSeiteUeberUns.edges, edge => {
+      const vorteilIconLinksIdTemp = edge.node.spaltenTopBildLinks.id
+      const vorteilIconMitteIdTemp = edge.node.spaltenTopBildMitte.id
+      const vorteilIconRechtsIdTemp = edge.node.spaltenTopBildRechts.id
+
       async.parallel(
         {
           mbImages: async.apply(
@@ -83,6 +96,9 @@ exports.create = function(graphql, createPage, callback) {
               projektBildId: '/' + edge.node.projekte.bild.id + '/',
               karrieremagazinId: '/' + edge.node.karrieremagazin.bild.id + '/',
               mbImagesSharp: imageMap,
+              vorteilIconLinksId: '/' + vorteilIconLinksIdTemp + '/',
+              vorteilIconMitteId: '/' + vorteilIconMitteIdTemp + '/',
+              vorteilIconRechtsId: '/' + vorteilIconRechtsIdTemp + '/',
             },
           })
 
