@@ -39,6 +39,7 @@ class SiteFooter extends React.Component {
                 <a
                   href="https://cofinpro.de/datenschutz/"
                   target="_blank"
+                  rel="noopener"
                   className="text-dark link-with-space"
                 >
                   DATENSCHUTZ
@@ -47,6 +48,7 @@ class SiteFooter extends React.Component {
                 <a
                   href="https://cofinpro.de/agb/"
                   target="_blank"
+                  rel="noopener"
                   className="text-dark link-with-space"
                 >
                   AGB
@@ -100,6 +102,7 @@ class SiteFooter extends React.Component {
                     <a
                       title="facebook"
                       target="_blank"
+                      rel="noopener"
                       href="https://www.facebook.com/Cofinpro"
                       className="text-light"
                     >
@@ -111,6 +114,7 @@ class SiteFooter extends React.Component {
                     <a
                       title="instagram"
                       target="_blank"
+                      rel="noopener"
                       href="http://instagram.com/cofinpro_ag"
                       className="text-light"
                     >
@@ -122,6 +126,7 @@ class SiteFooter extends React.Component {
                     <a
                       title="twitter"
                       target="_blank"
+                      rel="noopener"
                       href="https://twitter.com/cofinpro_ag"
                       className="text-light"
                     >
@@ -133,6 +138,7 @@ class SiteFooter extends React.Component {
                     <a
                       title="youtube"
                       target="_blank"
+                      rel="noopener"
                       href="https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ"
                       className="text-light"
                     >
@@ -144,6 +150,7 @@ class SiteFooter extends React.Component {
                     <a
                       title="linkedin"
                       target="_blank"
+                      rel="noopener"
                       href="https://www.linkedin.com/company/846504/"
                       className="text-light"
                     >
@@ -155,6 +162,7 @@ class SiteFooter extends React.Component {
                     <a
                       title="xing"
                       target="_blank"
+                      rel="noopener"
                       href="https://www.xing.com/companies/cofinproag"
                       className="text-light"
                     >
@@ -210,6 +218,7 @@ class SiteFooter extends React.Component {
                         <a
                           href="https://cofinpro.de/datenschutz/"
                           target="_blank"
+                          rel="noopener"
                           className="nav-link text-white"
                         >
                           DATENSCHUTZ
@@ -225,6 +234,7 @@ class SiteFooter extends React.Component {
                         <a
                           href="https://cofinpro.de/agb/"
                           target="_blank"
+                          rel="noopener"
                           className="nav-link text-white"
                         >
                           AGB

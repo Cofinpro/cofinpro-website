@@ -178,6 +178,7 @@ class LandingTemplate extends React.Component {
               <a
                 href="https://www.facebook.com/Cofinpro"
                 target="_blank"
+                rel="noopener"
                 title="facebook"
               >
                 <img
@@ -188,6 +189,7 @@ class LandingTemplate extends React.Component {
               <a
                 href="http://instagram.com/cofinpro_ag"
                 target="_blank"
+                rel="noopener"
                 title="instagram"
               >
                 <img
@@ -198,6 +200,7 @@ class LandingTemplate extends React.Component {
               <a
                 href="https://twitter.com/cofinpro_ag"
                 target="_blank"
+                rel="noopener"
                 title="twitter"
               >
                 <img
@@ -208,6 +211,7 @@ class LandingTemplate extends React.Component {
               <a
                 href="https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ"
                 target="_blank"
+                rel="noopener"
                 title="you tube"
               >
                 <img
@@ -218,6 +222,7 @@ class LandingTemplate extends React.Component {
               <a
                 href="https://www.linkedin.com/company/846504/"
                 target="_blank"
+                rel="noopener"
                 title="linkedin"
               >
                 <img
@@ -228,6 +233,7 @@ class LandingTemplate extends React.Component {
               <a
                 href="https://www.xing.com/companies/cofinproag"
                 target="_blank"
+                rel="noopener"
                 title="xing"
               >
                 <img
