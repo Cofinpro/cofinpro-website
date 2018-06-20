@@ -36,7 +36,7 @@ export default class HTML extends React.Component {
 
     let abotuiThemeDefaultCss = (
       <style
-        id="gatsby-apercu-font-css"
+        id="gatsby-botui-theme-css"
         dangerouslySetInnerHTML={{ __html: botuiThemeDefaultFile }}
       />
     )
@@ -45,7 +45,7 @@ export default class HTML extends React.Component {
 
     let fontAwesomeCss = (
       <style
-        id="gatsby-apercu-font-css"
+        id="gatsby-font-awesome-css"
         dangerouslySetInnerHTML={{ __html: fontAwesomeFile }}
       />
     )
@@ -54,7 +54,7 @@ export default class HTML extends React.Component {
 
     let OtherCssCss = (
       <style
-        id="gatsby-apercu-font-css"
+        id="gatsby-other-css"
         dangerouslySetInnerHTML={{ __html: otherCssFile }}
       />
     )
