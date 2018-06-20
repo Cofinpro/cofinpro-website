@@ -800,17 +800,17 @@ export const pageQuery = graphql`
       }
     }
     iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
-      sizes(quality: 80) {
+      sizes(quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }
     iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
-      sizes(quality: 80) {
+      sizes(quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }
     iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
-      sizes(quality: 80) {
+      sizes(quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }
