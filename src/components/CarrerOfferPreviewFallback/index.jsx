@@ -18,6 +18,7 @@ class CarrerOfferPreviewFallback extends React.Component {
             <a
               className="text-dark d-block"
               rel="noopener"
+              target="_blank"
               href="https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
             >
               <p className="no-margin-bottom text-left padding-sm-bottom">
