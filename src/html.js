@@ -11,8 +11,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const apercuFontCssFile = require('!raw-loader!../static/css/apercu-regular.css')
-const botuiThemeDefaultCssFile = require('!raw-loader!../static/css/apercu-regular.css')
-const fontAwesomeCssFile = require('!raw-loader!../static/css/font-awesome.min.css')
 const otherCssCssFile = require('!raw-loader!../static/css/other.css')
 
 const jQueryJsFile = require('!raw-loader!../static/js/jquery-3.2.1.min.js')
@@ -140,8 +138,6 @@ export default class HTML extends React.Component {
           <meta name="theme-color" content="#ffffff" />
           {css}
           {this.renderCssFile(apercuFontCssFile, 'apercuFont')}
-          {this.renderCssFile(botuiThemeDefaultCssFile, 'botUiThemeDefault')}
-          {this.renderCssFile(fontAwesomeCssFile, 'fontAwesome')}
           {this.renderCssFile(otherCssCssFile, 'other')}
         </head>
         <body>
