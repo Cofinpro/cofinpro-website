@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { ImageWrapper, SOURCE_TYP_CONTENTFUL } from '../../images/ImageWrapper'
-import ContentfulMarkdownText from '../../ContentfulMarkdownText'
 
 class FourFactsLayout extends React.Component {
   render() {

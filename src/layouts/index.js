@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link, navigateTo } from 'gatsby-link'
 import { siteMetadata } from '../../gatsby-config'
 import NavigationCareer from '../components/navigation/NavigationCareer'
 import SiteFooter from '../components/SiteFooter'

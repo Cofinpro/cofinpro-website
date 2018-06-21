@@ -1,11 +1,8 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
 import NewsPreview from '../../components/NewsPreview'
-import HtmlHeader from '../../components/HtmlHeader'
 import ToggleButton from '../../components/buttons/ToggleButton'
 
 import StorageHelper from '../../utils/storageHelper'
@@ -147,7 +144,7 @@ class PinnwandTemplate extends React.Component {
                 'News & Stories aus unserer Unternehmensberatung: Cofinpro',
             },
             {
-              property: 'Description',
+              name: 'description',
               content:
                 'Hier findest Du Neues aus unserem Consulting, Fachartikel unserer Experten und alles, was wir unbedingt mit Dir teilen wollen.',
             },

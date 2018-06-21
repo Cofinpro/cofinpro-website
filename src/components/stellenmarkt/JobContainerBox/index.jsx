@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import CarrerOfferPreview from '../../CarrerOfferPreview'
 import CarrerOfferPreviewFallback from '../../CarrerOfferPreviewFallback'

@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import './style.scss'

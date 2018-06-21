@@ -1,12 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
-import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ContentfulImage from '../../components/images/ContentfulImage'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
