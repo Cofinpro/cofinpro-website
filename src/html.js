@@ -10,53 +10,29 @@ if (process.env.NODE_ENV === 'production') {
   }
 }
 
+const apercuFontCssFile = require('!raw-loader!../static/css/apercu-regular.css')
+const botuiThemeDefaultCssFile = require('!raw-loader!../static/css/apercu-regular.css')
+const fontAwesomeCssFile = require('!raw-loader!../static/css/font-awesome.min.css')
+const otherCssCssFile = require('!raw-loader!../static/css/other.css')
+
+const jQueryJsFile = require('!raw-loader!../static/js/jquery-3.2.1.min.js')
+const popperJsFile = require('!raw-loader!../static/js/popper.min.js')
+const bootstrapJsFile = require('!raw-loader!../static/js/bootstrap.min.js')
+const apiAiJsFile = require('!raw-loader!../static/js/ApiAi.min.js')
+
 export default class HTML extends React.Component {
-  renderFontStylesheet() {
-    let apercuFontFile = require('!raw-loader!../static/css/apercu-regular.css')
-
-    let apercuFontCss = (
-      <style
-        id="gatsby-apercu-font-css"
-        dangerouslySetInnerHTML={{ __html: apercuFontFile }}
-      />
+  renderCssFile(_cssFile, _id) {
+    let innerHtmlCss = (
+      <style id={'css-' + _id} dangerouslySetInnerHTML={{ __html: _cssFile }} />
     )
-    return apercuFontCss
+    return innerHtmlCss
   }
 
-  renderBotUiThemeCss() {
-    let botuiThemeDefaultFile = require('!raw-loader!../static/css/botui-theme-default.css')
-
-    let abotuiThemeDefaultCss = (
-      <style
-        id="gatsby-botui-theme-css"
-        dangerouslySetInnerHTML={{ __html: botuiThemeDefaultFile }}
-      />
+  renderJsFile(_jsFile, _id) {
+    let innerHtmlJs = (
+      <script id={'js-' + _id} dangerouslySetInnerHTML={{ __html: _jsFile }} />
     )
-    return abotuiThemeDefaultCss
-  }
-
-  renderFontAwesomeCss() {
-    let fontAwesomeFile = require('!raw-loader!../static/css/font-awesome.min.css')
-
-    let fontAwesomeCss = (
-      <style
-        id="gatsby-font-awesome-css"
-        dangerouslySetInnerHTML={{ __html: fontAwesomeFile }}
-      />
-    )
-    return fontAwesomeCss
-  }
-
-  renderOtherCss() {
-    let otherCssFile = require('!raw-loader!../static/css/other.css')
-
-    let otherCssCss = (
-      <style
-        id="gatsby-other-css"
-        dangerouslySetInnerHTML={{ __html: otherCssFile }}
-      />
-    )
-    return otherCssCss
+    return innerHtmlJs
   }
 
   render() {
@@ -163,10 +139,10 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
           {css}
-          {this.renderFontStylesheet()}
-          {this.renderBotUiThemeCss()}
-          {this.renderFontAwesomeCss()}
-          {this.renderOtherCss()}
+          {this.renderCssFile(apercuFontCssFile, 'apercuFont')}
+          {this.renderCssFile(botuiThemeDefaultCssFile, 'botUiThemeDefault')}
+          {this.renderCssFile(fontAwesomeCssFile, 'fontAwesome')}
+          {this.renderCssFile(otherCssCssFile, 'other')}
         </head>
         <body>
           <div
@@ -174,10 +150,10 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src={pathPrefix + '/js/jquery-3.2.1.min.js'} />
-          <script src={pathPrefix + '/js/popper.min.js'} />
-          <script src={pathPrefix + '/js/bootstrap.min.js'} />
-          <script src={pathPrefix + '/js/ApiAi.min.js'} />
+          {this.renderJsFile(jQueryJsFile, 'jQuery')}
+          {this.renderJsFile(popperJsFile, 'popper')}
+          {this.renderJsFile(bootstrapJsFile, 'bootstrap')}
+          {this.renderJsFile(apiAiJsFile, 'apiAi')}
         </body>
       </html>
     )
