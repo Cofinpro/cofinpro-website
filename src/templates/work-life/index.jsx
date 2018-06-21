@@ -1,13 +1,9 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
 
 import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTextLayout'
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
-import ContentfulImage from '../../components/images/ContentfulImage'
 import HtmlHeader from '../../components/HtmlHeader'
 import ImageCarouselV2 from '../../components/carousels/ImageCarouselV2'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'

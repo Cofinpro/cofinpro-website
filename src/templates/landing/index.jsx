@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import FourFactsLayout from '../../components/layouts/FourFactsLayout'
@@ -9,13 +7,10 @@ import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import NewsPreviewNewest from '../../components/NewsPreviewNewest'
-import ContentfulImage from '../../components/images/ContentfulImage'
 import SocialMediaCarousel from '../../components/carousels/SocialMediaCarousel'
 import CarrerOfferBox from '../../components/CarrerOfferBox'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
-
-import StorageHelper from '../../utils/storageHelper'
 
 class LandingTemplate extends React.Component {
   getCurrentUrl() {
@@ -31,6 +26,9 @@ class LandingTemplate extends React.Component {
 
     const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
       .edges
+
+    const contentfulSocialMediaPost = this.props.data
+      .allContentfulSocialMediaPost
 
     const titelBildDesktop = this.props.pathContext.titelBildDesktop
     const titelBildMobile = this.props.pathContext.titelBildMobile
@@ -254,7 +252,7 @@ class LandingTemplate extends React.Component {
             <div className="col-12 col-md-10 col-lg-8">
               <SocialMediaCarousel
                 carouselId={'social-media'}
-                socialMediaPosts={graphQlResult.socialMediaPosts}
+                socialMediaPosts={contentfulSocialMediaPost}
                 sharpImages={socialMediaPostBilder}
               />
             </div>
@@ -397,24 +395,32 @@ export const pageQuery = graphql`
       socialMediaBeschreibung {
         socialMediaBeschreibung
       }
-      socialMediaPosts {
-        titel
-        headline
-        bildDesPosts {
+    }
+    allContentfulSocialMediaPost {
+      edges {
+        node {
           id
-          title
-          description
-          file {
-            url
-            fileName
-            contentType
+          perspektiven {
+            name
           }
-        }
-        textDesPosts {
-          textDesPosts
-        }
-        urlDesPosts {
-          urlDesPosts
+          titel
+          headline
+          bildDesPosts {
+            id
+            title
+            description
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          textDesPosts {
+            textDesPosts
+          }
+          urlDesPosts {
+            urlDesPosts
+          }
         }
       }
     }

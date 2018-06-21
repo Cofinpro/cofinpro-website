@@ -1,18 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
 
-import CarrerOffersCarousel from '../../components/carousels/CarrerOffersCarousel'
 import HeroImageLayout from '../../components/layouts/HeroImageLayout'
-import SiteHeaderContent from '../../components/SiteHeaderContent'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import CarrerOfferCarouselBox from '../../components/CarrerOfferCarouselBox'
 import HtmlHeader from '../../components/HtmlHeader'
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
-
-import RichTextParserHelper from '../../utils/richTextParserHelper'
-import StorageHelper from '../../utils/storageHelper'
 
 import './style.scss'
 

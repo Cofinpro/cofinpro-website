@@ -1,6 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
 import './style.scss'
