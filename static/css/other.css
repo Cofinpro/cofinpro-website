@@ -1,6 +1,6 @@
 .border-img-blue {
   border: 4px solid;
-  -webkit-border-image: url('../img/CP_Border_2.png') 100 stretch; /* Safari 3.1-5 */
-  -o-border-image: url('../img/CP_Border_2.png') 100 stretch; /* Opera 11-12.1 */
-  border-image: url('../img/CP_Border_2.png') 100 stretch;
+  -webkit-border-image: url('/img/CP_Border_2.png') 100 stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/img/CP_Border_2.png') 100 stretch; /* Opera 11-12.1 */
+  border-image: url('/img/CP_Border_2.png') 100 stretch;
 }
