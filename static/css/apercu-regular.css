@@ -1,21 +1,21 @@
 @font-face {
   font-family: apercu-regular-pro;
-  src: url(../fonts/apercu-regular-pro.eot);
-  src: url(../fonts/apercu-regular-pro.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/apercu-regular-pro.woff) format('woff'),
-    url(../fonts/apercu-regular-pro.woff2) format('woff2'),
-    url(../fonts/apercu-regular-pro.ttf) format('truetype');
+  src: url(/fonts/apercu-regular-pro.eot);
+  src: url(/fonts/apercu-regular-pro.eot?#iefix) format('embedded-opentype'),
+    url(/fonts/apercu-regular-pro.woff) format('woff'),
+    url(/fonts/apercu-regular-pro.woff2) format('woff2'),
+    url(/fonts/apercu-regular-pro.ttf) format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: apercu-bold-pro;
-  src: url(../fonts/apercu-bold-pro.eot);
-  src: url(../fonts/apercu-bold-pro.eot?#iefix) format('embedded-opentype'),
-    url(../fonts/apercu-bold-pro.woff) format('woff'),
-    url(../fonts/apercu-bold-pro.woff2) format('woff2'),
-    url(../fonts/apercu-bold-pro.ttf) format('truetype');
+  src: url(/fonts/apercu-bold-pro.eot);
+  src: url(/fonts/apercu-bold-pro.eot?#iefix) format('embedded-opentype'),
+    url(/fonts/apercu-bold-pro.woff) format('woff'),
+    url(/fonts/apercu-bold-pro.woff2) format('woff2'),
+    url(/fonts/apercu-bold-pro.ttf) format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
