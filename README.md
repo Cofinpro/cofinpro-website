@@ -43,6 +43,16 @@ Anschließend ist die Webseite unter localhost:8000 aufrufbar.
 
 [Doku](https://www.gatsbyjs.org/docs/)
 
+## Was liegt wo?
+
+* **static** - Bilder, CSS-Dateien, externe JavaScript Bibliotheken, Icons, Fonts, Robots.txt, Redirect-Config Dateien
+* **src** - Die eigentlichen React Files
+- **components** - Sammlung von React Komponenten die in den einzelnen Seiten verwendet werden.
+- **layouts** - Wir haben derzeit nur 1 Layout, enthält den Header, Footer und Chatbot, da diese auf jeder Seite zu sehen sind.
+- **pages** - Seiten bei denen wir über den Build Prozess nichts verändern müssen.
+- **templates** - Schablonen für einzelne Seiten die im Build Prozess verwendet werden um unsere Seite zu erzeugen.
+- **utils** - Eigene JavaScript Hilfsklassen. 
+
 ## Wichtige Dateien
 
 * **.babelrc** - Konfigurationsdatei für Babel. Erklärung zu Babel: Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in old browsers or environments.
