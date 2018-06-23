@@ -76,11 +76,15 @@ Jede CSS Datei wird inline eingebunden.
 
 ### Controlling Font Performance with font-display
 
-https://developers.google.com/web/updates/2016/02/font-display
+[Siehe](https://developers.google.com/web/updates/2016/02/font-display)
 
 ### Opens External Anchors Using rel="noopener"
 
-https://developers.google.com/web/tools/lighthouse/audits/noopener
+Bei target="_blank" bitte immer rel="noopener" verwenden. [Siehe](https://developers.google.com/web/tools/lighthouse/audits/noopener)
+
+### HTTP/2
+
+Wurde einmal eingestellt muss nicht weiter beachtet werden. [Siehe](https://developers.google.com/web/fundamentals/performance/http2/)
 
 # Entwicklungsumgebung
 
