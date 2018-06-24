@@ -188,13 +188,13 @@ class SiteFooter extends React.Component {
                     >
                       <li
                         className={
-                          location.pathname.indexOf('/pinnwand') !== -1
+                          location.pathname.indexOf('/karriere/pinnwand') !== -1
                             ? 'nav-item active'
                             : 'nav-item'
                         }
                       >
                         <Link
-                          to={pathPrefix + '/pinnwand'}
+                          to={pathPrefix + '/karriere/pinnwand'}
                           className="nav-link text-white"
                         >
                           PINNWAND

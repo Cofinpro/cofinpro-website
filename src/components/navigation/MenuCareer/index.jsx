@@ -43,7 +43,7 @@ class MenuCareer extends React.Component {
       this.getPerspective() === undefined ||
       this.getPerspective().length === 0
     ) {
-      return pathPrefix
+      return pathPrefix + '/'
     } else {
       return pathPrefix + '/' + this.getPerspective()
     }
@@ -65,43 +65,46 @@ class MenuCareer extends React.Component {
 
     const { location, locationUpdate } = this.props
 
-    var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
+    var mainUrl =
+      pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
 
     var menuItems = [
       {
         name: 'HOME',
-        link: this.getPathPrefixPerspective() + '/landing',
-        pattern: '/.*/landing',
+        link: '/karriere' + this.getPathPrefixPerspective() + '/landing',
+        pattern: '/karriere/.*/landing',
       },
       {
         name: 'ÜBER UNS',
-        link: pathPrefix + '/ueber-uns',
-        pattern: '/ueber-uns',
+        link: pathPrefix + '/karriere/ueber-uns',
+        pattern: '/karriere/ueber-uns',
       },
       {
         name: 'DEINE KARRIERE',
-        link: this.getPathPrefixPerspective() + '/deine-karriere',
-        pattern: '/.*/deine-karriere',
+        link: '/karriere' + this.getPathPrefixPerspective() + '/deine-karriere',
+        pattern: '/karriere/.*/deine-karriere',
       },
       {
         name: 'DEINE ENTWICKLUNG',
-        link: this.getPathPrefixPerspective() + '/deine-entwicklung',
-        pattern: '/.*/deine-entwicklung',
+        link:
+          '/karriere' + this.getPathPrefixPerspective() + '/deine-entwicklung',
+        pattern: '/karriere/.*/deine-entwicklung',
       },
       {
         name: 'GEHALT & BENEFITS',
-        link: this.getPathPrefixPerspective() + '/gehalt-beteiligung',
-        pattern: '/.*/gehalt-beteiligung',
+        link:
+          '/karriere' + this.getPathPrefixPerspective() + '/gehalt-beteiligung',
+        pattern: '/karriere/.*/gehalt-beteiligung',
       },
       {
         name: 'WORK & LIFE',
-        link: pathPrefix + '/work-life',
-        pattern: '/work-life',
+        link: pathPrefix + '/karriere/work-life',
+        pattern: '/karriere/work-life',
       },
       {
         name: 'JOBS & BEWERBUNG',
-        link: pathPrefix + '/jobs-bewerbung',
-        pattern: '/jobs-bewerbung',
+        link: pathPrefix + '/karriere/jobs-bewerbung',
+        pattern: '/karriere/jobs-bewerbung',
       },
     ]
 

@@ -76,7 +76,8 @@ class NavigationCareer extends React.Component {
 
     var urlFragmentPers = pathPrefix != null && pathPrefix.length > 2 ? 1 : 0
 
-    var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
+    var mainUrl =
+      pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
 
     return (
       <div className="fixed-top">

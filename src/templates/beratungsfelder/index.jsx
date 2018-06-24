@@ -1,16 +1,16 @@
 import React from 'react'
 
-class StartseiteTemplate extends React.Component {
+class BeratungsfelderTemplate extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
       <div>
-        <p>Startseite</p>
+        <p>Beratungsfelder</p>
       </div>
     )
   }
 }
 
-export default StartseiteTemplate
+export default BeratungsfelderTemplate

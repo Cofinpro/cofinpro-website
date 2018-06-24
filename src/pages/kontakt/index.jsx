@@ -71,7 +71,7 @@ class Kontakt extends React.Component {
                 <a href="mailto:karriere@cofinpro.de">karriere@cofinpro.de</a>
               </p>
 
-              <LinkButton text="ALLE JOBS" path="/jobs" />
+              <LinkButton text="ALLE JOBS" path="/karriere/jobs" />
             </div>
           </div>
         </div>

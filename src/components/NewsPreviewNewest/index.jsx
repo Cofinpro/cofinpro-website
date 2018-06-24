@@ -109,7 +109,11 @@ class NewsPreviewNewest extends React.Component {
         </div>
         <div className="row margin-40-top">
           <div className="col-12 col-md-10 mx-auto">
-            <LinkButton text="ZUR PINNWAND" path="/pinnwand" {...this.props} />
+            <LinkButton
+              text="ZUR PINNWAND"
+              path="/karriere/pinnwand"
+              {...this.props}
+            />
           </div>
         </div>
       </div>
