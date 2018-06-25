@@ -56,7 +56,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       function(error, success) {
         resolve()
         console.log('done')
-        return alert('Done!')
       }
     )
   })

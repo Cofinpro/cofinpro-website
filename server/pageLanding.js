@@ -34,26 +34,33 @@ exports.create = function(graphql, createPage, createRedirect, news, callback) {
                   contentType
                 }
               }
-              socialMediaPosts {
+            }
+          }
+        }
+        allContentfulSocialMediaPost {
+          edges {
+            node {
+              id
+              perspektiven {
+                name
+              }
+              titel
+              headline
+              bildDesPosts {
                 id
-                titel
-                headline
-                bildDesPosts {
-                  id
-                  title
-                  description
-                  file {
-                    url
-                    fileName
-                    contentType
-                  }
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
                 }
-                textDesPosts {
-                  textDesPosts
-                }
-                urlDesPosts {
-                  urlDesPosts
-                }
+              }
+              textDesPosts {
+                textDesPosts
+              }
+              urlDesPosts {
+                urlDesPosts
               }
             }
           }
@@ -74,14 +81,12 @@ exports.create = function(graphql, createPage, createRedirect, news, callback) {
     var postBilder = []
     var alreadyAddedImages = []
 
-    if (result.data.allContentfulSeiteLandingPerspektive.edges.length > 0) {
-      _.each(result.data.allContentfulSeiteLandingPerspektive.edges, edge => {
-        _.each(edge.node.socialMediaPosts, post => {
-          if (!alreadyAddedImages.includes(post.id)) {
-            postBilder.push(post.bildDesPosts)
-            alreadyAddedImages.push(post.id)
-          }
-        })
+    if (result.data.allContentfulSocialMediaPost.edges.length > 0) {
+      _.each(result.data.allContentfulSocialMediaPost.edges, edge => {
+        if (!alreadyAddedImages.includes(edge.node.id)) {
+          postBilder.push(edge.node.bildDesPosts)
+          alreadyAddedImages.push(edge.node.id)
+        }
       })
     }
 

@@ -1,7 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
 
 import ThreeIconsWithTextLayout from '../../components/layouts/ThreeIconsWithTextLayout'
 import TestimonialLayout from '../../components/layouts/TestimonialLayout'
@@ -46,11 +43,11 @@ class DeineEntwicklungTemplate extends React.Component {
 
         <ThreeIconsWithTextLayout
           title={graphQlResult.vorteile.titel}
-          iconLeft={graphQlResult.vorteile.bildVorteil1}
+          iconLeft={this.props.data.iconVorteilLinksSharp}
           textLeft={graphQlResult.vorteile.textVorteil1.textVorteil1}
-          iconMiddle={graphQlResult.vorteile.bildVorteil2}
+          iconMiddle={this.props.data.iconVorteilMitteSharp}
           textMiddle={graphQlResult.vorteile.textVorteil2.textVorteil2}
-          iconRight={graphQlResult.vorteile.bildVorteil3}
+          iconRight={this.props.data.iconVorteilRechtsSharp}
           textRight={graphQlResult.vorteile.textVorteil3.textVorteil3}
         />
 
@@ -103,6 +100,9 @@ export const pageQuery = graphql`
     $id: String!
     $titelbildId: String!
     $titelbildKleinId: String!
+    $vorteilIconLinksId: String!
+    $vorteilIconMitteId: String!
+    $vorteilIconRechtsId: String!
   ) {
     contentfulSeiteDeineEntwicklung(id: { eq: $id }) {
       id
@@ -243,6 +243,21 @@ export const pageQuery = graphql`
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
       sizes(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
+      sizes(quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }

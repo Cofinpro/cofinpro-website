@@ -1,9 +1,6 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 import PubSub from 'pubsub-js'
 
-import CarrerOfferPreview from '../CarrerOfferPreview'
 import LinkButton from '../buttons/LinkButton'
 
 import CarrerOffersCarousel from '../carousels/CarrerOffersCarousel'

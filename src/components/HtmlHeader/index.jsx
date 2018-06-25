@@ -1,7 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import get from 'lodash/get'
 
 import './style.scss'
 
@@ -35,11 +33,11 @@ class HtmlHeader extends React.Component {
               content: `${dataFromCms.title}`,
             },
             {
-              property: 'Keywords',
+              name: 'keywords',
               content: `${dataFromCms.keywords.keywords}`,
             },
             {
-              property: 'Description',
+              name: 'description',
               content: `${
                 dataFromCms.description !== null
                   ? dataFromCms.description.description

@@ -16,6 +16,17 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
               perspektive {
                 name
               }
+              vorteile {
+                bildVorteil1 {
+                  id
+                }
+                bildVorteil2 {
+                  id
+                }
+                bildVorteil3 {
+                  id
+                }
+              }
               bildUnterHauptueberschrift {
                 id
               }
@@ -41,6 +52,10 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     })
 
     _.each(result.data.allContentfulSeiteGehaltBenefits.edges, edge => {
+      const vorteilIconLinksIdTemp = edge.node.vorteile.bildVorteil1.id
+      const vorteilIconMitteIdTemp = edge.node.vorteile.bildVorteil2.id
+      const vorteilIconRechtsIdTemp = edge.node.vorteile.bildVorteil3.id
+
       createPage({
         path: `${edge.node.perspektive.name}/gehalt-beteiligung`,
         component: slash(gehaltBeteiligungTemplate),
@@ -48,6 +63,9 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           id: edge.node.id,
           titelbildId: '/' + edge.node.bildUnterHauptueberschrift.id + '/',
           titelbildKleinId: '/' + edge.node.titelbildKlein.id + '/',
+          vorteilIconLinksId: '/' + vorteilIconLinksIdTemp + '/',
+          vorteilIconMitteId: '/' + vorteilIconMitteIdTemp + '/',
+          vorteilIconRechtsId: '/' + vorteilIconRechtsIdTemp + '/',
         },
       })
       console.log(

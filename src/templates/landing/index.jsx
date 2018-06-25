@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
 import FourFactsLayout from '../../components/layouts/FourFactsLayout'
@@ -9,13 +7,10 @@ import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 
 import SiteHeaderContent from '../../components/SiteHeaderContent'
 import NewsPreviewNewest from '../../components/NewsPreviewNewest'
-import ContentfulImage from '../../components/images/ContentfulImage'
 import SocialMediaCarousel from '../../components/carousels/SocialMediaCarousel'
 import CarrerOfferBox from '../../components/CarrerOfferBox'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
-
-import StorageHelper from '../../utils/storageHelper'
 
 class LandingTemplate extends React.Component {
   getCurrentUrl() {
@@ -31,6 +26,9 @@ class LandingTemplate extends React.Component {
 
     const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige
       .edges
+
+    const contentfulSocialMediaPost = this.props.data
+      .allContentfulSocialMediaPost
 
     const titelBildDesktop = this.props.pathContext.titelBildDesktop
     const titelBildMobile = this.props.pathContext.titelBildMobile
@@ -178,60 +176,72 @@ class LandingTemplate extends React.Component {
               <a
                 href="https://www.facebook.com/Cofinpro"
                 target="_blank"
+                rel="noopener"
                 title="facebook"
               >
                 <img
                   src={pathPrefix + '/img/icons/facebook.png'}
+                  alt="cofinpro facebook profile"
                   className="social-media-icon-carousel"
                 />
               </a>
               <a
                 href="http://instagram.com/cofinpro_ag"
                 target="_blank"
+                rel="noopener"
                 title="instagram"
               >
                 <img
                   src={pathPrefix + '/img/icons/instagram.png'}
+                  alt="cofinpro instagram profile"
                   className="social-media-icon-carousel"
                 />
               </a>
               <a
                 href="https://twitter.com/cofinpro_ag"
                 target="_blank"
+                rel="noopener"
                 title="twitter"
               >
                 <img
                   src={pathPrefix + '/img/icons/twitter.png'}
+                  alt="cofinpro twitter profile"
                   className="social-media-icon-carousel"
                 />
               </a>
               <a
                 href="https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ"
                 target="_blank"
+                rel="noopener"
                 title="you tube"
               >
                 <img
                   src={pathPrefix + '/img/icons/youtube.png'}
+                  alt="cofinpro youtube profile"
                   className="social-media-icon-carousel"
                 />
               </a>
               <a
                 href="https://www.linkedin.com/company/846504/"
                 target="_blank"
+                rel="noopener"
                 title="linkedin"
               >
                 <img
                   src={pathPrefix + '/img/icons/linkedin.png'}
+                  alt="cofinpro linkedin profile"
                   className="social-media-icon-carousel"
                 />
               </a>
               <a
                 href="https://www.xing.com/companies/cofinproag"
                 target="_blank"
+                rel="noopener"
                 title="xing"
               >
                 <img
                   src={pathPrefix + '/img/icons/xing.png'}
+                  alt="cofinpro xing profile"
                   className="social-media-icon-carousel"
                 />
               </a>
@@ -242,7 +252,7 @@ class LandingTemplate extends React.Component {
             <div className="col-12 col-md-10 col-lg-8">
               <SocialMediaCarousel
                 carouselId={'social-media'}
-                socialMediaPosts={graphQlResult.socialMediaPosts}
+                socialMediaPosts={contentfulSocialMediaPost}
                 sharpImages={socialMediaPostBilder}
               />
             </div>
@@ -385,24 +395,32 @@ export const pageQuery = graphql`
       socialMediaBeschreibung {
         socialMediaBeschreibung
       }
-      socialMediaPosts {
-        titel
-        headline
-        bildDesPosts {
+    }
+    allContentfulSocialMediaPost {
+      edges {
+        node {
           id
-          title
-          description
-          file {
-            url
-            fileName
-            contentType
+          perspektiven {
+            name
           }
-        }
-        textDesPosts {
-          textDesPosts
-        }
-        urlDesPosts {
-          urlDesPosts
+          titel
+          headline
+          bildDesPosts {
+            id
+            title
+            description
+            file {
+              url
+              fileName
+              contentType
+            }
+          }
+          textDesPosts {
+            textDesPosts
+          }
+          urlDesPosts {
+            urlDesPosts
+          }
         }
       }
     }

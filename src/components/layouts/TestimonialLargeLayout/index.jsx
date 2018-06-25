@@ -1,8 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
-
-import ContentfulImage from '../../images/ContentfulImage'
 
 class TestimonialLargeLayout extends React.Component {
   render() {
@@ -31,6 +27,7 @@ class TestimonialLargeLayout extends React.Component {
           <div className="col-12 col-md-5">
             <div className="embed-responsive embed-responsive-16by9">
               <iframe
+                title="Testimonial eines Mitarbeiters"
                 className="embed-responsive-item"
                 src={videoUrl.replace('/watch?v=', '/embed/')}
                 allowFullScreen

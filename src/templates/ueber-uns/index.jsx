@@ -1,8 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import Helmet from 'react-helmet'
-import get from 'lodash/get'
-import Img from 'gatsby-image'
 
 import FourFactsLayout from '../../components/layouts/FourFactsLayout'
 import SubtitleTitelImageTextLayout from '../../components/layouts/SubtitleTitelImageTextLayout'
@@ -67,13 +63,13 @@ class UeberUnsTemplate extends React.Component {
         />
 
         <ThreeIconsWithTitleAndTextLayout
-          iconLeft={graphQlResult.spaltenTopBildLinks}
+          iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft={graphQlResult.spaltenTopTitelLinks}
           textLeft={graphQlResult.spaltenTopTextLinks.spaltenTopTextLinks}
-          iconMiddle={graphQlResult.spaltenTopBildMitte}
+          iconMiddle={this.props.data.iconVorteilMitteSharp}
           titleMiddle={graphQlResult.spaltenTopTitelMitte}
           textMiddle={graphQlResult.spaltenTopTextMitte.spaltenTopTextMitte}
-          iconRight={graphQlResult.spaltenTopBildRechts}
+          iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight={graphQlResult.spaltenTopTitelRechts}
           textRight={graphQlResult.spaltenTopTextRechts.spaltenTopTextRechts}
           containerStyle="margin-60-top"
@@ -246,6 +242,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink1.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -265,6 +262,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink2.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -274,6 +272,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink3.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -286,6 +285,7 @@ class UeberUnsTemplate extends React.Component {
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
                   className="embed-responsive-item"
+                  title="Testimonial eines Mitarbeiters"
                   src={graphQlResult.videoLink4.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -506,6 +506,9 @@ export const pageQuery = graphql`
     $titelbildKleinId: String!
     $projektBildId: String!
     $karrieremagazinId: String!
+    $vorteilIconLinksId: String!
+    $vorteilIconMitteId: String!
+    $vorteilIconRechtsId: String!
   ) {
     contentfulSeiteUeberUns(id: { eq: $id }) {
       id
@@ -789,6 +792,21 @@ export const pageQuery = graphql`
     }
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
       sizes(maxWidth: 1600, quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
+      sizes(quality: 60) {
         ...GatsbyImageSharpSizes
       }
     }

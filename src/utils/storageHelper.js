@@ -25,7 +25,7 @@ class StorageHelper {
 
     cookies.set(itemName, item, { path: '/' })
 
-    console.log('saved item:' + item + ', in session storage')
+    //console.log('saved item:' + item + ', in session storage')
   }
 
   static getFromSessionStorage(itemName) {
@@ -34,12 +34,12 @@ class StorageHelper {
     if (cookies.get(itemName) === undefined || cookies.get(itemName) === null) {
       return ''
     }
-    console.log(
+    /*console.log(
       'load item:' +
         itemName +
         ', from session storage:' +
         cookies.get(itemName)
-    )
+    )*/
     return cookies.get(itemName)
   }
 } /* 'perspective' */

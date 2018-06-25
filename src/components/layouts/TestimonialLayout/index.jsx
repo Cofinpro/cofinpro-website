@@ -1,10 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 
 import './style.scss'
 
-import ContentfulImage from '../../images/ContentfulImage'
 import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
 class TestimonialLayout extends React.Component {
@@ -66,6 +63,7 @@ class TestimonialLayout extends React.Component {
         >
           <iframe
             className="embed-responsive-item"
+            title="Testimonial eines Mitarbeiters"
             src={videoUrl.replace('/watch?v=', '/embed/')}
             allowFullScreen
           />

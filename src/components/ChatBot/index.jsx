@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 import { Launcher } from 'react-chat-window'
 
 import './style.scss'

@@ -1,11 +1,8 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 import Img from 'gatsby-image'
 
 import './style.scss'
 
-import ContentfulImage from '../../images/ContentfulImage'
 import ContentfulMarkdownText from '../../ContentfulMarkdownText'
 import CarouselControlPrevNext from '../../bootstrap-custom/CarouselControlPrevNext'
 
