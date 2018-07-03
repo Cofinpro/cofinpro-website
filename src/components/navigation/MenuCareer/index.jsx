@@ -8,6 +8,8 @@ import './style.scss'
 
 import Kompetenzen from '../../../../data/Kompetenzen'
 
+import NavbarLinks from '../NavbarLinks'
+
 class MenuCareer extends React.Component {
   componentDidMount() {
     $(document).on('click', '.navbar-collapse.show', function(e) {
@@ -138,48 +140,11 @@ class MenuCareer extends React.Component {
             />
           </button>
         </div>
-        <ul
-          className="navbar-nav w-100 justify-content-end"
-          hidden={locationUpdate === mainUrl ? true : false}
-        >
-          {menuItems.map(function(menuItem, i) {
-            return (
-              <li
-                key={'navItemMenuCarrer-' + i}
-                className={
-                  location.pathname.match(menuItem.pattern)
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link
-                  key={'linkMenuCarrer-' + i}
-                  to={menuItem.link}
-                  className="nav-link"
-                >
-                  {menuItem.name}
-                </Link>
-                {i < menuItems.length - 1 && (
-                  <div
-                    key={'lineContainerMenuCarrer-' + i}
-                    className="d-inline"
-                  >
-                    <img
-                      key={'dottedLineMenuCarrer-' + i}
-                      src={pathPrefix + '/img/nav-line.png'}
-                      className="d-inline d-lg-inline main-navigation-bar__dotted-line-horizontal"
-                    />
-                    <img
-                      key={'dottedLineVerticalMenuCarrer-' + i}
-                      src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                      className="d-block d-lg-none main-navigation-bar__dotted-line-vertical"
-                    />
-                  </div>
-                )}
-              </li>
-            )
-          })}
-        </ul>
+        <NavbarLinks
+          location={location}
+          locationUpdate={locationUpdate}
+          menuItems={menuItems}
+        />
       </div>
     )
   }
