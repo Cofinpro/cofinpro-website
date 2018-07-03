@@ -64,6 +64,10 @@ class MenuCompetence extends React.Component {
     }
   }
 
+  getLocalPerspective() {
+    return this.perspectives
+  }
+
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -74,6 +78,65 @@ class MenuCompetence extends React.Component {
 
     var mainUrl =
       pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
+
+    var menuItems = [
+      {
+        text: 'FACHBERATER',
+        type: 'header',
+      },
+      {
+        text: '> Absolvent & Young Professional',
+        path: '/karriere/fachlicher-absolvent/',
+        perspective: 'fachlicher-absolvent',
+        type: 'link',
+      },
+      {
+        text: '> Professional',
+        path: '/karriere/fachlicher-professional/',
+        perspective: 'fachlicher-professional',
+        type: 'link',
+      },
+      {
+        type: 'space',
+      },
+      {
+        text: 'TECHNOLOGISCHER BERATER',
+        type: 'header',
+      },
+      {
+        text: '> Absolvent & Young Professional',
+        path: '/karriere/technologischer-absolvent/',
+        perspective: 'technologischer-absolvent',
+        type: 'link',
+      },
+      {
+        text: '> Professional',
+        path: '/karriere/technologischer-professional/',
+        perspective: 'technologischer-professional',
+        type: 'link',
+      },
+      {
+        type: 'space',
+      },
+      {
+        text: 'STUDENTEN',
+        path: '/karriere/studenten/',
+        perspective: 'studenten',
+        type: 'link',
+      },
+      {
+        type: 'space',
+      },
+      {
+        text: 'ANDERE EXPERTISE',
+        path: '/karriere/andere/',
+        perspective: 'andere',
+        type: 'link',
+      },
+    ]
+
+    console.log(location.pathname.slice(1).split('/'))
+    console.log('/karriere/andere/' + location.pathname.slice(1).split('/')[2])
 
     return (
       <div
@@ -97,173 +160,46 @@ class MenuCompetence extends React.Component {
           </button>
         </div>
         <ul className="navbar-nav mr-auto text-dark">
-          <li>FACHBERATER</li>
-          <li
-            className={
-              StorageHelper.getFromSessionStorage('perspective').match(
-                'fachlicher-absolvent'
+          {menuItems.map((menuItem, i) => {
+            if (menuItem.type === 'header') {
+              return <li key={'menu-item-' + i}>{menuItem.text}</li>
+            } else if (menuItem.type === 'space') {
+              return (
+                <li key={'menu-item-' + i}>
+                  <span className="text-white">/</span>
+                </li>
               )
-                ? 'nav-item active'
-                : 'nav-item'
-            }
-          >
-            <Link
-              to={
-                location.pathname.slice(1).split('/').length > 0 &&
-                this.perspectives.indexOf(
-                  location.pathname.slice(1).split('/')[urlFragmentPers]
-                ) > -1
-                  ? '/karriere' +
-                    '/fachlicher-absolvent/' +
-                    location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                  : location.pathname
-              }
-              onClick={() => this.savePerspective('fachlicher-absolvent')}
-              className="nav-link"
-            >
-              > Absolvent & Young Professional
-            </Link>
-          </li>
-          <li
-            className={
-              StorageHelper.getFromSessionStorage('perspective').match(
-                'fachlicher-professional'
+            } else {
+              return (
+                <li
+                  key={'menu-item-' + i}
+                  className={
+                    StorageHelper.getFromSessionStorage('perspective').match(
+                      menuItem.perspective
+                    )
+                      ? 'nav-item active'
+                      : 'nav-item'
+                  }
+                >
+                  <Link
+                    to={
+                      location.pathname.slice(1).split('/').length > 2 &&
+                      this.perspectives.indexOf(
+                        location.pathname.slice(1).split('/')[1]
+                      ) > -1
+                        ? menuItem.path +
+                          location.pathname.slice(1).split('/')[2]
+                        : location.pathname
+                    }
+                    onClick={() => this.savePerspective(menuItem.perspective)}
+                    className="nav-link"
+                  >
+                    {menuItem.text}
+                  </Link>
+                </li>
               )
-                ? 'nav-item active'
-                : 'nav-item'
             }
-          >
-            <Link
-              to={
-                location.pathname.slice(1).split('/').length > 0 &&
-                this.perspectives.indexOf(
-                  location.pathname.slice(1).split('/')[urlFragmentPers]
-                ) > -1
-                  ? '/karriere' +
-                    '/fachlicher-professional/' +
-                    location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                  : location.pathname
-              }
-              onClick={() => this.savePerspective('fachlicher-professional')}
-              className="nav-link"
-            >
-              > Professional
-            </Link>
-          </li>
-          <li>
-            <span className="text-white">/</span>
-          </li>
-          <li>TECHNOLOGISCHER BERATER</li>
-          <li
-            className={
-              StorageHelper.getFromSessionStorage('perspective').match(
-                'technologischer-absolvent'
-              )
-                ? 'nav-item active'
-                : 'nav-item'
-            }
-          >
-            <Link
-              to={
-                location.pathname.slice(1).split('/').length > 0 &&
-                this.perspectives.indexOf(
-                  location.pathname.slice(1).split('/')[urlFragmentPers]
-                ) > -1
-                  ? '/karriere' +
-                    '/technologischer-absolvent/' +
-                    location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                  : location.pathname
-              }
-              onClick={() => this.savePerspective('technologischer-absolvent')}
-              className="nav-link"
-            >
-              > Absolvent & Young Professional
-            </Link>
-          </li>
-          <li
-            className={
-              StorageHelper.getFromSessionStorage('perspective').match(
-                'technologischer-professional'
-              )
-                ? 'nav-item active'
-                : 'nav-item'
-            }
-          >
-            <Link
-              to={
-                location.pathname.slice(1).split('/').length > 0 &&
-                this.perspectives.indexOf(
-                  location.pathname.slice(1).split('/')[urlFragmentPers]
-                ) > -1
-                  ? '/karriere' +
-                    '/technologischer-professional/' +
-                    location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                  : location.pathname
-              }
-              onClick={() =>
-                this.savePerspective('technologischer-professional')
-              }
-              className="nav-link"
-            >
-              > Professional
-            </Link>
-          </li>
-          <li>
-            <span className="text-white">/</span>
-          </li>
-          <li
-            className={
-              StorageHelper.getFromSessionStorage('perspective').match(
-                'studenten'
-              )
-                ? 'nav-item active'
-                : 'nav-item'
-            }
-          >
-            <Link
-              to={
-                location.pathname.slice(1).split('/').length > 0 &&
-                this.perspectives.indexOf(
-                  location.pathname.slice(1).split('/')[urlFragmentPers]
-                ) > -1
-                  ? '/karriere' +
-                    '/studenten/' +
-                    location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                  : location.pathname
-              }
-              onClick={() => this.savePerspective('studenten')}
-              className="nav-link"
-            >
-              STUDENTEN
-            </Link>
-          </li>
-          <li>
-            <span className="text-white">/</span>
-          </li>
-          <li
-            className={
-              StorageHelper.getFromSessionStorage('perspective').match('andere')
-                ? 'nav-item active'
-                : 'nav-item'
-            }
-          >
-            <Link
-              to={
-                location.pathname.slice(1).split('/').length > 0 &&
-                this.perspectives.indexOf(
-                  location.pathname.slice(1).split('/')[urlFragmentPers]
-                ) > -1
-                  ? '/karriere' +
-                    '/andere/' +
-                    location.pathname.slice(1).split('/')[urlFragmentPers + 1]
-                  : location.pathname
-              }
-              onClick={() => this.savePerspective('andere')}
-              className="nav-link"
-            >
-              ANDERE EXPERTISE
-            </Link>
-          </li>
+          })}
         </ul>
       </div>
     )
