@@ -7,6 +7,7 @@ import ContentfulImage from '../../images/ContentfulImage'
 const SOURCE_TYP_CONTENTFUL = 'Contentful'
 const SOURCE_TYP_SHARP = 'Sharp'
 const SOURCE_TYP_BOOTSTRAP = 'Bootstrap'
+const SOURCE_TYP_PLACEHOLDER = 'Placeholder'
 
 class ImageWrapper extends React.Component {
   render() {
@@ -42,6 +43,7 @@ export default {
   SOURCE_TYP_CONTENTFUL,
   SOURCE_TYP_SHARP,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_PLACEHOLDER,
 }
 
 ImageWrapper.propTypes = {
@@ -71,6 +73,7 @@ ImageWrapper.propTypes = {
     SOURCE_TYP_CONTENTFUL,
     SOURCE_TYP_SHARP,
     SOURCE_TYP_BOOTSTRAP,
+    SOURCE_TYP_PLACEHOLDER,
   ]),
   styleClasses: PropTypes.string,
 }
