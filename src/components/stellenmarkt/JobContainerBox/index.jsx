@@ -197,19 +197,14 @@ class JobContainerBox extends React.Component {
               </div>
             </div>
 
-            <div className="row d-none d-md-inline-flex">
+            <div className="row d-none d-md-flex">
               {bucket.length > 0
                 ? bucket.map((item, i) => {
                     var stellenAnzeige = item.node
 
-                    var columnWidth =
-                      bucket.length === 1 ? 'col-md-12' : 'col-md-6'
-
                     return (
                       <div
-                        className={
-                          'col-12 ' + columnWidth + ' padding-sm-top-bottom'
-                        }
+                        className="col-12 col-md-6 padding-sm-top-bottom"
                         key={'column-' + id + '-' + i}
                       >
                         <CarrerOfferPreview
