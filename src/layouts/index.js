@@ -168,16 +168,14 @@ class Template extends React.Component {
           {...this.props}
         />
         <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />
-        {
-          <CookieBanner
+        {/*<CookieBanner
             className="cofinpro-cookie-banner"
             styles={styles}
             message={message}
             buttonMessage="Ich habe verstanden!"
             dismissOnScroll={false}
             cookie="cofinpro-user-has-accepted-cookies"
-          />
-        }
+          />*/}
       </div>
     )
   }
