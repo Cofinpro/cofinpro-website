@@ -4,7 +4,6 @@ import './gatsrap.scss'
 
 class TestIndex extends React.Component {
   render() {
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 

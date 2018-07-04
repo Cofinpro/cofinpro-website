@@ -107,12 +107,12 @@ class Template extends React.Component {
 
     const styles = {
       banner: {
+        position: 'fixed',
+        bottom: 0,
         fontFamily: 'Source Sans Pro',
         height: 57,
-        background:
-          'rgba(52, 64, 81, 0.88) url(/cookie.png) 20px 50% no-repeat',
+        background: '#a9c5e8',
         backgroundSize: '30px 30px',
-        backgroundColor: '',
         fontSize: '15px',
         fontWeight: 600,
       },
@@ -169,13 +169,13 @@ class Template extends React.Component {
         />
         <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />
         {/*<CookieBanner
-          className="cofinpro-cookie-banner"
-          styles={styles}
-          message={message}
-          buttonMessage="Ich habe verstanden!"
-          dismissOnScroll={false}
-          cookie="cofinpro-user-has-accepted-cookies"
-        />*/}
+            className="cofinpro-cookie-banner"
+            styles={styles}
+            message={message}
+            buttonMessage="Ich habe verstanden!"
+            dismissOnScroll={false}
+            cookie="cofinpro-user-has-accepted-cookies"
+          />*/}
       </div>
     )
   }

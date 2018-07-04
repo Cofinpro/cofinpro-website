@@ -681,3 +681,10 @@ svg image[href$='img_20.jpg'] {
     visibility: hidden;
   }
 }
+
+.react-cookie-banner.cofinpro-cookie-banner {
+  @include media-breakpoint-only(xs) {
+  }
+  @include media-breakpoint-only(sm) {
+  }
+}

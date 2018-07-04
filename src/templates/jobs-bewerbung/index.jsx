@@ -8,7 +8,6 @@ import HeroImageLayout from '../../components/layouts/HeroImageLayout'
 import FourStepsLayout from '../../components/layouts/FourStepsLayout'
 import SubtitleTitelTwoImagesTextLayout from '../../components/layouts/SubtitleTitelTwoImagesTextLayout'
 
-
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import HtmlHeader from '../../components/HtmlHeader'
 import LinkButton from '../../components/buttons/LinkButton'
