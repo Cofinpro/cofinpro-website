@@ -79,3 +79,12 @@ ul.navbar-nav {
     }
   }
 }
+
+
+#navbarSupportedContent {
+  ul.navbar-nav {
+    li:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}

@@ -34,10 +34,31 @@ class NavbarLinks extends React.Component {
                   <img
                     key={'dottedLineMenuCarrer-' + i}
                     src={pathPrefix + '/img/nav-line.png'}
-                    className="d-inline d-lg-inline main-navigation-bar__dotted-line-horizontal"
+                    className="d-none d-lg-inline main-navigation-bar__dotted-line-horizontal"
                   />
                 </div>
               )}
+              {menuItem.children !== undefined &&
+              menuItem.children.length > 0 ? (
+                <ul className="d-flex d-lg-none nav-item-child">
+                  {menuItem.children.map(function(menuChild, i) {
+                    return (
+                      <li
+                        key={'navigation-list-child-item-' + i}
+                        className={
+                          location.pathname.match(menuChild.pattern)
+                            ? 'nav-item margin-20-left active'
+                            : 'nav-item margin-20-left'
+                        }
+                      >
+                        <Link to={menuChild.link} className="nav-link">
+                          {menuChild.name}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              ) : null}
             </li>
           )
         })}

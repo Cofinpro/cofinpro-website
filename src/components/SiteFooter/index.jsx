@@ -24,7 +24,7 @@ class SiteFooter extends React.Component {
       $('html,body').animate({ scrollTop: 0 }, 'slow')
     }
 
-    if (locationUpdate === mainUrl) {
+    if (locationUpdate === '/karriere') {
       return (
         <footer>
           <div className="container margin-20-top main">

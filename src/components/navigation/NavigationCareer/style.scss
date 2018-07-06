@@ -115,6 +115,27 @@
   button.navbar-toggler {
     margin-left: 0px;
   }
+
+  ul.nav-item-child {
+    flex-direction: column;
+    padding-left: 0;
+    /* margin-bottom: 0; */
+    list-style: none;
+
+    li:first-child {
+      a {
+        padding-top: 0px;
+      }
+    }
+
+    li:first-child {
+      margin-top: 14px;
+    }
+
+    li:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }
 
 #cofinpro-nav-career {

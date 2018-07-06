@@ -131,8 +131,8 @@ class MenuCareer extends React.Component {
             )}
           </a>
         </div>
-        <div className="d-block d-lg-none text-white margin-20-bottom">
-          <p className="h5 bold-font d-inline">MENÜ</p>
+        <div className="d-block d-lg-none text-secondary margin-20-bottom">
+          <p className="h5 d-inline">MENÜ</p>
           <button
             id="close-button-menu"
             type="button"
@@ -142,7 +142,7 @@ class MenuCareer extends React.Component {
             <img
               className="main-navigation-bar__img-close-button"
               alt="Menü schließen"
-              src={pathPrefix + '/svg/icon_close.svg'}
+              src={pathPrefix + '/svg/icon_close_blue.svg'}
             />
           </button>
         </div>

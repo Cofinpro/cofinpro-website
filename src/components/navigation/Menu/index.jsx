@@ -132,7 +132,7 @@ class Menu extends React.Component {
             <img
               className="main-navigation-bar__img-close-button"
               alt="Menü schließen"
-              src={pathPrefix + '/svg/icon_close.svg'}
+              src={pathPrefix + '/svg/icon_close_blue.svg'}
             />
           </button>
         </div>
