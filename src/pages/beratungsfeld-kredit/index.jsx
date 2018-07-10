@@ -9,6 +9,8 @@ import ToggleButton from '../../components/buttons/LinkButton'
 
 import DownloadLinksBottom from '../../components/DownloadLinksBottom'
 
+import FooterNavigation from '../../components/FooterNavigation'
+
 class BeratungsfelderTemplate extends React.Component {
   render() {
     const pathPrefix =
@@ -135,11 +137,11 @@ class BeratungsfelderTemplate extends React.Component {
           </div>
           <div className="row margin-60-top">
             <div className="col-6">
-              <h2>
+              <h3>
                 Mit besonderer Expertise und<br />
                 Praxiserfahrung berät Cofinpro<br />
                 Sie in den Themen:
-              </h2>
+              </h3>
               <img
                 src="http://via.placeholder.com/448x267"
                 alt="placeholder"
@@ -164,9 +166,12 @@ class BeratungsfelderTemplate extends React.Component {
               />
             </div>
           </div>
-          <div className="margin-100-top">
+          <div>
             <DownloadLinksBottom />
           </div>
+        </div>
+        <div className="margin-140-top">
+          <FooterNavigation />
         </div>
       </div>
     )

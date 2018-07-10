@@ -455,6 +455,19 @@ a:hover {
 .padding-lg-top {
   padding-top: 4rem;
 }
+.padding-button {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+.footer-navigation {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid #a9c5e8;
+}
 .margin-sm-top-bottom {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -604,6 +617,9 @@ a:hover {
 }
 .margin-10-top {
   margin-top: 10px;
+}
+.padding-10 {
+  padding: 10px;
 }
 .padding-20 {
   padding: 20px;
