@@ -403,9 +403,26 @@ class Startseite extends React.Component {
                 Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
                 nectibus.“
               </p>
+              <div className="collapse" id="more-fokusthemen">
+                <img
+                  src="http://via.placeholder.com/1200x800"
+                  className="img-fluid margin-20-top"
+                  alt="Responsive image"
+                />
+                <img
+                  src="http://via.placeholder.com/1200x800"
+                  className="img-fluid margin-20-top"
+                  alt="Responsive image"
+                />
+                <img
+                  src="http://via.placeholder.com/1200x800"
+                  className="img-fluid margin-20-top"
+                  alt="Responsive image"
+                />
+              </div>
             </div>
           </div>
-          <div className="row margin-40-top margin-xs-0-top">
+          <div className="row margin-40-top margin-xs-20-top">
             <div className="col-12 col-md-4 order-2 order-md-1">
               <LinkButton
                 styleSpan="w-100 w-md-unset"
@@ -414,7 +431,7 @@ class Startseite extends React.Component {
               />
             </div>
             <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
-              <ToggleButton id="pinnwand" dataTarget={'oldNewsContent'} />
+              <ToggleButton id="pinnwand" dataTarget={'more-fokusthemen'} />
               <p className="d-none d-md-block text-primary text-size-14">
                 MEHR<br />ANZEIGEN
               </p>
