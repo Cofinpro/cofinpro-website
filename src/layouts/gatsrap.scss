@@ -542,6 +542,7 @@ a:hover {
     font-size: 2rem;
   }
 }
+
 .margin-120-bottom {
   margin-bottom: 120px;
   @include media-breakpoint-only(xs) {
@@ -572,6 +573,88 @@ a:hover {
 .margin-20-bottom {
   margin-bottom: 20px;
 }
+.margin-10-bottom {
+  margin-bottom: 10px;
+}
+
+.margin-xs-80-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+.margin-xs-60-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 60px;
+  }
+}
+.margin-xs-40-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 40px;
+  }
+}
+.margin-xs-20-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.margin-md-80-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 80px;
+  }
+}
+.margin-md-60-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 60px;
+  }
+}
+.margin-md-40-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 40px;
+  }
+}
+.margin-md-20-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 20px;
+  }
+}
+
 .margin-120-top {
   margin-top: 120px;
   @include media-breakpoint-only(xs) {
@@ -608,6 +691,103 @@ a:hover {
 .margin-10-top {
   margin-top: 10px;
 }
+
+.margin-xs-80-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+.margin-xs-60-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+.margin-xs-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 40px;
+  }
+}
+.margin-xs-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+}
+.margin-xs-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+}
+.margin-md-80-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 80px;
+  }
+}
+.margin-md-60-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 60px;
+  }
+}
+.margin-md-40-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 40px;
+  }
+}
+.margin-md-20-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 20px;
+  }
+}
+.margin-md-0-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 0px;
+  }
+}
+
 .margin-40-left {
   margin-left: 40px;
 }
@@ -697,6 +877,10 @@ a:hover {
   font-size: 12px;
 }
 
+.text-size-14 {
+  font-size: 12px;
+}
+
 svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(xs) {
     visibility: hidden;
@@ -708,4 +892,21 @@ svg image[href$='img_20.jpg'] {
 
 .display-none {
   display: none !important;
+}
+
+.no-gutters {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.w-md-unset {
+  @include media-breakpoint-only(md) {
+    width: unset !important;
+  }
+  @include media-breakpoint-only(lg) {
+    width: unset !important;
+  }
+  @include media-breakpoint-only(xl) {
+    width: unset !important;
+  }
 }

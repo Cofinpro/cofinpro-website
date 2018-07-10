@@ -1,7 +1,8 @@
 import React from 'react'
 
 import LinkButton from '../components/buttons/LinkButton'
-import NewsPreview from '../components/NewsPreview'
+import ToggleButton from '../components/buttons/ToggleButton'
+import NewsPreviewV2 from '../components/NewsPreviewV2'
 
 class Startseite extends React.Component {
   render() {
@@ -128,7 +129,7 @@ class Startseite extends React.Component {
 
     return (
       <div>
-        <div className="container-fluid">
+        <div className="container-fluid no-gutters">
           <div className="row">
             <div className="col-12">
               <img
@@ -140,10 +141,10 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-80-top">
+        <div className="container margin-80-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1>Headline</h1>
+              <h1 className="h1">Headline</h1>
               <p>
                 Wir verfolgen ein Beratungskonzept, das alle Elemente der
                 Wertschöpfungskette von Unternehmen im Finanzsektor
@@ -151,12 +152,51 @@ class Startseite extends React.Component {
                 speziell für Kredit und Wertpapier und schließlich die
                 Technologieberatung für agile Architekturen.
               </p>
-              <LinkButton text="MEHR ÜBER COFINPRO" path="/cofinpro" />
+              <LinkButton
+                styleLink="d-inline d-md-none"
+                styleSpan="margin-20-bottom w-100"
+                text="BERATUNGSFELDER ÜBERSICHT"
+                path="/beratungsfelder"
+              />
+              <LinkButton
+                styleSpan="w-100 w-md-unset"
+                text="MEHR ÜBER COFINPRO"
+                path="/cofinpro"
+              />
             </div>
           </div>
         </div>
 
-        <div className="container margin-120-top">
+        <div className="container margin-80-top d-none d-md-block">
+          <div className="row text-center">
+            <div className="col-4">
+              <img
+                src="http://via.placeholder.com/59x65"
+                className="img-fluid padding-20"
+                alt="Responsive image"
+              />
+              <p className="h5">Managementberatung</p>
+            </div>
+            <div className="col-4">
+              <img
+                src="http://via.placeholder.com/59x65"
+                className="img-fluid padding-20"
+                alt="Responsive image"
+              />
+              <p className="h5">Fachberatung</p>
+            </div>
+            <div className="col-4">
+              <img
+                src="http://via.placeholder.com/59x65"
+                className="img-fluid padding-20"
+                alt="Responsive image"
+              />
+              <p className="h5">Technologieberatung</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12">
               <h3 className="h2">News&Medien</h3>
@@ -167,13 +207,19 @@ class Startseite extends React.Component {
             {cofinproNews.data.allContentfulSeiteNews.edges.length > 0
               ? cofinproNews.data.allContentfulSeiteNews.edges.map(
                   (news, i) => {
+                    let columnStyle = ''
+
+                    if (i === 1) {
+                      columnStyle = 'd-none d-md-block'
+                    }
+
                     if (i < 2) {
                       return (
                         <div
-                          className="col-12 col-md-6"
+                          className={'col-12 col-md-6 ' + columnStyle}
                           key={'news-column-' + i}
                         >
-                          <NewsPreview
+                          <NewsPreviewV2
                             key={'news-NewsPreview-' + i}
                             createdAt={news.node.datumFuerDieAnzeige}
                             title={news.node.ueberschrift}
@@ -201,6 +247,7 @@ class Startseite extends React.Component {
           <div className="row">
             <div className="col-12 col-md-12">
               <LinkButton
+                styleSpan="w-100 w-md-unset"
                 text="NEWS&MEDIEN ÜBERSICHT"
                 path="/karriere/pinnwand"
                 {...this.props}
@@ -209,9 +256,9 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top">
+        <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
-            <div className="col-6 d-flex">
+            <div className="col-12 col-md-6 d-flex">
               <div className="row">
                 <div className="col-12">
                   <h2>Fokusthemen</h2>
@@ -231,7 +278,7 @@ class Startseite extends React.Component {
                     vendus dolupta sitatio.
                   </p>
                 </div>
-                <div className="col-12 align-self-end">
+                <div className="col-12 d-none d-md-block align-self-end">
                   <img
                     src="http://via.placeholder.com/1200x800"
                     className="img-fluid"
@@ -240,7 +287,7 @@ class Startseite extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6 d-none d-md-block">
               <div className="row">
                 <div className="col-2" />
                 <div className="col-8">
@@ -259,7 +306,7 @@ class Startseite extends React.Component {
             </div>
           </div>
 
-          <div className="row align-items-end negative-margin-80-top">
+          <div className="row d-none d-md-flex align-items-end negative-margin-80-top">
             <div className="col-1" />
             <div className="col-6">
               <img
@@ -292,7 +339,7 @@ class Startseite extends React.Component {
             </div>
           </div>
 
-          <div className="row align-items-center margin-40-top">
+          <div className="row d-none d-md-flex align-items-center margin-40-top">
             <div className="col-8">
               <img
                 src="http://via.placeholder.com/1200x800"
@@ -308,7 +355,7 @@ class Startseite extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row align-items-center margin-40-top">
+          <div className="row d-none d-md-flex align-items-center margin-40-top">
             <div className="col-6">
               <img
                 src="http://via.placeholder.com/1200x800"
@@ -332,6 +379,48 @@ class Startseite extends React.Component {
                   />
                 </div>
               </div>
+            </div>
+          </div>
+          <div className="row d-flex d-md-none">
+            <div className="col-12">
+              <img
+                src="http://via.placeholder.com/1200x800"
+                className="img-fluid margin-20-top"
+                alt="Responsive image"
+              />
+              <img
+                src="http://via.placeholder.com/1200x800"
+                className="img-fluid margin-20-top"
+                alt="Responsive image"
+              />
+              <img
+                src="http://via.placeholder.com/1200x800"
+                className="img-fluid margin-20-top"
+                alt="Responsive image"
+              />
+              <p className="h3 margin-40-top">
+                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
+                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
+                nectibus.“
+              </p>
+            </div>
+          </div>
+          <div className="row margin-40-top margin-xs-0-top">
+            <div className="col-12 col-md-4 order-2 order-md-1">
+              <LinkButton
+                styleSpan="w-100 w-md-unset"
+                text="FOKUSTHEMEN ÜBERSICHT"
+                path="/fokusthemen"
+              />
+            </div>
+            <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
+              <ToggleButton id="pinnwand" dataTarget={'oldNewsContent'} />
+              <p className="d-none d-md-block text-primary text-size-14">
+                MEHR<br />ANZEIGEN
+              </p>
+              <p className="d-block d-md-none text-primary text-size-14">
+                MEHR ANZEIGEN
+              </p>
             </div>
           </div>
         </div>
