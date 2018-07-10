@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "babel-eslint": "8.0.2",
-    "devicon": "https://github.com/konpa/devicon.git#v2.2",
+    "devicon": "git+https://github.com/konpa/devicon.git#v2.2",
     "emergence.js": "1.1.2",
     "eslint": "4.11.0",
     "eslint-config-prettier": "2.7.0",
