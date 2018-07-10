@@ -29,7 +29,7 @@ class ImageWrapper extends React.Component {
       return (
         <img
           src="http://via.placeholder.com/650x350"
-          class="img-fluid"
+          className="img-fluid"
           alt="Responsive image"
         />
       )

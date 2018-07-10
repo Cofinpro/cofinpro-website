@@ -85,7 +85,7 @@ class NavigationCareer extends React.Component {
       pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
 
     return (
-      <div className="fixed-top">
+      <div className="nav-container fixed-top">
         <div className="bg-white">
           <div className="container">
             <div className="row">
