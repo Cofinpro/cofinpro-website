@@ -555,6 +555,7 @@ a:hover {
     font-size: 2rem;
   }
 }
+
 .margin-120-bottom {
   margin-bottom: 120px;
   @include media-breakpoint-only(xs) {
@@ -585,6 +586,88 @@ a:hover {
 .margin-20-bottom {
   margin-bottom: 20px;
 }
+.margin-10-bottom {
+  margin-bottom: 10px;
+}
+
+.margin-xs-80-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+.margin-xs-60-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 60px;
+  }
+}
+.margin-xs-40-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 40px;
+  }
+}
+.margin-xs-20-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.margin-md-80-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 80px;
+  }
+}
+.margin-md-60-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 60px;
+  }
+}
+.margin-md-40-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 40px;
+  }
+}
+.margin-md-20-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-bottom: 20px;
+  }
+}
+
 .margin-120-top {
   margin-top: 120px;
   @include media-breakpoint-only(xs) {
@@ -611,6 +694,9 @@ a:hover {
 }
 .margin-40-top {
   margin-top: 40px;
+}
+.margin-24-top {
+  margin-top: 24px;
 }
 .margin-20-top {
   margin-top: 20px;
@@ -689,11 +775,36 @@ a:hover {
   font-size: 12px;
 }
 
+.text-size-14 {
+  font-size: 12px;
+}
+
 svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(xs) {
     visibility: hidden;
   }
   @include media-breakpoint-only(sm) {
     visibility: hidden;
+  }
+}
+
+.display-none {
+  display: none !important;
+}
+
+.no-gutters {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.w-md-unset {
+  @include media-breakpoint-only(md) {
+    width: unset !important;
+  }
+  @include media-breakpoint-only(lg) {
+    width: unset !important;
+  }
+  @include media-breakpoint-only(xl) {
+    width: unset !important;
   }
 }

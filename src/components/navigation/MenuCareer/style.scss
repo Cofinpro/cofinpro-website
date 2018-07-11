@@ -3,20 +3,21 @@
 @import 'node_modules/bootstrap/scss/mixins';
 
 .main-navigation-bar {
-  opacity: 0.95;
+  //opacity: 0.95;
+  opacity: 1;
 
   @include media-breakpoint-only(xs) {
-    background-color: $orange;
+    background-color: #f2eeee;
     padding: 2rem;
     margin-top: 1rem;
   }
   @include media-breakpoint-only(sm) {
-    background-color: $orange;
+    background-color: #f2eeee;
     padding: 2rem;
     margin-top: 1rem;
   }
   @include media-breakpoint-only(md) {
-    background-color: $orange;
+    background-color: #f2eeee;
     padding: 2rem;
     margin-top: 1rem;
   }
@@ -65,4 +66,24 @@
 
 ul.navbar-nav {
   padding-right: 12px;
+
+  li {
+    @include media-breakpoint-only(xs) {
+      margin-bottom: 14px;
+    }
+    @include media-breakpoint-only(sm) {
+      margin-bottom: 14px;
+    }
+    @include media-breakpoint-only(md) {
+      margin-bottom: 14px;
+    }
+  }
+}
+
+#navbarSupportedContent {
+  ul.navbar-nav {
+    li:last-child {
+      margin-bottom: 0px;
+    }
+  }
 }

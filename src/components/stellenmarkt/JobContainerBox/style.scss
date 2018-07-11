@@ -2,16 +2,14 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-.jobangebote-technologie-box {
+.carrerOfferPreview.border-img-blue.jobangebote-technologie-box {
   border: 3px dashed $orange;
   -webkit-border-image: none;
   -o-border-image: none;
   border-image: none;
 }
-.jobangebote-studenten-box {
-  border: 3px solid $blue;
-}
-.jobangebote-andere-box {
+
+.carrerOfferPreview.border-img-blue.jobangebote-andere-box {
   border: 3px dashed $orange;
   -webkit-border-image: none;
   -o-border-image: none;

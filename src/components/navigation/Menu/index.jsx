@@ -2,15 +2,16 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PubSub from 'pubsub-js'
 
-import StorageHelper from '../../../utils/storageHelper'
-
 import './style.scss'
 
+import StorageHelper from '../../../utils/storageHelper'
 import Kompetenzen from '../../../../data/Kompetenzen'
+
+import LinkButton from '../../buttons/LinkButton'
 
 import NavbarLinks from '../NavbarLinks'
 
-class MenuCareer extends React.Component {
+class Menu extends React.Component {
   componentDidMount() {
     $(document).on('click', '.navbar-collapse.show', function(e) {
       if ($(e.target).is('a')) {
@@ -19,7 +20,7 @@ class MenuCareer extends React.Component {
     })
 
     $('#close-button-menu').click(function() {
-      $('#navbarSupportedContent').collapse('hide')
+      $('#navbar-main-content').collapse('hide')
     })
   }
 
@@ -72,47 +73,36 @@ class MenuCareer extends React.Component {
 
     var menuItems = [
       {
-        name: 'HOME',
-        link: '/karriere' + this.getPathPrefixPerspective() + '/landing',
-        pattern: '/karriere/.*/landing',
+        name: 'BERATUNGSFELDER',
+        link: '/beratungsfelder',
+        pattern: '/beratungsfelder/.*',
       },
       {
-        name: 'ÜBER UNS',
-        link: pathPrefix + '/karriere/ueber-uns',
-        pattern: '/karriere/ueber-uns',
+        name: 'FOKUSTHEMEN',
+        link: '/fokusthemen',
+        pattern: '/fokusthemen',
       },
       {
-        name: 'DEINE KARRIERE',
-        link: '/karriere' + this.getPathPrefixPerspective() + '/deine-karriere',
-        pattern: '/karriere/.*/deine-karriere',
+        name: 'PROJEKTE',
+        link: '/projekte',
+        pattern: '/projekte/.*',
       },
       {
-        name: 'DEINE ENTWICKLUNG',
-        link:
-          '/karriere' + this.getPathPrefixPerspective() + '/deine-entwicklung',
-        pattern: '/karriere/.*/deine-entwicklung',
+        name: 'NEWS & MEDIEN',
+        link: '/news-medien',
+        pattern: '/news-medien/.*',
       },
       {
-        name: 'GEHALT & BENEFITS',
-        link:
-          '/karriere' + this.getPathPrefixPerspective() + '/gehalt-beteiligung',
-        pattern: '/karriere/.*/gehalt-beteiligung',
-      },
-      {
-        name: 'WORK & LIFE',
-        link: pathPrefix + '/karriere/work-life',
-        pattern: '/karriere/work-life',
-      },
-      {
-        name: 'JOBS & BEWERBUNG',
-        link: pathPrefix + '/karriere/jobs-bewerbung',
-        pattern: '/karriere/jobs-bewerbung',
+        name: 'COFINPRO',
+        link: '/cofinpro',
+        pattern: '/cofinpro',
       },
     ]
+
     return (
       <div
         className="collapse navbar-collapse main-navigation-bar"
-        id="navbarSupportedContent"
+        id="navbar-main-content"
       >
         <div>
           <a href="/" className="navbar-brand d-none d-lg-block">
@@ -151,9 +141,15 @@ class MenuCareer extends React.Component {
           locationUpdate={locationUpdate}
           menuItems={menuItems}
         />
+        <LinkButton
+          styleLink=" navigation-to-krarriere"
+          text="KARRIERE"
+          path="/karriere"
+          {...this.props}
+        />
       </div>
     )
   }
 }
 
-export default MenuCareer
+export default Menu
