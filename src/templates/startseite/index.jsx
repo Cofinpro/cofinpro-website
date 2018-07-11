@@ -20,6 +20,17 @@ class StartseiteTemplate extends React.Component {
     }
   }
 
+  resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        $('#lottie').empty()
+        $('#intro').remove()
+        $('#introHeader').remove()
+        resolve('resolved')
+      }, 4000)
+    })
+  }
+
   componentDidMount() {
     $('#links-tech').hide()
     $('#links-fach').hide()
@@ -84,6 +95,7 @@ class StartseiteTemplate extends React.Component {
 
         var rnd = Math.floor(Math.random() * 80000)
 
+        script2.id = 'introHeader'
         script2.src = '/js/introHeader.js?r=' + rnd
         script2.async = false
 
@@ -91,13 +103,17 @@ class StartseiteTemplate extends React.Component {
 
         const script = document.createElement('script')
 
+        script.id = 'intro'
         script.src = '/js/intro.js?r=' + rnd
         script.async = false
 
         document.body.appendChild(script)
 
         StorageHelper.saveInSessionStorage('introPlayed', 'true')
+
+        this.resolveAfter2Seconds()
       } else {
+        $('#lottie').empty()
         $('#lottie').hide()
       }
     }
