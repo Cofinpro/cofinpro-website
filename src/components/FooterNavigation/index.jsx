@@ -3,6 +3,8 @@ import Link from 'gatsby-link'
 import get from 'lodash/get'
 import LinkButton from '../../components/buttons/LinkButton'
 
+import './style.scss'
+
 class FooterNavigation extends React.Component {
   render() {
     const data = this.props.data

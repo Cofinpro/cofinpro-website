@@ -7,7 +7,7 @@ import LinkButton from '../../components/buttons/LinkButton'
 
 import ToggleButton from '../../components/buttons/LinkButton'
 
-import DownloadLinksBottom from '../../components/DownloadLinksBottom'
+import ReferenzAndDownload from '../../components/ReferenzAndDownload'
 
 import FooterNavigation from '../../components/FooterNavigation'
 
@@ -20,7 +20,7 @@ class BeratungsfelderTemplate extends React.Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-12">
+            <div className="col-md-md-12">
               <img
                 src="http://via.placeholder.com/1024x584"
                 alt="placeholder"
@@ -29,7 +29,7 @@ class BeratungsfelderTemplate extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-8">
+            <div className="col-md-8">
               <img
                 src="http://via.placeholder.com/128x132"
                 alt="placeholder"
@@ -45,11 +45,10 @@ class BeratungsfelderTemplate extends React.Component {
               </h4>
             </div>
 
-            <div className="col-4">
+            <div className="col-md-4">
               <div className="text-left margin-20-top">
                 <h5>
-                  {' '}
-                  Relevante Fokusthemen <br />{' '}
+                  Relevante Fokusthemen <br />
                 </h5>
 
                 <h4 className="text-left margin-20-top">
@@ -70,7 +69,7 @@ class BeratungsfelderTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-120-top">
-            <div className="col-6">
+            <div className="col-md-6">
               <h2>
                 LOREM IPSUM dolor <br />
                 sit amet lorem ipsum
@@ -91,7 +90,7 @@ class BeratungsfelderTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-120-top">
-            <div className="col-12">
+            <div className="col-md-12">
               <h2 className="text-primary text-center">Kreditprozess</h2>
               <img
                 src="http://via.placeholder.com/937x90"
@@ -101,8 +100,8 @@ class BeratungsfelderTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-100-top">
-            <div className="col-6" />
-            <div className="col-6">
+            <div className="col-md-6" />
+            <div className="col-md-6">
               <h2>
                 LOREM IPSUM dolor <br />
                 sit amet lorem ipsum
@@ -136,7 +135,7 @@ class BeratungsfelderTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-60-top">
-            <div className="col-6">
+            <div className="col-md-6">
               <h3>
                 Mit besonderer Expertise und<br />
                 Praxiserfahrung berät Cofinpro<br />
@@ -153,7 +152,7 @@ class BeratungsfelderTemplate extends React.Component {
                 className="img-responsive margin-40-top"
               />
             </div>
-            <div className="col-6 margin-140-top">
+            <div className="col-md-6 margin-140-top">
               <img
                 src="http://via.placeholder.com/288x172"
                 alt="placeholder"
@@ -167,7 +166,7 @@ class BeratungsfelderTemplate extends React.Component {
             </div>
           </div>
           <div>
-            <DownloadLinksBottom />
+            <ReferenzAndDownload />
           </div>
         </div>
         <div className="margin-140-top">

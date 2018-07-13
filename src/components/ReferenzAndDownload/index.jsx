@@ -1,73 +1,54 @@
 import React from 'react'
-
-import HeroImageLayout from '../../components/layouts/HeroImageLayout'
-
-import SiteHeaderContent from '../../components/SiteHeaderContent'
+import Link from 'gatsby-link'
+import get from 'lodash/get'
 import LinkButton from '../../components/buttons/LinkButton'
 
-class BeratungsfelderTemplate extends React.Component {
+import './style.scss'
+
+class ReferenzAndDownload extends React.Component {
   render() {
+    const data = this.props.data
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    const { location, title, locationUpdate } = this.props
+
+    var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
 
     return (
       <div>
         <div className="container">
-          <div className="container-fluid no-padding">
-            <div className="row">
-              <div className="col-md-md-12">
-                <img
-                  src="http://via.placeholder.com/1024x584"
-                  alt="placeholder"
-                  className="img-responsive"
-                />
+          <div className="row">
+            <div className="col-md-6" />
+            <div className="col-md-6">
+              <h2> Referenzprojekte </h2>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+              <div className="row">
+                <div className="col-md-8">
+                  <LinkButton
+                    text="ALLE PROJEKTE ZUM FOKUSTHEMA"
+                    styleSpan="btn-lg btn-block padding-button margin-100-bottom margin-10-top"
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-2">
-              <img
-                src="http://via.placeholder.com/128x132"
-                alt="placeholder"
-                className="img-fluid margin-20-bottom margin-20-top"
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-7">
-              <h1>Fachberatung</h1>
-              <h2>
-                Die Experten <br />für Kredit und Wertpapier
-              </h2>
-              <p className="text-left margin-40-top">
-                {' '}
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-            <div className="col-md-5">
-              <LinkButton
-                text="Kreditgeschäft"
-                styleSpan="btn-lg btn-block margin-20-bottom margin-20-top"
-              />
-              <LinkButton
-                text="Wertpapiergeschäft"
-                styleSpan="btn-lg btn-block"
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-md-3" />
+          <div className="row margin-60-top">
             <div className="col-md-6">
-              <p className="text-left margin-20-top">
+              <h2> Downloads </h2>
+              <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -79,8 +60,15 @@ class BeratungsfelderTemplate extends React.Component {
                 et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                 est Lorem ipsum dolor sit amet.
               </p>
+              <div className="row">
+                <div className="col-md-8">
+                  <LinkButton
+                    text="ALLE MEDIEN ANZEIGEN"
+                    styleSpan="btn-lg btn-block padding-button margin-100-bottom margin-10-top"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="col-md-3" />
           </div>
         </div>
       </div>
@@ -88,4 +76,4 @@ class BeratungsfelderTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderTemplate
+export default ReferenzAndDownload
