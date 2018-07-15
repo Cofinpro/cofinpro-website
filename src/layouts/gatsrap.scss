@@ -44,6 +44,7 @@ $font-size-lg: 1rem !default;
 $font-size-sm: 0.875rem !default;
 $h1-font-size: 3rem;
 $h2-font-size: 2.25rem;
+$h3-font-size: 1.75rem;
 $h4-font-size: 1.5rem;
 $h6-font-size: 0.875rem;
 $h1-font-size-sm: 1.5rem;
@@ -158,7 +159,13 @@ h5,
 h6 {
   font-family: apercu-bold-pro;
 }
-.h1 {
+.h1,
+.h1 > h1,
+.h1 > h2,
+.h1 > h3,
+.h1 > h4,
+.h1 > h5,
+.h1 > h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h1-font-size-sm;
@@ -176,7 +183,13 @@ h6 {
     font-size: $h1-font-size;
   }
 }
-.h2 {
+.h2,
+.h2 > h1,
+.h2 > h2,
+.h2 > h3,
+.h2 > h4,
+.h2 > h5,
+.h2 > h6 {
   font-family: apercu-bold-pro;
   margin-bottom: 1rem;
   @include media-breakpoint-only(xs) {
@@ -195,10 +208,23 @@ h6 {
     font-size: $h2-font-size;
   }
 }
-.h3 {
+.h3,
+.h3 > h1,
+.h3 > h2,
+.h3 > h3,
+.h3 > h4,
+.h3 > h5,
+.h3 > h6 {
   font-family: apercu-bold-pro;
+  font-size: $h3-font-size;
 }
-.h4 {
+.h4,
+.h4 > h1,
+.h4 > h2,
+.h4 > h3,
+.h4 > h4,
+.h4 > h5,
+.h4 > h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
@@ -233,7 +259,13 @@ h6 {
     }
   }
 }
-.h5 {
+.h5,
+.h5 > h1,
+.h5 > h2,
+.h5 > h3,
+.h5 > h4,
+.h5 > h5,
+.h5 > h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
@@ -251,7 +283,13 @@ h6 {
     font-size: $h5-font-size;
   }
 }
-.h6 {
+.h6,
+.h6 > h1,
+.h6 > h2,
+.h6 > h3,
+.h6 > h4,
+.h6 > h5,
+.h6 > h6 {
   font-family: apercu-regular-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;

@@ -4,13 +4,16 @@ import PropTypes from 'prop-types'
 
 import ContentfulImage from '../../images/ContentfulImage'
 
+import './style.scss'
+
 const SOURCE_TYP_CONTENTFUL = 'Contentful'
 const SOURCE_TYP_SHARP = 'Sharp'
 const SOURCE_TYP_BOOTSTRAP = 'Bootstrap'
+const SOURCE_TYP_PLACEHOLDER = 'Placeholder'
 
 class ImageWrapper extends React.Component {
   render() {
-    const { source, sourceType, styleClasses } = this.props
+    const { source, sourceType, overlayElement, styleClasses } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -25,13 +28,20 @@ class ImageWrapper extends React.Component {
           className={styleClasses == null ? 'img-fluid' : styleClasses}
         />
       )
-    } else {
+    } else if (sourceType === SOURCE_TYP_PLACEHOLDER) {
       return (
-        <img
-          src="http://via.placeholder.com/650x350"
-          className="img-fluid"
-          alt="Responsive image"
-        />
+        <div>
+          <img
+            src={
+              'http://via.placeholder.com/' + source.width + 'x' + source.height
+            }
+            className={'img-fluid ' + styleClasses}
+            alt="Responsive image"
+          />
+          <div className={'image-overlay-top-left ' + styleClasses}>
+            {overlayElement}
+          </div>
+        </div>
       )
     }
   }
@@ -42,6 +52,7 @@ export default {
   SOURCE_TYP_CONTENTFUL,
   SOURCE_TYP_SHARP,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_PLACEHOLDER,
 }
 
 ImageWrapper.propTypes = {
@@ -65,12 +76,18 @@ ImageWrapper.propTypes = {
         srcSet: PropTypes.string,
       }),
     }),
+    PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
     PropTypes.string,
   ]),
   sourceType: PropTypes.oneOf([
     SOURCE_TYP_CONTENTFUL,
     SOURCE_TYP_SHARP,
     SOURCE_TYP_BOOTSTRAP,
+    SOURCE_TYP_PLACEHOLDER,
   ]),
+  overlayElement: PropTypes.any,
   styleClasses: PropTypes.string,
 }

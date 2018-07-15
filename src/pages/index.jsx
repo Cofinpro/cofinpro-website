@@ -3,6 +3,12 @@ import React from 'react'
 import LinkButton from '../components/buttons/LinkButton'
 import ToggleButton from '../components/buttons/ToggleButton'
 import NewsPreviewV2 from '../components/NewsPreviewV2'
+import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
+
+import {
+  ImageWrapper,
+  SOURCE_TYP_PLACEHOLDER,
+} from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
   render() {
@@ -132,10 +138,12 @@ class Startseite extends React.Component {
         <div className="container-fluid no-gutters">
           <div className="row">
             <div className="col-12">
-              <img
-                src="http://via.placeholder.com/2000x1000"
-                className="img-fluid"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 1000,
+                }}
               />
             </div>
           </div>
@@ -170,26 +178,35 @@ class Startseite extends React.Component {
         <div className="container margin-80-top d-none d-md-block">
           <div className="row text-center">
             <div className="col-4">
-              <img
-                src="http://via.placeholder.com/59x65"
-                className="img-fluid padding-20"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 59,
+                  height: 65,
+                }}
+                styleClasses="padding-20"
               />
               <p className="h5">Managementberatung</p>
             </div>
             <div className="col-4">
-              <img
-                src="http://via.placeholder.com/59x65"
-                className="img-fluid padding-20"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 59,
+                  height: 65,
+                }}
+                styleClasses="padding-20"
               />
               <p className="h5">Fachberatung</p>
             </div>
             <div className="col-4">
-              <img
-                src="http://via.placeholder.com/59x65"
-                className="img-fluid padding-20"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 59,
+                  height: 65,
+                }}
+                styleClasses="padding-20"
               />
               <p className="h5">Technologieberatung</p>
             </div>
@@ -279,10 +296,18 @@ class Startseite extends React.Component {
                   </p>
                 </div>
                 <div className="col-12 d-none d-md-block align-self-end">
-                  <img
-                    src="http://via.placeholder.com/1200x800"
-                    className="img-fluid"
-                    alt="Responsive image"
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="### Fokusthema 1"
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
@@ -291,47 +316,92 @@ class Startseite extends React.Component {
               <div className="row">
                 <div className="col-2" />
                 <div className="col-8">
-                  <img
-                    src="http://via.placeholder.com/1200x800"
-                    className="img-fluid"
-                    alt="Responsive image"
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="### Fokusthema 2"
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid margin-60-top margin-120-bottom"
-                alt="Responsive image"
-              />
+              <div className="row">
+                <div className="col-12">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                    styleClasses="margin-60-top margin-120-bottom"
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="### Fokusthema 3"
+                        styleClasses="h4"
+                      />
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="row d-none d-md-flex align-items-end negative-margin-80-top">
             <div className="col-1" />
             <div className="col-6">
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 4"
+                    styleClasses="h4"
+                  />
+                }
               />
             </div>
             <div className="col-5">
               <div className="row">
                 <div className="col-2" />
                 <div className="col-10">
-                  <img
-                    src="http://via.placeholder.com/1200x800"
-                    className="img-fluid"
-                    alt="Responsive image"
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="### Fokusthema 5"
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
               <div className="row margin-40-top">
                 <div className="col-10">
-                  <img
-                    src="http://via.placeholder.com/1200x800"
-                    className="img-fluid"
-                    alt="Responsive image"
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="### Fokusthema 6"
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
                 <div className="col-2" />
@@ -341,10 +411,18 @@ class Startseite extends React.Component {
 
           <div className="row d-none d-md-flex align-items-center margin-40-top">
             <div className="col-8">
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 7"
+                    styleClasses="h4"
+                  />
+                }
               />
             </div>
             <div className="col-4">
@@ -357,25 +435,49 @@ class Startseite extends React.Component {
           </div>
           <div className="row d-none d-md-flex align-items-center margin-40-top">
             <div className="col-6">
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 8"
+                    styleClasses="h4"
+                  />
+                }
               />
             </div>
             <div className="col-6">
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 9"
+                    styleClasses="h4"
+                  />
+                }
               />
               <div className="row margin-40-top">
                 <div className="col-4" />
                 <div className="col-8">
-                  <img
-                    src="http://via.placeholder.com/1200x800"
-                    className="img-fluid"
-                    alt="Responsive image"
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="### Fokusthema 10"
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
@@ -383,42 +485,112 @@ class Startseite extends React.Component {
           </div>
           <div className="row d-flex d-md-none">
             <div className="col-12">
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid margin-20-top"
-                alt="Responsive image"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                styleClasses="margin-20-top"
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 1"
+                    styleClasses="h4"
+                  />
+                }
               />
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid margin-20-top"
-                alt="Responsive image"
+            </div>
+            <div className="col-12">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                styleClasses="margin-20-top"
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 2"
+                    styleClasses="h4"
+                  />
+                }
               />
-              <img
-                src="http://via.placeholder.com/1200x800"
-                className="img-fluid margin-20-top"
-                alt="Responsive image"
+            </div>
+            <div className="col-12">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 800,
+                }}
+                styleClasses="margin-20-top"
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 3"
+                    styleClasses="h4"
+                  />
+                }
               />
+            </div>
+            <div className="col-12">
               <p className="h3 margin-40-top">
                 „tibusda volorum quiam, volenimus aut esti asseque velecatus.
                 Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
                 nectibus.“
               </p>
+            </div>
+            <div className="col-12">
               <div className="collapse" id="more-fokusthemen">
-                <img
-                  src="http://via.placeholder.com/1200x800"
-                  className="img-fluid margin-20-top"
-                  alt="Responsive image"
-                />
-                <img
-                  src="http://via.placeholder.com/1200x800"
-                  className="img-fluid margin-20-top"
-                  alt="Responsive image"
-                />
-                <img
-                  src="http://via.placeholder.com/1200x800"
-                  className="img-fluid margin-20-top"
-                  alt="Responsive image"
-                />
+                <div className="row">
+                  <div className="col-12">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_PLACEHOLDER}
+                      source={{
+                        width: 1200,
+                        height: 800,
+                      }}
+                      styleClasses="margin-20-top"
+                      overlayElement={
+                        <ContentfulMarkdownText
+                          text="### Fokusthema 4"
+                          styleClasses="h4"
+                        />
+                      }
+                    />
+                  </div>
+                  <div className="col-12">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_PLACEHOLDER}
+                      source={{
+                        width: 1200,
+                        height: 800,
+                      }}
+                      styleClasses="margin-20-top"
+                      overlayElement={
+                        <ContentfulMarkdownText
+                          text="### Fokusthema 5"
+                          styleClasses="h4"
+                        />
+                      }
+                    />
+                  </div>
+                  <div className="col-12">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_PLACEHOLDER}
+                      source={{
+                        width: 1200,
+                        height: 800,
+                      }}
+                      styleClasses="margin-20-top"
+                      overlayElement={
+                        <ContentfulMarkdownText
+                          text="### Fokusthema 6"
+                          styleClasses="h4"
+                        />
+                      }
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>

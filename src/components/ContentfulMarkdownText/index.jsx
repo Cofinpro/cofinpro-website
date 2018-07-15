@@ -18,7 +18,7 @@ class ContentfulMarkdownText extends React.Component {
       )
     }
 
-    return <MarkdownPreview className={styleClasses} value={marktText} />
+    return <MarkdownPreview className={styleClasses} value={text} />
   }
 }
 
