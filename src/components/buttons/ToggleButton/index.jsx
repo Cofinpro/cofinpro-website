@@ -56,12 +56,12 @@ class ToggleButton extends React.Component {
       >
         <img
           className="collapse-icon-down"
-          alt="Mehr Jobs zeigen"
+          alt="Mehr zeigen"
           src={pathPrefix + '/svg/icon_arrow_dotted_down_orange.svg'}
         />
         <img
           className="d-none collapse-icon-up"
-          alt="Weniger Jobs zeigen"
+          alt="Weniger zeigen"
           src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
         />
       </button>
