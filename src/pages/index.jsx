@@ -544,13 +544,31 @@ class Startseite extends React.Component {
                   display: fokusthemen.length > 10 ? 'block' : 'none',
                 }}
               >
-                <ToggleButton id="pinnwand" dataTarget={'more-fokusthemen'} />
-                <p className="d-none d-md-block text-primary text-size-14">
-                  MEHR<br />ANZEIGEN
-                </p>
-                <p className="d-block d-md-none text-primary text-size-14">
-                  MEHR ANZEIGEN
-                </p>
+                <ToggleButton
+                  id="pinnwand"
+                  dataTarget={'more-fokusthemen'}
+                  showElemForMore="label-toggle-focusthemen-more"
+                  showElemForLess="label-toggle-focusthemen-less"
+                />
+                <div id="label-toggle-focusthemen-more">
+                  <p className="d-none d-md-block text-primary text-size-14">
+                    MEHR<br />ANZEIGEN
+                  </p>
+                  <p className="d-block d-md-none text-primary text-size-14">
+                    MEHR ANZEIGEN
+                  </p>
+                </div>
+                <div
+                  id="label-toggle-focusthemen-less"
+                  style={{ display: 'none' }}
+                >
+                  <p className="d-none d-md-block text-primary text-size-14">
+                    WENIGER<br />ANZEIGEN
+                  </p>
+                  <p className="d-block d-md-none text-primary text-size-14">
+                    WENIGER ANZEIGEN
+                  </p>
+                </div>
               </div>
             </div>
           </div>

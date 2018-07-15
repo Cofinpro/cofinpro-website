@@ -10,6 +10,9 @@ class ToggleButton extends React.Component {
     const dataTarget = this.props.dataTarget
     const id = this.props.id
 
+    const showElemForMore = this.props.showElemForMore
+    const showElemForLess = this.props.showElemForLess
+
     $('#' + dataTarget).collapse({ toggle: false })
 
     $('#button-collapse-' + id).click(function() {
@@ -24,6 +27,8 @@ class ToggleButton extends React.Component {
         $('#button-collapse-' + id + '>img.collapse-icon-down').removeClass(
           'd-none'
         )
+        $('#' + showElemForMore).show()
+        $('#' + showElemForLess).hide()
       } else if (
         $('#button-collapse-' + id + '>img.collapse-icon-up').hasClass('d-none')
       ) {
@@ -33,12 +38,20 @@ class ToggleButton extends React.Component {
         $('#button-collapse-' + id + '>img.collapse-icon-up').removeClass(
           'd-none'
         )
+        $('#' + showElemForMore).hide()
+        $('#' + showElemForLess).show()
       }
     })
   }
 
   render() {
-    const { id, dataTarget, style } = this.props
+    const {
+      id,
+      dataTarget,
+      showElemForMore,
+      showElemForLess,
+      style,
+    } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
