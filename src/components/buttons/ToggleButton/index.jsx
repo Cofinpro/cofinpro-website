@@ -27,8 +27,12 @@ class ToggleButton extends React.Component {
         $('#button-collapse-' + id + '>img.collapse-icon-down').removeClass(
           'd-none'
         )
-        $('#' + showElemForMore).show()
-        $('#' + showElemForLess).hide()
+        if (showElemForMore !== undefined) {
+          $('#' + showElemForMore).show()
+        }
+        if (showElemForLess !== undefined) {
+          $('#' + showElemForLess).hide()
+        }
       } else if (
         $('#button-collapse-' + id + '>img.collapse-icon-up').hasClass('d-none')
       ) {
@@ -38,8 +42,12 @@ class ToggleButton extends React.Component {
         $('#button-collapse-' + id + '>img.collapse-icon-up').removeClass(
           'd-none'
         )
-        $('#' + showElemForMore).hide()
-        $('#' + showElemForLess).show()
+        if (showElemForMore !== undefined) {
+          $('#' + showElemForMore).hide()
+        }
+        if (showElemForLess !== undefined) {
+          $('#' + showElemForLess).show()
+        }
       }
     })
   }
