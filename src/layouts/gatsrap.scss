@@ -9,7 +9,6 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
-
 $blue: #a9c5e8 !default;
 $indigo: #3f51b5 !default;
 $purple: #673ab7 !default;
@@ -22,18 +21,7 @@ $green: #8bc34a !default;
 $teal: #009688 !default;
 $cyan: #00bcd4 !default;
 $brown: #847575 !default;
-
-$theme-colors: (
-    primary: $orange,
-    secondary: $blue,
-    success: $green,
-    info: $brown,
-    warning: $yellow,
-    danger: $red,
-    light: $gray-100,
-    dark: $gray-800
-  )
-  !default;
+$theme-colors: ( primary: $orange, secondary: $blue, success: $green, info: $brown, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800) !default;
 $display3-size: 3.75rem !default;
 $display4-size: 3.375rem !default;
 $font-family-sans-serif: apercu-regular-pro;
@@ -60,22 +48,9 @@ $h6-font-size-md: 0.875rem;
 $headings-font-family: inherit !default;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-);
-$container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 1060px,
-  xl: 1240px
-);
-
+$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: ( sm: 540px, md: 720px, lg: 1060px, xl: 1240px);
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
-
 main {
   margin-top: 76px;
   @include media-breakpoint-only(lg) {
@@ -85,6 +60,7 @@ main {
     margin-top: 104px;
   }
 }
+
 .p-font-large-lg {
   font-size: 1.125rem;
   @include media-breakpoint-only(xs) {
@@ -96,7 +72,6 @@ main {
   @include media-breakpoint-only(md) {
     font-size: $font-size-sm;
   }
-
   p {
     font-size: 1.125rem;
     @include media-breakpoint-only(xs) {
@@ -110,6 +85,7 @@ main {
     }
   }
 }
+
 .p-font-large-md {
   font-size: 1.125rem;
   @include media-breakpoint-only(xs) {
@@ -118,7 +94,6 @@ main {
   @include media-breakpoint-only(sm) {
     font-size: $font-size-sm;
   }
-
   p {
     font-size: 1.125rem;
     @include media-breakpoint-only(xs) {
@@ -129,9 +104,11 @@ main {
     }
   }
 }
+
 .p-font-large {
   font-size: 1.125rem;
 }
+
 p,
 li,
 .p {
@@ -151,6 +128,7 @@ li,
     font-size: $font-size-lg;
   }
 }
+
 h1,
 h2,
 h3,
@@ -159,13 +137,14 @@ h5,
 h6 {
   font-family: apercu-bold-pro;
 }
+
 .h1,
-.h1 > h1,
-.h1 > h2,
-.h1 > h3,
-.h1 > h4,
-.h1 > h5,
-.h1 > h6 {
+.h1>h1,
+.h1>h2,
+.h1>h3,
+.h1>h4,
+.h1>h5,
+.h1>h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h1-font-size-sm;
@@ -183,13 +162,14 @@ h6 {
     font-size: $h1-font-size;
   }
 }
+
 .h2,
-.h2 > h1,
-.h2 > h2,
-.h2 > h3,
-.h2 > h4,
-.h2 > h5,
-.h2 > h6 {
+.h2>h1,
+.h2>h2,
+.h2>h3,
+.h2>h4,
+.h2>h5,
+.h2>h6 {
   font-family: apercu-bold-pro;
   margin-bottom: 1rem;
   @include media-breakpoint-only(xs) {
@@ -208,23 +188,25 @@ h6 {
     font-size: $h2-font-size;
   }
 }
+
 .h3,
-.h3 > h1,
-.h3 > h2,
-.h3 > h3,
-.h3 > h4,
-.h3 > h5,
-.h3 > h6 {
+.h3>h1,
+.h3>h2,
+.h3>h3,
+.h3>h4,
+.h3>h5,
+.h3>h6 {
   font-family: apercu-bold-pro;
   font-size: $h3-font-size;
 }
+
 .h4,
-.h4 > h1,
-.h4 > h2,
-.h4 > h3,
-.h4 > h4,
-.h4 > h5,
-.h4 > h6 {
+.h4>h1,
+.h4>h2,
+.h4>h3,
+.h4>h4,
+.h4>h5,
+.h4>h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
@@ -259,13 +241,14 @@ h6 {
     }
   }
 }
+
 .h5,
-.h5 > h1,
-.h5 > h2,
-.h5 > h3,
-.h5 > h4,
-.h5 > h5,
-.h5 > h6 {
+.h5>h1,
+.h5>h2,
+.h5>h3,
+.h5>h4,
+.h5>h5,
+.h5>h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
@@ -283,13 +266,14 @@ h6 {
     font-size: $h5-font-size;
   }
 }
+
 .h6,
-.h6 > h1,
-.h6 > h2,
-.h6 > h3,
-.h6 > h4,
-.h6 > h5,
-.h6 > h6 {
+.h6>h1,
+.h6>h2,
+.h6>h3,
+.h6>h4,
+.h6>h5,
+.h6>h6 {
   font-family: apercu-regular-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
@@ -307,6 +291,7 @@ h6 {
     font-size: $h6-font-size;
   }
 }
+
 p.h5,
 span.h5,
 div.h5 {
@@ -327,6 +312,7 @@ div.h5 {
     font-size: $h5-font-size;
   }
 }
+
 li.h6 {
   font-family: apercu-regular-pro;
   @include media-breakpoint-only(xs) {
@@ -345,6 +331,7 @@ li.h6 {
     font-size: $h6-font-size;
   }
 }
+
 p.h4,
 span.h4,
 div.h4 {
@@ -373,18 +360,22 @@ a:hover {
 .news-content {
   margin-top: 1rem;
 }
+
 #nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
   opacity: 0.95;
 }
+
 .min-view-height {
   min-height: 80vh;
 }
+
 .filler-box {
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
+
 .filler-box-320 {
   margin-top: 320px;
   @include media-breakpoint-only(xs) {
@@ -394,6 +385,7 @@ a:hover {
     margin-top: 60px;
   }
 }
+
 .filler-box-240 {
   margin-top: 240px;
   @include media-breakpoint-only(xs) {
@@ -403,6 +395,7 @@ a:hover {
     margin-top: 60px;
   }
 }
+
 .filler-box-120 {
   margin-top: 120px;
   @include media-breakpoint-only(xs) {
@@ -412,6 +405,7 @@ a:hover {
     margin-top: 60px;
   }
 }
+
 .filler-box-220 {
   margin-top: 220px;
   @include media-breakpoint-only(xs) {
@@ -421,6 +415,7 @@ a:hover {
     margin-top: 60px;
   }
 }
+
 .filler-box-200 {
   margin-top: 200px;
   @include media-breakpoint-only(xs) {
@@ -430,25 +425,30 @@ a:hover {
     margin-top: 60px;
   }
 }
+
 .filler-box-two {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
 .bg-brown {
   background-color: #847575;
 }
+
 .bg-orange-light {
   background-color: $orange-light;
 }
+
 .img-md-padding {
   padding: 1.5rem;
 }
+
 .padding-sm {
   padding: 1rem;
 }
+
 .padding-lg {
   padding: 0rem;
-
   @include media-breakpoint-only(lg) {
     padding: 1rem;
   }
@@ -456,40 +456,51 @@ a:hover {
     padding: 1rem;
   }
 }
+
 .padding-md {
   padding: 2rem;
 }
+
 .padding-sm-top-bottom {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
 .padding-md-top-bottom {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
 .padding-lg-top-bottom {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+
 .padding-xl-top-bottom {
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+
 .padding-sm-bottom {
   padding-bottom: 1rem;
 }
+
 .padding-md-bottom {
   padding-bottom: 2rem;
 }
+
 .padding-lg-bottom {
   padding-bottom: 4rem;
 }
+
 .padding-sm-top {
   padding-top: 1rem;
 }
+
 .padding-md-top {
   padding-top: 2rem;
 }
+
 .padding-lg-top {
   padding-top: 4rem;
 }
@@ -498,17 +509,21 @@ a:hover {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 .margin-md-top-bottom {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 .margin-lg-top-bottom {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+
 .margin-sm-top {
   margin-top: 1rem;
 }
+
 .margin-md-top {
   margin-top: 2rem;
 }
@@ -516,32 +531,40 @@ a:hover {
 .margin-lg-top {
   margin-top: 4rem;
 }
+
 .margin-sm-bottom {
   margin-bottom: 1rem;
 }
+
 .margin-md-bottom {
   margin-bottom: 2rem;
 }
+
 .margin-sm-right {
   margin-right: 1rem;
 }
+
 .margin-md-right {
   margin-right: 2rem;
 }
+
 .no-margin {
   margin: 0;
 }
+
 .no-margin-bottom {
   margin-bottom: 0rem;
 }
+
 .stellenangebote-box {
   border: 3px solid #a9c5e8;
 }
+
 #carouselCaptionsArbeitsplatz,
 .imageCarousel,
 .socialMediaCarousel {
-  .carousel-control-prev > i,
-  .carousel-control-next > i {
+  .carousel-control-prev>i,
+  .carousel-control-next>i {
     font-size: 2rem;
     color: #ec7b1a !important;
   }
@@ -570,6 +593,7 @@ a:hover {
     }
   }
 }
+
 #button-pinnwand-collapse,
 #button-startseite-collapse {
   background: none;
@@ -591,6 +615,7 @@ a:hover {
     margin-bottom: 80px;
   }
 }
+
 .margin-100-bottom {
   margin-bottom: 100px;
   @include media-breakpoint-only(xs) {
@@ -600,18 +625,23 @@ a:hover {
     margin-bottom: 80px;
   }
 }
+
 .margin-80-bottom {
   margin-bottom: 80px;
 }
+
 .margin-60-bottom {
   margin-bottom: 60px;
 }
+
 .margin-40-bottom {
   margin-bottom: 40px;
 }
+
 .margin-20-bottom {
   margin-bottom: 20px;
 }
+
 .margin-10-bottom {
   margin-bottom: 10px;
 }
@@ -624,6 +654,7 @@ a:hover {
     margin-bottom: 80px;
   }
 }
+
 .margin-xs-60-bottom {
   @include media-breakpoint-only(xs) {
     margin-bottom: 60px;
@@ -632,6 +663,7 @@ a:hover {
     margin-bottom: 60px;
   }
 }
+
 .margin-xs-40-bottom {
   @include media-breakpoint-only(xs) {
     margin-bottom: 40px;
@@ -640,6 +672,7 @@ a:hover {
     margin-bottom: 40px;
   }
 }
+
 .margin-xs-20-bottom {
   @include media-breakpoint-only(xs) {
     margin-bottom: 20px;
@@ -660,6 +693,7 @@ a:hover {
     margin-bottom: 80px;
   }
 }
+
 .margin-md-60-bottom {
   @include media-breakpoint-only(md) {
     margin-bottom: 60px;
@@ -671,6 +705,7 @@ a:hover {
     margin-bottom: 60px;
   }
 }
+
 .margin-md-40-bottom {
   @include media-breakpoint-only(md) {
     margin-bottom: 40px;
@@ -682,6 +717,7 @@ a:hover {
     margin-bottom: 40px;
   }
 }
+
 .margin-md-20-bottom {
   @include media-breakpoint-only(md) {
     margin-bottom: 20px;
@@ -694,6 +730,18 @@ a:hover {
   }
 }
 
+.margin-180-top {
+  margin-top: 180px;
+}
+
+.margin-160-top {
+  margin-top: 160px;
+}
+
+.margin-140-top {
+  margin-top: 140px;
+}
+
 .margin-120-top {
   margin-top: 120px;
   @include media-breakpoint-only(xs) {
@@ -703,6 +751,7 @@ a:hover {
     margin-top: 80px;
   }
 }
+
 .margin-100-top {
   margin-top: 100px;
   @include media-breakpoint-only(xs) {
@@ -712,39 +761,51 @@ a:hover {
     margin-top: 80px;
   }
 }
+
 .margin-80-top {
   margin-top: 80px;
 }
+
 .margin-60-top {
   margin-top: 60px;
 }
+
 .margin-40-top {
   margin-top: 40px;
 }
+
 .margin-24-top {
   margin-top: 24px;
 }
+
 .margin-20-top {
   margin-top: 20px;
 }
+
 .margin-10-top {
   margin-top: 10px;
 }
+
 .padding-10 {
   padding: 10px;
 }
+
 .padding-20 {
   padding: 20px;
 }
+
 .line-black {
   color: black;
 }
+
 .border-primary-dashed {
   border: 3px dashed $orange;
 }
+
 .close {
   opacity: 1;
 }
+
 .container-md-full-width {
   @include media-breakpoint-only(xs) {
     padding-left: 0px;
@@ -768,6 +829,7 @@ a:hover {
     max-width: 100%;
   }
 }
+
 .link-button {
   span {
     border-style: dashed;
@@ -775,9 +837,11 @@ a:hover {
     border-radius: 0px;
   }
 }
+
 .normal-font {
   font-family: apercu-regular-pro;
 }
+
 .bold-font {
   font-family: apercu-bold-pro !important;
 }
@@ -833,4 +897,8 @@ svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(xl) {
     width: unset !important;
   }
+}
+
+.hidden {
+  display: none !important
 }

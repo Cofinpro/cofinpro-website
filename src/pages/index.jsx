@@ -4,6 +4,7 @@ import LinkButton from '../components/buttons/LinkButton'
 import ToggleButton from '../components/buttons/ToggleButton'
 import NewsPreviewV2 from '../components/NewsPreviewV2'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
+import FokusthemenPreview from '../components/layouts/FokusthemenPreview'
 
 import {
   ImageWrapper,
@@ -127,6 +128,12 @@ class Startseite extends React.Component {
       },
     }
 
+    const fokusthemen = []
+
+    for (let i = 0; i < 18; ++i) {
+      fokusthemen.push('Fokusthema ' + i)
+    }
+
     const testImageStyle = {
       height: '250px',
       width: '100%',
@@ -142,7 +149,7 @@ class Startseite extends React.Component {
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
                   width: 2000,
-                  height: 1000,
+                  height: 800,
                 }}
               />
             </div>
@@ -352,6 +359,39 @@ class Startseite extends React.Component {
             </div>
           </div>
 
+          <div className="row d-flex d-md-none">
+            {fokusthemen.map((item, i) => {
+              if (i < 3) {
+                return (
+                  <div className="col-12" key={'fokusthema-mobile-' + i}>
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_PLACEHOLDER}
+                      source={{
+                        width: 1200,
+                        height: 800,
+                      }}
+                      styleClasses="margin-20-top"
+                      overlayElement={
+                        <ContentfulMarkdownText
+                          text={'### ' + item}
+                          styleClasses="h4"
+                        />
+                      }
+                    />
+                  </div>
+                )
+              } else {
+                return null
+              }
+            })}
+            <div className="col-12">
+              <p className="h3 margin-40-top">
+                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
+                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
+                nectibus.“
+              </p>
+            </div>
+          </div>
           <div className="row d-none d-md-flex align-items-end negative-margin-80-top">
             <div className="col-1" />
             <div className="col-6">
@@ -483,114 +523,10 @@ class Startseite extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row d-flex d-md-none">
-            <div className="col-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
-                styleClasses="margin-20-top"
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 1"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
-                styleClasses="margin-20-top"
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 2"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
-                styleClasses="margin-20-top"
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 3"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-12">
-              <p className="h3 margin-40-top">
-                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
-                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
-                nectibus.“
-              </p>
-            </div>
+          <div className="row">
             <div className="col-12">
               <div className="collapse" id="more-fokusthemen">
-                <div className="row">
-                  <div className="col-12">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_PLACEHOLDER}
-                      source={{
-                        width: 1200,
-                        height: 800,
-                      }}
-                      styleClasses="margin-20-top"
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text="### Fokusthema 4"
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </div>
-                  <div className="col-12">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_PLACEHOLDER}
-                      source={{
-                        width: 1200,
-                        height: 800,
-                      }}
-                      styleClasses="margin-20-top"
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text="### Fokusthema 5"
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </div>
-                  <div className="col-12">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_PLACEHOLDER}
-                      source={{
-                        width: 1200,
-                        height: 800,
-                      }}
-                      styleClasses="margin-20-top"
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text="### Fokusthema 6"
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </div>
-                </div>
+                <FokusthemenPreview items={fokusthemen} />
               </div>
             </div>
           </div>
@@ -603,13 +539,19 @@ class Startseite extends React.Component {
               />
             </div>
             <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
-              <ToggleButton id="pinnwand" dataTarget={'more-fokusthemen'} />
-              <p className="d-none d-md-block text-primary text-size-14">
-                MEHR<br />ANZEIGEN
-              </p>
-              <p className="d-block d-md-none text-primary text-size-14">
-                MEHR ANZEIGEN
-              </p>
+              <div
+                style={{
+                  display: fokusthemen.length > 10 ? 'block' : 'none',
+                }}
+              >
+                <ToggleButton id="pinnwand" dataTarget={'more-fokusthemen'} />
+                <p className="d-none d-md-block text-primary text-size-14">
+                  MEHR<br />ANZEIGEN
+                </p>
+                <p className="d-block d-md-none text-primary text-size-14">
+                  MEHR ANZEIGEN
+                </p>
+              </div>
             </div>
           </div>
         </div>
