@@ -370,7 +370,7 @@ class Startseite extends React.Component {
                 <div className="col-12 col-md-1 col-lg-3" />
               </div>
             </div>
-            <div className="col-12 margin-40-top">
+            <div className="col-12 margin-40-top margin-xs-20-top">
               <div className="row">
                 <div className="col-12 col-md-5 col-lg-3">
                   <div className="row">
