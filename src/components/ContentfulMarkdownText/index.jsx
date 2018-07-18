@@ -9,15 +9,6 @@ class ContentfulMarkdownText extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    var marktText = ''
-
-    if (text != null) {
-      marktText = text.replace(
-        /##primary##(.*?)##primary##/g,
-        "<span class='text-primary'>$1</span>"
-      )
-    }
-
     return <MarkdownPreview className={styleClasses} value={text} />
   }
 }

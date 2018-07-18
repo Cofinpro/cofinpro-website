@@ -20,7 +20,7 @@ class Startseite extends React.Component {
 
     return (
       <div>
-        <div className="container margin-80-top margin-xs-20-top">
+        <div className="container padding-60-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Headline</h1>
