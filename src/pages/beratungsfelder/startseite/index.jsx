@@ -7,8 +7,6 @@ import {
   SOURCE_TYP_BOOTSTRAP,
 } from '../../../components/images/ImageWrapper'
 
-import './style.scss'
-
 class StartseiteTemplate extends React.Component {
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
