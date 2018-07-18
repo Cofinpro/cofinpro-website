@@ -112,7 +112,14 @@ class ChatBot extends React.Component {
       pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
 
     return (
-      <div hidden={locationUpdate === mainUrl ? true : false}>
+      <div
+        hidden={
+          locationUpdate === mainUrl ||
+          locationUpdate.indexOf('/karriere') !== 0
+            ? true
+            : false
+        }
+      >
         <Launcher
           agentProfile={{
             teamName: 'Cofinpro ChatBot #beta',
