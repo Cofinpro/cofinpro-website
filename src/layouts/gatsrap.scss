@@ -34,6 +34,7 @@ $h1-font-size: 3rem;
 $h2-font-size: 2.25rem;
 $h3-font-size: 1.75rem;
 $h4-font-size: 1.5rem;
+$h5-font-size: 1.125rem;
 $h6-font-size: 0.875rem;
 $h1-font-size-sm: 1.5rem;
 $h1-font-size-md: 3rem;
@@ -682,6 +683,15 @@ a:hover {
   }
 }
 
+.margin-xs-0-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 00px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 00px;
+  }
+}
+
 .margin-md-80-bottom {
   @include media-breakpoint-only(md) {
     margin-bottom: 80px;
@@ -786,6 +796,90 @@ a:hover {
   margin-top: 10px;
 }
 
+.margin-xs-80-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+
+.margin-xs-60-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.margin-xs-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 40px;
+  }
+}
+
+.margin-xs-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+}
+
+.margin-md-80-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 80px;
+  }
+}
+
+.margin-md-60-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 60px;
+  }
+}
+
+.margin-md-40-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 40px;
+  }
+}
+
+.margin-md-20-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 20px;
+  }
+}
+
 .padding-10 {
   padding: 10px;
 }
@@ -795,7 +889,7 @@ a:hover {
 }
 
 .line-black {
-  color: black;
+  color: rgb(17, 13, 13);
 }
 
 .border-primary-dashed {

@@ -538,7 +538,7 @@ class Startseite extends React.Component {
                 path="/fokusthemen"
               />
             </div>
-            <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
+            <div className="d-block d-md-none col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
               <div
                 style={{
                   display: fokusthemen.length > 10 ? 'block' : 'none',
