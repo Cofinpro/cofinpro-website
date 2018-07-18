@@ -10,11 +10,11 @@ Im ersten Menü nach dem Login, sieht man welche Seiten derzeit bei netlify betr
 * www.dev.cofinpro.de (Test-Umgebung)
 * www.karriere-cofinpro.de (Alte Domain, wird nur zur Weiterletiung auf karriere.cofinpro.de verwendet)
 
-Der Grund warum die Webseite bei netlify gehostet wird und nicht bei 1und1 ist die Möglichkeit automatisch oder manuell neue Builds mit npm zu starten. 
+Der Grund warum die Webseite bei netlify gehostet wird und nicht bei 1und1 ist die Möglichkeit automatisch oder manuell neue Builds mit npm zu starten.
 
 ## Wie werden neue Builds bei Netlify getriggered?
 
-www.karriere.cofinpro.de wird durch einen GIT PUSH im master getriggered.  
+www.karriere.cofinpro.de wird durch einen GIT PUSH im master getriggered.
 www.dev.cofinpro.de wird durch einen GIT PUSH im branch dev getriggered und durch Änderungen im CMS (Contentful).
 
 ## Redirects - Konfiguration und bestehende Redirects
@@ -27,7 +27,7 @@ Die Redirects befinden sich in der Datei _redirects unter /static.
 
 Bilder finden sich unter static/img.
 
-Im img Ordner selbst liegen die statischen Bilder der Webseite. Der Ordner contentful beinhaltet alle Bilder die aus dem CMS stammen. Diese wurden beim bauen der Seite per "gatsby  build" heruntergeladen und in diesem Ordner gespeichert. 
+Im img Ordner selbst liegen die statischen Bilder der Webseite. Der Ordner contentful beinhaltet alle Bilder die aus dem CMS stammen. Diese wurden beim bauen der Seite per "gatsby  build" heruntergeladen und in diesem Ordner gespeichert.
 
 ## CSS Styling Konventions
 
@@ -35,11 +35,11 @@ Wir arbeiten nach BEM: http://getbem.com/naming/
 
 ## Wie starte ich einen Dev Server zum testen bzw. Seite anschauen
 
-In die Console folgenden Befehl eingeben: 
+In die Console folgenden Befehl eingeben:
 
 $ gatsby develop
 
-Anschließend ist die Webseite unter localhost:8000 aufrufbar. 
+Anschließend ist die Webseite unter localhost:8000 aufrufbar.
 
 [Doku](https://www.gatsbyjs.org/docs/)
 
@@ -51,13 +51,13 @@ Anschließend ist die Webseite unter localhost:8000 aufrufbar.
   * **layouts** - Wir haben derzeit nur 1 Layout, enthält den Header, Footer und Chatbot, da diese auf jeder Seite zu sehen sind.
   * **pages** - Seiten bei denen wir über den Build Prozess nichts verändern müssen.
   * **templates** - Schablonen für einzelne Seiten die im Build Prozess verwendet werden um unsere Seite zu erzeugen.
-  * **utils** - Eigene JavaScript Hilfsklassen. 
+  * **utils** - Eigene JavaScript Hilfsklassen.
 
 ## Wichtige Dateien
 
 * **.babelrc** - Konfigurationsdatei für Babel. Erklärung zu Babel: Babel is a toolchain that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in old browsers or environments.
 * **.eslintrc** - Konfigurationsdatei für ESLint. Erklärung zu ESLint: ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
-* **.gitignore** - Dateien, die nicht versioniert werden sollen, können in die .gitignore Datei aufgenommen werden. 
+* **.gitignore** - Dateien, die nicht versioniert werden sollen, können in die .gitignore Datei aufgenommen werden.
 * **.nvmrc** - Konfigurationsdatei für Netlify. Gibt die Node Version an die zum bauen der Seite verwendet werden soll. [Doku Build Settings Netlify](https://www.netlify.com/docs/build-settings/)
 * **.prettierrc** - Konfigurationsdatei für Prettier. Erklärung zu Prettier: Prettier is an opinionated code formatter with support for: JavaScript, including ES2017, JSX, Flow, TypeScript, CSS, Less, and SCSS, JSON, GraphQL, Markdown, including GFM. It removes all original styling* and ensures that all outputted code conforms to a consistent style. [Doku](https://prettier.io/docs/en/index.html)
 * **.textlintrc** - Konfigurationsdatei für Textlint. Erklärung zu Textlint: textlint is an open source text linting utility written in JavaScript. It is hard to lint natural language texts, but we try to resolve this issue by pluggable approach.
@@ -72,7 +72,7 @@ Anschließend ist die Webseite unter localhost:8000 aufrufbar.
 
 ### Inline CSS
 
-Jede CSS Datei wird inline eingebunden. 
+Jede CSS Datei wird inline eingebunden.
 
 ### Controlling Font Performance with font-display
 
@@ -96,3 +96,9 @@ Empfohlen wird den Visual Studio Code mit folgenden Plugins zu verwenden:
 * Prettier - Code formatter
 * HTML Snippets
 * HTML CSS Support
+
+# Github
+
+## Erstellen eines neuen Branches
+
+`git checkout -b BRANCHNAME dev-main-website`
