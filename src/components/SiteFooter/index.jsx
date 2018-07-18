@@ -24,7 +24,7 @@ class SiteFooter extends React.Component {
       $('html,body').animate({ scrollTop: 0 }, 'slow')
     }
 
-    if (locationUpdate === mainUrl) {
+    if (locationUpdate === '/karriere') {
       return (
         <footer>
           <div className="container margin-20-top main">
@@ -221,14 +221,12 @@ class SiteFooter extends React.Component {
                             : 'nav-item'
                         }
                       >
-                        <a
-                          href="https://cofinpro.de/datenschutz/"
-                          target="_blank"
-                          rel="noopener"
+                        <Link
+                          to={pathPrefix + '/datenschutz'}
                           className="nav-link text-white"
                         >
                           DATENSCHUTZ
-                        </a>
+                        </Link>
                       </li>
                       <li
                         className={
@@ -237,14 +235,12 @@ class SiteFooter extends React.Component {
                             : 'nav-item'
                         }
                       >
-                        <a
-                          href="https://cofinpro.de/agb/"
-                          target="_blank"
-                          rel="noopener"
+                        <Link
+                          to={pathPrefix + '/agb'}
                           className="nav-link text-white"
                         >
                           AGB
-                        </a>
+                        </Link>
                       </li>
                       <li
                         className={

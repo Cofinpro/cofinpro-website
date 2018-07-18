@@ -46,13 +46,14 @@
     "react-cookie-banner": "^4.0.0",
     "react-helmet": "5.2.0",
     "react-lazyload": "2.3.0",
-    "react-marked": "0.3.1",
-    "react-marked-markdown": "1.4.6",
+    "react-markdown": "^3.3.4",
+    "react-marked": "^0.3.1",
+    "react-marked-markdown": "^1.4.6",
     "universal-cookie": "^2.1.2"
   },
   "devDependencies": {
     "babel-eslint": "8.0.2",
-    "devicon": "https://github.com/konpa/devicon.git#v2.2",
+    "devicon": "git+https://github.com/konpa/devicon.git#v2.2",
     "emergence.js": "1.1.2",
     "eslint": "4.11.0",
     "eslint-config-prettier": "2.7.0",
