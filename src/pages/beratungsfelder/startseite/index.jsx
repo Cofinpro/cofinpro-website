@@ -20,8 +20,7 @@ class StartseiteTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const text = 'hallo'
-    const buttonText = 'MEHR'
+    const buttonLinkText = 'MEHR'
 
     return (
       <div>
@@ -83,7 +82,7 @@ class StartseiteTemplate extends React.Component {
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset"
-                text={buttonText}
+                text={buttonLinkText}
                 path="/jobs"
               />
             </div>
@@ -114,7 +113,7 @@ class StartseiteTemplate extends React.Component {
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset"
-                text={buttonText}
+                text={buttonLinkText}
                 path="/jobs"
               />
             </div>
@@ -151,7 +150,7 @@ class StartseiteTemplate extends React.Component {
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset"
-                text={buttonText}
+                text={buttonLinkText}
                 path="/jobs"
               />
             </div>
