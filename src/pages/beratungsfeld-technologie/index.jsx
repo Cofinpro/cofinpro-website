@@ -9,6 +9,11 @@ import ReferenzAndDownload from '../../components/ReferenzAndDownload'
 
 import FooterNavigation from '../../components/FooterNavigation'
 
+import {
+  ImageWrapper,
+  SOURCE_TYP_PLACEHOLDER,
+} from '../../components/images/ImageWrapper'
+
 class BeratungsfelderTemplate extends React.Component {
   render() {
     const pathPrefix =
@@ -16,16 +21,20 @@ class BeratungsfelderTemplate extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="container-fluid no-gutters">
           <div className="row">
-            <div className="col-md-md-12">
-              <img
-                src="http://via.placeholder.com/1024x584"
-                alt="placeholder"
-                className="img-fluid"
+            <div className="col-12">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 800,
+                }}
               />
             </div>
           </div>
+        </div>
+        <div className="container">
           <div className="row">
             <div className="col-md-8">
               <img
@@ -63,14 +72,18 @@ class BeratungsfelderTemplate extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-120-top">
-            <div className="col-md-12">
-              <h2 className="text-primary text-center">Wertpapierprozess</h2>
-              <img
-                src="http://via.placeholder.com/937x90"
-                alt="placeholder"
-                className="img-fluid"
-              />
+          <div className="container-fluid no-gutters">
+            <div className="row margin-120-top">
+              <div className="col-md-12">
+                <h2 className="text-primary text-center">Wertpapierprozess</h2>
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_PLACEHOLDER}
+                  source={{
+                    width: 2000,
+                    height: 200,
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>

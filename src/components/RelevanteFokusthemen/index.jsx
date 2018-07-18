@@ -19,23 +19,17 @@ class RelevanteFokusthemen extends React.Component {
     return (
       <div>
         <div className="text-left margin-20-top">
-          <h5>
-            Relevante Fokusthemen <br />
-          </h5>
+          <p className="text-size-14">RELEVANTE FOKUSTHEMEN</p>
 
-          <h5 className="text-left margin-20-top">
-            Kundenorientierte vertriebswege <br />
-            und digitale Antragsprozesse
-          </h5>
-          <h5 className="text-left margin-20-top">
-            Automatisierung in<br />
-            Bonitätsprüfung und<br />
-            Sicherheitsbewertung <br />
-          </h5>
-          <h5 className="text-left margin-20-top">
-            Kundenbindung und Effizien<br />
-            in der Bestandsführung
-          </h5>
+          <p className="text-left margin-20-top text-size-18">
+            Kundenorientierte vertriebswege und digitale Antragsprozesse
+          </p>
+          <p className="text-left margin-40-top text-size-18">
+            Automatisierung in Bonitätsprüfung und Sicherheitsbewertung
+          </p>
+          <p className="text-left margin-20-top text-size-18">
+            Kundenbindung und Effizien in der Bestandsführung
+          </p>
           <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
             <ToggleButton id="pinnwand" dataTarget={'more-fokusthemen'} />
             <p className="d-none d-md-block text-primary text-size-14">

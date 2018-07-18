@@ -21,7 +21,17 @@ $green: #8bc34a !default;
 $teal: #009688 !default;
 $cyan: #00bcd4 !default;
 $brown: #847575 !default;
-$theme-colors: ( primary: $orange, secondary: $blue, success: $green, info: $brown, warning: $yellow, danger: $red, light: $gray-100, dark: $gray-800) !default;
+$theme-colors: (
+    primary: $orange,
+    secondary: $blue,
+    success: $green,
+    info: $brown,
+    warning: $yellow,
+    danger: $red,
+    light: $gray-100,
+    dark: $gray-800
+  )
+  !default;
 $display3-size: 3.75rem !default;
 $display4-size: 3.375rem !default;
 $font-family-sans-serif: apercu-regular-pro;
@@ -49,8 +59,19 @@ $h6-font-size-md: 0.875rem;
 $headings-font-family: inherit !default;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
-$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-$container-max-widths: ( sm: 540px, md: 720px, lg: 1060px, xl: 1240px);
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 1060px,
+  xl: 1240px
+);
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 main {
   margin-top: 76px;
@@ -140,12 +161,12 @@ h6 {
 }
 
 .h1,
-.h1>h1,
-.h1>h2,
-.h1>h3,
-.h1>h4,
-.h1>h5,
-.h1>h6 {
+.h1 > h1,
+.h1 > h2,
+.h1 > h3,
+.h1 > h4,
+.h1 > h5,
+.h1 > h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h1-font-size-sm;
@@ -165,12 +186,12 @@ h6 {
 }
 
 .h2,
-.h2>h1,
-.h2>h2,
-.h2>h3,
-.h2>h4,
-.h2>h5,
-.h2>h6 {
+.h2 > h1,
+.h2 > h2,
+.h2 > h3,
+.h2 > h4,
+.h2 > h5,
+.h2 > h6 {
   font-family: apercu-bold-pro;
   margin-bottom: 1rem;
   @include media-breakpoint-only(xs) {
@@ -191,23 +212,23 @@ h6 {
 }
 
 .h3,
-.h3>h1,
-.h3>h2,
-.h3>h3,
-.h3>h4,
-.h3>h5,
-.h3>h6 {
+.h3 > h1,
+.h3 > h2,
+.h3 > h3,
+.h3 > h4,
+.h3 > h5,
+.h3 > h6 {
   font-family: apercu-bold-pro;
   font-size: $h3-font-size;
 }
 
 .h4,
-.h4>h1,
-.h4>h2,
-.h4>h3,
-.h4>h4,
-.h4>h5,
-.h4>h6 {
+.h4 > h1,
+.h4 > h2,
+.h4 > h3,
+.h4 > h4,
+.h4 > h5,
+.h4 > h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
@@ -244,12 +265,12 @@ h6 {
 }
 
 .h5,
-.h5>h1,
-.h5>h2,
-.h5>h3,
-.h5>h4,
-.h5>h5,
-.h5>h6 {
+.h5 > h1,
+.h5 > h2,
+.h5 > h3,
+.h5 > h4,
+.h5 > h5,
+.h5 > h6 {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
@@ -269,12 +290,12 @@ h6 {
 }
 
 .h6,
-.h6>h1,
-.h6>h2,
-.h6>h3,
-.h6>h4,
-.h6>h5,
-.h6>h6 {
+.h6 > h1,
+.h6 > h2,
+.h6 > h3,
+.h6 > h4,
+.h6 > h5,
+.h6 > h6 {
   font-family: apercu-regular-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
@@ -564,8 +585,8 @@ a:hover {
 #carouselCaptionsArbeitsplatz,
 .imageCarousel,
 .socialMediaCarousel {
-  .carousel-control-prev>i,
-  .carousel-control-next>i {
+  .carousel-control-prev > i,
+  .carousel-control-next > i {
     font-size: 2rem;
     color: #ec7b1a !important;
   }
@@ -960,7 +981,11 @@ a:hover {
 }
 
 .text-size-14 {
-  font-size: 12px;
+  font-size: 14px;
+}
+
+.text-size-18 {
+  font-size: 18px;
 }
 
 svg image[href$='img_20.jpg'] {
@@ -994,5 +1019,5 @@ svg image[href$='img_20.jpg'] {
 }
 
 .hidden {
-  display: none !important
+  display: none !important;
 }
