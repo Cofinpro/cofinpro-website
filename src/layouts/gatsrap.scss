@@ -984,6 +984,10 @@ a:hover {
   font-size: 14px;
 }
 
+.text-size-18 {
+  font-size: 18px;
+}
+
 svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(xs) {
     visibility: hidden;

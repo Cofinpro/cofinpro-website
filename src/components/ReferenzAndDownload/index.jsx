@@ -22,7 +22,7 @@ class ReferenzAndDownload extends React.Component {
           <div className="row">
             <div className="col-md-6" />
             <div className="col-md-6">
-              <h2> Referenzprojekte </h2>
+              <h2 className="h2"> Referenzprojekte </h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -39,15 +39,15 @@ class ReferenzAndDownload extends React.Component {
                 <div className="col-md-8">
                   <LinkButton
                     text="ALLE PROJEKTE ZUM FOKUSTHEMA"
-                    styleSpan="btn-lg btn-block padding-button margin-100-bottom margin-10-top"
+                    styleSpan="btn-lg btn-block padding-button margin-10-top"
                   />
                 </div>
               </div>
             </div>
           </div>
-          <div className="row margin-60-top">
+          <div className="row margin-120-top margin-xs-100">
             <div className="col-md-6">
-              <h2> Downloads </h2>
+              <h2 className="h2"> Downloads </h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
