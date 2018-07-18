@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ThreeIconsWithTextLayout from '../../../components/layouts/ThreeIconsWithTextLayout'
+import ThreeIconsWithLinks from '../../../components/layouts/ThreeIconsWithLinks'
 import LinkButton from '../../../components/buttons/LinkButton'
 import {
   ImageWrapper,
@@ -26,107 +26,137 @@ class StartseiteTemplate extends React.Component {
     const buttonText = 'MEHR'
 
     return (
-      <div className="container margin-lg-top-bottom">
-        <div className="row margin-80-top">
-          <div className="col-7">
-            <h1 className="h1">Beratungsfelder</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
+      <div>
+        <div className="container padding-60-top padding-xs-20-top">
+          <div className="row">
+            <div className="col-12 col-md-7">
+              <h1 className="h1">Beratungsfelder</h1>
+              <p className="h4 margin-20-top d-md-block d-none">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetu
+              </p>
+              <p className="d-md-none">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetu
+              </p>
+            </div>
           </div>
         </div>
 
-        <ThreeIconsWithTextLayout
-          title={text}
+        <ThreeIconsWithLinks
+          styleClass="margin-100-top"
           iconLeft={this.props.data.iconVorteilLinksSharp}
-          textLeft={text}
+          titleLeft={'Managementberatung'}
           iconMiddle={this.props.data.iconVorteilMitteSharp}
-          textMiddle={text}
+          titleMiddle={'Fachberatungext'}
           iconRight={this.props.data.iconVorteilRechtsSharp}
-          textRight={text}
+          titleRight={'Technologieberatung'}
         />
 
-        <div className="row margin-120-top">
-          <div className="col-6">
-            <ImageWrapper
-              source="http://via.placeholder.com/600x350"
-              sourceType={SOURCE_TYP_BOOTSTRAP}
-            />
-          </div>
-          <div className="col-6">
-            <h1 className="h2">Managementberatung</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-            <LinkButton text={buttonText} path="/jobs" />
-          </div>
-        </div>
-
-        <div className="row margin-120-top">
-          <div className="col-6">
-            <h1 className="h2">Fachberatung</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-            <LinkButton text={buttonText} path="/jobs" />
-          </div>
-          <div className="col-6">
-            <ImageWrapper
-              source="http://via.placeholder.com/600x350"
-              sourceType={SOURCE_TYP_BOOTSTRAP}
-            />
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <ImageWrapper
+                source="http://via.placeholder.com/600x350"
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+              />
+            </div>
+            <div className="col-12 col-md-6 margin-xs-20-top">
+              <h1 className="h2">Managementberatung</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+              <LinkButton
+                styleSpan="w-100 w-md-unset"
+                text={buttonText}
+                path="/jobs"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="row margin-120-top">
-          <div className="col-6">
-            <ImageWrapper
-              source="http://via.placeholder.com/600x350"
-              sourceType={SOURCE_TYP_BOOTSTRAP}
-            />
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 d-md-none">
+              <ImageWrapper
+                source="http://via.placeholder.com/600x350"
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+              />
+            </div>
+            <div className="col-12 col-md-6 margin-xs-20-top">
+              <h1 className="h2">Fachberatung</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+              <LinkButton
+                styleSpan="w-100 w-md-unset"
+                text={buttonText}
+                path="/jobs"
+              />
+            </div>
+            <div className="col-md-6 d-md-block d-none">
+              <ImageWrapper
+                source="http://via.placeholder.com/600x350"
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+              />
+            </div>
           </div>
-          <div className="col-6">
-            <h1 className="h2">Technologieberatung</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-              amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-              invidunt ut labore et dolore magna aliquyam erat, sed diam
-              voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
-              dolor sit amet.
-            </p>
-            <LinkButton text={buttonText} path="/jobs" />
+        </div>
+
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <ImageWrapper
+                source="http://via.placeholder.com/600x350"
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+              />
+            </div>
+            <div className="col-12 col-md-6 margin-xs-20-top">
+              <h1 className="h2">Technologieberatung</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+              <LinkButton
+                styleSpan="w-100 w-md-unset"
+                text={buttonText}
+                path="/jobs"
+              />
+            </div>
           </div>
         </div>
       </div>

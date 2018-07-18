@@ -909,6 +909,19 @@ a:hover {
   padding: 20px;
 }
 
+.padding-60-top {
+  padding-top: 60px;
+}
+
+.padding-xs-20-top {
+  @include media-breakpoint-only(xs) {
+    padding-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-top: 20px;
+  }
+}
+
 .line-black {
   color: rgb(17, 13, 13);
 }
