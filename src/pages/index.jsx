@@ -5,6 +5,7 @@ import ToggleButton from '../components/buttons/ToggleButton'
 import NewsPreviewV2 from '../components/NewsPreviewV2'
 import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import FokusthemenPreview from '../components/layouts/FokusthemenPreview'
+import ThreeIconsWithLinks from '../components/layouts/ThreeIconsWithLinks'
 
 import {
   ImageWrapper,
@@ -182,43 +183,15 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-80-top d-none d-md-block">
-          <div className="row text-center">
-            <div className="col-4">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 59,
-                  height: 65,
-                }}
-                styleClasses="padding-20"
-              />
-              <p className="h5">Managementberatung</p>
-            </div>
-            <div className="col-4">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 59,
-                  height: 65,
-                }}
-                styleClasses="padding-20"
-              />
-              <p className="h5">Fachberatung</p>
-            </div>
-            <div className="col-4">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 59,
-                  height: 65,
-                }}
-                styleClasses="padding-20"
-              />
-              <p className="h5">Technologieberatung</p>
-            </div>
-          </div>
-        </div>
+        <ThreeIconsWithLinks
+          styleClass="margin-80-top"
+          iconLeft={this.props.data.iconVorteilLinksSharp}
+          titleLeft="Managementberatung"
+          iconMiddle={this.props.data.iconVorteilMitteSharp}
+          titleMiddle="Fachberatungext"
+          iconRight={this.props.data.iconVorteilRechtsSharp}
+          titleRight="Technologieberatung"
+        />
 
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
@@ -579,3 +552,29 @@ class Startseite extends React.Component {
 }
 
 export default Startseite
+
+export const pageQuery = graphql`
+  query StartseiteQuery {
+    iconVorteilLinksSharp: imageSharp(
+      id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }
+    ) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilMitteSharp: imageSharp(
+      id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }
+    ) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilRechtsSharp: imageSharp(
+      id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }
+    ) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

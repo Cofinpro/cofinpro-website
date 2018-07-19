@@ -104,14 +104,6 @@ class StartseiteTemplate extends React.Component {
     //$('#lottie').hide()
   }
 
-  getCurrentUrl() {
-    if (typeof window !== 'undefined') {
-      return window.location.href
-    } else {
-      return ''
-    }
-  }
-
   render() {
     const graphQlResult = this.props.data.contentfulSeiteStartseiteKarriere
 
