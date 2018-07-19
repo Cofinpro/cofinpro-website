@@ -1017,6 +1017,17 @@ svg image[href$='img_20.jpg'] {
 .no-gutters {
   padding-left: 0px;
   padding-right: 0px;
+
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  div[class^='col-'],
+  div.col {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .w-md-unset {
