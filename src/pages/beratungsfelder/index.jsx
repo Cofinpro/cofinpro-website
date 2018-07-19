@@ -7,7 +7,7 @@ import {
   SOURCE_TYP_BOOTSTRAP,
 } from '../../components/images/ImageWrapper'
 
-class BeratungsfelderStartseiteTemplate extends React.Component {
+class BeratungsfelderStartseite extends React.Component {
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href
@@ -161,7 +161,7 @@ class BeratungsfelderStartseiteTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderStartseiteTemplate
+export default BeratungsfelderStartseite
 
 export const pageQuery = graphql`
   query BeratungsfelderQuery {
