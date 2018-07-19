@@ -75,22 +75,22 @@ class Menu extends React.Component {
       {
         name: 'BERATUNGSFELDER',
         link: '/beratungsfelder',
-        pattern: '/beratungsfelder/.*',
+        pattern: '/beratungsfelder.*',
       },
       {
         name: 'FOKUSTHEMEN',
         link: '/fokusthemen',
-        pattern: '/fokusthemen',
+        pattern: '/fokusthemen.*',
       },
       {
         name: 'PROJEKTE',
         link: '/projekte',
-        pattern: '/projekte/.*',
+        pattern: '/projekte.*',
       },
       {
         name: 'NEWS & MEDIEN',
         link: '/news-medien',
-        pattern: '/news-medien/.*',
+        pattern: '/news-medien.*',
       },
       {
         name: 'COFINPRO',
