@@ -1,16 +1,13 @@
 import React from 'react'
 
-import HeroImageLayout from '../../components/layouts/HeroImageLayout'
-
-import SiteHeaderContent from '../../components/SiteHeaderContent'
-import LinkButton from '../../components/buttons/LinkButton'
+import LinkButton from '../../../components/buttons/LinkButton'
 
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
-} from '../../components/images/ImageWrapper'
+} from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderTemplate extends React.Component {
+class BeratungsfelderFachTemplate extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -69,10 +66,12 @@ class BeratungsfelderTemplate extends React.Component {
               <LinkButton
                 text="Kreditgeschäft"
                 styleSpan="btn-lg btn-block margin-20-bottom margin-20-top"
+                path="/beratungsfelder/kredit"
               />
               <LinkButton
                 text="Wertpapiergeschäft"
                 styleSpan="btn-lg btn-block"
+                path="/beratungsfelder/wertpapier"
               />
             </div>
           </div>
@@ -100,4 +99,4 @@ class BeratungsfelderTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderTemplate
+export default BeratungsfelderFachTemplate

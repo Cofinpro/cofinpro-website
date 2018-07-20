@@ -12,7 +12,7 @@ class FooterNavigation extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { location, title, locationUpdate } = this.props
+    const { backButtonPath } = this.props
 
     var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
 
@@ -25,6 +25,7 @@ class FooterNavigation extends React.Component {
                 <LinkButton
                   text="ZURÜCK"
                   styleSpan="btn-lg btn-block padding-button"
+                  path={backButtonPath}
                 />
               </div>
             </div>

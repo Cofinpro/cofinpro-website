@@ -1,29 +1,16 @@
 import React from 'react'
 
-import HeroImageLayout from '../../components/layouts/HeroImageLayout'
-
-import SiteHeaderContent from '../../components/SiteHeaderContent'
-import LinkButton from '../../components/buttons/LinkButton'
-
-import ToggleButton from '../../components/buttons/ToggleButton'
-import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
-
-import ReferenzAndDownload from '../../components/ReferenzAndDownload'
-
-import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-
-import FooterNavigation from '../../components/FooterNavigation'
+import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
+import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
+import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
-} from '../../components/images/ImageWrapper'
+} from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderTemplate extends React.Component {
+class BeratungsfelderKreditTemplate extends React.Component {
   render() {
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -240,4 +227,4 @@ class BeratungsfelderTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderTemplate
+export default BeratungsfelderKreditTemplate

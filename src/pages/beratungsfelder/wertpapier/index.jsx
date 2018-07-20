@@ -1,24 +1,16 @@
 import React from 'react'
 
-import HeroImageLayout from '../../components/layouts/HeroImageLayout'
-
-import SiteHeaderContent from '../../components/SiteHeaderContent'
-import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
-
-import ReferenzAndDownload from '../../components/ReferenzAndDownload'
-
-import FooterNavigation from '../../components/FooterNavigation'
+import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
+import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
+import FooterNavigation from '../../../components/FooterNavigation'
 
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
-} from '../../components/images/ImageWrapper'
+} from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderTemplate extends React.Component {
+class BeratungsfelderWertpapierTemplate extends React.Component {
   render() {
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -179,11 +171,11 @@ class BeratungsfelderTemplate extends React.Component {
           </div>
         </div>
         <div className="margin-140-top">
-          <FooterNavigation />
+          <FooterNavigation backButtonPath="/beratungsfelder" />
         </div>
       </div>
     )
   }
 }
 
-export default BeratungsfelderTemplate
+export default BeratungsfelderWertpapierTemplate
