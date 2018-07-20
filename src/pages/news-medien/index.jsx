@@ -1,6 +1,7 @@
 import React from 'react'
 
 import LinkButton from '../../components/buttons/LinkButton'
+import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
 import {
   ImageWrapper,
@@ -79,10 +80,11 @@ class NewsMedienVerteiler extends React.Component {
                 accum facessus eos sinciis coreperia con cus, tem quidelendit
                 plit magnam, comnis dia sim nitae netur.
               </p>
-              <LinkButton
+              <ExternalLinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
                 text="MEHR"
-                path="/jobs"
+                _target="_blank"
+                _href="https://medium.com/cofinpro"
               />
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
