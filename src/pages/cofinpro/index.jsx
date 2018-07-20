@@ -23,7 +23,7 @@ class Startseite extends React.Component {
 
     return (
       <div>
-        <div className="container padding-60-top margin-xs-20-top">
+        <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Headline</h1>
@@ -351,7 +351,9 @@ class Startseite extends React.Component {
             </div>
           </div>
         </div>
-        <DownloadPreviewTextAndImageLayout />
+        <DownloadPreviewTextAndImageLayout
+          style={{ container: 'margin-40-top margin-xs-0-top' }}
+        />
       </div>
     )
   }

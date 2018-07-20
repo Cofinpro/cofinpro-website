@@ -1,6 +1,21 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
 .image-overlay-top-left {
   position: absolute;
   top: 38px;
   left: 53px;
   max-width: 75%;
+
+  @include media-breakpoint-only(xs) {
+    top: 20px;
+    left: 35px;
+  }
+
+  @include media-breakpoint-only(sm) {
+    top: 20px;
+    left: 35px;
+  }
+
 }

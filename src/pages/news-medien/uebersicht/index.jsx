@@ -20,7 +20,7 @@ class NewsMedienUebersicht extends React.Component {
       const { content } = props
 
       return (
-        <div className="container margin-100-top margin-xs-80-top">
+        <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h2 className="h2">{content.header}</h2>
@@ -78,7 +78,7 @@ class NewsMedienUebersicht extends React.Component {
               </div>
             </div>
             <div className="col-12 col-md-6">
-              <div className="row justify-content-center margin-xs-20-top">
+              <div className="row justify-content-center margin-xs-20-top d-none d-md-block">
                 <div className="col-12 col-md-8">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_PLACEHOLDER}
@@ -101,7 +101,7 @@ class NewsMedienUebersicht extends React.Component {
                   />
                 </div>
               </div>
-              <div className="row margin-40-top margin-xs-20-top">
+              <div className="row margin-40-top margin-xs-20-top d-none d-md-block">
                 <div className="col-12">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_PLACEHOLDER}
@@ -135,6 +135,8 @@ class NewsMedienUebersicht extends React.Component {
               <DownloadButton text={content.downloads[2].text} />
             </div>
             <div className="col-12 col-md-2" />
+          </div>
+          <div className="row d-none d-md-flex">
             <div className="col-12 col-md-4">
               <DownloadButton text={content.downloads[1].text} />
             </div>
@@ -161,10 +163,10 @@ class NewsMedienUebersicht extends React.Component {
     }
 
     function LayoutDownloads(props) {
-      const { content } = props
+      const { content, style } = props
 
       return (
-        <div className="container margin-60-top margin-xs-60-top">
+        <div className={'container ' + style.container}>
           <div className="row">
             <div className="col-12">
               <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
@@ -198,7 +200,7 @@ class NewsMedienUebersicht extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 d-none d-md-block">
               <div className="row margin-xs-20-top">
                 <div className="col-12 col-md-8">
                   <ImageWrapper
@@ -314,6 +316,7 @@ class NewsMedienUebersicht extends React.Component {
             ],
             buttonText: 'ZUM ARCHIV FÜR VERÖFFENTLICHUNGEN',
           }}
+          style={{ container: 'margin-60-top margin-xs-40-top ' }}
         />
         <LayoutMax
           content={{
@@ -399,6 +402,7 @@ class NewsMedienUebersicht extends React.Component {
             ],
             buttonText: 'ZUM ARCHIV FÜR STUDIEN',
           }}
+          style={{ container: 'margin-60-top margin-xs-40-top ' }}
         />
 
         <LayoutDownloads
@@ -426,6 +430,7 @@ class NewsMedienUebersicht extends React.Component {
             ],
             buttonText: 'ZUM ARCHIV FÜR THESENPAPIERE',
           }}
+          style={{ container: 'margin-60-top margin-xs-60-top ' }}
         />
 
         <LayoutDownloads
@@ -453,6 +458,7 @@ class NewsMedienUebersicht extends React.Component {
             ],
             buttonText: 'ZUM ARCHIV FÜR WHITEPAPERS',
           }}
+          style={{ container: 'margin-60-top margin-xs-60-top ' }}
         />
 
         <LayoutDownloads
@@ -480,6 +486,7 @@ class NewsMedienUebersicht extends React.Component {
             ],
             buttonText: 'ZUM ARCHIV FÜR LÖSUNGSSKIZZEN',
           }}
+          style={{ container: 'margin-60-top margin-xs-60-top ' }}
         />
 
         <div className="container margin-120-top margin-xs-80-top">
@@ -496,7 +503,9 @@ class NewsMedienUebersicht extends React.Component {
             <div className="col-12 col-md-6" />
           </div>
         </div>
-        <DownloadPreviewTextAndImageLayout />
+        <DownloadPreviewTextAndImageLayout
+          style={{ container: 'margin-40-top margin-xs-0-top' }}
+        />
       </div>
     )
   }
