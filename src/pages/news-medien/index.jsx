@@ -61,7 +61,7 @@ class NewsMedienVerteiler extends React.Component {
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
                 text="MEHR"
-                path="/jobs"
+                path="/news-medien/uebersicht"
               />
             </div>
           </div>
