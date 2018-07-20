@@ -53,7 +53,7 @@ class BeratungsfelderStartseite extends React.Component {
           iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft={'Managementberatung'}
           iconMiddle={this.props.data.iconVorteilMitteSharp}
-          titleMiddle={'Fachberatungext'}
+          titleMiddle={'Fachberatung'}
           iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight={'Technologieberatung'}
         />
