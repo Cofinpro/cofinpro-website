@@ -1,7 +1,6 @@
 import React from 'react'
 
 import LinkButton from '../../../components/buttons/LinkButton'
-import ExternalLinkButton from '../../../components/buttons/ExternalLinkButton'
 import DownloadButton from '../../../components/buttons/DownloadButton'
 import MobileToggleWithButton from '../../../components/buttons/MobileToggleWithButton'
 
@@ -16,11 +15,30 @@ import {
 
 class NewsMedienUebersicht extends React.Component {
   render() {
+    function LayoutDownloadRow(props) {
+      const { content, style } = props
+
+      return (
+        <div className={'row ' + style.row}>
+          <div className="col-12 col-md-4">
+            <DownloadButton text={content.itemLeft} />
+          </div>
+          <div className="col-12 col-md-2" />
+          <div className="col-12 col-md-4">
+            <DownloadButton text={content.itemRight} />
+          </div>
+          <div className="col-12 col-md-2" />
+        </div>
+      )
+    }
+
     function LayoutMax(props) {
       const { content } = props
 
+      let showMoreButton = content.downloads.length > 4 ? true : false
+
       return (
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h2 className="h2">{content.header}</h2>
@@ -126,25 +144,32 @@ class NewsMedienUebersicht extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row margin-40-top margin-xs-20-top">
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.downloads[0].text} />
-            </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.downloads[2].text} />
-            </div>
-            <div className="col-12 col-md-2" />
-          </div>
-          <div className="row d-none d-md-flex">
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.downloads[1].text} />
-            </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.downloads[3].text} />
-            </div>
-            <div className="col-12 col-md-2" />
+          {content.downloads.map(function(item, i) {
+            let style = ''
+
+            if (i === 0) {
+              style = 'margin-40-top margin-xs-20-top'
+            } else if (i === 2) {
+              style = 'd-none d-md-flex'
+            }
+
+            if (i < 4 && i % 2 === 0) {
+              return (
+                <LayoutDownloadRow
+                  key={i}
+                  content={{
+                    itemLeft: content.downloads[i].text,
+                    itemRight: content.downloads[i + 1].text,
+                  }}
+                  style={{ row: style }}
+                />
+              )
+            } else {
+              return null
+            }
+          })}
+          <div className="collapse" id={'more-' + content.id}>
+            <p>Test</p>
           </div>
           <div className="row margin-40-top margin-xs-0-top">
             <div className="col-12 col-md-4 order-2 order-md-1">
@@ -155,7 +180,10 @@ class NewsMedienUebersicht extends React.Component {
               />
             </div>
             <div className="col-12 col-md-4 align-items-center order-1 order-md-2">
-              <MobileToggleWithButton show={true} />
+              <MobileToggleWithButton
+                dataTargetId={'more-' + content.id}
+                show={showMoreButton}
+              />
             </div>
           </div>
         </div>
@@ -164,6 +192,8 @@ class NewsMedienUebersicht extends React.Component {
 
     function LayoutDownloads(props) {
       const { content, style } = props
+
+      let showMoreButton = content.downloads.length > 2 ? true : false
 
       return (
         <div className={'container ' + style.container}>
@@ -245,7 +275,7 @@ class NewsMedienUebersicht extends React.Component {
               />
             </div>
             <div className="col-12 col-md-4 align-items-center order-1 order-md-2">
-              <MobileToggleWithButton show={true} />
+              <MobileToggleWithButton show={showMoreButton} />
             </div>
           </div>
         </div>
@@ -257,7 +287,7 @@ class NewsMedienUebersicht extends React.Component {
 
     return (
       <div>
-        <div className="container padding-60-top margin-xs-20-top">
+        <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">News&amp;Medien</h1>
@@ -275,6 +305,7 @@ class NewsMedienUebersicht extends React.Component {
 
         <LayoutMax
           content={{
+            id: 'veroeffentlichungen',
             header: 'Veröffentlichungen',
             description:
               'Genda excerum solecusam, venim atur sit illibus anditat harum aligendae ratur sus ducid et odigniscilis dolori di seceper roriber iaspidundaes volent repedit fuga. Nam esti conse landi quiamus incillam, atur aliberr oreperio.',
@@ -320,6 +351,7 @@ class NewsMedienUebersicht extends React.Component {
         />
         <LayoutMax
           content={{
+            id: 'pressemeldungen',
             header: 'Pressemeldungen',
             description:
               'Genda excerum solecusam, venim atur sit illibus anditat harum aligendae ratur sus ducid et odigniscilis dolori di seceper roriber iaspidundaes volent repedit fuga. Nam esti conse landi quiamus incillam, atur aliberr oreperio.',
@@ -342,6 +374,22 @@ class NewsMedienUebersicht extends React.Component {
               },
             ],
             downloads: [
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
               {
                 text:
                   'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',

@@ -4,7 +4,7 @@ import ToggleButton from '../ToggleButton'
 
 class MobileToggleWithButton extends React.Component {
   render() {
-    const { text, path, show } = this.props
+    const { text, path, dataTargetId, show } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -17,12 +17,12 @@ class MobileToggleWithButton extends React.Component {
           }}
         >
           <ToggleButton
-            id="pinnwand"
-            dataTarget={'more-fokusthemen'}
-            showElemForMore="label-toggle-focusthemen-more"
-            showElemForLess="label-toggle-focusthemen-less"
+            id={'toggle-button-' + dataTargetId}
+            dataTarget={dataTargetId}
+            showElemForMore={'label-toggle-' + dataTargetId + '-more'}
+            showElemForLess={'label-toggle-' + dataTargetId + '-less'}
           />
-          <div id="label-toggle-focusthemen-more">
+          <div id={'label-toggle-' + dataTargetId + '-more'}>
             <p className="d-none d-md-block text-primary text-size-14">
               MEHR<br />ANZEIGEN
             </p>
@@ -30,7 +30,10 @@ class MobileToggleWithButton extends React.Component {
               MEHR ANZEIGEN
             </p>
           </div>
-          <div id="label-toggle-focusthemen-less" style={{ display: 'none' }}>
+          <div
+            id={'label-toggle-' + dataTargetId + '-less'}
+            style={{ display: 'none' }}
+          >
             <p className="d-none d-md-block text-primary text-size-14">
               WENIGER<br />ANZEIGEN
             </p>
