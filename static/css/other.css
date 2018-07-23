@@ -4,3 +4,12 @@
   -o-border-image: url('/img/CP_Border_2.png') 100 stretch; /* Opera 11-12.1 */
   border-image: url('/img/CP_Border_2.png') 100 stretch;
 }
+
+ul.blue-bullet {
+
+}
+
+.blue-bullet li {
+  list-style-image: url('/img/blue-bullet-point.png');
+  margin-bottom: 4px;
+}
