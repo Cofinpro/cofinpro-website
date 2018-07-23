@@ -45,17 +45,20 @@
 
   .nav-item.active {
     a {
+      padding-bottom: 4px;
       border-bottom: 1px solid white;
     }
   }
 
   .nav-item {
     a {
+      padding-bottom: 4px;
       border-bottom: 1px solid #847575;
     }
   }
 
   a.nav-link:hover {
+    padding-bottom: 4px;
     border-bottom: 1px solid white;
   }
 }

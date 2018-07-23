@@ -5,6 +5,9 @@ import ToggleButton from '../../components/buttons/ToggleButton'
 import FourFactsSmallLayout from '../../components/layouts/FourFactsSmallLayout'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import FokusthemenPreview from '../../components/layouts/FokusthemenPreview'
+import DownloadButton from '../../components/buttons/DownloadButton'
+
+import DownloadPreviewTextAndImageLayout from '../../components/layouts/DownloadPreviewTextAndImageLayout'
 
 import {
   ImageWrapper,
@@ -20,7 +23,7 @@ class Startseite extends React.Component {
 
     return (
       <div>
-        <div className="container padding-60-top margin-xs-20-top">
+        <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Headline</h1>
@@ -346,89 +349,11 @@ class Startseite extends React.Component {
             <div className="col-12">
               <h2>Downloads</h2>
             </div>
-            <div className="d-none d-md-block col-12 margin-40-top">
-              <div className="row">
-                <div className="col-12 col-md-5 col-lg-3">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 210,
-                      height: 287,
-                    }}
-                  />
-                </div>
-                <div className="col-12 col-md-1 col-lg-3" />
-                <div className="col-12 col-md-5 col-lg-3">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 210,
-                      height: 287,
-                    }}
-                  />
-                </div>
-                <div className="col-12 col-md-1 col-lg-3" />
-              </div>
-            </div>
-            <div className="col-12 margin-40-top margin-xs-20-top">
-              <div className="row">
-                <div className="col-12 col-md-5 col-lg-3">
-                  <div className="row">
-                    <div className="col-2 col-md-2">
-                      <a href="#">
-                        <img
-                          alt="Download"
-                          src={pathPrefix + '/svg/download arrow.svg'}
-                        />
-                      </a>
-                    </div>
-                    <div className="col-8 col-md-10">
-                      <p className="h5 bold-font">
-                        Folder Unternehmen Subheadline zum Unternehmensfolder
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-1 col-lg-3" />
-                <div className="col-12 col-md-5 col-lg-3">
-                  <div className="row">
-                    <div className="col-2 col-md-2">
-                      <a href="#">
-                        <img
-                          alt="Download"
-                          src={pathPrefix + '/svg/download arrow.svg'}
-                        />
-                      </a>
-                    </div>
-                    <div className="col-8 col-md-10">
-                      <p className="h5 bold-font">
-                        Karrieremagazin Ausgabe #1 Schubidu statt Mimimi
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-1 col-lg-3" />
-              </div>
-            </div>
-          </div>
-          <div className="row margin-20-top">
-            <div className="col-12 col-md-3">
-              <LinkButton
-                text="ZU DEN MEDIEN"
-                path="/karriere/ueber-uns"
-                styleLink="d-none d-md-inline"
-                {...this.props}
-              />
-              <LinkButton
-                text="ZU DEN MEDIEN"
-                path="/karriere/ueber-uns"
-                styleLink="d-inline d-md-none"
-                styleSpan="w-100"
-                {...this.props}
-              />
-            </div>
           </div>
         </div>
+        <DownloadPreviewTextAndImageLayout
+          style={{ container: 'margin-40-top margin-xs-0-top' }}
+        />
       </div>
     )
   }

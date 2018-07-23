@@ -270,7 +270,8 @@ h6 {
 .h5 > h3,
 .h5 > h4,
 .h5 > h5,
-.h5 > h6 {
+.h5 > h6,
+.h5 > p {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
@@ -853,6 +854,15 @@ a:hover {
   }
 }
 
+.margin-xs-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+}
+
 .margin-md-80-top {
   @include media-breakpoint-only(md) {
     margin-top: 80px;
@@ -899,6 +909,10 @@ a:hover {
   @include media-breakpoint-only(xl) {
     margin-top: 20px;
   }
+}
+
+.margin-20-left {
+  margin-left: 20px;
 }
 
 .padding-10 {
