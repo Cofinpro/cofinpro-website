@@ -24,9 +24,11 @@ class NewsMedienUebersicht extends React.Component {
             <DownloadButton text={content.itemLeft} />
           </div>
           <div className="col-12 col-md-2" />
-          <div className="col-12 col-md-4">
-            <DownloadButton text={content.itemRight} />
-          </div>
+          {content.itemRight !== null && (
+            <div className="col-12 col-md-4">
+              <DownloadButton text={content.itemRight} />
+            </div>
+          )}
           <div className="col-12 col-md-2" />
         </div>
       )
@@ -35,7 +37,7 @@ class NewsMedienUebersicht extends React.Component {
     function LayoutMax(props) {
       const { content } = props
 
-      let showMoreButton = content.downloads.length > 4 ? true : false
+      let showMoreButton = content.downloads.length > 2 ? true : false
 
       return (
         <div className="container margin-100-top margin-xs-80-top">
@@ -169,7 +171,28 @@ class NewsMedienUebersicht extends React.Component {
             }
           })}
           <div className="collapse" id={'more-' + content.id}>
-            <p>Test</p>
+            {content.downloads.map(function(item, i) {
+              if (i % 2 === 0 && i > 1 && i < 4) {
+                let itemLeftT = content.downloads[i].text
+                let itemRightT =
+                  i === content.downloads.length - 1
+                    ? null
+                    : content.downloads[i + 1].text
+
+                return (
+                  <LayoutDownloadRow
+                    key={i}
+                    content={{
+                      itemLeft: itemLeftT,
+                      itemRight: itemRightT,
+                    }}
+                    style={{ row: 'd-flex d-md-none' }}
+                  />
+                )
+              } else {
+                return null
+              }
+            })}
           </div>
           <div className="row margin-40-top margin-xs-0-top">
             <div className="col-12 col-md-4 order-2 order-md-1">
@@ -266,6 +289,30 @@ class NewsMedienUebersicht extends React.Component {
             </div>
             <div className="col-12 col-md-2" />
           </div>
+          <div className="collapse" id={'more-' + content.id}>
+            {content.downloads.map(function(item, i) {
+              if (i % 2 === 0 && i > 1 && i < 4) {
+                let itemLeftT = content.downloads[i].text
+                let itemRightT =
+                  i === content.downloads.length - 1
+                    ? null
+                    : content.downloads[i + 1].text
+
+                return (
+                  <LayoutDownloadRow
+                    key={i}
+                    content={{
+                      itemLeft: itemLeftT,
+                      itemRight: itemRightT,
+                    }}
+                    style={{ row: 'd-flex d-md-none' }}
+                  />
+                )
+              } else {
+                return null
+              }
+            })}
+          </div>
           <div className="row margin-40-top margin-xs-0-top">
             <div className="col-12 col-md-4 order-2 order-md-1">
               <LinkButton
@@ -275,7 +322,10 @@ class NewsMedienUebersicht extends React.Component {
               />
             </div>
             <div className="col-12 col-md-4 align-items-center order-1 order-md-2">
-              <MobileToggleWithButton show={showMoreButton} />
+              <MobileToggleWithButton
+                show={showMoreButton}
+                dataTargetId={'more-' + content.id}
+              />
             </div>
           </div>
         </div>
@@ -402,10 +452,6 @@ class NewsMedienUebersicht extends React.Component {
                 text:
                   'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
               },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
             ],
             buttonText: 'ZUM ARCHIV FÜR PRESSEMELDUNGEN',
           }}
@@ -427,6 +473,7 @@ class NewsMedienUebersicht extends React.Component {
 
         <LayoutDownloads
           content={{
+            id: 'STUDIEN',
             header: 'STUDIEN',
             medien: [
               {
@@ -447,6 +494,10 @@ class NewsMedienUebersicht extends React.Component {
                 text:
                   'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
               },
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
             ],
             buttonText: 'ZUM ARCHIV FÜR STUDIEN',
           }}
@@ -455,6 +506,7 @@ class NewsMedienUebersicht extends React.Component {
 
         <LayoutDownloads
           content={{
+            id: 'THESENPAPIERE',
             header: 'THESENPAPIERE',
             medien: [
               {
@@ -483,6 +535,7 @@ class NewsMedienUebersicht extends React.Component {
 
         <LayoutDownloads
           content={{
+            id: 'WHITEPAPERS',
             header: 'WHITEPAPERS',
             medien: [
               {
@@ -503,6 +556,14 @@ class NewsMedienUebersicht extends React.Component {
                 text:
                   'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
               },
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
+              {
+                text:
+                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
+              },
             ],
             buttonText: 'ZUM ARCHIV FÜR WHITEPAPERS',
           }}
@@ -511,6 +572,7 @@ class NewsMedienUebersicht extends React.Component {
 
         <LayoutDownloads
           content={{
+            id: 'LOESUNGSSKIZZEN',
             header: 'LÖSUNGSSKIZZEN',
             medien: [
               {
