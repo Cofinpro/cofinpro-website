@@ -629,6 +629,10 @@ a:hover {
   }
 }
 
+.negative-margin-80-top {
+  margin-top: -80px;
+}
+
 .margin-120-bottom {
   margin-bottom: 120px;
   @include media-breakpoint-only(xs) {

@@ -1,12 +1,8 @@
 import React from 'react'
 
 import LinkButton from '../../components/buttons/LinkButton'
-import ToggleButton from '../../components/buttons/ToggleButton'
-import FourFactsSmallLayout from '../../components/layouts/FourFactsSmallLayout'
-import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-import FokusthemenPreview from '../../components/layouts/FokusthemenPreview'
-import DownloadButton from '../../components/buttons/DownloadButton'
 
+import FourFactsSmallLayout from '../../components/layouts/FourFactsSmallLayout'
 import DownloadPreviewTextAndImageLayout from '../../components/layouts/DownloadPreviewTextAndImageLayout'
 
 import {
