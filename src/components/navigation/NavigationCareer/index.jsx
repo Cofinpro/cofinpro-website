@@ -122,7 +122,7 @@ class NavigationCareer extends React.Component {
                     <div
                       className={
                         location.pathname.startsWith('/karriere')
-                          ? 'd-inline '
+                          ? 'd-none d-lg-inline'
                           : 'd-inline display-none'
                       }
                     >
@@ -136,22 +136,11 @@ class NavigationCareer extends React.Component {
                   </div>
                   <div className="d-flex w-100 justify-content-between align-items-center">
                     <div>
-                      <div
-                        className={
-                          location.pathname.startsWith('/karriere')
-                            ? 'd-inline '
-                            : 'd-inline display-none'
-                        }
-                      >
-                        <Link
-                          className="link-nav-main-page text-muted d-none d-lg-inline"
-                          to="/"
-                        >
-                          Zur Hauptseite
-                        </Link>
-                      </div>
                       {location.pathname.startsWith('/karriere') === false ? (
-                        <Link a="/" className="navbar-brand d-inline d-lg-none">
+                        <Link
+                          to="/"
+                          className="navbar-brand d-inline d-lg-none"
+                        >
                           <img
                             className="cofinpro-logo"
                             alt="Nächstes Bild"

@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PubSub from 'pubsub-js'
 
+import LinkButton from '../../buttons/LinkButton'
+
 import StorageHelper from '../../../utils/storageHelper'
 
 import './style.scss'
@@ -154,6 +156,7 @@ class MenuCareer extends React.Component {
           locationUpdate={locationUpdate}
           menuItems={menuItems}
         />
+        <LinkButton text="HAUPTSEITE" path="/" {...this.props} />
       </div>
     )
   }

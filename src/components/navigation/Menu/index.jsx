@@ -144,12 +144,7 @@ class Menu extends React.Component {
           locationUpdate={locationUpdate}
           menuItems={menuItems}
         />
-        <LinkButton
-          styleLink=" navigation-to-krarriere"
-          text="KARRIERE"
-          path="/karriere"
-          {...this.props}
-        />
+        <LinkButton text="KARRIERE" path="/karriere" {...this.props} />
       </div>
     )
   }
