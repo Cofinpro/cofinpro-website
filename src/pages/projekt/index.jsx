@@ -1,7 +1,6 @@
 import React from 'react'
 
 import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
-import ReferenzAndDownload from '../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import {
@@ -45,14 +44,14 @@ class Projekt extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
+        <div className="container no-gutters-mobile margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
-                  width: 1200,
-                  height: 800,
+                  width: 1800,
+                  height: 1200,
                 }}
               />
             </div>

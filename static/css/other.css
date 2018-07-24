@@ -6,10 +6,9 @@
 }
 
 ul.blue-bullet {
-
 }
 
 .blue-bullet li {
   list-style-image: url('/img/blue-bullet-point.png');
-  margin-bottom: 4px;
+  margin-bottom: 20px;
 }

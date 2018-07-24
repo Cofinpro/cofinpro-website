@@ -90,8 +90,12 @@ class NavigationCareer extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col">
-                <a
-                  href="https://www.cofinpro.de"
+                <Link
+                  to={
+                    location.pathname.startsWith('/karriere')
+                      ? '/karriere'
+                      : '/'
+                  }
                   hidden={locationUpdate !== mainUrl ? true : false}
                 >
                   {location.pathname.startsWith('/karriere') === false ? (
@@ -107,7 +111,7 @@ class NavigationCareer extends React.Component {
                       src={pathPrefix + '/svg/karrierelogo.svg'}
                     />
                   )}
-                </a>
+                </Link>
 
                 <nav
                   id="cofinpro-nav-career"
@@ -122,12 +126,12 @@ class NavigationCareer extends React.Component {
                           : 'd-inline display-none'
                       }
                     >
-                      <a
+                      <Link
                         className="link-nav-main-page text-small text-muted d-inline d-lg-none small-main-page-nav"
-                        href="https://www.cofinpro.de"
+                        to="/"
                       >
                         Zur Hauptseite
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className="d-flex w-100 justify-content-between align-items-center">
@@ -139,27 +143,24 @@ class NavigationCareer extends React.Component {
                             : 'd-inline display-none'
                         }
                       >
-                        <a
+                        <Link
                           className="link-nav-main-page text-muted d-none d-lg-inline"
-                          href="https://www.cofinpro.de"
+                          to="/"
                         >
                           Zur Hauptseite
-                        </a>
+                        </Link>
                       </div>
                       {location.pathname.startsWith('/karriere') === false ? (
-                        <a
-                          href="https://www.cofinpro.de"
-                          className="navbar-brand d-inline d-lg-none"
-                        >
+                        <Link a="/" className="navbar-brand d-inline d-lg-none">
                           <img
                             className="cofinpro-logo"
                             alt="Nächstes Bild"
                             src={pathPrefix + '/svg/logo_cofinpro.svg'}
                           />
-                        </a>
+                        </Link>
                       ) : (
-                        <a
-                          href="https://www.cofinpro.de"
+                        <Link
+                          to="/karriere"
                           className="navbar-brand d-inline d-lg-none"
                         >
                           <img
@@ -167,7 +168,7 @@ class NavigationCareer extends React.Component {
                             alt="Nächstes Bild"
                             src={pathPrefix + '/svg/karrierelogo.svg'}
                           />
-                        </a>
+                        </Link>
                       )}
                     </div>
 

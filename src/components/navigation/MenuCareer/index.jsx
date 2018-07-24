@@ -115,7 +115,10 @@ class MenuCareer extends React.Component {
         id="navbarSupportedContent"
       >
         <div>
-          <a href="/" className="navbar-brand d-none d-lg-block">
+          <Link
+            to={location.pathname.startsWith('/karriere') ? '/karriere' : '/'}
+            className="navbar-brand d-none d-lg-block"
+          >
             {location.pathname.startsWith('/karriere') === false ? (
               <img
                 className="cofinpro-logo-startseite"
@@ -129,7 +132,7 @@ class MenuCareer extends React.Component {
                 src={pathPrefix + '/svg/karrierelogo.svg'}
               />
             )}
-          </a>
+          </Link>
         </div>
         <div className="d-block d-lg-none text-secondary margin-20-bottom">
           <p className="h5 d-inline">MENÜ</p>
