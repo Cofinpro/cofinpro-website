@@ -78,7 +78,7 @@ class NavigationCareer extends React.Component {
 
     return (
       <div
-        className="career-navigation fixed-top bg-white"
+        className="career-navigation fixed-top"
         hidden={location.pathname.startsWith('/karriere') === false}
       >
         <div className="bg-white">
