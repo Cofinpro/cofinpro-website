@@ -78,132 +78,137 @@ class NavigationCareer extends React.Component {
 
     return (
       <div
-        className="nav-container fixed-top"
+        className="career-navigation fixed-top bg-white"
         hidden={location.pathname.startsWith('/karriere') === false}
       >
-        <div className="bg-white mobile-navigation-bar">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <Link
-                  to="/karriere"
-                  hidden={locationUpdate !== mainUrl ? true : false}
-                >
-                  <img
-                    className="cofinpro-logo-startseite"
-                    alt="Nächstes Bild"
-                    src={pathPrefix + '/svg/karrierelogo.svg'}
-                  />
-                </Link>
-
-                <nav
-                  id="cofinpro-nav-career"
-                  className="navbar"
-                  hidden={locationUpdate === mainUrl ? true : false}
-                >
-                  <div className="d-flex w-100 justify-content-between align-items-center">
-                    <div>
-                      <Link
-                        to="/karriere"
-                        className="navbar-brand d-inline d-lg-none"
-                      >
-                        <img
-                          className="cofinpro-logo"
-                          alt="Nächstes Bild"
-                          src={pathPrefix + '/svg/karrierelogo.svg'}
-                        />
-                      </Link>
-                    </div>
-
-                    <div />
-
-                    <div>
-                      <form className="form-inline">
-                        <div className="d-inline">
-                          <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-lg-inline">
-                            {this.getPerspectiveTitle()}
-                          </span>
-                          <span className="title-perspective text-secondary navbar-text mr-sm-2 d-inline d-lg-none">
-                            KOMPETENZ
-                          </span>
-                          <button
-                            id="perspectiveNavbarToggler"
-                            className="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#nav-menu-competence"
-                            aria-controls="nav-menu-competence"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                          >
-                            <img
-                              alt="Menü Icon"
-                              src={
-                                pathPrefix +
-                                '/svg/icon_menu_perspektive_toggler.svg'
-                              }
-                            />
-                          </button>
-                          <LinkButton
-                            text="HAUPTSEITE"
-                            path="/"
-                            styleLink={'d-none d-lg-inline'}
-                            styleSpan={'btn-sm margin-20-left'}
-                            {...this.props}
-                          />
-                        </div>
-                        <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
-                          MENÜ
-                        </span>
-                        <div>
-                          <button
-                            id="menuNavbarToggler"
-                            hidden={locationUpdate === mainUrl ? true : false}
-                            className="navbar-toggler d-inline d-lg-none"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarSupportedContent"
-                            aria-controls="navbarSupportedContent"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                          >
-                            <img
-                              alt="Menü Icon"
-                              src={pathPrefix + '/svg/icon_menu_toggler.svg'}
-                            />
-                          </button>
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="bg-white">
-          <div className="container container-md-full-width bg-white">
-            <div className="row">
-              <div className="col">
-                <nav
-                  id="cofinpro-nav"
-                  className={
-                    'navbar ' +
-                    (locationUpdate === mainUrl ? 'on-main-site' : '')
-                  }
-                  hidden={locationUpdate === mainUrl ? true : false}
-                >
-                  <MenuCareer
-                    location={location}
-                    locationUpdate={locationUpdate}
-                    {...this.props}
-                  />
-                </nav>
+          <div className="bg-white mobile-navigation-bar">
+            <div className="container">
+              <div className="row">
+                <div className="col">
+                  <Link
+                    to="/karriere"
+                    hidden={locationUpdate !== mainUrl ? true : false}
+                  >
+                    <img
+                      className={
+                        locationUpdate !== mainUrl
+                          ? 'cofinpro-logo-startseite '
+                          : 'cofinpro-logo-startseite cofinpro-logo-startseite--withSpace'
+                      }
+                      alt="Nächstes Bild"
+                      src={pathPrefix + '/svg/karrierelogo.svg'}
+                    />
+                  </Link>
+
+                  <nav
+                    id="cofinpro-nav-career"
+                    className="navbar"
+                    hidden={locationUpdate === mainUrl ? true : false}
+                  >
+                    <div className="d-flex w-100 justify-content-between align-items-center">
+                      <div>
+                        <Link
+                          to="/karriere"
+                          className="navbar-brand d-inline d-lg-none"
+                        >
+                          <img
+                            className="cofinpro-logo"
+                            alt="Nächstes Bild"
+                            src={pathPrefix + '/svg/karrierelogo.svg'}
+                          />
+                        </Link>
+                      </div>
+
+                      <div />
+
+                      <div>
+                        <form className="form-inline">
+                          <div className="d-inline">
+                            <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-lg-inline">
+                              {this.getPerspectiveTitle()}
+                            </span>
+                            <span className="title-perspective text-secondary navbar-text mr-sm-2 d-inline d-lg-none">
+                              KOMPETENZ
+                            </span>
+                            <button
+                              id="perspectiveNavbarToggler"
+                              className="navbar-toggler"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#nav-menu-competence"
+                              aria-controls="nav-menu-competence"
+                              aria-expanded="false"
+                              aria-label="Toggle navigation"
+                            >
+                              <img
+                                alt="Menü Icon"
+                                src={
+                                  pathPrefix +
+                                  '/svg/icon_menu_perspektive_toggler.svg'
+                                }
+                              />
+                            </button>
+                            <LinkButton
+                              text="HAUPTSEITE"
+                              path="/"
+                              styleLink={'d-none d-lg-inline'}
+                              styleSpan={'btn-sm margin-20-left'}
+                              {...this.props}
+                            />
+                          </div>
+                          <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
+                            MENÜ
+                          </span>
+                          <div>
+                            <button
+                              id="menuNavbarToggler"
+                              hidden={locationUpdate === mainUrl ? true : false}
+                              className="navbar-toggler d-inline d-lg-none"
+                              type="button"
+                              data-toggle="collapse"
+                              data-target="#navbarSupportedContent"
+                              aria-controls="navbarSupportedContent"
+                              aria-expanded="false"
+                              aria-label="Toggle navigation"
+                            >
+                              <img
+                                alt="Menü Icon"
+                                src={pathPrefix + '/svg/icon_menu_toggler.svg'}
+                              />
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white">
+            <div className="container container-md-full-width bg-white">
+              <div className="row">
+                <div className="col">
+                  <nav
+                    id="cofinpro-nav"
+                    className={
+                      'navbar navbar-expand-lg ' +
+                      (locationUpdate === mainUrl ? 'on-main-site' : '')
+                    }
+                    hidden={locationUpdate === mainUrl ? true : false}
+                  >
+                    <MenuCareer
+                      location={location}
+                      locationUpdate={locationUpdate}
+                      {...this.props}
+                    />
+                  </nav>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
         <div className="container container-md-full-width">
           <div className="row">
             <div className="col-12 col-lg-6 offset-lg-6">

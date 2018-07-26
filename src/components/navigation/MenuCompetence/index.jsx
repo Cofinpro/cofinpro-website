@@ -157,7 +157,7 @@ class MenuCompetence extends React.Component {
           {menuItems.map((menuItem, i) => {
             if (menuItem.type === 'header') {
               return (
-                <li key={'menu-item-' + i} className="text-white">
+                <li key={'menu-item-' + i} className="">
                   {menuItem.text}
                 </li>
               )
