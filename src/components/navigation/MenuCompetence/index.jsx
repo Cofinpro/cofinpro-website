@@ -85,58 +85,52 @@ class MenuCompetence extends React.Component {
         type: 'header',
       },
       {
-        text: '> Absolvent & Young Professional',
+        text: 'Absolvent & Young Professional',
         path: '/karriere/fachlicher-absolvent/',
         perspective: 'fachlicher-absolvent',
         type: 'link',
+        indented: true,
       },
       {
-        text: '> Professional',
+        text: 'Professional',
         path: '/karriere/fachlicher-professional/',
         perspective: 'fachlicher-professional',
         type: 'link',
-      },
-      {
-        type: 'space',
+        indented: true,
       },
       {
         text: 'TECHNOLOGISCHER BERATER',
         type: 'header',
       },
       {
-        text: '> Absolvent & Young Professional',
+        text: 'Absolvent & Young Professional',
         path: '/karriere/technologischer-absolvent/',
         perspective: 'technologischer-absolvent',
         type: 'link',
+        indented: true,
       },
       {
-        text: '> Professional',
+        text: 'Professional',
         path: '/karriere/technologischer-professional/',
         perspective: 'technologischer-professional',
         type: 'link',
-      },
-      {
-        type: 'space',
+        indented: true,
       },
       {
         text: 'STUDENTEN',
         path: '/karriere/studenten/',
         perspective: 'studenten',
         type: 'link',
-      },
-      {
-        type: 'space',
+        indented: false,
       },
       {
         text: 'ANDERE EXPERTISE',
         path: '/karriere/andere/',
         perspective: 'andere',
         type: 'link',
+        indented: false,
       },
     ]
-
-    console.log(location.pathname.slice(1).split('/'))
-    console.log('/karriere/andere/' + location.pathname.slice(1).split('/')[2])
 
     return (
       <div
@@ -162,7 +156,11 @@ class MenuCompetence extends React.Component {
         <ul className="navbar-nav mr-auto text-dark">
           {menuItems.map((menuItem, i) => {
             if (menuItem.type === 'header') {
-              return <li key={'menu-item-' + i}>{menuItem.text}</li>
+              return (
+                <li key={'menu-item-' + i} className="text-white">
+                  {menuItem.text}
+                </li>
+              )
             } else if (menuItem.type === 'space') {
               return (
                 <li key={'menu-item-' + i}>
@@ -181,6 +179,15 @@ class MenuCompetence extends React.Component {
                       : 'nav-item'
                   }
                 >
+                  <img
+                    className={
+                      menuItem.indented
+                        ? 'icon-select margin-20-left'
+                        : 'icon-select'
+                    }
+                    alt="Auswählen"
+                    src={pathPrefix + '/svg/arrowright.svg'}
+                  />
                   <Link
                     to={
                       location.pathname.slice(1).split('/').length > 2 &&

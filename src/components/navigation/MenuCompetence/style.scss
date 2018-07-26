@@ -1,5 +1,11 @@
 #nav-menu-competence {
   .nav-link:hover {
+    padding-bottom: 4px;
     border-bottom: 1px solid black;
+  }
+
+  .icon-select {
+    width: 23px;
+    height: 12px;
   }
 }

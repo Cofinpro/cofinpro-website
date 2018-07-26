@@ -19,10 +19,6 @@ class MenuCareer extends React.Component {
         $(this).collapse('hide')
       }
     })
-
-    $('#close-button-menu').click(function() {
-      $('#navbarSupportedContent').collapse('hide')
-    })
   }
 
   constructor(props) {
@@ -111,6 +107,11 @@ class MenuCareer extends React.Component {
         pattern: '/karriere/jobs-bewerbung',
       },
     ]
+
+    function hideMenu() {
+      $('#navbarSupportedContent').collapse('hide')
+    }
+
     return (
       <div
         className="collapse navbar-collapse main-navigation-bar"
@@ -143,6 +144,7 @@ class MenuCareer extends React.Component {
             type="button"
             className="close d-inline"
             aria-label="Close"
+            onClick={hideMenu}
           >
             <img
               className="main-navigation-bar__img-close-button"
@@ -156,7 +158,12 @@ class MenuCareer extends React.Component {
           locationUpdate={locationUpdate}
           menuItems={menuItems}
         />
-        <LinkButton text="HAUPTSEITE" path="/" {...this.props} />
+        <LinkButton
+          text="HAUPTSEITE"
+          path="/"
+          styleLink={'d-inline d-lg-none'}
+          {...this.props}
+        />
       </div>
     )
   }

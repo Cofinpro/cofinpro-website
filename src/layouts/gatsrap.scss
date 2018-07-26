@@ -387,7 +387,7 @@ a:hover {
 #nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
-  opacity: 0.95;
+  /*opacity: 0.95;*/
 }
 
 .min-view-height {
@@ -569,6 +569,10 @@ a:hover {
 
 .margin-md-right {
   margin-right: 2rem;
+}
+
+.no-padding {
+  padding: 0;
 }
 
 .no-margin {

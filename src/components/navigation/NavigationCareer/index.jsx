@@ -1,14 +1,12 @@
 import React from 'react'
-import { findDOMNode } from 'react-dom'
 import Link from 'gatsby-link'
-import navigateTo from 'gatsby-link'
-import PubSub from 'pubsub-js'
 
 import StorageHelper from '../../../utils/storageHelper'
 
-import Menu from '../Menu'
 import MenuCareer from '../MenuCareer'
 import MenuCompetence from '../MenuCompetence'
+
+import LinkButton from '../../buttons/LinkButton'
 
 import './style.scss'
 
@@ -18,10 +16,6 @@ class NavigationCareer extends React.Component {
   componentDidMount() {
     $('#perspectiveNavbarToggler').click(function() {
       $('#navbarSupportedContent').collapse('hide')
-    })
-
-    $('#menu-main-mobile-toggle').click(function() {
-      $('#navbar-main-content').collapse('hide')
     })
 
     $('#menuNavbarToggler').click(function() {
@@ -77,40 +71,29 @@ class NavigationCareer extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-    const { onClick, location, title, locationUpdate } = this.props
-
-    var urlFragmentPers = pathPrefix != null && pathPrefix.length > 2 ? 1 : 0
+    const { location, locationUpdate } = this.props
 
     var mainUrl =
       pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
 
     return (
-      <div className="nav-container fixed-top">
-        <div className="bg-white">
+      <div
+        className="nav-container fixed-top"
+        hidden={location.pathname.startsWith('/karriere') === false}
+      >
+        <div className="bg-white mobile-navigation-bar">
           <div className="container">
             <div className="row">
               <div className="col">
                 <Link
-                  to={
-                    location.pathname.startsWith('/karriere')
-                      ? '/karriere'
-                      : '/'
-                  }
+                  to="/karriere"
                   hidden={locationUpdate !== mainUrl ? true : false}
                 >
-                  {location.pathname.startsWith('/karriere') === false ? (
-                    <img
-                      className="cofinpro-logo-startseite"
-                      alt="Nächstes Bild"
-                      src={pathPrefix + '/svg/logo_cofinpro.svg'}
-                    />
-                  ) : (
-                    <img
-                      className="cofinpro-logo-startseite"
-                      alt="Nächstes Bild"
-                      src={pathPrefix + '/svg/karrierelogo.svg'}
-                    />
-                  )}
+                  <img
+                    className="cofinpro-logo-startseite"
+                    alt="Nächstes Bild"
+                    src={pathPrefix + '/svg/karrierelogo.svg'}
+                  />
                 </Link>
 
                 <nav
@@ -118,60 +101,25 @@ class NavigationCareer extends React.Component {
                   className="navbar"
                   hidden={locationUpdate === mainUrl ? true : false}
                 >
-                  <div>
-                    <div
-                      className={
-                        location.pathname.startsWith('/karriere')
-                          ? 'd-none d-lg-inline'
-                          : 'd-inline display-none'
-                      }
-                    >
-                      <Link
-                        className="link-nav-main-page text-small text-muted d-inline d-lg-none small-main-page-nav"
-                        to="/"
-                      >
-                        Zur Hauptseite
-                      </Link>
-                    </div>
-                  </div>
                   <div className="d-flex w-100 justify-content-between align-items-center">
                     <div>
-                      {location.pathname.startsWith('/karriere') === false ? (
-                        <Link
-                          to="/"
-                          className="navbar-brand d-inline d-lg-none"
-                        >
-                          <img
-                            className="cofinpro-logo"
-                            alt="Nächstes Bild"
-                            src={pathPrefix + '/svg/logo_cofinpro.svg'}
-                          />
-                        </Link>
-                      ) : (
-                        <Link
-                          to="/karriere"
-                          className="navbar-brand d-inline d-lg-none"
-                        >
-                          <img
-                            className="cofinpro-logo"
-                            alt="Nächstes Bild"
-                            src={pathPrefix + '/svg/karrierelogo.svg'}
-                          />
-                        </Link>
-                      )}
+                      <Link
+                        to="/karriere"
+                        className="navbar-brand d-inline d-lg-none"
+                      >
+                        <img
+                          className="cofinpro-logo"
+                          alt="Nächstes Bild"
+                          src={pathPrefix + '/svg/karrierelogo.svg'}
+                        />
+                      </Link>
                     </div>
 
                     <div />
 
                     <div>
                       <form className="form-inline">
-                        <div
-                          className={
-                            location.pathname.startsWith('/karriere')
-                              ? 'd-inline '
-                              : 'd-inline display-none'
-                          }
-                        >
+                        <div className="d-inline">
                           <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-lg-inline">
                             {this.getPerspectiveTitle()}
                           </span>
@@ -196,17 +144,18 @@ class NavigationCareer extends React.Component {
                               }
                             />
                           </button>
+                          <LinkButton
+                            text="HAUPTSEITE"
+                            path="/"
+                            styleLink={'d-none d-lg-inline'}
+                            styleSpan={'btn-sm margin-20-left'}
+                            {...this.props}
+                          />
                         </div>
                         <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
                           MENÜ
                         </span>
-                        <div
-                          className={
-                            location.pathname.startsWith('/karriere')
-                              ? ''
-                              : 'display-none'
-                          }
-                        >
+                        <div>
                           <button
                             id="menuNavbarToggler"
                             hidden={locationUpdate === mainUrl ? true : false}
@@ -224,30 +173,6 @@ class NavigationCareer extends React.Component {
                             />
                           </button>
                         </div>
-                        <div
-                          className={
-                            location.pathname.startsWith('/karriere')
-                              ? 'display-none'
-                              : ''
-                          }
-                        >
-                          <button
-                            id="menu-main-mobile-toggle"
-                            hidden={locationUpdate === mainUrl ? true : false}
-                            className="navbar-toggler d-inline d-lg-none"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbar-main-content"
-                            aria-controls="navbar-main-content"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                          >
-                            <img
-                              alt="Menü Icon"
-                              src={pathPrefix + '/svg/icon_menu_toggler.svg'}
-                            />
-                          </button>
-                        </div>
                       </form>
                     </div>
                   </div>
@@ -256,32 +181,31 @@ class NavigationCareer extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container container-md-full-width ">
-          <div className="row">
-            <div className="col">
-              <nav
-                id="cofinpro-nav"
-                className={
-                  'navbar navbar-expand-lg ' +
-                  (locationUpdate === mainUrl ? 'on-main-site' : '')
-                }
-                hidden={locationUpdate === mainUrl ? true : false}
-              >
-                {location.pathname.startsWith('/karriere') === false ? (
-                  <Menu
-                    location={location}
-                    locationUpdate={locationUpdate}
-                    {...this.props}
-                  />
-                ) : (
+        <div className="bg-white">
+          <div className="container container-md-full-width bg-white">
+            <div className="row">
+              <div className="col">
+                <nav
+                  id="cofinpro-nav"
+                  className={
+                    'navbar ' +
+                    (locationUpdate === mainUrl ? 'on-main-site' : '')
+                  }
+                  hidden={locationUpdate === mainUrl ? true : false}
+                >
                   <MenuCareer
                     location={location}
                     locationUpdate={locationUpdate}
                     {...this.props}
                   />
-                )}
-              </nav>
+                </nav>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <div className="container container-md-full-width">
+          <div className="row">
             <div className="col-12 col-lg-6 offset-lg-6">
               <MenuCompetence
                 location={location}

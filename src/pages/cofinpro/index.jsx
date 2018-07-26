@@ -145,6 +145,7 @@ class Startseite extends React.Component {
                     },
                   ],
                 }}
+                isHeaderCentered={false}
               />
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
