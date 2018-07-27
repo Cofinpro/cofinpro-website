@@ -13,31 +13,20 @@ const SOURCE_TYP_PLACEHOLDER = 'Placeholder'
 const SOURCE_TYP_ICON_IMAGE = 'Icon'
 
 class ImageWrapper extends React.Component {
+  componentDidMount() {}
+
   render() {
     function IconImage(props) {
-      let styleOverlay = ''
-
-      if (props.style !== undefined && props.style.overlay !== undefined) {
-        styleOverlay = props.style.overlay
-      }
-
-      let styleBackgroundImage = ''
-
-      if (
-        props.style !== undefined &&
-        props.style.backgroundImage !== undefined
-      ) {
-        styleBackgroundImage = props.style.backgroundImage
-      }
-
       return (
-        <div>
+        <div className={'svg-image ' + props.style.border}>
           <img
             src={'/img/filler_fokus.png'}
-            className={'img-fluid ' + styleBackgroundImage}
+            className={'img-fluid ' + props.style.backgroundImage}
           />
-          <img src={props.source} className="icon-image" />
-          <div className={'image-overlay-top-left ' + styleOverlay}>
+          <div className={'icon-image ' + props.style.iconColor}>
+            {props.source}
+          </div>
+          <div className={'image-overlay-top-left ' + props.style.overlay}>
             {overlayElement}
           </div>
         </div>
