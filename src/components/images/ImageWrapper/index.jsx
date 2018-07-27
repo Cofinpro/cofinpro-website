@@ -23,7 +23,10 @@ class ImageWrapper extends React.Component {
 
       let styleBackgroundImage = ''
 
-      if (props.style !== undefined && props.style.backgroundImage !== undefined) {
+      if (
+        props.style !== undefined &&
+        props.style.backgroundImage !== undefined
+      ) {
         styleBackgroundImage = props.style.backgroundImage
       }
 
