@@ -1,6 +1,8 @@
 import React from 'react'
 
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
+import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
+import FooterNavigation from '../../../components/FooterNavigation'
 
 import {
   ImageWrapper,
@@ -13,7 +15,7 @@ class BeratungsfelderTechnologieTemplate extends React.Component {
       <div>
         <div className="container-fluid no-gutters">
           <div className="row">
-            <div className="col-12">
+            <div className="col-md-12">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -48,7 +50,7 @@ class BeratungsfelderTechnologieTemplate extends React.Component {
               <RelevanteFokusthemen />
             </div>
           </div>
-          <div className="row margin-120-top">
+          <div className="row margin-120-top margin-xs-60-top">
             <div className="col-md-6">
               <h2>
                 LOREM IPSUM dolor <br />
@@ -62,19 +64,86 @@ class BeratungsfelderTechnologieTemplate extends React.Component {
               </p>
             </div>
           </div>
-          <div className="container-fluid no-gutters">
-            <div className="row margin-120-top">
-              <div className="col-md-12">
-                <h2 className="text-primary text-center">Wertpapierprozess</h2>
-                <ImageWrapper
-                  sourceType={SOURCE_TYP_PLACEHOLDER}
-                  source={{
-                    width: 2000,
-                    height: 200,
-                  }}
-                />
-              </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row margin-120-top justify-content-center">
+            <div className="col-md-10">
+              <h2 className="text-primary text-center">Headline</h2>
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 2000,
+                }}
+              />
             </div>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row margin-60-top">
+            <div className="col-md-6">
+              <h3>Lorem Ipsum Dolor Lorem Ipsum Dolor</h3>
+            </div>
+          </div>
+          <div className="row margin justify-content-center">
+            <div className="col-md-6">
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div className="col-md-6">
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div className="row margin-140-top margin-xs-60-top">
+            <div className="col-md-6">
+              <h3>Lorem Ipsum Dolor Lorem Ipsum Dolor</h3>
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 600,
+                }}
+              />
+              <p className="margin-xs-20-top">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div className="margin-120-top">
+            <ReferenzAndDownload />
+          </div>
+          <div className="margin-140-top">
+            <FooterNavigation backButtonPath="/beratungsfelder" />
           </div>
         </div>
       </div>
