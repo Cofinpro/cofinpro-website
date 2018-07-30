@@ -83,7 +83,7 @@ class BeratungsfelderStartseiteTemplate extends React.Component {
               <LinkButton
                 styleSpan="w-100 w-md-unset"
                 text={buttonLinkText}
-                path="/jobs"
+                path="/beratungsfelder/management"
               />
             </div>
           </div>
