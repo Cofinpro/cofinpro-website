@@ -34,65 +34,33 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 alt="placeholder"
                 className="img-fluid margin-20-bottom margin-20-top"
               />
-              <h1>Wertpapiergeschäft</h1>
+              <h1>Managementberatung</h1>
               <h2 className="margin-20-top">
-                Fachberatung im<br />Wertpapierumfeld
+                Wie wir Geschäftsmodelle gestalten und optimieren
               </h2>
               <h4 className="margin-40-top">
-                Unsere erfahrenen Berater verbinden ihre <br />
-                langjährige Erfahrung im Wertpapiergeschäft <br />
-                mit methodischem Wissen und einer hohen <br />
-                projektmanagmentkompetenz.
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
               </h4>
             </div>
-
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
           </div>
-          <div className="row margin-120-top">
+        </div>
+        <div className="container margin-120-top">
+          <div className="row">
             <div className="col-md-6">
-              <h2>
-                LOREM IPSUM dolor <br />
-                sit amet lorem ipsum
-              </h2>
-              <p className="text-left margin-20-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-              </p>
-            </div>
-          </div>
-          <div className="row margin-120-top">
-            <div className="col-md-12">
-              <h2 className="text-primary text-center">Wertpapierprozess</h2>
-              <img
-                src="http://via.placeholder.com/937x90"
-                alt="placeholder"
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="row margin-80-top">
-            <div className="col-md-12">
-              <h2 className="text-primary text-center">Investmentprozess</h2>
-              <img
-                src="http://via.placeholder.com/937x90"
-                alt="placeholder"
-                className="img-fluid"
-              />
-            </div>
-          </div>
-          <div className="row margin-100-top">
-            <div className="col-md-6" />
-            <div className="col-md-6">
-              <h2>
-                LOREM IPSUM dolor <br />
-                sit amet lorem ipsum
-              </h2>
-              <p className="text-left margin-20-top">
-                {' '}
+              <h2>TrendThemen</h2>
+              <p className="margin-20-top">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -104,73 +72,80 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                 est Lorem ipsum dolor sit amet.
               </p>
-              <p className="text-left margin-20-top">
-                {' '}
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
-              </p>
-            </div>
-          </div>
-          <div className="row margin-60-top">
-            <div className="col-md-6">
-              <h3>
-                Mit besonderer Expertise und<br />
-                Praxiserfahrung berät Cofinpro<br />
-                Sie in den Themen:
-              </h3>
-              <img
-                src="http://via.placeholder.com/448x267"
-                alt="placeholder"
-                className="img-fluid margin-100-top"
-              />
-              <img
-                src="http://via.placeholder.com/288x172"
-                alt="placeholder"
-                className="img-fluid margin-40-top"
-              />
-              <div className="row">
-                <div className="col-md-2" />
-                <div className="col-md-10">
-                  <img
-                    src="http://via.placeholder.com/288x172"
-                    alt="placeholder"
-                    className="img-fluid margin-40-top"
-                  />
-                </div>
+              <div className="margin-120-top">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_PLACEHOLDER}
+                  source={{
+                    width: 2000,
+                    height: 1500,
+                  }}
+                />
               </div>
             </div>
-            <div className="col-md-6 margin-140-top">
-              <img
-                src="http://via.placeholder.com/288x172"
-                alt="placeholder"
-                className="mx-auto d-block margin-40-top"
-              />
-              <img
-                src="http://via.placeholder.com/448x267"
-                alt="placeholder"
-                className="mx-auto d-block margin-40-top"
+            <div className="col-md-6">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 1500,
+                }}
               />
 
-              <img
-                src="http://via.placeholder.com/448x267"
-                alt="placeholder"
-                className="mx-auto d-block margin-40-top"
+              <div className="row margin-20-top">
+                <div className="col-md-8 justify-content-end">
+                  <div className="justify-content-end">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_PLACEHOLDER}
+                      source={{
+                        width: 2000,
+                        height: 1000,
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="margin-40-top">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_PLACEHOLDER}
+                  source={{
+                    width: 2000,
+                    height: 800,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row margin-80-top">
+            <div className="col-md-6">
+              <h2> Lorem Ipsum dolor</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                sed diam voluptua. At vero eos et accusam et justo duo dolores
+                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+            <div className="col-md-6">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 1500,
+                }}
               />
             </div>
           </div>
-          <div className="margin-100-top">
-            <ReferenzAndDownload />
-          </div>
         </div>
-        <div className="margin-140-top">
+        <ReferenzAndDownload />
+        <div className="margin-140-top margin-xs-40-top">
           <FooterNavigation backButtonPath="/beratungsfelder" />
         </div>
       </div>
@@ -178,4 +153,4 @@ class BeratungsfelderManagementTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderWertpapierTemplate
+export default BeratungsfelderManagementTemplate
