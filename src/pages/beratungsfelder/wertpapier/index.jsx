@@ -50,7 +50,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <RelevanteFokusthemen />
             </div>
           </div>
-          <div className="row margin-120-top">
+          <div className="row margin-120-top margin-xs-40-top">
             <div className="col-md-6">
               <h2 className="h2">
                 LOREM IPSUM dolor <br />
@@ -64,9 +64,9 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-120-top">
+          <div className="row margin-120-top margin-xs-20-top">
             <div className="col-md-12">
-              <h2 className="text-primary text-center">Wertpapierprozess</h2>
+              <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
               <img
                 src="http://via.placeholder.com/937x90"
                 alt="placeholder"
@@ -74,9 +74,9 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               />
             </div>
           </div>
-          <div className="row margin-80-top">
+          <div className="row margin-80-top margin-xs-20-top">
             <div className="col-md-12">
-              <h2 className="text-primary text-center">Investmentprozess</h2>
+              <h2 className="h2 text-primary text-center">Investmentprozess</h2>
               <img
                 src="http://via.placeholder.com/937x90"
                 alt="placeholder"
@@ -84,7 +84,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               />
             </div>
           </div>
-          <div className="row margin-100-top">
+          <div className="row margin-100-top margin-xs-40-top">
             <div className="col-md-6" />
             <div className="col-md-6">
               <h2 className="h2">
@@ -119,7 +119,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-60-top">
+          <div className="row margin-60-top margin-xs-20-top">
             <div className="col-md-5">
               <h3 className="h3">
                 Mit besonderer Expertise und<br />
@@ -130,7 +130,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-7" />
           </div>
           <div className="row ">
-            <div className="col-md-6 margin-100-top">
+            <div className="col-md-6 margin-100-top margin-xs-40-top">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -138,7 +138,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                   height: 800,
                 }}
               />
-              <div className="row margin-40-top">
+              <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12 col-md-8">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_PLACEHOLDER}
@@ -152,7 +152,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <div className="col-12 col-md-4" />
             </div>
             <div className="col-md-6">
-              <div className="row">
+              <div className="row margin-xs-20-top">
                 <div className="col-md-2" />
                 <div className="col-12 col-md-8">
                   <ImageWrapper
@@ -165,7 +165,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 </div>
                 <div className="col-md-2" />
               </div>
-              <div className="row margin-40-top">
+              <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_PLACEHOLDER}
@@ -178,7 +178,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row align-items-end negative-margin-40-top">
+          <div className="row align-items-end negative-margin-40-top margin-xs-20-top">
             <div className="col-12 col-md-5">
               <div className="row">
                 <div className="col-md-2" />
@@ -193,9 +193,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 </div>
               </div>
             </div>
-
             <div className="col-md-7">
-              <div className="row">
+              <div className="row margin-xs-20-top">
                 <div className="col-md-10">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_PLACEHOLDER}
@@ -209,12 +208,9 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             </div>
             <div className="col-md-2" />
           </div>
-          <div className="margin-100-top">
+          <div className="margin-100-top margin-xs-40-top">
             <ReferenzAndDownload />
           </div>
-        </div>
-        <div className="margin-140-top">
-          <FooterNavigation backButtonPath="/beratungsfelder" />
         </div>
       </div>
     )
