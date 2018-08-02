@@ -2,6 +2,14 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1083px,
+  xl: 1200px
+);
+
 .main-navigation-bar {
   //opacity: 0.95;
   opacity: 1;
@@ -9,17 +17,14 @@
   @include media-breakpoint-only(xs) {
     background-color: #f2eeee;
     padding: 2rem;
-    margin-top: 1rem;
   }
   @include media-breakpoint-only(sm) {
     background-color: #f2eeee;
     padding: 2rem;
-    margin-top: 1rem;
   }
   @include media-breakpoint-only(md) {
     background-color: #f2eeee;
     padding: 2rem;
-    margin-top: 1rem;
   }
   @include media-breakpoint-only(lg) {
     background-color: white;
@@ -28,6 +33,7 @@
     background-color: white;
   }
 
+  .close-button-img,
   .main-navigation-bar__img-close-button {
     width: 18px;
   }
@@ -60,6 +66,7 @@
   }
 
   .nav-item.active > a {
+    padding-bottom: 4px;
     border-bottom: 1px solid black;
   }
 }
@@ -76,22 +83,6 @@ ul.navbar-nav {
     }
     @include media-breakpoint-only(md) {
       margin-bottom: 14px;
-    }
-  }
-}
-
-#navbarSupportedContent {
-  ul.navbar-nav {
-    li:last-child {
-      margin-bottom: 0px;
-    }
-  }
-}
-
-#navbarSupportedContent {
-  ul.navbar-nav {
-    li:last-child {
-      margin-bottom: 0px;
     }
   }
 }

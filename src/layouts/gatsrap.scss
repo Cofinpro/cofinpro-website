@@ -63,13 +63,13 @@ $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
-  lg: 992px,
+  lg: 1083px,
   xl: 1200px
 );
 $container-max-widths: (
   sm: 540px,
-  md: 720px,
-  lg: 1060px,
+  md: 820px,
+  lg: 1160px,
   xl: 1240px
 );
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
@@ -270,7 +270,8 @@ h6 {
 .h5 > h3,
 .h5 > h4,
 .h5 > h5,
-.h5 > h6 {
+.h5 > h6,
+.h5 > p {
   font-family: apercu-bold-pro;
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
@@ -386,7 +387,7 @@ a:hover {
 #nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
-  opacity: 0.95;
+  /*opacity: 0.95;*/
 }
 
 .min-view-height {
@@ -570,6 +571,10 @@ a:hover {
   margin-right: 2rem;
 }
 
+.no-padding {
+  padding: 0;
+}
+
 .no-margin {
   margin: 0;
 }
@@ -626,6 +631,10 @@ a:hover {
     color: $orange;
     font-size: 2rem;
   }
+}
+
+.negative-margin-80-top {
+  margin-top: -80px;
 }
 
 .margin-120-bottom {
@@ -853,6 +862,15 @@ a:hover {
   }
 }
 
+.margin-xs-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+}
+
 .margin-md-80-top {
   @include media-breakpoint-only(md) {
     margin-top: 80px;
@@ -899,6 +917,10 @@ a:hover {
   @include media-breakpoint-only(xl) {
     margin-top: 20px;
   }
+}
+
+.margin-20-left {
+  margin-left: 20px;
 }
 
 .padding-10 {
@@ -1015,18 +1037,57 @@ svg image[href$='img_20.jpg'] {
 }
 
 .no-gutters {
-  padding-left: 0px;
-  padding-right: 0px;
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
 
   .row {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-right: 0;
+    margin-left: 0;
   }
 
-  div[class^='col-'],
-  div.col {
-    padding-left: 0px;
-    padding-right: 0px;
+  .row > .col,
+  .row > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.no-gutters-mobile {
+  @include media-breakpoint-only(xs) {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .row > .col,
+    .row > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  @include media-breakpoint-only(sm) {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .row > .col,
+    .row > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 }
 
@@ -1045,3 +1106,7 @@ svg image[href$='img_20.jpg'] {
 .hidden {
   display: none !important;
 }
+
+.img-svg {
+  width: 100% \9;
+} 

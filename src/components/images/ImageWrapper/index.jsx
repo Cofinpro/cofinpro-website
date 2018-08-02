@@ -10,39 +10,72 @@ const SOURCE_TYP_CONTENTFUL = 'Contentful'
 const SOURCE_TYP_SHARP = 'Sharp'
 const SOURCE_TYP_BOOTSTRAP = 'Bootstrap'
 const SOURCE_TYP_PLACEHOLDER = 'Placeholder'
+const SOURCE_TYP_ICON_IMAGE = 'Icon'
 
 class ImageWrapper extends React.Component {
+  componentDidMount() {}
+
   render() {
+    function IconImage(props) {
+      return (
+        <div className={'svg-image ' + props.style.border}>
+          <img
+            src={'/img/filler_fokus.png'}
+            className={'img-fluid ' + props.style.backgroundImage}
+          />
+          <div className={'icon-image ' + props.style.iconColor}>
+            {props.source}
+          </div>
+          <div className={'image-overlay-top-left ' + props.style.overlay}>
+            {overlayElement}
+          </div>
+        </div>
+      )
+    }
+
+    function BootstrapImage(props) {
+      return (
+        <img
+          src={props.source}
+          className={
+            props.styleClasses == null ? 'img-fluid' : props.styleClasses
+          }
+        />
+      )
+    }
+
+    function PlaceholderImage(props) {
+      return (
+        <div>
+          <img
+            src={
+              'http://via.placeholder.com/' +
+              props.source.width +
+              'x' +
+              props.source.height
+            }
+            className={'img-fluid ' + props.styleClasses}
+            alt="Responsive image"
+          />
+          <div className={'image-overlay-top-left ' + props.styleClasses}>
+            {overlayElement}
+          </div>
+        </div>
+      )
+    }
+
     const { source, sourceType, overlayElement, styleClasses } = this.props
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     if (sourceType === SOURCE_TYP_CONTENTFUL) {
       return <ContentfulImage imageFile={source} styleClasses={styleClasses} />
     } else if (sourceType === SOURCE_TYP_SHARP) {
       return <Img sizes={source.sizes} className={styleClasses} />
     } else if (sourceType === SOURCE_TYP_BOOTSTRAP) {
-      return (
-        <img
-          src={source}
-          className={styleClasses == null ? 'img-fluid' : styleClasses}
-        />
-      )
+      return <BootstrapImage {...this.props} />
     } else if (sourceType === SOURCE_TYP_PLACEHOLDER) {
-      return (
-        <div>
-          <img
-            src={
-              'http://via.placeholder.com/' + source.width + 'x' + source.height
-            }
-            className={'img-fluid ' + styleClasses}
-            alt="Responsive image"
-          />
-          <div className={'image-overlay-top-left ' + styleClasses}>
-            {overlayElement}
-          </div>
-        </div>
-      )
+      return <PlaceholderImage {...this.props} />
+    } else if (sourceType === SOURCE_TYP_ICON_IMAGE) {
+      return <IconImage {...this.props} />
     }
   }
 }
@@ -53,6 +86,7 @@ export default {
   SOURCE_TYP_SHARP,
   SOURCE_TYP_BOOTSTRAP,
   SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_ICON_IMAGE,
 }
 
 ImageWrapper.propTypes = {
@@ -87,6 +121,7 @@ ImageWrapper.propTypes = {
     SOURCE_TYP_SHARP,
     SOURCE_TYP_BOOTSTRAP,
     SOURCE_TYP_PLACEHOLDER,
+    SOURCE_TYP_ICON_IMAGE,
   ]),
   overlayElement: PropTypes.any,
   styleClasses: PropTypes.string,
