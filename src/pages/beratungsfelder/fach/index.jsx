@@ -7,7 +7,7 @@ import {
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderFachTemplate extends React.Component {
+class BeratungsfelderFach extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -99,4 +99,4 @@ class BeratungsfelderFachTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderFachTemplate
+export default BeratungsfelderFach

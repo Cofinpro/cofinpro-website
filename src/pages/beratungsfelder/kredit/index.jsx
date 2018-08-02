@@ -9,7 +9,7 @@ import {
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderKreditTemplate extends React.Component {
+class BeratungsfelderKredit extends React.Component {
   render() {
     return (
       <div>
@@ -227,4 +227,4 @@ class BeratungsfelderKreditTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderKreditTemplate
+export default BeratungsfelderKredit
