@@ -7,7 +7,7 @@ import {
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderTechnologieTemplate extends React.Component {
+class BeratungsfelderTechnologie extends React.Component {
   render() {
     return (
       <div>
@@ -82,4 +82,4 @@ class BeratungsfelderTechnologieTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderTechnologieTemplate
+export default BeratungsfelderTechnologie
