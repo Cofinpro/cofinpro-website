@@ -44,13 +44,13 @@ class BeratungsfelderKredit extends React.Component {
           <div className="row">
             <div className="col-8">
               <h1 className="h1">Kreditgeschäft</h1>
-              <h2 className="margin-20-top d-none d-md-block">
+              <h2 className="h2 margin-20-top d-none d-md-block">
                 Fachberatung im Kreditgeschäft
               </h2>
               <p className="d-block d-md-none">
                 Fachberatung im Kreditgeschäft
               </p>
-              <h4 className="margin-40-top d-none d-md-block">
+              <h4 className="h4 margin-40-top d-none d-md-block">
                 Cofinpro setzt mit Ihnen überzeugende Lösungen für das
                 Kreditgeschäft von Morgen um.
               </h4>
@@ -88,7 +88,7 @@ class BeratungsfelderKredit extends React.Component {
         <div className="container">
           <div className="row margin-140-top margin-xs-100-top">
             <div className="col-12">
-              <h2 className="text-primary text-center">Kreditprozess</h2>
+              <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -140,7 +140,7 @@ class BeratungsfelderKredit extends React.Component {
         <div className="container">
           <div className="row margin-40-top">
             <div className="col-12 col-md-5 ">
-              <h3 className="h2">
+              <h3 className="h3">
                 Mit besonderer Expertise und Praxiserfahrung berät Cofinpro Sie
                 in den Themen:
               </h3>

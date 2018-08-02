@@ -42,7 +42,7 @@ class BeratungsfelderFach extends React.Component {
           <div className="row margin-40-top">
             <div className="col-md-7">
               <h1 className="h1">Fachberatung</h1>
-              <h2 className="d-none d-md-block">
+              <h2 className="h2 d-none d-md-block">
                 Die Experten <br />für Kredit und Wertpapier
               </h2>
               <p className="d-block d-md-none">

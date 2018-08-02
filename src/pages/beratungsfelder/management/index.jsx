@@ -37,11 +37,11 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 alt="placeholder"
                 className="img-fluid margin-20-bottom margin-20-top"
               />
-              <h1 className="flex-wrap">Managementberatung</h1>
-              <h2 className="margin-20-top">
+              <h1 className="h1">Managementberatung</h1>
+              <h2 className="h2 margin-20-top">
                 Wie wir Geschäftsmodelle gestalten und optimieren
               </h2>
-              <h4 className="margin-40-top">
+              <h4 className="h4 margin-40-top">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
                 aliquyam erat, sed diam voluptua. At vero eos et accusam et
@@ -62,7 +62,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
         <div className="container margin-120-top">
           <div className="row">
             <div className="col-md-6">
-              <h2>TrendThemen</h2>
+              <h2 className="h2">TrendThemen</h2>
               <p className="margin-20-top">
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
@@ -119,7 +119,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
         <div className="container">
           <div className="row margin-80-top">
             <div className="col-md-6">
-              <h2> Lorem Ipsum dolor</h2>
+              <h2 className="h2"> Lorem Ipsum dolor</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna

@@ -35,11 +35,11 @@ class BeratungsfelderTechnologie extends React.Component {
                 alt="placeholder"
                 className="img-fluid margin-20-bottom margin-20-top"
               />
-              <h1>Technologieberatung</h1>
-              <h2 className="margin-20-top">
+              <h1 className="h1">Technologieberatung</h1>
+              <h2 className="h2 margin-20-top">
                 Wie sich IT und Zukunft<br />verbinden lassen
               </h2>
-              <h4 className="margin-40-top">
+              <h4 className="h4 margin-40-top">
                 Unsere erfahrenen Berater verbinden ihre <br />
                 langjährige Erfahrung im Wertpapiergeschäft <br />
                 mit methodischem Wissen und einer hohen <br />
@@ -53,7 +53,7 @@ class BeratungsfelderTechnologie extends React.Component {
           </div>
           <div className="row margin-120-top margin-xs-60-top">
             <div className="col-md-6">
-              <h2>
+              <h2 className="h2">
                 LOREM IPSUM dolor <br />
                 sit amet lorem ipsum
               </h2>
@@ -69,7 +69,7 @@ class BeratungsfelderTechnologie extends React.Component {
         <div className="container">
           <div className="row margin-120-top justify-content-center">
             <div className="col-md-10">
-              <h2 className="text-primary text-center">Headline</h2>
+              <h2 className="h2 text-primary text-center">Headline</h2>
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -118,7 +118,7 @@ class BeratungsfelderTechnologie extends React.Component {
           </div>
           <div className="row margin-140-top margin-xs-60-top">
             <div className="col-md-6">
-              <h3>Lorem Ipsum Dolor Lorem Ipsum Dolor</h3>
+              <h3 className="h3">Lorem Ipsum Dolor Lorem Ipsum Dolor</h3>
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{

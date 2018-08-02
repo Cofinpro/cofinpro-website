@@ -9,13 +9,13 @@ import {
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderWertpapier extends React.Component {
+class BeratungsfelderWertpapierTemplate extends React.Component {
   render() {
     return (
       <div>
         <div className="container-fluid no-gutters">
           <div className="row">
-            <div className="col-md-md-12">
+            <div className="col-md-12">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -34,11 +34,11 @@ class BeratungsfelderWertpapier extends React.Component {
                 alt="placeholder"
                 className="img-fluid margin-20-bottom margin-20-top"
               />
-              <h1>Wertpapiergeschäft</h1>
-              <h2 className="margin-20-top">
+              <h1 className="h1">Wertpapiergeschäft</h1>
+              <h2 className="h2 margin-20-top">
                 Fachberatung im<br />Wertpapierumfeld
               </h2>
-              <h4 className="margin-40-top">
+              <h4 className="h4 margin-40-top">
                 Unsere erfahrenen Berater verbinden ihre <br />
                 langjährige Erfahrung im Wertpapiergeschäft <br />
                 mit methodischem Wissen und einer hohen <br />
@@ -52,7 +52,7 @@ class BeratungsfelderWertpapier extends React.Component {
           </div>
           <div className="row margin-120-top">
             <div className="col-md-6">
-              <h2>
+              <h2 className="h2">
                 LOREM IPSUM dolor <br />
                 sit amet lorem ipsum
               </h2>
@@ -87,7 +87,7 @@ class BeratungsfelderWertpapier extends React.Component {
           <div className="row margin-100-top">
             <div className="col-md-6" />
             <div className="col-md-6">
-              <h2>
+              <h2 className="h2">
                 LOREM IPSUM dolor <br />
                 sit amet lorem ipsum
               </h2>
@@ -120,53 +120,94 @@ class BeratungsfelderWertpapier extends React.Component {
             </div>
           </div>
           <div className="row margin-60-top">
-            <div className="col-md-6">
-              <h3>
+            <div className="col-md-5">
+              <h3 className="h3">
                 Mit besonderer Expertise und<br />
                 Praxiserfahrung berät Cofinpro<br />
                 Sie in den Themen:
               </h3>
-              <img
-                src="http://via.placeholder.com/448x267"
-                alt="placeholder"
-                className="img-fluid margin-100-top"
-              />
-              <img
-                src="http://via.placeholder.com/288x172"
-                alt="placeholder"
-                className="img-fluid margin-40-top"
-              />
             </div>
-            <div className="col-md-6 margin-140-top">
-              <img
-                src="http://via.placeholder.com/288x172"
-                alt="placeholder"
-                className="mx-auto d-block margin-40-top"
-              />
-              <img
-                src="http://via.placeholder.com/448x267"
-                alt="placeholder"
-                className="mx-auto d-block margin-40-top"
-              />
-            </div>
+            <div className="col-md-7" />
           </div>
           <div className="row ">
-            <div className="col-md-5">
+            <div className="col-md-6 margin-100-top">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
-                  width: 2000,
+                  width: 1200,
                   height: 800,
                 }}
               />
+              <div className="row margin-40-top">
+                <div className="col-12 col-md-8">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="col-12 col-md-4" />
             </div>
+            <div className="col-md-6">
+              <div className="row">
+                <div className="col-md-2" />
+                <div className="col-12 col-md-8">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                  />
+                </div>
+                <div className="col-md-2" />
+              </div>
+              <div className="row margin-40-top">
+                <div className="col-12">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row align-items-end negative-margin-40-top">
+            <div className="col-12 col-md-5">
+              <div className="row">
+                <div className="col-md-2" />
+                <div className="col-12 col-md-10">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
             <div className="col-md-7">
-              <img
-                src="http://via.placeholder.com/288x172"
-                alt="placeholder"
-                className="img-fluid margin-40-top"
-              />
+              <div className="row">
+                <div className="col-md-10">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 1200,
+                      height: 800,
+                    }}
+                  />
+                </div>
+              </div>
             </div>
+            <div className="col-md-2" />
           </div>
           <div className="margin-100-top">
             <ReferenzAndDownload />
@@ -180,4 +221,4 @@ class BeratungsfelderWertpapier extends React.Component {
   }
 }
 
-export default BeratungsfelderWertpapier
+export default BeratungsfelderWertpapierTemplate
