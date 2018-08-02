@@ -18,6 +18,7 @@ class BeratungsfelderTechnologieTemplate extends React.Component {
             <div className="col-md-12">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
+                className="img-fluid margin-20-bottom margin-20-top"
                 source={{
                   width: 2000,
                   height: 800,

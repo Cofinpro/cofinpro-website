@@ -11,11 +11,14 @@ import {
 
 class BeratungsfelderManagementTemplate extends React.Component {
   render() {
+    const pathPrefix =
+      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
     return (
       <div>
         <div className="container-fluid no-gutters">
           <div className="row">
-            <div className="col-md-md-12">
+            <div className="col-md-12">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -34,7 +37,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 alt="placeholder"
                 className="img-fluid margin-20-bottom margin-20-top"
               />
-              <h1>Managementberatung</h1>
+              <h1 className="flex-wrap">Managementberatung</h1>
               <h2 className="margin-20-top">
                 Wie wir Geschäftsmodelle gestalten und optimieren
               </h2>
@@ -90,18 +93,15 @@ class BeratungsfelderManagementTemplate extends React.Component {
                   height: 1500,
                 }}
               />
-
               <div className="row margin-20-top">
-                <div className="col-md-8 justify-content-end">
-                  <div className="justify-content-end">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_PLACEHOLDER}
-                      source={{
-                        width: 2000,
-                        height: 1000,
-                      }}
-                    />
-                  </div>
+                <div className="col-md-8 align-items-end">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 2000,
+                      height: 1000,
+                    }}
+                  />
                 </div>
               </div>
               <div className="margin-40-top">
@@ -144,7 +144,9 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
           </div>
         </div>
-        <ReferenzAndDownload />
+        <div className="margin-120-top">
+          <ReferenzAndDownload />
+        </div>
         <div className="margin-140-top margin-xs-40-top">
           <FooterNavigation backButtonPath="/beratungsfelder" />
         </div>

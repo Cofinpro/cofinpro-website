@@ -136,16 +136,6 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 alt="placeholder"
                 className="img-fluid margin-40-top"
               />
-              <div className="row">
-                <div className="col-md-2" />
-                <div className="col-md-10">
-                  <img
-                    src="http://via.placeholder.com/288x172"
-                    alt="placeholder"
-                    className="img-fluid margin-40-top"
-                  />
-                </div>
-              </div>
             </div>
             <div className="col-md-6 margin-140-top">
               <img
@@ -158,11 +148,23 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 alt="placeholder"
                 className="mx-auto d-block margin-40-top"
               />
-
+            </div>
+          </div>
+          <div className="row ">
+            <div className="col-md-5">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 2000,
+                  height: 800,
+                }}
+              />
+            </div>
+            <div className="col-md-7">
               <img
-                src="http://via.placeholder.com/448x267"
+                src="http://via.placeholder.com/288x172"
                 alt="placeholder"
-                className="mx-auto d-block margin-40-top"
+                className="img-fluid margin-40-top"
               />
             </div>
           </div>
