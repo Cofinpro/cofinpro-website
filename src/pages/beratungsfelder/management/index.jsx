@@ -2,7 +2,6 @@ import React from 'react'
 
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
-import FooterNavigation from '../../../components/FooterNavigation'
 
 import {
   ImageWrapper,
@@ -146,9 +145,6 @@ class BeratungsfelderManagementTemplate extends React.Component {
         </div>
         <div className="margin-120-top">
           <ReferenzAndDownload />
-        </div>
-        <div className="margin-140-top margin-xs-40-top">
-          <FooterNavigation backButtonPath="/beratungsfelder" />
         </div>
       </div>
     )

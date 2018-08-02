@@ -2,7 +2,6 @@ import React from 'react'
 
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
-import FooterNavigation from '../../../components/FooterNavigation'
 
 import {
   ImageWrapper,
@@ -67,20 +66,24 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           <div className="row margin-120-top margin-xs-20-top">
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
-              <img
-                src="http://via.placeholder.com/937x90"
-                alt="placeholder"
-                className="img-fluid"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 100,
+                }}
               />
             </div>
           </div>
           <div className="row margin-80-top margin-xs-20-top">
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Investmentprozess</h2>
-              <img
-                src="http://via.placeholder.com/937x90"
-                alt="placeholder"
-                className="img-fluid"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_PLACEHOLDER}
+                source={{
+                  width: 1200,
+                  height: 100,
+                }}
               />
             </div>
           </div>
