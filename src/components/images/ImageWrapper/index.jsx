@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 
 import ContentfulImage from '../../images/ContentfulImage'
 
+import { ReactComponent as AnlegerschutzIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/anlegerschutz.svg'
+
 import './style.scss'
 
 const SOURCE_TYP_CONTENTFUL = 'Contentful'
@@ -18,16 +20,24 @@ class ImageWrapper extends React.Component {
   render() {
     function IconImage(props) {
       return (
-        <div className={'svg-image ' + props.style.border}>
-          <img
-            src={'/img/filler_fokus.png'}
-            className={'img-fluid ' + props.style.backgroundImage}
-          />
-          <div className={'icon-image ' + props.style.iconColor}>
-            {props.source}
-          </div>
-          <div className={'image-overlay-top-left ' + props.style.overlay}>
-            {overlayElement}
+        <div
+          className={
+            'image-container ' + props.style.container !== undefined
+              ? props.style.container
+              : ''
+          }
+        >
+          <div className={'svg-image position-relative ' + props.style.border}>
+            <img
+              src={'/img/filler_fokus.png'}
+              className={'img-fluid ' + props.style.backgroundImage}
+            />
+            <div className={'icon-image ' + props.style.iconColor}>
+              <AnlegerschutzIcon />
+            </div>
+            <div className={'image-overlay-top-left ' + props.style.overlay}>
+              {overlayElement}
+            </div>
           </div>
         </div>
       )
