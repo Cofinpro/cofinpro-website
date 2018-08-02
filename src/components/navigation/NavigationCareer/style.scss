@@ -2,8 +2,33 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-.nav-container.fixed-top {
-  background: white;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1083px,
+  xl: 1200px
+);
+
+.career-navigation > div:first-child {
+  @include media-breakpoint-only(xs) {
+  }
+
+  @include media-breakpoint-only(sm) {
+  }
+
+  @include media-breakpoint-only(md) {
+  }
+
+  @include media-breakpoint-only(lg) {
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-bottom: 12px;
+    padding-top: 12px;
+  }
 }
 
 .cofinpro-logo {
@@ -17,17 +42,19 @@
 #cofinpro-nav {
   background: white;
 
+  padding: 0px;
+
   //opacity: 0.95;
   opacity: 1;
 
   @include media-breakpoint-only(lg) {
     opacity: 1;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
   }
 
   @include media-breakpoint-only(xl) {
     opacity: 1;
-    padding-bottom: 1rem;
+    padding-bottom: 0rem;
   }
 
   @include media-breakpoint-only(xs) {
@@ -148,13 +175,7 @@
   padding-right: 0px;
   padding-left: 0px;
 
-  @include media-breakpoint-only(lg) {
-    padding-bottom: 0px;
-  }
-
-  @include media-breakpoint-only(xl) {
-    padding-bottom: 0px;
-  }
+  padding: 0px;
 
   .title-menu {
     margin-left: auto;
@@ -224,6 +245,15 @@
     line-height: inherit;
     padding-top: 0px;
     padding-bottom: 0px;
+    padding-left: 2px;
+
+    @include media-breakpoint-only(xs) {
+      padding-left: 12px;
+    }
+
+    @include media-breakpoint-only(sm) {
+      padding-left: 12px;
+    }
   }
 
   .navbar-toggler:focus {
@@ -281,10 +311,41 @@
 }
 
 .cofinpro-logo-startseite {
-  padding-bottom: 1rem;
   width: 100px;
+}
+
+.cofinpro-logo-startseite--withSpace {
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .small-main-page-nav {
   font-size: 14px;
+}
+
+.mobile-navigation-bar {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  @include media-breakpoint-only(lg) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+.desktop-navigation-bar {
+  @include media-breakpoint-only(lg) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
 }

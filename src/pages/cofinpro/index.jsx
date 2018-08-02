@@ -1,17 +1,16 @@
 import React from 'react'
 
 import LinkButton from '../../components/buttons/LinkButton'
-import ToggleButton from '../../components/buttons/ToggleButton'
-import FourFactsSmallLayout from '../../components/layouts/FourFactsSmallLayout'
-import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
-import FokusthemenPreview from '../../components/layouts/FokusthemenPreview'
-import DownloadButton from '../../components/buttons/DownloadButton'
 
+import FourFactsSmallLayout from '../../components/layouts/FourFactsSmallLayout'
 import DownloadPreviewTextAndImageLayout from '../../components/layouts/DownloadPreviewTextAndImageLayout'
+
+import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
 
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
@@ -26,16 +25,16 @@ class Startseite extends React.Component {
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1 className="h1">Headline</h1>
+              <h1 className="h1">Cofinpro</h1>
               <p className="h4 bold-font d-none d-md-block">
-                Wir beraten Deutschlands führende Finanzdienstleister entlang
-                der gesamten Wertschöpfungskette. Cofinpro ist ein
-                Beratungsunternehmen mit Fokus auf die Finanzindustrie.
+                Unsere Experten konzentrieren sich auf Digitalisierung, neue
+                Marktanforderungen und Regulatorik in den Beratungsfeldern
+                Management-, Fach- und Technologieberatung.
               </p>
               <p className="d-block d-md-none">
-                Wir beraten Deutschlands führende Finanzdienstleister entlang
-                der gesamten Wertschöpfungskette. Cofinpro ist ein
-                Beratungsunternehmen mit Fokus auf die Finanzindustrie.
+                Unsere Experten konzentrieren sich auf Digitalisierung, neue
+                Marktanforderungen und Regulatorik in den Beratungsfeldern
+                Management-, Fach- und Technologieberatung.
               </p>
               <LinkButton
                 styleLink="d-inline d-md-none"
@@ -47,68 +46,34 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top d-none d-md-block">
-          <div className="row text-center">
-            <div className="col-4">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 59,
-                  height: 65,
-                }}
-                styleClasses="padding-20"
-              />
-              <p className="h5">Managementberatung</p>
-            </div>
-            <div className="col-4">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 59,
-                  height: 65,
-                }}
-                styleClasses="padding-20"
-              />
-              <p className="h5">Fachberatung</p>
-            </div>
-            <div className="col-4">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 59,
-                  height: 65,
-                }}
-                styleClasses="padding-20"
-              />
-              <p className="h5">Technologieberatung</p>
-            </div>
-          </div>
-        </div>
+        <ThreeIconsWithLinks
+          styleClass="margin-80-top"
+          iconLeft={this.props.data.iconVorteilLinksSharp}
+          titleLeft="Managementberatung"
+          iconMiddle={this.props.data.iconVorteilMitteSharp}
+          titleMiddle="Fachberatungext"
+          iconRight={this.props.data.iconVorteilRechtsSharp}
+          titleRight="Technologieberatung"
+        />
 
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h3 className="h2">Über uns</h3>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Wir bauen auf ein Beratungskonzept, das alle Elemente der
+                Wertschöpfungskette für Unternehmen in der Finanzindustrie
+                abdeckt. Als Managementberater, Fachberater mit Fokus auf Kredit
+                und Wertpapier sowie Technologieberater für agile,
+                zukunftsfähige Architekturen bieten wir unseren Kunden
+                zukunftsfähige Lösungen für ihr Geschäftsmodell. Persönlich,
+                unabhängig und im vertrauensvollen Kontakt.
               </p>
             </div>
             <div className="col-12 col-md-6 text-center">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 322,
-                  height: 425,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/allgemein/landkarte.png'}
               />
               <p className="margin-20-top h5 d-none d-md-block">
                 Unsere Standorte
@@ -149,60 +114,51 @@ class Startseite extends React.Component {
                     },
                   ],
                 }}
+                isHeaderCentered={false}
               />
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
-              <h2>Nachhaltigkeit</h2>
+              <h2>Cofinpro lebt Nachhaltigkeit</h2>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Seit unserer Gründung sehen wir uns darin bestätigt, dass nur
+                eine positive, zukunftsorientierte Unternehmenspolitik eine
+                solide Basis für erfolgreiche Zusammenarbeit bildet. Dazu gehört
+                auch, sich für die Bewahrung eines intakten ökonomischen,
+                ökologischen und sozialen Gefüges einzusetzen. Diese
+                Verantwortung empfinden wir gegenüber unseren Kunden, unseren
+                Mitarbeitern und der Gesellschaft.
               </p>
               <h5>Ökonomische Verantwortung</h5>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Wir wünschen uns langfristige, faire Geschäftsbeziehungen, mit
+                denen sich nachhaltige Ergebnisse für unsere Kunden erreichen
+                lassen. Unser bedeutendstes Kapital dabei sind unsere
+                Mitarbeiter, denn mit all ihrer professionellen und menschlichen
+                Unterschiedlichkeit sind sie das Herz von Cofinpro.
               </p>
               <h5>Ökologische Verantwortung</h5>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Unternehmen können wichtige Schritte tun, um die Umweltbelastung
+                gering zu halten. Deshalb kommt bei uns modernste Technik zum
+                Einsatz, und wir übergeben ausgedientes Equipment dem
+                Recycling-Kreislauf. Es versteht sich, dass unsere Fahrzeuge den
+                aktuellsten Umweltschutzrichtlinien entsprechen. Und sowieso
+                rauschen immer mehr von uns mit Elektrorollern durch den
+                Großstadtverkehr. Für jeden gebuchten Flug zahlen wir außerdem
+                einen Ausgleich an die Initiative »Atmosfair«.
               </p>
               <h5>Soziale Verantwortung</h5>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Wir schätzen jedes Teammitglied, unabhängig von Geschlecht,
+                Ethnie, Alter, körperlicher Einschränkung, Religion oder
+                Lebensstil. Um das offiziell zu machen, haben wir die »Charta
+                der Vielfalt« unterzeichnet. Damit gehören wir zum größten
+                deutschen Netzwerk für Diversity Management. Als Mitglied der
+                Initiative »Fair Company« hält sich Cofinpro an die ethischen
+                Grundregeln der Arbeitswelt. Wir lehnen die Ausbeutung von
+                Berufseinsteigern ab, genauso wie jede Form von Korruption. Seit
+                unserer Gründung wurden wir übrigens immer wieder als »Great
+                Place to Work« ausgezeichnet.
               </p>
             </div>
           </div>
@@ -415,6 +371,27 @@ export const pageQuery = graphql`
           fileName
           contentType
         }
+      }
+    }
+    iconVorteilLinksSharp: imageSharp(
+      id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }
+    ) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilMitteSharp: imageSharp(
+      id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }
+    ) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconVorteilRechtsSharp: imageSharp(
+      id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }
+    ) {
+      sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

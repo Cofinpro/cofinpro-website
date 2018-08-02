@@ -1,7 +1,6 @@
 import React from 'react'
 import { siteMetadata } from '../../gatsby-config'
-import NavigationCareer from '../components/navigation/NavigationCareer'
-import SiteFooter from '../components/SiteFooter'
+
 import ChatBot from '../components/ChatBot'
 import emergence from 'emergence.js'
 import CookieBanner from 'react-cookie-banner'
@@ -10,6 +9,10 @@ import StorageHelper from '../utils/storageHelper'
 
 import './gatsrap.scss'
 import 'animate.css/animate.css'
+
+import MainNavigation from '../components/navigation/MainNavigation'
+import NavigationCareer from '../components/navigation/NavigationCareer'
+import SiteFooter from '../components/SiteFooter'
 
 class Template extends React.Component {
   constructor(props) {
@@ -155,9 +158,13 @@ class Template extends React.Component {
     return (
       <div>
         <header>
+          <MainNavigation
+            location={location}
+            locationUpdate={this.state.locationUpdate}
+            {...this.props}
+          />
           <NavigationCareer
             locationUpdate={this.state.locationUpdate}
-            title={siteMetadata.title}
             {...this.props}
           />
         </header>{' '}

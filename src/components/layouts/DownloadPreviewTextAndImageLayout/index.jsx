@@ -8,12 +8,10 @@ import DownloadButton from '../../buttons/DownloadButton'
 
 class DownloadPreviewTextAndImageLayout extends React.Component {
   render() {
-    const { content, style, isHeaderCentered } = this.props
+    const { content, style } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
-    var headerCssClass = isHeaderCentered ? 'text-center' : ''
 
     return (
       <div className={'container ' + style.container}>

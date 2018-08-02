@@ -9,7 +9,7 @@ import {
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
-class BeratungsfelderWertpapierTemplate extends React.Component {
+class BeratungsfelderWertpapier extends React.Component {
   render() {
     return (
       <div>
@@ -180,4 +180,4 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
   }
 }
 
-export default BeratungsfelderWertpapierTemplate
+export default BeratungsfelderWertpapier

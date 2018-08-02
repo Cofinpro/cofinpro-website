@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PubSub from 'pubsub-js'
 
+import LinkButton from '../../buttons/LinkButton'
+
 import StorageHelper from '../../../utils/storageHelper'
 
 import './style.scss'
@@ -16,10 +18,6 @@ class MenuCareer extends React.Component {
       if ($(e.target).is('a')) {
         $(this).collapse('hide')
       }
-    })
-
-    $('#close-button-menu').click(function() {
-      $('#navbarSupportedContent').collapse('hide')
     })
   }
 
@@ -109,13 +107,21 @@ class MenuCareer extends React.Component {
         pattern: '/karriere/jobs-bewerbung',
       },
     ]
+
+    function hideMenu() {
+      $('#navbarSupportedContent').collapse('hide')
+    }
+
     return (
       <div
         className="collapse navbar-collapse main-navigation-bar"
         id="navbarSupportedContent"
       >
         <div>
-          <a href="/" className="navbar-brand d-none d-lg-block">
+          <Link
+            to={location.pathname.startsWith('/karriere') ? '/karriere' : '/'}
+            className="navbar-brand d-none d-lg-block"
+          >
             {location.pathname.startsWith('/karriere') === false ? (
               <img
                 className="cofinpro-logo-startseite"
@@ -129,7 +135,7 @@ class MenuCareer extends React.Component {
                 src={pathPrefix + '/svg/karrierelogo.svg'}
               />
             )}
-          </a>
+          </Link>
         </div>
         <div className="d-block d-lg-none text-secondary margin-20-bottom">
           <p className="h5 d-inline">MENÜ</p>
@@ -138,6 +144,7 @@ class MenuCareer extends React.Component {
             type="button"
             className="close d-inline"
             aria-label="Close"
+            onClick={hideMenu}
           >
             <img
               className="main-navigation-bar__img-close-button"
@@ -150,6 +157,12 @@ class MenuCareer extends React.Component {
           location={location}
           locationUpdate={locationUpdate}
           menuItems={menuItems}
+        />
+        <LinkButton
+          text="HAUPTSEITE"
+          path="/"
+          styleLink={'d-inline d-lg-none'}
+          {...this.props}
         />
       </div>
     )

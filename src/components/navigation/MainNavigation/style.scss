@@ -1,0 +1,28 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1083px,
+  xl: 1200px
+);
+
+.main-navigation > div:first-child {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  @include media-breakpoint-only(lg) {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  @include media-breakpoint-only(xl) {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+.main-navigation button:focus {
+  outline: none;
+}

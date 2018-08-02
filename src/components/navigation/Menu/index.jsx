@@ -18,10 +18,6 @@ class Menu extends React.Component {
         $(this).collapse('hide')
       }
     })
-
-    $('#close-button-menu').click(function() {
-      $('#navbar-main-content').collapse('hide')
-    })
   }
 
   constructor(props) {
@@ -66,7 +62,7 @@ class Menu extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { location, locationUpdate } = this.props
+    const { id, location, locationUpdate } = this.props
 
     var mainUrl =
       pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
@@ -99,27 +95,20 @@ class Menu extends React.Component {
       },
     ]
 
+    function hideMenu() {
+      $('#' + id).collapse('hide')
+    }
+
     return (
-      <div
-        className="collapse navbar-collapse main-navigation-bar"
-        id="navbar-main-content"
-      >
+      <div className="collapse navbar-collapse main-navigation-bar" id={id}>
         <div>
-          <a href="/" className="navbar-brand d-none d-lg-block">
-            {location.pathname.startsWith('/karriere') === false ? (
-              <img
-                className="cofinpro-logo-startseite"
-                alt="Nächstes Bild"
-                src={pathPrefix + '/svg/logo_cofinpro.svg'}
-              />
-            ) : (
-              <img
-                className="cofinpro-logo-startseite"
-                alt="Nächstes Bild"
-                src={pathPrefix + '/svg/karrierelogo.svg'}
-              />
-            )}
-          </a>
+          <Link to="/" className="navbar-brand d-none d-lg-block">
+            <img
+              className="cofinpro-logo-startseite"
+              alt="Nächstes Bild"
+              src={pathPrefix + '/svg/logo_cofinpro.svg'}
+            />
+          </Link>
         </div>
         <div className="d-block d-lg-none text-secondary margin-20-bottom">
           <p className="h5 d-inline">MENÜ</p>
@@ -128,6 +117,7 @@ class Menu extends React.Component {
             type="button"
             className="close d-inline"
             aria-label="Close"
+            onClick={hideMenu}
           >
             <img
               className="main-navigation-bar__img-close-button"
@@ -141,12 +131,7 @@ class Menu extends React.Component {
           locationUpdate={locationUpdate}
           menuItems={menuItems}
         />
-        <LinkButton
-          styleLink=" navigation-to-krarriere"
-          text="KARRIERE"
-          path="/karriere"
-          {...this.props}
-        />
+        <LinkButton text="KARRIERE" path="/karriere" {...this.props} />
       </div>
     )
   }

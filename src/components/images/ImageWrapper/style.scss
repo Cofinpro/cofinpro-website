@@ -1,21 +1,69 @@
 @import 'node_modules/bootstrap/scss/functions';
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
-
 .image-overlay-top-left {
   position: absolute;
   top: 38px;
   left: 53px;
   max-width: 75%;
-
   @include media-breakpoint-only(xs) {
     top: 20px;
     left: 35px;
   }
-
   @include media-breakpoint-only(sm) {
     top: 20px;
     left: 35px;
   }
+  @include media-breakpoint-only(md) {
+    top: 20px;
+    left: 35px;
+  }
+  @include media-breakpoint-only(lg) {
+    max-width: 65%;
+  }
+}
 
+.icon-image {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.svg-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.icon-image--blue {
+  fill: #a9c5e8;
+}
+
+.icon-image--orange {
+  fill: #ec7b1a;
+}
+
+.icon-image--grey {
+  fill: #f2eeee;
+}
+
+.icon-image--yellow {
+  fill: #fff8c7;
+}
+
+.icon-image--pink {
+  fill: #fadceb;
 }
