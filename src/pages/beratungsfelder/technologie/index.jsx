@@ -66,7 +66,7 @@ class BeratungsfelderTechnologie extends React.Component {
           </div>
         </div>
         <div className="container">
-          <div className="row margin-120-top justify-content-center">
+          <div className="row margin-120-top margin-xs-40-top justify-content-center">
             <div className="col-md-10">
               <h2 className="h2 text-primary text-center">Headline</h2>
               <ImageWrapper
@@ -115,7 +115,7 @@ class BeratungsfelderTechnologie extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-140-top margin-xs-60-top">
+          <div className="row margin-140-top margin-xs-40-top">
             <div className="col-md-6">
               <h3 className="h3">Lorem Ipsum Dolor Lorem Ipsum Dolor</h3>
               <ImageWrapper
@@ -139,7 +139,7 @@ class BeratungsfelderTechnologie extends React.Component {
               </p>
             </div>
           </div>
-          <div className="margin-120-top">
+          <div className="margin-120-top margin-xs-40-top">
             <ReferenzAndDownload />
           </div>
         </div>

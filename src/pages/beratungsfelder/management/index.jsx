@@ -58,7 +58,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container margin-120-top">
+        <div className="container margin-120-top margin-xs-40-top">
           <div className="row">
             <div className="col-md-6">
               <h2 className="h2">TrendThemen</h2>
@@ -74,7 +74,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
                 est Lorem ipsum dolor sit amet.
               </p>
-              <div className="margin-120-top">
+              <div className="margin-120-top margin-xs-40-top">
                 <ImageWrapper
                   sourceType={SOURCE_TYP_PLACEHOLDER}
                   source={{
@@ -84,7 +84,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 margin-xs-20-top">
               <ImageWrapper
                 sourceType={SOURCE_TYP_PLACEHOLDER}
                 source={{
@@ -103,7 +103,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                   />
                 </div>
               </div>
-              <div className="margin-40-top">
+              <div className="margin-40-top margin-xs-20-top">
                 <ImageWrapper
                   sourceType={SOURCE_TYP_PLACEHOLDER}
                   source={{
@@ -143,7 +143,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
           </div>
         </div>
-        <div className="margin-120-top">
+        <div className="margin-120-top margin-xs-40-top">
           <ReferenzAndDownload />
         </div>
       </div>
