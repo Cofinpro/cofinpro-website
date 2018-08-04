@@ -332,7 +332,7 @@ class FokusthemenStartseite extends React.Component {
 export default FokusthemenStartseite
 
 export const pageQuery = graphql`
-  query StartseiteQuery {
+  query FokusthemenQuery {
     iconVorteilLinksSharp: imageSharp(
       id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }
     ) {
