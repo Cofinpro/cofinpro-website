@@ -23,6 +23,7 @@ const pageLanding = require('./server/karriere/pageLanding')
 const pageStartseiteKarriere = require('./server/karriere/pageStartseiteKarriere')
 const pagesUeberUns = require('./server/karriere/pagesUeberUns')
 const pageWorkLife = require('./server/karriere/pageWorkLife')
+const pagesFokusthemen = require('./server/pagesFokusthemen')
 
 const runWithTestData = false
 
@@ -124,6 +125,14 @@ function createPages(callback) {
   asyncTasks.push(
     async.apply(pageStartseiteKarriere.create, globalGraphql, globalCreatePage)
   )
+  asyncTasks.push(
+    async.apply(
+      pagesFokusthemen.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
+  )
 
   async.waterfall(asyncTasks, function() {
     // All tasks are done now
@@ -155,7 +164,7 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
           sizes
                           }
                       }
-                  }          
+                  }
               `
     ).then(result => {
       callback(null, result.data.resultImage)
