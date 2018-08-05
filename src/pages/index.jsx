@@ -12,6 +12,7 @@ import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_ICON_IMAGE,
+  SOURCE_TYP_SHARP,
 } from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
@@ -149,11 +150,8 @@ class Startseite extends React.Component {
           <div className="row">
             <div className="col-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.heroImageSharp}
               />
             </div>
           </div>
@@ -581,6 +579,13 @@ export const pageQuery = graphql`
       id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }
     ) {
       sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    heroImageSharp: imageSharp(
+      id: { regex: "/20180718-cofinpro-stills19468/" }
+    ) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
         ...GatsbyImageSharpSizes
       }
     }

@@ -43,6 +43,34 @@ class ImageWrapper extends React.Component {
       )
     }
 
+    function SharpImage(props) {
+      var style = {}
+      console.log(props)
+      if (typeof props.style !== 'undefined') {
+        style = props.style
+      }
+
+      return (
+        <div
+          className={
+            'image-container ' + style.container !== undefined
+              ? style.container
+              : ''
+          }
+        >
+          <div className={'svg-image position-relative ' + style.border}>
+            <Img sizes={props.source.sizes} className={props.styleClasses} />
+            {props.backgroundOverlay}
+            {props.overlayElement !== undefined && (
+              <div className={'image-overlay-top-left ' + style.overlay}>
+                {props.overlayElement}
+              </div>
+            )}
+          </div>
+        </div>
+      )
+    }
+
     function BootstrapImage(props) {
       return (
         <img
@@ -79,7 +107,7 @@ class ImageWrapper extends React.Component {
     if (sourceType === SOURCE_TYP_CONTENTFUL) {
       return <ContentfulImage imageFile={source} styleClasses={styleClasses} />
     } else if (sourceType === SOURCE_TYP_SHARP) {
-      return <Img sizes={source.sizes} className={styleClasses} />
+      return <SharpImage {...this.props} />
     } else if (sourceType === SOURCE_TYP_BOOTSTRAP) {
       return <BootstrapImage {...this.props} />
     } else if (sourceType === SOURCE_TYP_PLACEHOLDER) {
@@ -133,6 +161,7 @@ ImageWrapper.propTypes = {
     SOURCE_TYP_PLACEHOLDER,
     SOURCE_TYP_ICON_IMAGE,
   ]),
+  backgroundOverlay: PropTypes.any,
   overlayElement: PropTypes.any,
   styleClasses: PropTypes.string,
 }

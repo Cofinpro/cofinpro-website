@@ -24,6 +24,9 @@ const pageStartseiteKarriere = require('./server/karriere/pageStartseiteKarriere
 const pagesUeberUns = require('./server/karriere/pagesUeberUns')
 const pageWorkLife = require('./server/karriere/pageWorkLife')
 
+const pageProjekt = require('./server/projekt')
+const pageProjekte = require('./server/projekte')
+
 const runWithTestData = false
 
 const pathPrefix = ''
@@ -123,6 +126,13 @@ function createPages(callback) {
   )
   asyncTasks.push(
     async.apply(pageStartseiteKarriere.create, globalGraphql, globalCreatePage)
+  )
+
+  asyncTasks.push(
+    async.apply(pageProjekt.create, globalGraphql, globalCreatePage)
+  )
+  asyncTasks.push(
+    async.apply(pageProjekte.create, globalGraphql, globalCreatePage)
   )
 
   async.waterfall(asyncTasks, function() {

@@ -5,10 +5,12 @@
   border-image: url('/img/CP_Border_2.png') 100 stretch;
 }
 
-ul.blue-bullet {
+ul.blue-bullet,
+div.blue-bullet ul {
 }
 
-.blue-bullet li {
+ul.blue-bullet li,
+div.blue-bullet ul li {
   list-style-image: url('/img/blue-bullet-point.png');
   margin-bottom: 20px;
 }

@@ -80,7 +80,7 @@ class Menu extends React.Component {
       },
       {
         name: 'PROJEKTE',
-        link: '/projekte',
+        link: '/projekte/managementberatung',
         pattern: '/projekte.*',
       },
       {
