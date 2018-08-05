@@ -193,7 +193,7 @@ class NavigationCareer extends React.Component {
                   <nav
                     id="cofinpro-nav"
                     className={
-                      'navbar navbar-expand-lg ' +
+                      'navbar navbar-expand-xl ' +
                       (locationUpdate === mainUrl ? 'on-main-site' : '')
                     }
                     hidden={locationUpdate === mainUrl ? true : false}

@@ -78,7 +78,8 @@ class ProjekteUebersicht extends React.Component {
                 firstColumnWidth = 'col-md-8'
                 rowAlignment = 'align-items-end margin-xs-0-top'
                 if (projects.length !== i + 1) {
-                  rowAlignment += ' negative-margin-80-top negative-margin-md-40-top'
+                  rowAlignment +=
+                    ' negative-margin-80-top negative-margin-md-40-top'
                 } else {
                   rowAlignment += ' margin-40-top'
                 }
@@ -100,39 +101,41 @@ class ProjekteUebersicht extends React.Component {
                   <div className="col-12 col-md-6">
                     <div className="row margin-xs-20-top justify-content-center">
                       <div className={'col-12 ' + firstColumnWidth}>
-                        <ImageWrapper
-                          sourceType={SOURCE_TYP_SHARP}
-                          source={backgroundImages[i]}
-                          backgroundOverlay={
-                            <div
-                              className={
-                                'image-overlay-background image-overlay-background' +
-                                backgroundColorLeft
-                              }
-                            />
+                        <Link
+                          className="d-block text-dark"
+                          to={
+                            '/projekte/' +
+                            item.kategorieInDerDasProjektFllt.toLowerCase() +
+                            '/' +
+                            item.urlDerSeite
                           }
-                          overlayElement={
-                            <Link
-                              className="d-block text-dark"
-                              to={
-                                '/projekte/' +
-                                item.kategorieInDerDasProjektFllt.toLowerCase() +
-                                '/' +
-                                item.urlDerSeite
-                              }
-                            >
-                              <ContentfulMarkdownText
-                                text={'### ' + item.ueberschrift}
-                                styleClasses="h4"
+                        >
+                          <ImageWrapper
+                            sourceType={SOURCE_TYP_SHARP}
+                            source={backgroundImages[i]}
+                            backgroundOverlay={
+                              <div
+                                className={
+                                  'image-overlay-background image-overlay-background' +
+                                  backgroundColorLeft
+                                }
                               />
-                              <ContentfulMarkdownText
-                                text={' ' + item.unterueberschrift}
-                                styleClasses="h5 text-md-normal"
-                              />
-                            </Link>
-                          }
-                          showOverlay={true}
-                        />
+                            }
+                            overlayElement={
+                              <div>
+                                <ContentfulMarkdownText
+                                  text={'### ' + item.ueberschrift}
+                                  styleClasses="h4"
+                                />
+                                <ContentfulMarkdownText
+                                  text={' ' + item.unterueberschrift}
+                                  styleClasses="h5 text-md-normal"
+                                />
+                              </div>
+                            }
+                            showOverlay={true}
+                          />
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -140,39 +143,43 @@ class ProjekteUebersicht extends React.Component {
                     <div className="col-12 col-md-6">
                       <div className="row margin-xs-20-top justify-content-center">
                         <div className={'col-12 ' + secondColumnWidth}>
-                          <ImageWrapper
-                            sourceType={SOURCE_TYP_SHARP}
-                            source={backgroundImages[i + 1]}
-                            backgroundOverlay={
-                              <div
-                                className={
-                                  'image-overlay-background image-overlay-background' +
-                                  backgroundColorRight
-                                }
-                              />
+                          <Link
+                            className="d-block text-dark"
+                            to={
+                              '/projekte/' +
+                              item.kategorieInDerDasProjektFllt.toLowerCase() +
+                              '/' +
+                              item.urlDerSeite
                             }
-                            overlayElement={
-                              <Link
-                                className="d-block text-dark"
-                                to={
-                                  '/projekte/' +
-                                  item.kategorieInDerDasProjektFllt.toLowerCase() +
-                                  '/' +
-                                  item.urlDerSeite
-                                }
-                              >
-                                <ContentfulMarkdownText
-                                  text={'### ' + projects[i + 1].ueberschrift}
-                                  styleClasses="h4"
+                          >
+                            <ImageWrapper
+                              sourceType={SOURCE_TYP_SHARP}
+                              source={backgroundImages[i + 1]}
+                              backgroundOverlay={
+                                <div
+                                  className={
+                                    'image-overlay-background image-overlay-background' +
+                                    backgroundColorRight
+                                  }
                                 />
-                                <ContentfulMarkdownText
-                                  text={' ' + projects[i + 1].unterueberschrift}
-                                  styleClasses="h5 text-md-normal"
-                                />
-                              </Link>
-                            }
-                            showOverlay={true}
-                          />
+                              }
+                              overlayElement={
+                                <div>
+                                  <ContentfulMarkdownText
+                                    text={'### ' + projects[i + 1].ueberschrift}
+                                    styleClasses="h4"
+                                  />
+                                  <ContentfulMarkdownText
+                                    text={
+                                      ' ' + projects[i + 1].unterueberschrift
+                                    }
+                                    styleClasses="h5 text-md-normal"
+                                  />
+                                </div>
+                              }
+                              showOverlay={true}
+                            />
+                          </Link>
                         </div>
                       </div>
                     </div>
