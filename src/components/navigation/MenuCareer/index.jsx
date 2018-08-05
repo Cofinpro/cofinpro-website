@@ -120,7 +120,7 @@ class MenuCareer extends React.Component {
         <div>
           <Link
             to={location.pathname.startsWith('/karriere') ? '/karriere' : '/'}
-            className="navbar-brand d-none d-lg-block"
+            className="navbar-brand d-none d-xl-block"
           >
             {location.pathname.startsWith('/karriere') === false ? (
               <img
@@ -137,7 +137,7 @@ class MenuCareer extends React.Component {
             )}
           </Link>
         </div>
-        <div className="d-block d-lg-none text-secondary margin-20-bottom">
+        <div className="d-block d-xl-none text-secondary margin-20-bottom">
           <p className="h5 d-inline">MENÜ</p>
           <button
             id="close-button-menu"
@@ -161,7 +161,7 @@ class MenuCareer extends React.Component {
         <LinkButton
           text="HAUPTSEITE"
           path="/"
-          styleLink={'d-inline d-lg-none'}
+          styleLink={'d-inline d-xl-none'}
           {...this.props}
         />
       </div>

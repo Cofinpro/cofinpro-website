@@ -63,14 +63,14 @@ $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
-  lg: 1083px,
+  lg: 992px,
   xl: 1200px
 );
 $container-max-widths: (
   sm: 540px,
-  md: 820px,
-  lg: 1160px,
-  xl: 1240px
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 );
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 main {
@@ -637,6 +637,18 @@ a:hover {
   margin-top: -80px;
 }
 
+.negative-margin-md-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: -40px;
+  }
+}
+
 .margin-120-bottom {
   margin-bottom: 120px;
   @include media-breakpoint-only(xs) {
@@ -1021,6 +1033,13 @@ a:hover {
 
 .text-size-18 {
   font-size: 18px;
+}
+
+.text-md-normal,
+.text-md-normal > p {
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-lg;
+  }
 }
 
 svg image[href$='img_20.jpg'] {

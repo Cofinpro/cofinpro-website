@@ -110,7 +110,7 @@ class NavigationCareer extends React.Component {
                       <div>
                         <Link
                           to="/karriere"
-                          className="navbar-brand d-inline d-lg-none"
+                          className="navbar-brand d-inline d-xl-none"
                         >
                           <img
                             className="cofinpro-logo"
@@ -125,10 +125,10 @@ class NavigationCareer extends React.Component {
                       <div>
                         <form className="form-inline">
                           <div className="d-inline">
-                            <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-lg-inline">
+                            <span className="title-perspective text-secondary navbar-text mr-sm-2 d-none d-xl-inline">
                               {this.getPerspectiveTitle()}
                             </span>
-                            <span className="title-perspective text-secondary navbar-text mr-sm-2 d-inline d-lg-none">
+                            <span className="title-perspective text-secondary navbar-text mr-sm-2 d-inline d-xl-none">
                               KOMPETENZ
                             </span>
                             <button
@@ -152,19 +152,19 @@ class NavigationCareer extends React.Component {
                             <LinkButton
                               text="HAUPTSEITE"
                               path="/"
-                              styleLink={'d-none d-lg-inline'}
+                              styleLink={'d-none d-xl-inline'}
                               styleSpan={'btn-sm margin-20-left'}
                               {...this.props}
                             />
                           </div>
-                          <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
+                          <span className="title-menu text-primary d-inline d-xl-none navbar-text mr-sm-2">
                             MENÜ
                           </span>
                           <div>
                             <button
                               id="menuNavbarToggler"
                               hidden={locationUpdate === mainUrl ? true : false}
-                              className="navbar-toggler d-inline d-lg-none"
+                              className="navbar-toggler d-inline d-xl-none"
                               type="button"
                               data-toggle="collapse"
                               data-target="#navbarSupportedContent"
@@ -211,7 +211,7 @@ class NavigationCareer extends React.Component {
         </div>
         <div className="container container-md-full-width">
           <div className="row">
-            <div className="col-12 col-lg-6 offset-lg-6">
+            <div className="col-12 col-xl-6 offset-xl-6">
               <MenuCompetence
                 location={location}
                 locationUpdate={locationUpdate}

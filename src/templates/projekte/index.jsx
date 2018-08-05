@@ -78,7 +78,7 @@ class ProjekteUebersicht extends React.Component {
                 firstColumnWidth = 'col-md-8'
                 rowAlignment = 'align-items-end margin-xs-0-top'
                 if (projects.length !== i + 1) {
-                  rowAlignment += ' negative-margin-80-top'
+                  rowAlignment += ' negative-margin-80-top negative-margin-md-40-top'
                 } else {
                   rowAlignment += ' margin-40-top'
                 }
@@ -127,7 +127,7 @@ class ProjekteUebersicht extends React.Component {
                               />
                               <ContentfulMarkdownText
                                 text={' ' + item.unterueberschrift}
-                                styleClasses="h5"
+                                styleClasses="h5 text-md-normal"
                               />
                             </Link>
                           }
@@ -167,7 +167,7 @@ class ProjekteUebersicht extends React.Component {
                                 />
                                 <ContentfulMarkdownText
                                   text={' ' + projects[i + 1].unterueberschrift}
-                                  styleClasses="h5"
+                                  styleClasses="h5 text-md-normal"
                                 />
                               </Link>
                             }

@@ -2,14 +2,6 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1083px,
-  xl: 1200px
-);
-
 .career-navigation > div:first-child {
   @include media-breakpoint-only(xs) {
 
@@ -24,8 +16,6 @@ $grid-breakpoints: (
   }
 
   @include media-breakpoint-only(lg) {
-    padding-bottom: 12px;
-    padding-top: 12px;
   }
 
   @include media-breakpoint-only(xl) {
@@ -50,11 +40,6 @@ $grid-breakpoints: (
   //opacity: 0.95;
   opacity: 1;
 
-  @include media-breakpoint-only(lg) {
-    opacity: 1;
-    padding-bottom: 0rem;
-  }
-
   @include media-breakpoint-only(xl) {
     opacity: 1;
     padding-bottom: 0rem;
@@ -76,6 +61,7 @@ $grid-breakpoints: (
   }
 
   @include media-breakpoint-only(lg) {
+    padding-bottom: 0px;
     padding-top: 0px;
   }
 
@@ -330,11 +316,6 @@ $grid-breakpoints: (
   padding-top: 8px;
   padding-bottom: 8px;
 
-  @include media-breakpoint-only(lg) {
-    padding-top: 0px;
-    padding-bottom: 0px;
-  }
-
   @include media-breakpoint-only(xl) {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -342,10 +323,6 @@ $grid-breakpoints: (
 }
 
 .desktop-navigation-bar {
-  @include media-breakpoint-only(lg) {
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
 
   @include media-breakpoint-only(xl) {
     padding-top: 8px;

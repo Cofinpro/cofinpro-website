@@ -24,7 +24,7 @@ class MainNavigation extends React.Component {
         hidden={location.pathname.startsWith('/karriere')}
       >
         <div className="bg-white">
-          <div className="d-block d-lg-none">
+          <div className="d-block d-xl-none">
             <div className="container">
               <div className="row">
                 <div className="col">
@@ -41,13 +41,13 @@ class MainNavigation extends React.Component {
                       </div>
                       <div>
                         <form className="form-inline">
-                          <span className="title-menu text-primary d-inline d-lg-none navbar-text mr-sm-2">
+                          <span className="title-menu text-primary d-inline d-xl-none navbar-text mr-sm-2">
                             MENÜ
                           </span>
                           <div>
                             <button
                               id="menu-main-mobile-toggle"
-                              className="navbar-toggler d-inline d-lg-none"
+                              className="navbar-toggler d-inline d-xl-none"
                               type="button"
                               data-toggle="collapse"
                               data-target="#mobile-main-menu"
@@ -69,7 +69,7 @@ class MainNavigation extends React.Component {
               </div>
             </div>
           </div>
-          <div className="d-none d-lg-block">
+          <div className="d-none d-xl-block">
             <div className="container container-md-full-width">
               <div className="row">
                 <div className="col">
@@ -86,7 +86,7 @@ class MainNavigation extends React.Component {
             </div>
           </div>
         </div>
-        <div className="d-block d-lg-none">
+        <div className="d-block d-xl-none">
           <Menu
             id="mobile-main-menu"
             location={location}

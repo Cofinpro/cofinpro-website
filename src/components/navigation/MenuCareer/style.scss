@@ -2,14 +2,6 @@
 @import 'node_modules/bootstrap/scss/variables';
 @import 'node_modules/bootstrap/scss/mixins';
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1083px,
-  xl: 1200px
-);
-
 .main-navigation-bar {
   //opacity: 0.95;
   opacity: 1;
@@ -27,7 +19,8 @@ $grid-breakpoints: (
     padding: 2rem;
   }
   @include media-breakpoint-only(lg) {
-    background-color: white;
+    background-color: #f2eeee;
+    padding: 2rem;
   }
   @include media-breakpoint-only(xl) {
     background-color: white;
@@ -82,6 +75,9 @@ ul.navbar-nav {
       margin-bottom: 14px;
     }
     @include media-breakpoint-only(md) {
+      margin-bottom: 14px;
+    }
+    @include media-breakpoint-only(lg) {
       margin-bottom: 14px;
     }
   }
