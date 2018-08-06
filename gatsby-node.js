@@ -34,6 +34,7 @@ const pathPrefix = ''
 let globalGraphql = null
 let globalCreatePage = null
 let globalCreateRedirect = null
+let globalBackgroundImages = []
 
 let globalNews = []
 
@@ -54,6 +55,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       [
         async.apply(contentfulImageService.refreshImages, globalGraphql),
         getNews,
+        getStockImages,
         createPages,
       ],
       function(error, success) {
@@ -66,6 +68,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
 function createPages(callback) {
   var asyncTasks = []
+
+  console.log('test rtest')
 
   asyncTasks.push(
     async.apply(
@@ -129,10 +133,20 @@ function createPages(callback) {
   )
 
   asyncTasks.push(
-    async.apply(pageProjekt.create, globalGraphql, globalCreatePage)
+    async.apply(
+      pageProjekt.create,
+      globalGraphql,
+      globalCreatePage,
+      globalBackgroundImages
+    )
   )
   asyncTasks.push(
-    async.apply(pageProjekte.create, globalGraphql, globalCreatePage)
+    async.apply(
+      pageProjekte.create,
+      globalGraphql,
+      globalCreatePage,
+      globalBackgroundImages
+    )
   )
 
   async.waterfall(asyncTasks, function() {
@@ -171,6 +185,255 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
       callback(null, result.data.resultImage)
     })
   }
+}
+
+function getStockImages(callback) {
+  globalGraphql(`
+    {
+      architektur1ImageSharp: imageSharp(id: { regex: "/stock_architektur_1/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur2ImageSharp: imageSharp(id: { regex: "/stock_architektur_2/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur4ImageSharp: imageSharp(id: { regex: "/stock_architektur_4/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur6ImageSharp: imageSharp(id: { regex: "/stock_architektur_6/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur7ImageSharp: imageSharp(id: { regex: "/stock_architektur_7/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur9ImageSharp: imageSharp(id: { regex: "/stock_architektur_9/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur10ImageSharp: imageSharp(
+        id: { regex: "/stock_architektur_10/" }
+      ) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur11ImageSharp: imageSharp(
+        id: { regex: "/stock_architektur_11/" }
+      ) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht46ImageSharp: imageSharp(id: { regex: "/stock_licht_46/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht2ImageSharp: imageSharp(id: { regex: "/stock_licht_2/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht3ImageSharp: imageSharp(id: { regex: "/stock_licht_3/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht4ImageSharp: imageSharp(id: { regex: "/stock_licht_4/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht41ImageSharp: imageSharp(id: { regex: "/stock_licht_41/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht42ImageSharp: imageSharp(id: { regex: "/stock_licht_42/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht31ImageSharp: imageSharp(id: { regex: "/stock_licht_31/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht22ImageSharp: imageSharp(id: { regex: "/stock_licht_22/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+    }
+`).then(result => {
+    console.log(result)
+
+    globalBackgroundImages.length = 0
+
+    globalBackgroundImages.push(result.data.architektur1ImageSharp)
+    globalBackgroundImages.push(result.data.architektur2ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht46ImageSharp)
+    globalBackgroundImages.push(result.data.licht2ImageSharp)
+
+    globalBackgroundImages.push(result.data.architektur4ImageSharp)
+    globalBackgroundImages.push(result.data.architektur6ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht31ImageSharp)
+    globalBackgroundImages.push(result.data.licht22ImageSharp)
+
+    globalBackgroundImages.push(result.data.architektur7ImageSharp)
+    globalBackgroundImages.push(result.data.architektur9ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht3ImageSharp)
+    globalBackgroundImages.push(result.data.licht4ImageSharp)
+
+    globalBackgroundImages.push(result.data.architektur10ImageSharp)
+    globalBackgroundImages.push(result.data.architektur11ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht41ImageSharp)
+    globalBackgroundImages.push(result.data.licht42ImageSharp)
+
+    callback(null)
+  })
 }
 
 function getNews(callback) {

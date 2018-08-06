@@ -6,11 +6,15 @@ import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
 class Projekt extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulProjekt
+
+    var mainImage = this.props.pathContext.image
+    var backgroundOverlayColor = this.props.pathContext.backgroundOverlayColor
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -50,11 +54,17 @@ class Projekt extends React.Component {
           <div className="row">
             <div className="col-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1800,
-                  height: 1200,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={mainImage}
+                backgroundOverlay={
+                  <div
+                    className={
+                      'image-overlay-background image-overlay-background' +
+                      backgroundOverlayColor
+                    }
+                  />
+                }
+                showOverlay={true}
               />
             </div>
           </div>
