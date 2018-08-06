@@ -4,7 +4,7 @@ import LinkButton from '../../../components/buttons/LinkButton'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderFach extends React.Component {
@@ -18,11 +18,10 @@ class BeratungsfelderFach extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/fach/20180718-cofinpro-stills19078-1.jpg'
+                }
               />
             </div>
           </div>
@@ -31,11 +30,10 @@ class BeratungsfelderFach extends React.Component {
           <div className="row">
             <div className="col-md-2">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 128,
-                  height: 132,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/fach/20180718-cofinpro-stills19078-1.jpg'
+                }
               />
             </div>
           </div>

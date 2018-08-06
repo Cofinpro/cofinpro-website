@@ -6,6 +6,7 @@ import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderManagementTemplate extends React.Component {
@@ -19,11 +20,10 @@ class BeratungsfelderManagementTemplate extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/management/20180718-cofinpro-stills19242.jpg'
+                }
               />
             </div>
           </div>

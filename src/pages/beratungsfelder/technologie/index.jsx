@@ -3,10 +3,10 @@ import React from 'react'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
-// '../../../../static/img/beratungsfelder/technologie/20180718-cofinpro-stills18919.jpg'
+//
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderTechnologie extends React.Component {
@@ -17,12 +17,10 @@ class BeratungsfelderTechnologie extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                className="img-fluid margin-20-bottom margin-20-top"
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/technologie/20180718-cofinpro-stills18919.jpg'
+                }
               />
             </div>
           </div>
@@ -30,10 +28,11 @@ class BeratungsfelderTechnologie extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <img
-                src="http://via.placeholder.com/128x132"
-                alt="placeholder"
-                className="img-fluid margin-20-bottom margin-20-top"
+              <ImageWrapper
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/technologie/technologieberatung.png'
+                }
               />
               <h1 className="h1">Technologieberatung</h1>
               <h2 className="h2 margin-20-top">
@@ -75,11 +74,8 @@ class BeratungsfelderTechnologie extends React.Component {
             <div className="col-md-10">
               <h2 className="h2 text-primary text-center">Headline</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 2000,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/beratungsfelder/technologie/tech3.png'}
               />
             </div>
           </div>
@@ -154,11 +150,8 @@ class BeratungsfelderTechnologie extends React.Component {
                 Unsere Projektleistungen in der Technologieberatung in Kürze
               </h3>
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 600,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/beratungsfelder/technologie/tech.png'}
               />
               <p className="margin-20-top margin-xs-20-top">
                 <ul>
