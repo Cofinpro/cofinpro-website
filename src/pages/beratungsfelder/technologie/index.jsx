@@ -3,6 +3,7 @@ import React from 'react'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
+// '../../../../static/img/beratungsfelder/technologie/20180718-cofinpro-stills18919.jpg'
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
