@@ -2,9 +2,7 @@ import React from 'react'
 
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
-import starUrl, {
-  ReactComponent as TestIcon,
-} from '../../../static/svg/Fokusthemen_Trendthemen/schwarz/anlegerschutz.svg'
+import { ReactComponent as AnlegerschutzIcon } from '../../../static/svg/Fokusthemen_Trendthemen/schwarz/anlegerschutz.svg'
 
 import {
   ImageWrapper,
@@ -27,6 +25,12 @@ class Test extends React.Component {
                   overlay: '',
                   border: 'border-img-svg--blue',
                 }}
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="### Fokusthema 3"
+                    styleClasses="h4"
+                  />
+                }
               />
             </div>
           </div>

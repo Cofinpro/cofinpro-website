@@ -11,6 +11,7 @@ import ThreeIconsWithLinks from '../components/layouts/ThreeIconsWithLinks'
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_ICON_IMAGE,
 } from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
@@ -161,13 +162,14 @@ class Startseite extends React.Component {
         <div className="container margin-80-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1 className="h1">Headline</h1>
+              <h1 className="h1">Hallo, hier ist Cofinpro</h1>
               <p>
-                Wir verfolgen ein Beratungskonzept, das alle Elemente der
-                Wertschöpfungskette von Unternehmen im Finanzsektor
-                berücksichtigt: die Management-beratung, die Fachberatung
-                speziell für Kredit und Wertpapier und schließlich die
-                Technologieberatung für agile Architekturen.
+                Wir sind die Management-, Fach- und Technologieberatung für
+                Deutschlands führende Banken und
+                Kapitalverwaltungsgesellschaften. Als Experten für Kredit und
+                Wertpapier begleiten und navigieren wir unsere Kunden durch die
+                Herausforderungen von Digitalisierung, neuen Marktanforderungen
+                und Regulatorik.
               </p>
               <LinkButton
                 styleLink="d-inline d-md-none"
@@ -197,7 +199,7 @@ class Startseite extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12">
-              <h3 className="h2">News&Medien</h3>
+              <h3 className="h2">Neues von Cofinpro</h3>
             </div>
           </div>
           <div className="row">
@@ -259,29 +261,29 @@ class Startseite extends React.Component {
             <div className="col-12 col-md-6 d-flex">
               <div className="row">
                 <div className="col-12">
-                  <h2>Fokusthemen</h2>
+                  <h2>Unsere Fokusthemen</h2>
                   <p>
-                    Atatios culpa dolut a dolorep reculparumet alistibus mi,
-                    volo blaccum alibus ex et, commolu ptatiam endit, simus ab
-                    iumendenis et ommolorrorro que dolupta consedigeni nime
-                    exera sunt rest estenecti dolut que derspel ipiciminus
-                    restis diam nam est volest, te esequodi que voles de nim nos
-                    quam et ut offici ulla accum facessus eos sinciis coreperia
-                    con cus, tem quidelendit plit magnam, comnis dia sim nitae
-                    netur sunti ommosam rem eos nulluptate vendam repudita
-                    nonsequi cupta nus, ilia que porestis essitamet aspeditassus
-                    et pa volorit atemporiant liquis molum int ea qui rae si re
-                    cum fugia inulpa sum doluptatur, sit faccum qui rescid quid
-                    quiditi num dolesto tatiumquis atatemporate ne cus quia
-                    vendus dolupta sitatio.
+                    Mit Teams aus Management-, Fach- und Technologieberatern
+                    unterstützen wir Banken und
+                    Kapitalverwaltungsgesellschaften, damit sie den
+                    unterschiedlichsten Herausforderungen gerecht werden. Hier
+                    möchten wir Ihnen einen Einblick in unser Leistungsspektrum
+                    geben, von der agilen Transformation oder dem Aufsatz von
+                    Effizienzsteigerungen über die Regulierung und
+                    Digitalisierung im Kredit- und Wertpapiergeschäft bis hin
+                    zum Design moderner Plattform-Architekturen und vielen
+                    Themen mehr.
                   </p>
                 </div>
                 <div className="col-12 d-none d-md-block align-self-end">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
+                    sourceType={SOURCE_TYP_ICON_IMAGE}
+                    source={'Anlegerschutz'}
+                    style={{
+                      backgroundImage: '',
+                      iconColor: 'icon-image--blue',
+                      overlay: '',
+                      border: 'border-img-svg--blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -298,10 +300,13 @@ class Startseite extends React.Component {
                 <div className="col-2" />
                 <div className="col-8">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
+                    sourceType={SOURCE_TYP_ICON_IMAGE}
+                    source={'Anlegerschutz'}
+                    style={{
+                      backgroundImage: '',
+                      iconColor: 'icon-image--blue',
+                      overlay: '',
+                      border: 'border-img-svg--blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -315,12 +320,15 @@ class Startseite extends React.Component {
               <div className="row">
                 <div className="col-12">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
+                    sourceType={SOURCE_TYP_ICON_IMAGE}
+                    source={'Anlegerschutz'}
+                    style={{
+                      backgroundImage: '',
+                      container: 'margin-60-top margin-120-bottom',
+                      iconColor: 'icon-image--blue',
+                      overlay: '',
+                      border: 'border-img-svg--blue',
                     }}
-                    styleClasses="margin-60-top margin-120-bottom"
                     overlayElement={
                       <ContentfulMarkdownText
                         text="### Fokusthema 3"
@@ -339,12 +347,15 @@ class Startseite extends React.Component {
                 return (
                   <div className="col-12" key={'fokusthema-mobile-' + i}>
                     <ImageWrapper
-                      sourceType={SOURCE_TYP_PLACEHOLDER}
-                      source={{
-                        width: 1200,
-                        height: 800,
+                      sourceType={SOURCE_TYP_ICON_IMAGE}
+                      source={'Anlegerschutz'}
+                      style={{
+                        backgroundImage: '',
+                        container: 'margin-20-top',
+                        iconColor: 'icon-image--blue',
+                        overlay: '',
+                        border: 'border-img-svg--blue',
                       }}
-                      styleClasses="margin-20-top"
                       overlayElement={
                         <ContentfulMarkdownText
                           text={'### ' + item}
@@ -370,10 +381,14 @@ class Startseite extends React.Component {
             <div className="col-1" />
             <div className="col-6">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
+                sourceType={SOURCE_TYP_ICON_IMAGE}
+                source={'Anlegerschutz'}
+                style={{
+                  backgroundImage: '',
+                  container: '',
+                  iconColor: 'icon-image--blue',
+                  overlay: '',
+                  border: 'border-img-svg--blue',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -388,10 +403,14 @@ class Startseite extends React.Component {
                 <div className="col-2" />
                 <div className="col-10">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
+                    sourceType={SOURCE_TYP_ICON_IMAGE}
+                    source={'Anlegerschutz'}
+                    style={{
+                      backgroundImage: '',
+                      container: '',
+                      iconColor: 'icon-image--blue',
+                      overlay: '',
+                      border: 'border-img-svg--blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -405,10 +424,14 @@ class Startseite extends React.Component {
               <div className="row margin-40-top">
                 <div className="col-10">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
+                    sourceType={SOURCE_TYP_ICON_IMAGE}
+                    source={'Anlegerschutz'}
+                    style={{
+                      backgroundImage: '',
+                      container: '',
+                      iconColor: 'icon-image--blue',
+                      overlay: '',
+                      border: 'border-img-svg--blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -426,10 +449,14 @@ class Startseite extends React.Component {
           <div className="row d-none d-md-flex align-items-center margin-40-top">
             <div className="col-8">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
+                sourceType={SOURCE_TYP_ICON_IMAGE}
+                source={'Anlegerschutz'}
+                style={{
+                  backgroundImage: '',
+                  container: '',
+                  iconColor: 'icon-image--blue',
+                  overlay: '',
+                  border: 'border-img-svg--blue',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -450,10 +477,14 @@ class Startseite extends React.Component {
           <div className="row d-none d-md-flex align-items-center margin-40-top">
             <div className="col-6">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
+                sourceType={SOURCE_TYP_ICON_IMAGE}
+                source={'Anlegerschutz'}
+                style={{
+                  backgroundImage: '',
+                  container: '',
+                  iconColor: 'icon-image--blue',
+                  overlay: '',
+                  border: 'border-img-svg--blue',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -465,10 +496,14 @@ class Startseite extends React.Component {
             </div>
             <div className="col-6">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
+                sourceType={SOURCE_TYP_ICON_IMAGE}
+                source={'Anlegerschutz'}
+                style={{
+                  backgroundImage: '',
+                  container: '',
+                  iconColor: 'icon-image--blue',
+                  overlay: '',
+                  border: 'border-img-svg--blue',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -481,10 +516,14 @@ class Startseite extends React.Component {
                 <div className="col-4" />
                 <div className="col-8">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
+                    sourceType={SOURCE_TYP_ICON_IMAGE}
+                    source={'Anlegerschutz'}
+                    style={{
+                      backgroundImage: '',
+                      container: 'margin-60-top margin-120-bottom',
+                      iconColor: 'icon-image--blue',
+                      overlay: '',
+                      border: 'border-img-svg--blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
