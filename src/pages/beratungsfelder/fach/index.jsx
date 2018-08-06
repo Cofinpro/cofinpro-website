@@ -49,7 +49,6 @@ class BeratungsfelderFach extends React.Component {
                 Wir sind Experten für Kredit und Wertpapier
               </p>
               <p className="text-left margin-40-top margin-20-bottom margin-xs-20-top">
-                {' '}
                 Als Berater für führende Banken und Asset Manager rüsten wir
                 unsere Kunden für die Zukunft. Um sie in Sachen Digitalisierung
                 und Regulierung wettbewerbsfähig zu halten, setzen wir die

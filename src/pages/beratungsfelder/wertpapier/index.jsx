@@ -2,7 +2,7 @@ import React from 'react'
 
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
-
+import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -35,13 +35,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               />
               <h1 className="h1">Wertpapiergeschäft</h1>
               <h2 className="h2 margin-20-top">
-                Unsere Fachberatung im Kreditgeschäft
+                Unsere Fachberatung im Wertpapiergeschäft
               </h2>
               <h4 className="h4 margin-40-top">
-                Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir
-                Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer
-                Kundenorientierung und der Bewältigung der Anforderungen aus der
-                Regulatorik. projektmanagmentkompetenz.
+                Langjährige Erfahrung im Wertpapiergeschäft, tiefes methodisches
+                Wissen und hohe Projektmanagementkompetenz macht uns zu
+                führenden Beratern.
               </h4>
             </div>
 
@@ -122,6 +121,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                   width: 1200,
                   height: 800,
                 }}
+                overlayElement={
+                  <ContentfulMarkdownText
+                    text="Kundenbindung und Effizienz in der Bestandsführung "
+                    styleClasses="h4"
+                  />
+                }
               />
               <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12 col-md-8">
@@ -131,6 +136,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                       width: 1200,
                       height: 800,
                     }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="Kundenbindung und Effizienz in der Bestandsführung "
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
@@ -146,6 +157,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                       width: 1200,
                       height: 800,
                     }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="Kundenbindung und Effizienz in der Bestandsführung "
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
                 <div className="col-md-2" />
@@ -158,6 +175,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                       width: 1200,
                       height: 800,
                     }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="Kundenbindung und Effizienz in der Bestandsführung "
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
@@ -174,6 +197,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                       width: 1200,
                       height: 800,
                     }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="Kundenbindung und Effizienz in der Bestandsführung "
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
@@ -187,6 +216,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                       width: 1200,
                       height: 800,
                     }}
+                    overlayElement={
+                      <ContentfulMarkdownText
+                        text="Kundenbindung und Effizienz in der Bestandsführung "
+                        styleClasses="h4"
+                      />
+                    }
                   />
                 </div>
               </div>
