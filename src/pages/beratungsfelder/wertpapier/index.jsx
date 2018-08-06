@@ -35,13 +35,13 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               />
               <h1 className="h1">Wertpapiergeschäft</h1>
               <h2 className="h2 margin-20-top">
-                Fachberatung im<br />Wertpapierumfeld
+                Unsere Fachberatung im Kreditgeschäft
               </h2>
               <h4 className="h4 margin-40-top">
-                Unsere erfahrenen Berater verbinden ihre <br />
-                langjährige Erfahrung im Wertpapiergeschäft <br />
-                mit methodischem Wissen und einer hohen <br />
-                projektmanagmentkompetenz.
+                Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir
+                Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer
+                Kundenorientierung und der Bewältigung der Anforderungen aus der
+                Regulatorik. projektmanagmentkompetenz.
               </h4>
             </div>
 
@@ -52,14 +52,15 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           <div className="row margin-120-top margin-xs-40-top">
             <div className="col-md-6">
               <h2 className="h2">
-                LOREM IPSUM dolor <br />
-                sit amet lorem ipsum
+                Wir decken die gesamte Wertschöpfungskette ab
               </h2>
               <p className="text-left margin-20-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                Unsere Leistungen für Banken reichen von Beratung über Vertrieb,
+                Handel und Abwicklung bis Verwahrung.
+                Kapitalverwaltungsgesellschaften unterstützen wir bei der
+                Digitalisierung von Geschäftsmodellen, der Umsetzung
+                regulatorischer Anforderungen, im Portfoliomanagement und bei
+                der Optimierung ihrer Markt- und Stammdaten.
               </p>
             </div>
           </div>
@@ -90,44 +91,25 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           <div className="row margin-100-top margin-xs-40-top">
             <div className="col-md-6" />
             <div className="col-md-6">
-              <h2 className="h2">
-                LOREM IPSUM dolor <br />
-                sit amet lorem ipsum
-              </h2>
+              <h2 className="h2">Alles greift ineinander</h2>
               <p className="text-left margin-20-top">
-                {' '}
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
-              </p>
-              <p className="text-left margin-20-top">
-                {' '}
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Das Wertpapiergeschäft unserer Kunden wird sowohl in Deutschland
+                als auch global von immer stärkerer Regulierung bestimmt, von
+                anhaltendem Niedrigzinsumfeld und hohem Kostensenkungsdruck.
+                Anforderungen wie MiFID II / MiFIR, PRIIPs und das
+                Finanzmarktnovellierungsgesetz, die Harmonisierung der
+                europäischen Wertpapierabwicklung und neue technologische Trends
+                wirken sich auf die Themenfelder unserer Kunden entlang des
+                ganzen Wertpapierprozesses aus. Es ist also nur konsequent,
+                unser Beratungsangebot ganzheitlich zu gestalten, damit so viele
+                Prozesse wie möglich sinnvoll ineinandergreifen.
               </p>
             </div>
           </div>
           <div className="row margin-60-top margin-xs-20-top">
             <div className="col-md-5">
               <h3 className="h3">
-                Mit besonderer Expertise und<br />
-                Praxiserfahrung berät Cofinpro<br />
-                Sie in den Themen:
+                Unsere Themen rund um Fachberatung im Wertpapiergeschäft:
               </h3>
             </div>
             <div className="col-md-7" />

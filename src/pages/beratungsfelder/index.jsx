@@ -29,20 +29,20 @@ class BeratungsfelderStartseite extends React.Component {
             <div className="col-12 col-md-7">
               <h1 className="h1">Beratungsfelder</h1>
               <p className="h4 margin-20-top d-md-block d-none">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetu
+                Wir sind Experten für Kredit und Wertpapier und beraten führende
+                Banken und Kapitalverwaltungsgesellschaften. Als
+                Managementberater, Fachberater und Technologieberater haben wir
+                die Zukunftsfähigkeit unserer Kunden im Blick. Damit sie den
+                Herausforderungen nicht hinterher sind, sondern einen Schritt
+                voraus.
               </p>
               <p className="d-md-none">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetu
+                Wir sind Experten für Kredit und Wertpapier und beraten führende
+                Banken und Kapitalverwaltungsgesellschaften. Als
+                Managementberater, Fachberater und Technologieberater haben wir
+                die Zukunftsfähigkeit unserer Kunden im Blick. Damit sie den
+                Herausforderungen nicht hinterher sind, sondern einen Schritt
+                voraus.
               </p>
             </div>
           </div>
@@ -69,16 +69,13 @@ class BeratungsfelderStartseite extends React.Component {
             <div className="col-12 col-md-6 margin-xs-20-top">
               <h1 className="h2">Managementberatung</h1>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                In der Managementberatung entwickeln wir
+                Digitalisierungsstrategien, bereiten den Weg zur agilen
+                Organisation, begleiten Auswahlverfahren, übernehmen das
+                Programmmanagementaufsatz und verantworten Vorhaben zur
+                Effizienzsteigerung bei führenden Finanzinstituten. Und auch
+                Zukunftsthemen gehören dazu, aktuell digitale Transformation,
+                Machine Learning, Unbundling Banks und Blockchain.
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset"
@@ -100,16 +97,13 @@ class BeratungsfelderStartseite extends React.Component {
             <div className="col-12 col-md-6 margin-xs-20-top">
               <h1 className="h2">Fachberatung</h1>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Als Spezialisten für Kredit und Wertpapier begleiten und
+                navigieren wir unsere Kunden durch die Herausforderungen von
+                Digitalisierung, neuen Marktanforderungen und Regulatorik und
+                konzipieren nutzenoptimierte Prozesse und Lösungen.<br />
+                <p />
+                &#8594; Kredit <br />
+                &#8594; Wertpapier
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset"
@@ -137,16 +131,11 @@ class BeratungsfelderStartseite extends React.Component {
             <div className="col-12 col-md-6 margin-xs-20-top">
               <h1 className="h2">Technologieberatung</h1>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Als Technologieberater machen wir IT-Landschaften belastbar für
+                die Anforderungen der Zukunft. Dazu gehört, dass wir
+                analysieren, was ist, und kreieren, was neu dazukommen sollte,
+                und zwar effizient und kostensparend. Kurz: Wir kümmern uns um
+                die Innovation, von der Konzeption bis zur Praxis.
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset"

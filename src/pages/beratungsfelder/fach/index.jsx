@@ -41,25 +41,23 @@ class BeratungsfelderFach extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-md-7">
-              <h1 className="h1">Fachberatung</h1>
+              <h1 className="h1">Unsere Fachberatung</h1>
               <h2 className="h2 d-none d-md-block">
-                Die Experten <br />für Kredit und Wertpapier
+                Wir sind Experten <br />für Kredit und Wertpapier
               </h2>
               <p className="d-block d-md-none">
-                Die Experten für Kredit und Wertpapier
+                Wir sind Experten für Kredit und Wertpapier
               </p>
               <p className="text-left margin-40-top margin-20-bottom margin-xs-20-top">
                 {' '}
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Als Berater für führende Banken und Asset Manager rüsten wir
+                unsere Kunden für die Zukunft. Um sie in Sachen Digitalisierung
+                und Regulierung wettbewerbsfähig zu halten, setzen wir die
+                Zirkelspitze dort an, wo unsere Kunden ihr Geschäft
+                weiterentwickeln wollen. Denn fundierte Beratung soll Angebote
+                kundenzentrierter, Prozesse wirksamer, Produkte innovativer und
+                die Erfüllung regulatorischer Maßnahmen ressourceneffizienter
+                machen.
               </p>
             </div>
             <div className="col-md-5">
@@ -79,16 +77,15 @@ class BeratungsfelderFach extends React.Component {
             <div className="col-md-3" />
             <div className="col-md-6">
               <p className="text-left margin-40-top margin-xs-40-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Weil wir lösungsorientierte Experten für Kredit und Wertpapier
+                sind, aber auch Unternehmer durch und durch, packen wir
+                Projektvorhaben mit fachlichem Expertenwissen und dazu mit
+                technologischem Know-how an. Unsere fachliche Erfahrung
+                erweitern wir also um das Verständnis komplexer Prozesse und der
+                Abhängigkeiten zur Technologie. Mit klassischen und agilen
+                Vorgehensweisen kennen wir uns bestens aus, und wir nehmen die
+                Hürden, die bei der Umsetzung von Lösungen in die Prozesse und
+                IT-Landschaften unserer Kunden entstehen.
               </p>
             </div>
             <div className="col-md-3" />

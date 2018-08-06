@@ -41,16 +41,18 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 Wie wir Geschäftsmodelle gestalten und optimieren
               </h2>
               <h4 className="h4 margin-40-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Für uns steckt in guter Managementberatung auch
+                »Zeitgeistberatung«. Schließlich beleuchten wir für Banken und
+                Asset Manager, ob und wie sich Trends auf deren Geschäft
+                auswirken. Unsere Kooperation mit Spitzeninstituten, die daraus
+                resultierende Marktkenntnis und unsere ohnehin enorme Passion
+                für die Finanzindustrie lässt uns genau erkennen, welche
+                Fragestellungen es wert sind, unter die Lupe genommen zu werden.
+                Oftmals fertigen wir eigene Studien und Foren an. So gewinnen
+                wir Erkenntnisse, die uns wiederum helfen, Chancen und Nutzen zu
+                bewerten und sie Risiken und Restriktionen gegenüberzustellen.
+                Aus dem Ergebnis leiten wir für unsere Kunden realistische,
+                sichere Handlungsempfehlungen ab.
               </h4>
             </div>
             <div className="col-md-4">
@@ -61,18 +63,14 @@ class BeratungsfelderManagementTemplate extends React.Component {
         <div className="container margin-120-top margin-xs-40-top">
           <div className="row">
             <div className="col-md-6">
-              <h2 className="h2">TrendThemen</h2>
+              <h2 className="h2">Trends sind unser Ding</h2>
               <p className="margin-20-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Wir unterstützen unsere Kunden in ihrem Ziel,
+                Digitalisierungsstrategien zu entwickeln, und begleiten sie auf
+                ihrem Weg zur agilen Organisation. Themen, mit denen wir uns im
+                Kontext der Digitalisierung aktuell beschäftigen, sind etwa
+                digitale Transformation, Machine Learning, Unbundling Banks und
+                Blockchain.
               </p>
               <div className="margin-120-top margin-xs-40-top">
                 <ImageWrapper
@@ -118,18 +116,13 @@ class BeratungsfelderManagementTemplate extends React.Component {
         <div className="container">
           <div className="row margin-80-top">
             <div className="col-md-6">
-              <h2 className="h2"> Lorem Ipsum dolor</h2>
+              <h2 className="h2">Die Zukunft wird gut </h2>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Wir treiben die Organisationsentwicklung voran, übernehmen das
+                Programmmanagement und führen Auswahlverfahren durch. Mit
+                objektiven, nachhaltigen Entscheidungsgrundlagen nehmen wir es
+                gut und gerne in die Hand, die Effektivität und Effizienz
+                unserer Kunden entscheidend zu steigern.
               </p>
             </div>
             <div className="col-md-6">
