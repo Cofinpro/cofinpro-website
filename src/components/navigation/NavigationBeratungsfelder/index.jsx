@@ -10,10 +10,10 @@ class NavigationBeratungsfelder extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const listItems = [
-      { text: 'Management', path: 'management' },
-      { text: 'Fachberatung Kredit', path: 'kredit' },
-      { text: 'Fachberatung Wertpapier', path: 'wertpapier' },
-      { text: 'Technologieberatung', path: 'technologie' },
+      { text: 'Management', path: 'managementberatung' },
+      { text: 'Fachberatung Kredit', path: 'fachberatung-kredit' },
+      { text: 'Fachberatung Wertpapier', path: 'fachberatung-wertpapier' },
+      { text: 'Technologieberatung', path: 'technologieberatung' },
       { text: 'Digitalisierung', path: 'digitalisierung' },
     ].map(data => (
       <div key={data.path} className="col-sm text-md-center filter-button">

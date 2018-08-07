@@ -2,7 +2,7 @@ import React from 'react'
 
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import RelevanteBeratungsfelder from '../RelevanteBeratungsfelder'
+import RelevanteBeratungsfelder from '../../fokusthemen'
 
 import {
   ImageWrapper,

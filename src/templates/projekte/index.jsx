@@ -6,6 +6,8 @@ import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import ToggleWithButton from '../../components/buttons/ToggleWithButton'
 
+import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -187,6 +189,11 @@ class ProjekteUebersicht extends React.Component {
             </div>
           </div>
         </div>
+
+        <NavigationBeratungsfelder
+          urlPrefix="projekte"
+          styleClass="margin-80-top"
+        />
 
         <Layout
           projects={firstShowProjects}

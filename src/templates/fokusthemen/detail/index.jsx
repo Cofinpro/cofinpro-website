@@ -2,7 +2,7 @@ import React from 'react'
 
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import RelevanteBeratungsfelder from '../RelevanteBeratungsfelder'
+import RelevanteBeratungsfelder from '../../fokusthemen'
 
 import {
   ImageWrapper,
@@ -11,6 +11,8 @@ import {
 
 class FokusthemenDetailTeamplate extends React.Component {
   render() {
+    console.log(this.props.data)
+
     const graphQlResult = this.props.data.contentfulFokusthema
 
     return (
