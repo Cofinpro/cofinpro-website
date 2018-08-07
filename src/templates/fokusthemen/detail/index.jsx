@@ -11,8 +11,6 @@ import {
 
 class FokusthemenDetailTeamplate extends React.Component {
   render() {
-    console.log(this.props.data)
-
     const graphQlResult = this.props.data.contentfulFokusthema
 
     return (

@@ -25,9 +25,9 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       `./src/templates/fokusthemen/detail/index.jsx`
     )
 
-    console.log(result)
-
     _.each(result.data.allContentfulFokusthema.edges, edge => {
+      console.log(edge.node.id)
+
       createPage({
         path: `/fokusthemen/${edge.node.url}`,
         component: slash(template),
