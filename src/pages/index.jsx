@@ -132,7 +132,7 @@ class Startseite extends React.Component {
       },
     }
 
-    const fokusthemen = []
+    const fokusthemen = this.props.data.allContentfulSeiteFokusthema.edges
 
     for (let i = 0; i < 18; ++i) {
       fokusthemen.push('Fokusthema ' + i)
@@ -285,7 +285,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 1"
+                        text={'### ' + fokusthemen[0].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -308,7 +308,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 2"
+                        text={'### ' + fokusthemen[1].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -330,7 +330,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 3"
+                        text={'### ' + fokusthemen[2].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -357,7 +357,9 @@ class Startseite extends React.Component {
                       }}
                       overlayElement={
                         <ContentfulMarkdownText
-                          text={'### ' + item}
+                          text={
+                            '### ' + fokusthemen[i].node.uberschriftGanzOben
+                          }
                           styleClasses="h4"
                         />
                       }
@@ -391,7 +393,7 @@ class Startseite extends React.Component {
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 4"
+                    text={'### ' + fokusthemen[3].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -413,7 +415,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 5"
+                        text={'### ' + fokusthemen[4].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -434,7 +436,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 6"
+                        text={'### ' + fokusthemen[5].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -459,7 +461,7 @@ class Startseite extends React.Component {
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 7"
+                    text={'### ' + fokusthemen[6].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -487,7 +489,7 @@ class Startseite extends React.Component {
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 8"
+                    text={'### ' + fokusthemen[7].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -506,7 +508,7 @@ class Startseite extends React.Component {
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 9"
+                    text={'### ' + fokusthemen[8].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -527,7 +529,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 10"
+                        text={'### ' + fokusthemen[9].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
