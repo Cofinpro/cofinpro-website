@@ -28,13 +28,17 @@ class BeratungsfelderTechnologie extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/technologie/technologieberatung.png'
-                }
-              />
-              <h1 className="h1">Technologieberatung</h1>
+              <div className="row margin-20-top">
+                <div className="col-md-4">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={
+                      '/img/beratungsfelder/technologie/technologieberatung.png'
+                    }
+                  />
+                </div>
+              </div>
+              <h1 className="h1 margin-20-top">Technologieberatung</h1>
               <h2 className="h2 margin-20-top">
                 Wie sich IT und Zukunft<br />verbinden lassen
               </h2>

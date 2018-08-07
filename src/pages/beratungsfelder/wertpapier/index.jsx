@@ -28,11 +28,15 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <img
-                src="http://via.placeholder.com/128x132"
-                alt="placeholder"
-                className="img-fluid margin-20-bottom margin-20-top"
-              />
+              <div className="row">
+                <div className="col-md-4">
+                  <img
+                    src="http://via.placeholder.com/128x132"
+                    alt="placeholder"
+                    className="img-fluid margin-20-bottom margin-20-top"
+                  />
+                </div>
+              </div>
               <h1 className="h1">Wertpapiergeschäft</h1>
               <h2 className="h2 margin-20-top">
                 Unsere Fachberatung im Wertpapiergeschäft

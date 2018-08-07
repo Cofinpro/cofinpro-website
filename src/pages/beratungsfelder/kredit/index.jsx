@@ -30,20 +30,19 @@ class BeratungsfelderKredit extends React.Component {
         <div className="container margin-40-top">
           <div className="row">
             <div className="col-md-8">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 128,
-                  height: 132,
-                }}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="container margin-40-top">
-          <div className="row">
-            <div className="col-8">
-              <h1 className="h1">Kreditgeschäft</h1>
+              <div className="row">
+                <div className="col-md-4">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    source={{
+                      width: 128,
+                      height: 132,
+                    }}
+                  />
+                </div>
+              </div>
+
+              <h1 className="h1 margin-20-top">Kreditgeschäft</h1>
               <h2 className="h2 margin-20-top d-none d-md-block">
                 Unsere Fachberatung im Kreditgeschäft
               </h2>
@@ -90,7 +89,7 @@ class BeratungsfelderKredit extends React.Component {
           </div>
         </div>
         <div className="container">
-          <div className="row margin-140-top margin-xs-100-top">
+          <div className="row margin-140-top margin-xs-60-top">
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper

@@ -31,9 +31,7 @@ class BeratungsfelderFach extends React.Component {
             <div className="col-md-2">
               <ImageWrapper
                 sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/fach/20180718-cofinpro-stills19078-1.jpg'
-                }
+                source={'/img/beratungsfelder/fach/fachberatung.png'}
               />
             </div>
           </div>
