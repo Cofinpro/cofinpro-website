@@ -12,7 +12,16 @@ class ProjekteUebersicht extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    var projects = ['test 1', 'test 2', 'test 3', 'test 4', 'test 5', 'test 6', 'test 7', 'test 8']
+    var projects = [
+      'test 1',
+      'test 2',
+      'test 3',
+      'test 4',
+      'test 5',
+      'test 6',
+      'test 7',
+      'test 8',
+    ]
 
     var bigSmallSwitch = false
 
