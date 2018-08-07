@@ -3,12 +3,12 @@ const path = require(`path`)
 const slash = require(`slash`)
 
 exports.create = function(graphql, createPage, createRedirect, callback) {
-  console.log('start graphql query: allContentfulSeiteFokusthema.')
+  console.log('start graphql query: allContentfulFokusthema.')
 
   graphql(
     `
       {
-        allContentfulSeiteFokusthema {
+        allContentfulFokusthema {
           edges {
             node {
               id
@@ -19,13 +19,13 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       }
     `
   ).then(result => {
-    console.log('end graphql query: allContentfulSeiteFokusthema.')
+    console.log('end graphql query: allContentfulFokusthema.')
 
     const template = path.resolve(
       `./src/templates/fokusthemen/detail/index.jsx`
     )
 
-    _.each(result.data.allContentfulSeiteFokusthema.edges, edge => {
+    _.each(result.data.allContentfulFokusthema.edges, edge => {
       createPage({
         path: `/fokusthemen/${edge.node.url}`,
         component: slash(template),

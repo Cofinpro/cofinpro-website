@@ -11,7 +11,7 @@ import {
 
 class FokusthemenDetailTeamplate extends React.Component {
   render() {
-    const graphQlResult = this.props.data.contentfulSeiteFokusthema
+    const graphQlResult = this.props.data.contentfulFokusthema
 
     return (
       <div>
@@ -169,7 +169,7 @@ export default FokusthemenDetailTeamplate
 
 export const pageQuery = graphql`
   query fokusthemaQuery($id: String!) {
-    contentfulSeiteFokusthema(id: { eq: $id }) {
+    contentfulFokusthema(id: { eq: $id }) {
       url
       fokusthema
       uberschriftGanzOben
