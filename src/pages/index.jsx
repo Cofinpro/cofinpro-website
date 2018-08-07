@@ -12,6 +12,7 @@ import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_ICON_IMAGE,
+  SOURCE_TYP_SHARP,
 } from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
@@ -131,7 +132,7 @@ class Startseite extends React.Component {
       },
     }
 
-    const fokusthemen = []
+    const fokusthemen = this.props.data.allContentfulSeiteFokusthema.edges
 
     for (let i = 0; i < 18; ++i) {
       fokusthemen.push('Fokusthema ' + i)
@@ -149,11 +150,8 @@ class Startseite extends React.Component {
           <div className="row">
             <div className="col-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.heroImageSharp}
               />
             </div>
           </div>
@@ -287,7 +285,7 @@ class Startseite extends React.Component {
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 1"
+                        text={'### ' + fokusthemen[0].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -304,18 +302,19 @@ class Startseite extends React.Component {
                     source={'Anlegerschutz'}
                     style={{
                       backgroundImage: '',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--grey',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--grey',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 2"
+                        text={'### ' + fokusthemen[1].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
                   />
                 </div>
+                <div className="col-2" />
               </div>
               <div className="row">
                 <div className="col-12">
@@ -325,13 +324,13 @@ class Startseite extends React.Component {
                     style={{
                       backgroundImage: '',
                       container: 'margin-60-top margin-120-bottom',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--orange',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--orange',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 3"
+                        text={'### ' + fokusthemen[2].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -358,7 +357,9 @@ class Startseite extends React.Component {
                       }}
                       overlayElement={
                         <ContentfulMarkdownText
-                          text={'### ' + item}
+                          text={
+                            '### ' + fokusthemen[i].node.uberschriftGanzOben
+                          }
                           styleClasses="h4"
                         />
                       }
@@ -386,13 +387,13 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--grey',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--grey',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 4"
+                    text={'### ' + fokusthemen[3].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -408,13 +409,13 @@ class Startseite extends React.Component {
                     style={{
                       backgroundImage: '',
                       container: '',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--pink',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--pink',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 5"
+                        text={'### ' + fokusthemen[4].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -429,13 +430,13 @@ class Startseite extends React.Component {
                     style={{
                       backgroundImage: '',
                       container: '',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--yellow',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--yellow',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 6"
+                        text={'### ' + fokusthemen[5].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -454,20 +455,20 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--orange',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--orange',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 7"
+                    text={'### ' + fokusthemen[6].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
               />
             </div>
             <div className="col-4">
-              <p className="h3">
+              <p className="h3 text-md-normal">
                 „tibusda volorum quiam, volenimus aut esti asseque velecatus.
                 Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
                 nectibus.“
@@ -482,13 +483,13 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--yellow',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--yellow',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 8"
+                    text={'### ' + fokusthemen[7].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -501,13 +502,13 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--pink',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--pink',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
-                    text="### Fokusthema 9"
+                    text={'### ' + fokusthemen[8].node.uberschriftGanzOben}
                     styleClasses="h4"
                   />
                 }
@@ -520,14 +521,15 @@ class Startseite extends React.Component {
                     source={'Anlegerschutz'}
                     style={{
                       backgroundImage: '',
-                      container: 'margin-60-top margin-120-bottom',
+                      container:
+                        'margin-60-top margin-120-bottom margin-md-0-top margin-md-0-bottom',
                       iconColor: 'icon-image--blue',
                       overlay: '',
                       border: 'border-img-svg--blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
-                        text="### Fokusthema 10"
+                        text={'### ' + fokusthemen[9].node.uberschriftGanzOben}
                         styleClasses="h4"
                       />
                     }
@@ -563,6 +565,20 @@ export default Startseite
 
 export const pageQuery = graphql`
   query StartseiteQuery {
+    allContentfulSeiteFokusthema {
+      edges {
+        node {
+          id
+          url
+          uberschriftGanzOben
+          icon
+          fokusthema
+          headline {
+            headline
+          }
+        }
+      }
+    }
     iconVorteilLinksSharp: imageSharp(
       id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }
     ) {
@@ -581,6 +597,13 @@ export const pageQuery = graphql`
       id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }
     ) {
       sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    heroImageSharp: imageSharp(
+      id: { regex: "/20180718-cofinpro-stills19468/" }
+    ) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
         ...GatsbyImageSharpSizes
       }
     }
