@@ -92,11 +92,8 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 200,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/beratungsfelder/kredit/fb1.png'}
               />
             </div>
           </div>

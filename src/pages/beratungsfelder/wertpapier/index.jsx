@@ -73,11 +73,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 100,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/beratungsfelder/wertpapier/fb2.png'}
               />
             </div>
           </div>
@@ -85,11 +82,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Investmentprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 100,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/beratungsfelder/wertpapier/fb3.png'}
               />
             </div>
           </div>
