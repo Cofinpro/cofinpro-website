@@ -32,31 +32,36 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-4">
-                  <ImageWrapper sourceType={SOURCE_TYP_BOOTSTRAP} source={''} />
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/beratungsfelder/fach/fachberatung.png'}
+                  />
                 </div>
               </div>
-
-              <h1 className="h1 margin-20-top">Kreditgeschäft</h1>
-              <h2 className="h2 margin-20-top d-none d-md-block">
-                Unsere Fachberatung im Kreditgeschäft
-              </h2>
-              <p className="d-block d-md-none">
-                Unsere Fachberatung im Kreditgeschäft
-              </p>
-              <h4 className="h4 margin-40-top d-none d-md-block">
-                Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir
-                Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer
-                Kundenorientierung und der Bewältigung der Anforderungen aus der
-                Regulatorik.
-              </h4>
-              <p className="d-block d-md-none">
-                Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir
-                Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer
-                Kundenorientierung und der Bewältigung der Anforderungen aus der
-                Regulatorik.
-              </p>
+              <div className="row margin-20-top">
+                <div className="col-md-12">
+                  <h1 className="h1">Kreditgeschäft</h1>
+                  <h2 className="h2 margin-20-top d-none d-md-block">
+                    Unsere Fachberatung im Kreditgeschäft
+                  </h2>
+                  <p className="d-block d-md-none">
+                    Unsere Fachberatung im Kreditgeschäft
+                  </p>
+                  <h4 className="h4 margin-40-top d-none d-md-block">
+                    Mit Lösungen für das Kreditgeschäft von morgen unterstützen
+                    wir Sie im steigenden Wettbewerb, in der Ausrichtung zu
+                    zeitgemäßer Kundenorientierung und der Bewältigung der
+                    Anforderungen aus der Regulatorik.
+                  </h4>
+                  <p className="d-block d-md-none">
+                    Mit Lösungen für das Kreditgeschäft von morgen unterstützen
+                    wir Sie im steigenden Wettbewerb, in der Ausrichtung zu
+                    zeitgemäßer Kundenorientierung und der Bewältigung der
+                    Anforderungen aus der Regulatorik.
+                  </p>
+                </div>
+              </div>
             </div>
-
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
