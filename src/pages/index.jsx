@@ -565,14 +565,14 @@ export default Startseite
 
 export const pageQuery = graphql`
   query StartseiteQuery {
-    allContentfulSeiteFokusthema {
+    allContentfulFokusthema {
       edges {
         node {
           id
           url
           uberschriftGanzOben
           icon
-          fokusthema
+          beratungsfelder
           headline {
             headline
           }
