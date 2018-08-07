@@ -47,7 +47,7 @@ $h4-font-size: 1.5rem;
 $h5-font-size: 1.125rem;
 $h6-font-size: 0.875rem;
 $h1-font-size-sm: 1.5rem;
-$h1-font-size-md: 3rem;
+$h1-font-size-md: 2.5rem;
 $h2-font-size-sm: 1.5rem;
 $h2-font-size-md: 2.25rem;
 $h4-font-size-sm: 1.125rem;
@@ -63,14 +63,14 @@ $grid-breakpoints: (
   xs: 0,
   sm: 576px,
   md: 768px,
-  lg: 1083px,
+  lg: 992px,
   xl: 1200px
 );
 $container-max-widths: (
   sm: 540px,
-  md: 820px,
-  lg: 1160px,
-  xl: 1240px
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
 );
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
 main {
@@ -637,6 +637,26 @@ a:hover {
   margin-top: -80px;
 }
 
+.negative-margin-md-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: -40px;
+  }
+}
+
+.negative-margin-60-top {
+  margin-top: -60px;
+}
+
+.negative-margin-40-top {
+  margin-top: -40px;
+}
+
 .margin-120-bottom {
   margin-bottom: 120px;
   @include media-breakpoint-only(xs) {
@@ -654,6 +674,18 @@ a:hover {
   }
   @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
+  }
+}
+
+.margin-md-0-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-bottom: 0px;
   }
 }
 
@@ -919,6 +951,18 @@ a:hover {
   }
 }
 
+.margin-md-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 0px;
+  }
+}
+
 .margin-20-left {
   margin-left: 20px;
 }
@@ -1023,6 +1067,13 @@ a:hover {
   font-size: 18px;
 }
 
+.text-md-normal,
+.text-md-normal > p {
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-lg;
+  }
+}
+
 svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(xs) {
     visibility: hidden;
@@ -1041,12 +1092,10 @@ svg image[href$='img_20.jpg'] {
   margin-left: 0;
   padding-right: 0;
   padding-left: 0;
-
   .row {
     margin-right: 0;
     margin-left: 0;
   }
-
   .row > .col,
   .row > [class*='col-'] {
     padding-right: 0;
@@ -1060,12 +1109,10 @@ svg image[href$='img_20.jpg'] {
     margin-left: 0;
     padding-right: 0;
     padding-left: 0;
-
     .row {
       margin-right: 0;
       margin-left: 0;
     }
-
     .row > .col,
     .row > [class*='col-'] {
       padding-right: 0;
@@ -1077,12 +1124,10 @@ svg image[href$='img_20.jpg'] {
     margin-left: 0;
     padding-right: 0;
     padding-left: 0;
-
     .row {
       margin-right: 0;
       margin-left: 0;
     }
-
     .row > .col,
     .row > [class*='col-'] {
       padding-right: 0;
@@ -1109,4 +1154,4 @@ svg image[href$='img_20.jpg'] {
 
 .img-svg {
   width: 100% \9;
-} 
+}

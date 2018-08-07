@@ -4,6 +4,20 @@ import PropTypes from 'prop-types'
 
 import ContentfulImage from '../../images/ContentfulImage'
 
+import { ReactComponent as AnlegerschutzIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/anlegerschutz.svg'
+import { ReactComponent as BlockchainIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/blockchain.svg'
+import { ReactComponent as BonitaetspruefungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/bonitaetspruefung.svg'
+import { ReactComponent as DatagovernanceIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/datagovernance.svg'
+import { ReactComponent as DigitalisierungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/digitalisierung.svg'
+import { ReactComponent as KundenbindungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kundenbindung.svg'
+import { ReactComponent as KundenorientiertIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kundenorientiert.svg'
+import { ReactComponent as MachinelearningIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/machinelearning.svg'
+import { ReactComponent as PortfolioIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/portfolio.svg'
+import { ReactComponent as RegulierungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/regulierung.svg'
+import { ReactComponent as SettlementIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/settlement.svg'
+import { ReactComponent as SteuergesetzgebungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/steuergesetzgebung.svg'
+import { ReactComponent as UnbundlingbanksIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/unbundlingbanks.svg'
+
 import './style.scss'
 
 const SOURCE_TYP_CONTENTFUL = 'Contentful'
@@ -18,16 +32,55 @@ class ImageWrapper extends React.Component {
   render() {
     function IconImage(props) {
       return (
-        <div className={'svg-image ' + props.style.border}>
-          <img
-            src={'/img/filler_fokus.png'}
-            className={'img-fluid ' + props.style.backgroundImage}
-          />
-          <div className={'icon-image ' + props.style.iconColor}>
-            {props.source}
+        <div
+          className={
+            'image-container ' + props.style.container !== undefined
+              ? props.style.container
+              : ''
+          }
+        >
+          <div className={'svg-image position-relative ' + props.style.border}>
+            <img
+              src={'/img/filler_fokus.png'}
+              className={'img-fluid ' + props.style.backgroundImage}
+            />
+            <div className={'icon-image ' + props.style.iconColor}>
+              <AnlegerschutzIcon />
+            </div>
+            <div
+              className={
+                'image-overlay-top-left text-dark' + props.style.overlay
+              }
+            >
+              {overlayElement}
+            </div>
           </div>
-          <div className={'image-overlay-top-left ' + props.style.overlay}>
-            {overlayElement}
+        </div>
+      )
+    }
+
+    function SharpImage(props) {
+      var style = {}
+      if (typeof props.style !== 'undefined') {
+        style = props.style
+      }
+
+      return (
+        <div
+          className={
+            'image-container ' + style.container !== undefined
+              ? style.container
+              : ''
+          }
+        >
+          <div className={'svg-image position-relative ' + style.border}>
+            <Img sizes={props.source.sizes} className={props.styleClasses} />
+            {props.backgroundOverlay}
+            {props.overlayElement !== undefined && (
+              <div className={'image-overlay-top-left ' + style.overlay}>
+                {props.overlayElement}
+              </div>
+            )}
           </div>
         </div>
       )
@@ -69,7 +122,7 @@ class ImageWrapper extends React.Component {
     if (sourceType === SOURCE_TYP_CONTENTFUL) {
       return <ContentfulImage imageFile={source} styleClasses={styleClasses} />
     } else if (sourceType === SOURCE_TYP_SHARP) {
-      return <Img sizes={source.sizes} className={styleClasses} />
+      return <SharpImage {...this.props} />
     } else if (sourceType === SOURCE_TYP_BOOTSTRAP) {
       return <BootstrapImage {...this.props} />
     } else if (sourceType === SOURCE_TYP_PLACEHOLDER) {
@@ -123,6 +176,7 @@ ImageWrapper.propTypes = {
     SOURCE_TYP_PLACEHOLDER,
     SOURCE_TYP_ICON_IMAGE,
   ]),
+  backgroundOverlay: PropTypes.any,
   overlayElement: PropTypes.any,
   styleClasses: PropTypes.string,
 }

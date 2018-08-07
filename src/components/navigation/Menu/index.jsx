@@ -80,7 +80,7 @@ class Menu extends React.Component {
       },
       {
         name: 'PROJEKTE',
-        link: '/projekte',
+        link: '/projekte/managementberatung',
         pattern: '/projekte.*',
       },
       {
@@ -102,7 +102,7 @@ class Menu extends React.Component {
     return (
       <div className="collapse navbar-collapse main-navigation-bar" id={id}>
         <div>
-          <Link to="/" className="navbar-brand d-none d-lg-block">
+          <Link to="/" className="navbar-brand d-none d-xl-block">
             <img
               className="cofinpro-logo-startseite"
               alt="Nächstes Bild"
@@ -110,7 +110,7 @@ class Menu extends React.Component {
             />
           </Link>
         </div>
-        <div className="d-block d-lg-none text-secondary margin-20-bottom">
+        <div className="d-block d-xl-none text-secondary margin-20-bottom">
           <p className="h5 d-inline">MENÜ</p>
           <button
             id="close-button-menu"

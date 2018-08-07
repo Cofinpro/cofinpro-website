@@ -1,0 +1,19 @@
+$primary: #ec7b1a !default;
+$blue: #a5c5e8 !default;
+
+.filter {
+  color: $blue;
+}
+
+.filter-button-group {
+  border: 1px solid $blue;
+}
+
+.filter-button {
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  color: $primary;
+  border-bottom: 1px solid $primary;
+}

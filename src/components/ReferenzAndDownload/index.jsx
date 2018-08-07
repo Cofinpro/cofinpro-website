@@ -47,7 +47,7 @@ class ReferenzAndDownload extends React.Component {
           </div>
           <div className="row margin-120-top margin-xs-100">
             <div className="col-md-6">
-              <h2 className="h2"> Downloads </h2>
+              <h2 className="h2"> Medien </h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
                 diam nonumy eirmod tempor invidunt ut labore et dolore magna
