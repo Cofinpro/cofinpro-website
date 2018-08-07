@@ -14,11 +14,12 @@ class RelevanteBeratungsfelder extends React.Component {
         <div className="">
           <p className="text-size-14">RELEVANTE BERATUNGSFELDER</p>
 
-          {beratungsfelder.map((beratungsfeld, index) => (
-            <p key={index} className="text-size-18">
-              {beratungsfeld}
-            </p>
-          ))}
+          {beratungsfelder !== undefined &&
+            beratungsfelder.map((beratungsfeld, index) => (
+              <p key={index} className="text-size-18">
+                {beratungsfeld}
+              </p>
+            ))}
         </div>
       </div>
     )
