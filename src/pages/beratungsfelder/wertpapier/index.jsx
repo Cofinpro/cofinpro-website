@@ -5,6 +5,7 @@ import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import {
   ImageWrapper,
+  SOURCE_TYP_BOOTSTRAP,
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
@@ -16,11 +17,10 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/wertpapier/20180718-cofinpro-stills19149.jpg'
+                }
               />
             </div>
           </div>

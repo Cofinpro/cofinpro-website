@@ -6,6 +6,7 @@ import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
+  SOURCE_TYP_BOOTSTRAP,
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
@@ -17,11 +18,10 @@ class BeratungsfelderKredit extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={
+                  '/img/beratungsfelder/kredit/20180718-cofinpro-stills19124 1.jpg'
+                }
               />
             </div>
           </div>
@@ -32,13 +32,7 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-4">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 128,
-                      height: 132,
-                    }}
-                  />
+                  <ImageWrapper sourceType={SOURCE_TYP_BOOTSTRAP} source={''} />
                 </div>
               </div>
 
