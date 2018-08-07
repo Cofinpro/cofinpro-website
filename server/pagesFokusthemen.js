@@ -34,12 +34,6 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
         },
       })
 
-      createRedirect({
-        fromPath: `/fokusthemen/${edge.node.id}`,
-        redirectInBrowser: true,
-        toPath: `/fokusthemen/${edge.node.url}`,
-      })
-
       console.log(`created page /fokusthemen/${edge.node.url}.`)
     })
 
