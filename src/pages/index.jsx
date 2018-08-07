@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 import LinkButton from '../components/buttons/LinkButton'
 import ToggleButton from '../components/buttons/ToggleButton'
@@ -132,7 +133,7 @@ class Startseite extends React.Component {
       },
     }
 
-    const fokusthemen = this.props.data.allContentfulSeiteFokusthema.edges
+    const fokusthemen = this.props.data.allContentfulFokusthema.edges
 
     for (let i = 0; i < 18; ++i) {
       fokusthemen.push('Fokusthema ' + i)
@@ -274,22 +275,26 @@ class Startseite extends React.Component {
                   </p>
                 </div>
                 <div className="col-12 d-none d-md-block align-self-end">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text={'### ' + fokusthemen[0].node.uberschriftGanzOben}
-                        styleClasses="h4"
-                      />
-                    }
-                  />
+                  <Link to={'/fokusthemen/' + fokusthemen[0].node.url}>
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_ICON_IMAGE}
+                      source={'Anlegerschutz'}
+                      style={{
+                        backgroundImage: '',
+                        iconColor: 'icon-image--blue',
+                        overlay: '',
+                        border: 'border-img-svg--blue',
+                      }}
+                      overlayElement={
+                        <ContentfulMarkdownText
+                          text={
+                            '### ' + fokusthemen[0].node.uberschriftGanzOben
+                          }
+                          styleClasses="h4"
+                        />
+                      }
+                    />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -297,22 +302,26 @@ class Startseite extends React.Component {
               <div className="row">
                 <div className="col-2" />
                 <div className="col-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      iconColor: 'icon-image--grey',
-                      overlay: '',
-                      border: 'border-img-svg--grey',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text={'### ' + fokusthemen[1].node.uberschriftGanzOben}
-                        styleClasses="h4"
-                      />
-                    }
-                  />
+                  <Link to={'/fokusthemen/' + fokusthemen[1].node.url}>
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_ICON_IMAGE}
+                      source={'Anlegerschutz'}
+                      style={{
+                        backgroundImage: '',
+                        iconColor: 'icon-image--grey',
+                        overlay: '',
+                        border: 'border-img-svg--grey',
+                      }}
+                      overlayElement={
+                        <ContentfulMarkdownText
+                          text={
+                            '### ' + fokusthemen[1].node.uberschriftGanzOben
+                          }
+                          styleClasses="h4"
+                        />
+                      }
+                    />
+                  </Link>
                 </div>
                 <div className="col-2" />
               </div>

@@ -171,7 +171,7 @@ export const pageQuery = graphql`
   query fokusthemaQuery($id: String!) {
     contentfulFokusthema(id: { eq: $id }) {
       url
-      fokusthema
+      beratungsfelder
       uberschriftGanzOben
       headline {
         headline

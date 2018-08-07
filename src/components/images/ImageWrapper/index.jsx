@@ -47,7 +47,11 @@ class ImageWrapper extends React.Component {
             <div className={'icon-image ' + props.style.iconColor}>
               <AnlegerschutzIcon />
             </div>
-            <div className={'image-overlay-top-left ' + props.style.overlay}>
+            <div
+              className={
+                'image-overlay-top-left text-dark' + props.style.overlay
+              }
+            >
               {overlayElement}
             </div>
           </div>
