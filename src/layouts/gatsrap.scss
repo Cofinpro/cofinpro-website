@@ -669,6 +669,18 @@ a:hover {
   }
 }
 
+.margin-md-0-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-bottom: 0px;
+  }
+}
+
 .margin-80-bottom {
   margin-bottom: 80px;
 }
@@ -928,6 +940,18 @@ a:hover {
   }
   @include media-breakpoint-only(xl) {
     margin-top: 20px;
+  }
+}
+
+.margin-md-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 0px;
   }
 }
 

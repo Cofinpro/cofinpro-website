@@ -4,6 +4,8 @@ import Link from 'gatsby-link'
 import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
+import ToggleWithButton from '../../components/buttons/ToggleWithButton'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -12,35 +14,10 @@ import {
 
 class ProjekteUebersicht extends React.Component {
   render() {
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
-    var bigSmallSwitch = false
-
-    var id = this.props.pathContext.id
-    var title = this.props.pathContext.title
-    var description = this.props.pathContext.description
-    var projects = this.props.pathContext.projects
-    var backgroundImages = this.props.pathContext.stockImages
-
-    return (
-      <div>
-        <div className="container padding-60-top padding-xs-20-top">
-          <div className="row">
-            <div className="col-12 col-md-6">
-              <h1 className="h1">{title}</h1>
-              <p className="h4 bold-font d-none d-md-block">{description}</p>
-              <p className="d-block d-md-none">{description}</p>
-            </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <RelevanteFokusthemen />
-            </div>
-          </div>
-        </div>
-
-        <div className="container margin-100-top margin-xs-60-top">
-          {projects.map(function(item, i) {
+    function Layout(props) {
+      return (
+        <div className={'container ' + props.style.container}>
+          {props.projects.map(function(item, i) {
             if (i % 2 === 0) {
               var firstColumnWidth
               var secondColumnWidth
@@ -141,12 +118,16 @@ class ProjekteUebersicht extends React.Component {
                               overlayElement={
                                 <div>
                                   <ContentfulMarkdownText
-                                    text={'### ' + projects[i + 1].ueberschrift}
+                                    text={
+                                      '### ' +
+                                      props.projects[i + 1].ueberschrift
+                                    }
                                     styleClasses="h4"
                                   />
                                   <ContentfulMarkdownText
                                     text={
-                                      ' ' + projects[i + 1].unterueberschrift
+                                      ' ' +
+                                      props.projects[i + 1].unterueberschrift
                                     }
                                     styleClasses="h5 text-md-normal"
                                   />
@@ -165,6 +146,64 @@ class ProjekteUebersicht extends React.Component {
               return null
             }
           })}
+        </div>
+      )
+    }
+
+    const pathPrefix =
+      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    var bigSmallSwitch = false
+
+    var id = this.props.pathContext.id
+    var title = this.props.pathContext.title
+    var description = this.props.pathContext.description
+    var projects = this.props.pathContext.projects
+    var backgroundImages = this.props.pathContext.stockImages
+
+    var firstShowProjects = []
+    var moreProjects = []
+
+    for (let i = 0; i < projects.length; ++i) {
+      if (i < 8) {
+        firstShowProjects.push(projects[i])
+      } else if (i >= 8 && i < 16) {
+        moreProjects.push(projects[i])
+      }
+    }
+
+    return (
+      <div>
+        <div className="container padding-60-top padding-xs-20-top">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h1 className="h1">{title}</h1>
+              <p className="h4 bold-font d-none d-md-block">{description}</p>
+              <p className="d-block d-md-none">{description}</p>
+            </div>
+            <div className="col-12 col-md-2" />
+            <div className="col-12 col-md-4">
+              <RelevanteFokusthemen />
+            </div>
+          </div>
+        </div>
+
+        <Layout
+          projects={firstShowProjects}
+          style={{ container: 'margin-100-top margin-xs-60-top' }}
+        />
+
+        <div className="collapse" id="collapse-more-projects">
+          <Layout projects={moreProjects} style={{ container: '' }} />
+        </div>
+
+        <div className="container margin-40-top">
+          <div className="row justify-content-center">
+            <ToggleWithButton
+              dataTargetId={'collapse-more-projects'}
+              show={true}
+            />
+          </div>
         </div>
       </div>
     )

@@ -5,6 +5,18 @@ import PropTypes from 'prop-types'
 import ContentfulImage from '../../images/ContentfulImage'
 
 import { ReactComponent as AnlegerschutzIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/anlegerschutz.svg'
+import { ReactComponent as BlockchainIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/blockchain.svg'
+import { ReactComponent as BonitaetspruefungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/bonitaetspruefung.svg'
+import { ReactComponent as DatagovernanceIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/datagovernance.svg'
+import { ReactComponent as DigitalisierungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/digitalisierung.svg'
+import { ReactComponent as KundenbindungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kundenbindung.svg'
+import { ReactComponent as KundenorientiertIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kundenorientiert.svg'
+import { ReactComponent as MachinelearningIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/machinelearning.svg'
+import { ReactComponent as PortfolioIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/portfolio.svg'
+import { ReactComponent as RegulierungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/regulierung.svg'
+import { ReactComponent as SettlementIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/settlement.svg'
+import { ReactComponent as SteuergesetzgebungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/steuergesetzgebung.svg'
+import { ReactComponent as UnbundlingbanksIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/unbundlingbanks.svg'
 
 import './style.scss'
 
@@ -45,7 +57,6 @@ class ImageWrapper extends React.Component {
 
     function SharpImage(props) {
       var style = {}
-      console.log(props)
       if (typeof props.style !== 'undefined') {
         style = props.style
       }

@@ -302,9 +302,9 @@ class Startseite extends React.Component {
                     source={'Anlegerschutz'}
                     style={{
                       backgroundImage: '',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--grey',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--grey',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -314,6 +314,7 @@ class Startseite extends React.Component {
                     }
                   />
                 </div>
+                <div className="col-2" />
               </div>
               <div className="row">
                 <div className="col-12">
@@ -323,9 +324,9 @@ class Startseite extends React.Component {
                     style={{
                       backgroundImage: '',
                       container: 'margin-60-top margin-120-bottom',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--orange',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--orange',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -384,9 +385,9 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--grey',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--grey',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -406,9 +407,9 @@ class Startseite extends React.Component {
                     style={{
                       backgroundImage: '',
                       container: '',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--pink',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--pink',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -427,9 +428,9 @@ class Startseite extends React.Component {
                     style={{
                       backgroundImage: '',
                       container: '',
-                      iconColor: 'icon-image--blue',
+                      iconColor: 'icon-image--yellow',
                       overlay: '',
-                      border: 'border-img-svg--blue',
+                      border: 'border-img-svg--yellow',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -452,9 +453,9 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--orange',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--orange',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -465,7 +466,7 @@ class Startseite extends React.Component {
               />
             </div>
             <div className="col-4">
-              <p className="h3">
+              <p className="h3 text-md-normal">
                 „tibusda volorum quiam, volenimus aut esti asseque velecatus.
                 Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
                 nectibus.“
@@ -480,9 +481,9 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--yellow',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--yellow',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -499,9 +500,9 @@ class Startseite extends React.Component {
                 style={{
                   backgroundImage: '',
                   container: '',
-                  iconColor: 'icon-image--blue',
+                  iconColor: 'icon-image--pink',
                   overlay: '',
-                  border: 'border-img-svg--blue',
+                  border: 'border-img-svg--pink',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -518,7 +519,8 @@ class Startseite extends React.Component {
                     source={'Anlegerschutz'}
                     style={{
                       backgroundImage: '',
-                      container: 'margin-60-top margin-120-bottom',
+                      container:
+                        'margin-60-top margin-120-bottom margin-md-0-top margin-md-0-bottom',
                       iconColor: 'icon-image--blue',
                       overlay: '',
                       border: 'border-img-svg--blue',
@@ -561,6 +563,20 @@ export default Startseite
 
 export const pageQuery = graphql`
   query StartseiteQuery {
+    allContentfulSeiteFokusthema {
+      edges {
+        node {
+          id
+          url
+          uberschriftGanzOben
+          icon
+          fokusthema
+          headline {
+            headline
+          }
+        }
+      }
+    }
     iconVorteilLinksSharp: imageSharp(
       id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }
     ) {
