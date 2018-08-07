@@ -3,7 +3,7 @@ import React from 'react'
 import ToggleButton from '../../components/buttons/ToggleButton'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import FokusthemenPreview from '../../components/layouts/FokusthemenPreview'
-import FokusthemenFilter from './filter'
+import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
 
 import {
   ImageWrapper,
@@ -36,7 +36,10 @@ class FokusthemenStartseite extends React.Component {
           </div>
         </div>
 
-        <FokusthemenFilter styleClass="margin-80-top" />
+        <NavigationBeratungsfelder
+          urlPrefix="fokusthemen"
+          styleClass="margin-80-top"
+        />
 
         <div className="container margin-60-top">
           <div className="row">

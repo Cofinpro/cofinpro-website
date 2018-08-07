@@ -3,17 +3,20 @@ $blue: #a5c5e8 !default;
 
 .filter {
   color: $blue;
+
+  & a {
+    color: $blue;
+  }
 }
 
 .filter-button-group {
+  padding: 20px;
   border: 1px solid $blue;
 }
 
 .filter-button {
-  cursor: pointer;
-}
-
-.filter-button:hover {
-  color: $primary;
-  border-bottom: 1px solid $primary;
+  & a:hover,
+  a:active {
+    color: $primary;
+  }
 }

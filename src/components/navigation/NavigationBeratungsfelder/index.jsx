@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import './filter.scss'
+import './style.scss'
 
-class FokusthemenFilter extends React.Component {
+class NavigationBeratungsfelder extends React.Component {
   render() {
-    const { styleClass } = this.props
+    const { styleClass, urlPrefix } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -16,8 +16,12 @@ class FokusthemenFilter extends React.Component {
       { text: 'Technologieberatung', path: 'technologie' },
       { text: 'Digitalisierung', path: 'digitalisierung' },
     ].map(data => (
-      <div key={data.path} className="col-sm filter-button">
-        <Link to={pathPrefix + data.path}>{data.text}</Link>
+      <div key={data.path} className="col-sm text-md-center filter-button">
+        <p>
+          <Link to={`${pathPrefix}/${urlPrefix}/${data.path}`}>
+            {data.text}
+          </Link>
+        </p>
       </div>
     ))
 
@@ -32,10 +36,12 @@ class FokusthemenFilter extends React.Component {
             </p>
           </div>
         </div>
-        <div className="row filter-button-group">{listItems}</div>
+        <div className="row justify-content-center filter-button-group">
+          {listItems}
+        </div>
       </div>
     )
   }
 }
 
-export default FokusthemenFilter
+export default NavigationBeratungsfelder
