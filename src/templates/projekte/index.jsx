@@ -93,7 +93,7 @@ class ProjekteUebersicht extends React.Component {
                       </div>
                     </div>
                   </div>
-                  {projects.length !== i + 2 && (
+                  {props.projects.length !== i + 1 && (
                     <div className="col-12 col-md-6">
                       <div className="row margin-xs-20-top justify-content-center">
                         <div className={'col-12 ' + secondColumnWidth}>
