@@ -56,8 +56,6 @@ exports.create = function(graphql, createPage, backgroundImages, callback) {
         '/' +
         edge.node.urlDerSeite
 
-      console.log(indexOfImage)
-
       createPage({
         path: '/projekte/' + pathPrefix,
         component: slash(template),

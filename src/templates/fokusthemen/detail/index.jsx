@@ -2,7 +2,6 @@ import React from 'react'
 
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import RelevanteBeratungsfelder from '../../fokusthemen'
 
 import {
   ImageWrapper,
@@ -28,12 +27,12 @@ class FokusthemenDetailTeamplate extends React.Component {
             </div>
             <div className="col-md-6" />
             <div className="col-md-4 d-md-block d-none">
-              <RelevanteBeratungsfelder
+              {/*<RelevanteBeratungsfelder
                 beratungsfelder={[
                   'Managementberatung',
                   'Fachberatung Wertpapiergeschäft',
                 ]}
-              />
+              />*/}
             </div>
           </div>
         </div>

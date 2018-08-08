@@ -15,10 +15,13 @@ class NavigationBeratungsfelder extends React.Component {
       { text: 'Fachberatung Wertpapier', path: 'fachberatung-wertpapier' },
       { text: 'Technologieberatung', path: 'technologieberatung' },
       { text: 'Digitalisierung', path: 'digitalisierung' },
-    ].map(data => (
+    ].map((data, i) => (
       <div key={data.path} className="col-sm text-md-center filter-button">
         <p>
-          <Link to={`${pathPrefix}/${urlPrefix}/${data.path}`}>
+          <Link
+            to={`${pathPrefix}/${urlPrefix}/${data.path}`}
+            activeClassName="active"
+          >
             {data.text}
           </Link>
         </p>
@@ -26,18 +29,27 @@ class NavigationBeratungsfelder extends React.Component {
     ))
 
     return (
-      <div className={'container filter ' + styleClass}>
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <h4>FILTER</h4>
-            <p>
-              Commolorrorro que dolupta consedigeni nime exera sunt rest
-              estenecti dolut que derspel ipiciminus restis diam nam est.
-            </p>
+      <div>
+        <div className={'container filter ' + styleClass}>
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h4>FILTER</h4>
+              <p>
+                Commolorrorro que dolupta consedigeni nime exera sunt rest
+                estenecti dolut que derspel ipiciminus restis diam nam est.
+              </p>
+            </div>
           </div>
         </div>
-        <div className="row justify-content-center filter-button-group">
-          {listItems}
+        <div className={'container'}>
+          <div className="row d-none d-md-flex justify-content-center filter-button-group">
+            {listItems}
+          </div>
+          <div className="row d-flex d-md-none justify-content-center">
+            <div className="col-12">
+              <div className="div filter-button-group">{listItems}</div>
+            </div>
+          </div>
         </div>
       </div>
     )

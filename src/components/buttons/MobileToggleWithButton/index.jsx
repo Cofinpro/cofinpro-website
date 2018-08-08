@@ -4,13 +4,18 @@ import ToggleButton from '../ToggleButton'
 
 class MobileToggleWithButton extends React.Component {
   render() {
-    const { text, path, dataTargetId, show } = this.props
+    const { text, path, dataTargetId, show, styleClasses } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-      <div className="d-block d-md-none col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
+      <div
+        className={
+          'd-block d-md-none col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom ' +
+          styleClasses
+        }
+      >
         <div
           style={{
             display: show ? 'block' : 'none',
