@@ -9,6 +9,8 @@ import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import FokusthemenPreview from '../components/layouts/FokusthemenPreview'
 import ThreeIconsWithLinks from '../components/layouts/ThreeIconsWithLinks'
 
+import FokusthemenLayout from '../components/layouts/FokusthemenLayout'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -133,16 +135,14 @@ class Startseite extends React.Component {
       },
     }
 
-    const fokusthemen = this.props.data.allContentfulFokusthema.edges
+    var fokusthemen = []
 
-    for (let i = 0; i < 18; ++i) {
-      fokusthemen.push('Fokusthema ' + i)
-    }
-
-    const testImageStyle = {
-      height: '250px',
-      width: '100%',
-      display: 'block',
+    for (
+      let i = 0;
+      i < this.props.data.allContentfulFokusthema.edges.length;
+      ++i
+    ) {
+      fokusthemen.push(this.props.data.allContentfulFokusthema.edges[i].node)
     }
 
     return (
@@ -255,275 +255,14 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-12 col-md-6 d-flex">
-              <div className="row">
-                <div className="col-12">
-                  <h2>Unsere Fokusthemen</h2>
-                  <p>
-                    Mit Teams aus Management-, Fach- und Technologieberatern
-                    unterstützen wir Banken und
-                    Kapitalverwaltungsgesellschaften, damit sie den
-                    unterschiedlichsten Herausforderungen gerecht werden. Hier
-                    möchten wir Ihnen einen Einblick in unser Leistungsspektrum
-                    geben, von der agilen Transformation oder dem Aufsatz von
-                    Effizienzsteigerungen über die Regulierung und
-                    Digitalisierung im Kredit- und Wertpapiergeschäft bis hin
-                    zum Design moderner Plattform-Architekturen und vielen
-                    Themen mehr.
-                  </p>
-                </div>
-                <div className="col-12 d-none d-md-block align-self-end">
-                  <Link to={'/fokusthemen/' + fokusthemen[0].node.url}>
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_ICON_IMAGE}
-                      source={'Anlegerschutz'}
-                      style={{
-                        container: '--blue-yellow',
-                      }}
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text={
-                            '### ' + fokusthemen[0].node.uberschriftGanzOben
-                          }
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="col-6 d-none d-md-block">
-              <div className="row">
-                <div className="col-2" />
-                <div className="col-8">
-                  <Link to={'/fokusthemen/' + fokusthemen[1].node.url}>
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_ICON_IMAGE}
-                      source={'Anlegerschutz'}
-                      style={{
-                        container: '--grey-orange',
-                      }}
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text={
-                            '### ' + fokusthemen[1].node.uberschriftGanzOben
-                          }
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </Link>
-                </div>
-                <div className="col-2" />
-              </div>
-              <div className="row">
-                <div className="col-12">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      container:
-                        'margin-60-top margin-120-bottom --orange-pink',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text={'### ' + fokusthemen[2].node.uberschriftGanzOben}
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row d-flex d-md-none">
-            {fokusthemen.map((item, i) => {
-              if (i < 3) {
-                return (
-                  <div className="col-12" key={'fokusthema-mobile-' + i}>
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_ICON_IMAGE}
-                      source={'Anlegerschutz'}
-                      style={{
-                        container: 'margin-20-top --grey-orange',
-                      }}
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text={
-                            '### ' + fokusthemen[i].node.uberschriftGanzOben
-                          }
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </div>
-                )
-              } else {
-                return null
-              }
-            })}
-            <div className="col-12">
-              <p className="h3 margin-40-top">
-                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
-                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
-                nectibus.“
-              </p>
-            </div>
-          </div>
-          <div className="row d-none d-md-flex align-items-end negative-margin-80-top">
-            <div className="col-1" />
-            <div className="col-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  container: '--grey-blue',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text={'### ' + fokusthemen[3].node.uberschriftGanzOben}
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-5">
-              <div className="row">
-                <div className="col-2" />
-                <div className="col-10">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      container: '--pink-orange',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text={'### ' + fokusthemen[4].node.uberschriftGanzOben}
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-              <div className="row margin-40-top">
-                <div className="col-10">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      container: '--yellow-blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text={'### ' + fokusthemen[5].node.uberschriftGanzOben}
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-                <div className="col-2" />
-              </div>
-            </div>
-          </div>
-
-          <div className="row d-none d-md-flex align-items-center margin-40-top">
-            <div className="col-8">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  container: '--orange-pink',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text={'### ' + fokusthemen[6].node.uberschriftGanzOben}
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-4">
-              <p className="h3 text-md-normal">
-                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
-                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
-                nectibus.“
-              </p>
-            </div>
-          </div>
-          <div className="row d-none d-md-flex align-items-center margin-40-top">
-            <div className="col-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  container: '--yellow-orange',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text={'### ' + fokusthemen[7].node.uberschriftGanzOben}
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  container: '--pink-blue',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text={'### ' + fokusthemen[8].node.uberschriftGanzOben}
-                    styleClasses="h4"
-                  />
-                }
-              />
-              <div className="row margin-40-top">
-                <div className="col-4" />
-                <div className="col-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      container:
-                        'margin-60-top margin-120-bottom margin-md-0-top margin-md-0-bottom --blue-orange',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text={'### ' + fokusthemen[9].node.uberschriftGanzOben}
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <div className="collapse" id="more-fokusthemen">
-                <FokusthemenPreview items={fokusthemen} />
-              </div>
-            </div>
-          </div>
-          <div className="row margin-40-top margin-xs-20-top">
-            <div className="col-12 col-md-4 order-2 order-md-1">
-              <LinkButton
-                styleSpan="w-100 w-md-unset"
-                text="FOKUSTHEMEN ÜBERSICHT"
-                path="/fokusthemen"
-              />
-            </div>
-            <MobileToggleWithButton />
-          </div>
-        </div>
+        <FokusthemenLayout
+          header={'Unsere Fokusthemen'}
+          description={
+            ' Mit Teams aus Management-, Fach- und Technologieberatern unterstützen wir Banken und Kapitalverwaltungsgesellschaften, damit sie den  unterschiedlichsten Herausforderungen gerecht werden. Hier möchten wir Ihnen einen Einblick in unser Leistungsspektrum geben, von der agilen Transformation oder dem Aufsatz von Effizienzsteigerungen über die Regulierung und Digitalisierung im Kredit- und Wertpapiergeschäft bis hin zum Design moderner Plattform-Architekturen und vielen Themen mehr.'
+          }
+          fokusthemen={fokusthemen}
+          style={{ container: 'margin-120-top margin-xs-80-top' }}
+        />
       </div>
     )
   }
@@ -569,9 +308,9 @@ export const pageQuery = graphql`
       }
     }
     heroImageSharp: imageSharp(
-      id: { regex: "/20180718-cofinpro-stills19468/" }
+      id: { regex: "/20180718-cofinpro-stills19468-sw/" }
     ) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
+      sizes(quality: 100, maxWidth: 2000) {
         ...GatsbyImageSharpSizes
       }
     }

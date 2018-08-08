@@ -1,12 +1,17 @@
-$primary: #ec7b1a !default;
-$blue: #a5c5e8 !default;
-
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+$primary: #ec7b1a;
+$blue: #a5c5e8;
 .filter {
   color: $blue;
-
   & a {
     color: $blue;
   }
+}
+
+.filter-button a {
+  color: $blue;
 }
 
 .filter-button-group {
@@ -16,7 +21,28 @@ $blue: #a5c5e8 !default;
 
 .filter-button {
   & a:hover,
-  a:active {
+  a.active {
     color: $primary;
+    text-decoration: underline;
+  }
+  p {
+    margin-bottom: 0px;
+    @include media-breakpoint-only(xs) {
+      margin-bottom: 1rem;
+    }
+    @include media-breakpoint-only(sm) {
+      margin-bottom: 1rem;
+    }
   }
 }
+
+
+  .filter-button:last-child > p {
+      margin-bottom: 0px;
+      @include media-breakpoint-only(xs) {
+        margin-bottom: 0px;
+      }
+      @include media-breakpoint-only(sm) {
+        margin-bottom: 0px;
+      }
+    }

@@ -1,28 +1,53 @@
 import React from 'react'
 
-class RelevanteBeratungsfelder extends React.Component {
+import FokusthemenLayout from '../../components/layouts/FokusthemenLayout'
+import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
+
+import {
+  ImageWrapper,
+  SOURCE_TYP_PLACEHOLDER,
+} from '../../components/images/ImageWrapper'
+
+class FokusthemenStartseite extends React.Component {
   render() {
-    const data = this.props.data
-
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
-    const { beratungsfelder } = this.props
+    const name = this.props.pathContext.id
+    const url = this.props.pathContext.path
+    const header = this.props.pathContext.header
+    const description = this.props.pathContext.description
+    const fokusthemen = this.props.pathContext.fokusthemen
 
     return (
       <div>
-        <div className="">
-          <p className="text-size-14">RELEVANTE BERATUNGSFELDER</p>
-          {beratungsfelder !== undefined &&
-            beratungsfelder.map((beratungsfeld, index) => (
-              <p key={index} className="text-size-18">
-                {beratungsfeld}
+        <div className="container padding-60-top padding-xs-20-top">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h1 className="h1">Fokusthemen</h1>
+              <p className="h4 margin-20-top d-md-block d-none">
+                Hier finden Sie alle unsere aktuellen Fokusthemen auf einen
+                Blick. Entdecken sie unsere Themenvielfalt.
               </p>
-            ))}
+              <p className="d-md-none">
+                Hier finden Sie alle unsere aktuellen Fokusthemen auf einen
+                Blick. Entdecken sie unsere Themenvielfalt.
+              </p>
+            </div>
+          </div>
         </div>
+
+        <NavigationBeratungsfelder
+          urlPrefix="fokusthemen"
+          styleClass="margin-60-top"
+        />
+
+        <FokusthemenLayout
+          header={header}
+          description={description}
+          fokusthemen={fokusthemen}
+          style={{ container: 'margin-60-top' }}
+        />
       </div>
     )
   }
 }
 
-export default RelevanteBeratungsfelder
+export default FokusthemenStartseite

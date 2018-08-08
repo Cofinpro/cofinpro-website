@@ -70,8 +70,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 function createPages(callback) {
   var asyncTasks = []
 
-  console.log('test rtest')
-
   asyncTasks.push(
     async.apply(
       pagesStellenanzeigen.create,
@@ -413,8 +411,6 @@ function getStockImages(callback) {
       }
     }
 `).then(result => {
-    console.log(result)
-
     globalBackgroundImages.length = 0
 
     globalBackgroundImages.push(result.data.architektur1ImageSharp)
