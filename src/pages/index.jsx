@@ -280,10 +280,7 @@ class Startseite extends React.Component {
                       sourceType={SOURCE_TYP_ICON_IMAGE}
                       source={'Anlegerschutz'}
                       style={{
-                        backgroundImage: '',
-                        iconColor: 'icon-image--blue',
-                        overlay: '',
-                        border: 'border-img-svg--blue',
+                        container: '--blue-yellow',
                       }}
                       overlayElement={
                         <ContentfulMarkdownText
@@ -307,10 +304,7 @@ class Startseite extends React.Component {
                       sourceType={SOURCE_TYP_ICON_IMAGE}
                       source={'Anlegerschutz'}
                       style={{
-                        backgroundImage: '',
-                        iconColor: 'icon-image--grey',
-                        overlay: '',
-                        border: 'border-img-svg--grey',
+                        container: '--grey-orange',
                       }}
                       overlayElement={
                         <ContentfulMarkdownText
@@ -331,11 +325,8 @@ class Startseite extends React.Component {
                     sourceType={SOURCE_TYP_ICON_IMAGE}
                     source={'Anlegerschutz'}
                     style={{
-                      backgroundImage: '',
-                      container: 'margin-60-top margin-120-bottom',
-                      iconColor: 'icon-image--orange',
-                      overlay: '',
-                      border: 'border-img-svg--orange',
+                      container:
+                        'margin-60-top margin-120-bottom --orange-pink',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -358,11 +349,7 @@ class Startseite extends React.Component {
                       sourceType={SOURCE_TYP_ICON_IMAGE}
                       source={'Anlegerschutz'}
                       style={{
-                        backgroundImage: '',
-                        container: 'margin-20-top',
-                        iconColor: 'icon-image--blue',
-                        overlay: '',
-                        border: 'border-img-svg--blue',
+                        container: 'margin-20-top --grey-orange',
                       }}
                       overlayElement={
                         <ContentfulMarkdownText
@@ -394,11 +381,7 @@ class Startseite extends React.Component {
                 sourceType={SOURCE_TYP_ICON_IMAGE}
                 source={'Anlegerschutz'}
                 style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--grey',
-                  overlay: '',
-                  border: 'border-img-svg--grey',
+                  container: '--grey-blue',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -416,11 +399,7 @@ class Startseite extends React.Component {
                     sourceType={SOURCE_TYP_ICON_IMAGE}
                     source={'Anlegerschutz'}
                     style={{
-                      backgroundImage: '',
-                      container: '',
-                      iconColor: 'icon-image--pink',
-                      overlay: '',
-                      border: 'border-img-svg--pink',
+                      container: '--pink-orange',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -437,11 +416,7 @@ class Startseite extends React.Component {
                     sourceType={SOURCE_TYP_ICON_IMAGE}
                     source={'Anlegerschutz'}
                     style={{
-                      backgroundImage: '',
-                      container: '',
-                      iconColor: 'icon-image--yellow',
-                      overlay: '',
-                      border: 'border-img-svg--yellow',
+                      container: '--yellow-blue',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText
@@ -462,11 +437,7 @@ class Startseite extends React.Component {
                 sourceType={SOURCE_TYP_ICON_IMAGE}
                 source={'Anlegerschutz'}
                 style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--orange',
-                  overlay: '',
-                  border: 'border-img-svg--orange',
+                  container: '--orange-pink',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -490,11 +461,7 @@ class Startseite extends React.Component {
                 sourceType={SOURCE_TYP_ICON_IMAGE}
                 source={'Anlegerschutz'}
                 style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--yellow',
-                  overlay: '',
-                  border: 'border-img-svg--yellow',
+                  container: '--yellow-orange',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -509,11 +476,7 @@ class Startseite extends React.Component {
                 sourceType={SOURCE_TYP_ICON_IMAGE}
                 source={'Anlegerschutz'}
                 style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--pink',
-                  overlay: '',
-                  border: 'border-img-svg--pink',
+                  container: '--pink-blue',
                 }}
                 overlayElement={
                   <ContentfulMarkdownText
@@ -529,12 +492,8 @@ class Startseite extends React.Component {
                     sourceType={SOURCE_TYP_ICON_IMAGE}
                     source={'Anlegerschutz'}
                     style={{
-                      backgroundImage: '',
                       container:
-                        'margin-60-top margin-120-bottom margin-md-0-top margin-md-0-bottom',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
+                        'margin-60-top margin-120-bottom margin-md-0-top margin-md-0-bottom --blue-orange',
                     }}
                     overlayElement={
                       <ContentfulMarkdownText

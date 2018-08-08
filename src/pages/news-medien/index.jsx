@@ -17,18 +17,18 @@ class NewsMedienVerteiler extends React.Component {
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1 className="h1">News&amp;Medien</h1>
+              <h1 className="h1">Unser Medienforum</h1>
               <p className="h4 bold-font d-none d-md-block">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper
-                roriber iaspidundaes volent repedit fuga. Nam esti conse landi
-                quiamus incillam, atur aliberr oreperio.
+                Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
+                und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
+                erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
+                Sie hier ganz richtig.
               </p>
               <p className="d-block d-md-none">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper
-                roriber iaspidundaes volent repedit fuga. Nam esti conse landi
-                quiamus incillam, atur aliberr oreperio.
+                Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
+                und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
+                erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
+                Sie hier ganz richtig.
               </p>
             </div>
           </div>
@@ -47,16 +47,15 @@ class NewsMedienVerteiler extends React.Component {
             </div>
             <div className="col-12 col-md-6">
               <h2 className="margin-20-bottom margin-xs-20-top">
-                News&amp;Medien
+                Neues von Cofinpro
               </h2>
               <p>
-                Atatios culpa dolut a dolorep reculparumet alistibus mi, volo
-                blaccum alibus ex et, commolu ptatiam endit, simus ab iumendenis
-                et ommolorrorro que dolupta consedigeni nime exera sunt rest
-                estenecti dolut que derspel ipiciminus restis diam nam est
-                volest, te esequodi que voles de nim nos quam et ut offici ulla
-                accum facessus eos sinciis coreperia con cus, tem quidelendit
-                plit magnam, comnis dia sim nitae netur.
+                Hier finden Sie unsere sämtlichen Veröffentlichungen: von
+                Publikationen in digitalen und analogen Fachmedien über
+                Whitepaper, Studien und Thesenpapiere bis zu Pressemitteilungen
+                und unserem Unternehmensfolder. Alles natürlich rund um unsere
+                Fachberatung in den Bereichen Kredit und Wertpapier, unsere
+                Management- und Technologieberatung.
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
@@ -70,15 +69,14 @@ class NewsMedienVerteiler extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6 order-2 order-md-1">
-              <h2 className="margin-20-bottom margin-xs-20-top">Blog</h2>
+              <h2 className="margin-20-bottom margin-xs-20-top">Unser Blog</h2>
               <p>
-                Atatios culpa dolut a dolorep reculparumet alistibus mi, volo
-                blaccum alibus ex et, commolu ptatiam endit, simus ab iumendenis
-                et ommolorrorro que dolupta consedigeni nime exera sunt rest
-                estenecti dolut que derspel ipiciminus restis diam nam est
-                volest, te esequodi que voles de nim nos quam et ut offici ulla
-                accum facessus eos sinciis coreperia con cus, tem quidelendit
-                plit magnam, comnis dia sim nitae netur.
+                Was treiben unsere Technologieberater? Sehr viel, das ist schon
+                mal klar. Hier erfahren Sie aus erster Hand, welche Themen uns
+                derzeit beschäftigen und welche Lösungswege wir gehen. Dazu
+                gehört auch unser eigener Podcast, für den sich unsere Experten
+                regelmäßig ans Mikro setzen, um aktuelle Herausforderungen und
+                Trendthemen zu diskutieren.
               </p>
               <ExternalLinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
