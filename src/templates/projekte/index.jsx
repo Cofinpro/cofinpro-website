@@ -6,6 +6,8 @@ import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import ToggleWithButton from '../../components/buttons/ToggleWithButton'
 
+import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -91,7 +93,7 @@ class ProjekteUebersicht extends React.Component {
                       </div>
                     </div>
                   </div>
-                  {projects.length !== i + 1 && (
+                  {props.projects.length !== i + 1 && (
                     <div className="col-12 col-md-6">
                       <div className="row margin-xs-20-top justify-content-center">
                         <div className={'col-12 ' + secondColumnWidth}>
@@ -187,6 +189,11 @@ class ProjekteUebersicht extends React.Component {
             </div>
           </div>
         </div>
+
+        <NavigationBeratungsfelder
+          urlPrefix="projekte"
+          styleClass="margin-80-top"
+        />
 
         <Layout
           projects={firstShowProjects}

@@ -32,25 +32,14 @@ class ImageWrapper extends React.Component {
   render() {
     function IconImage(props) {
       return (
-        <div
-          className={
-            'image-container ' + props.style.container !== undefined
-              ? props.style.container
-              : ''
-          }
-        >
-          <div className={'svg-image position-relative ' + props.style.border}>
-            <img
-              src={'/img/filler_fokus.png'}
-              className={'img-fluid ' + props.style.backgroundImage}
-            />
-            <div className={'icon-image ' + props.style.iconColor}>
+        <div className={'icon-image ' + props.style.container}>
+          <div className={'icon-image__wrapper position-relative'}>
+            <img src={'/img/filler_fokus.png'} className={'img-fluid'} />
+            <div className={'icon-image__icon-wrapper'}>
               <AnlegerschutzIcon />
             </div>
             <div
-              className={
-                'image-overlay-top-left text-dark' + props.style.overlay
-              }
+              className={'icon-image__overlay image-overlay-top-left text-dark'}
             >
               {overlayElement}
             </div>

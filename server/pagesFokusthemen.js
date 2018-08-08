@@ -26,18 +26,14 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     )
 
     _.each(result.data.allContentfulFokusthema.edges, edge => {
+      console.log(edge.node.id)
+
       createPage({
         path: `/fokusthemen/${edge.node.url}`,
         component: slash(template),
         context: {
           id: edge.node.id,
         },
-      })
-
-      createRedirect({
-        fromPath: `/fokusthemen/${edge.node.id}`,
-        redirectInBrowser: true,
-        toPath: `/fokusthemen/${edge.node.url}`,
       })
 
       console.log(`created page /fokusthemen/${edge.node.url}.`)
