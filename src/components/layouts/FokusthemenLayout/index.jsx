@@ -10,12 +10,12 @@ import { ImageWrapper, SOURCE_TYP_ICON_IMAGE } from '../../images/ImageWrapper'
 class FokusthemenLayout extends React.Component {
   render() {
     function PreviewImage(props) {
-      const { url, header, color } = props
+      const { url, header, color, icon } = props
       return (
         <Link to={'/fokusthemen/thema/' + url}>
           <ImageWrapper
             sourceType={SOURCE_TYP_ICON_IMAGE}
-            source={'Anlegerschutz'}
+            source={icon}
             style={{
               container: color,
             }}
@@ -115,6 +115,7 @@ class FokusthemenLayout extends React.Component {
                       url={fokusthemen[2].url}
                       header={fokusthemen[2].uberschriftGanzOben}
                       color={'--blue-yellow'}
+                      icon={fokusthemen[2].icon}
                     />
                   )}
                 </div>
@@ -129,6 +130,7 @@ class FokusthemenLayout extends React.Component {
                       url={fokusthemen[0].url}
                       header={fokusthemen[0].uberschriftGanzOben}
                       color={'--grey-orange'}
+                      icon={fokusthemen[0].icon}
                     />
                   </div>
                   <div className="col-2" />
@@ -141,6 +143,7 @@ class FokusthemenLayout extends React.Component {
                       url={fokusthemen[1].url}
                       header={fokusthemen[1].uberschriftGanzOben}
                       color={'--orange-pink'}
+                      icon={fokusthemen[1].icon}
                     />
                   </div>
                 </div>
@@ -160,6 +163,7 @@ class FokusthemenLayout extends React.Component {
                       url={fokusthemen[i].url}
                       header={fokusthemen[i].uberschriftGanzOben}
                       color={colorSchema[i]}
+                      icon={fokusthemen[i].icon}
                     />
                   </div>
                 )
@@ -183,6 +187,7 @@ class FokusthemenLayout extends React.Component {
                           url={fokusthemen[i].url}
                           header={fokusthemen[i].uberschriftGanzOben}
                           color={colorSchema[i]}
+                          icon={fokusthemen[i].icon}
                         />
                       </div>
                     )
@@ -211,6 +216,7 @@ class FokusthemenLayout extends React.Component {
                     url={fokusthemen[4].url}
                     header={fokusthemen[4].uberschriftGanzOben}
                     color={'--grey-blue'}
+                    icon={fokusthemen[4].icon}
                   />
                 )}
               </div>
@@ -223,6 +229,7 @@ class FokusthemenLayout extends React.Component {
                         url={fokusthemen[3].url}
                         header={fokusthemen[3].uberschriftGanzOben}
                         color={'--pink-orange'}
+                        icon={fokusthemen[3].icon}
                       />
                     )}
                   </div>
@@ -234,6 +241,7 @@ class FokusthemenLayout extends React.Component {
                         url={fokusthemen[5].url}
                         header={fokusthemen[5].uberschriftGanzOben}
                         color={'--orange-pink'}
+                        icon={fokusthemen[5].icon}
                       />
                     </div>
                     <div className="col-2" />
@@ -250,6 +258,7 @@ class FokusthemenLayout extends React.Component {
                   url={fokusthemen[6].url}
                   header={fokusthemen[6].uberschriftGanzOben}
                   color={'--orange-pink'}
+                  icon={fokusthemen[6].icon}
                 />
               </div>
               <div className="col-4">
@@ -271,6 +280,7 @@ class FokusthemenLayout extends React.Component {
                   url={fokusthemen[8].url}
                   header={fokusthemen[8].uberschriftGanzOben}
                   color={'--yellow-orange'}
+                  icon={fokusthemen[8].icon}
                 />
               )}
             </div>
@@ -282,6 +292,7 @@ class FokusthemenLayout extends React.Component {
                       url={fokusthemen[7].url}
                       header={fokusthemen[7].uberschriftGanzOben}
                       color={'--pink-blue'}
+                      icon={fokusthemen[7].icon}
                     />
                   )}
                 </div>
@@ -294,6 +305,7 @@ class FokusthemenLayout extends React.Component {
                           url={fokusthemen[9].url}
                           header={fokusthemen[9].uberschriftGanzOben}
                           color={'--blue-orange'}
+                          icon={fokusthemen[9].icon}
                         />
                       </div>
                     </div>
