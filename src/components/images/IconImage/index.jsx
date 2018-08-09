@@ -20,6 +20,9 @@ class IconImage extends React.Component {
       $(this)
         .find('path[stroke]')
         .attr('stroke', $(this).css('fill'))
+      $(this)
+        .find('rect[stroke]')
+        .attr('stroke', $(this).css('fill'))
     })
   }
 
