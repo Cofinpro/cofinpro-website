@@ -10,7 +10,6 @@ import NavigationBeratungsfelder from '../../components/navigation/NavigationBer
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
@@ -66,15 +65,7 @@ class ProjekteUebersicht extends React.Component {
                         >
                           <ImageWrapper
                             sourceType={SOURCE_TYP_SHARP}
-                            source={backgroundImages[i]}
-                            backgroundOverlay={
-                              <div
-                                className={
-                                  'image-overlay-background image-overlay-background' +
-                                  backgroundColorLeft
-                                }
-                              />
-                            }
+                            source={props.images[props.imageIndexOffset + i]}
                             overlayElement={
                               <div>
                                 <ContentfulMarkdownText
@@ -109,14 +100,6 @@ class ProjekteUebersicht extends React.Component {
                             <ImageWrapper
                               sourceType={SOURCE_TYP_SHARP}
                               source={backgroundImages[i + 1]}
-                              backgroundOverlay={
-                                <div
-                                  className={
-                                    'image-overlay-background image-overlay-background' +
-                                    backgroundColorRight
-                                  }
-                                />
-                              }
                               overlayElement={
                                 <div>
                                   <ContentfulMarkdownText
@@ -194,11 +177,18 @@ class ProjekteUebersicht extends React.Component {
 
         <Layout
           projects={firstShowProjects}
+          images={backgroundImages}
+          imageIndexOffset={0}
           style={{ container: 'margin-100-top margin-xs-60-top' }}
         />
 
         <div className="collapse" id="collapse-more-projects">
-          <Layout projects={moreProjects} style={{ container: '' }} />
+          <Layout
+            projects={moreProjects}
+            images={backgroundImages}
+            imageIndexOffset={7}
+            style={{ container: '' }}
+          />
         </div>
 
         <div className="container margin-40-top">

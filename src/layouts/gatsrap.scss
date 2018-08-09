@@ -1112,6 +1112,15 @@ a.link-button:hover {
   font-size: 12px;
 }
 
+.text-sm-small {
+  @include media-breakpoint-only(xs) {
+    font-size: 12px;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: 12px;
+  }
+}
+
 .text-size-14 {
   font-size: 14px;
 }

@@ -311,7 +311,7 @@ export const pageQuery = graphql`
     heroImageSharp: imageSharp(
       id: { regex: "/20180718-cofinpro-stills19468-sw/" }
     ) {
-      sizes(quality: 100, maxWidth: 2000) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
         ...GatsbyImageSharpSizes
       }
     }
