@@ -4,38 +4,12 @@ import Link from 'gatsby-link'
 import LinkButton from '../../buttons/LinkButton'
 import MobileToggleWithButton from '../../buttons/MobileToggleWithButton'
 import ContentfulMarkdownText from '../../ContentfulMarkdownText'
+import FokusthemaPreview from './FokusthemaPreview'
 
 import { ImageWrapper, SOURCE_TYP_ICON_IMAGE } from '../../images/ImageWrapper'
 
 class FokusthemenLayout extends React.Component {
   render() {
-    function PreviewImage(props) {
-      const { url, header, color, icon } = props
-      return (
-        <Link to={'/fokusthemen/thema/' + url}>
-          <ImageWrapper
-            sourceType={SOURCE_TYP_ICON_IMAGE}
-            source={icon}
-            style={{
-              container: color,
-            }}
-            overlayElement={
-              <div>
-                <ContentfulMarkdownText
-                  text={'### ' + header}
-                  styleClasses="h4 d-none d-lg-block"
-                />
-                <ContentfulMarkdownText
-                  text={'### ' + header}
-                  styleClasses="h5 d-block d-lg-none"
-                />
-              </div>
-            }
-          />
-        </Link>
-      )
-    }
-
     const pathPrefix = process.env_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const { header, description, fokusthemen, style } = this.props
@@ -111,7 +85,7 @@ class FokusthemenLayout extends React.Component {
                 </div>
                 <div className="col-12 d-none d-md-block align-self-end">
                   {fokusthemen.length >= 3 && (
-                    <PreviewImage
+                    <FokusthemaPreview
                       url={fokusthemen[2].url}
                       header={fokusthemen[2].uberschriftGanzOben}
                       color={'--blue-yellow'}
@@ -126,7 +100,7 @@ class FokusthemenLayout extends React.Component {
                 <div className="row">
                   <div className="col-2" />
                   <div className="col-8">
-                    <PreviewImage
+                    <FokusthemaPreview
                       url={fokusthemen[0].url}
                       header={fokusthemen[0].uberschriftGanzOben}
                       color={'--grey-orange'}
@@ -139,7 +113,7 @@ class FokusthemenLayout extends React.Component {
               {fokusthemen.length >= 2 && (
                 <div className="row">
                   <div className="col-12 margin-60-top margin-120-bottom">
-                    <PreviewImage
+                    <FokusthemaPreview
                       url={fokusthemen[1].url}
                       header={fokusthemen[1].uberschriftGanzOben}
                       color={'--orange-pink'}
@@ -159,7 +133,7 @@ class FokusthemenLayout extends React.Component {
                     className="col-12 margin-20-top"
                     key={'fokusthema-mobile-' + i}
                   >
-                    <PreviewImage
+                    <FokusthemaPreview
                       url={fokusthemen[i].url}
                       header={fokusthemen[i].uberschriftGanzOben}
                       color={colorSchema[i]}
@@ -183,7 +157,7 @@ class FokusthemenLayout extends React.Component {
                         className="col-12 margin-20-top"
                         key={'fokusthema-mobile-' + i}
                       >
-                        <PreviewImage
+                        <FokusthemaPreview
                           url={fokusthemen[i].url}
                           header={fokusthemen[i].uberschriftGanzOben}
                           color={colorSchema[i]}
@@ -212,7 +186,7 @@ class FokusthemenLayout extends React.Component {
               <div className="col-1" />
               <div className="col-6">
                 {fokusthemen.length >= 5 && (
-                  <PreviewImage
+                  <FokusthemaPreview
                     url={fokusthemen[4].url}
                     header={fokusthemen[4].uberschriftGanzOben}
                     color={'--grey-blue'}
@@ -225,7 +199,7 @@ class FokusthemenLayout extends React.Component {
                   <div className="col-2" />
                   <div className="col-10">
                     {fokusthemen.length >= 4 && (
-                      <PreviewImage
+                      <FokusthemaPreview
                         url={fokusthemen[3].url}
                         header={fokusthemen[3].uberschriftGanzOben}
                         color={'--pink-orange'}
@@ -237,7 +211,7 @@ class FokusthemenLayout extends React.Component {
                 {fokusthemen.length >= 6 && (
                   <div className="row margin-40-top">
                     <div className="col-10">
-                      <PreviewImage
+                      <FokusthemaPreview
                         url={fokusthemen[5].url}
                         header={fokusthemen[5].uberschriftGanzOben}
                         color={'--orange-pink'}
@@ -254,7 +228,7 @@ class FokusthemenLayout extends React.Component {
           {fokusthemen.length >= 7 && (
             <div className="row d-none d-md-flex align-items-center margin-40-top">
               <div className="col-8">
-                <PreviewImage
+                <FokusthemaPreview
                   url={fokusthemen[6].url}
                   header={fokusthemen[6].uberschriftGanzOben}
                   color={'--orange-pink'}
@@ -276,7 +250,7 @@ class FokusthemenLayout extends React.Component {
           <div className={'row d-none d-md-flex ' + styleRowFokusthema8}>
             <div className={'col-6 ' + styleColFokusthema8}>
               {fokusthemen.length >= 9 && (
-                <PreviewImage
+                <FokusthemaPreview
                   url={fokusthemen[8].url}
                   header={fokusthemen[8].uberschriftGanzOben}
                   color={'--yellow-orange'}
@@ -288,7 +262,7 @@ class FokusthemenLayout extends React.Component {
               <div className="row">
                 <div className="col-12">
                   {fokusthemen.length >= 8 && (
-                    <PreviewImage
+                    <FokusthemaPreview
                       url={fokusthemen[7].url}
                       header={fokusthemen[7].uberschriftGanzOben}
                       color={'--pink-blue'}
@@ -301,7 +275,7 @@ class FokusthemenLayout extends React.Component {
                     <div className="row">
                       <div className="col-4" />
                       <div className="col-8 margin-40-top margin-120-bottom margin-md-0-top margin-md-0-bottom">
-                        <PreviewImage
+                        <FokusthemaPreview
                           url={fokusthemen[9].url}
                           header={fokusthemen[9].uberschriftGanzOben}
                           color={'--blue-orange'}
