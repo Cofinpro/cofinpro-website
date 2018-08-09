@@ -988,13 +988,13 @@ a:hover {
 }
 
 .margin-md-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
   @include media-breakpoint-only(md) {
-    margin-top: 20px;
-  }
-  @include media-breakpoint-only(lg) {
-    margin-top: 20px;
-  }
-  @include media-breakpoint-only(xl) {
     margin-top: 20px;
   }
 }
@@ -1078,6 +1078,11 @@ a:hover {
     border-width: 2px;
     border-radius: 0px;
   }
+
+}
+
+a.link-button:hover {
+  text-decoration: none;
 }
 
 .normal-font {

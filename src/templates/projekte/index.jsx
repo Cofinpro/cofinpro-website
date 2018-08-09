@@ -183,10 +183,7 @@ class ProjekteUebersicht extends React.Component {
               <p className="h4 bold-font d-none d-md-block">{description}</p>
               <p className="d-block d-md-none">{description}</p>
             </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <RelevanteFokusthemen />
-            </div>
+            <div className="col-12 col-md-6" />
           </div>
         </div>
 

@@ -57,8 +57,8 @@ class FokusthemenLayout extends React.Component {
 
     let styleRowFokusthema8 =
       fokusthemen.length < 10
-        ? 'margin-40-top align-items-start'
-        : 'margin-40-top align-items-center'
+        ? 'margin-40-top margin-md-20-top align-items-start'
+        : 'margin-40-top margin-md-20-top align-items-center'
     let styleColFokusthema8 =
       fokusthemen.length < 10 ? 'margin-120-top margin-md-60-top' : ''
 
@@ -214,7 +214,7 @@ class FokusthemenLayout extends React.Component {
                       <FokusthemaPreview
                         url={fokusthemen[5].url}
                         header={fokusthemen[5].uberschriftGanzOben}
-                        color={'--orange-pink'}
+                        color={'--yellow-blue'}
                         icon={fokusthemen[5].icon}
                       />
                     </div>
@@ -226,7 +226,7 @@ class FokusthemenLayout extends React.Component {
           )}
 
           {fokusthemen.length >= 7 && (
-            <div className="row d-none d-md-flex align-items-center margin-40-top">
+            <div className="row d-none d-md-flex align-items-center margin-40-top margin-md-20-top">
               <div className="col-8">
                 <FokusthemaPreview
                   url={fokusthemen[6].url}
@@ -274,7 +274,7 @@ class FokusthemenLayout extends React.Component {
                   {fokusthemen.length >= 10 && (
                     <div className="row">
                       <div className="col-4" />
-                      <div className="col-8 margin-40-top margin-120-bottom margin-md-0-top margin-md-0-bottom">
+                      <div className="col-8 margin-40-top margin-120-bottom margin-md-20-top margin-md-0-bottom">
                         <FokusthemaPreview
                           url={fokusthemen[9].url}
                           header={fokusthemen[9].uberschriftGanzOben}

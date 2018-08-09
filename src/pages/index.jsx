@@ -278,6 +278,7 @@ export const pageQuery = graphql`
           id
           url
           uberschriftGanzOben
+          unterueberschrift
           icon
           beratungsfelder
           headline {
@@ -308,7 +309,7 @@ export const pageQuery = graphql`
       }
     }
     heroImageSharp: imageSharp(
-      id: { regex: "/20180718-cofinpro-stills19468-cl/" }
+      id: { regex: "/20180718-cofinpro-stills19468-sw/" }
     ) {
       sizes(quality: 100, maxWidth: 2000) {
         ...GatsbyImageSharpSizes

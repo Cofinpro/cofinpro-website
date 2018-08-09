@@ -7,7 +7,7 @@ import './style.scss'
 
 class ReferenzAndDownload extends React.Component {
   render() {
-    const data = this.props.data
+    const { data, style } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -16,9 +16,11 @@ class ReferenzAndDownload extends React.Component {
 
     var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
 
+    var stylingContainer = style !== undefined ? style.container : ''
+
     return (
       <div>
-        <div className="container">
+        <div className={'container ' + stylingContainer}>
           <div className="row">
             <div className="col-md-6" />
             <div className="col-md-6">
@@ -63,6 +65,7 @@ class ReferenzAndDownload extends React.Component {
               <div className="row">
                 <div className="col-md-8">
                   <LinkButton
+                    path="/news-medien/uebersicht"
                     text="ALLE MEDIEN ANZEIGEN"
                     styleSpan="btn-lg btn-block padding-button margin-100-bottom margin-10-top"
                   />
