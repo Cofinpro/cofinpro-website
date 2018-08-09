@@ -7,6 +7,7 @@ import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderManagementTemplate extends React.Component {
@@ -20,24 +21,23 @@ class BeratungsfelderManagementTemplate extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/management/20180718-cofinpro-stills19242.jpg'
-                }
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.heroImageSharp}
               />
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container margin-40-top">
           <div className="row">
             <div className="col-md-8">
-              <div className="row margin-20-top">
+              <div className="row">
                 <div className="col-md-4">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={
                       '/img/beratungsfelder/management/managementberatung.png'
                     }
+                    styleClasses={'beratungs-icons'}
                   />
                 </div>
               </div>
@@ -150,3 +150,15 @@ class BeratungsfelderManagementTemplate extends React.Component {
 }
 
 export default BeratungsfelderManagementTemplate
+
+export const pageQuery = graphql`
+  query BeratungsfelderManagementQuery {
+    heroImageSharp: imageSharp(
+      id: { regex: "/20180718-cofinpro-stills19242/" }
+    ) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

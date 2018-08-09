@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 import LinkButton from '../components/buttons/LinkButton'
 import ToggleButton from '../components/buttons/ToggleButton'
@@ -8,10 +9,13 @@ import ContentfulMarkdownText from '../components/ContentfulMarkdownText'
 import FokusthemenPreview from '../components/layouts/FokusthemenPreview'
 import ThreeIconsWithLinks from '../components/layouts/ThreeIconsWithLinks'
 
+import FokusthemenLayout from '../components/layouts/FokusthemenLayout'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_ICON_IMAGE,
+  SOURCE_TYP_SHARP,
 } from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
@@ -131,16 +135,14 @@ class Startseite extends React.Component {
       },
     }
 
-    const fokusthemen = []
+    var fokusthemen = []
 
-    for (let i = 0; i < 18; ++i) {
-      fokusthemen.push('Fokusthema ' + i)
-    }
-
-    const testImageStyle = {
-      height: '250px',
-      width: '100%',
-      display: 'block',
+    for (
+      let i = 0;
+      i < this.props.data.allContentfulFokusthema.edges.length;
+      ++i
+    ) {
+      fokusthemen.push(this.props.data.allContentfulFokusthema.edges[i].node)
     }
 
     return (
@@ -149,11 +151,8 @@ class Startseite extends React.Component {
           <div className="row">
             <div className="col-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.heroImageSharp}
               />
             </div>
           </div>
@@ -256,304 +255,14 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-12 col-md-6 d-flex">
-              <div className="row">
-                <div className="col-12">
-                  <h2>Unsere Fokusthemen</h2>
-                  <p>
-                    Mit Teams aus Management-, Fach- und Technologieberatern
-                    unterstützen wir Banken und
-                    Kapitalverwaltungsgesellschaften, damit sie den
-                    unterschiedlichsten Herausforderungen gerecht werden. Hier
-                    möchten wir Ihnen einen Einblick in unser Leistungsspektrum
-                    geben, von der agilen Transformation oder dem Aufsatz von
-                    Effizienzsteigerungen über die Regulierung und
-                    Digitalisierung im Kredit- und Wertpapiergeschäft bis hin
-                    zum Design moderner Plattform-Architekturen und vielen
-                    Themen mehr.
-                  </p>
-                </div>
-                <div className="col-12 d-none d-md-block align-self-end">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Fokusthema 1"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-6 d-none d-md-block">
-              <div className="row">
-                <div className="col-2" />
-                <div className="col-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Fokusthema 2"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-              <div className="row">
-                <div className="col-12">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      container: 'margin-60-top margin-120-bottom',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Fokusthema 3"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row d-flex d-md-none">
-            {fokusthemen.map((item, i) => {
-              if (i < 3) {
-                return (
-                  <div className="col-12" key={'fokusthema-mobile-' + i}>
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_ICON_IMAGE}
-                      source={'Anlegerschutz'}
-                      style={{
-                        backgroundImage: '',
-                        container: 'margin-20-top',
-                        iconColor: 'icon-image--blue',
-                        overlay: '',
-                        border: 'border-img-svg--blue',
-                      }}
-                      overlayElement={
-                        <ContentfulMarkdownText
-                          text={'### ' + item}
-                          styleClasses="h4"
-                        />
-                      }
-                    />
-                  </div>
-                )
-              } else {
-                return null
-              }
-            })}
-            <div className="col-12">
-              <p className="h3 margin-40-top">
-                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
-                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
-                nectibus.“
-              </p>
-            </div>
-          </div>
-          <div className="row d-none d-md-flex align-items-end negative-margin-80-top">
-            <div className="col-1" />
-            <div className="col-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--blue',
-                  overlay: '',
-                  border: 'border-img-svg--blue',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 4"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-5">
-              <div className="row">
-                <div className="col-2" />
-                <div className="col-10">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      container: '',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Fokusthema 5"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-              <div className="row margin-40-top">
-                <div className="col-10">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      container: '',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Fokusthema 6"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-                <div className="col-2" />
-              </div>
-            </div>
-          </div>
-
-          <div className="row d-none d-md-flex align-items-center margin-40-top">
-            <div className="col-8">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--blue',
-                  overlay: '',
-                  border: 'border-img-svg--blue',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 7"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-4">
-              <p className="h3">
-                „tibusda volorum quiam, volenimus aut esti asseque velecatus.
-                Fere reic tem seque dus eum rectur sit latemperovit quam sumendi
-                nectibus.“
-              </p>
-            </div>
-          </div>
-          <div className="row d-none d-md-flex align-items-center margin-40-top">
-            <div className="col-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--blue',
-                  overlay: '',
-                  border: 'border-img-svg--blue',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 8"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_ICON_IMAGE}
-                source={'Anlegerschutz'}
-                style={{
-                  backgroundImage: '',
-                  container: '',
-                  iconColor: 'icon-image--blue',
-                  overlay: '',
-                  border: 'border-img-svg--blue',
-                }}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Fokusthema 9"
-                    styleClasses="h4"
-                  />
-                }
-              />
-              <div className="row margin-40-top">
-                <div className="col-4" />
-                <div className="col-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_ICON_IMAGE}
-                    source={'Anlegerschutz'}
-                    style={{
-                      backgroundImage: '',
-                      container: 'margin-60-top margin-120-bottom',
-                      iconColor: 'icon-image--blue',
-                      overlay: '',
-                      border: 'border-img-svg--blue',
-                    }}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Fokusthema 10"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-12">
-              <div className="collapse" id="more-fokusthemen">
-                <FokusthemenPreview items={fokusthemen} />
-              </div>
-            </div>
-          </div>
-          <div className="row margin-40-top margin-xs-20-top">
-            <div className="col-12 col-md-4 order-2 order-md-1">
-              <LinkButton
-                styleSpan="w-100 w-md-unset"
-                text="FOKUSTHEMEN ÜBERSICHT"
-                path="/fokusthemen"
-              />
-            </div>
-            <MobileToggleWithButton />
-          </div>
-        </div>
+        <FokusthemenLayout
+          header={'Unsere Fokusthemen'}
+          description={
+            ' Mit Teams aus Management-, Fach- und Technologieberatern unterstützen wir Banken und Kapitalverwaltungsgesellschaften, damit sie den  unterschiedlichsten Herausforderungen gerecht werden. Hier möchten wir Ihnen einen Einblick in unser Leistungsspektrum geben, von der agilen Transformation oder dem Aufsatz von Effizienzsteigerungen über die Regulierung und Digitalisierung im Kredit- und Wertpapiergeschäft bis hin zum Design moderner Plattform-Architekturen und vielen Themen mehr.'
+          }
+          fokusthemen={fokusthemen}
+          style={{ container: 'margin-120-top margin-xs-80-top' }}
+        />
       </div>
     )
   }
@@ -563,6 +272,20 @@ export default Startseite
 
 export const pageQuery = graphql`
   query StartseiteQuery {
+    allContentfulFokusthema {
+      edges {
+        node {
+          id
+          url
+          uberschriftGanzOben
+          icon
+          beratungsfelder
+          headline {
+            headline
+          }
+        }
+      }
+    }
     iconVorteilLinksSharp: imageSharp(
       id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }
     ) {
@@ -581,6 +304,13 @@ export const pageQuery = graphql`
       id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }
     ) {
       sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    heroImageSharp: imageSharp(
+      id: { regex: "/20180718-cofinpro-stills19468-sw/" }
+    ) {
+      sizes(quality: 100, maxWidth: 2000) {
         ...GatsbyImageSharpSizes
       }
     }

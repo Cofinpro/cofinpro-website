@@ -3,36 +3,45 @@
 @import 'node_modules/bootstrap/scss/mixins';
 .image-overlay-top-left {
   position: absolute;
-  top: 38px;
-  left: 53px;
-  max-width: 75%;
-  @include media-breakpoint-only(xs) {
-    top: 20px;
-    left: 35px;
-  }
-  @include media-breakpoint-only(sm) {
-    top: 20px;
-    left: 35px;
-  }
-  @include media-breakpoint-only(md) {
-    top: 20px;
-    left: 35px;
-  }
-  @include media-breakpoint-only(lg) {
-    max-width: 65%;
-  }
+  top: 10%;
+  left: 8%;
+  width: 84%;
+  height: 80%;
+  overflow: hidden;
 }
 
-.icon-image {
+.image-overlay-background {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.image-overlay-background--brown {
+  background-color: rgba(196, 185, 185, 0.85);
+}
+
+.image-overlay-background--pink {
+  background-color: rgba(250, 220, 235, 0.85);
+}
+
+.icon-image .icon-image__icon-wrapper {
   position: absolute;
   top: 15%;
   left: 15%;
   width: 70%;
   height: 70%;
+  overflow: hidden;
   svg {
     width: 100%;
     height: 100%;
   }
+
+}
+
+.icon-image .icon-image__overlay:hover {
+  text-decoration: underline;
 }
 
 .svg-border {
@@ -48,22 +57,74 @@
   }
 }
 
-.icon-image--blue {
-  fill: #a9c5e8;
+.icon-image.--blue-yellow {
+  background-color: #a9c5e8;
+
+  .icon-image__icon-wrapper {
+    fill: #fff8c7;
+  }
 }
 
-.icon-image--orange {
-  fill: #ec7b1a;
+.icon-image.--blue-orange {
+  background-color: #a9c5e8;
+
+  .icon-image__icon-wrapper {
+    fill: #ec7b1a;
+  }
 }
 
-.icon-image--grey {
-  fill: #f2eeee;
+.icon-image.--orange-pink {
+  background-color: #ec7b1a;
+
+  .icon-image__icon-wrapper {
+    fill: #fadceb;
+  }
 }
 
-.icon-image--yellow {
-  fill: #fff8c7;
+.icon-image.--grey-blue {
+  background-color: #f2eeee;
+
+  .icon-image__icon-wrapper {
+    fill: #a9c5e8;
+  }
 }
 
-.icon-image--pink {
-  fill: #fadceb;
+.icon-image.--grey-orange {
+  background-color: #f2eeee;
+
+  .icon-image__icon-wrapper {
+    fill: #ec7b1a;
+  }
+}
+
+.icon-image.--yellow-orange {
+  background-color: #fff8c7;
+
+  .icon-image__icon-wrapper {
+    fill: #ec7b1a;
+  }
+}
+
+.icon-image.--yellow-blue {
+  background-color: #fff8c7;
+
+  .icon-image__icon-wrapper {
+    fill: #a9c5e8;
+  }
+}
+
+.icon-image.--pink-orange {
+  background-color: #fadceb;
+
+  .icon-image__icon-wrapper {
+    fill: #ec7b1a;
+  }
+}
+
+.icon-image.--pink-blue {
+  background-color: #fadceb;
+
+  .icon-image__icon-wrapper {
+    fill: #a9c5e8;
+  }
 }
