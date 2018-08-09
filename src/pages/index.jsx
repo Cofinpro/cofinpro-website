@@ -308,7 +308,7 @@ export const pageQuery = graphql`
       }
     }
     heroImageSharp: imageSharp(
-      id: { regex: "/20180718-cofinpro-stills19468-sw/" }
+      id: { regex: "/20180718-cofinpro-stills19468-cl/" }
     ) {
       sizes(quality: 100, maxWidth: 2000) {
         ...GatsbyImageSharpSizes
