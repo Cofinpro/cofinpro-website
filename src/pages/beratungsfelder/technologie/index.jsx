@@ -58,20 +58,6 @@ class BeratungsfelderTechnologie extends React.Component {
               <RelevanteFokusthemen />
             </div>
           </div>
-          <div className="row margin-120-top margin-xs-60-top">
-            <div className="col-md-6">
-              <h2 className="h2">
-                LOREM IPSUM dolor <br />
-                sit amet lorem ipsum
-              </h2>
-              <p className="text-left margin-20-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-              </p>
-            </div>
-          </div>
         </div>
         <div className="container">
           <div className="row margin-120-top margin-xs-40-top justify-content-center">
