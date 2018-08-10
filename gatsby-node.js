@@ -26,6 +26,7 @@ const pageWorkLife = require('./server/karriere/pageWorkLife')
 const pagesFokusthemen = require('./server/pagesFokusthemen')
 
 const pageProjekte = require('./server/projekte')
+const pageNewsMedien = require('./server/news-medien')
 
 const runWithTestData = false
 
@@ -141,6 +142,15 @@ function createPages(callback) {
   asyncTasks.push(
     async.apply(
       pageProjekte.create,
+      globalGraphql,
+      globalCreatePage,
+      globalBackgroundImages
+    )
+  )
+
+  asyncTasks.push(
+    async.apply(
+      pageNewsMedien.create,
       globalGraphql,
       globalCreatePage,
       globalBackgroundImages

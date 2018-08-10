@@ -85,7 +85,7 @@ class Menu extends React.Component {
       },
       {
         name: 'NEWS & MEDIEN',
-        link: '/news-medien',
+        link: '/news-medien/managementberatung',
         pattern: '/news-medien.*',
       },
       {
