@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import ToggleWithButton from '../../components/buttons/ToggleWithButton'
@@ -56,12 +55,7 @@ class ProjekteUebersicht extends React.Component {
                       <div className={'col-12 ' + firstColumnWidth}>
                         <Link
                           className="d-block text-dark"
-                          to={
-                            '/projekte/' +
-                            item.kategorieInDerDasProjektFllt.toLowerCase() +
-                            '/' +
-                            item.urlDerSeite
-                          }
+                          to={'/projekte/' + item.urlDerSeite}
                         >
                           <ImageWrapper
                             sourceType={SOURCE_TYP_SHARP}
@@ -72,10 +66,12 @@ class ProjekteUebersicht extends React.Component {
                                   text={'### ' + item.ueberschrift}
                                   styleClasses="h4"
                                 />
-                                <ContentfulMarkdownText
-                                  text={' ' + item.unterueberschrift}
-                                  styleClasses="h5 text-md-normal"
-                                />
+                                {item.unterueberschrift !== undefined && (
+                                  <ContentfulMarkdownText
+                                    text={' ' + item.unterueberschrift}
+                                    styleClasses="h5 text-md-normal"
+                                  />
+                                )}
                               </div>
                             }
                             showOverlay={true}
@@ -90,12 +86,7 @@ class ProjekteUebersicht extends React.Component {
                         <div className={'col-12 ' + secondColumnWidth}>
                           <Link
                             className="d-block text-dark"
-                            to={
-                              '/projekte/' +
-                              item.kategorieInDerDasProjektFllt.toLowerCase() +
-                              '/' +
-                              item.urlDerSeite
-                            }
+                            to={'/projekte/' + item.urlDerSeite}
                           >
                             <ImageWrapper
                               sourceType={SOURCE_TYP_SHARP}
@@ -109,13 +100,16 @@ class ProjekteUebersicht extends React.Component {
                                     }
                                     styleClasses="h4"
                                   />
-                                  <ContentfulMarkdownText
-                                    text={
-                                      ' ' +
-                                      props.projects[i + 1].unterueberschrift
-                                    }
-                                    styleClasses="h5 text-md-normal"
-                                  />
+                                  {props.projects[i + 1].unterueberschrift !==
+                                    undefined && (
+                                    <ContentfulMarkdownText
+                                      text={
+                                        ' ' +
+                                        props.projects[i + 1].unterueberschrift
+                                      }
+                                      styleClasses="h5 text-md-normal"
+                                    />
+                                  )}
                                 </div>
                               }
                               showOverlay={true}

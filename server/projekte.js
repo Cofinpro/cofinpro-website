@@ -6,15 +6,54 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
   graphql(
     `
       {
-        allContentfulProjekt (sort: { fields: [id], order: DESC }) {
+        allContentfulProjekt {
           edges {
             node {
               id
-              contentfulInternerName
-              kategorieInDerDasProjektFllt
               urlDerSeite
-              ueberschrift
-              unterueberschrift
+            }
+          }
+        }
+        allContentfulProjekteZuordnung {
+          edges {
+            node {
+              id
+              contentfulInterneBezeichnung
+              managementberatung {
+                id
+                relevanteBeratungsfelder
+                urlDerSeite
+                ueberschrift
+                unterueberschrift
+              }
+              fachberatungKredit {
+                id
+                relevanteBeratungsfelder
+                urlDerSeite
+                ueberschrift
+                unterueberschrift
+              }
+              fachberatungWertpapier {
+                id
+                relevanteBeratungsfelder
+                urlDerSeite
+                ueberschrift
+                unterueberschrift
+              }
+              technologieberatung {
+                id
+                relevanteBeratungsfelder
+                urlDerSeite
+                ueberschrift
+                unterueberschrift
+              }
+              digitalisierung {
+                id
+                relevanteBeratungsfelder
+                urlDerSeite
+                ueberschrift
+                unterueberschrift
+              }
             }
           }
         }
@@ -279,7 +318,7 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
     images.push(result.data.stockA9grau)
 
     images.push(result.data.stockA10pink)
-    images.push(result.data.stockA22pink)
+    images.push(result.data.stockA29pink)
 
     images.push(result.data.stockA14grau)
     images.push(result.data.stockA16grau)
@@ -291,77 +330,107 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
     images.push(result.data.stockA24grau)
 
     images.push(result.data.stockA22pink)
-    images.push(result.data.stockA29pink)
+    images.push(result.data.stockA37pink)
 
     images.push(result.data.stockA39grau)
     images.push(result.data.stockA31grau)
 
-    images.push(result.data.stockA37pink)
     images.push(result.data.stockA35pink)
-
-    images.push(result.data.stockA40grau)
-
-    let categories = [{
-        id: 'Managementberatung',
-        path: 'managementberatung',
-        title: 'Unsere Projekte in der Managementberatung ',
-        description: 'Programmmanagement, Auswahlverfahren, Organisationsentwicklung oder Digitalisierungsstrategien sind nur wenige Stichwörter: Was sich auf diesem Feld bei uns in den vergangenen Jahren getan hat, zeigt unsere Projektauswahl. ',
-        projects: [],
-      },
-      {
-        id: 'Fachberatung-Kredit',
-        path: 'fachberatung-kredit',
-        title: 'Unsere Projekte im Kreditgeschäft',
-        description: 'In den vergangenen Jahren hat sich auf unserem Kerngebiet viel getan: Was genau, zeigen wir hier anhand einer Auswahl unserer Projekte. ',
-        projects: [],
-      },
-      {
-        id: 'Fachberatung-Wertpapier',
-        path: 'fachberatung-wertpapier',
-        title: 'Unsere Projekte im Wertpapiergeschäft',
-        description: 'Hier ist in den vergangenen Jahren viel passiert: Was genau wir in unserem Kerngebiet geleistet haben, zeigen wir mit einer exemplarischen Projektauswahl. ',
-        projects: [],
-      },
-      {
-        id: 'Technologieberatung',
-        path: 'technologieberatung',
-        title: 'Unsere Projekte in der Technologieberatung',
-        description: 'Welche technologischen Antworten wir auf die Herausforderungen unserer Kunden haben? Hier finden Sie eine Auswahl exemplarischer Projekte. ',
-        projects: [],
-      },
-      {
-        id: 'Digitalisierung',
-        path: 'digitalisierung',
-        title: 'Unsere Projekte im Kontext von Digitalisierung',
-        description: 'Ob Digi-Ramp-up, Innovationslabore oder agile Organisation: Hier finden Sie eine Reihe exemplarischer Projekte aus dem Umfeld der Digitalisierung. ',
-        projects: [],
-      },
-    ]
 
     const template = path.resolve(`./src/templates/projekte/index.jsx`)
 
-    _.each(result.data.allContentfulProjekt.edges, edge => {
-      for (let i = 0; i < categories.length; ++i) {
-        if (categories[i].id === edge.node.kategorieInDerDasProjektFllt) {
-          categories[i].projects.push(edge.node)
-        }
-      }
-    })
-
-    _.each(categories, category => {
+    if (result.data.allContentfulProjekteZuordnung.edges.length > 0) {
       createPage({
-        path: '/projekte/' + category.path,
+        path: '/projekte/managementberatung',
         component: slash(template),
         context: {
-          id: category.id,
-          title: category.title,
-          description: category.description,
-          projects: category.projects,
+          id: 'Managementberatung',
+          title: 'Unsere Projekte in der Managementberatung ',
+          description: 'Programmmanagement, Auswahlverfahren, Organisationsentwicklung oder Digitalisierungsstrategien sind nur wenige Stichwörter: Was sich auf diesem Feld bei uns in den vergangenen Jahren getan hat, zeigt unsere Projektauswahl.',
+          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.managementberatung,
           stockImages: images,
         },
       })
-      console.log('created page /projekte/' + category.path)
-    })
+      console.log('created page /projekte/managementberatung')
+
+      createPage({
+        path: '/projekte/fachberatung-kredit',
+        component: slash(template),
+        context: {
+          id: 'Fachberatung-Kredit',
+          title: 'Unsere Projekte im Kreditgeschäft',
+          description: 'In den vergangenen Jahren hat sich auf unserem Kerngebiet viel getan: Was genau, zeigen wir hier anhand einer Auswahl unserer Projekte.',
+          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.fachberatungKredit,
+          stockImages: images,
+        },
+      })
+      console.log('created page /projekte/fachberatung-kredit')
+
+      createPage({
+        path: '/projekte/fachberatung-wertpapier',
+        component: slash(template),
+        context: {
+          id: 'Fachberatung-Wertpapier',
+          title: 'Unsere Projekte im Wertpapiergeschäft',
+          description: 'Hier ist in den vergangenen Jahren viel passiert: Was genau wir in unserem Kerngebiet geleistet haben, zeigen wir mit einer exemplarischen Projektauswahl.',
+          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.fachberatungWertpapier,
+          stockImages: images,
+        },
+      })
+      console.log('created page /projekte/fachberatung-wertpapier')
+
+      createPage({
+        path: '/projekte/technologieberatung',
+        component: slash(template),
+        context: {
+          id: 'Technologieberatung',
+          title: 'Unsere Projekte in der Technologieberatung',
+          description: 'Welche technologischen Antworten wir auf die Herausforderungen unserer Kunden haben? Hier finden Sie eine Auswahl exemplarischer Projekte.',
+          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.technologieberatung,
+          stockImages: images,
+        },
+      })
+      console.log('created page /projekte/technologieberatung')
+
+      createPage({
+        path: '/projekte/digitalisierung',
+        component: slash(template),
+        context: {
+          id: 'Digitalisierung',
+          title: 'Unsere Projekte im Kontext von Digitalisierung',
+          description: 'Ob Digi-Ramp-up, Innovationslabore oder agile Organisation: Hier finden Sie eine Reihe exemplarischer Projekte aus dem Umfeld der Digitalisierung.',
+          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.digitalisierung,
+          stockImages: images,
+        },
+      })
+      console.log('created page /projekte/digitalisierung')
+    }
+
+    // Detailseiten Projekte ab hier
+
+    const templateDetail = path.resolve(`./src/templates/projekt/index.jsx`)
+
+    let indexOfImage = 0
+
+    for (let i = 0; i < result.data.allContentfulProjekt.edges.length; ++i) {
+
+      createPage({
+          path: `/projekte/${result.data.allContentfulProjekt.edges[i].node.urlDerSeite}`,
+          component: slash(templateDetail),
+          context: {
+            id: result.data.allContentfulProjekt.edges[i].node.id,
+            bigImage: images[indexOfImage],
+          },
+        })
+        ++indexOfImage
+
+      if (indexOfImage === images.length) {
+        indexOfImage = 0
+      }
+
+      console.log(`created page /projekte/${result.data.allContentfulProjekt.edges[i].node.urlDerSeite}.`)
+    }
+
     callback(null)
   })
 }

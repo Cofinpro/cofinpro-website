@@ -193,6 +193,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
       }
     }
 
+    console.log(`created pages für fokusthemen done.`)
+
     callback(null)
   })
 }
