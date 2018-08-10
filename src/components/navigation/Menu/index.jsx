@@ -75,7 +75,7 @@ class Menu extends React.Component {
       },
       {
         name: 'FOKUSTHEMEN',
-        link: '/fokusthemen',
+        link: '/fokusthemen/managementberatung',
         pattern: '/fokusthemen.*',
       },
       {

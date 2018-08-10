@@ -12,7 +12,7 @@ class FokusthemaPreview extends React.Component {
   render() {
     const pathPrefix = process.env_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { url, header, color, icon } = this.props
+    const { url, header, subheader, color, icon } = this.props
     return (
       <Link to={'/fokusthemen/thema/' + url}>
         <ImageWrapper
@@ -23,14 +23,15 @@ class FokusthemaPreview extends React.Component {
           }}
           overlayElement={
             <div>
-              <ContentfulMarkdownText
-                text={'### ' + header}
-                styleClasses="h4 d-none d-lg-block"
-              />
-              <ContentfulMarkdownText
-                text={'### ' + header}
-                styleClasses="h5 d-block d-lg-none"
-              />
+              <p className="h4 d-none d-lg-block no-margin bold-font">
+                {header}
+              </p>
+              <p className="h5 d-block d-lg-none no-margin bold-font">
+                {header}
+              </p>
+              {subheader !== undefined && (
+                <p className="text-sm-small">{subheader}</p>
+              )}
             </div>
           }
         />

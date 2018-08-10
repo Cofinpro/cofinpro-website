@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import ToggleWithButton from '../../components/buttons/ToggleWithButton'
@@ -10,7 +9,6 @@ import NavigationBeratungsfelder from '../../components/navigation/NavigationBer
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
@@ -57,34 +55,23 @@ class ProjekteUebersicht extends React.Component {
                       <div className={'col-12 ' + firstColumnWidth}>
                         <Link
                           className="d-block text-dark"
-                          to={
-                            '/projekte/' +
-                            item.kategorieInDerDasProjektFllt.toLowerCase() +
-                            '/' +
-                            item.urlDerSeite
-                          }
+                          to={'/projekte/' + item.urlDerSeite}
                         >
                           <ImageWrapper
                             sourceType={SOURCE_TYP_SHARP}
-                            source={backgroundImages[i]}
-                            backgroundOverlay={
-                              <div
-                                className={
-                                  'image-overlay-background image-overlay-background' +
-                                  backgroundColorLeft
-                                }
-                              />
-                            }
+                            source={props.images[props.imageIndexOffset + i]}
                             overlayElement={
                               <div>
                                 <ContentfulMarkdownText
                                   text={'### ' + item.ueberschrift}
                                   styleClasses="h4"
                                 />
-                                <ContentfulMarkdownText
-                                  text={' ' + item.unterueberschrift}
-                                  styleClasses="h5 text-md-normal"
-                                />
+                                {item.unterueberschrift !== undefined && (
+                                  <ContentfulMarkdownText
+                                    text={' ' + item.unterueberschrift}
+                                    styleClasses="h5 text-md-normal"
+                                  />
+                                )}
                               </div>
                             }
                             showOverlay={true}
@@ -99,24 +86,11 @@ class ProjekteUebersicht extends React.Component {
                         <div className={'col-12 ' + secondColumnWidth}>
                           <Link
                             className="d-block text-dark"
-                            to={
-                              '/projekte/' +
-                              item.kategorieInDerDasProjektFllt.toLowerCase() +
-                              '/' +
-                              item.urlDerSeite
-                            }
+                            to={'/projekte/' + item.urlDerSeite}
                           >
                             <ImageWrapper
                               sourceType={SOURCE_TYP_SHARP}
                               source={backgroundImages[i + 1]}
-                              backgroundOverlay={
-                                <div
-                                  className={
-                                    'image-overlay-background image-overlay-background' +
-                                    backgroundColorRight
-                                  }
-                                />
-                              }
                               overlayElement={
                                 <div>
                                   <ContentfulMarkdownText
@@ -126,13 +100,16 @@ class ProjekteUebersicht extends React.Component {
                                     }
                                     styleClasses="h4"
                                   />
-                                  <ContentfulMarkdownText
-                                    text={
-                                      ' ' +
-                                      props.projects[i + 1].unterueberschrift
-                                    }
-                                    styleClasses="h5 text-md-normal"
-                                  />
+                                  {props.projects[i + 1].unterueberschrift !==
+                                    undefined && (
+                                    <ContentfulMarkdownText
+                                      text={
+                                        ' ' +
+                                        props.projects[i + 1].unterueberschrift
+                                      }
+                                      styleClasses="h5 text-md-normal"
+                                    />
+                                  )}
                                 </div>
                               }
                               showOverlay={true}
@@ -183,10 +160,7 @@ class ProjekteUebersicht extends React.Component {
               <p className="h4 bold-font d-none d-md-block">{description}</p>
               <p className="d-block d-md-none">{description}</p>
             </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <RelevanteFokusthemen />
-            </div>
+            <div className="col-12 col-md-6" />
           </div>
         </div>
 
@@ -197,11 +171,18 @@ class ProjekteUebersicht extends React.Component {
 
         <Layout
           projects={firstShowProjects}
+          images={backgroundImages}
+          imageIndexOffset={0}
           style={{ container: 'margin-100-top margin-xs-60-top' }}
         />
 
         <div className="collapse" id="collapse-more-projects">
-          <Layout projects={moreProjects} style={{ container: '' }} />
+          <Layout
+            projects={moreProjects}
+            images={backgroundImages}
+            imageIndexOffset={7}
+            style={{ container: '' }}
+          />
         </div>
 
         <div className="container margin-40-top">
