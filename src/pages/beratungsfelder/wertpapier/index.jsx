@@ -6,6 +6,7 @@ import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
@@ -17,10 +18,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/wertpapier/20180718-cofinpro-stills19149.jpg'
-                }
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.wertpapierImageSharp}
               />
             </div>
           </div>
@@ -30,10 +29,19 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-8">
               <div className="row margin-20-top">
                 <div className="col-md-4">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_BOOTSTRAP}
-                    source={'/img/beratungsfelder/fach/fachberatung.png'}
-                  />
+                  <div className="d-none d-md-block">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                    />
+                  </div>
+                  <div className="d-block d-md-none">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                      styleClasses="beratungs-icons"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="row">
@@ -73,8 +81,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/wertpapier/fb2.png'}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharp}
               />
             </div>
           </div>
@@ -82,8 +90,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Investmentprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/wertpapier/fb3.png'}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.process2ImageSharp}
               />
             </div>
           </div>
@@ -238,3 +246,28 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
 }
 
 export default BeratungsfelderWertpapierTemplate
+
+export const pageQuery = graphql`
+  query BeratungsfelderWertQuery {
+    wertpapierImageSharp: imageSharp(id: { regex: "/Wertpapier/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
+      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharp: imageSharp(id: { regex: "/fb2/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    process2ImageSharp: imageSharp(id: { regex: "/fb3/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

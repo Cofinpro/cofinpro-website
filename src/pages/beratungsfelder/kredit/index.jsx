@@ -6,7 +6,7 @@ import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
@@ -18,10 +18,8 @@ class BeratungsfelderKredit extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/kredit/20180718-cofinpro-stills19124 1.jpg'
-                }
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.kreditImageSharp}
               />
             </div>
           </div>
@@ -32,10 +30,19 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-4">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_BOOTSTRAP}
-                    source={'/img/beratungsfelder/fach/fachberatung.png'}
-                  />
+                  <div className="d-none d-md-block">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                    />
+                  </div>
+                  <div className="d-block d-md-none">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                      styleClasses="beratungs-icons"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="row margin-20-top">
@@ -87,13 +94,13 @@ class BeratungsfelderKredit extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container ">
           <div className="row margin-140-top margin-xs-60-top">
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/kredit/fb1.png'}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharp}
               />
             </div>
           </div>
@@ -212,3 +219,23 @@ class BeratungsfelderKredit extends React.Component {
 }
 
 export default BeratungsfelderKredit
+
+export const pageQuery = graphql`
+  query BeratungsfelderKreditQuery {
+    kreditImageSharp: imageSharp(id: { regex: "/Kredit/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
+      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharp: imageSharp(id: { regex: "/fb1/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

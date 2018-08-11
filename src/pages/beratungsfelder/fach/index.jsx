@@ -4,7 +4,7 @@ import LinkButton from '../../../components/buttons/LinkButton'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderFach extends React.Component {
@@ -18,8 +18,8 @@ class BeratungsfelderFach extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/fach/fachberatung.jpg'}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.fachImageSharp}
               />
             </div>
           </div>
@@ -27,10 +27,19 @@ class BeratungsfelderFach extends React.Component {
         <div className="container margin-40-top">
           <div className="row">
             <div className="col-md-2">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/fach/fachberatung.png'}
-              />
+              <div className="d-none d-md-block">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.iconImageSharp}
+                />
+              </div>
+              <div className="d-block d-md-none">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.iconImageSharp}
+                  styleClasses="beratungs-icons"
+                />
+              </div>
             </div>
           </div>
           <div className="row margin-40-top">
@@ -90,3 +99,18 @@ class BeratungsfelderFach extends React.Component {
 }
 
 export default BeratungsfelderFach
+
+export const pageQuery = graphql`
+  query BeratungsfelderFachQuery {
+    fachImageSharp: imageSharp(id: { regex: "/Fachberatung/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
+      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`
