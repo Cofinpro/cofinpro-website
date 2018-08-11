@@ -6,7 +6,7 @@ import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
   SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
@@ -18,10 +18,8 @@ class BeratungsfelderKredit extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/kredit/20180718-cofinpro-stills19124 1.jpg'
-                }
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.kreditImageSharp}
               />
             </div>
           </div>
@@ -32,31 +30,45 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-md-8">
               <div className="row">
                 <div className="col-md-4">
-                  <ImageWrapper sourceType={SOURCE_TYP_BOOTSTRAP} source={''} />
+                  <div className="d-none d-md-block">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                    />
+                  </div>
+                  <div className="d-block d-md-none">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                      styleClasses="beratungs-icons"
+                    />
+                  </div>
                 </div>
               </div>
-
-              <h1 className="h1 margin-20-top">Kreditgeschäft</h1>
-              <h2 className="h2 margin-20-top d-none d-md-block">
-                Unsere Fachberatung im Kreditgeschäft
-              </h2>
-              <p className="d-block d-md-none">
-                Unsere Fachberatung im Kreditgeschäft
-              </p>
-              <h4 className="h4 margin-40-top d-none d-md-block">
-                Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir
-                Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer
-                Kundenorientierung und der Bewältigung der Anforderungen aus der
-                Regulatorik.
-              </h4>
-              <p className="d-block d-md-none">
-                Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir
-                Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer
-                Kundenorientierung und der Bewältigung der Anforderungen aus der
-                Regulatorik.
-              </p>
+              <div className="row margin-20-top">
+                <div className="col-md-12">
+                  <h1 className="h1">Kreditgeschäft</h1>
+                  <h2 className="h2 margin-20-top d-none d-md-block">
+                    Unsere Fachberatung im Kreditgeschäft
+                  </h2>
+                  <p className="d-block d-md-none">
+                    Unsere Fachberatung im Kreditgeschäft
+                  </p>
+                  <h4 className="h4 margin-40-top d-none d-md-block">
+                    Mit Lösungen für das Kreditgeschäft von morgen unterstützen
+                    wir Sie im steigenden Wettbewerb, in der Ausrichtung zu
+                    zeitgemäßer Kundenorientierung und der Bewältigung der
+                    Anforderungen aus der Regulatorik.
+                  </h4>
+                  <p className="d-block d-md-none">
+                    Mit Lösungen für das Kreditgeschäft von morgen unterstützen
+                    wir Sie im steigenden Wettbewerb, in der Ausrichtung zu
+                    zeitgemäßer Kundenorientierung und der Bewältigung der
+                    Anforderungen aus der Regulatorik.
+                  </p>
+                </div>
+              </div>
             </div>
-
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
@@ -82,16 +94,13 @@ class BeratungsfelderKredit extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container ">
           <div className="row margin-140-top margin-xs-60-top">
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 200,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharp}
               />
             </div>
           </div>
@@ -210,3 +219,23 @@ class BeratungsfelderKredit extends React.Component {
 }
 
 export default BeratungsfelderKredit
+
+export const pageQuery = graphql`
+  query BeratungsfelderKreditQuery {
+    kreditImageSharp: imageSharp(id: { regex: "/Kredit/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
+      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharp: imageSharp(id: { regex: "/fb1/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`
