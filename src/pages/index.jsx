@@ -186,12 +186,12 @@ export const pageQuery = graphql`
       }
     }
     newsMedienLinks: imageSharp(id: { regex: "/startseite-b12/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: SOUTH) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
     newsMedienRechts: imageSharp(id: { regex: "/startseite-b17/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: SOUTH) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
