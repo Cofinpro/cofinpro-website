@@ -193,7 +193,7 @@ export const pageQuery = graphql`
       }
     }
     iconImageSharp: imageSharp(id: { regex: "/technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 1115, maxHeight: 140) {
+      sizes(quality: 100, maxWidth: 115, maxHeight: 140) {
         ...GatsbyImageSharpSizes
       }
     }

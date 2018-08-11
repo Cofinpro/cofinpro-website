@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 import LinkButton from '../../components/buttons/LinkButton'
+import ToggleWithButton from '../../components/buttons/ToggleWithButton'
 import DownloadButton from '../../components/buttons/DownloadButton'
 import MobileToggleWithButton from '../../components/buttons/MobileToggleWithButton'
 
@@ -17,23 +18,49 @@ import {
   SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
+import './style.scss'
+
 class NewsMedienUebersichtTemplate extends React.Component {
   render() {
     function LayoutDownloadRow(props) {
-      const { content, style } = props
+      const { downloads, startIndex, endIndex, style } = props
 
       return (
         <div className={'row ' + style.row}>
-          <div className="col-12 col-md-4">
-            <DownloadButton text={content.itemLeft} />
+          <div className="col-12">
+            {downloads.map((download, i) => {
+              if (startIndex <= i && i <= endIndex) {
+                if (i % 2 === 0) {
+                  return (
+                    <div className="row" key={i}>
+                      <div className="col-12 col-md-4">
+                        <DownloadButton
+                          _href={`/pdf/contentful/${download.datei.id}.pdf`}
+                          text={download.beschriftungDesDownloads}
+                        />
+                      </div>
+                      <div className="col-12 col-md-2" />
+                      <div className="col-12 col-md-4">
+                        {downloads.length !== i + 1 && (
+                          <DownloadButton
+                            _href={`/pdf/contentful/${
+                              downloads[i + 1].datei.id
+                            }.pdf`}
+                            text={downloads[i + 1].beschriftungDesDownloads}
+                          />
+                        )}
+                      </div>
+                      <div className="col-12 col-md-2" />
+                    </div>
+                  )
+                } else {
+                  return null
+                }
+              } else {
+                return null
+              }
+            })}
           </div>
-          <div className="col-12 col-md-2" />
-          {content.itemRight !== null && (
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.itemRight} />
-            </div>
-          )}
-          <div className="col-12 col-md-2" />
         </div>
       )
     }
@@ -171,11 +198,27 @@ class NewsMedienUebersichtTemplate extends React.Component {
               return (
                 <LayoutDownloadRow
                   key={i}
-                  content={{
-                    itemLeft: content.downloads[i].text,
-                    itemRight: content.downloads[i + 1].text,
-                  }}
-                  style={{ row: style }}
+                  downloads={[
+                    {
+                      id: 'c6kWn3MYQuIWMuKGiE6UASM',
+                      contentfulInternerName:
+                        'WP - Lösungsskizze - Optimierung der Markt- und Stammdatenprozesse',
+                      datumDerVerffentlichung: '2018-09-29',
+                      beschriftungDesDownloads:
+                        'Optimierung der Markt- und Stammdatenprozesse',
+                      zuordnungZuBereiche: ['Fachberatung-Wertpapier'],
+                      artDesDownloads: 'Lösungsskizze',
+                      nurImArchivAnzeigen: false,
+                      datei: {
+                        id: 'c6n7cm1qACIKy42w6ggmqE6',
+                        title: 'Cofinpro loesungsskizze Markt Stammdaten v1.1',
+                        description: '',
+                      },
+                    },
+                  ]}
+                  startIndex={0}
+                  endIndex={0}
+                  style={{ row: '' }}
                 />
               )
             } else {
@@ -194,11 +237,28 @@ class NewsMedienUebersichtTemplate extends React.Component {
                 return (
                   <LayoutDownloadRow
                     key={i}
-                    content={{
-                      itemLeft: itemLeftT,
-                      itemRight: itemRightT,
-                    }}
-                    style={{ row: 'd-flex d-md-none' }}
+                    downloads={[
+                      {
+                        id: 'c6kWn3MYQuIWMuKGiE6UASM',
+                        contentfulInternerName:
+                          'WP - Lösungsskizze - Optimierung der Markt- und Stammdatenprozesse',
+                        datumDerVerffentlichung: '2018-09-29',
+                        beschriftungDesDownloads:
+                          'Optimierung der Markt- und Stammdatenprozesse',
+                        zuordnungZuBereiche: ['Fachberatung-Wertpapier'],
+                        artDesDownloads: 'Lösungsskizze',
+                        nurImArchivAnzeigen: false,
+                        datei: {
+                          id: 'c6n7cm1qACIKy42w6ggmqE6',
+                          title:
+                            'Cofinpro loesungsskizze Markt Stammdaten v1.1',
+                          description: '',
+                        },
+                      },
+                    ]}
+                    startIndex={0}
+                    endIndex={0}
+                    style={{ row: '' }}
                   />
                 )
               } else {
@@ -239,96 +299,103 @@ class NewsMedienUebersichtTemplate extends React.Component {
               </h3>
             </div>
           </div>
-          <div className="row">
-            <div className="col-12 col-md-6">
-              <div className="row justify-content-center">
-                <div className="col-12">
-                  <Link className="text-dark" to={`/`}>
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={content.images[0]}
-                      overlayElement={
-                        <div className="text-underline">
-                          <p className="h4 d-none d-lg-block no-margin bold-font">
-                            {content.medien[0].header}
-                          </p>
-                          <p className="h5 d-block d-lg-none no-margin bold-font">
-                            {content.medien[0].header}
-                          </p>
-                          {content.medien[0].subheader !== undefined && (
-                            <p className="text-sm-small">
-                              {content.medien[0].subheader}
+          {content.downloads.length > 0 && (
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <div className="row justify-content-center">
+                  <div className="col-12">
+                    <a
+                      className="text-dark"
+                      href={`/pdf/contentful/${
+                        content.downloads[0].datei.id
+                      }.pdf`}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <ImageWrapper
+                        sourceType={SOURCE_TYP_SHARP}
+                        source={content.images[0]}
+                        overlayElement={
+                          <div className="text-underline">
+                            <p className="h4 d-none d-lg-block no-margin bold-font">
+                              {content.downloads[0].beschriftungDesDownloads}
                             </p>
-                          )}
-                        </div>
-                      }
-                    />
-                  </Link>
+                            <p className="h5 d-block d-lg-none no-margin bold-font">
+                              {content.downloads[0].beschriftungDesDownloads}
+                            </p>
+                            {/*content.medien[0].subheader !== undefined && (
+                              <p className="text-sm-small">
+                                {content.medien[0].subheader}
+                              </p>
+                            )*/}
+                          </div>
+                        }
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-12 col-md-6 d-none d-md-block">
-              <div className="row margin-xs-20-top">
-                <div className="col-12 col-md-8">
-                  <Link className="text-dark" to={`/`}>
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={content.images[1]}
-                      overlayElement={
-                        <div className="text-underline">
-                          <p className="h4 d-none d-lg-block no-margin bold-font">
-                            {content.medien[1].header}
-                          </p>
-                          <p className="h5 d-block d-lg-none no-margin bold-font">
-                            {content.medien[1].header}
-                          </p>
-                          {content.medien[1].subheader !== undefined && (
-                            <p className="text-sm-small">
-                              {content.medien[1].subheader}
-                            </p>
-                          )}
-                        </div>
-                      }
-                    />
-                  </Link>
-                </div>
+              <div className="col-12 col-md-6 d-none d-md-block">
+                {content.downloads.length > 1 && (
+                  <div className="row margin-xs-20-top">
+                    <div className="col-12 col-md-8">
+                      <a
+                        className="text-dark"
+                        href={`/pdf/contentful/${
+                          content.downloads[1].datei.id
+                        }.pdf`}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        <ImageWrapper
+                          sourceType={SOURCE_TYP_SHARP}
+                          source={content.images[1]}
+                          overlayElement={
+                            <div className="text-underline">
+                              <p className="h4 d-none d-lg-block no-margin bold-font">
+                                {content.downloads[1].beschriftungDesDownloads}
+                              </p>
+                              <p className="h5 d-block d-lg-none no-margin bold-font">
+                                {content.downloads[1].beschriftungDesDownloads}
+                              </p>
+                              {/*content.medien[0].subheader !== undefined && (
+                              <p className="text-sm-small">
+                                {content.medien[0].subheader}
+                              </p>
+                            )*/}
+                            </div>
+                          }
+                        />
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-          <div className="row margin-40-top margin-xs-20-top">
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.downloads[0].text} />
+          )}
+          {content.downloads.length > 2 && (
+            <LayoutDownloadRow
+              downloads={content.downloads}
+              startIndex={2}
+              endIndex={3}
+              style={{ row: 'margin-30-top margin-xs-10-top' }}
+            />
+          )}
+          {content.downloads.length > 4 && (
+            <div className="collapse" id={'more-' + content.id}>
+              <LayoutDownloadRow
+                downloads={content.downloads}
+                startIndex={4}
+                endIndex={999}
+                style={{ row: '' }}
+              />
             </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <DownloadButton text={content.downloads[1].text} />
-            </div>
-            <div className="col-12 col-md-2" />
-          </div>
-          <div className="collapse" id={'more-' + content.id}>
-            {content.downloads.map(function(item, i) {
-              if (i % 2 === 0 && i > 1 && i < 4) {
-                let itemLeftT = content.downloads[i].text
-                let itemRightT =
-                  i === content.downloads.length - 1
-                    ? null
-                    : content.downloads[i + 1].text
-
-                return (
-                  <LayoutDownloadRow
-                    key={i}
-                    content={{
-                      itemLeft: itemLeftT,
-                      itemRight: itemRightT,
-                    }}
-                    style={{ row: 'd-flex d-md-none' }}
-                  />
-                )
-              } else {
-                return null
-              }
-            })}
-          </div>
+          )}
+          {content.downloads.length === 0 && (
+            <p className="no-media-available-text">
+              Keine Medien zu diesem Thema <br />in dieser Kategorie verfügbar
+            </p>
+          )}
           <div className="row margin-40-top margin-xs-0-top">
             <div className="col-12 col-md-4 order-2 order-md-1">
               <LinkButton
@@ -338,10 +405,12 @@ class NewsMedienUebersichtTemplate extends React.Component {
               />
             </div>
             <div className="col-12 col-md-4 align-items-center order-1 order-md-2">
-              <MobileToggleWithButton
-                show={showMoreButton}
-                dataTargetId={'more-' + content.id}
-              />
+              {content.downloads.length > 4 && (
+                <ToggleWithButton
+                  show={true}
+                  dataTargetId={'more-' + content.id}
+                />
+              )}
             </div>
           </div>
         </div>
@@ -350,6 +419,8 @@ class NewsMedienUebersichtTemplate extends React.Component {
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    var input = this.props.pathContext.input
 
     return (
       <div>
@@ -515,30 +586,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.studienOneSharp,
               this.props.data.studienTwoSharp,
             ],
-            medien: [
-              {
-                header: 'Headline Medien/Unterthema 1',
-                subheader: 'Subheadline Medien/Unterthema 1',
-              },
-              {
-                header: 'Headline Medien/Unterthema 2',
-                subheader: 'Subheadline Medien/Unterthema 2',
-              },
-            ],
-            downloads: [
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-            ],
+            downloads: input.studien,
             buttonText: 'ZUM ARCHIV FÜR STUDIEN',
           }}
           style={{ container: 'margin-60-top margin-xs-40-top ' }}
@@ -552,26 +600,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.thesenpapierOneSharp,
               this.props.data.thesenpapierTwoSharp,
             ],
-            medien: [
-              {
-                header: 'Headline Medien/Unterthema 1',
-                subheader: 'Subheadline Medien/Unterthema 1',
-              },
-              {
-                header: 'Headline Medien/Unterthema 2',
-                subheader: 'Subheadline Medien/Unterthema 2',
-              },
-            ],
-            downloads: [
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-            ],
+            downloads: input.thesenpapiere,
             buttonText: 'ZUM ARCHIV FÜR THESENPAPIERE',
           }}
           style={{ container: 'margin-60-top margin-xs-60-top ' }}
@@ -595,24 +624,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
                 subheader: 'Subheadline Medien/Unterthema 2',
               },
             ],
-            downloads: [
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-            ],
+            downloads: input.whitepapers,
             buttonText: 'ZUM ARCHIV FÜR WHITEPAPERS',
           }}
           style={{ container: 'margin-60-top margin-xs-60-top ' }}
@@ -626,26 +638,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.loesungsskizzenOneSharp,
               this.props.data.loesungsskizzenTwoSharp,
             ],
-            medien: [
-              {
-                header: 'Headline Medien/Unterthema 1',
-                subheader: 'Subheadline Medien/Unterthema 1',
-              },
-              {
-                header: 'Headline Medien/Unterthema 2',
-                subheader: 'Subheadline Medien/Unterthema 2',
-              },
-            ],
-            downloads: [
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-              {
-                text:
-                  'MiFID II Umsetzung  \n Folgen der MIFID II-Umsetzung:  \n Das ändert sich für Bankkunden',
-              },
-            ],
+            downloads: input.loesungsskizzen,
             buttonText: 'ZUM ARCHIV FÜR LÖSUNGSSKIZZEN',
           }}
           style={{ container: 'margin-60-top margin-xs-60-top ' }}
