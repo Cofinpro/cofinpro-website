@@ -132,11 +132,8 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
             <div className="col-md-6">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 1500,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.managementMatrixSharp}
               />
             </div>
           </div>
@@ -153,10 +150,13 @@ export default BeratungsfelderManagementTemplate
 
 export const pageQuery = graphql`
   query BeratungsfelderManagementQuery {
-    heroImageSharp: imageSharp(
-      id: { regex: "/20180718-cofinpro-stills19242/" }
-    ) {
+    heroImageSharp: imageSharp(id: { regex: "/Managementberatung/" }) {
       sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    managementMatrixSharp: imageSharp(id: { regex: "/ManagementMatrix/" }) {
+      sizes(quality: 100, maxWidth: 500, maxHeight: 570, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }

@@ -7,6 +7,7 @@ import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderTechnologie extends React.Component {
@@ -17,10 +18,8 @@ class BeratungsfelderTechnologie extends React.Component {
           <div className="row">
             <div className="col-md-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={
-                  '/img/beratungsfelder/technologie/20180718-cofinpro-stills18919.jpg'
-                }
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.techImageSharp}
               />
             </div>
           </div>
@@ -30,12 +29,19 @@ class BeratungsfelderTechnologie extends React.Component {
             <div className="col-md-8">
               <div className="row margin-20-top">
                 <div className="col-md-4">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_BOOTSTRAP}
-                    source={
-                      '/img/beratungsfelder/technologie/technologieberatung.png'
-                    }
-                  />
+                  <div className="d-none d-md-block">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                    />
+                  </div>
+                  <div className="d-block d-md-none">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_SHARP}
+                      source={this.props.data.iconImageSharp}
+                      styleClasses="beratungs-icons"
+                    />
+                  </div>
                 </div>
               </div>
               <h1 className="h1 margin-20-top">Technologieberatung</h1>
@@ -58,28 +64,14 @@ class BeratungsfelderTechnologie extends React.Component {
               <RelevanteFokusthemen />
             </div>
           </div>
-          <div className="row margin-120-top margin-xs-60-top">
-            <div className="col-md-6">
-              <h2 className="h2">
-                LOREM IPSUM dolor <br />
-                sit amet lorem ipsum
-              </h2>
-              <p className="text-left margin-20-top">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-              </p>
-            </div>
-          </div>
         </div>
         <div className="container">
           <div className="row margin-120-top margin-xs-40-top justify-content-center">
             <div className="col-md-10">
               <h2 className="h2 text-primary text-center">Headline</h2>
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/technologie/tech3.png'}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.headlineImageSharp}
               />
             </div>
           </div>
@@ -95,7 +87,7 @@ class BeratungsfelderTechnologie extends React.Component {
               <p>
                 Auf diese Plattformen für unterschiedliche Zielgruppen
                 fokussieren wir uns:<p />
-                <ul>
+                <ul className="blue-bullet">
                   <li>
                     <b>Customer Experience: </b>Diese Plattform stellt den
                     B2C-Kunden in den Mittelpunkt. Eine hohe User Experience
@@ -131,7 +123,7 @@ class BeratungsfelderTechnologie extends React.Component {
                 Um diese Plattformen zu entwickeln, bauen wir ein starkes
                 Fundament. Dafür verwenden wir die aktuellste
                 Entwicklungs-Infrastruktur, die unter anderem beinhaltet:<p />
-                <ul>
+                <ul className="blue-bullet">
                   <li>
                     moderne Methoden im Software Engineering wie DevOps und
                     Scrum<p />
@@ -154,11 +146,11 @@ class BeratungsfelderTechnologie extends React.Component {
                 Unsere Projektleistungen in der Technologieberatung in Kürze
               </h3>
               <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/technologie/tech.png'}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharp}
               />
               <p className="margin-20-top margin-xs-20-top">
-                <ul>
+                <ul className="blue-bullet">
                   <li>
                     <b>Assessment und Roadmap:</b> Wir nehmen die Anforderungen
                     an die IT unserer Kunden individuell auf, analysieren die
@@ -192,3 +184,28 @@ class BeratungsfelderTechnologie extends React.Component {
 }
 
 export default BeratungsfelderTechnologie
+
+export const pageQuery = graphql`
+  query BeratungsfelderTechQuery {
+    techImageSharp: imageSharp(id: { regex: "/Technologieberatung/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    iconImageSharp: imageSharp(id: { regex: "/technologieberatung/" }) {
+      sizes(quality: 100, maxWidth: 1115, maxHeight: 140) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    headlineImageSharp: imageSharp(id: { regex: "/tech3/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharp: imageSharp(id: { regex: "/tech4/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

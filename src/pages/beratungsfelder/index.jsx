@@ -5,6 +5,7 @@ import LinkButton from '../../components/buttons/LinkButton'
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
 class BeratungsfelderStartseite extends React.Component {
@@ -62,8 +63,8 @@ class BeratungsfelderStartseite extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6">
               <ImageWrapper
-                source="http://via.placeholder.com/600x350"
-                sourceType={SOURCE_TYP_BOOTSTRAP}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.mngmtHeroImageSharp}
               />
             </div>
             <div className="col-12 col-md-6 margin-xs-20-top">
@@ -90,8 +91,8 @@ class BeratungsfelderStartseite extends React.Component {
           <div className="row">
             <div className="col-12 d-md-none">
               <ImageWrapper
-                source="http://via.placeholder.com/600x350"
-                sourceType={SOURCE_TYP_BOOTSTRAP}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.fachHeroImageSharp}
               />
             </div>
             <div className="col-12 col-md-6 margin-xs-20-top">
@@ -113,8 +114,8 @@ class BeratungsfelderStartseite extends React.Component {
             </div>
             <div className="col-md-6 d-md-block d-none">
               <ImageWrapper
-                source="http://via.placeholder.com/600x350"
-                sourceType={SOURCE_TYP_BOOTSTRAP}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.fachHeroImageSharp}
               />
             </div>
           </div>
@@ -124,8 +125,8 @@ class BeratungsfelderStartseite extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6">
               <ImageWrapper
-                source="http://via.placeholder.com/600x350"
-                sourceType={SOURCE_TYP_BOOTSTRAP}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.techHeroImageSharp}
               />
             </div>
             <div className="col-12 col-md-6 margin-xs-20-top">
@@ -177,6 +178,21 @@ export const pageQuery = graphql`
       id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }
     ) {
       sizes(quality: 60) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    mngmtHeroImageSharp: imageSharp(id: { regex: "/Managementberatung/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    fachHeroImageSharp: imageSharp(id: { regex: "/Fachberatung/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    techHeroImageSharp: imageSharp(id: { regex: "/Technologieberatung/" }) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
         ...GatsbyImageSharpSizes
       }
     }
