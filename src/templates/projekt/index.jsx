@@ -5,7 +5,6 @@ import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
@@ -13,8 +12,10 @@ class Projekt extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulProjekt
 
-    var mainImage = this.props.pathContext.image
-    var backgroundOverlayColor = this.props.pathContext.backgroundOverlayColor
+    var mainImage = this.props.pathContext.bigImage
+
+    //var allStockImages = this.props.pathContext.allImages
+    //var indexOfimage = this.props.pathContext.indexOfImage
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -53,19 +54,7 @@ class Projekt extends React.Component {
         <div className="container no-gutters-mobile margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={mainImage}
-                backgroundOverlay={
-                  <div
-                    className={
-                      'image-overlay-background image-overlay-background' +
-                      backgroundOverlayColor
-                    }
-                  />
-                }
-                showOverlay={true}
-              />
+              <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
             </div>
           </div>
         </div>
@@ -75,7 +64,8 @@ class Projekt extends React.Component {
             <div className="col-12 col-md-6">
               <h2 className="h2">Ziele</h2>
               <div className="blue-bullet">
-                {graphQlResult.ziele !== undefined ? (
+                {graphQlResult.ziele !== undefined &&
+                graphQlResult.ziele !== null ? (
                   <ContentfulMarkdownText text={graphQlResult.ziele.ziele} />
                 ) : null}
               </div>
@@ -86,7 +76,8 @@ class Projekt extends React.Component {
             <div className="col-12 col-md-6">
               <h2 className="h2">Aufgaben</h2>
               <div className="blue-bullet">
-                {graphQlResult.aufgaben !== undefined ? (
+                {graphQlResult.aufgaben !== undefined &&
+                graphQlResult.aufgaben !== null ? (
                   <ContentfulMarkdownText
                     text={graphQlResult.aufgaben.aufgaben}
                   />
@@ -98,7 +89,8 @@ class Projekt extends React.Component {
             <div className="col-12 col-md-6">
               <h2 className="h2">Ergebnisse</h2>
               <div className="blue-bullet">
-                {graphQlResult.ergebnisse !== undefined ? (
+                {graphQlResult.ergebnisse !== undefined &&
+                graphQlResult.ergebnisse !== null ? (
                   <ContentfulMarkdownText
                     text={graphQlResult.ergebnisse.ergebnisse}
                   />
@@ -111,7 +103,8 @@ class Projekt extends React.Component {
             <div className="col-12 col-md-6 margin-top-20">
               <h2 className="h2">Unser Beitrag</h2>
               <div className="blue-bullet">
-                {graphQlResult.unserBeitrag !== undefined ? (
+                {graphQlResult.unserBeitrag !== undefined &&
+                graphQlResult.unserBeitrag !== null ? (
                   <ContentfulMarkdownText
                     text={graphQlResult.unserBeitrag.unserBeitrag}
                   />
@@ -131,8 +124,13 @@ export const pageQuery = graphql`
   query projectQuery($id: String!) {
     contentfulProjekt(id: { eq: $id }) {
       id
-      contentfulInternerName
-      kategorieInDerDasProjektFllt
+      relevanteBeratungsfelder
+      relevanteFokusthemen {
+        id
+        url
+        uberschriftGanzOben
+        unterueberschrift
+      }
       urlDerSeite
       ueberschrift
       unterueberschrift

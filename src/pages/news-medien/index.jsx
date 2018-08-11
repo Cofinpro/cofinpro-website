@@ -5,7 +5,7 @@ import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
 class NewsMedienVerteiler extends React.Component {
@@ -38,11 +38,8 @@ class NewsMedienVerteiler extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.newsImage}
               />
             </div>
             <div className="col-12 col-md-6">
@@ -87,11 +84,8 @@ class NewsMedienVerteiler extends React.Component {
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.blogImage}
               />
             </div>
           </div>
@@ -102,3 +96,18 @@ class NewsMedienVerteiler extends React.Component {
 }
 
 export default NewsMedienVerteiler
+
+export const pageQuery = graphql`
+  query newsMedienQuery {
+    newsImage: imageSharp(id: { regex: "/news-medien-a23/" }) {
+      sizes(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    blogImage: imageSharp(id: { regex: "/news-medien-blog/" }) {
+      sizes(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`

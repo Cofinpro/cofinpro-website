@@ -57,8 +57,8 @@ class FokusthemenLayout extends React.Component {
 
     let styleRowFokusthema8 =
       fokusthemen.length < 10
-        ? 'margin-40-top align-items-start'
-        : 'margin-40-top align-items-center'
+        ? 'margin-40-top margin-md-20-top align-items-start'
+        : 'margin-40-top margin-md-20-top align-items-center'
     let styleColFokusthema8 =
       fokusthemen.length < 10 ? 'margin-120-top margin-md-60-top' : ''
 
@@ -88,6 +88,7 @@ class FokusthemenLayout extends React.Component {
                     <FokusthemaPreview
                       url={fokusthemen[2].url}
                       header={fokusthemen[2].uberschriftGanzOben}
+                      subheader={fokusthemen[2].unterueberschrift}
                       color={'--blue-yellow'}
                       icon={fokusthemen[2].icon}
                     />
@@ -103,6 +104,7 @@ class FokusthemenLayout extends React.Component {
                     <FokusthemaPreview
                       url={fokusthemen[0].url}
                       header={fokusthemen[0].uberschriftGanzOben}
+                      subheader={fokusthemen[0].unterueberschrift}
                       color={'--grey-orange'}
                       icon={fokusthemen[0].icon}
                     />
@@ -116,6 +118,7 @@ class FokusthemenLayout extends React.Component {
                     <FokusthemaPreview
                       url={fokusthemen[1].url}
                       header={fokusthemen[1].uberschriftGanzOben}
+                      subheader={fokusthemen[1].unterueberschrift}
                       color={'--orange-pink'}
                       icon={fokusthemen[1].icon}
                     />
@@ -136,6 +139,7 @@ class FokusthemenLayout extends React.Component {
                     <FokusthemaPreview
                       url={fokusthemen[i].url}
                       header={fokusthemen[i].uberschriftGanzOben}
+                      subheader={fokusthemen[i].unterueberschrift}
                       color={colorSchema[i]}
                       icon={fokusthemen[i].icon}
                     />
@@ -160,6 +164,7 @@ class FokusthemenLayout extends React.Component {
                         <FokusthemaPreview
                           url={fokusthemen[i].url}
                           header={fokusthemen[i].uberschriftGanzOben}
+                          subheader={fokusthemen[i].unterueberschrift}
                           color={colorSchema[i]}
                           icon={fokusthemen[i].icon}
                         />
@@ -189,6 +194,7 @@ class FokusthemenLayout extends React.Component {
                   <FokusthemaPreview
                     url={fokusthemen[4].url}
                     header={fokusthemen[4].uberschriftGanzOben}
+                    subheader={fokusthemen[4].unterueberschrift}
                     color={'--grey-blue'}
                     icon={fokusthemen[4].icon}
                   />
@@ -202,6 +208,7 @@ class FokusthemenLayout extends React.Component {
                       <FokusthemaPreview
                         url={fokusthemen[3].url}
                         header={fokusthemen[3].uberschriftGanzOben}
+                        subheader={fokusthemen[3].unterueberschrift}
                         color={'--pink-orange'}
                         icon={fokusthemen[3].icon}
                       />
@@ -214,7 +221,8 @@ class FokusthemenLayout extends React.Component {
                       <FokusthemaPreview
                         url={fokusthemen[5].url}
                         header={fokusthemen[5].uberschriftGanzOben}
-                        color={'--orange-pink'}
+                        subheader={fokusthemen[5].unterueberschrift}
+                        color={'--yellow-blue'}
                         icon={fokusthemen[5].icon}
                       />
                     </div>
@@ -226,11 +234,12 @@ class FokusthemenLayout extends React.Component {
           )}
 
           {fokusthemen.length >= 7 && (
-            <div className="row d-none d-md-flex align-items-center margin-40-top">
+            <div className="row d-none d-md-flex align-items-center margin-40-top margin-md-20-top">
               <div className="col-8">
                 <FokusthemaPreview
                   url={fokusthemen[6].url}
                   header={fokusthemen[6].uberschriftGanzOben}
+                  subheader={fokusthemen[6].unterueberschrift}
                   color={'--orange-pink'}
                   icon={fokusthemen[6].icon}
                 />
@@ -253,6 +262,7 @@ class FokusthemenLayout extends React.Component {
                 <FokusthemaPreview
                   url={fokusthemen[8].url}
                   header={fokusthemen[8].uberschriftGanzOben}
+                  subheader={fokusthemen[8].unterueberschrift}
                   color={'--yellow-orange'}
                   icon={fokusthemen[8].icon}
                 />
@@ -265,6 +275,7 @@ class FokusthemenLayout extends React.Component {
                     <FokusthemaPreview
                       url={fokusthemen[7].url}
                       header={fokusthemen[7].uberschriftGanzOben}
+                      subheader={fokusthemen[7].unterueberschrift}
                       color={'--pink-blue'}
                       icon={fokusthemen[7].icon}
                     />
@@ -274,10 +285,11 @@ class FokusthemenLayout extends React.Component {
                   {fokusthemen.length >= 10 && (
                     <div className="row">
                       <div className="col-4" />
-                      <div className="col-8 margin-40-top margin-120-bottom margin-md-0-top margin-md-0-bottom">
+                      <div className="col-8 margin-40-top margin-120-bottom margin-md-20-top margin-md-0-bottom">
                         <FokusthemaPreview
                           url={fokusthemen[9].url}
                           header={fokusthemen[9].uberschriftGanzOben}
+                          subheader={fokusthemen[9].unterueberschrift}
                           color={'--blue-orange'}
                           icon={fokusthemen[9].icon}
                         />

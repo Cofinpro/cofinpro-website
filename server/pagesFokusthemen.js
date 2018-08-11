@@ -37,6 +37,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 id
                 url
                 uberschriftGanzOben
+                unterueberschrift
                 icon
                 beratungsfelder
                 headline {
@@ -47,6 +48,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 id
                 url
                 uberschriftGanzOben
+                unterueberschrift
                 icon
                 beratungsfelder
                 headline {
@@ -57,6 +59,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 id
                 url
                 uberschriftGanzOben
+                unterueberschrift
                 icon
                 beratungsfelder
                 headline {
@@ -67,6 +70,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 id
                 url
                 uberschriftGanzOben
+                unterueberschrift
                 icon
                 beratungsfelder
                 headline {
@@ -77,6 +81,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 id
                 url
                 uberschriftGanzOben
+                unterueberschrift
                 icon
                 beratungsfelder
                 headline {
@@ -187,6 +192,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         console.log(`created page /fokusthemen/thema/${result.data.allContentfulFokusthema.edges[i].node.url}.`)
       }
     }
+
+    console.log(`created pages für fokusthemen done.`)
 
     callback(null)
   })
