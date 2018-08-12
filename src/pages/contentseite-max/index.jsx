@@ -1,6 +1,5 @@
 import React from 'react'
 
-import LinkButton from '../../components/buttons/LinkButton'
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
@@ -14,7 +13,7 @@ class ContentseiteMax extends React.Component {
   render() {
     function Paragraph(props) {
       return (
-        <div className="container margin-100-top">
+        <div className={'container ' + props.style.container}>
           <div className="row">
             <div className={'col-12 col-md-6 ' + props.content.orderText}>
               <h4>{props.content.header}</h4>
@@ -45,7 +44,7 @@ class ContentseiteMax extends React.Component {
               <h2 className="h2">
                 Unterthema (News und Media) Blog Project Contenseite
               </h2>
-              <p calssName="margin-80-top">Datum Max Mustermann</p>
+              <p className="margin-60-top margin-xs-20-top">12.01.2018</p>
               <p className="h4 bold-font d-none d-md-block">
                 Genda excerum solecusam, venim atur sit illibus anditat harum
                 aligendae ratur sus ducid et odigniscilis dolori di seceper
@@ -66,7 +65,7 @@ class ContentseiteMax extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top margin-xs-80-top">
+        <div className="container margin-100-top margin-xs-60-top">
           <div className="row">
             <div className="col-12 align-items-center">
               <ImageWrapper
@@ -88,6 +87,7 @@ class ContentseiteMax extends React.Component {
             orderText: 'order-md-1',
             orderPicture: 'order-md-2',
           }}
+          style={{ container: 'margin-120-top margin-xs-80-top' }}
         />
 
         <Paragraph
@@ -98,6 +98,7 @@ class ContentseiteMax extends React.Component {
             orderText: 'order-md-2',
             orderPicture: 'order-md-1',
           }}
+          style={{ container: 'margin-100-top margin-xs-80-top' }}
         />
 
         <Paragraph
@@ -108,7 +109,22 @@ class ContentseiteMax extends React.Component {
             orderText: 'order-md-1',
             orderPicture: 'order-md-2',
           }}
+          style={{ container: 'margin-100-top margin-xs-80-top' }}
         />
+
+        <div className="container margin-100-top margin-xs-60-top">
+          <div className="row">
+            <div className="col-12 text-center">
+              <p>Download Text</p>
+              <ExternalLinkButton
+                text={'DOWNLOAD'}
+                _href={'#'}
+                _target={'_blank'}
+                styleSpan="w-100 w-md-unset"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

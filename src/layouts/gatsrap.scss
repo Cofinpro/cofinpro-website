@@ -894,6 +894,10 @@ a:hover {
   margin-top: 40px;
 }
 
+.margin-30-top {
+  margin-top: 30px;
+}
+
 .margin-24-top {
   margin-top: 24px;
 }
@@ -934,6 +938,15 @@ a:hover {
 }
 
 .margin-xs-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+}
+
+.margin-xs-10-top {
   @include media-breakpoint-only(xs) {
     margin-top: 20px;
   }
@@ -1220,4 +1233,14 @@ svg image[href$='img_20.jpg'] {
 
 .beratungs-icons {
   max-width: 140px;
+}
+
+.text-underline:hover {
+  text-decoration: underline;
+}
+
+.flex-box-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

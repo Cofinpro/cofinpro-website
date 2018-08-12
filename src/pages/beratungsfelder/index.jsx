@@ -182,17 +182,17 @@ export const pageQuery = graphql`
       }
     }
     mngmtHeroImageSharp: imageSharp(id: { regex: "/Managementberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
+      sizes(quality: 80, maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
     fachHeroImageSharp: imageSharp(id: { regex: "/Fachberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
+      sizes(quality: 80, maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
     techHeroImageSharp: imageSharp(id: { regex: "/Technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: SOUTH) {
+      sizes(quality: 80, maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }

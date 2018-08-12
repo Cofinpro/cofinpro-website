@@ -156,7 +156,7 @@ export const pageQuery = graphql`
       }
     }
     managementMatrixSharp: imageSharp(id: { regex: "/ManagementMatrix/" }) {
-      sizes(quality: 100, maxWidth: 500, maxHeight: 570, cropFocus: CENTER) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
