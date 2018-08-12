@@ -4,6 +4,8 @@ import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
+import ContentMaxParagraph from './ContentMaxParagraph'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -11,28 +13,6 @@ import {
 
 class ContentseiteMax extends React.Component {
   render() {
-    function Paragraph(props) {
-      return (
-        <div className={'container ' + props.style.container}>
-          <div className="row">
-            <div className={'col-12 col-md-6 ' + props.content.orderText}>
-              <h4>{props.content.header}</h4>
-              <ContentfulMarkdownText text={props.content.text} />
-            </div>
-            <div className={'col-12 col-md-6 ' + props.content.orderPicture}>
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      )
-    }
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
@@ -79,7 +59,7 @@ class ContentseiteMax extends React.Component {
           </div>
         </div>
 
-        <Paragraph
+        <ContentMaxParagraph
           content={{
             header: 'Subheader',
             text:
@@ -90,7 +70,7 @@ class ContentseiteMax extends React.Component {
           style={{ container: 'margin-120-top margin-xs-80-top' }}
         />
 
-        <Paragraph
+        <ContentMaxParagraph
           content={{
             header: 'Subheader',
             text:
@@ -101,7 +81,7 @@ class ContentseiteMax extends React.Component {
           style={{ container: 'margin-100-top margin-xs-80-top' }}
         />
 
-        <Paragraph
+        <ContentMaxParagraph
           content={{
             header: 'Subheader',
             text:

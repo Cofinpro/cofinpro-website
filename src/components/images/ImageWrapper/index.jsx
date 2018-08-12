@@ -5,6 +5,7 @@ import ContentfulImage from '../../images/ContentfulImage'
 import BootstrapImage from '../../images/BootstrapImage'
 import SharpImage from '../../images/SharpImage'
 import IconImage from '../../images/IconImage'
+import PlaceholderImage from '../../images/PlaceholderImage'
 
 import './style.scss'
 
@@ -15,30 +16,7 @@ const SOURCE_TYP_PLACEHOLDER = 'Placeholder'
 const SOURCE_TYP_ICON_IMAGE = 'Icon'
 
 class ImageWrapper extends React.Component {
-  componentDidMount() {}
-
   render() {
-
-    function PlaceholderImage(props) {
-      return (
-        <div>
-          <img
-            src={
-              'http://via.placeholder.com/' +
-              props.source.width +
-              'x' +
-              props.source.height
-            }
-            className={'img-fluid ' + props.styleClasses}
-            alt="Responsive image"
-          />
-          <div className={'image-overlay-top-left ' + props.styleClasses}>
-            {overlayElement}
-          </div>
-        </div>
-      )
-    }
-
     const { source, sourceType, overlayElement, styleClasses } = this.props
 
     if (sourceType === SOURCE_TYP_CONTENTFUL) {

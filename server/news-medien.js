@@ -28,6 +28,96 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
             }
           }
         }
+        allContentfulVeroffentlichung(
+          sort: { fields: [datumDerVerffentlichung], order: DESC }
+        ) {
+          edges {
+            node {
+              id
+              contentfulInternerName
+              datumDerVerffentlichung
+              ueberschrift
+              unterUeberschrift
+              zuordnungZuBereiche
+              pdfDatei {
+                id
+                title
+                description
+              }
+              urlDerVerffentlichung
+            }
+          }
+        }
+        allContentfulPressemeldung(
+          sort: { fields: [verffentlichungsdatum], order: DESC }
+        ) {
+          edges {
+            node {
+              id
+              contentfulInternerName
+              verffentlichungsdatum
+              urlDerSeite
+              downloadDatei {
+                id
+                title
+                description
+              }
+              downloadBeschreibenderText {
+                downloadBeschreibenderText
+              }
+              pressemeldungNurImArchivAnzeigen
+              anzeigenFuerBeratungsfelder
+              ueberschrift
+              unteruebrschrift
+              fokusthema {
+                id
+                beratungsfelder
+                url
+                uberschriftGanzOben
+                unterueberschrift
+              }
+              introText {
+                introText
+              }
+              groesBildMitte {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              paragraph1 {
+                paragraph1
+              }
+              bildZuParagraph1 {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+              paragraph2 {
+                paragraph2
+              }
+              bildZuParagraph2 {
+                id
+                title
+                description
+                file {
+                  url
+                  fileName
+                  contentType
+                }
+              }
+            }
+          }
+        }
       }
     `
   ).then(result => {
@@ -36,6 +126,12 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     const template = path.resolve(`./src/templates/news-medien-uebersicht/index.jsx`)
 
     let dataManagementBeratung = {
+      pressemeldungen: [],
+      veroeffentlichungen: {
+        all: [],
+        links: [],
+        downloads: [],
+      },
       studien: [],
       thesenpapiere: [],
       whitepapers: [],
@@ -43,6 +139,12 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     let dataFachKreditBeratung = {
+      pressemeldungen: [],
+      veroeffentlichungen: {
+        all: [],
+        links: [],
+        downloads: [],
+      },
       studien: [],
       thesenpapiere: [],
       whitepapers: [],
@@ -50,6 +152,12 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     let dataFachWertpapierBeratung = {
+      pressemeldungen: [],
+      veroeffentlichungen: {
+        all: [],
+        links: [],
+        downloads: [],
+      },
       studien: [],
       thesenpapiere: [],
       whitepapers: [],
@@ -57,6 +165,12 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     let dataTechnologieBeratung = {
+      pressemeldungen: [],
+      veroeffentlichungen: {
+        all: [],
+        links: [],
+        downloads: [],
+      },
       studien: [],
       thesenpapiere: [],
       whitepapers: [],
@@ -64,6 +178,12 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     let dataDigitalisierungBeratung = {
+      pressemeldungen: [],
+      veroeffentlichungen: {
+        all: [],
+        links: [],
+        downloads: [],
+      },
       studien: [],
       thesenpapiere: [],
       whitepapers: [],
@@ -71,24 +191,139 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     for (let i = 0; i < result.data.allContentfulDownload.edges.length; ++i) {
-      let download = result.data.allContentfulDownload.edges[i].node;
+      let download = result.data.allContentfulDownload.edges[i].node
 
-      if (download.zuordnungZuBereiche.indexOf('Managementberatung') > -1) {
-        addDownloadToBucket(download, dataManagementBeratung)
+      if (
+        download.zuordnungZuBereiche !== undefined &&
+        download.zuordnungZuBereiche !== null
+      ) {
+        if (download.zuordnungZuBereiche.indexOf('Managementberatung') > -1) {
+          addDownloadToBucket(download, dataManagementBeratung)
+        }
+        if (download.zuordnungZuBereiche.indexOf('Fachberatung-Kredit') > -1) {
+          addDownloadToBucket(download, dataFachKreditBeratung)
+        }
+        if (
+          download.zuordnungZuBereiche.indexOf('Fachberatung-Wertpapier') > -1
+        ) {
+          addDownloadToBucket(download, dataFachWertpapierBeratung)
+        }
+        if (download.zuordnungZuBereiche.indexOf('Technologieberatung') > -1) {
+          addDownloadToBucket(download, dataTechnologieBeratung)
+        }
+        if (download.zuordnungZuBereiche.indexOf('Digitalisierung') > -1) {
+          addDownloadToBucket(download, dataDigitalisierungBeratung)
+        }
       }
-      if (download.zuordnungZuBereiche.indexOf('Fachberatung-Kredit') > -1) {
-        addDownloadToBucket(download, dataFachKreditBeratung)
-      }
-      if (download.zuordnungZuBereiche.indexOf('Fachberatung-Wertpapier') > -1) {
-        addDownloadToBucket(download, dataFachWertpapierBeratung)
-      }
-      if (download.zuordnungZuBereiche.indexOf('Technologieberatung') > -1) {
-        addDownloadToBucket(download, dataTechnologieBeratung)
-      }
-      if (download.zuordnungZuBereiche.indexOf('Digitalisierung') > -1) {
-        addDownloadToBucket(download, dataDigitalisierungBeratung)
-      }
+    }
 
+    for (
+      let i = 0; i < result.data.allContentfulVeroffentlichung.edges.length;
+      ++i
+    ) {
+      let veroffentlichung =
+        result.data.allContentfulVeroffentlichung.edges[i].node
+
+      if (
+        veroffentlichung.zuordnungZuBereiche !== undefined &&
+        veroffentlichung.zuordnungZuBereiche !== null
+      ) {
+        if (
+          veroffentlichung.zuordnungZuBereiche.indexOf('Managementberatung') > -1
+        ) {
+          addVeroeffentlichungToBucket(veroffentlichung, dataManagementBeratung)
+        }
+        if (
+          veroffentlichung.zuordnungZuBereiche.indexOf('Fachberatung-Kredit') > -1
+        ) {
+          addVeroeffentlichungToBucket(veroffentlichung, dataFachKreditBeratung)
+        }
+        if (
+          veroffentlichung.zuordnungZuBereiche.indexOf(
+            'Fachberatung-Wertpapier'
+          ) > -1
+        ) {
+          addVeroeffentlichungToBucket(
+            veroffentlichung,
+            dataFachWertpapierBeratung
+          )
+        }
+        if (
+          veroffentlichung.zuordnungZuBereiche.indexOf('Technologieberatung') > -1
+        ) {
+          addVeroeffentlichungToBucket(
+            veroffentlichung,
+            dataTechnologieBeratung
+          )
+        }
+        if (
+          veroffentlichung.zuordnungZuBereiche.indexOf('Digitalisierung') > -1
+        ) {
+          addVeroeffentlichungToBucket(
+            veroffentlichung,
+            dataDigitalisierungBeratung
+          )
+        }
+      }
+    }
+
+    for (
+      let i = 0; i < result.data.allContentfulPressemeldung.edges.length;
+      ++i
+    ) {
+      let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
+
+      if (
+        pressemeldung.anzeigenFuerBeratungsfelder !== undefined &&
+        pressemeldung.anzeigenFuerBeratungsfelder !== null
+      ) {
+        if (
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Managementberatung') > -1
+        ) {
+          dataManagementBeratung.pressemeldungen.push(pressemeldung)
+        }
+        if (
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Fachberatung-Kredit') > -1
+        ) {
+          dataFachKreditBeratung.pressemeldungen.push(pressemeldung)
+        }
+        if (
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Fachberatung-Wertpapier') > -1
+        ) {
+          dataFachWertpapierBeratung.pressemeldungen.push(pressemeldung)
+        }
+        if (
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Technologieberatung') > -1
+        ) {
+          dataTechnologieBeratung.pressemeldungen.push(pressemeldung)
+        }
+        if (
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Digitalisierung') > -1
+        ) {
+          dataDigitalisierungBeratung.pressemeldungen.push(pressemeldung)
+        }
+      }
+    }
+
+    const templatePressemeldungSite = path.resolve(`./src/templates/content-max/index.jsx`)
+
+
+    for (
+      let i = 0; i < result.data.allContentfulPressemeldung.edges.length;
+      ++i
+    ) {
+      let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
+
+      createPage({
+        path: `/pressemeldung/${pressemeldung.urlDerSeite}`,
+        component: slash(templatePressemeldungSite),
+        context: {
+          id: pressemeldung.id,
+          input: pressemeldung,
+        },
+      })
+
+      console.log(`created page /pressemeldung/${pressemeldung.urlDerSeite}.`)
     }
 
     createPage({
@@ -157,18 +392,37 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
   })
 }
 
+function addVeroeffentlichungToBucket(_veroeffentlichung, _bucket) {
+  let typeOfVeroeffentlichung = 'unknown'
+
+  if (
+    _veroeffentlichung.urlDerVerffentlichung !== undefined &&
+    _veroeffentlichung.urlDerVerffentlichung !== null
+  ) {
+    _bucket.veroeffentlichungen.links.push(_veroeffentlichung)
+    typeOfVeroeffentlichung = 'link'
+  }
+
+  if (
+    _veroeffentlichung.pdfDatei !== undefined &&
+    _veroeffentlichung.pdfDatei !== null
+  ) {
+    _bucket.veroeffentlichungen.downloads.push(_veroeffentlichung)
+    typeOfVeroeffentlichung = 'file'
+  }
+
+  _veroeffentlichung.dataType = typeOfVeroeffentlichung
+  _bucket.veroeffentlichungen.all.push(_veroeffentlichung)
+}
+
 function addDownloadToBucket(_download, _bucket) {
   if (_download.artDesDownloads === 'Studie') {
     _bucket.studien.push(_download)
-
   } else if (_download.artDesDownloads === 'Lösungsskizze') {
     _bucket.loesungsskizzen.push(_download)
-
   } else if (_download.artDesDownloads === 'Whitepaper') {
     _bucket.whitepapers.push(_download)
-
   } else if (_download.artDesDownloads === 'Thesenpapier') {
     _bucket.thesenpapiere.push(_download)
-
   }
 }
