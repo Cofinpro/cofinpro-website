@@ -1238,3 +1238,9 @@ svg image[href$='img_20.jpg'] {
 .text-underline:hover {
   text-decoration: underline;
 }
+
+.flex-box-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

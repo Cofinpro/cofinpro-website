@@ -162,12 +162,12 @@ class LayoutVeroeffentlichungen extends React.Component {
         <div className="row margin-40-top margin-xs-0-top">
           <div className="col-12 col-md-4 order-2 order-md-1">
             <LinkButton
-              styleSpan="w-md-unset w-100"
+              styleSpan="w-md-unset w-100 margin-20-top"
               text={content.buttonText}
               path="/beratungsfelder"
             />
           </div>
-          <div className="col-12 col-md-4 align-items-center order-1 order-md-2">
+          <div className="col-12 col-md-4 flex-box-content-center order-1 order-md-2">
             {downloadsLeft > 4 && (
               <ToggleWithButton
                 show={true}

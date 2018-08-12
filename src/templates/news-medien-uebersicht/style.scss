@@ -4,6 +4,9 @@
 .no-media-available-text {
     font-size: 24px;
     color: #94BCE5;
+
+    margin: 0px;
+
     @include media-breakpoint-only(xs) {
         font-size: 18px;
     }

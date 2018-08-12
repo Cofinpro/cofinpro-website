@@ -17,15 +17,15 @@ class LayoutDownloadRow extends React.Component {
               if (i % 2 === 0) {
                 return (
                   <div className="row" key={i}>
-                    <div className="col-12 col-md-4">
+                    <div className="col-12 col-md-6 col-lg-4">
                       <DownloadButton
                         _href={`/pdf/contentful/${download.id}.pdf`}
                         text={download.name}
                         styleContainer={''}
                       />
                     </div>
-                    <div className="col-12 col-md-2" />
-                    <div className="col-12 col-md-4">
+                    <div className="col-12 d-none d-lg-block col-lg-2" />
+                    <div className="col-12 col-md-6 col-lg-4">
                       {downloads.length !== i + 1 && (
                         <DownloadButton
                           _href={`/pdf/contentful/${downloads[i + 1].id}.pdf`}
@@ -34,7 +34,7 @@ class LayoutDownloadRow extends React.Component {
                         />
                       )}
                     </div>
-                    <div className="col-12 col-md-2" />
+                    <div className="col-12 d-none d-lg-block col-lg-2" />
                   </div>
                 )
               } else {
