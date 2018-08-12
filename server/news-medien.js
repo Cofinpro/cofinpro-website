@@ -1,6 +1,7 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
+var moment = require('moment')
 
 exports.create = function (graphql, createPage, createRedirect, callback) {
   console.log('start graphql query: news medien.')
@@ -195,7 +196,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
       if (
         download.zuordnungZuBereiche !== undefined &&
-        download.zuordnungZuBereiche !== null
+        download.zuordnungZuBereiche !== null &&
+        download.nurImArchivAnzeigen === false
       ) {
         if (download.zuordnungZuBereiche.indexOf('Managementberatung') > -1) {
           addDownloadToBucket(download, dataManagementBeratung)
@@ -275,7 +277,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
       if (
         pressemeldung.anzeigenFuerBeratungsfelder !== undefined &&
-        pressemeldung.anzeigenFuerBeratungsfelder !== null
+        pressemeldung.anzeigenFuerBeratungsfelder !== null &&
+        pressemeldung.pressemeldungNurImArchivAnzeigen === false
       ) {
         if (
           pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Managementberatung') > -1
@@ -307,19 +310,35 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     const templatePressemeldungSite = path.resolve(`./src/templates/content-max/index.jsx`)
 
-
     for (
       let i = 0; i < result.data.allContentfulPressemeldung.edges.length;
       ++i
     ) {
       let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
 
+      let pathToBigMiddleImage = pressemeldung.groesBildMitte !== undefined && pressemeldung.groesBildMitte !== null ? '/' + pressemeldung.groesBildMitte.id + '/' : '/unkown/'
+      let pathToParagraphOneImage = pressemeldung.bildZuParagraph1 !== undefined && pressemeldung.bildZuParagraph1 !== null ? '/' + pressemeldung.bildZuParagraph1.id + '/' : '/unkown/'
+      let pathToParagraphTwoImage = pressemeldung.bildZuParagraph2 !== undefined && pressemeldung.bildZuParagraph2 !== null ? '/' + pressemeldung.bildZuParagraph2.id + '/' : '/unkown/'
+      let pathToParagraphThreeImage = pressemeldung.bildZuParagraph3 !== undefined && pressemeldung.bildZuParagraph3 !== null ? '/' + pressemeldung.bildZuParagraph3.id + '/' : '/unkown/'
+
+      if (pressemeldung.verffentlichungsdatum != null) {
+        pressemeldung.verffentlichungsdatum = moment(
+          pressemeldung.verffentlichungsdatum,
+          'YYYY-MM-DD'
+        ).format('L')
+      }
+      console.log(pressemeldung)
+
       createPage({
         path: `/pressemeldung/${pressemeldung.urlDerSeite}`,
         component: slash(templatePressemeldungSite),
         context: {
           id: pressemeldung.id,
-          input: pressemeldung,
+          bigMiddleImageId: pathToBigMiddleImage,
+          paragraphOneImageId: pathToParagraphOneImage,
+          paragraphTwoImageId: pathToParagraphTwoImage,
+          paragraphThreeImageId: pathToParagraphThreeImage,
+          content: pressemeldung,
         },
       })
 
@@ -385,8 +404,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     })
 
     console.log(`created page /news-medien/digitalisierung.`)
-
-    // Detailseiten Fokusthemen ab hier
 
     callback(null)
   })

@@ -4,7 +4,7 @@ import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
 class ContentMaxParagraph extends React.Component {
@@ -18,17 +18,19 @@ class ContentMaxParagraph extends React.Component {
       <div className={'container ' + style.container}>
         <div className="row">
           <div className={'col-12 col-md-6 ' + content.orderText}>
-            <h4>{content.header}</h4>
-            <ContentfulMarkdownText text={content.text} />
+            {content.text !== undefined &&
+              content.text !== null && (
+                <ContentfulMarkdownText text={content.text} />
+              )}
           </div>
           <div className={'col-12 col-md-6 ' + content.orderPicture}>
-            <ImageWrapper
-              sourceType={SOURCE_TYP_PLACEHOLDER}
-              source={{
-                width: 1200,
-                height: 800,
-              }}
-            />
+            {content.image !== undefined &&
+              content.image !== null && (
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={content.image}
+                />
+              )}
           </div>
         </div>
       </div>
