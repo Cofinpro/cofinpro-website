@@ -327,7 +327,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
           'YYYY-MM-DD'
         ).format('L')
       }
-      console.log(pressemeldung)
 
       createPage({
         path: `/pressemeldung/${pressemeldung.urlDerSeite}`,
