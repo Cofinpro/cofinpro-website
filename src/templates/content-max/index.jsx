@@ -77,7 +77,7 @@ class ContentseiteMax extends React.Component {
       <div>
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-6">
+            <div className="col-12 col-md-8 col-lg-7">
               <h1 className="h1">{content.ueberschrift}</h1>
               {content.unteruebrschrift !== undefined &&
                 content.unteruebrschrift !== null && (
@@ -88,17 +88,17 @@ class ContentseiteMax extends React.Component {
               <p className="h5 margin-60-top margin-xs-20-top">
                 {content.verffentlichungsdatum}
               </p>
-              <p className="h4 bold-font d-none d-lg-block margin-20-top">
+              <p className="h4 normal-font d-none d-lg-block margin-20-top">
                 {content.introText !== undefined && content.introText.introText}
               </p>
-              <p className="h5 bold-font d-none d-md-block d-lg-none margin-20-top">
+              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
                 {content.introText !== undefined && content.introText.introText}
               </p>
-              <p className="d-block d-md-none margin-20-top">
+              <p className="d-block normal-font d-md-none margin-20-top">
                 {content.introText !== undefined && content.introText.introText}
               </p>
             </div>
-            <div className="col-12 d-block d-md-none d-lg-block col-lg-2" />
+            <div className="col-12 d-block d-md-none d-lg-block col-lg-1" />
             <div className="col-12 col-md-4 col-lg-4">
               <RelevanteFokusthemen />
             </div>

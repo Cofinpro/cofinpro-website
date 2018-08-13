@@ -155,10 +155,17 @@ class ProjekteUebersicht extends React.Component {
       <div>
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-8 col-lg-7">
               <h1 className="h1">{title}</h1>
-              <p className="h4 bold-font d-none d-md-block">{description}</p>
-              <p className="d-block d-md-none">{description}</p>
+              <p className="h4 normal-font d-none d-lg-block margin-20-top">
+                {description}
+              </p>
+              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
+                {description}
+              </p>
+              <p className="d-block normal-font d-md-none margin-20-top">
+                {description}
+              </p>
             </div>
             <div className="col-12 col-md-6" />
           </div>

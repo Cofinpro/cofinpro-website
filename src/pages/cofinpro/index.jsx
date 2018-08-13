@@ -26,12 +26,17 @@ class Startseite extends React.Component {
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Cofinpro</h1>
-              <p className="h4 bold-font d-none d-md-block">
+              <p className="h4 normal-font d-none d-lg-block margin-20-top">
                 Unsere Experten konzentrieren sich auf Digitalisierung, neue
                 Marktanforderungen und Regulatorik in den Beratungsfeldern
                 Management-, Fach- und Technologieberatung.
               </p>
-              <p className="d-block d-md-none">
+              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
+                Unsere Experten konzentrieren sich auf Digitalisierung, neue
+                Marktanforderungen und Regulatorik in den Beratungsfeldern
+                Management-, Fach- und Technologieberatung.
+              </p>
+              <p className="d-block normal-font d-md-none margin-20-top">
                 Unsere Experten konzentrieren sich auf Digitalisierung, neue
                 Marktanforderungen und Regulatorik in den Beratungsfeldern
                 Management-, Fach- und Technologieberatung.

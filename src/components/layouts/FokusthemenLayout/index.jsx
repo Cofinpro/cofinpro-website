@@ -251,7 +251,7 @@ class FokusthemenLayout extends React.Component {
                       ? '„' + fokusthemen[6].headline.headline + '“'
                       : ''
                   }
-                  styleClasses="h3 h5-md margin-40-top"
+                  styleClasses="h4 h5-md margin-40-top"
                 />
               </div>
             </div>

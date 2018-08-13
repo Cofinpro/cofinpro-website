@@ -16,15 +16,21 @@ class NewsMedienVerteiler extends React.Component {
       <div>
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-6">
+            <div className="col-12 col-md-8 col-lg-7">
               <h1 className="h1">Unser Medienforum</h1>
-              <p className="h4 bold-font d-none d-md-block">
+              <p className="h4 normal-font d-none d-lg-block margin-20-top">
                 Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
                 und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
                 erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
                 Sie hier ganz richtig.
               </p>
-              <p className="d-block d-md-none">
+              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
+                Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
+                und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
+                erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
+                Sie hier ganz richtig.
+              </p>
+              <p className="d-block normal-font d-md-none margin-20-top">
                 Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
                 und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
                 erfahren möchten, welche Neuigkeiten unsere Experten haben, sind

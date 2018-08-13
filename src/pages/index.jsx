@@ -42,15 +42,31 @@ class Startseite extends React.Component {
 
         <div className="container margin-80-top margin-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-6">
+            <div className="col-12 col-md-8 col-lg-8">
               <h1 className="h1">Hallo, hier ist Cofinpro</h1>
-              <p>
+              <p className="h4 normal-font d-none d-lg-block margin-20-top">
                 Wir sind die Management-, Fach- und Technologieberatung für
                 Deutschlands führende Banken und
-                Kapitalverwaltungsgesellschaften. Als Experten für Kredit und
-                Wertpapier begleiten und navigieren wir unsere Kunden durch die
-                Herausforderungen von Digitalisierung, neuen Marktanforderungen
-                und Regulatorik.
+                Kapitalverwaltungsgesellschaften. <br />
+                <br />Als Experten für Kredit und Wertpapier begleiten und
+                navigieren wir unsere Kunden durch die Herausforderungen von
+                Digitalisierung, neuen Marktanforderungen und Regulatorik.
+              </p>
+              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
+                Wir sind die Management-, Fach- und Technologieberatung für
+                Deutschlands führende Banken und
+                Kapitalverwaltungsgesellschaften. <br />
+                <br />Als Experten für Kredit und Wertpapier begleiten und
+                navigieren wir unsere Kunden durch die Herausforderungen von
+                Digitalisierung, neuen Marktanforderungen und Regulatorik.
+              </p>
+              <p className="d-block normal-font d-md-none margin-20-top">
+                Wir sind die Management-, Fach- und Technologieberatung für
+                Deutschlands führende Banken und
+                Kapitalverwaltungsgesellschaften. <br />
+                <br />Als Experten für Kredit und Wertpapier begleiten und
+                navigieren wir unsere Kunden durch die Herausforderungen von
+                Digitalisierung, neuen Marktanforderungen und Regulatorik.
               </p>
               <LinkButton
                 styleLink="d-inline d-md-none"
