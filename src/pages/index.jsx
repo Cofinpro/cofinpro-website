@@ -131,6 +131,7 @@ class Startseite extends React.Component {
             ' Mit Teams aus Management-, Fach- und Technologieberatern unterstützen wir Banken und Kapitalverwaltungsgesellschaften, damit sie den  unterschiedlichsten Herausforderungen gerecht werden. Hier möchten wir Ihnen einen Einblick in unser Leistungsspektrum geben, von der agilen Transformation oder dem Aufsatz von Effizienzsteigerungen über die Regulierung und Digitalisierung im Kredit- und Wertpapiergeschäft bis hin zum Design moderner Plattform-Architekturen und vielen Themen mehr.'
           }
           fokusthemen={fokusthemen}
+          showButton={true}
           style={{ container: 'margin-120-top margin-xs-80-top' }}
         />
       </div>

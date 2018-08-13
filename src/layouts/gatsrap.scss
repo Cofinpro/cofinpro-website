@@ -49,7 +49,7 @@ $h6-font-size: 0.875rem;
 $h1-font-size-sm: 1.5rem;
 $h1-font-size-md: 2.5rem;
 $h2-font-size-sm: 1.5rem;
-$h2-font-size-md: 2.25rem;
+$h2-font-size-md: 2rem;
 $h3-font-size-sm: 1.5rem;
 $h3-font-size-md: 1.75rem;
 $h4-font-size-sm: 1.125rem;
@@ -280,6 +280,30 @@ h6 {
     }
     @include media-breakpoint-only(xl) {
       font-size: $h4-font-size;
+    }
+  }
+}
+
+.h4-md {
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+
+  p {
+    @include media-breakpoint-only(xs) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $h4-font-size-md;
     }
   }
 }
@@ -1091,7 +1115,6 @@ a:hover {
     border-width: 2px;
     border-radius: 0px;
   }
-
 }
 
 a.link-button:hover {

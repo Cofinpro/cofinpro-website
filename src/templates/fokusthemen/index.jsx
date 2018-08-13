@@ -43,6 +43,7 @@ class FokusthemenStartseite extends React.Component {
           header={header}
           description={description}
           fokusthemen={fokusthemen}
+          showButton={false}
           style={{ container: 'margin-60-top' }}
         />
       </div>
