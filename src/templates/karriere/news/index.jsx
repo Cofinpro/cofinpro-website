@@ -36,7 +36,6 @@ class NewsTemplate extends React.Component {
           <div className="row justify-content-center">
             <div className="col-12 col-md-8 text-center">
               <p className="margin-40-top">{news.datumFuerDieAnzeige}</p>
-              <h2>{news.ueberschrift}</h2>
               <ContentfulMarkdownText
                 text={news.absatz1 !== null ? news.absatz1.absatz1 : ''}
                 {...this.props}
