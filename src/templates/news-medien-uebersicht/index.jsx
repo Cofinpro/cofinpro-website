@@ -48,7 +48,12 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className="container margin-80-top margin-xs-40-top">
           <div className="row">
             <div className="col-12">
-              <NavigationBeratungsfelder urlPrefix="news-medien" />
+              <NavigationBeratungsfelder
+                urlPrefix="news-medien"
+                description={
+                  'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren? Wählen Sie selbst. '
+                }
+              />
             </div>
           </div>
         </div>

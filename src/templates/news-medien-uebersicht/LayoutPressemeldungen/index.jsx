@@ -5,7 +5,8 @@ import LinkButton from '../../../components/buttons/LinkButton'
 import ToggleWithButton from '../../../components/buttons/ToggleWithButton'
 
 import LayoutLinkRow from '../LayoutLinkRow'
-import PreviewImageInternal from '../PreviewImageInternal'
+
+import StockphotoWithInternalLink from '../../../components/images/StockphotoWithInternalLink'
 
 import {
   ImageWrapper,
@@ -68,7 +69,7 @@ class LayoutPressemeldungen extends React.Component {
             <div className="col-12 col-md-6">
               <div className="row justify-content-center">
                 <div className="col-12">
-                  <PreviewImageInternal
+                  <StockphotoWithInternalLink
                     content={firstForElements}
                     images={content.images}
                     indexOfElelement={0}
@@ -78,7 +79,7 @@ class LayoutPressemeldungen extends React.Component {
               {firstForElements.length > 1 && (
                 <div className="row justify-content-center margin-40-top margin-xs-20-top">
                   <div className="col-12 col-md-8">
-                    <PreviewImageInternal
+                    <StockphotoWithInternalLink
                       content={firstForElements}
                       images={content.images}
                       indexOfElelement={1}
@@ -91,7 +92,7 @@ class LayoutPressemeldungen extends React.Component {
               {firstForElements.length > 2 && (
                 <div className="row justify-content-center margin-xs-20-top d-none d-md-block">
                   <div className="col-12 col-md-8">
-                    <PreviewImageInternal
+                    <StockphotoWithInternalLink
                       content={firstForElements}
                       images={content.images}
                       indexOfElelement={2}
@@ -102,7 +103,7 @@ class LayoutPressemeldungen extends React.Component {
               {firstForElements.length > 3 && (
                 <div className="row margin-40-top margin-xs-20-top d-none d-md-block">
                   <div className="col-12">
-                    <PreviewImageInternal
+                    <StockphotoWithInternalLink
                       content={firstForElements}
                       images={content.images}
                       indexOfElelement={3}

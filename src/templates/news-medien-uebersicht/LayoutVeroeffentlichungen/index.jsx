@@ -1,11 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import LinkButton from '../../../components/buttons/LinkButton'
 import ToggleWithButton from '../../../components/buttons/ToggleWithButton'
 
 import LayoutDownloadRow from '../LayoutDownloadRow'
-import PreviewImageExternal from '../PreviewImageExternal'
+import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
+
 
 import {
   ImageWrapper,
@@ -91,7 +91,7 @@ class LayoutVeroeffentlichungen extends React.Component {
             <div className="col-12 col-md-6">
               <div className="row justify-content-center">
                 <div className="col-12">
-                  <PreviewImageExternal
+                  <StockphotoWithExternalLink
                     content={firstForElements}
                     images={content.images}
                     indexOfElelement={0}
@@ -101,7 +101,7 @@ class LayoutVeroeffentlichungen extends React.Component {
               {firstForElements.length > 1 && (
                 <div className="row justify-content-center margin-40-top margin-xs-20-top">
                   <div className="col-12 col-md-8">
-                    <PreviewImageExternal
+                    <StockphotoWithExternalLink
                       content={firstForElements}
                       images={content.images}
                       indexOfElelement={1}
@@ -114,7 +114,7 @@ class LayoutVeroeffentlichungen extends React.Component {
               {firstForElements.length > 2 && (
                 <div className="row justify-content-center margin-xs-20-top d-none d-md-block">
                   <div className="col-12 col-md-8">
-                    <PreviewImageExternal
+                    <StockphotoWithExternalLink
                       content={firstForElements}
                       images={content.images}
                       indexOfElelement={2}
@@ -125,7 +125,7 @@ class LayoutVeroeffentlichungen extends React.Component {
               {firstForElements.length > 3 && (
                 <div className="row margin-40-top margin-xs-20-top d-none d-md-block">
                   <div className="col-12">
-                    <PreviewImageExternal
+                    <StockphotoWithExternalLink
                       content={firstForElements}
                       images={content.images}
                       indexOfElelement={3}

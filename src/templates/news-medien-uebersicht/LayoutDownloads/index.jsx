@@ -5,7 +5,7 @@ import ToggleWithButton from '../../../components/buttons/ToggleWithButton'
 
 import LayoutDownloadRow from '../LayoutDownloadRow'
 
-import PreviewImageExternal from '../PreviewImageExternal'
+import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
 
 import {
   ImageWrapper,
@@ -66,7 +66,7 @@ class LayoutDownloads extends React.Component {
             <div className="col-12 col-md-6">
               <div className="row justify-content-center">
                 <div className="col-12">
-                  <PreviewImageExternal
+                  <StockphotoWithExternalLink
                     content={firstTwoElements}
                     images={content.images}
                     indexOfElelement={0}
@@ -78,7 +78,7 @@ class LayoutDownloads extends React.Component {
               {content.downloads.length > 1 && (
                 <div className="row margin-xs-20-top">
                   <div className="col-12 col-md-8">
-                    <PreviewImageExternal
+                    <StockphotoWithExternalLink
                       content={firstTwoElements}
                       images={content.images}
                       indexOfElelement={1}

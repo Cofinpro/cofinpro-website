@@ -211,7 +211,32 @@ class BeratungsfelderKredit extends React.Component {
           <div />
         </div>
         <div className="container margin-100-top">
-          <ReferenzAndDownload />
+          <ReferenzAndDownload
+            content={{
+              right: {
+                header: 'Referenzprojekte',
+                description:
+                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
+                  graphQlResult.uberschriftGanzOben +
+                  '.',
+                button: {
+                  text: 'Alle Referenzen zum Thema',
+                  path: '/projekte/managementberatung',
+                },
+              },
+              left: {
+                header: 'Medien',
+                description:
+                  'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
+                  graphQlResult.uberschriftGanzOben +
+                  '.',
+                button: {
+                  text: 'Alle Publikationen zum Thema',
+                  path: '/news-medien/managementberatung',
+                },
+              },
+            }}
+          />
         </div>
       </div>
     )

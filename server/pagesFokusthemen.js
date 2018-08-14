@@ -39,7 +39,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 uberschriftGanzOben
                 unterueberschrift
                 icon
-                beratungsfelder
                 headline {
                   headline
                 }
@@ -50,7 +49,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 uberschriftGanzOben
                 unterueberschrift
                 icon
-                beratungsfelder
                 headline {
                   headline
                 }
@@ -61,7 +59,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 uberschriftGanzOben
                 unterueberschrift
                 icon
-                beratungsfelder
                 headline {
                   headline
                 }
@@ -72,7 +69,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 uberschriftGanzOben
                 unterueberschrift
                 icon
-                beratungsfelder
                 headline {
                   headline
                 }
@@ -83,7 +79,6 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
                 uberschriftGanzOben
                 unterueberschrift
                 icon
-                beratungsfelder
                 headline {
                   headline
                 }
