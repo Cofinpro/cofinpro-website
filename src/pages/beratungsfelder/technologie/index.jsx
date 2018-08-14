@@ -26,7 +26,7 @@ class BeratungsfelderTechnologie extends React.Component {
         </div>
         <div className="container margin-40-top">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-7">
               <div className="row">
                 <div className="col-6 col-md-4 col-lg-3">
                   <ImageWrapper
@@ -41,7 +41,7 @@ class BeratungsfelderTechnologie extends React.Component {
                   <h2 className="h2 margin-20-top">
                     Wie sich IT und Zukunft<br />verbinden lassen
                   </h2>
-                  <h4 className="h4 margin-40-top">
+                  <p className="h4 normal-font d-none d-lg-block margin-40-top">
                     Neue Anforderungen an Unternehmen verlangen nach
                     IT-Landschaften, die belastbar und in die Zukunft gerichtet
                     sind. Mit unserer Technologieberatung nehmen wir die
@@ -50,11 +50,31 @@ class BeratungsfelderTechnologie extends React.Component {
                     kreieren Neues und weisen den Weg in Richtung Zukunft. So,
                     wie es zu unseren Kunden passt und in engem Austausch, aber
                     das versteht sich von selbst.
-                  </h4>
+                  </p>
+                  <p className="h5 normal-font d-none d-md-block d-lg-none margin-40-top">
+                    Neue Anforderungen an Unternehmen verlangen nach
+                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
+                    sind. Mit unserer Technologieberatung nehmen wir die
+                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
+                    und setzen sie um. Wir analysieren also Bestehendes,
+                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
+                    wie es zu unseren Kunden passt und in engem Austausch, aber
+                    das versteht sich von selbst.
+                  </p>
+                  <p className="d-block normal-font d-md-none margin-40-top">
+                    Neue Anforderungen an Unternehmen verlangen nach
+                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
+                    sind. Mit unserer Technologieberatung nehmen wir die
+                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
+                    und setzen sie um. Wir analysieren also Bestehendes,
+                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
+                    wie es zu unseren Kunden passt und in engem Austausch, aber
+                    das versteht sich von selbst.
+                  </p>
                 </div>
               </div>
             </div>
-
+            <div className="col-md-1" />
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>

@@ -69,13 +69,13 @@ class Startseite extends React.Component {
                 Digitalisierung, neuen Marktanforderungen und Regulatorik.
               </p>
               <LinkButton
-                styleLink="d-inline d-md-none"
+                styleLink="d-inline d-md-none margin-10-top"
                 styleSpan="margin-20-bottom w-100"
                 text="BERATUNGSFELDER ÜBERSICHT"
                 path="/beratungsfelder"
               />
               <LinkButton
-                styleSpan="w-100 w-md-unset"
+                styleSpan="w-100 w-md-unset margin-10-top"
                 text="MEHR ÜBER COFINPRO"
                 path="/cofinpro"
               />
