@@ -15,7 +15,7 @@ class FokusThemenSmallLayout extends React.Component {
             <div className="col-md-6">
               <h2 className="h2">{header}</h2>
               <p className="margin-20-top">{text}</p>
-              {fokusthemen.length >= 2 && (
+              {fokusthemen.length > 1 && (
                 <div className="margin-120-top margin-xs-40-top">
                   <FokusthemaPreview
                     url={fokusthemen[0].url}
@@ -27,7 +27,7 @@ class FokusThemenSmallLayout extends React.Component {
                 </div>
               )}
             </div>
-            {fokusthemen.length >= 1 && (
+            {fokusthemen.length > 0 && (
               <div className="col-md-6 margin-xs-20-top">
                 <FokusthemaPreview
                   url={fokusthemen[1].url}
@@ -37,7 +37,7 @@ class FokusThemenSmallLayout extends React.Component {
                   icon={fokusthemen[1].icon}
                 />
 
-                {fokusthemen.length >= 3 && (
+                {fokusthemen.length > 2 && (
                   <div className="row margin-20-top">
                     <div className="col-md-4" />
                     <div className="col-md-8 justify-content-end">
@@ -51,7 +51,7 @@ class FokusThemenSmallLayout extends React.Component {
                     </div>
                   </div>
                 )}
-                {fokusthemen.length >= 4 && (
+                {fokusthemen.length > 3 && (
                   <div className="margin-40-top margin-xs-20-top">
                     <FokusthemaPreview
                       url={fokusthemen[4].url}
