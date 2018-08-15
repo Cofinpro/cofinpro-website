@@ -144,9 +144,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
               right: {
                 header: 'Referenzprojekte',
                 description:
-                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
-                  graphQlResult.uberschriftGanzOben +
-                  '.',
+                  'Welche Projekte haben wir im Kontext unserer Fokusthemen schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
                 button: {
                   text: 'Alle Referenzen zum Thema',
                   path: '/projekte/managementberatung',
@@ -155,9 +153,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
               left: {
                 header: 'Medien',
                 description:
-                  'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
-                  graphQlResult.uberschriftGanzOben +
-                  '.',
+                  'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema finden Sie hier.',
                 button: {
                   text: 'Alle Publikationen zum Thema',
                   path: '/news-medien/managementberatung',
