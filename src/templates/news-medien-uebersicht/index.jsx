@@ -26,6 +26,19 @@ class NewsMedienUebersichtTemplate extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     var input = this.props.pathContext.input
+    var siteHeader = this.props.pathContext.siteHeader
+    var professionalPublications = this.props.pathContext
+      .professionalPublications
+    var buttonTextProfessionalPublications = this.props.pathContext
+      .buttonTextProfessionalPublications
+    var pressReleases = this.props.pathContext.pressReleases
+    var medien = this.props.pathContext.medien
+    var buttonTextPressRelease = this.props.pathContext.buttonTextPressRelease
+    var buttonTextStudien = this.props.pathContext.buttonTextStudien
+    var buttonTextThesen = this.props.pathContext.buttonTextThesen
+    var buttonTextWhitePaper = this.props.pathContext.buttonTextWhitePaper
+    var buttonTextLösung = this.props.pathContext.buttonTextLösung
+    var weAboutUs = this.props.pathContext.weAboutUs
 
     return (
       <div>
@@ -33,14 +46,8 @@ class NewsMedienUebersichtTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">News&amp;Medien</h1>
-              <p className="h4 bold-font d-none d-md-block">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper.
-              </p>
-              <p className="d-block d-md-none">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper.
-              </p>
+              <p className="h4 bold-font d-none d-md-block">{siteHeader}</p>
+              <p className="d-block d-md-none">{siteHeader}</p>
             </div>
           </div>
         </div>
@@ -68,10 +75,9 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.veroeffentlichungenThreeSharp,
               this.props.data.veroeffentlichungenFourSharp,
             ],
-            description:
-              'Genda excerum solecusam, venim atur sit illibus anditat harum aligendae ratur sus ducid et odigniscilis dolori di seceper roriber iaspidundaes volent repedit fuga. Nam esti conse landi quiamus incillam, atur aliberr oreperio.',
+            description: professionalPublications,
             elements: input.veroeffentlichungen,
-            buttonText: 'ZUM ARCHIV FÜR VERÖFFENTLICHUNGEN',
+            buttonText: buttonTextProfessionalPublications,
           }}
           style={{ container: 'margin-60-top margin-xs-40-top ' }}
         />
@@ -85,22 +91,16 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.pressemeldungThreeSharp,
               this.props.data.pressemeldungFourSharp,
             ],
-            description:
-              'Genda excerum solecusam, venim atur sit illibus anditat harum aligendae ratur sus ducid et odigniscilis dolori di seceper roriber iaspidundaes volent repedit fuga. Nam esti conse landi quiamus incillam, atur aliberr oreperio.',
+            description: pressReleases,
             elements: input.pressemeldungen,
-            buttonText: 'ZUM ARCHIV FÜR PRESSEMELDUNGEN',
+            buttonText: buttonTextPressRelease,
           }}
         />
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h2 className="h2">Downloads</h2>
-              <p className="no-margin">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper
-                roriber iaspidundaes volent repedit fuga. Nam esti conse landi
-                quiamus incillam, atur aliberr oreperio.
-              </p>
+              <p className="no-margin">{medien}</p>
             </div>
             <div className="col-12 col-md-6" />
           </div>
@@ -115,7 +115,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.studienTwoSharp,
             ],
             downloads: input.studien,
-            buttonText: 'ZUM ARCHIV FÜR STUDIEN',
+            buttonText: buttonTextStudien,
           }}
           style={{ container: 'margin-60-top margin-xs-40-top ' }}
         />
@@ -129,7 +129,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.thesenpapierTwoSharp,
             ],
             downloads: input.thesenpapiere,
-            buttonText: 'ZUM ARCHIV FÜR THESENPAPIERE',
+            buttonText: buttonTextThesen,
           }}
           style={{ container: 'margin-60-top margin-xs-60-top ' }}
         />
@@ -153,7 +153,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               },
             ],
             downloads: input.whitepapers,
-            buttonText: 'ZUM ARCHIV FÜR WHITEPAPERS',
+            buttonText: buttonTextWhitePaper,
           }}
           style={{ container: 'margin-60-top margin-xs-60-top ' }}
         />
@@ -167,7 +167,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.loesungsskizzenTwoSharp,
             ],
             downloads: input.loesungsskizzen,
-            buttonText: 'ZUM ARCHIV FÜR LÖSUNGSSKIZZEN',
+            buttonText: buttonTextLösung,
           }}
           style={{ container: 'margin-60-top margin-xs-60-top ' }}
         />
@@ -175,12 +175,13 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">Allgemein</h2>
+              <h2 className="h2">Wir über uns</h2>
               <p className="no-margin">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper
-                roriber iaspidundaes volent repedit fuga. Nam esti conse landi
-                quiamus incillam, atur aliberr oreperio.
+                Was das Angebot von Cofinpro ausmacht, was wir konkret tun und
+                was wir mit unserer Arbeit bewirken, erfahren Sie im
+                Unternehmensfolder. In unserem Cofinpro Karrieremagazin können
+                Sie nachlesen, was uns als Arbeitgeber ausmacht und welche
+                Karrieremöglichkeiten wir bieten (nämlich sehr viele).
               </p>
             </div>
             <div className="col-12 col-md-6" />
