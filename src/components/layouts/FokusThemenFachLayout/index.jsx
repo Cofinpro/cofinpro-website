@@ -20,7 +20,7 @@ class FokusThemenFachLayout extends React.Component {
             </div>
             <div className="row ">
               <div className="col-md-6 margin-100-top margin-xs-40-top">
-                {fokusthemen.length > 1 && (
+                {fokusthemen.length > 0 && (
                   <FokusthemaPreview
                     url={fokusthemen[0].url}
                     header={fokusthemen[0].uberschriftGanzOben}
@@ -75,10 +75,10 @@ class FokusThemenFachLayout extends React.Component {
                 )}
               </div>
             </div>
-            {fokusthemen.length > 5 && (
+            {fokusthemen.length > 4 && (
               <div className="row align-items-end negative-margin-40-top margin-xs-20-top">
                 <div className="col-12 col-md-5">
-                  {fokusthemen.length > 6 && (
+                  {fokusthemen.length > 5 && (
                     <div className="row">
                       <div className="col-md-2" />
                       <div className="col-12 col-md-10">
