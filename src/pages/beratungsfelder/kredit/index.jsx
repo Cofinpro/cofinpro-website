@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
+import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
@@ -8,7 +8,6 @@ import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/Fok
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
-  SOURCE_TYP_PLACEHOLDER,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderKredit extends React.Component {
@@ -74,7 +73,18 @@ class BeratungsfelderKredit extends React.Component {
               </div>
             </div>
             <div className="col-md-4">
-              <RelevanteFokusthemen />
+              <RelevanteLinks
+                title="relevante fokusthemen"
+                relevanteLinks={[
+                  { title: 'hallo1', url: 'sasa' },
+                  { title: 'hallo2', url: 'sasa' },
+                  { title: 'hallo3', url: 'sasa' },
+                  { title: 'hallo4', url: 'sasa' },
+                  { title: 'hallo5', url: 'sasa' },
+                  { title: 'hallo6', url: 'sasa' },
+                  { title: 'hallo7', url: 'sasa' },
+                ]}
+              />
             </div>
           </div>
         </div>

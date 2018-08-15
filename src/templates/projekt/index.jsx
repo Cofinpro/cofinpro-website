@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
+import RelevanteLinks from '../../components/relevanteLinks'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import {
@@ -31,22 +31,21 @@ class Projekt extends React.Component {
               <p className="d-block d-md-none">
                 {graphQlResult.unterueberschrift}
               </p>
-              {/*<h4 className="margin-40-top d-none d-md-block">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper
-                roriber iaspidundaes volent repedit fuga. Nam esti conse landi
-                quiamus incillam, atur aliberr oreperio.
-              </h4>
-              <p className="d-block d-md-none">
-                Genda excerum solecusam, venim atur sit illibus anditat harum
-                aligendae ratur sus ducid et odigniscilis dolori di seceper
-                roriber iaspidundaes volent repedit fuga. Nam esti conse landi
-                quiamus incillam, atur aliberr oreperio.
-              </p>*/}
             </div>
             <div className="col-12 col-md-2" />
             <div className="col-12 col-md-4">
-              <RelevanteFokusthemen />
+              <RelevanteLinks
+                title="relevante fokusthemen"
+                relevanteLinks={[
+                  { title: 'hallo1', url: 'sasa' },
+                  { title: 'hallo2', url: 'sasa' },
+                  { title: 'hallo3', url: 'sasa' },
+                  { title: 'hallo4', url: 'sasa' },
+                  { title: 'hallo5', url: 'sasa' },
+                  { title: 'hallo6', url: 'sasa' },
+                  { title: 'hallo7', url: 'sasa' },
+                ]}
+              />
             </div>
           </div>
         </div>
