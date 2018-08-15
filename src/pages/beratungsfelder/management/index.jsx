@@ -1,9 +1,9 @@
 import React from 'react'
 
-import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
+import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
-import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
+import FokusThemenSmallLayout from '../../../components/layouts/FokusThemenSmallLayout'
 
 import PageIntroText from '../../../components/text/PageIntroText'
 
@@ -20,6 +20,15 @@ class BeratungsfelderManagementTemplate extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+
+    var fokusthemen = []
+
+    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+      .edges[0].node
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenManagement.length; ++i) {
+      fokusthemen.push(focusThemsWrapper.fokusthemenManagement[i])
+    }
 
     console.log(graphQlResult)
     return (
@@ -69,95 +78,28 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
             <div className="col-md-1" />
             <div className="col-md-4">
-              <RelevanteFokusthemen />
-            </div>
-          </div>
-        </div>
-        <div className="container margin-120-top margin-xs-40-top">
-          <div className="row">
-            <div className="col-md-6">
-              <h2 className="h2">Trends sind unser Ding</h2>
-              <p className="margin-20-top">
-                Wir unterstützen unsere Kunden in ihrem Ziel,
-                Digitalisierungsstrategien zu entwickeln, und begleiten sie auf
-                ihrem Weg zur agilen Organisation. Themen, mit denen wir uns im
-                Kontext der Digitalisierung aktuell beschäftigen, sind etwa
-                digitale Transformation, Machine Learning, Unbundling Banks und
-                Blockchain.
-              </p>
-              <div className="margin-120-top margin-xs-40-top">
-                <FokusthemaPreview
-                  url={graphQlResult.edges[0].node.fokusthemenManagement[0].url}
-                  header={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0]
-                      .uberschriftGanzOben
-                  }
-                  subheader={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0]
-                      .uberschriftGanzOben
-                  }
-                  color={'--blue-yellow'}
-                  icon={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0].icon
-                  }
-                />
-              </div>
-            </div>
-            <div className="col-md-6 margin-xs-20-top">
-              <FokusthemaPreview
-                url={graphQlResult.edges[0].node.fokusthemenManagement[1].url}
-                header={
-                  graphQlResult.edges[0].node.fokusthemenManagement[1]
-                    .uberschriftGanzOben
-                }
-                subheader={
-                  graphQlResult.edges[0].node.fokusthemenManagement[1].subheader
-                }
-                color={'--orange-pink'}
-                icon={graphQlResult.edges[0].node.fokusthemenManagement[1].icon}
+              <RelevanteLinks
+                title="relevante fokusthemen"
+                relevanteLinks={[
+                  { title: 'hallo1', url: 'sasa' },
+                  { title: 'hallo2', url: 'sasa' },
+                  { title: 'hallo3', url: 'sasa' },
+                  { title: 'hallo4', url: 'sasa' },
+                  { title: 'hallo5', url: 'sasa' },
+                  { title: 'hallo6', url: 'sasa' },
+                  { title: 'hallo7', url: 'sasa' },
+                ]}
               />
-              <div className="row margin-20-top">
-                <div className="col-md-4" />
-                <div className="col-md-8 justify-content-end">
-                  <FokusthemaPreview
-                    url={
-                      graphQlResult.edges[0].node.fokusthemenManagement[2].url
-                    }
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenManagement[2]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenManagement[2]
-                        .subheader
-                    }
-                    color={'--pink-orange'}
-                    icon={
-                      graphQlResult.edges[0].node.fokusthemenManagement[2].icon
-                    }
-                  />
-                </div>
-              </div>
-              <div className="margin-40-top margin-xs-20-top">
-                <FokusthemaPreview
-                  url={graphQlResult.edges[0].node.fokusthemenManagement[0].url}
-                  header={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0]
-                      .uberschriftGanzOben
-                  }
-                  subheader={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0]
-                      .subheader
-                  }
-                  color={'--blue-yellow'}
-                  icon={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0].icon
-                  }
-                />
-              </div>
             </div>
           </div>
         </div>
+        <FokusThemenSmallLayout
+          header={'Trends sind unser Ding'}
+          text={
+            'Wir unterstützen unsere Kunden in ihrem Ziel, Digitalisierungsstrategien zu entwickeln, und begleiten sie auf ihrem Weg zur agilen Organisation. Themen, mit denen wir uns im Kontext der Digitalisierung aktuell beschäftigen, sind etwa digitale Transformation, Machine Learning, Unbundling Banks und Blockchain.'
+          }
+          fokusthemen={fokusthemen}
+        />
         <div className="container">
           <div className="row margin-80-top">
             <div className="col-md-6">

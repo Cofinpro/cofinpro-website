@@ -1,8 +1,7 @@
 import React from 'react'
 
+import RelevanteLinks from '../../components/relevanteLinks'
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
-import RelevanteFokusthemen from '../../components/RelevanteFokusthemen'
-import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import ContentMaxParagraph from './ContentMaxParagraph'
 
@@ -13,9 +12,6 @@ import {
 
 class ContentseiteMax extends React.Component {
   render() {
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
     const content = this.props.pathContext.content
 
     console.log(content)
@@ -100,7 +96,18 @@ class ContentseiteMax extends React.Component {
             </div>
             <div className="col-12 d-block d-md-none d-lg-block col-lg-1" />
             <div className="col-12 col-md-4 col-lg-4">
-              <RelevanteFokusthemen />
+              <RelevanteLinks
+                title="relevante fokusthemen"
+                relevanteLinks={[
+                  { title: 'hallo1', url: 'sasa' },
+                  { title: 'hallo2', url: 'sasa' },
+                  { title: 'hallo3', url: 'sasa' },
+                  { title: 'hallo4', url: 'sasa' },
+                  { title: 'hallo5', url: 'sasa' },
+                  { title: 'hallo6', url: 'sasa' },
+                  { title: 'hallo7', url: 'sasa' },
+                ]}
+              />
             </div>
           </div>
         </div>
