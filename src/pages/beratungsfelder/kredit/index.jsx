@@ -146,7 +146,10 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-12 col-md-6 margin-100-top margin-xs-20-top">
               <FokusthemaPreview
                 url={graphQlResult.edges[0].node.fokusthemenKredit[0].url}
-                header={graphQlResult.edges[0].node.fokusthemenKredit[0].header}
+                header={
+                  graphQlResult.edges[0].node.fokusthemenKredit[0]
+                    .uberschriftGanzOben
+                }
                 subheader={
                   graphQlResult.edges[0].node.fokusthemenKredit[0].subheader
                 }
@@ -164,7 +167,8 @@ class BeratungsfelderKredit extends React.Component {
                   <FokusthemaPreview
                     url={graphQlResult.edges[0].node.fokusthemenKredit[1].url}
                     header={
-                      graphQlResult.edges[0].node.fokusthemenKredit[1].header
+                      graphQlResult.edges[0].node.fokusthemenKredit[1]
+                        .uberschriftGanzOben
                     }
                     subheader={
                       graphQlResult.edges[0].node.fokusthemenKredit[1].subheader
@@ -187,7 +191,8 @@ class BeratungsfelderKredit extends React.Component {
                   <FokusthemaPreview
                     url={graphQlResult.edges[0].node.fokusthemenKredit[2].url}
                     header={
-                      graphQlResult.edges[0].node.fokusthemenKredit[2].header
+                      graphQlResult.edges[0].node.fokusthemenKredit[2]
+                        .uberschriftGanzOben
                     }
                     subheader={
                       graphQlResult.edges[0].node.fokusthemenKredit[2].subheader
@@ -208,7 +213,8 @@ class BeratungsfelderKredit extends React.Component {
                   <FokusthemaPreview
                     url={graphQlResult.edges[0].node.fokusthemenKredit[3].url}
                     header={
-                      graphQlResult.edges[0].node.fokusthemenKredit[3].header
+                      graphQlResult.edges[0].node.fokusthemenKredit[3]
+                        .uberschriftGanzOben
                     }
                     subheader={
                       graphQlResult.edges[0].node.fokusthemenKredit[3].subheader

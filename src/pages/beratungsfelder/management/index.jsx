@@ -86,11 +86,12 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 <FokusthemaPreview
                   url={graphQlResult.edges[0].node.fokusthemenManagement[0].url}
                   header={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0].header
+                    graphQlResult.edges[0].node.fokusthemenManagement[0]
+                      .uberschriftGanzOben
                   }
                   subheader={
                     graphQlResult.edges[0].node.fokusthemenManagement[0]
-                      .subheader
+                      .uberschriftGanzOben
                   }
                   color={'--blue-yellow'}
                   icon={
@@ -103,7 +104,8 @@ class BeratungsfelderManagementTemplate extends React.Component {
               <FokusthemaPreview
                 url={graphQlResult.edges[0].node.fokusthemenManagement[1].url}
                 header={
-                  graphQlResult.edges[0].node.fokusthemenManagement[1].header
+                  graphQlResult.edges[0].node.fokusthemenManagement[1]
+                    .uberschriftGanzOben
                 }
                 subheader={
                   graphQlResult.edges[0].node.fokusthemenManagement[1].subheader
@@ -120,7 +122,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                     }
                     header={
                       graphQlResult.edges[0].node.fokusthemenManagement[2]
-                        .header
+                        .uberschriftGanzOben
                     }
                     subheader={
                       graphQlResult.edges[0].node.fokusthemenManagement[2]
@@ -137,7 +139,8 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 <FokusthemaPreview
                   url={graphQlResult.edges[0].node.fokusthemenManagement[0].url}
                   header={
-                    graphQlResult.edges[0].node.fokusthemenManagement[0].header
+                    graphQlResult.edges[0].node.fokusthemenManagement[0]
+                      .uberschriftGanzOben
                   }
                   subheader={
                     graphQlResult.edges[0].node.fokusthemenManagement[0]

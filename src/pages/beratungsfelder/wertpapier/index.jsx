@@ -130,7 +130,8 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <FokusthemaPreview
                 url={graphQlResult.edges[0].node.fokusthemenWertpapier[0].url}
                 header={
-                  graphQlResult.edges[0].node.fokusthemenWertpapier[0].header
+                  graphQlResult.edges[0].node.fokusthemenWertpapier[0]
+                    .uberschriftGanzOben
                 }
                 subheader={
                   graphQlResult.edges[0].node.fokusthemenWertpapier[0].subheader
@@ -152,7 +153,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                     }
                     header={
                       graphQlResult.edges[0].node.fokusthemenWertpapier[1]
-                        .header
+                        .uberschriftGanzOben
                     }
                     subheader={
                       graphQlResult.edges[0].node.fokusthemenWertpapier[1]
@@ -179,19 +180,19 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 <div className="col-12 col-md-8">
                   <FokusthemaPreview
                     url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].url
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2].url
                     }
                     header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
-                        .header
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2]
+                        .uberschriftGanzOben
                     }
                     subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2]
                         .subheader
                     }
                     color={'--grey-orange'}
                     icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].icon
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2].icon
                     }
                     overlayElement={
                       <ContentfulMarkdownText
@@ -207,19 +208,19 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 <div className="col-12">
                   <FokusthemaPreview
                     url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].url
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3].url
                     }
                     header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
-                        .header
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3]
+                        .uberschriftGanzOben
                     }
                     subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3]
                         .subheader
                     }
                     color={'--blue-yellow'}
                     icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].icon
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3].icon
                     }
                     overlayElement={
                       <ContentfulMarkdownText
@@ -239,19 +240,19 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 <div className="col-12 col-md-10">
                   <FokusthemaPreview
                     url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].url
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4].url
                     }
                     header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
-                        .header
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4]
+                        .uberschriftGanzOben
                     }
                     subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4]
                         .subheader
                     }
                     color={'--yellow-blue'}
                     icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].icon
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4].icon
                     }
                     overlayElement={
                       <ContentfulMarkdownText
@@ -268,19 +269,19 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 <div className="col-md-10">
                   <FokusthemaPreview
                     url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].url
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5].url
                     }
                     header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
-                        .header
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5]
+                        .uberschriftGanzOben
                     }
                     subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0]
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5]
                         .subheader
                     }
                     color={'--grey-blue'}
                     icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[0].icon
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5].icon
                     }
                     overlayElement={
                       <ContentfulMarkdownText
