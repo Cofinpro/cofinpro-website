@@ -112,7 +112,8 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 icon={graphQlResult.edges[0].node.fokusthemenManagement[1].icon}
               />
               <div className="row margin-20-top">
-                <div className="col-md-8 align-items-end">
+                <div className="col-md-4" />
+                <div className="col-md-8 justify-content-end">
                   <FokusthemaPreview
                     url={
                       graphQlResult.edges[0].node.fokusthemenManagement[2].url
