@@ -109,7 +109,7 @@ class FokusthemenDetailTeamplate extends React.Component {
               <div className="row">
                 <div className="col-12">
                   <RelevanteLinks
-                    title="relevante fokusthemen"
+                    title="relevante beratungsfelder"
                     relevanteLinks={[
                       { title: 'hallo1', url: 'sasa' },
                       { title: 'hallo2', url: 'sasa' },
@@ -164,10 +164,15 @@ class FokusthemenDetailTeamplate extends React.Component {
         <div className="container margin-40-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top">
-              <h1 className="h2">Die Herausforderung</h1>
-              <ContentfulMarkdownText
-                text={graphQlResult.herausforderung.herausforderung}
-              />
+              <h2 className="h2">Die Herausforderung</h2>
+              <div className="blue-bullet">
+                {graphQlResult.herausforderung !== undefined &&
+                graphQlResult.herausforderung !== null ? (
+                  <ContentfulMarkdownText
+                    text={graphQlResult.herausforderung.herausforderung}
+                  />
+                ) : null}
+              </div>
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
               <StockphotoWithExternalLink
@@ -183,10 +188,15 @@ class FokusthemenDetailTeamplate extends React.Component {
           <div className="row">
             <div className="col-md-6" />
             <div className="col-md-6 margin-xs-20-top">
-              <h1 className="h2">Unser Lösungsansatz</h1>
-              <ContentfulMarkdownText
-                text={graphQlResult.loesungsansatz.loesungsansatz}
-              />
+              <h2 className="h2">Unser Lösungsansatz</h2>
+              <div className="blue-bullet">
+                {graphQlResult.loesungsansatz !== undefined &&
+                graphQlResult.loesungsansatz !== null ? (
+                  <ContentfulMarkdownText
+                    text={graphQlResult.loesungsansatz.loesungsansatz}
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
@@ -194,8 +204,13 @@ class FokusthemenDetailTeamplate extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-md-6 margin-xs-20-top">
-              <h1 className="h2">Ihr Nutzen</h1>
-              <ContentfulMarkdownText text={graphQlResult.nutzen.nutzen} />
+              <h2 className="h2">Ihr Nutzen</h2>
+              <div className="blue-bullet">
+                {graphQlResult.nutzen !== undefined &&
+                graphQlResult.nutzen !== null ? (
+                  <ContentfulMarkdownText text={graphQlResult.nutzen.nutzen} />
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
