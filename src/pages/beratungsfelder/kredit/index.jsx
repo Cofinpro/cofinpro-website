@@ -2,8 +2,7 @@ import React from 'react'
 
 import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
-import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
+import FokusThemenFachLayout from '../../../components/layouts/FokusThemenFachLayout'
 
 import {
   ImageWrapper,
@@ -12,9 +11,15 @@ import {
 
 class BeratungsfelderKredit extends React.Component {
   render() {
-    const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+    var fokusthemen = []
 
-    console.log(graphQlResult)
+    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+      .edges[0].node
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenKredit.length; ++i) {
+      fokusthemen.push(focusThemsWrapper.fokusthemenKredit[i])
+    }
+
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -109,12 +114,23 @@ class BeratungsfelderKredit extends React.Component {
           </div>
         </div>
         <div className="container ">
-          <div className="row margin-140-top margin-xs-60-top">
+          <div className="row margin-140-top d-none d-md-block">
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharp}
+              />
+            </div>
+          </div>
+          <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
+            <h2 className="h2 text-primary text-center">Kreditprozess</h2>
+          </div>
+          <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
+            <div className="col-6">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharpM}
               />
             </div>
           </div>
@@ -143,107 +159,11 @@ class BeratungsfelderKredit extends React.Component {
           </div>
         </div>
 
-        <div className="container">
-          <div className="row margin-40-top">
-            <div className="col-12 col-md-5 ">
-              <h3 className="h3">
-                Unsere Themen rund um Fachberatung im Kreditgeschäft:
-              </h3>
-            </div>
-          </div>
+        <FokusThemenFachLayout
+          text={'Unsere Themen rund um Fachberatung im Kreditgeschäft:'}
+          fokusthemen={fokusthemen}
+        />
 
-          <div className="row">
-            <div className="col-12 col-md-6 margin-100-top margin-xs-20-top">
-              <FokusthemaPreview
-                url={graphQlResult.edges[0].node.fokusthemenKredit[0].url}
-                header={
-                  graphQlResult.edges[0].node.fokusthemenKredit[0]
-                    .uberschriftGanzOben
-                }
-                subheader={
-                  graphQlResult.edges[0].node.fokusthemenKredit[0].subheader
-                }
-                color={'--orange-pink'}
-                icon={graphQlResult.edges[0].node.fokusthemenKredit[0].icon}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="Kundenbindung und Effizienz in der Bestandsführung "
-                    styleClasses="h4"
-                  />
-                }
-              />
-              <div className="row margin-40-top margin-xs-20-top">
-                <div className="col-12 col-md-8">
-                  <FokusthemaPreview
-                    url={graphQlResult.edges[0].node.fokusthemenKredit[1].url}
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenKredit[1]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenKredit[1].subheader
-                    }
-                    color={'--pink-orange'}
-                    icon={graphQlResult.edges[0].node.fokusthemenKredit[1].icon}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Data Governance für regulatorische Compliance (BCBS 239, AnaCredit, ERF) "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-12 col-md-6">
-              <div className="row margin-xs-20-top justify-content-center">
-                <div className="col-12 col-md-8">
-                  <FokusthemaPreview
-                    url={graphQlResult.edges[0].node.fokusthemenKredit[2].url}
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenKredit[2]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenKredit[2].subheader
-                    }
-                    color={'--grey-orange'}
-                    icon={graphQlResult.edges[0].node.fokusthemenKredit[2].icon}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Automatisierung in der Bonitätsprüfung und Sicherheitenbewertung "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-              <div className="row margin-40-top margin-xs-20-top">
-                <div className="col-12">
-                  <FokusthemaPreview
-                    url={graphQlResult.edges[0].node.fokusthemenKredit[3].url}
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenKredit[3]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenKredit[3].subheader
-                    }
-                    color={'--blue-yellow'}
-                    icon={graphQlResult.edges[0].node.fokusthemenKredit[3].icon}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="kundenorientierte Vertriebswege und digitale Antragsprozesse "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div />
-        </div>
         <div className="container margin-100-top">
           <ReferenzAndDownload
             content={{
@@ -305,6 +225,11 @@ export const pageQuery = graphql`
       }
     }
     processImageSharp: imageSharp(id: { regex: "/fb1/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharpM: imageSharp(id: { regex: "/kreditprozessmobile/" }) {
       sizes(quality: 100) {
         ...GatsbyImageSharpSizes
       }
