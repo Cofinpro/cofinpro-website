@@ -5,7 +5,7 @@ import './style.scss'
 
 class NavigationBeratungsfelder extends React.Component {
   render() {
-    const { styleClass, urlPrefix } = this.props
+    const { description, styleClass, urlPrefix } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -34,10 +34,7 @@ class NavigationBeratungsfelder extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6">
               <h4>FILTER</h4>
-              <p>
-                Commolorrorro que dolupta consedigeni nime exera sunt rest
-                estenecti dolut que derspel ipiciminus restis diam nam est.
-              </p>
+              <p>{description}</p>
             </div>
           </div>
         </div>

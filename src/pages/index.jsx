@@ -19,12 +19,11 @@ class Startseite extends React.Component {
 
     var fokusthemen = []
 
-    for (
-      let i = 0;
-      i < this.props.data.allContentfulFokusthema.edges.length;
-      ++i
-    ) {
-      fokusthemen.push(this.props.data.allContentfulFokusthema.edges[i].node)
+    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+      .edges[0].node
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenStartseite.length; ++i) {
+      fokusthemen.push(focusThemsWrapper.fokusthemenStartseite[i])
     }
 
     return (
@@ -159,17 +158,19 @@ export default Startseite
 
 export const pageQuery = graphql`
   query StartseiteQuery {
-    allContentfulFokusthema {
+    allContentfulZuordnungFokusthemen {
       edges {
         node {
           id
-          url
-          uberschriftGanzOben
-          unterueberschrift
-          icon
-          beratungsfelder
-          headline {
-            headline
+          fokusthemenStartseite {
+            id
+            url
+            uberschriftGanzOben
+            unterueberschrift
+            icon
+            headline {
+              headline
+            }
           }
         }
       }

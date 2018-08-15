@@ -4,11 +4,11 @@ import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 
+import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
+
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_BOOTSTRAP,
-  SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
 class FokusthemenDetailTeamplate extends React.Component {
@@ -17,6 +17,68 @@ class FokusthemenDetailTeamplate extends React.Component {
 
     var srcOficonTopLeft =
       '/img/icons/fokusthema/' + graphQlResult.icon.toLowerCase() + '-color.png'
+
+    let stockImages = [
+      this.props.data.stockImageOne,
+      this.props.data.stockImageTwo,
+      this.props.data.stockImageThree,
+      this.props.data.stockImageFour,
+    ]
+
+    let medien = []
+
+    if (graphQlResult.verlinkteVeroeffentlichungen !== null) {
+      for (
+        let i = 0;
+        i < graphQlResult.verlinkteVeroeffentlichungen.length;
+        ++i
+      ) {
+        let veroeffentlichungen = graphQlResult.verlinkteVeroeffentlichungen[i]
+        if (veroeffentlichungen !== null) {
+          if (veroeffentlichungen.urlDerVerffentlichung !== null) {
+            medien.push({
+              hrefLink: veroeffentlichungen.urlDerVerffentlichung,
+              header: veroeffentlichungen.ueberschrift,
+              subHeader: veroeffentlichungen.unterUeberschrift,
+            })
+          }
+          if (veroeffentlichungen.pdfDatei !== null) {
+            medien.push({
+              hrefLink: `/pdf/contentful/${
+                veroeffentlichungen.pdfDatei.id
+              }.pdf`,
+              header: veroeffentlichungen.ueberschrift,
+              subHeader: veroeffentlichungen.unterUeberschrift,
+            })
+          }
+        }
+      }
+    }
+
+    if (graphQlResult.verlinktePressemeldungen !== null) {
+      for (let i = 0; i < graphQlResult.verlinktePressemeldungen.length; ++i) {
+        let pressemeldung = graphQlResult.verlinktePressemeldungen[i]
+        if (pressemeldung !== null) {
+          medien.push({
+            hrefLink: `/pressemeldung/${pressemeldung.urlDerSeite}`,
+            header: pressemeldung.ueberschrift,
+            subHeader: pressemeldung.unteruebrschrift,
+          })
+        }
+      }
+    }
+
+    if (graphQlResult.verlinkteDownloads !== null) {
+      for (let i = 0; i < graphQlResult.verlinkteDownloads.length; ++i) {
+        let download = graphQlResult.verlinkteDownloads[i]
+        if (download !== null && download.datei !== null) {
+          medien.push({
+            hrefLink: `/pdf/contentful/${download.datei.id}.pdf`,
+            header: download.beschriftungDesDownloads,
+          })
+        }
+      }
+    }
 
     return (
       <div>
@@ -53,53 +115,40 @@ class FokusthemenDetailTeamplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
-          <div className="row d-md-flex">
-            <div className="col-12 col-md-6">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.stockImageOne}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Headline Medien/ Unterthema 1"
-                    styleClasses="h4"
-                  />
-                }
-              />
-            </div>
-            <div className="col-md-6 col-12 margin-xs-20-top">
-              <div className="row">
-                <div className="col-12 col-md-4" />
-                <div className="col-12 col-md-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_SHARP}
-                    source={this.props.data.stockImageTwo}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Headline Medien/ Unterthema 2"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
+        {medien.length > 0 && (
+          <div className="container margin-120-top margin-xs-80-top">
+            <div className="row d-md-flex">
+              <div className="col-12 col-md-6">
+                <StockphotoWithExternalLink
+                  content={medien}
+                  images={stockImages}
+                  indexOfElelement={0}
+                />
               </div>
-              <div className="row margin-40-top margin-xs-20-top">
-                <div className="col-md-8 col-12">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_SHARP}
-                    source={this.props.data.stockImageThree}
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="### Headline Medien/ Unterthema 3"
-                        styleClasses="h4"
-                      />
-                    }
-                  />
+              <div className="col-md-6 col-12 margin-xs-20-top">
+                <div className="row">
+                  <div className="col-12 col-md-4" />
+                  <div className="col-12 col-md-8">
+                    <StockphotoWithExternalLink
+                      content={medien}
+                      images={stockImages}
+                      indexOfElelement={1}
+                    />
+                  </div>
+                </div>
+                <div className="row margin-40-top margin-xs-20-top">
+                  <div className="col-md-8 col-12">
+                    <StockphotoWithExternalLink
+                      content={medien}
+                      images={stockImages}
+                      indexOfElelement={2}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         <div className="container margin-40-top margin-xs-20-top">
           <div className="row">
@@ -110,15 +159,10 @@ class FokusthemenDetailTeamplate extends React.Component {
               />
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.stockImageFour}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="### Headline Medien/ Unterthema 4"
-                    styleClasses="h4"
-                  />
-                }
+              <StockphotoWithExternalLink
+                content={medien}
+                images={stockImages}
+                indexOfElelement={3}
               />
             </div>
           </div>
@@ -145,7 +189,33 @@ class FokusthemenDetailTeamplate extends React.Component {
           </div>
         </div>
 
-        <ReferenzAndDownload style={{ container: 'margin-xs-80-top' }} />
+        <ReferenzAndDownload
+          style={{ container: 'margin-xs-80-top' }}
+          content={{
+            right: {
+              header: 'Referenzprojekte',
+              description:
+                'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
+                graphQlResult.uberschriftGanzOben +
+                '.',
+              button: {
+                text: 'Alle Referenzen zum Thema',
+                path: '/projekte/managementberatung',
+              },
+            },
+            left: {
+              header: 'Medien',
+              description:
+                'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
+                graphQlResult.uberschriftGanzOben +
+                '.',
+              button: {
+                text: 'Alle Publikationen zum Thema',
+                path: '/news-medien/managementberatung',
+              },
+            },
+          }}
+        />
       </div>
     )
   }
@@ -157,7 +227,6 @@ export const pageQuery = graphql`
   query fokusthemaQuery($id: String!) {
     contentfulFokusthema(id: { eq: $id }) {
       url
-      beratungsfelder
       icon
       uberschriftGanzOben
       headline {
@@ -171,6 +240,32 @@ export const pageQuery = graphql`
       }
       nutzen {
         nutzen
+      }
+      verlinkteVeroeffentlichungen {
+        id
+        ueberschrift
+        unterUeberschrift
+        urlDerVerffentlichung
+        pdfDatei {
+          id
+          title
+          description
+        }
+      }
+      verlinktePressemeldungen {
+        id
+        ueberschrift
+        unteruebrschrift
+        urlDerSeite
+      }
+      verlinkteDownloads {
+        id
+        beschriftungDesDownloads
+        datei {
+          id
+          title
+          description
+        }
       }
     }
     stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24/" }) {

@@ -37,6 +37,9 @@ class FokusthemenStartseite extends React.Component {
         <NavigationBeratungsfelder
           urlPrefix="fokusthemen"
           styleClass="margin-60-top"
+          description={
+            'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen? Wählen Sie selbst.'
+          }
         />
 
         <FokusthemenLayout

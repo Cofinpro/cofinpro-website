@@ -190,7 +190,28 @@ class BeratungsfelderTechnologie extends React.Component {
             </div>
           </div>
           <div className="margin-120-top margin-xs-40-top">
-            <ReferenzAndDownload />
+            <ReferenzAndDownload
+              content={{
+                right: {
+                  header: 'Referenzprojekte',
+                  description:
+                    'Welche Projekte haben wir im Kontext unserer Fokusthemen schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
+                  button: {
+                    text: 'Alle Referenzen zum Thema',
+                    path: '/projekte/technologieberatung',
+                  },
+                },
+                left: {
+                  header: 'Medien',
+                  description:
+                    'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema finden Sie hier.',
+                  button: {
+                    text: 'Alle Publikationen zum Thema',
+                    path: '/news-medien/technologieberatung',
+                  },
+                },
+              }}
+            />
           </div>
         </div>
       </div>

@@ -174,6 +174,9 @@ class ProjekteUebersicht extends React.Component {
         <NavigationBeratungsfelder
           urlPrefix="projekte"
           styleClass="margin-80-top"
+          description={
+            'Aus welchem unserer Beratungsfelder möchten Sie Projekte ansehen? Wählen Sie selbst.'
+          }
         />
 
         <Layout
