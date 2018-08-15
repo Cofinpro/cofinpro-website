@@ -243,5 +243,10 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
+    processImageSharpM: imageSharp(id: { regex: "/tech4_m/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
   }
 `

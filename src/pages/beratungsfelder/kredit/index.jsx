@@ -104,12 +104,23 @@ class BeratungsfelderKredit extends React.Component {
           </div>
         </div>
         <div className="container ">
-          <div className="row margin-140-top margin-xs-60-top">
+          <div className="row margin-140-top d-none d-md-block">
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharp}
+              />
+            </div>
+          </div>
+          <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
+            <h2 className="h2 text-primary text-center">Kreditprozess</h2>
+          </div>
+          <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
+            <div className="col-6">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharpM}
               />
             </div>
           </div>
@@ -204,6 +215,11 @@ export const pageQuery = graphql`
       }
     }
     processImageSharp: imageSharp(id: { regex: "/fb1/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharpM: imageSharp(id: { regex: "/kreditprozessmobile/" }) {
       sizes(quality: 100) {
         ...GatsbyImageSharpSizes
       }

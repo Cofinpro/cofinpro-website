@@ -87,7 +87,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-120-top margin-xs-20-top">
+          <div className="row margin-120-top margin-xs-20-top d-none d-md-block">
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
               <ImageWrapper
@@ -96,12 +96,34 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               />
             </div>
           </div>
-          <div className="row margin-80-top margin-xs-20-top">
+          <div className="row margin-120-top margin-xs-20-top d-flex d-md-none justify-content-center">
+            <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
+          </div>
+          <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
+            <div className="col-3">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.processImageSharpM}
+              />
+            </div>
+          </div>
+          <div className="row margin-80-top margin-xs-20-top d-none d-md-block">
             <div className="col-md-12">
               <h2 className="h2 text-primary text-center">Investmentprozess</h2>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.process2ImageSharp}
+              />
+            </div>
+          </div>
+          <div className="row margin-120-top margin-xs-20-top d-flex d-md-none justify-content-center">
+            <h2 className="h2 text-primary text-center">Investmentprozess</h2>
+          </div>
+          <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
+            <div className="col-6">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_SHARP}
+                source={this.props.data.process2ImageSharpM}
               />
             </div>
           </div>
@@ -196,6 +218,16 @@ export const pageQuery = graphql`
       }
     }
     process2ImageSharp: imageSharp(id: { regex: "/fb3/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    processImageSharpM: imageSharp(id: { regex: "/prozessmobile2/" }) {
+      sizes(quality: 100) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    process2ImageSharpM: imageSharp(id: { regex: "/prozessmobile3/" }) {
       sizes(quality: 100) {
         ...GatsbyImageSharpSizes
       }
