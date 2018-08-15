@@ -2,8 +2,8 @@ import React from 'react'
 
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
-import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
+
+import FokusThemenFachLayout from '../../../components/layouts/FokusThemenFachLayout'
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
@@ -13,9 +13,15 @@ import {
 
 class BeratungsfelderWertpapierTemplate extends React.Component {
   render() {
-    const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+    var fokusthemen = []
 
-    console.log(graphQlResult)
+    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+      .edges[0].node
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenWertpapier.length; ++i) {
+      fokusthemen.push(focusThemsWrapper.fokusthemenWertpapier[i])
+    }
+
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -117,184 +123,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-60-top margin-xs-20-top">
-            <div className="col-md-5">
-              <h3 className="h3">
-                Unsere Themen rund um Fachberatung im Wertpapiergeschäft:
-              </h3>
-            </div>
-            <div className="col-md-7" />
-          </div>
-          <div className="row ">
-            <div className="col-md-6 margin-100-top margin-xs-40-top">
-              <FokusthemaPreview
-                url={graphQlResult.edges[0].node.fokusthemenWertpapier[0].url}
-                header={
-                  graphQlResult.edges[0].node.fokusthemenWertpapier[0]
-                    .uberschriftGanzOben
-                }
-                subheader={
-                  graphQlResult.edges[0].node.fokusthemenWertpapier[0].subheader
-                }
-                color={'--orange-pink'}
-                icon={graphQlResult.edges[0].node.fokusthemenWertpapier[0].icon}
-                overlayElement={
-                  <ContentfulMarkdownText
-                    text="Kundenbindung und Effizienz in der Bestandsführung "
-                    styleClasses="h4"
-                  />
-                }
-              />
-              <div className="row margin-40-top margin-xs-20-top">
-                <div className="col-12 col-md-8">
-                  <FokusthemaPreview
-                    url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[1].url
-                    }
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[1]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[1]
-                        .subheader
-                    }
-                    color={'--pink-orange'}
-                    icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[1].icon
-                    }
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Kundenbindung und Effizienz in der Bestandsführung "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-              <div className="col-12 col-md-4" />
-            </div>
-            <div className="col-md-6">
-              <div className="row margin-xs-20-top">
-                <div className="col-md-2" />
-                <div className="col-12 col-md-8">
-                  <FokusthemaPreview
-                    url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[2].url
-                    }
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[2]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[2]
-                        .subheader
-                    }
-                    color={'--grey-orange'}
-                    icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[2].icon
-                    }
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Kundenbindung und Effizienz in der Bestandsführung "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-                <div className="col-md-2" />
-              </div>
-              <div className="row margin-40-top margin-xs-20-top">
-                <div className="col-12">
-                  <FokusthemaPreview
-                    url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[3].url
-                    }
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[3]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[3]
-                        .subheader
-                    }
-                    color={'--blue-yellow'}
-                    icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[3].icon
-                    }
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Kundenbindung und Effizienz in der Bestandsführung "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row align-items-end negative-margin-40-top margin-xs-20-top">
-            <div className="col-12 col-md-5">
-              <div className="row">
-                <div className="col-md-2" />
-                <div className="col-12 col-md-10">
-                  <FokusthemaPreview
-                    url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[4].url
-                    }
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[4]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[4]
-                        .subheader
-                    }
-                    color={'--yellow-blue'}
-                    icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[4].icon
-                    }
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Kundenbindung und Effizienz in der Bestandsführung "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-md-7">
-              <div className="row margin-xs-20-top">
-                <div className="col-md-10">
-                  <FokusthemaPreview
-                    url={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[5].url
-                    }
-                    header={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[5]
-                        .uberschriftGanzOben
-                    }
-                    subheader={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[5]
-                        .subheader
-                    }
-                    color={'--grey-blue'}
-                    icon={
-                      graphQlResult.edges[0].node.fokusthemenWertpapier[5].icon
-                    }
-                    overlayElement={
-                      <ContentfulMarkdownText
-                        text="Kundenbindung und Effizienz in der Bestandsführung "
-                        styleClasses="h4"
-                      />
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="col-md-2" />
-          </div>
+        </div>
+        <FokusThemenFachLayout
+          text={'Unsere Themen rund um Fachberatung im Wertpapiergeschäft:'}
+          fokusthemen={fokusthemen}
+        />
+        <div className="container">
           <div className="margin-100-top margin-xs-40-top">
             <ReferenzAndDownload
               content={{
