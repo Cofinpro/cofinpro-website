@@ -25,16 +25,18 @@ class Startseite extends React.Component {
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1 className="h1">Cofinpro</h1>
-              <p className="h4 bold-font d-none d-md-block">
-                Unsere Experten konzentrieren sich auf Digitalisierung, neue
-                Marktanforderungen und Regulatorik in den Beratungsfeldern
-                Management-, Fach- und Technologieberatung.
+              <h1 className="h1">Über Cofinpro</h1>
+              <p className="h4 normal-font d-none d-lg-block margin-20-top">
+                Was tun wir, wie arbeiten wir und was macht uns aus? Hier
+                stellen wir uns vor.
               </p>
-              <p className="d-block d-md-none">
-                Unsere Experten konzentrieren sich auf Digitalisierung, neue
-                Marktanforderungen und Regulatorik in den Beratungsfeldern
-                Management-, Fach- und Technologieberatung.
+              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
+                Was tun wir, wie arbeiten wir und was macht uns aus? Hier
+                stellen wir uns vor.
+              </p>
+              <p className="d-block normal-font d-md-none margin-20-top">
+                Was tun wir, wie arbeiten wir und was macht uns aus? Hier
+                stellen wir uns vor.
               </p>
               <LinkButton
                 styleLink="d-inline d-md-none"
@@ -59,15 +61,18 @@ class Startseite extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h3 className="h2">Über uns</h3>
+              <h3 className="h2">Das tun wir</h3>
               <p>
-                Wir bauen auf ein Beratungskonzept, das alle Elemente der
-                Wertschöpfungskette für Unternehmen in der Finanzindustrie
-                abdeckt. Als Managementberater, Fachberater mit Fokus auf Kredit
-                und Wertpapier sowie Technologieberater für agile,
-                zukunftsfähige Architekturen bieten wir unseren Kunden
-                zukunftsfähige Lösungen für ihr Geschäftsmodell. Persönlich,
-                unabhängig und im vertrauensvollen Kontakt.
+                Unsere Experten konzentrieren sich auf Digitalisierung, neue
+                Marktanforderungen und Regulatorik in den Beratungsfeldern
+                Management-, Fach- und Technologieberatung. Wir bauen auf ein
+                Beratungskonzept, das alle Elemente der Wertschöpfungskette für
+                Unternehmen in der Finanzindustrie abdeckt. Als
+                Managementberater, Fachberater mit Fokus auf Kredit und
+                Wertpapier sowie Technologieberater für agile, zukunftsfähige
+                Architekturen bieten wir unseren Kunden zukunftsfähige Lösungen
+                für ihr Geschäftsmodell. Persönlich, unabhängig und im
+                vertrauensvollen Kontakt.
               </p>
             </div>
             <div className="col-12 col-md-6 text-center">
@@ -118,7 +123,7 @@ class Startseite extends React.Component {
               />
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
-              <h2>Cofinpro lebt Nachhaltigkeit</h2>
+              <h2>So sind wir</h2>
               <p>
                 Seit unserer Gründung sehen wir uns darin bestätigt, dass nur
                 eine positive, zukunftsorientierte Unternehmenspolitik eine
@@ -167,18 +172,14 @@ class Startseite extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h3 className="h2">Ausgezeichnete Werte</h3>
+              <h3 className="h2">Unsere Werte sind ausgezeichnet</h3>
               <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-                takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
-                dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                sed diam voluptua. At vero eos et accusam et justo duo dolores
-                et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                est Lorem ipsum dolor sit amet.
+                Dass Werte für uns nicht nur Worte sind, leben wir seit der
+                Gründung von Cofinpro. Und wir sind stolz darauf, mit unserem
+                Engagement für große und kleine Organisationen, Hilfswerke und
+                Initiativen schon einiges mitbewegt zu haben. Dafür, und für
+                unsere täglich gelebten Werte als Arbeitgeber, wurden wir
+                wiederholt ausgezeichnet.
               </p>
             </div>
           </div>

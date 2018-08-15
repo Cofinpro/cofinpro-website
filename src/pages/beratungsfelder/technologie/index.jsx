@@ -24,42 +24,57 @@ class BeratungsfelderTechnologie extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container margin-40-top">
           <div className="row">
-            <div className="col-md-8">
-              <div className="row margin-20-top">
-                <div className="col-md-4">
-                  <div className="d-none d-md-block">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={this.props.data.iconImageSharp}
-                    />
-                  </div>
-                  <div className="d-block d-md-none">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={this.props.data.iconImageSharp}
-                      styleClasses="beratungs-icons"
-                    />
-                  </div>
+            <div className="col-md-7">
+              <div className="row">
+                <div className="col-6 col-md-4 col-lg-3">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_SHARP}
+                    source={this.props.data.iconImageSharp}
+                  />
                 </div>
               </div>
-              <h1 className="h1 margin-20-top">Technologieberatung</h1>
-              <h2 className="h2 margin-20-top">
-                Wie sich IT und Zukunft<br />verbinden lassen
-              </h2>
-              <h4 className="h4 margin-40-top">
-                Neue Anforderungen an Unternehmen verlangen nach
-                IT-Landschaften, die belastbar und in die Zukunft gerichtet
-                sind. Mit unserer Technologieberatung nehmen wir die
-                IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen und
-                setzen sie um. Wir analysieren also Bestehendes, kreieren Neues
-                und weisen den Weg in Richtung Zukunft. So, wie es zu unseren
-                Kunden passt und in engem Austausch, aber das versteht sich von
-                selbst.
-              </h4>
+              <div className="row">
+                <div className="col-12">
+                  <h1 className="h1 margin-20-top">Technologieberatung</h1>
+                  <h2 className="h2 margin-20-top">
+                    Wie sich IT und Zukunft<br />verbinden lassen
+                  </h2>
+                  <p className="h4 normal-font d-none d-lg-block margin-40-top">
+                    Neue Anforderungen an Unternehmen verlangen nach
+                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
+                    sind. Mit unserer Technologieberatung nehmen wir die
+                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
+                    und setzen sie um. Wir analysieren also Bestehendes,
+                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
+                    wie es zu unseren Kunden passt und in engem Austausch, aber
+                    das versteht sich von selbst.
+                  </p>
+                  <p className="h5 normal-font d-none d-md-block d-lg-none margin-40-top">
+                    Neue Anforderungen an Unternehmen verlangen nach
+                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
+                    sind. Mit unserer Technologieberatung nehmen wir die
+                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
+                    und setzen sie um. Wir analysieren also Bestehendes,
+                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
+                    wie es zu unseren Kunden passt und in engem Austausch, aber
+                    das versteht sich von selbst.
+                  </p>
+                  <p className="d-block normal-font d-md-none margin-40-top">
+                    Neue Anforderungen an Unternehmen verlangen nach
+                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
+                    sind. Mit unserer Technologieberatung nehmen wir die
+                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
+                    und setzen sie um. Wir analysieren also Bestehendes,
+                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
+                    wie es zu unseren Kunden passt und in engem Austausch, aber
+                    das versteht sich von selbst.
+                  </p>
+                </div>
+              </div>
             </div>
-
+            <div className="col-md-1" />
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
@@ -175,7 +190,28 @@ class BeratungsfelderTechnologie extends React.Component {
             </div>
           </div>
           <div className="margin-120-top margin-xs-40-top">
-            <ReferenzAndDownload />
+            <ReferenzAndDownload
+              content={{
+                right: {
+                  header: 'Referenzprojekte',
+                  description:
+                    'Welche Projekte haben wir im Kontext unserer Fokusthemen schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
+                  button: {
+                    text: 'Alle Referenzen zum Thema',
+                    path: '/projekte/technologieberatung',
+                  },
+                },
+                left: {
+                  header: 'Medien',
+                  description:
+                    'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema finden Sie hier.',
+                  button: {
+                    text: 'Alle Publikationen zum Thema',
+                    path: '/news-medien/technologieberatung',
+                  },
+                },
+              }}
+            />
           </div>
         </div>
       </div>
@@ -188,12 +224,12 @@ export default BeratungsfelderTechnologie
 export const pageQuery = graphql`
   query BeratungsfelderTechQuery {
     techImageSharp: imageSharp(id: { regex: "/Technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+      sizes(quality: 100, maxWidth: 2000, maxHeight: 800, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
     iconImageSharp: imageSharp(id: { regex: "/technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 1115, maxHeight: 140) {
+      sizes(quality: 100, maxWidth: 300) {
         ...GatsbyImageSharpSizes
       }
     }

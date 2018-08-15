@@ -10,7 +10,7 @@ class ToggleWithButton extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-      <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
+      <div className="text-center margin-10-bottom">
         <div
           style={{
             display: show ? 'block' : 'none',

@@ -12,7 +12,7 @@ class FokusthemenLayout extends React.Component {
   render() {
     const pathPrefix = process.env_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { header, description, fokusthemen, style } = this.props
+    const { header, description, fokusthemen, showButton, style } = this.props
 
     const testImageStyle = {
       height: '250px',
@@ -49,7 +49,7 @@ class FokusthemenLayout extends React.Component {
                   '“'
                 : ''
             }
-            styleClasses="h3 margin-40-top"
+            styleClasses="h3 h4-md margin-40-top"
           />
         </div>
       )
@@ -80,7 +80,7 @@ class FokusthemenLayout extends React.Component {
             <div className="col-12 col-md-6 d-flex">
               <div className="row">
                 <div className="col-12">
-                  <h2>{header}</h2>
+                  <h2 className="h2">{header}</h2>
                   <p>{description}</p>
                 </div>
                 <div className="col-12 d-none d-md-block align-self-end">
@@ -151,7 +151,7 @@ class FokusthemenLayout extends React.Component {
             })}
             {mobileFokusthemaText}
           </div>
-          {fokusthemen.length >= 3 && (
+          {fokusthemen.length > 3 && (
             <div className="row d-flex d-md-none">
               <div className="collapse" id="collapse-more-fokusthemen">
                 {fokusthemen.map((item, i) => {
@@ -251,7 +251,7 @@ class FokusthemenLayout extends React.Component {
                       ? '„' + fokusthemen[6].headline.headline + '“'
                       : ''
                   }
-                  styleClasses="h3 h5-md margin-40-top"
+                  styleClasses="h4 h5-md margin-40-top"
                 />
               </div>
             </div>
@@ -300,15 +300,17 @@ class FokusthemenLayout extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row margin-40-top margin-xs-20-top">
-            <div className="col-12 col-md-4 order-2 order-md-1">
-              <LinkButton
-                styleSpan="w-100 w-md-unset"
-                text="FOKUSTHEMEN ÜBERSICHT"
-                path="/fokusthemen/managementberatung"
-              />
+          {showButton == true && (
+            <div className="row margin-40-top margin-xs-20-top">
+              <div className="col-12 col-md-4 order-2 order-md-1">
+                <LinkButton
+                  styleSpan="w-100 w-md-unset"
+                  text="FOKUSTHEMEN ÜBERSICHT"
+                  path="/fokusthemen/managementberatung"
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     )

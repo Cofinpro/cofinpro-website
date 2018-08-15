@@ -12,7 +12,12 @@ class DownloadButton extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     return (
-      <a href="#" className={'download-button ' + styleContainer}>
+      <a
+        href={_href !== undefined ? _href : '#'}
+        target="_blank"
+        rel="noopener"
+        className={'download-button ' + styleContainer}
+      >
         <img alt="Download" src={pathPrefix + '/svg/download arrow.svg'} />
         <ContentfulMarkdownText
           text={text}

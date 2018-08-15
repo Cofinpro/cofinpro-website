@@ -37,12 +37,16 @@ class FokusthemenStartseite extends React.Component {
         <NavigationBeratungsfelder
           urlPrefix="fokusthemen"
           styleClass="margin-60-top"
+          description={
+            'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen? Wählen Sie selbst.'
+          }
         />
 
         <FokusthemenLayout
           header={header}
           description={description}
           fokusthemen={fokusthemen}
+          showButton={false}
           style={{ container: 'margin-60-top' }}
         />
       </div>
