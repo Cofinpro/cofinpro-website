@@ -2,8 +2,11 @@ import React from 'react'
 
 import LinkButton from '../../../components/buttons/LinkButton'
 
+import PageIntroText from '../../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
+  SOURCE_TYP_BOOTSTRAP,
   SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
@@ -14,53 +17,49 @@ class BeratungsfelderFach extends React.Component {
 
     return (
       <div>
-        <div className="container-fluid no-gutters">
+        <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.fachImageSharp}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="container margin-40-top">
-          <div className="row">
-            <div className="col-md-2">
               <div className="d-none d-md-block">
                 <ImageWrapper
                   sourceType={SOURCE_TYP_SHARP}
-                  source={this.props.data.iconImageSharp}
+                  source={this.props.data.titelBildDesktopSharp}
                 />
               </div>
               <div className="d-block d-md-none">
                 <ImageWrapper
                   sourceType={SOURCE_TYP_SHARP}
-                  source={this.props.data.iconImageSharp}
-                  styleClasses="beratungs-icons"
+                  source={this.props.data.titelBildMobileSharp}
                 />
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="container margin-60-top margin-xs-20-top">
+          <div className="row">
+            <div className="col-4 col-md-3 col-lg-2">
+              <ImageWrapper
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
+              />
             </div>
           </div>
           <div className="row margin-40-top">
             <div className="col-md-7">
               <h1 className="h1">Unsere Fachberatung</h1>
-              <h2 className="h2 d-none d-md-block">
+              <h2 className="h2 margin-20-top d-none d-md-block">
                 Wir sind Experten <br />für Kredit und Wertpapier
               </h2>
               <p className="d-block d-md-none">
-                Wir sind Experten für Kredit und Wertpapier
+                Wir sind Experten <br />für Kredit und Wertpapier
               </p>
-              <p className="text-left margin-40-top margin-20-bottom margin-xs-20-top">
-                Als Berater für führende Banken und Asset Manager rüsten wir
-                unsere Kunden für die Zukunft. Um sie in Sachen Digitalisierung
-                und Regulierung wettbewerbsfähig zu halten, setzen wir die
-                Zirkelspitze dort an, wo unsere Kunden ihr Geschäft
-                weiterentwickeln wollen. Denn fundierte Beratung soll Angebote
-                kundenzentrierter, Prozesse wirksamer, Produkte innovativer und
-                die Erfüllung regulatorischer Maßnahmen ressourceneffizienter
-                machen.
-              </p>
+              <PageIntroText
+                style={{ container: 'margin-40-top margin-xs-0-top' }}
+                content={{
+                  text:
+                    'Als Berater für führende Banken und Asset Manager rüsten wir unsere Kunden für die Zukunft. Um sie in Sachen Digitalisierung und Regulierung wettbewerbsfähig zu halten, setzen wir die Zirkelspitze dort an, wo unsere Kunden ihr Geschäft weiterentwickeln wollen. Denn fundierte Beratung soll Angebote kundenzentrierter, Prozesse wirksamer, Produkte innovativer und die Erfüllung regulatorischer Maßnahmen ressourceneffizienter machen.',
+                }}
+              />
             </div>
             <div className="col-md-5">
               <LinkButton
@@ -102,13 +101,17 @@ export default BeratungsfelderFach
 
 export const pageQuery = graphql`
   query BeratungsfelderFachQuery {
-    fachImageSharp: imageSharp(id: { regex: "/Fachberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+    titelBildDesktopSharp: imageSharp(
+      id: { regex: "/Fachberatung-Titelbild-Desktop/" }
+    ) {
+      sizes(quality: 80, maxWidth: 2000) {
         ...GatsbyImageSharpSizes
       }
     }
-    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
-      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+    titelBildMobileSharp: imageSharp(
+      id: { regex: "/Fachberatung-Titelbild-Mobile/" }
+    ) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }

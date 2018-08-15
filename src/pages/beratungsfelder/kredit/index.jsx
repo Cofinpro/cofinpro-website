@@ -5,10 +5,12 @@ import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
 
+import PageIntroText from '../../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
-  SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderKredit extends React.Component {
@@ -18,35 +20,34 @@ class BeratungsfelderKredit extends React.Component {
     console.log(graphQlResult)
     return (
       <div>
-        <div className="container-fluid no-gutters">
+        <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.kreditImageSharp}
-              />
+              <div className="d-none d-md-block">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildDesktopSharp}
+                />
+              </div>
+              <div className="d-block d-md-none">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildMobileSharp}
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="container margin-40-top">
+        <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-md-7">
               <div className="row">
-                <div className="col-md-4">
-                  <div className="d-none d-md-block">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={this.props.data.iconImageSharp}
-                    />
-                  </div>
-                  <div className="d-block d-md-none">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={this.props.data.iconImageSharp}
-                      styleClasses="beratungs-icons"
-                    />
-                  </div>
+                <div className="col-4 col-md-3 col-lg-2">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
+                  />
                 </div>
               </div>
               <div className="row margin-20-top">
@@ -58,21 +59,17 @@ class BeratungsfelderKredit extends React.Component {
                   <p className="d-block d-md-none">
                     Unsere Fachberatung im Kreditgeschäft
                   </p>
-                  <h4 className="h4 margin-40-top d-none d-md-block">
-                    Mit Lösungen für das Kreditgeschäft von morgen unterstützen
-                    wir Sie im steigenden Wettbewerb, in der Ausrichtung zu
-                    zeitgemäßer Kundenorientierung und der Bewältigung der
-                    Anforderungen aus der Regulatorik.
-                  </h4>
-                  <p className="d-block d-md-none">
-                    Mit Lösungen für das Kreditgeschäft von morgen unterstützen
-                    wir Sie im steigenden Wettbewerb, in der Ausrichtung zu
-                    zeitgemäßer Kundenorientierung und der Bewältigung der
-                    Anforderungen aus der Regulatorik.
-                  </p>
+                  <PageIntroText
+                    content={{
+                      text:
+                        'Mit Lösungen für das Kreditgeschäft von morgen unterstützen wir Sie im steigenden Wettbewerb, in der Ausrichtung zu zeitgemäßer Kundenorientierung und der Bewältigung der Anforderungen aus der Regulatorik.',
+                    }}
+                    style={{ container: 'margin-40-top margin-xs-0-top' }}
+                  />
                 </div>
               </div>
             </div>
+            <div className="col-md-1" />
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
@@ -284,13 +281,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    kreditImageSharp: imageSharp(id: { regex: "/Kredit/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+    titelBildDesktopSharp: imageSharp(
+      id: { regex: "/Kredit-Titelbild-Desktop/" }
+    ) {
+      sizes(quality: 80, maxWidth: 2000) {
         ...GatsbyImageSharpSizes
       }
     }
-    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
-      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+    titelBildMobileSharp: imageSharp(
+      id: { regex: "/Kredit-Titelbild-Mobile/" }
+    ) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }

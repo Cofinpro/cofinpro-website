@@ -190,7 +190,7 @@ class FokusthemenDetailTeamplate extends React.Component {
         </div>
 
         <ReferenzAndDownload
-          style={{ container: 'margin-xs-80-top' }}
+          style={{ container: 'margin-120-top margin-xs-80-top' }}
           content={{
             right: {
               header: 'Referenzprojekte',

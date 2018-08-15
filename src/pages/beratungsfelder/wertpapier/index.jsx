@@ -4,6 +4,9 @@ import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
+
+import PageIntroText from '../../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
@@ -18,34 +21,33 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
     console.log(graphQlResult)
     return (
       <div>
-        <div className="container-fluid no-gutters">
+        <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.wertpapierImageSharp}
-              />
+              <div className="d-none d-md-block">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildDesktopSharp}
+                />
+              </div>
+              <div className="d-block d-md-none">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildMobileSharp}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-md-8">
-              <div className="row margin-20-top">
-                <div className="col-md-4">
-                  <div className="d-none d-md-block">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={this.props.data.iconImageSharp}
-                    />
-                  </div>
-                  <div className="d-block d-md-none">
-                    <ImageWrapper
-                      sourceType={SOURCE_TYP_SHARP}
-                      source={this.props.data.iconImageSharp}
-                      styleClasses="beratungs-icons"
-                    />
-                  </div>
+            <div className="col-12 ol-md-7">
+              <div className="row">
+                <div className="col-4 col-md-3 col-lg-2">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
+                  />
                 </div>
               </div>
               <div className="row">
@@ -54,14 +56,17 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                   <h2 className="h2 margin-20-top">
                     Unsere Fachberatung im Wertpapiergeschäft
                   </h2>
-                  <h4 className="h4 margin-40-top">
-                    Langjährige Erfahrung im Wertpapiergeschäft, tiefes
-                    methodisches Wissen und hohe Projektmanagementkompetenz
-                    macht uns zu führenden Beratern.
-                  </h4>
+                  <PageIntroText
+                    content={{
+                      text:
+                        'Langjährige Erfahrung im Wertpapiergeschäft, tiefes methodisches Wissen und hohe Projektmanagementkompetenz macht uns zu führenden Beratern.',
+                    }}
+                    style={{ container: 'margin-40-top margin-xs-0-top' }}
+                  />
                 </div>
               </div>
             </div>
+            <div className="col-md-1" />
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
@@ -346,13 +351,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    wertpapierImageSharp: imageSharp(id: { regex: "/Wertpapier/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+    titelBildDesktopSharp: imageSharp(
+      id: { regex: "/Wertpapier-Titelbild-Desktop/" }
+    ) {
+      sizes(quality: 80, maxWidth: 2000) {
         ...GatsbyImageSharpSizes
       }
     }
-    iconImageSharp: imageSharp(id: { regex: "/fachberatung/" }) {
-      sizes(quality: 100, maxWidth: 130, maxHeight: 143, cropFocus: CENTER) {
+    titelBildMobileSharp: imageSharp(
+      id: { regex: "/Wertpapier-Titelbild-Mobile/" }
+    ) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }

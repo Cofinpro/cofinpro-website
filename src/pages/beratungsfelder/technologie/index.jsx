@@ -3,6 +3,8 @@ import React from 'react'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
+import PageIntroText from '../../../components/text/PageIntroText'
+
 //
 import {
   ImageWrapper,
@@ -14,24 +16,34 @@ class BeratungsfelderTechnologie extends React.Component {
   render() {
     return (
       <div>
-        <div className="container-fluid no-gutters">
+        <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.techImageSharp}
-              />
+              <div className="d-none d-md-block">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildDesktopSharp}
+                />
+              </div>
+              <div className="d-block d-md-none">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildMobileSharp}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="container margin-40-top">
+        <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-md-7">
+            <div className="col-12 col-md-7">
               <div className="row">
-                <div className="col-6 col-md-4 col-lg-3">
+                <div className="col-4 col-md-3 col-lg-2">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_SHARP}
-                    source={this.props.data.iconImageSharp}
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={
+                      '/img/beratungsfelder/technologie/Technologie-Icon.png'
+                    }
                   />
                 </div>
               </div>
@@ -41,36 +53,13 @@ class BeratungsfelderTechnologie extends React.Component {
                   <h2 className="h2 margin-20-top">
                     Wie sich IT und Zukunft<br />verbinden lassen
                   </h2>
-                  <p className="h4 normal-font d-none d-lg-block margin-40-top">
-                    Neue Anforderungen an Unternehmen verlangen nach
-                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
-                    sind. Mit unserer Technologieberatung nehmen wir die
-                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
-                    und setzen sie um. Wir analysieren also Bestehendes,
-                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
-                    wie es zu unseren Kunden passt und in engem Austausch, aber
-                    das versteht sich von selbst.
-                  </p>
-                  <p className="h5 normal-font d-none d-md-block d-lg-none margin-40-top">
-                    Neue Anforderungen an Unternehmen verlangen nach
-                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
-                    sind. Mit unserer Technologieberatung nehmen wir die
-                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
-                    und setzen sie um. Wir analysieren also Bestehendes,
-                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
-                    wie es zu unseren Kunden passt und in engem Austausch, aber
-                    das versteht sich von selbst.
-                  </p>
-                  <p className="d-block normal-font d-md-none margin-40-top">
-                    Neue Anforderungen an Unternehmen verlangen nach
-                    IT-Landschaften, die belastbar und in die Zukunft gerichtet
-                    sind. Mit unserer Technologieberatung nehmen wir die
-                    IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen
-                    und setzen sie um. Wir analysieren also Bestehendes,
-                    kreieren Neues und weisen den Weg in Richtung Zukunft. So,
-                    wie es zu unseren Kunden passt und in engem Austausch, aber
-                    das versteht sich von selbst.
-                  </p>
+                  <PageIntroText
+                    content={{
+                      text:
+                        'Neue Anforderungen an Unternehmen verlangen nach IT-Landschaften, die belastbar und in die Zukunft gerichtet sind. Mit unserer Technologieberatung nehmen wir die IT-Herausforderungen unserer Kunden auf, erarbeiten Lösungen und setzen sie um. Wir analysieren also Bestehendes, kreieren Neues und weisen den Weg in Richtung Zukunft. So, wie es zu unseren Kunden passt und in engem Austausch, aber das versteht sich von selbst.',
+                    }}
+                    style={{ container: 'margin-40-top margin-xs-0-top' }}
+                  />
                 </div>
               </div>
             </div>
@@ -223,13 +212,22 @@ export default BeratungsfelderTechnologie
 
 export const pageQuery = graphql`
   query BeratungsfelderTechQuery {
-    techImageSharp: imageSharp(id: { regex: "/Technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 800, cropFocus: CENTER) {
+    titelBildDesktopSharp: imageSharp(
+      id: { regex: "/Technologie-Titelbild-Desktop/" }
+    ) {
+      sizes(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    titelBildMobileSharp: imageSharp(
+      id: { regex: "/Technologie-Titelbild-Mobile/" }
+    ) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
     iconImageSharp: imageSharp(id: { regex: "/technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 300) {
+      sizes(quality: 100, maxWidth: 200) {
         ...GatsbyImageSharpSizes
       }
     }

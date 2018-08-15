@@ -181,17 +181,23 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    mngmtHeroImageSharp: imageSharp(id: { regex: "/Managementberatung/" }) {
+    mngmtHeroImageSharp: imageSharp(
+      id: { regex: "/Management-Titelbild-Mobile/" }
+    ) {
       sizes(quality: 80, maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
-    fachHeroImageSharp: imageSharp(id: { regex: "/Fachberatung/" }) {
+    fachHeroImageSharp: imageSharp(
+      id: { regex: "/Fachberatung-Titelbild-Mobile/" }
+    ) {
       sizes(quality: 80, maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }
     }
-    techHeroImageSharp: imageSharp(id: { regex: "/Technologieberatung/" }) {
+    techHeroImageSharp: imageSharp(
+      id: { regex: "/Technologie-Titelbild-Mobile/" }
+    ) {
       sizes(quality: 80, maxWidth: 800) {
         ...GatsbyImageSharpSizes
       }

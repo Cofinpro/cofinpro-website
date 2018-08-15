@@ -5,6 +5,8 @@ import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
 import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
 
+import PageIntroText from '../../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -22,27 +24,34 @@ class BeratungsfelderManagementTemplate extends React.Component {
     console.log(graphQlResult)
     return (
       <div>
-        <div className="container-fluid no-gutters">
+        <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.heroImageSharp}
-              />
+              <div className="d-none d-md-block">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildDesktopSharp}
+                />
+              </div>
+              <div className="d-block d-md-none">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildMobileSharp}
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div className="container margin-40-top">
+        <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-md-8">
+            <div className="col-12 col-md-7">
               <div className="row">
-                <div className="col-md-4">
+                <div className="col-4 col-md-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={
-                      '/img/beratungsfelder/management/managementberatung.png'
+                      '/img/beratungsfelder/management/Managementberatung-Icon.png'
                     }
-                    styleClasses={'beratungs-icons'}
                   />
                 </div>
               </div>
@@ -50,21 +59,15 @@ class BeratungsfelderManagementTemplate extends React.Component {
               <h2 className="h2 margin-20-top">
                 Wie wir Geschäftsmodelle gestalten und optimieren
               </h2>
-              <h4 className="h4 margin-40-top">
-                Für uns steckt in guter Managementberatung auch
-                »Zeitgeistberatung«. Schließlich beleuchten wir für Banken und
-                Asset Manager, ob und wie sich Trends auf deren Geschäft
-                auswirken. Unsere Kooperation mit Spitzeninstituten, die daraus
-                resultierende Marktkenntnis und unsere ohnehin enorme Passion
-                für die Finanzindustrie lässt uns genau erkennen, welche
-                Fragestellungen es wert sind, unter die Lupe genommen zu werden.
-                Oftmals fertigen wir eigene Studien und Foren an. So gewinnen
-                wir Erkenntnisse, die uns wiederum helfen, Chancen und Nutzen zu
-                bewerten und sie Risiken und Restriktionen gegenüberzustellen.
-                Aus dem Ergebnis leiten wir für unsere Kunden realistische,
-                sichere Handlungsempfehlungen ab.
-              </h4>
+              <PageIntroText
+                content={{
+                  text:
+                    'Für uns steckt in guter Managementberatung auch »Zeitgeistberatung«. Schließlich beleuchten wir für Banken und Asset Manager, ob und wie sich Trends auf deren Geschäft auswirken. Unsere Kooperation mit Spitzeninstituten, die daraus resultierende Marktkenntnis und unsere ohnehin enorme Passion für die Finanzindustrie lässt uns genau erkennen, welche Fragestellungen es wert sind, unter die Lupe genommen zu werden. Oftmals fertigen wir eigene Studien und Foren an. So gewinnen wir Erkenntnisse, die uns wiederum helfen, Chancen und Nutzen zu bewerten und sie Risiken und Restriktionen gegenüberzustellen. Aus dem Ergebnis leiten wir für unsere Kunden realistische, sichere Handlungsempfehlungen ab.',
+                }}
+                style={{ container: 'margin-40-top margin-xs-0-top' }}
+              />
             </div>
+            <div className="col-md-1" />
             <div className="col-md-4">
               <RelevanteFokusthemen />
             </div>
@@ -225,8 +228,17 @@ export const pageQuery = graphql`
         }
       }
     }
-    heroImageSharp: imageSharp(id: { regex: "/Managementberatung/" }) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
+    titelBildDesktopSharp: imageSharp(
+      id: { regex: "/Management-Titelbild-Desktop/" }
+    ) {
+      sizes(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    titelBildMobileSharp: imageSharp(
+      id: { regex: "/Management-Titelbild-Mobile/" }
+    ) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
