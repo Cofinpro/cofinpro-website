@@ -3,6 +3,7 @@ import React from 'react'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
+import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
 
 import {
   ImageWrapper,
@@ -12,6 +13,9 @@ import {
 
 class BeratungsfelderKredit extends React.Component {
   render() {
+    const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+
+    console.log(graphQlResult)
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -140,12 +144,17 @@ class BeratungsfelderKredit extends React.Component {
 
           <div className="row">
             <div className="col-12 col-md-6 margin-100-top margin-xs-20-top">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
+              <FokusthemaPreview
+                url={graphQlResult.edges[0].node.fokusthemenKredit[0].url}
+                header={
+                  graphQlResult.edges[0].node.fokusthemenKredit[0]
+                    .uberschriftGanzOben
+                }
+                subheader={
+                  graphQlResult.edges[0].node.fokusthemenKredit[0].subheader
+                }
+                color={'--orange-pink'}
+                icon={graphQlResult.edges[0].node.fokusthemenKredit[0].icon}
                 overlayElement={
                   <ContentfulMarkdownText
                     text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -155,12 +164,17 @@ class BeratungsfelderKredit extends React.Component {
               />
               <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12 col-md-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={graphQlResult.edges[0].node.fokusthemenKredit[1].url}
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenKredit[1]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenKredit[1].subheader
+                    }
+                    color={'--pink-orange'}
+                    icon={graphQlResult.edges[0].node.fokusthemenKredit[1].icon}
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Data Governance für regulatorische Compliance (BCBS 239, AnaCredit, ERF) "
@@ -174,12 +188,17 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-12 col-md-6">
               <div className="row margin-xs-20-top justify-content-center">
                 <div className="col-12 col-md-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={graphQlResult.edges[0].node.fokusthemenKredit[2].url}
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenKredit[2]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenKredit[2].subheader
+                    }
+                    color={'--grey-orange'}
+                    icon={graphQlResult.edges[0].node.fokusthemenKredit[2].icon}
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Automatisierung in der Bonitätsprüfung und Sicherheitenbewertung "
@@ -191,12 +210,17 @@ class BeratungsfelderKredit extends React.Component {
               </div>
               <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={graphQlResult.edges[0].node.fokusthemenKredit[3].url}
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenKredit[3]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenKredit[3].subheader
+                    }
+                    color={'--blue-yellow'}
+                    icon={graphQlResult.edges[0].node.fokusthemenKredit[3].icon}
                     overlayElement={
                       <ContentfulMarkdownText
                         text="kundenorientierte Vertriebswege und digitale Antragsprozesse "
@@ -243,6 +267,23 @@ export default BeratungsfelderKredit
 
 export const pageQuery = graphql`
   query BeratungsfelderKreditQuery {
+    allContentfulZuordnungFokusthemen {
+      edges {
+        node {
+          fokusthemenKredit {
+            id
+            url
+            uberschriftGanzOben
+            unterueberschrift
+            icon
+            beratungsfelder
+            headline {
+              headline
+            }
+          }
+        }
+      }
+    }
     kreditImageSharp: imageSharp(id: { regex: "/Kredit/" }) {
       sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes

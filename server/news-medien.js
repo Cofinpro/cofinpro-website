@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var moment = require('moment')
 
-exports.create = function (graphql, createPage, createRedirect, callback) {
+exports.create = function(graphql, createPage, createRedirect, callback) {
   console.log('start graphql query: news medien.')
 
   graphql(
@@ -124,7 +124,9 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
   ).then(result => {
     console.log('end graphql query: news medien.')
 
-    const template = path.resolve(`./src/templates/news-medien-uebersicht/index.jsx`)
+    const template = path.resolve(
+      `./src/templates/news-medien-uebersicht/index.jsx`
+    )
 
     let dataManagementBeratung = {
       pressemeldungen: [],
@@ -220,7 +222,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     for (
-      let i = 0; i < result.data.allContentfulVeroffentlichung.edges.length;
+      let i = 0;
+      i < result.data.allContentfulVeroffentlichung.edges.length;
       ++i
     ) {
       let veroffentlichung =
@@ -231,12 +234,14 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         veroffentlichung.zuordnungZuBereiche !== null
       ) {
         if (
-          veroffentlichung.zuordnungZuBereiche.indexOf('Managementberatung') > -1
+          veroffentlichung.zuordnungZuBereiche.indexOf('Managementberatung') >
+          -1
         ) {
           addVeroeffentlichungToBucket(veroffentlichung, dataManagementBeratung)
         }
         if (
-          veroffentlichung.zuordnungZuBereiche.indexOf('Fachberatung-Kredit') > -1
+          veroffentlichung.zuordnungZuBereiche.indexOf('Fachberatung-Kredit') >
+          -1
         ) {
           addVeroeffentlichungToBucket(veroffentlichung, dataFachKreditBeratung)
         }
@@ -251,7 +256,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
           )
         }
         if (
-          veroffentlichung.zuordnungZuBereiche.indexOf('Technologieberatung') > -1
+          veroffentlichung.zuordnungZuBereiche.indexOf('Technologieberatung') >
+          -1
         ) {
           addVeroeffentlichungToBucket(
             veroffentlichung,
@@ -270,7 +276,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     for (
-      let i = 0; i < result.data.allContentfulPressemeldung.edges.length;
+      let i = 0;
+      i < result.data.allContentfulPressemeldung.edges.length;
       ++i
     ) {
       let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
@@ -281,45 +288,73 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         pressemeldung.pressemeldungNurImArchivAnzeigen === false
       ) {
         if (
-          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Managementberatung') > -1
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf(
+            'Managementberatung'
+          ) > -1
         ) {
           dataManagementBeratung.pressemeldungen.push(pressemeldung)
         }
         if (
-          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Fachberatung-Kredit') > -1
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf(
+            'Fachberatung-Kredit'
+          ) > -1
         ) {
           dataFachKreditBeratung.pressemeldungen.push(pressemeldung)
         }
         if (
-          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Fachberatung-Wertpapier') > -1
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf(
+            'Fachberatung-Wertpapier'
+          ) > -1
         ) {
           dataFachWertpapierBeratung.pressemeldungen.push(pressemeldung)
         }
         if (
-          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Technologieberatung') > -1
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf(
+            'Technologieberatung'
+          ) > -1
         ) {
           dataTechnologieBeratung.pressemeldungen.push(pressemeldung)
         }
         if (
-          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Digitalisierung') > -1
+          pressemeldung.anzeigenFuerBeratungsfelder.indexOf('Digitalisierung') >
+          -1
         ) {
           dataDigitalisierungBeratung.pressemeldungen.push(pressemeldung)
         }
       }
     }
 
-    const templatePressemeldungSite = path.resolve(`./src/templates/content-max/index.jsx`)
+    const templatePressemeldungSite = path.resolve(
+      `./src/templates/content-max/index.jsx`
+    )
 
     for (
-      let i = 0; i < result.data.allContentfulPressemeldung.edges.length;
+      let i = 0;
+      i < result.data.allContentfulPressemeldung.edges.length;
       ++i
     ) {
       let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
 
-      let pathToBigMiddleImage = pressemeldung.groesBildMitte !== undefined && pressemeldung.groesBildMitte !== null ? '/' + pressemeldung.groesBildMitte.id + '/' : '/unkown/'
-      let pathToParagraphOneImage = pressemeldung.bildZuParagraph1 !== undefined && pressemeldung.bildZuParagraph1 !== null ? '/' + pressemeldung.bildZuParagraph1.id + '/' : '/unkown/'
-      let pathToParagraphTwoImage = pressemeldung.bildZuParagraph2 !== undefined && pressemeldung.bildZuParagraph2 !== null ? '/' + pressemeldung.bildZuParagraph2.id + '/' : '/unkown/'
-      let pathToParagraphThreeImage = pressemeldung.bildZuParagraph3 !== undefined && pressemeldung.bildZuParagraph3 !== null ? '/' + pressemeldung.bildZuParagraph3.id + '/' : '/unkown/'
+      let pathToBigMiddleImage =
+        pressemeldung.groesBildMitte !== undefined &&
+        pressemeldung.groesBildMitte !== null
+          ? '/' + pressemeldung.groesBildMitte.id + '/'
+          : '/unkown/'
+      let pathToParagraphOneImage =
+        pressemeldung.bildZuParagraph1 !== undefined &&
+        pressemeldung.bildZuParagraph1 !== null
+          ? '/' + pressemeldung.bildZuParagraph1.id + '/'
+          : '/unkown/'
+      let pathToParagraphTwoImage =
+        pressemeldung.bildZuParagraph2 !== undefined &&
+        pressemeldung.bildZuParagraph2 !== null
+          ? '/' + pressemeldung.bildZuParagraph2.id + '/'
+          : '/unkown/'
+      let pathToParagraphThreeImage =
+        pressemeldung.bildZuParagraph3 !== undefined &&
+        pressemeldung.bildZuParagraph3 !== null
+          ? '/' + pressemeldung.bildZuParagraph3.id + '/'
+          : '/unkown/'
 
       if (pressemeldung.verffentlichungsdatum != null) {
         pressemeldung.verffentlichungsdatum = moment(

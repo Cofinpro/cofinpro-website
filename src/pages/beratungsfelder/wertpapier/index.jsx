@@ -3,6 +3,7 @@ import React from 'react'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
+import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
@@ -12,6 +13,9 @@ import {
 
 class BeratungsfelderWertpapierTemplate extends React.Component {
   render() {
+    const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+
+    console.log(graphQlResult)
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -123,12 +127,17 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           </div>
           <div className="row ">
             <div className="col-md-6 margin-100-top margin-xs-40-top">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 1200,
-                  height: 800,
-                }}
+              <FokusthemaPreview
+                url={graphQlResult.edges[0].node.fokusthemenWertpapier[0].url}
+                header={
+                  graphQlResult.edges[0].node.fokusthemenWertpapier[0]
+                    .uberschriftGanzOben
+                }
+                subheader={
+                  graphQlResult.edges[0].node.fokusthemenWertpapier[0].subheader
+                }
+                color={'--orange-pink'}
+                icon={graphQlResult.edges[0].node.fokusthemenWertpapier[0].icon}
                 overlayElement={
                   <ContentfulMarkdownText
                     text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -138,12 +147,22 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               />
               <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12 col-md-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[1].url
+                    }
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[1]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[1]
+                        .subheader
+                    }
+                    color={'--pink-orange'}
+                    icon={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[1].icon
+                    }
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -159,12 +178,22 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <div className="row margin-xs-20-top">
                 <div className="col-md-2" />
                 <div className="col-12 col-md-8">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2].url
+                    }
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2]
+                        .subheader
+                    }
+                    color={'--grey-orange'}
+                    icon={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[2].icon
+                    }
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -177,12 +206,22 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               </div>
               <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3].url
+                    }
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3]
+                        .subheader
+                    }
+                    color={'--blue-yellow'}
+                    icon={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[3].icon
+                    }
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -199,12 +238,22 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <div className="row">
                 <div className="col-md-2" />
                 <div className="col-12 col-md-10">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4].url
+                    }
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4]
+                        .subheader
+                    }
+                    color={'--yellow-blue'}
+                    icon={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[4].icon
+                    }
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -218,12 +267,22 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-7">
               <div className="row margin-xs-20-top">
                 <div className="col-md-10">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 1200,
-                      height: 800,
-                    }}
+                  <FokusthemaPreview
+                    url={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5].url
+                    }
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5]
+                        .uberschriftGanzOben
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5]
+                        .subheader
+                    }
+                    color={'--grey-blue'}
+                    icon={
+                      graphQlResult.edges[0].node.fokusthemenWertpapier[5].icon
+                    }
                     overlayElement={
                       <ContentfulMarkdownText
                         text="Kundenbindung und Effizienz in der Bestandsführung "
@@ -270,6 +329,23 @@ export default BeratungsfelderWertpapierTemplate
 
 export const pageQuery = graphql`
   query BeratungsfelderWertQuery {
+    allContentfulZuordnungFokusthemen {
+      edges {
+        node {
+          fokusthemenWertpapier {
+            id
+            url
+            uberschriftGanzOben
+            unterueberschrift
+            icon
+            beratungsfelder
+            headline {
+              headline
+            }
+          }
+        }
+      }
+    }
     wertpapierImageSharp: imageSharp(id: { regex: "/Wertpapier/" }) {
       sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes

@@ -6,7 +6,6 @@ import ToggleWithButton from '../../../components/buttons/ToggleWithButton'
 import LayoutDownloadRow from '../LayoutDownloadRow'
 import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
 
-
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
