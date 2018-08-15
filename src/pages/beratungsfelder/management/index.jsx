@@ -3,6 +3,8 @@ import React from 'react'
 import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
+import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -15,6 +17,9 @@ class BeratungsfelderManagementTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+
+    console.log(graphQlResult)
     return (
       <div>
         <div className="container-fluid no-gutters">
@@ -78,41 +83,69 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 Blockchain.
               </p>
               <div className="margin-120-top margin-xs-40-top">
-                <ImageWrapper
-                  sourceType={SOURCE_TYP_PLACEHOLDER}
-                  source={{
-                    width: 2000,
-                    height: 1500,
-                  }}
+                <FokusthemaPreview
+                  url={graphQlResult.edges[0].node.fokusthemenManagement[0].url}
+                  header={
+                    graphQlResult.edges[0].node.fokusthemenManagement[0].header
+                  }
+                  subheader={
+                    graphQlResult.edges[0].node.fokusthemenManagement[0]
+                      .subheader
+                  }
+                  color={'--blue-yellow'}
+                  icon={
+                    graphQlResult.edges[0].node.fokusthemenManagement[0].icon
+                  }
                 />
               </div>
             </div>
             <div className="col-md-6 margin-xs-20-top">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
-                source={{
-                  width: 2000,
-                  height: 1500,
-                }}
+              <FokusthemaPreview
+                url={graphQlResult.edges[0].node.fokusthemenManagement[1].url}
+                header={
+                  graphQlResult.edges[0].node.fokusthemenManagement[1].header
+                }
+                subheader={
+                  graphQlResult.edges[0].node.fokusthemenManagement[1].subheader
+                }
+                color={'--orange-pink'}
+                icon={graphQlResult.edges[0].node.fokusthemenManagement[1].icon}
               />
               <div className="row margin-20-top">
                 <div className="col-md-8 align-items-end">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 2000,
-                      height: 1000,
-                    }}
+                  <FokusthemaPreview
+                    url={
+                      graphQlResult.edges[0].node.fokusthemenManagement[2].url
+                    }
+                    header={
+                      graphQlResult.edges[0].node.fokusthemenManagement[2]
+                        .header
+                    }
+                    subheader={
+                      graphQlResult.edges[0].node.fokusthemenManagement[2]
+                        .subheader
+                    }
+                    color={'--pink-orange'}
+                    icon={
+                      graphQlResult.edges[0].node.fokusthemenManagement[2].icon
+                    }
                   />
                 </div>
               </div>
               <div className="margin-40-top margin-xs-20-top">
-                <ImageWrapper
-                  sourceType={SOURCE_TYP_PLACEHOLDER}
-                  source={{
-                    width: 2000,
-                    height: 800,
-                  }}
+                <FokusthemaPreview
+                  url={graphQlResult.edges[0].node.fokusthemenManagement[0].url}
+                  header={
+                    graphQlResult.edges[0].node.fokusthemenManagement[0].header
+                  }
+                  subheader={
+                    graphQlResult.edges[0].node.fokusthemenManagement[0]
+                      .subheader
+                  }
+                  color={'--blue-yellow'}
+                  icon={
+                    graphQlResult.edges[0].node.fokusthemenManagement[0].icon
+                  }
                 />
               </div>
             </div>
@@ -150,13 +183,30 @@ export default BeratungsfelderManagementTemplate
 
 export const pageQuery = graphql`
   query BeratungsfelderManagementQuery {
+    allContentfulZuordnungFokusthemen {
+      edges {
+        node {
+          fokusthemenManagement {
+            id
+            url
+            uberschriftGanzOben
+            unterueberschrift
+            icon
+            beratungsfelder
+            headline {
+              headline
+            }
+          }
+        }
+      }
+    }
     heroImageSharp: imageSharp(id: { regex: "/Managementberatung/" }) {
       sizes(quality: 100, maxWidth: 2000, maxHeight: 1000, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
     managementMatrixSharp: imageSharp(id: { regex: "/ManagementMatrix/" }) {
-      sizes(quality: 100, maxWidth: 500, maxHeight: 570, cropFocus: CENTER) {
+      sizes(quality: 100) {
         ...GatsbyImageSharpSizes
       }
     }
