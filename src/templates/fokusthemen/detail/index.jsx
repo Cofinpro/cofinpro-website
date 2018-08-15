@@ -1,8 +1,8 @@
 import React from 'react'
 
+import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import RelevanteFokusthemen from '../../../components/RelevanteFokusthemen'
 
 import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
 
@@ -108,7 +108,18 @@ class FokusthemenDetailTeamplate extends React.Component {
             <div className="col-12 col-md-4">
               <div className="row">
                 <div className="col-12">
-                  <RelevanteFokusthemen />
+                  <RelevanteLinks
+                    title="relevante fokusthemen"
+                    relevanteLinks={[
+                      { title: 'hallo1', url: 'sasa' },
+                      { title: 'hallo2', url: 'sasa' },
+                      { title: 'hallo3', url: 'sasa' },
+                      { title: 'hallo4', url: 'sasa' },
+                      { title: 'hallo5', url: 'sasa' },
+                      { title: 'hallo6', url: 'sasa' },
+                      { title: 'hallo7', url: 'sasa' },
+                    ]}
+                  />
                 </div>
               </div>
             </div>
