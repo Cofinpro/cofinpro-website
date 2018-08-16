@@ -18,11 +18,11 @@ class BeratungsfelderManagementTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const graphQlResult = this.props.data.allContentfulZuordnungFokusthemen
+    const graphQlResult = this.props.data.allContentfulFokusthemaEinteilung
 
     var fokusthemen = []
 
-    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+    let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
       .edges[0].node
 
     for (let i = 0; i < focusThemsWrapper.fokusthemenManagement.length; ++i) {
@@ -152,7 +152,7 @@ export default BeratungsfelderManagementTemplate
 
 export const pageQuery = graphql`
   query BeratungsfelderManagementQuery {
-    allContentfulZuordnungFokusthemen {
+    allContentfulFokusthemaEinteilung {
       edges {
         node {
           fokusthemenManagement {

@@ -20,7 +20,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
   render() {
     var fokusthemen = []
 
-    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+    let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
       .edges[0].node
 
     for (let i = 0; i < focusThemsWrapper.fokusthemenWertpapier.length; ++i) {
@@ -203,7 +203,7 @@ export default BeratungsfelderWertpapierTemplate
 
 export const pageQuery = graphql`
   query BeratungsfelderWertQuery {
-    allContentfulZuordnungFokusthemen {
+    allContentfulFokusthemaEinteilung {
       edges {
         node {
           fokusthemenWertpapier {

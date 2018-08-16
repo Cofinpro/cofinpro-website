@@ -9,12 +9,15 @@ class LayoutDownloadRow extends React.Component {
 
     const { downloads, startIndex, endIndex, style } = this.props
 
+    let counterOfValidDownloads = -1
+
     return (
       <div className={'row ' + style.row}>
         <div className="col-12">
           {downloads.map((download, i) => {
             if (startIndex <= i && i <= endIndex) {
-              if (i % 2 === 0) {
+              ++counterOfValidDownloads
+              if (counterOfValidDownloads % 2 === 0) {
                 return (
                   <div className="row" key={i}>
                     <div className="col-12 col-md-6 col-lg-4">

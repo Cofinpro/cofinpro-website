@@ -16,7 +16,7 @@ class BeratungsfelderKredit extends React.Component {
   render() {
     var fokusthemen = []
 
-    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+    let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
       .edges[0].node
 
     for (let i = 0; i < focusThemsWrapper.fokusthemenKredit.length; ++i) {
@@ -195,7 +195,7 @@ export default BeratungsfelderKredit
 
 export const pageQuery = graphql`
   query BeratungsfelderKreditQuery {
-    allContentfulZuordnungFokusthemen {
+    allContentfulFokusthemaEinteilung {
       edges {
         node {
           fokusthemenKredit {

@@ -4,13 +4,15 @@ import ToggleButton from '../ToggleButton'
 
 class ToggleWithButton extends React.Component {
   render() {
-    const { text, path, dataTargetId, show } = this.props
+    const { text, path, dataTargetId, show, style } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    let rowStyle = style !== undefined ? style.container : ''
+
     return (
-      <div className="text-center margin-10-bottom">
+      <div className={'text-center margin-10-bottom ' + rowStyle}>
         <div
           style={{
             display: show ? 'block' : 'none',

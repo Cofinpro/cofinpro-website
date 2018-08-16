@@ -3,7 +3,7 @@ import React from 'react'
 import LinkButton from '../../../components/buttons/LinkButton'
 import ToggleWithButton from '../../../components/buttons/ToggleWithButton'
 
-import LayoutDownloadRow from '../LayoutDownloadRow'
+import LayoutDownloadAndLinkMixedRow from '../LayoutDownloadAndLinkMixedRow'
 import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
 
 import {
@@ -12,14 +12,27 @@ import {
 } from '../../../components/images/ImageWrapper'
 
 class LayoutVeroeffentlichungen extends React.Component {
-  createDataStructureForDownloadRow(_input) {
+  createDataStructureForDataRow(_input) {
     let result = []
 
     for (let i = 0; i < _input.length; ++i) {
-      result.push({
-        id: _input[i].pdfDatei.id,
-        name: _input[i].ueberschrift,
-      })
+      if (_input[i].dataType === 'link') {
+        result.push({
+          id: _input[i].id,
+          to: _input[i].urlDerVerffentlichung,
+          name: _input[i].ueberschrift,
+          zweiterName: _input[i].unterUeberschrift,
+          type: 'link',
+        })
+      }
+      if (_input[i].dataType === 'file') {
+        result.push({
+          id: _input[i].id,
+          to: `/pdf/contentful/${_input[i].pdfDatei.id}.pdf`,
+          name: _input[i].ueberschrift,
+          type: 'file',
+        })
+      }
     }
     return result
   }
@@ -46,35 +59,27 @@ class LayoutVeroeffentlichungen extends React.Component {
 
     const { content } = this.props
 
-    let convertedDownloads = this.createDataStructureForDownloadRow(
-      content.elements.downloads
+    let convertedDownloads = this.createDataStructureForDataRow(
+      content.elements.all
     )
 
-    let numberOfDownloadsUsedInPreviewImages = 0
-    let numberOfLinksUsedInPreviewImages = 0
+    console.log(convertedDownloads)
 
     let firstForElements = []
 
     for (let i = 0; i < content.elements.all.length; ++i) {
       if (i < 4) {
         if (content.elements.all[i].dataType === 'file') {
-          ++numberOfDownloadsUsedInPreviewImages
-
           firstForElements.push(
             this.createDataForPreviewImageByFile(content.elements.all[i])
           )
         } else if (content.elements.all[i].dataType === 'link') {
-          ++numberOfLinksUsedInPreviewImages
-
           firstForElements.push(
             this.createDataForPreviewImageByLink(content.elements.all[i])
           )
         }
       }
     }
-
-    let downloadsLeft =
-      convertedDownloads.length - numberOfDownloadsUsedInPreviewImages
 
     return (
       <div className="container margin-100-top margin-xs-80-top">
@@ -97,26 +102,26 @@ class LayoutVeroeffentlichungen extends React.Component {
                   />
                 </div>
               </div>
-              {firstForElements.length > 1 && (
-                <div className="row justify-content-center margin-40-top margin-xs-20-top">
+              {firstForElements.length > 2 && (
+                <div className="row justify-content-center margin-40-top margin-xs-20-top d-none d-md-block">
                   <div className="col-12 col-md-8">
                     <StockphotoWithExternalLink
                       content={firstForElements}
                       images={content.images}
-                      indexOfElelement={1}
+                      indexOfElelement={2}
                     />
                   </div>
                 </div>
               )}
             </div>
             <div className="col-12 col-md-6">
-              {firstForElements.length > 2 && (
-                <div className="row justify-content-center margin-xs-20-top d-none d-md-block">
+              {firstForElements.length > 1 && (
+                <div className="row justify-content-center margin-xs-20-top">
                   <div className="col-12 col-md-8">
                     <StockphotoWithExternalLink
                       content={firstForElements}
                       images={content.images}
-                      indexOfElelement={2}
+                      indexOfElelement={1}
                     />
                   </div>
                 </div>
@@ -135,21 +140,39 @@ class LayoutVeroeffentlichungen extends React.Component {
             </div>
           </div>
         )}
-        {downloadsLeft > 0 && (
-          <LayoutDownloadRow
-            downloads={convertedDownloads}
-            startIndex={numberOfDownloadsUsedInPreviewImages}
-            endIndex={numberOfDownloadsUsedInPreviewImages + 3}
-            style={{ row: 'margin-30-top margin-xs-10-top' }}
+        {convertedDownloads.length > 4 && (
+          <LayoutDownloadAndLinkMixedRow
+            elements={convertedDownloads}
+            startIndex={4}
+            endIndex={7}
+            style={{ row: 'margin-30-top margin-xs-10-top d-none d-md-flex' }}
           />
         )}
-        {downloadsLeft > 4 && (
-          <div className="collapse" id={'more-' + content.id}>
-            <LayoutDownloadRow
-              downloads={convertedDownloads}
-              startIndex={numberOfDownloadsUsedInPreviewImages + 4}
+        {convertedDownloads.length > 2 && (
+          <LayoutDownloadAndLinkMixedRow
+            elements={convertedDownloads}
+            startIndex={2}
+            endIndex={5}
+            style={{ row: 'margin-30-top margin-xs-10-top d-flex d-md-none' }}
+          />
+        )}
+        {convertedDownloads.length > 8 && (
+          <div className="collapse" id={'more-md-' + content.id}>
+            <LayoutDownloadAndLinkMixedRow
+              elements={convertedDownloads}
+              startIndex={8}
               endIndex={999}
-              style={{ row: '' }}
+              style={{ row: 'd-none d-md-flex' }}
+            />
+          </div>
+        )}
+        {convertedDownloads.length > 6 && (
+          <div className="collapse" id={'more-xs-' + content.id}>
+            <LayoutDownloadAndLinkMixedRow
+              elements={convertedDownloads}
+              startIndex={6}
+              endIndex={999}
+              style={{ row: 'd-flex d-md-none' }}
             />
           </div>
         )}
@@ -167,10 +190,18 @@ class LayoutVeroeffentlichungen extends React.Component {
             />
           </div>
           <div className="col-12 col-md-4 flex-box-content-center order-1 order-md-2">
-            {downloadsLeft > 4 && (
+            {convertedDownloads.length > 8 && (
               <ToggleWithButton
                 show={true}
-                dataTargetId={'more-' + content.id}
+                dataTargetId={'more-md-' + content.id}
+                style={{ container: 'd-none d-md-flex' }}
+              />
+            )}
+            {convertedDownloads.length > 6 && (
+              <ToggleWithButton
+                show={true}
+                dataTargetId={'more-xs-' + content.id}
+                style={{ container: 'd-flex d-md-none' }}
               />
             )}
           </div>

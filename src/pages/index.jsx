@@ -13,18 +13,121 @@ import {
 } from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
+  createMediaDataStructureForDownloads(_input) {
+    let result = []
+
+    for (let i = 0; i < _input.length; ++i) {
+      result.push({
+        to: `/pdf/contentful/${_input[i].datei.id}.pdf`,
+        linkType: 'external',
+        header: _input[i].beschriftungDesDownloads,
+        date: _input[i].datumDerVerffentlichung,
+        description:
+          _input[i].beschreibung !== null
+            ? _input[i].beschreibung.beschreibung
+            : null,
+      })
+    }
+    return result
+  }
+
+  createMediaDataStructureForPressemeldung(_input) {
+    let result = []
+
+    for (let i = 0; i < _input.length; ++i) {
+      result.push({
+        to: _input[i].urlDerSeite,
+        linkType: 'internal',
+        header: _input[i].ueberschrift,
+        subHeader: _input[i].unteruebrschrift,
+        date: _input[i].verffentlichungsdatum,
+        description:
+          _input[i].introText !== null ? _input[i].introText.introText : null,
+      })
+    }
+    return result
+  }
+
+  createMediaDataStructureForVeroeffentlichung(_input) {
+    let result = []
+
+    for (let i = 0; i < _input.length; ++i) {
+      let url = ''
+      let linkType = ''
+      if (
+        _input[i].urlDerVerffentlichung !== undefined &&
+        _input[i].urlDerVerffentlichung !== null
+      ) {
+        url = _input[i].urlDerVerffentlichung
+      }
+      if (_input[i].pdfDatei !== undefined && _input[i].pdfDatei !== null) {
+        url = `/pdf/contentful/${_input[i].pdfDatei.id}.pdf`
+      }
+
+      result.push({
+        to: url,
+        linkType: 'external',
+        header: _input[i].ueberschrift,
+        subHeader: _input[i].unterUeberschrift,
+        date: _input[i].datumDerVerffentlichung,
+        description:
+          _input[i].beschreibung !== null
+            ? _input[i].beschreibung.beschreibung
+            : null,
+      })
+    }
+    return result
+  }
+
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     var fokusthemen = []
 
-    let focusThemsWrapper = this.props.data.allContentfulZuordnungFokusthemen
+    let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
       .edges[0].node
 
     for (let i = 0; i < focusThemsWrapper.fokusthemenStartseite.length; ++i) {
       fokusthemen.push(focusThemsWrapper.fokusthemenStartseite[i])
     }
+
+    let medienEinteilung = {}
+    let edges = this.props.data.allContentfulMedienEinteilung.edges
+
+    for (let i = 0; i < edges.length; ++i) {
+      if (edges[i].node.id === 'A2YNdv1hwOCuGueqyCiMO') {
+        medienEinteilung = edges[i].node
+      }
+    }
+
+    let medien = []
+
+    if (medienEinteilung.startseiteVerlinkungZuDownloads != null) {
+      medien = medien.concat(
+        this.createMediaDataStructureForDownloads(
+          medienEinteilung.startseiteVerlinkungZuDownloads
+        )
+      )
+    }
+
+    if (medienEinteilung.startseiteVerlinkungZuVeroeffentlichungen != null) {
+      medien = medien.concat(
+        this.createMediaDataStructureForVeroeffentlichung(
+          medienEinteilung.startseiteVerlinkungZuVeroeffentlichungen
+        )
+      )
+    }
+
+    if (medienEinteilung.startseiteVerlinkungZuPressemeldungen != null) {
+      medien = medien.concat(
+        this.createMediaDataStructureForPressemeldung(
+          medienEinteilung.startseiteVerlinkungZuPressemeldungen
+        )
+      )
+    }
+
+    console.log(medienEinteilung)
 
     return (
       <div>
@@ -108,32 +211,36 @@ class Startseite extends React.Component {
           </div>
           <div className="row">
             <div className="col-12 col-md-6">
-              <NewsMedienPreview
-                content={{
-                  url: '/',
-                  header:
-                    'Studie: Sprint? Digitaler Wandel fordert von Banken Ausdauer statt Aktivismus',
-                  image: this.props.data.newsMedienLinks,
-                  date: '11.08.2018',
-                  publishedBy: 'IT Finanzmagazin, 06/2018',
-                  intro:
-                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                }}
-              />
+              {medien.length > 0 && (
+                <NewsMedienPreview
+                  content={{
+                    url: medien[0].to,
+                    linkType: medien[0].linkType,
+                    header: medien[0].header,
+                    subHeader: medien[0].subHeader,
+                    image: this.props.data.newsMedienLinks,
+                    date: medien[0].date,
+                    publishedBy: medien[0].publishedBy,
+                    intro: medien[0].description,
+                  }}
+                />
+              )}
             </div>
             <div className="col-12 col-md-6">
-              <NewsMedienPreview
-                content={{
-                  url: '/',
-                  header:
-                    'Studie: Sprint? Digitaler Wandel fordert von Banken Ausdauer statt Aktivismus',
-                  image: this.props.data.newsMedienRechts,
-                  date: '11.08.2018',
-                  publishedBy: 'IT Finanzmagazin, 06/2018',
-                  intro:
-                    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.',
-                }}
-              />
+              {medien.length > 1 && (
+                <NewsMedienPreview
+                  content={{
+                    url: medien[1].to,
+                    linkType: medien[1].linkType,
+                    header: medien[1].header,
+                    subHeader: medien[1].subHeader,
+                    image: this.props.data.newsMedienRechts,
+                    date: medien[1].date,
+                    publishedBy: medien[1].publishedBy,
+                    intro: medien[1].description,
+                  }}
+                />
+              )}
             </div>
           </div>
           <div className="row">
@@ -166,7 +273,7 @@ export default Startseite
 
 export const pageQuery = graphql`
   query StartseiteQuery {
-    allContentfulZuordnungFokusthemen {
+    allContentfulFokusthemaEinteilung {
       edges {
         node {
           id
@@ -179,6 +286,68 @@ export const pageQuery = graphql`
             headline {
               headline
             }
+          }
+        }
+      }
+    }
+    allContentfulMedienEinteilung {
+      edges {
+        node {
+          id
+          startseiteVerlinkungZuDownloads {
+            id
+            contentfulInternerName
+            datumDerVerffentlichung
+            beschriftungDesDownloads
+            zuordnungZuBereiche
+            artDesDownloads
+            nurImArchivAnzeigen
+            beschreibung {
+              beschreibung
+            }
+            datei {
+              id
+              title
+              description
+            }
+          }
+          startseiteVerlinkungZuPressemeldungen {
+            id
+            contentfulInternerName
+            verffentlichungsdatum
+            urlDerSeite
+            downloadDatei {
+              id
+              title
+              description
+            }
+            downloadBeschreibenderText {
+              downloadBeschreibenderText
+            }
+            pressemeldungNurImArchivAnzeigen
+            anzeigenFuerBeratungsfelder
+            ueberschrift
+            unteruebrschrift
+            introText {
+              introText
+            }
+          }
+          startseiteVerlinkungZuVeroeffentlichungen {
+            id
+            contentfulInternerName
+            datumDerVerffentlichung
+            ueberschrift
+            unterUeberschrift
+            zuordnungZuBereiche
+            pdfDatei {
+              id
+              title
+              description
+            }
+            beschreibung {
+              beschreibung
+            }
+            urlDerVerffentlichung
           }
         }
       }

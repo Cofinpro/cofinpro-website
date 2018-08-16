@@ -41,8 +41,6 @@ class LayoutPressemeldungen extends React.Component {
 
     const { content } = this.props
 
-    console.log(content)
-
     let convertedLinks = this.createDataStructureForLinkRow(content.elements)
 
     let firstForElements = []
@@ -76,26 +74,26 @@ class LayoutPressemeldungen extends React.Component {
                   />
                 </div>
               </div>
-              {firstForElements.length > 1 && (
-                <div className="row justify-content-center margin-40-top margin-xs-20-top">
+              {firstForElements.length > 2 && (
+                <div className="row justify-content-center margin-40-top margin-xs-20-top d-none d-md-block">
                   <div className="col-12 col-md-8">
                     <StockphotoWithInternalLink
                       content={firstForElements}
                       images={content.images}
-                      indexOfElelement={1}
+                      indexOfElelement={2}
                     />
                   </div>
                 </div>
               )}
             </div>
             <div className="col-12 col-md-6">
-              {firstForElements.length > 2 && (
-                <div className="row justify-content-center margin-xs-20-top d-none d-md-block">
+              {firstForElements.length > 1 && (
+                <div className="row justify-content-center margin-xs-20-top">
                   <div className="col-12 col-md-8">
                     <StockphotoWithInternalLink
                       content={firstForElements}
                       images={content.images}
-                      indexOfElelement={2}
+                      indexOfElelement={1}
                     />
                   </div>
                 </div>
@@ -119,16 +117,34 @@ class LayoutPressemeldungen extends React.Component {
             links={convertedLinks}
             startIndex={4}
             endIndex={7}
-            style={{ row: 'margin-30-top margin-xs-10-top' }}
+            style={{ row: 'margin-30-top margin-xs-10-top d-none d-md-flex' }}
+          />
+        )}
+        {content.elements.length > 2 && (
+          <LayoutLinkRow
+            links={convertedLinks}
+            startIndex={2}
+            endIndex={5}
+            style={{ row: 'margin-30-top margin-xs-10-top d-flex d-md-none' }}
           />
         )}
         {content.elements.length > 8 && (
-          <div className="collapse" id={'more-' + content.id}>
+          <div className="collapse" id={'more-md-' + content.id}>
             <LayoutLinkRow
               links={convertedLinks}
               startIndex={8}
               endIndex={999}
-              style={{ row: '' }}
+              style={{ row: 'd-none d-md-flex' }}
+            />
+          </div>
+        )}
+        {content.elements.length > 6 && (
+          <div className="collapse" id={'more-xs-' + content.id}>
+            <LayoutLinkRow
+              links={convertedLinks}
+              startIndex={6}
+              endIndex={999}
+              style={{ row: 'd-flex d-md-none' }}
             />
           </div>
         )}
@@ -149,7 +165,15 @@ class LayoutPressemeldungen extends React.Component {
             {content.elements.length > 8 && (
               <ToggleWithButton
                 show={true}
-                dataTargetId={'more-' + content.id}
+                dataTargetId={'more-md-' + content.id}
+                style={{ container: 'd-none d-md-flex' }}
+              />
+            )}
+            {content.elements.length > 6 && (
+              <ToggleWithButton
+                show={true}
+                dataTargetId={'more-xs-' + content.id}
+                style={{ container: 'd-flex d-md-none' }}
               />
             )}
           </div>

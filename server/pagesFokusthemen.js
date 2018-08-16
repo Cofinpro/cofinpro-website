@@ -3,12 +3,12 @@ const path = require(`path`)
 const slash = require(`slash`)
 
 exports.create = function(graphql, createPage, createRedirect, callback) {
-  console.log('start graphql query: allContentfulZuordnungFokusthemen.')
+  console.log('start graphql query: allContentfulFokusthemaEinteilung.')
 
   graphql(
     `
       {
-        allContentfulZuordnungFokusthemen {
+        allContentfulFokusthemaEinteilung {
           edges {
             node {
               id
@@ -97,11 +97,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       }
     `
   ).then(result => {
-    console.log('end graphql query: allContentfulZuordnungFokusthemen.')
+    console.log('end graphql query: allContentfulFokusthemaEinteilung.')
 
     const template = path.resolve(`./src/templates/fokusthemen/index.jsx`)
 
-    if (result.data.allContentfulZuordnungFokusthemen.edges.length > 0) {
+    if (result.data.allContentfulFokusthemaEinteilung.edges.length > 0) {
       createPage({
         path: `/fokusthemen/managementberatung`,
         component: slash(template),
@@ -109,13 +109,13 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           name: 'Managementberatung',
           url: 'managementberatung',
           header:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .ueberschriftManagement,
           description:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .beschreibungManagement.beschreibungManagement,
           fokusthemen:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .fokusthemenManagement,
         },
       })
@@ -129,13 +129,13 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           name: 'Fachberatung-Kredit',
           url: 'fachberatung-kredit',
           header:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .ueberschriftKredit,
           description:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .beschreibungKredit.beschreibungKredit,
           fokusthemen:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .fokusthemenKredit,
         },
       })
@@ -149,13 +149,13 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           name: 'Fachberatung-Wertpapier',
           url: 'fachberatung-wertpapier',
           header:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .ueberschriftWertpapier,
           description:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .beschreibungWertpapier.beschreibungWertpapier,
           fokusthemen:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .fokusthemenWertpapier,
         },
       })
@@ -169,13 +169,13 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           name: 'Technologieberatung',
           url: 'technologieberatung',
           header:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .ueberschriftTechnologie,
           description:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .beschreibungTechnologie.beschreibungTechnologie,
           fokusthemen:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .fokusthemenTechnologie,
         },
       })
@@ -189,13 +189,13 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           name: 'Digitalisierung',
           url: 'digitalisierung',
           header:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .ueberschriftDigitalisierung,
           description:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .beschreibungDigitalisierung.beschreibungDigitalisierung,
           fokusthemen:
-            result.data.allContentfulZuordnungFokusthemen.edges[0].node
+            result.data.allContentfulFokusthemaEinteilung.edges[0].node
               .fokusthemenDigitalisierung,
         },
       })

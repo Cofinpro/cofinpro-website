@@ -94,16 +94,34 @@ class LayoutDownloads extends React.Component {
             downloads={convertedDownloads}
             startIndex={2}
             endIndex={3}
-            style={{ row: 'margin-30-top margin-xs-10-top' }}
+            style={{ row: 'margin-30-top margin-xs-10-top d-none d-md-flex' }}
+          />
+        )}
+        {convertedDownloads.length > 1 && (
+          <LayoutDownloadRow
+            downloads={convertedDownloads}
+            startIndex={1}
+            endIndex={2}
+            style={{ row: 'margin-30-top margin-xs-10-top d-flex d-md-none' }}
           />
         )}
         {convertedDownloads.length > 4 && (
-          <div className="collapse" id={'more-' + content.id}>
+          <div className="collapse" id={'more-md-' + content.id}>
             <LayoutDownloadRow
               downloads={convertedDownloads}
               startIndex={4}
               endIndex={999}
-              style={{ row: '' }}
+              style={{ row: 'd-none d-md-flex' }}
+            />
+          </div>
+        )}
+        {convertedDownloads.length > 3 && (
+          <div className="collapse" id={'more-xs-' + content.id}>
+            <LayoutDownloadRow
+              downloads={convertedDownloads}
+              startIndex={3}
+              endIndex={999}
+              style={{ row: 'd-flex d-md-none' }}
             />
           </div>
         )}
@@ -121,10 +139,18 @@ class LayoutDownloads extends React.Component {
             />
           </div>
           <div className="col-12 col-md-4 flex-box-content-center order-1 order-md-2">
-            {content.downloads.length > 4 && (
+            {convertedDownloads.length > 4 && (
               <ToggleWithButton
                 show={true}
-                dataTargetId={'more-' + content.id}
+                dataTargetId={'more-md-' + content.id}
+                style={{ container: 'd-none d-md-flex' }}
+              />
+            )}
+            {convertedDownloads.length > 3 && (
+              <ToggleWithButton
+                show={true}
+                dataTargetId={'more-xs-' + content.id}
+                style={{ container: 'd-flex d-md-none' }}
               />
             )}
           </div>

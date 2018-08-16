@@ -15,36 +15,64 @@ class NewsMedienPreview extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    const DATE_OPTIONS = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }
+
+    function InnerContent(props) {
+      return (
+        <ImageWrapper
+          sourceType={SOURCE_TYP_SHARP}
+          source={props.content.image}
+          overlayElement={
+            <div className="text-underline">
+              <p className="h4 d-none d-lg-block no-margin bold-font">
+                {props.content.header}
+              </p>
+              <p className="h5 d-block d-lg-none no-margin bold-font">
+                {props.content.header}
+              </p>
+              {props.content.subHeader !== undefined && (
+                <p className="text-sm-small">{props.content.subHeader}</p>
+              )}
+            </div>
+          }
+        />
+      )
+    }
+
     return (
       <div className="row">
         <div className="col-12">
-          <Link className="text-dark" to={`/${content.url}`}>
-            <ImageWrapper
-              sourceType={SOURCE_TYP_SHARP}
-              source={content.image}
-              overlayElement={
-                <div className="text-underline">
-                  <p className="h4 d-none d-lg-block no-margin bold-font">
-                    {content.header}
-                  </p>
-                  <p className="h5 d-block d-lg-none no-margin bold-font">
-                    {content.header}
-                  </p>
-                  {content.subheader !== undefined && (
-                    <p className="text-sm-small">{content.subheader}</p>
-                  )}
-                </div>
-              }
-            />
-          </Link>
+          {content.linkType === 'external' && (
+            <a
+              className="text-dark"
+              href={content.url}
+              target="_blank"
+              rel="noopener"
+            >
+              <InnerContent content={content} />
+            </a>
+          )}
+          {content.linkType === 'internal' && (
+            <Link className="text-dark" to={content.url}>
+              <InnerContent content={content} />
+            </Link>
+          )}
         </div>
         <div className="col-12 margin-20-top">
           <p className="h5 bold-font">
-            {content.date} - {content.publishedBy}
+            {new Date(content.date).toLocaleDateString('de-DE', DATE_OPTIONS)}
+            {content.publishedBy !== undefined &&
+              content.publishedBy !== null && (
+                <span> - {content.publishedBy}</span>
+              )}
           </p>
         </div>
         <div className="col-12">
-          <ContentfulMarkdownText text={content.intro} />
+          <ContentfulMarkdownText text={content.intro} {...this.props} />
         </div>
       </div>
     )
