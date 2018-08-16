@@ -28,18 +28,26 @@ class Startseite extends React.Component {
 
     return (
       <div>
-        <div className="container-fluid no-gutters">
+        <div className="container">
           <div className="row">
             <div className="col-12">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_SHARP}
-                source={this.props.data.heroImageSharp}
-              />
+              <div className="d-none d-md-block">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildDesktopSharp}
+                />
+              </div>
+              <div className="d-block d-md-none">
+                <ImageWrapper
+                  sourceType={SOURCE_TYP_SHARP}
+                  source={this.props.data.titelBildMobileSharp}
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="container margin-80-top margin-xs-20-top">
+        <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-8">
               <h1 className="h1">Hallo, hier ist Cofinpro</h1>
@@ -196,10 +204,17 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    heroImageSharp: imageSharp(
-      id: { regex: "/20180718-cofinpro-stills19468-sw/" }
+    titelBildDesktopSharp: imageSharp(
+      id: { regex: "/Startseite-Titelbild-Desktop/" }
     ) {
-      sizes(quality: 100, maxWidth: 2000, maxHeight: 800, cropFocus: SOUTH) {
+      sizes(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    titelBildMobileSharp: imageSharp(
+      id: { regex: "/Startseite-Titelbild-Mobile/" }
+    ) {
+      sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
     }
