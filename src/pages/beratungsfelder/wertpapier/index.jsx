@@ -49,7 +49,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
         </div>
         <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-12 ol-md-7">
+            <div className="col-12 col-md-7">
               <div className="row">
                 <div className="col-4 col-md-3 col-lg-2">
                   <ImageWrapper
