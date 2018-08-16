@@ -14,8 +14,6 @@ class ContentseiteMax extends React.Component {
   render() {
     const content = this.props.pathContext.content
 
-    console.log(content)
-
     let paragraphOne = undefined
     let paragraphTwo = undefined
     let paragraphThree = undefined

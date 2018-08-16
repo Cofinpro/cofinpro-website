@@ -63,8 +63,6 @@ class LayoutVeroeffentlichungen extends React.Component {
       content.elements.all
     )
 
-    console.log(convertedDownloads)
-
     let firstForElements = []
 
     for (let i = 0; i < content.elements.all.length; ++i) {

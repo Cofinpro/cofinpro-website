@@ -29,7 +29,6 @@ class BeratungsfelderManagementTemplate extends React.Component {
       fokusthemen.push(focusThemsWrapper.fokusthemenManagement[i])
     }
 
-    console.log(graphQlResult)
     return (
       <div>
         <div className="container">

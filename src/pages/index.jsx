@@ -127,8 +127,6 @@ class Startseite extends React.Component {
       )
     }
 
-    console.log(medienEinteilung)
-
     return (
       <div>
         <div className="container">
