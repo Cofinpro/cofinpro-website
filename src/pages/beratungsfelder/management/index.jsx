@@ -9,7 +9,6 @@ import PageIntroText from '../../../components/text/PageIntroText'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_BOOTSTRAP,
   SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'

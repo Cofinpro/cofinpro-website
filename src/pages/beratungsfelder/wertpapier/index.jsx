@@ -13,6 +13,7 @@ import FokusThemenFachLayout from '../../../components/layouts/FokusThemenFachLa
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../../components/images/ImageWrapper'
 
 class BeratungsfelderWertpapierTemplate extends React.Component {
