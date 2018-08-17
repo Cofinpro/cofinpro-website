@@ -13,6 +13,20 @@ class PressemeldungArchivTemplate extends React.Component {
     var siteDescription = this.props.pathContext.siteDescription
     var sectionDescription = this.props.pathContext.sectionDescription
 
+    let firstSetOfImages = [
+      this.props.data.pressemeldungOneSharp,
+      this.props.data.pressemeldungTwoSharp,
+      this.props.data.pressemeldungThreeSharp,
+      this.props.data.pressemeldungFourSharp,
+    ]
+
+    let secondSetOfImages = [
+      this.props.data.veroeffentlichungenOneSharp,
+      this.props.data.veroeffentlichungenTwoSharp,
+      this.props.data.veroeffentlichungenThreeSharp,
+      this.props.data.veroeffentlichungenFourSharp,
+    ]
+
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
@@ -78,12 +92,7 @@ class PressemeldungArchivTemplate extends React.Component {
                 content={{
                   id: 'pressemeldungen',
                   header: 'Pressemeldungen',
-                  images: [
-                    this.props.data.pressemeldungOneSharp,
-                    this.props.data.pressemeldungTwoSharp,
-                    this.props.data.pressemeldungThreeSharp,
-                    this.props.data.pressemeldungFourSharp,
-                  ],
+                  images: i % 2 === 0 ? firstSetOfImages : secondSetOfImages,
                   description: sectionDescription,
                   elements: input[key],
                   showButton: false,
@@ -128,6 +137,34 @@ export const pageQuery = graphql`
     }
     pressemeldungFourSharp: imageSharp(
       id: { regex: "/medien-pressemeldungen-b39/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    veroeffentlichungenOneSharp: imageSharp(
+      id: { regex: "/medien-veroeffentlichungen-a14/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    veroeffentlichungenTwoSharp: imageSharp(
+      id: { regex: "/medien-veroeffentlichungen-a29/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    veroeffentlichungenThreeSharp: imageSharp(
+      id: { regex: "/medien-veroeffentlichungen-a16/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    veroeffentlichungenFourSharp: imageSharp(
+      id: { regex: "/medien-veroeffentlichungen-a1/" }
     ) {
       sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes

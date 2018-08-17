@@ -13,6 +13,16 @@ class ThesenpapiereArchivTemplate extends React.Component {
     var siteDescription = this.props.pathContext.siteDescription
     var sectionDescription = this.props.pathContext.sectionDescription
 
+    let firstSetOfImages = [
+      this.props.data.thesenpapierOneSharp,
+      this.props.data.thesenpapierTwoSharp,
+    ]
+
+    let secondSetOfImages = [
+      this.props.data.loesungsskizzenOneSharp,
+      this.props.data.loesungsskizzenTwoSharp,
+    ]
+
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
@@ -78,10 +88,7 @@ class ThesenpapiereArchivTemplate extends React.Component {
                 content={{
                   id: 'THESENPAPIERE',
                   header: 'THESENPAPIERE',
-                  images: [
-                    this.props.data.thesenpapierOneSharp,
-                    this.props.data.thesenpapierTwoSharp,
-                  ],
+                  images: i % 2 === 0 ? firstSetOfImages : secondSetOfImages,
                   description: sectionDescription,
                   downloads: input[key],
                   showButton: false,
@@ -112,6 +119,20 @@ export const pageQuery = graphql`
     }
     thesenpapierTwoSharp: imageSharp(
       id: { regex: "/medien-thesenpapiere-a6/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    loesungsskizzenOneSharp: imageSharp(
+      id: { regex: "/medien-loesungsskizzen-b32/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    loesungsskizzenTwoSharp: imageSharp(
+      id: { regex: "/medien-loesungsskizzen-b26/" }
     ) {
       sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes

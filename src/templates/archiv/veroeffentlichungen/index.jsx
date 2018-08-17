@@ -13,6 +13,20 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
     var siteDescription = this.props.pathContext.siteDescription
     var sectionDescription = this.props.pathContext.sectionDescription
 
+    let firstSetOfImages = [
+      this.props.data.veroeffentlichungenOneSharp,
+      this.props.data.veroeffentlichungenTwoSharp,
+      this.props.data.veroeffentlichungenThreeSharp,
+      this.props.data.veroeffentlichungenFourSharp,
+    ]
+
+    let secondSetOfImages = [
+      this.props.data.pressemeldungOneSharp,
+      this.props.data.pressemeldungTwoSharp,
+      this.props.data.pressemeldungThreeSharp,
+      this.props.data.pressemeldungFourSharp,
+    ]
+
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
@@ -78,12 +92,7 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
                 content={{
                   id: 'veroeffentlichungen',
                   header: 'Veröffentlichungen',
-                  images: [
-                    this.props.data.veroeffentlichungenOneSharp,
-                    this.props.data.veroeffentlichungenTwoSharp,
-                    this.props.data.veroeffentlichungenThreeSharp,
-                    this.props.data.veroeffentlichungenFourSharp,
-                  ],
+                  images: i % 2 === 0 ? firstSetOfImages : secondSetOfImages,
                   description: sectionDescription,
                   elements: input[key],
                   showButton: false,
@@ -128,6 +137,27 @@ export const pageQuery = graphql`
     }
     veroeffentlichungenFourSharp: imageSharp(
       id: { regex: "/medien-veroeffentlichungen-a1/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    pressemeldungOneSharp: imageSharp(
+      id: { regex: "/medien-pressemeldungen-b50/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    pressemeldungTwoSharp: imageSharp(
+      id: { regex: "/medien-pressemeldungen-b3/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    pressemeldungThreeSharp: imageSharp(
+      id: { regex: "/medien-pressemeldungen-b2/" }
     ) {
       sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes

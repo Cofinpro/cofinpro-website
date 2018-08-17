@@ -13,6 +13,16 @@ class WhitepapersArchivTemplate extends React.Component {
     var siteDescription = this.props.pathContext.siteDescription
     var sectionDescription = this.props.pathContext.sectionDescription
 
+    let firstSetOfImages = [
+      this.props.data.whitepapersOneSharp,
+      this.props.data.whitepapersTwoSharp,
+    ]
+
+    let secondSetOfImages = [
+      this.props.data.studienOneSharp,
+      this.props.data.studienTwoSharp,
+    ]
+
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
@@ -78,10 +88,7 @@ class WhitepapersArchivTemplate extends React.Component {
                 content={{
                   id: 'WHITEPAPERS',
                   header: 'WHITEPAPERS',
-                  images: [
-                    this.props.data.whitepapersOneSharp,
-                    this.props.data.whitepapersTwoSharp,
-                  ],
+                  images: i % 2 === 0 ? firstSetOfImages : secondSetOfImages,
                   description: sectionDescription,
                   downloads: input[key],
                   showButton: false,
@@ -103,6 +110,16 @@ export default WhitepapersArchivTemplate
 
 export const pageQuery = graphql`
   query whitepapersArchivQuery {
+    studienOneSharp: imageSharp(id: { regex: "/medien-studien-a42/" }) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+    studienTwoSharp: imageSharp(id: { regex: "/medien-studien-a7/" }) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
     whitepapersOneSharp: imageSharp(id: { regex: "/medien-whitepapers-b8/" }) {
       sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes

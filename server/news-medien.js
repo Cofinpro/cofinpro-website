@@ -124,238 +124,60 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     `
   ).then(result => {
     console.log('end graphql query: news medien.')
-    
+
     const template = path.resolve(
       `./src/templates/news-medien-uebersicht/index.jsx`
     )
 
-    let dataManagementBeratung = {
-      pressemeldungen: {
-        current: [],
-        archiv: [],
-      },
-      veroeffentlichungen: {
-        all: [],
-        links: [],
-        downloads: [],
-        archiv: [],
-      },
-      studien: {
-        current: [],
-        archiv: [],
-      },
-      thesenpapiere: {
-        current: [],
-        archiv: [],
-      },
-      whitepapers: {
-        current: [],
-        archiv: [],
-      },
-      loesungsskizzen: {
-        current: [],
-        archiv: [],
-      },
-    }
+    let dataManagementBeratung = createNewBucket()
+    let dataFachKreditBeratung = createNewBucket()
+    let dataFachWertpapierBeratung = createNewBucket()
+    let dataTechnologieBeratung = createNewBucket()
+    let dataDigitalisierungBeratung = createNewBucket()
 
-    let dataFachKreditBeratung = {
-      pressemeldungen: {
-        current: [],
-        archiv: [],
+    let veroeffentlichungenMap = [{
+        name: 'Managementberatung',
+        bucket: dataManagementBeratung,
       },
-      veroeffentlichungen: {
-        all: [],
-        links: [],
-        downloads: [],
-        archiv: [],
+      {
+        name: 'Fachberatung-Kredit',
+        bucket: dataFachKreditBeratung,
       },
-      studien: {
-        current: [],
-        archiv: [],
+      {
+        name: 'Fachberatung-Wertpapier',
+        bucket: dataFachWertpapierBeratung,
       },
-      thesenpapiere: {
-        current: [],
-        archiv: [],
+      {
+        name: 'Technologieberatung',
+        bucket: dataTechnologieBeratung,
       },
-      whitepapers: {
-        current: [],
-        archiv: [],
+      {
+        name: 'Digitalisierung',
+        bucket: dataDigitalisierungBeratung,
       },
-      loesungsskizzen: {
-        current: [],
-        archiv: [],
-      },
-    }
-
-    let dataFachWertpapierBeratung = {
-      pressemeldungen: {
-        current: [],
-        archiv: [],
-      },
-      veroeffentlichungen: {
-        all: [],
-        links: [],
-        downloads: [],
-        archiv: [],
-      },
-      studien: {
-        current: [],
-        archiv: [],
-      },
-      thesenpapiere: {
-        current: [],
-        archiv: [],
-      },
-      whitepapers: {
-        current: [],
-        archiv: [],
-      },
-      loesungsskizzen: {
-        current: [],
-        archiv: [],
-      },
-    }
-
-    let dataTechnologieBeratung = {
-      pressemeldungen: {
-        current: [],
-        archiv: [],
-      },
-      veroeffentlichungen: {
-        all: [],
-        links: [],
-        downloads: [],
-        archiv: [],
-      },
-      studien: {
-        current: [],
-        archiv: [],
-      },
-      thesenpapiere: {
-        current: [],
-        archiv: [],
-      },
-      whitepapers: {
-        current: [],
-        archiv: [],
-      },
-      loesungsskizzen: {
-        current: [],
-        archiv: [],
-      },
-    }
-
-    let dataDigitalisierungBeratung = {
-      pressemeldungen: {
-        current: [],
-        archiv: [],
-      },
-      veroeffentlichungen: {
-        all: [],
-        links: [],
-        downloads: [],
-        archiv: [],
-      },
-      studien: {
-        current: [],
-        archiv: [],
-      },
-      thesenpapiere: {
-        current: [],
-        archiv: [],
-      },
-      whitepapers: {
-        current: [],
-        archiv: [],
-      },
-      loesungsskizzen: {
-        current: [],
-        archiv: [],
-      },
-    }
-
-    for (let i = 0; i < result.data.allContentfulDownload.edges.length; ++i) {
-      let download = result.data.allContentfulDownload.edges[i].node
-
-      if (
-        download.zuordnungZuBereiche !== undefined &&
-        download.zuordnungZuBereiche !== null
-      ) {
-        if (download.zuordnungZuBereiche.indexOf('Managementberatung') > -1) {
-          addDownloadToBucket(download, dataManagementBeratung)
-        }
-        if (download.zuordnungZuBereiche.indexOf('Fachberatung-Kredit') > -1) {
-          addDownloadToBucket(download, dataFachKreditBeratung)
-        }
-        if (
-          download.zuordnungZuBereiche.indexOf('Fachberatung-Wertpapier') > -1
-        ) {
-          addDownloadToBucket(download, dataFachWertpapierBeratung)
-        }
-        if (download.zuordnungZuBereiche.indexOf('Technologieberatung') > -1) {
-          addDownloadToBucket(download, dataTechnologieBeratung)
-        }
-        if (download.zuordnungZuBereiche.indexOf('Digitalisierung') > -1) {
-          addDownloadToBucket(download, dataDigitalisierungBeratung)
-        }
-      }
-    }
+    ]
 
     let veroeffentlichungen = result.data.allContentfulVeroffentlichung.edges
-
-    extractAllVeroeffentlichungenToBucket(
-      veroeffentlichungen,
-      dataManagementBeratung,
-      'Managementberatung'
-    )
-    extractAllVeroeffentlichungenToBucket(
-      veroeffentlichungen,
-      dataFachKreditBeratung,
-      'Fachberatung-Kredit'
-    )
-    extractAllVeroeffentlichungenToBucket(
-      veroeffentlichungen,
-      dataFachWertpapierBeratung,
-      'Fachberatung-Wertpapier'
-    )
-    extractAllVeroeffentlichungenToBucket(
-      veroeffentlichungen,
-      dataTechnologieBeratung,
-      'Technologieberatung'
-    )
-    extractAllVeroeffentlichungenToBucket(
-      veroeffentlichungen,
-      dataDigitalisierungBeratung,
-      'Digitalisierung'
-    )
-
     let pressemeldungen = result.data.allContentfulPressemeldung.edges
+    let downloads = result.data.allContentfulDownload.edges
 
-    extractAllPressemeldungenToBucket(
-      pressemeldungen,
-      dataManagementBeratung,
-      'Managementberatung'
-    )
-    extractAllPressemeldungenToBucket(
-      pressemeldungen,
-      dataFachKreditBeratung,
-      'Fachberatung-Kredit'
-    )
-    extractAllPressemeldungenToBucket(
-      pressemeldungen,
-      dataFachWertpapierBeratung,
-      'Fachberatung-Wertpapier'
-    )
-    extractAllPressemeldungenToBucket(
-      pressemeldungen,
-      dataTechnologieBeratung,
-      'Technologieberatung'
-    )
-    extractAllPressemeldungenToBucket(
-      pressemeldungen,
-      dataDigitalisierungBeratung,
-      'Digitalisierung'
-    )
+    for (let i = 0; i < veroeffentlichungenMap.length; ++i) {
+      extractAllDownloadsToBucket(
+        downloads,
+        veroeffentlichungenMap[i].bucket,
+        veroeffentlichungenMap[i].name
+      )
+      extractAllVeroeffentlichungenToBucket(
+        veroeffentlichungen,
+        veroeffentlichungenMap[i].bucket,
+        veroeffentlichungenMap[i].name
+      )
+      extractAllPressemeldungenToBucket(
+        pressemeldungen,
+        veroeffentlichungenMap[i].bucket,
+        veroeffentlichungenMap[i].name
+      )
+    }
 
     const templatePressemeldungSite = path.resolve(
       `./src/templates/content-max/index.jsx`
@@ -822,6 +644,21 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
   })
 }
 
+function extractAllDownloadsToBucket(_downloads, _bucket, _identifier) {
+  for (let i = 0; i < _downloads.length; ++i) {
+    let download = _downloads[i].node
+
+    if (
+      download.zuordnungZuBereiche !== undefined &&
+      download.zuordnungZuBereiche !== null
+    ) {
+      if (download.zuordnungZuBereiche.indexOf(_identifier) > -1) {
+        addDownloadToBucket(download, _bucket)
+      }
+    }
+  }
+}
+
 function extractAllPressemeldungenToBucket(
   _pressemeldungen,
   _bucket,
@@ -1068,4 +905,35 @@ function createYearToDownloadsMap(_input) {
       ordered['year-' + key] = yearToElementsMap[key]
     })
   return ordered
+}
+
+function createNewBucket() {
+  return {
+    pressemeldungen: {
+      current: [],
+      archiv: [],
+    },
+    veroeffentlichungen: {
+      all: [],
+      links: [],
+      downloads: [],
+      archiv: [],
+    },
+    studien: {
+      current: [],
+      archiv: [],
+    },
+    thesenpapiere: {
+      current: [],
+      archiv: [],
+    },
+    whitepapers: {
+      current: [],
+      archiv: [],
+    },
+    loesungsskizzen: {
+      current: [],
+      archiv: [],
+    },
+  }
 }
