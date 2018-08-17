@@ -1,9 +1,6 @@
 import React from 'react'
 
-import {
-  ImageWrapper,
-  SOURCE_TYP_SHARP,
-} from '../../../components/images/ImageWrapper'
+import { ImageWrapper, SOURCE_TYP_SHARP } from '../ImageWrapper'
 
 class PreviewImageExternal extends React.Component {
   render() {

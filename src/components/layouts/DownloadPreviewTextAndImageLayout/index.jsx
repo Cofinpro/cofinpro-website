@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { ImageWrapper, SOURCE_TYP_PLACEHOLDER } from '../../images/ImageWrapper'
 

@@ -39,7 +39,7 @@ class LayoutPressemeldungen extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { content } = this.props
+    const { content, style } = this.props
 
     let convertedLinks = this.createDataStructureForLinkRow(content.elements)
 
@@ -54,16 +54,9 @@ class LayoutPressemeldungen extends React.Component {
     }
 
     return (
-      <div className="container margin-100-top margin-xs-80-top">
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <h2 className="h2">{content.header}</h2>
-            <p>{content.description}</p>
-          </div>
-          <div className="col-12 col-md-6" />
-        </div>
+      <div className="container">
         {firstForElements.length > 0 && (
-          <div className="row margin-60-top margin-xs-0-top">
+          <div className={'row ' + style.row}>
             <div className="col-12 col-md-6">
               <div className="row justify-content-center">
                 <div className="col-12">
@@ -153,31 +146,35 @@ class LayoutPressemeldungen extends React.Component {
             Keine Medien zu diesem Thema <br />in dieser Kategorie verfügbar
           </p>
         )}
-        <div className="row margin-40-top margin-xs-0-top">
-          <div className="col-12 col-md-4 order-2 order-md-1">
-            <LinkButton
-              styleSpan="w-md-unset w-100 margin-20-top"
-              text={content.buttonText}
-              path="/beratungsfelder"
-            />
+        {(content.showButton || content.elements.length > 6) && (
+          <div className="row margin-40-top margin-xs-0-top">
+            <div className="col-12 col-md-4 order-2 order-md-1">
+              {content.showButton && (
+                <LinkButton
+                  styleSpan="w-md-unset w-100 margin-20-top"
+                  text={content.buttonText}
+                  path={content.buttonLink}
+                />
+              )}
+            </div>
+            <div className="col-12 col-md-4 flex-box-content-center order-md-2">
+              {content.elements.length > 8 && (
+                <ToggleWithButton
+                  show={true}
+                  dataTargetId={'more-md-' + content.id}
+                  style={{ container: 'd-none d-md-flex' }}
+                />
+              )}
+              {content.elements.length > 6 && (
+                <ToggleWithButton
+                  show={true}
+                  dataTargetId={'more-xs-' + content.id}
+                  style={{ container: 'd-flex d-md-none' }}
+                />
+              )}
+            </div>
           </div>
-          <div className="col-12 col-md-4 flex-box-content-center order-md-2">
-            {content.elements.length > 8 && (
-              <ToggleWithButton
-                show={true}
-                dataTargetId={'more-md-' + content.id}
-                style={{ container: 'd-none d-md-flex' }}
-              />
-            )}
-            {content.elements.length > 6 && (
-              <ToggleWithButton
-                show={true}
-                dataTargetId={'more-xs-' + content.id}
-                style={{ container: 'd-flex d-md-none' }}
-              />
-            )}
-          </div>
-        </div>
+        )}
       </div>
     )
   }

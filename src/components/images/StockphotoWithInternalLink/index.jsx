@@ -1,10 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import {
-  ImageWrapper,
-  SOURCE_TYP_SHARP,
-} from '../../../components/images/ImageWrapper'
+import { ImageWrapper, SOURCE_TYP_SHARP } from '../ImageWrapper'
 
 class PreviewImageInternal extends React.Component {
   render() {

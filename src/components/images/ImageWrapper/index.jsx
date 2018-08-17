@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import ContentfulImage from '../../images/ContentfulImage'
-import BootstrapImage from '../../images/BootstrapImage'
-import SharpImage from '../../images/SharpImage'
-import IconImage from '../../images/IconImage'
-import PlaceholderImage from '../../images/PlaceholderImage'
+import ContentfulImage from '../ContentfulImage'
+import BootstrapImage from '../BootstrapImage'
+import SharpImage from '../SharpImage'
+import IconImage from '../IconImage'
+import PlaceholderImage from '../PlaceholderImage'
 
 import './style.scss'
 

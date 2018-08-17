@@ -67,11 +67,17 @@ class ContentseiteMax extends React.Component {
       paragrapOneSpaceToTop = 'margin-40-top'
     }
 
+    const DATE_OPTIONS = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }
+
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-7">
+            <div className="col-12 col-md-9 col-lg-8">
               <h1 className="h1">{content.ueberschrift}</h1>
               {content.unteruebrschrift !== undefined &&
                 content.unteruebrschrift !== null && (
@@ -80,7 +86,10 @@ class ContentseiteMax extends React.Component {
                   </h2>
                 )}
               <p className="h5 margin-60-top margin-xs-20-top">
-                {content.verffentlichungsdatum}
+                {new Date(content.verffentlichungsdatum).toLocaleDateString(
+                  'de-DE',
+                  DATE_OPTIONS
+                )}
               </p>
               <p className="h4 normal-font d-none d-lg-block margin-20-top">
                 {content.introText !== undefined && content.introText.introText}
@@ -92,21 +101,7 @@ class ContentseiteMax extends React.Component {
                 {content.introText !== undefined && content.introText.introText}
               </p>
             </div>
-            <div className="col-12 d-block d-md-none d-lg-block col-lg-1" />
-            <div className="col-12 col-md-4 col-lg-4">
-              <RelevanteLinks
-                title="relevante fokusthemen"
-                relevanteLinks={[
-                  { title: 'hallo1', url: 'sasa' },
-                  { title: 'hallo2', url: 'sasa' },
-                  { title: 'hallo3', url: 'sasa' },
-                  { title: 'hallo4', url: 'sasa' },
-                  { title: 'hallo5', url: 'sasa' },
-                  { title: 'hallo6', url: 'sasa' },
-                  { title: 'hallo7', url: 'sasa' },
-                ]}
-              />
-            </div>
+            <div className="col-12 col-md-3 col-lg-4" />
           </div>
         </div>
 
@@ -133,7 +128,7 @@ class ContentseiteMax extends React.Component {
                 orderText: 'order-md-1',
                 orderPicture: 'order-md-2',
               }}
-              style={{ container: paragrapOneSpaceToTop + ' margin-xs-80-top' }}
+              style={{ container: paragrapOneSpaceToTop + ' margin-xs-40-top' }}
             />
           )}
 
