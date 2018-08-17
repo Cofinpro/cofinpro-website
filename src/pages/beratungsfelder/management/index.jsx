@@ -29,6 +29,17 @@ class BeratungsfelderManagementTemplate extends React.Component {
       fokusthemen.push(focusThemsWrapper.fokusthemenManagement[i])
     }
 
+    let relevantFocusFields = []
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenManagement.length; ++i) {
+      relevantFocusFields.push({
+        title: focusThemsWrapper.fokusthemenManagement[i].uberschriftGanzOben,
+        url:
+          '/fokusthemen/thema/' +
+          focusThemsWrapper.fokusthemenManagement[i].url,
+      })
+    }
+
     return (
       <div>
         <div className="container">
@@ -78,15 +89,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
             <div className="col-md-4">
               <RelevanteLinks
                 title="relevante fokusthemen"
-                relevanteLinks={[
-                  { title: 'hallo1', url: 'sasa' },
-                  { title: 'hallo2', url: 'sasa' },
-                  { title: 'hallo3', url: 'sasa' },
-                  { title: 'hallo4', url: 'sasa' },
-                  { title: 'hallo5', url: 'sasa' },
-                  { title: 'hallo6', url: 'sasa' },
-                  { title: 'hallo7', url: 'sasa' },
-                ]}
+                relevanteLinks={relevantFocusFields}
               />
             </div>
           </div>
@@ -160,7 +163,7 @@ export const pageQuery = graphql`
             uberschriftGanzOben
             unterueberschrift
             icon
-            beratungsfelder
+            relevanteBeratungsfelder
             headline {
               headline
             }

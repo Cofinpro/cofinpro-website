@@ -84,7 +84,7 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
                     this.props.data.veroeffentlichungenThreeSharp,
                     this.props.data.veroeffentlichungenFourSharp,
                   ],
-                  description: descriptionPublications,
+                  description: sectionDescription,
                   elements: input[key],
                   showButton: false,
                 }}

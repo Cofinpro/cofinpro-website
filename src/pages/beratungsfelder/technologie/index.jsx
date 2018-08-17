@@ -13,6 +13,21 @@ import {
 
 class BeratungsfelderTechnologie extends React.Component {
   render() {
+
+    let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
+      .edges[0].node
+
+    let relevantFocusFields = []
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenTechnologie.length; ++i) {
+      relevantFocusFields.push({
+        title: focusThemsWrapper.fokusthemenTechnologie[i].uberschriftGanzOben,
+        url:
+          '/fokusthemen/thema/' +
+          focusThemsWrapper.fokusthemenTechnologie[i].url,
+      })
+    }
+
     return (
       <div>
         <div className="container">
@@ -66,15 +81,7 @@ class BeratungsfelderTechnologie extends React.Component {
             <div className="col-md-4">
               <RelevanteLinks
                 title="relevante fokusthemen"
-                relevanteLinks={[
-                  { title: 'hallo1', url: 'sasa' },
-                  { title: 'hallo2', url: 'sasa' },
-                  { title: 'hallo3', url: 'sasa' },
-                  { title: 'hallo4', url: 'sasa' },
-                  { title: 'hallo5', url: 'sasa' },
-                  { title: 'hallo6', url: 'sasa' },
-                  { title: 'hallo7', url: 'sasa' },
-                ]}
+                relevanteLinks={relevantFocusFields}
               />
             </div>
           </div>
@@ -93,7 +100,7 @@ class BeratungsfelderTechnologie extends React.Component {
         <div className="container">
           <div className="row margin-60-top">
             <div className="col-md-6">
-              <h3>Zukunft? Bitte hier entlang </h3>
+              <h2>Zukunft? Bitte hier entlang </h2>
             </div>
           </div>
           <div className="row margin justify-content-center">
@@ -222,6 +229,23 @@ export default BeratungsfelderTechnologie
 
 export const pageQuery = graphql`
   query BeratungsfelderTechQuery {
+    allContentfulFokusthemaEinteilung {
+      edges {
+        node {
+          fokusthemenTechnologie {
+            id
+            url
+            uberschriftGanzOben
+            unterueberschrift
+            icon
+            relevanteBeratungsfelder
+            headline {
+              headline
+            }
+          }
+        }
+      }
+    }
     titelBildDesktopSharp: imageSharp(
       id: { regex: "/Technologie-Titelbild-Desktop/" }
     ) {

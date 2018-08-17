@@ -15,6 +15,35 @@ class FokusthemenDetailTeamplate extends React.Component {
   render() {
     const graphQlResult = this.props.data.contentfulFokusthema
 
+    let linksAndNamesForRevelantLinks = []
+
+    for (let i = 0; i < graphQlResult.relevanteBeratungsfelder.length; ++i) {
+      if (graphQlResult.relevanteBeratungsfelder[i] === 'Managementberatung') {
+        linksAndNamesForRevelantLinks.push({
+          title: graphQlResult.relevanteBeratungsfelder[i],
+          url: '/beratungsfelder/management',
+        })
+      }
+      if (graphQlResult.relevanteBeratungsfelder[i] === 'Kreditgeschäft') {
+        linksAndNamesForRevelantLinks.push({
+          title: graphQlResult.relevanteBeratungsfelder[i],
+          url: '/beratungsfelder/kredit',
+        })
+      }
+      if (graphQlResult.relevanteBeratungsfelder[i] === 'Wertpapiergeschäft') {
+        linksAndNamesForRevelantLinks.push({
+          title: graphQlResult.relevanteBeratungsfelder[i],
+          url: '/beratungsfelder/wertpapier',
+        })
+      }
+      if (graphQlResult.relevanteBeratungsfelder[i] === 'Technologieberatung') {
+        linksAndNamesForRevelantLinks.push({
+          title: graphQlResult.relevanteBeratungsfelder[i],
+          url: '/beratungsfelder/technologie',
+        })
+      }
+    }
+
     var srcOficonTopLeft =
       '/img/icons/fokusthema/' + graphQlResult.icon.toLowerCase() + '-color.png'
 
@@ -110,15 +139,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 <div className="col-12">
                   <RelevanteLinks
                     title="relevante beratungsfelder"
-                    relevanteLinks={[
-                      { title: 'hallo1', url: 'sasa' },
-                      { title: 'hallo2', url: 'sasa' },
-                      { title: 'hallo3', url: 'sasa' },
-                      { title: 'hallo4', url: 'sasa' },
-                      { title: 'hallo5', url: 'sasa' },
-                      { title: 'hallo6', url: 'sasa' },
-                      { title: 'hallo7', url: 'sasa' },
-                    ]}
+                    relevanteLinks={linksAndNamesForRevelantLinks}
                   />
                 </div>
               </div>
@@ -252,6 +273,7 @@ export default FokusthemenDetailTeamplate
 export const pageQuery = graphql`
   query fokusthemaQuery($id: String!) {
     contentfulFokusthema(id: { eq: $id }) {
+      id
       url
       icon
       uberschriftGanzOben
@@ -267,6 +289,7 @@ export const pageQuery = graphql`
       nutzen {
         nutzen
       }
+      relevanteBeratungsfelder
       verlinkteVeroeffentlichungen {
         id
         ueberschrift

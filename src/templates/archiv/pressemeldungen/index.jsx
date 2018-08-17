@@ -84,7 +84,7 @@ class PressemeldungArchivTemplate extends React.Component {
                     this.props.data.pressemeldungThreeSharp,
                     this.props.data.pressemeldungFourSharp,
                   ],
-                  description: pressReleases,
+                  description: sectionDescription,
                   elements: input[key],
                   showButton: false,
                 }}

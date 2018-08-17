@@ -73,7 +73,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
               unteruebrschrift
               fokusthema {
                 id
-                beratungsfelder
+                relevanteBeratungsfelder
                 url
                 uberschriftGanzOben
                 unterueberschrift
@@ -124,7 +124,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     `
   ).then(result => {
     console.log('end graphql query: news medien.')
-
+    
     const template = path.resolve(
       `./src/templates/news-medien-uebersicht/index.jsx`
     )
