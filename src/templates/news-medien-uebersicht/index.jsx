@@ -40,12 +40,14 @@ class NewsMedienUebersichtTemplate extends React.Component {
     var buttonTextLösung = this.props.pathContext.buttonTextLösung
     var weAboutUs = this.props.pathContext.weAboutUs
 
+    var innerContent = this.props.pathContext.content
+
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1 className="h1">News&amp;Medien</h1>
+              <h1 className="h1">Neues von Cofinpro</h1>
               <p className="h4 bold-font d-none d-md-block">{siteHeader}</p>
               <p className="d-block d-md-none">{siteHeader}</p>
             </div>
@@ -65,6 +67,15 @@ class NewsMedienUebersichtTemplate extends React.Component {
           </div>
         </div>
 
+        <div className="container margin-100-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h2 className="h2">{'Veröffentlichungen'}</h2>
+              <p>{professionalPublications}</p>
+            </div>
+            <div className="col-12 col-md-6" />
+          </div>
+        </div>
         <LayoutVeroeffentlichungen
           content={{
             id: 'veroeffentlichungen',
@@ -76,11 +87,25 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.veroeffentlichungenFourSharp,
             ],
             description: professionalPublications,
-            elements: input.veroeffentlichungen,
+            elements: input.veroeffentlichungen.all,
             buttonText: buttonTextProfessionalPublications,
+            buttonLink: innerContent.buttonVeroeffentlichungenLink,
+            showButton: true,
           }}
-          style={{ container: 'margin-60-top margin-xs-40-top ' }}
+          style={{
+            container: 'margin-60-top margin-xs-40-top ',
+            row: 'margin-60-top margin-xs-0-top',
+          }}
         />
+        <div className="container margin-100-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <h2 className="h2">{'Pressemeldungen'}</h2>
+              <p>{pressReleases}</p>
+            </div>
+            <div className="col-12 col-md-6" />
+          </div>
+        </div>
         <LayoutPressemeldungen
           content={{
             id: 'pressemeldungen',
@@ -92,8 +117,14 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.pressemeldungFourSharp,
             ],
             description: pressReleases,
-            elements: input.pressemeldungen,
+            elements: input.pressemeldungen.current,
             buttonText: buttonTextPressRelease,
+            buttonLink: innerContent.buttonPressemeldungenLink,
+            showButton: true,
+          }}
+          style={{
+            container: 'margin-60-top margin-xs-40-top ',
+            row: 'margin-60-top margin-xs-0-top',
           }}
         />
         <div className="container margin-120-top margin-xs-80-top">
@@ -106,6 +137,15 @@ class NewsMedienUebersichtTemplate extends React.Component {
           </div>
         </div>
 
+        <div className={'container margin-60-top margin-xs-60-top'}>
+          <div className="row">
+            <div className="col-12">
+              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
+                STUDIEN
+              </h3>
+            </div>
+          </div>
+        </div>
         <LayoutDownloads
           content={{
             id: 'STUDIEN',
@@ -114,12 +154,25 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.studienOneSharp,
               this.props.data.studienTwoSharp,
             ],
-            downloads: input.studien,
+            downloads: input.studien.current,
             buttonText: buttonTextStudien,
+            buttonLink: innerContent.buttonStudienLink,
+            showButton: true,
           }}
-          style={{ container: 'margin-60-top margin-xs-40-top ' }}
+          style={{
+            row: 'margin-40-top margin-xs-0-top',
+          }}
         />
 
+        <div className={'container margin-60-top margin-xs-60-top'}>
+          <div className="row">
+            <div className="col-12">
+              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
+                THESENPAPIERE
+              </h3>
+            </div>
+          </div>
+        </div>
         <LayoutDownloads
           content={{
             id: 'THESENPAPIERE',
@@ -128,12 +181,25 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.thesenpapierOneSharp,
               this.props.data.thesenpapierTwoSharp,
             ],
-            downloads: input.thesenpapiere,
+            downloads: input.thesenpapiere.current,
             buttonText: buttonTextThesen,
+            buttonLink: innerContent.buttonThesenpapiereLink,
+            showButton: true,
           }}
-          style={{ container: 'margin-60-top margin-xs-60-top ' }}
+          style={{
+            row: 'margin-40-top margin-xs-0-top',
+          }}
         />
 
+        <div className={'container margin-60-top margin-xs-60-top'}>
+          <div className="row">
+            <div className="col-12">
+              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
+                WHITEPAPERS
+              </h3>
+            </div>
+          </div>
+        </div>
         <LayoutDownloads
           content={{
             id: 'WHITEPAPERS',
@@ -142,22 +208,25 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.whitepapersOneSharp,
               this.props.data.whitepapersTwoSharp,
             ],
-            medien: [
-              {
-                header: 'Headline Medien/Unterthema 1',
-                subheader: 'Subheadline Medien/Unterthema 1',
-              },
-              {
-                header: 'Headline Medien/Unterthema 2',
-                subheader: 'Subheadline Medien/Unterthema 2',
-              },
-            ],
-            downloads: input.whitepapers,
+            downloads: input.whitepapers.current,
             buttonText: buttonTextWhitePaper,
+            buttonLink: innerContent.buttonWhitepaperLink,
+            showButton: true,
           }}
-          style={{ container: 'margin-60-top margin-xs-60-top ' }}
+          style={{
+            row: 'margin-40-top margin-xs-0-top',
+          }}
         />
 
+        <div className={'container margin-60-top margin-xs-60-top'}>
+          <div className="row">
+            <div className="col-12">
+              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
+                LOESUNGSSKIZZEN
+              </h3>
+            </div>
+          </div>
+        </div>
         <LayoutDownloads
           content={{
             id: 'LOESUNGSSKIZZEN',
@@ -166,10 +235,14 @@ class NewsMedienUebersichtTemplate extends React.Component {
               this.props.data.loesungsskizzenOneSharp,
               this.props.data.loesungsskizzenTwoSharp,
             ],
-            downloads: input.loesungsskizzen,
+            downloads: input.loesungsskizzen.current,
             buttonText: buttonTextLösung,
+            buttonLink: innerContent.buttonLoesungLink,
+            showButton: true,
           }}
-          style={{ container: 'margin-60-top margin-xs-60-top ' }}
+          style={{
+            row: 'margin-40-top margin-xs-0-top',
+          }}
         />
 
         <div className="container margin-120-top margin-xs-80-top">

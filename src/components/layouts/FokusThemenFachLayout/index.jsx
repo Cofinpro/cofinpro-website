@@ -14,7 +14,7 @@ class FokusThemenFachLayout extends React.Component {
           <div className="container">
             <div className="row margin-60-top margin-xs-20-top">
               <div className="col-md-5">
-                <h3 className="h3">{text}</h3>
+                <h3 className="h4">{text}</h3>
               </div>
               <div className="col-md-7" />
             </div>

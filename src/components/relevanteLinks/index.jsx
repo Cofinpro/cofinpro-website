@@ -34,15 +34,13 @@ class RelevanteLinks extends React.Component {
           {relevanteLinks.length > 3 && (
             <div className="collapse" id={'more-relevanteLinks'}>
               {relevanteLinks !== undefined &&
-                relevanteLinks
-                  .slice(3, relevanteLinks.length - 1)
-                  .map((link, index) => (
-                    <p key={index} className="text-size-18">
-                      <Link className="text-dark" to={pathPrefix + link.url}>
-                        {link.title}
-                      </Link>
-                    </p>
-                  ))}
+                relevanteLinks.slice(3).map((link, index) => (
+                  <p key={index} className="text-size-18">
+                    <Link className="text-dark" to={pathPrefix + link.url}>
+                      {link.title}
+                    </Link>
+                  </p>
+                ))}
             </div>
           )}
 

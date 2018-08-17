@@ -19,6 +19,15 @@ class BeratungsfelderKredit extends React.Component {
     let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
       .edges[0].node
 
+    let relevantFocusFields = []
+
+    for (let i = 0; i < focusThemsWrapper.fokusthemenKredit.length; ++i) {
+      relevantFocusFields.push({
+        title: focusThemsWrapper.fokusthemenKredit[i].uberschriftGanzOben,
+        url: '/fokusthemen/thema/' + focusThemsWrapper.fokusthemenKredit[i].url,
+      })
+    }
+
     for (let i = 0; i < focusThemsWrapper.fokusthemenKredit.length; ++i) {
       fokusthemen.push(focusThemsWrapper.fokusthemenKredit[i])
     }
@@ -78,15 +87,7 @@ class BeratungsfelderKredit extends React.Component {
             <div className="col-md-4">
               <RelevanteLinks
                 title="relevante fokusthemen"
-                relevanteLinks={[
-                  { title: 'hallo1', url: 'sasa' },
-                  { title: 'hallo2', url: 'sasa' },
-                  { title: 'hallo3', url: 'sasa' },
-                  { title: 'hallo4', url: 'sasa' },
-                  { title: 'hallo5', url: 'sasa' },
-                  { title: 'hallo6', url: 'sasa' },
-                  { title: 'hallo7', url: 'sasa' },
-                ]}
+                relevanteLinks={relevantFocusFields}
               />
             </div>
           </div>
@@ -94,7 +95,7 @@ class BeratungsfelderKredit extends React.Component {
         <div className="container margin-140-top margin-xs-60-top">
           <div className="row">
             <div className="col-md-6">
-              <h2 className="h2">Im Wettbewerb bestehen </h2>
+              <h2 className="h2">Im Wettbewerb bestehen</h2>
               <p className="text-left margin-20-top">
                 Die Kreditbranche ist von starkem Wettbewerb geprägt, und
                 Institute sind herausgefordert, sich stetig zu verbessern.
@@ -204,7 +205,7 @@ export const pageQuery = graphql`
             uberschriftGanzOben
             unterueberschrift
             icon
-            beratungsfelder
+            relevanteBeratungsfelder
             headline {
               headline
             }

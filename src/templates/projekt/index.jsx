@@ -23,7 +23,7 @@ class Projekt extends React.Component {
       <div>
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-7">
               <h1 className="h1">{graphQlResult.ueberschrift}</h1>
               <h2 className="margin-20-top d-none d-md-block">
                 {graphQlResult.unterueberschrift}
@@ -32,27 +32,7 @@ class Projekt extends React.Component {
                 {graphQlResult.unterueberschrift}
               </p>
             </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-4">
-              <RelevanteLinks
-                title="relevante fokusthemen"
-                relevanteLinks={[
-                  { title: 'hallo1', url: 'sasa' },
-                  { title: 'hallo2', url: 'sasa' },
-                  { title: 'hallo3', url: 'sasa' },
-                  { title: 'hallo4', url: 'sasa' },
-                  { title: 'hallo5', url: 'sasa' },
-                  { title: 'hallo6', url: 'sasa' },
-                  { title: 'hallo7', url: 'sasa' },
-                ]}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="container no-gutters-mobile margin-120-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-12">
+            <div className="col-12 col-md-5 margin-0-top margin-xs-40-top">
               <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
             </div>
           </div>
