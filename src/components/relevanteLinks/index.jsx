@@ -18,8 +18,6 @@ class RelevanteLinks extends React.Component {
       return null
     }
 
-    console.log(relevanteLinks)
-
     return (
       <div>
         <div className="text-left margin-20-top">

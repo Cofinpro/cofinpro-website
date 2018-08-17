@@ -13,8 +13,6 @@ class WhitepapersArchivTemplate extends React.Component {
     var siteDescription = this.props.pathContext.siteDescription
     var sectionDescription = this.props.pathContext.sectionDescription
 
-    console.log(input)
-
     return (
       <div>
         <div className="container padding-60-top padding-xs-20-top">
