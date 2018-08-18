@@ -1,6 +1,5 @@
 import React from 'react'
 
-import RelevanteLinks from '../../components/relevanteLinks'
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
 import ContentMaxParagraph from './ContentMaxParagraph'

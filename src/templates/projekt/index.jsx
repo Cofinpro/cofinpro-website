@@ -41,7 +41,7 @@ class Projekt extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">Ziele</h2>
+              <h3 className="h2">Ziele</h3>
               <div className="blue-bullet">
                 {graphQlResult.ziele !== undefined &&
                 graphQlResult.ziele !== null ? (
@@ -53,7 +53,7 @@ class Projekt extends React.Component {
           <div className="row margin-20-top">
             <div className="col-12 col-md-6" />
             <div className="col-12 col-md-6">
-              <h2 className="h2">Aufgaben</h2>
+              <h3 className="h2">Aufgaben</h3>
               <div className="blue-bullet">
                 {graphQlResult.aufgaben !== undefined &&
                 graphQlResult.aufgaben !== null ? (
@@ -66,7 +66,7 @@ class Projekt extends React.Component {
           </div>
           <div className="row margin-20-top">
             <div className="col-12 col-md-6">
-              <h2 className="h2">Ergebnisse</h2>
+              <h3 className="h2">Ergebnisse</h3>
               <div className="blue-bullet">
                 {graphQlResult.ergebnisse !== undefined &&
                 graphQlResult.ergebnisse !== null ? (

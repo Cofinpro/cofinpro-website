@@ -68,7 +68,7 @@ class BeratungsfelderStartseite extends React.Component {
               />
             </div>
             <div className="col-12 col-md-6 margin-xs-20-top">
-              <h1 className="h2">Wir sind Managementberater</h1>
+              <h2 className="h2">Wir sind Managementberater</h2>
               <p>
                 In der Managementberatung entwickeln wir
                 Digitalisierungsstrategien, bereiten den Weg zur agilen
@@ -96,7 +96,7 @@ class BeratungsfelderStartseite extends React.Component {
               />
             </div>
             <div className="col-12 col-md-6 margin-xs-20-top">
-              <h1 className="h2">Wir sind Fachberater</h1>
+              <h2 className="h2">Wir sind Fachberater</h2>
               <p>
                 Als Spezialisten für Kredit und Wertpapier begleiten und
                 navigieren wir unsere Kunden durch die Herausforderungen von
@@ -130,7 +130,7 @@ class BeratungsfelderStartseite extends React.Component {
               />
             </div>
             <div className="col-12 col-md-6 margin-xs-20-top">
-              <h1 className="h2">Wir sind Technologieberater</h1>
+              <h2 className="h2">Wir sind Technologieberater</h2>
               <p>
                 Als Technologieberater machen wir IT-Landschaften belastbar für
                 die Anforderungen der Zukunft. Dazu gehört, dass wir

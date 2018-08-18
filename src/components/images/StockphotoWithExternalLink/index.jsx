@@ -22,9 +22,9 @@ class PreviewImageExternal extends React.Component {
             source={images[indexOfElelement]}
             overlayElement={
               <div className="text-underline">
-                <p className="h4 d-none d-lg-block no-margin bold-font">
+                <h3 className="h4 d-none d-lg-block no-margin bold-font">
                   {content[indexOfElelement].header}
-                </p>
+                </h3>
                 <p className="h5 d-block d-lg-none no-margin bold-font">
                   {content[indexOfElelement].header}
                 </p>

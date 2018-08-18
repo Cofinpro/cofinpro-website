@@ -28,9 +28,9 @@ class NewsMedienPreview extends React.Component {
           source={props.content.image}
           overlayElement={
             <div className="text-underline">
-              <p className="h4 d-none d-lg-block no-margin bold-font">
+              <h3 className="h4 d-none d-lg-block no-margin bold-font">
                 {props.content.header}
-              </p>
+              </h3>
               <p className="h5 d-block d-lg-none no-margin bold-font">
                 {props.content.header}
               </p>
