@@ -3,9 +3,6 @@ import React from 'react'
 import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 
-import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
-import FokusthemaPreview from '../../../components/layouts/FokusthemenLayout/FokusthemaPreview'
-
 import PageIntroText from '../../../components/text/PageIntroText'
 
 import FokusThemenFachLayout from '../../../components/layouts/FokusThemenFachLayout'
@@ -110,7 +107,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           </div>
           <div className="row margin-120-top margin-xs-20-top d-none d-md-block">
             <div className="col-md-12">
-              <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
+              <h3 className="h2 text-primary text-center">Wertpapierprozess</h3>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharp}
@@ -118,7 +115,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-120-top margin-xs-20-top d-flex d-md-none justify-content-center">
-            <h2 className="h2 text-primary text-center">Wertpapierprozess</h2>
+            <h3 className="h2 text-primary text-center">Wertpapierprozess</h3>
           </div>
           <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
             <div className="col-3">
@@ -130,7 +127,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           </div>
           <div className="row margin-80-top margin-xs-20-top d-none d-md-block">
             <div className="col-md-12">
-              <h2 className="h2 text-primary text-center">Investmentprozess</h2>
+              <h3 className="h2 text-primary text-center">Investmentprozess</h3>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.process2ImageSharp}
@@ -138,7 +135,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             </div>
           </div>
           <div className="row margin-120-top margin-xs-20-top d-flex d-md-none justify-content-center">
-            <h2 className="h2 text-primary text-center">Investmentprozess</h2>
+            <h3 className="h2 text-primary text-center">Investmentprozess</h3>
           </div>
           <div className="row margin-xs-20-top d-flex d-md-none justify-content-center">
             <div className="col-6">

@@ -133,7 +133,7 @@ class Startseite extends React.Component {
                 Verantwortung empfinden wir gegenüber unseren Kunden, unseren
                 Mitarbeitern und der Gesellschaft.
               </p>
-              <h5>Ökonomische Verantwortung</h5>
+              <h3 className="h5">Ökonomische Verantwortung</h3>
               <p>
                 Wir wünschen uns langfristige, faire Geschäftsbeziehungen, mit
                 denen sich nachhaltige Ergebnisse für unsere Kunden erreichen
@@ -141,7 +141,7 @@ class Startseite extends React.Component {
                 Mitarbeiter, denn mit all ihrer professionellen und menschlichen
                 Unterschiedlichkeit sind sie das Herz von Cofinpro.
               </p>
-              <h5>Ökologische Verantwortung</h5>
+              <h3 className="h5">Ökologische Verantwortung</h3>
               <p>
                 Unternehmen können wichtige Schritte tun, um die Umweltbelastung
                 gering zu halten. Deshalb kommt bei uns modernste Technik zum
@@ -152,7 +152,7 @@ class Startseite extends React.Component {
                 Großstadtverkehr. Für jeden gebuchten Flug zahlen wir außerdem
                 einen Ausgleich an die Initiative »Atmosfair«.
               </p>
-              <h5>Soziale Verantwortung</h5>
+              <h3 className="h5">Soziale Verantwortung</h3>
               <p>
                 Wir schätzen jedes Teammitglied, unabhängig von Geschlecht,
                 Ethnie, Alter, körperlicher Einschränkung, Religion oder
@@ -172,7 +172,7 @@ class Startseite extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h3 className="h2">Unsere Werte sind ausgezeichnet</h3>
+              <h2 className="h2">Unsere Werte sind ausgezeichnet</h2>
               <p>
                 Dass Werte für uns nicht nur Worte sind, leben wir seit der
                 Gründung von Cofinpro. Und wir sind stolz darauf, mit unserem
@@ -187,7 +187,7 @@ class Startseite extends React.Component {
             <div className="col-12 col-md-4">
               <div className="row">
                 <div className="col-12 margin-20-bottom margin-xs-0-bottom">
-                  <h4>AUSZEICHNUNGEN</h4>
+                  <h3 className="h4">AUSZEICHNUNGEN</h3>
                 </div>
                 <div className="col-6 margin-20-top">
                   <ImageWrapper
@@ -249,7 +249,7 @@ class Startseite extends React.Component {
             <div className="col-12 col-md-6">
               <div className="row">
                 <div className="col-12 margin-20-bottom margin-xs-60-top margin-xs-0-bottom">
-                  <h4>WIR UNTERSTÜTZEN</h4>
+                  <h3 className="h4">WIR UNTERSTÜTZEN</h3>
                 </div>
                 <div className="col-12 margin-20-top">
                   <ImageWrapper

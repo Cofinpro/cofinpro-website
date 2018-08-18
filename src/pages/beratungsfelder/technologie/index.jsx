@@ -13,7 +13,6 @@ import {
 
 class BeratungsfelderTechnologie extends React.Component {
   render() {
-
     let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
       .edges[0].node
 
@@ -89,7 +88,7 @@ class BeratungsfelderTechnologie extends React.Component {
         <div className="container">
           <div className="row margin-120-top margin-xs-40-top justify-content-center">
             <div className="col-md-10">
-              <h2 className="h2 text-primary text-center">Headline</h2>
+              <h3 className="h2 text-primary text-center">Headline</h3>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.headlineImageSharp}

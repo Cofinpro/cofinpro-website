@@ -204,7 +204,7 @@ class Startseite extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12">
-              <h3 className="h2">Neues von Cofinpro</h3>
+              <h2 className="h2">Neues von Cofinpro</h2>
             </div>
           </div>
           <div className="row">

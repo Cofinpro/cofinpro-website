@@ -23,9 +23,9 @@ class FokusthemaPreview extends React.Component {
           }}
           overlayElement={
             <div>
-              <p className="h4 d-none d-lg-block no-margin bold-font">
+              <h3 className="h4 d-none d-lg-block no-margin bold-font">
                 {header}
-              </p>
+              </h3>
               <p className="h5 d-block d-lg-none no-margin bold-font">
                 {header}
               </p>
