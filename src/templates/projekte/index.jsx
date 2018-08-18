@@ -7,6 +7,8 @@ import ToggleWithButton from '../../components/buttons/ToggleWithButton'
 
 import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
@@ -151,8 +153,17 @@ class ProjekteUebersicht extends React.Component {
       }
     }
 
+    let seoTitel = title
+    let seoDescription = description
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitel,
+            description: seoDescription,
+          }}
+        />
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-7">

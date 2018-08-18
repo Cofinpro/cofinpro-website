@@ -111,12 +111,22 @@ class FokusthemenDetailTeamplate extends React.Component {
       }
     }
 
+    let seoTitel = graphQlResult.uberschriftGanzOben
+    let seoDescription = seoTitel
+
+    if (
+      graphQlResult.headline !== undefined &&
+      graphQlResult.headline !== null
+    ) {
+      seoDescription = graphQlResult.headline.headline
+    }
+
     return (
       <div>
         <HtmlHeader
           direktData={{
-            title: graphQlResult.seoTitel,
-            description: graphQlResult.seoDescription,
+            title: 'Fokusthema: ' + seoTitel,
+            description: seoDescription,
           }}
         />
 
@@ -284,8 +294,6 @@ export const pageQuery = graphql`
     contentfulFokusthema(id: { eq: $id }) {
       id
       url
-      seoTitel
-      seoDescription
       icon
       uberschriftGanzOben
       headline {

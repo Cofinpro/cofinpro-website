@@ -13,6 +13,8 @@ import DownloadPreviewTextAndImageLayout from '../../components/layouts/Download
 
 import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
@@ -25,6 +27,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    var name = this.props.pathContext.name
     var input = this.props.pathContext.input
     var siteHeader = this.props.pathContext.siteHeader
     var professionalPublications = this.props.pathContext
@@ -42,8 +45,17 @@ class NewsMedienUebersichtTemplate extends React.Component {
 
     var innerContent = this.props.pathContext.content
 
+    let seoTitle = 'Neues von Cofinpro - ' + name
+    let seoDescription = siteHeader
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">

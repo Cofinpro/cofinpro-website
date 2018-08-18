@@ -4,11 +4,14 @@ import LayoutPressemeldungen from '../../news-medien-uebersicht/LayoutPressemeld
 
 import NavigationBeratungsfelder from '../../../components/navigation/NavigationBeratungsfelder'
 
+import HtmlHeader from '../../../components/HtmlHeader'
+
 class PressemeldungArchivTemplate extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    var name = this.props.pathContext.name
     var input = this.props.pathContext.input
     var siteDescription = this.props.pathContext.siteDescription
     var sectionDescription = this.props.pathContext.sectionDescription
@@ -27,8 +30,17 @@ class PressemeldungArchivTemplate extends React.Component {
       this.props.data.veroeffentlichungenFourSharp,
     ]
 
+    let seoTitel = 'Pressemeldungen Archiv - ' + name
+    let seoDescription = siteDescription
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitel,
+            description: seoDescription,
+          }}
+        />
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
