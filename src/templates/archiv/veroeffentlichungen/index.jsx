@@ -163,5 +163,12 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
+    pressemeldungFourSharp: imageSharp(
+      id: { regex: "/medien-pressemeldungen-b39/" }
+    ) {
+      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpSizes
+      }
+    }
   }
 `
