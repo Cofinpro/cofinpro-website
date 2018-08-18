@@ -384,6 +384,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     createDownloadsArchivSites(
       dataManagementBeratung.studien,
+      'Managementberatung',
       '/news-medien/archiv/studien/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
@@ -392,6 +393,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachKreditBeratung.studien,
+      'Fachberatung-Kredit',
       '/news-medien/archiv/studien/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -400,6 +402,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachWertpapierBeratung.studien,
+      'Fachberatung-Wertpapier',
       '/news-medien/archiv/studien/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -408,6 +411,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataTechnologieBeratung.studien,
+      'Technologieberatung',
       '/news-medien/archiv/studien/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
@@ -416,6 +420,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataDigitalisierungBeratung.studien,
+      'Digitalisierung',
       '/news-medien/archiv/studien/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
@@ -431,6 +436,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     createDownloadsArchivSites(
       dataManagementBeratung.thesenpapiere,
+      'Managementberatung',
       '/news-medien/archiv/thesenpapiere/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
@@ -439,6 +445,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachKreditBeratung.thesenpapiere,
+      'Fachberatung-Kredit',
       '/news-medien/archiv/thesenpapiere/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -447,6 +454,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachWertpapierBeratung.thesenpapiere,
+      'Fachberatung-Wertpapier',
       '/news-medien/archiv/thesenpapiere/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -455,6 +463,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataTechnologieBeratung.thesenpapiere,
+      'Technologieberatung',
       '/news-medien/archiv/thesenpapiere/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
@@ -463,6 +472,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataDigitalisierungBeratung.thesenpapiere,
+      'Digitalisierung',
       '/news-medien/archiv/thesenpapiere/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
@@ -478,6 +488,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     createDownloadsArchivSites(
       dataManagementBeratung.whitepapers,
+      'Managementberatung',
       '/news-medien/archiv/whitepapers/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
@@ -486,6 +497,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachKreditBeratung.whitepapers,
+      'Fachberatung-Kredit',
       '/news-medien/archiv/whitepapers/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -494,6 +506,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachWertpapierBeratung.whitepapers,
+      'Fachberatung-Wertpapier',
       '/news-medien/archiv/whitepapers/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -502,6 +515,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataTechnologieBeratung.whitepapers,
+      'Technologieberatung',
       '/news-medien/archiv/whitepapers/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
@@ -510,6 +524,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataDigitalisierungBeratung.whitepapers,
+      'Digitalisierung',
       '/news-medien/archiv/whitepapers/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
@@ -525,6 +540,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     createDownloadsArchivSites(
       dataManagementBeratung.loesungsskizzen,
+      'Managementberatung',
       '/news-medien/archiv/loesungsskizzen/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
@@ -533,6 +549,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachKreditBeratung.loesungsskizzen,
+      'Fachberatung-Kredit',
       '/news-medien/archiv/loesungsskizzen/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -541,6 +558,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataFachWertpapierBeratung.loesungsskizzen,
+      'Fachberatung-Wertpapier',
       '/news-medien/archiv/loesungsskizzen/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
@@ -549,6 +567,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataTechnologieBeratung.loesungsskizzen,
+      'Technologieberatung',
       '/news-medien/archiv/loesungsskizzen/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
@@ -557,6 +576,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createDownloadsArchivSites(
       dataDigitalisierungBeratung.loesungsskizzen,
+      'Digitalisierung',
       '/news-medien/archiv/loesungsskizzen/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
@@ -568,6 +588,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     createVeroeffentlichungenArchivSites(
       dataManagementBeratung,
+      'Managementberatung',
       '/news-medien/archiv/veroeffentlichungen/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Managementberater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
@@ -575,6 +596,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createVeroeffentlichungenArchivSites(
       dataFachKreditBeratung,
+      'Fachberatung-Kredit',
       '/news-medien/archiv/veroeffentlichungen/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Fachberater schreiben regelmäßig für Fachmedien über Kreditthemen. Lesen Sie nach, welchen Trends sich unsere Experten widmen.',
@@ -582,6 +604,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createVeroeffentlichungenArchivSites(
       dataFachWertpapierBeratung,
+      'Fachberatung-Wertpapier',
       '/news-medien/archiv/veroeffentlichungen/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Lesen Sie nach, über welche Trendthemen aus dem Wertpapierbereich unsere Experten für Fachmedien schreiben.',
@@ -589,6 +612,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createVeroeffentlichungenArchivSites(
       dataTechnologieBeratung,
+      'Technologieberatung',
       '/news-medien/archiv/veroeffentlichungen/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Technologieberater schreiben regelmäßig für Fachmedien über ihre Projekte und Herausforderungen. Lesen Sie nach, was unsere Experten bewegt.',
@@ -596,6 +620,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createVeroeffentlichungenArchivSites(
       dataDigitalisierungBeratung,
+      'Digitalisierung',
       '/news-medien/archiv/veroeffentlichungen/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Unsere Experten verfassen regelmäßig Fachbeiträge rund um die jüngsten Digitalisierungsthemen. Welchen Trends sie sich in ihren Artikeln widmen? Lesen Sie einfach nach.',
@@ -606,6 +631,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     createPressemeldungenArchivSites(
       dataManagementBeratung,
+      'Managementberatung',
       '/news-medien/archiv/pressemeldungen/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
@@ -613,6 +639,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createPressemeldungenArchivSites(
       dataFachKreditBeratung,
+      'Fachberatung-Kredit',
       '/news-medien/archiv/pressemeldungen/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Wirkung unsere Fachberatung hat, machen wir gerne öffentlich. Hier geht es zur Übersicht über unsere Pressemeldungen zum Schwerpunkt Kredit.',
@@ -620,6 +647,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createPressemeldungenArchivSites(
       dataFachWertpapierBeratung,
+      'Fachberatung-Wertpapier',
       '/news-medien/archiv/pressemeldungen/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Fachberatung erreichen, teilen wir gerne öffentlich. Hier finden Sie eine Übersicht über unsere Pressemeldungen zum Schwerpunkt Wertpapier.',
@@ -627,6 +655,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createPressemeldungenArchivSites(
       dataTechnologieBeratung,
+      'Technologieberatung',
       '/news-medien/archiv/pressemeldungen/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Expertise erreichen, teilen wir gerne mit der Presse. Hier finden Sie unsere Meldungen rund um Technologieberatung.',
@@ -634,6 +663,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
     createPressemeldungenArchivSites(
       dataDigitalisierungBeratung,
+      'Digitalisierung',
       '/news-medien/archiv/pressemeldungen/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
@@ -756,6 +786,7 @@ function addDownloadToBucket(_download, _bucket) {
 
 function createVeroeffentlichungenArchivSites(
   _data,
+  _name,
   _url,
   _siteDescription,
   _sectionDescription,
@@ -771,7 +802,7 @@ function createVeroeffentlichungenArchivSites(
     path: _url,
     component: slash(template),
     context: {
-      name: 'VeroeffentlichungenArchiv',
+      name: _name,
       input: inputData,
       siteDescription: _siteDescription,
       sectionDescription: _sectionDescription,
@@ -783,6 +814,7 @@ function createVeroeffentlichungenArchivSites(
 
 function createPressemeldungenArchivSites(
   _data,
+  _name,
   _url,
   _siteDescription,
   _sectionDescription,
@@ -798,7 +830,7 @@ function createPressemeldungenArchivSites(
     path: _url,
     component: slash(template),
     context: {
-      name: 'PressemeldungenArchiv',
+      name: _name,
       input: inputData,
       siteDescription: _siteDescription,
       sectionDescription: _sectionDescription,
@@ -810,6 +842,7 @@ function createPressemeldungenArchivSites(
 
 function createDownloadsArchivSites(
   _data,
+  _name,
   _url,
   _siteDescription,
   _sectionDescription,
@@ -822,7 +855,7 @@ function createDownloadsArchivSites(
     path: _url,
     component: slash(_template),
     context: {
-      name: 'DownloadArchiv',
+      name: _name,
       input: inputData,
       siteDescription: _siteDescription,
       sectionDescription: _sectionDescription,

@@ -3,6 +3,8 @@ import React from 'react'
 import FokusthemenLayout from '../../components/layouts/FokusthemenLayout'
 import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -16,8 +18,20 @@ class FokusthemenStartseite extends React.Component {
     const description = this.props.pathContext.description
     const fokusthemen = this.props.pathContext.fokusthemen
 
+    let seoTitel = 'Fokusthemen - ' + name
+    let seoDescription =
+      seoTitel +
+      ' - ' +
+      'Hier finden Sie alle unsere aktuellen Fokusthemen auf einen Blick. Entdecken sie unsere Themenvielfalt.'
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitel,
+            description: seoDescription,
+          }}
+        />
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-6">

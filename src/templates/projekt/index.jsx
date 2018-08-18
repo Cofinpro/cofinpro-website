@@ -22,7 +22,7 @@ class Projekt extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    let seoTitle = graphQlResult.ueberschrift
+    let seoTitle = 'Projekt: ' + graphQlResult.ueberschrift
 
     if (
       graphQlResult.unterueberschrift !== undefined &&
