@@ -1,5 +1,7 @@
 import React from 'react'
 
+import HtmlHeader from '../../../components/HtmlHeader'
+
 import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
 import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
@@ -111,6 +113,13 @@ class FokusthemenDetailTeamplate extends React.Component {
 
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: graphQlResult.seoTitel,
+            description: graphQlResult.seoDescription,
+          }}
+        />
+
         <div className="container margin-40-top">
           <div className="row">
             <div className="col-12 col-md-7">
@@ -275,6 +284,8 @@ export const pageQuery = graphql`
     contentfulFokusthema(id: { eq: $id }) {
       id
       url
+      seoTitel
+      seoDescription
       icon
       uberschriftGanzOben
       headline {

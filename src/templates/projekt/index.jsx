@@ -3,6 +3,8 @@ import React from 'react'
 import RelevanteLinks from '../../components/relevanteLinks'
 import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
@@ -19,8 +21,27 @@ class Projekt extends React.Component {
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    let seoTitle = graphQlResult.ueberschrift
+
+    if (
+      graphQlResult.unterueberschrift !== undefined &&
+      graphQlResult.unterueberschrift !== null
+    ) {
+      seoTitle = seoTitle + '-' + graphQlResult.unterueberschrift
+    }
+
+    let seoDescription = seoTitle
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
+
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-7">

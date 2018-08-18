@@ -7,6 +7,8 @@ import DownloadPreviewTextAndImageLayout from '../../components/layouts/Download
 
 import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -20,8 +22,20 @@ class Startseite extends React.Component {
 
     const graphQlResult = this.props.data.contentfulBausteinCofinproFakten
 
+    let seoTitle =
+      'Über Cofinpro - Was tun wir, wie arbeiten wir und was macht uns aus?'
+    let seoDescription =
+      'Unsere Experten konzentrieren sich auf Digitalisierung, neue Marktanforderungen und Regulatorik in den Beratungsfeldern Management-, Fach- und Technologieberatung. Wir bauen auf ein Beratungskonzept, das alle Elemente der Wertschöpfungskette für Unternehmen in der Finanzindustrie abdeckt.'
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
+
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">

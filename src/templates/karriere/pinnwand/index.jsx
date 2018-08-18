@@ -139,14 +139,14 @@ class PinnwandTemplate extends React.Component {
           ]}
           meta={[
             {
+              name: 'Description',
+              content:
+                'Hier findest Du Neues aus unserem Consulting, Fachartikel unserer Experten und alles, was wir unbedingt mit Dir teilen wollen.',
+            },
+            {
               property: 'og:title',
               content:
                 'News & Stories aus unserer Unternehmensberatung: Cofinpro',
-            },
-            {
-              name: 'description',
-              content:
-                'Hier findest Du Neues aus unserem Consulting, Fachartikel unserer Experten und alles, was wir unbedingt mit Dir teilen wollen.',
             },
             {
               property: 'og:description',

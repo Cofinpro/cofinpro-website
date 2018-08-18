@@ -2,6 +2,8 @@ import React from 'react'
 
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import ContentMaxParagraph from './ContentMaxParagraph'
 
 import {
@@ -72,8 +74,32 @@ class ContentseiteMax extends React.Component {
       day: '2-digit',
     }
 
+    let seoTitle = content.ueberschrift
+
+    if (
+      content.unteruebrschrift !== undefined &&
+      content.unteruebrschrift !== null
+    ) {
+      seoTitle = seoTitle + '-' + content.unteruebrschrift.unteruebrschrift
+    }
+
+    let seoDescription
+
+    if (content.introText !== undefined) {
+      seoDescription = content.introText.introText.substring(0, 215)
+    } else {
+      seoDescription = seoTitle
+    }
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
+
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-9 col-lg-8">

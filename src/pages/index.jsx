@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 
 import LinkButton from '../components/buttons/LinkButton'
 import ThreeIconsWithLinks from '../components/layouts/ThreeIconsWithLinks'
@@ -7,12 +8,22 @@ import FokusthemenLayout from '../components/layouts/FokusthemenLayout'
 
 import NewsMedienPreview from '../components/startseite/NewsMedienPreview'
 
+import HtmlHeader from '../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
 } from '../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
+  getCurrentUrl() {
+    if (typeof window !== 'undefined') {
+      return window.location.href
+    } else {
+      return ''
+    }
+  }
+
   createMediaDataStructureForDownloads(_input) {
     let result = []
 
@@ -127,8 +138,20 @@ class Startseite extends React.Component {
       )
     }
 
+    let seoTitle =
+      'Cofinpro - Die Experten für Management-, Fach- und Technologieberatung'
+    let seoDescription =
+      'Wir sind die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Kapitalverwaltungsgesellschaften.'
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
+
         <div className="container">
           <div className="row">
             <div className="col-12">
@@ -148,7 +171,7 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-60-top margin-xs-20-top">
+        <div className="container margin-60-top margin-md-40-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-8">
               <h1 className="h1">Hallo, hier ist Cofinpro</h1>
@@ -201,7 +224,7 @@ class Startseite extends React.Component {
           titleRight="Technologieberatung"
         />
 
-        <div className="container margin-120-top margin-xs-80-top">
+        <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12">
               <h2 className="h2">Neues von Cofinpro</h2>
@@ -260,7 +283,9 @@ class Startseite extends React.Component {
           }
           fokusthemen={fokusthemen}
           showButton={true}
-          style={{ container: 'margin-120-top margin-xs-80-top' }}
+          style={{
+            container: 'margin-120-top margin-md-100-top margin-xs-80-top',
+          }}
         />
       </div>
     )

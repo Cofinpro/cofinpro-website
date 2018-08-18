@@ -25,13 +25,13 @@ class Datenschutz extends React.Component {
           ]}
           meta={[
             {
-              property: 'og:title',
-              content: 'Datenschutz - Cofinpro',
-            },
-            {
-              property: 'description',
+              name: 'Description',
               content:
                 'Datenschutz Datenschutzerklärung Wir freuen uns über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten und Ihrer Privatsphäre bei…',
+            },
+            {
+              property: 'og:title',
+              content: 'Datenschutz - Cofinpro',
             },
             {
               property: 'og:description',

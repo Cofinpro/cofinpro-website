@@ -797,6 +797,10 @@ a:hover {
   margin-bottom: 10px;
 }
 
+.margin-5-bottom {
+  margin-bottom: 5px;
+}
+
 .margin-xs-80-bottom {
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
@@ -1004,6 +1008,18 @@ a:hover {
   }
 }
 
+.margin-md-100-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 100px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 100px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 100px;
+  }
+}
+
 .margin-md-80-top {
   @include media-breakpoint-only(md) {
     margin-top: 80px;
@@ -1078,6 +1094,30 @@ a:hover {
 
 .padding-60-top {
   padding-top: 60px;
+}
+
+.padding-40-top {
+  padding-top: 40px;
+}
+
+.padding-25-top {
+  padding-top: 25px;
+}
+
+.padding-20-top {
+  padding-top: 20px;
+}
+
+.padding-60-bottom {
+  padding-bottom: 60px;
+}
+
+.padding-40-bottom {
+  padding-bottom: 40px;
+}
+
+.padding-20-bottom {
+  padding-bottom: 20px;
 }
 
 .padding-xs-20-top {

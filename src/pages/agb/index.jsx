@@ -25,13 +25,13 @@ class AGB extends React.Component {
           ]}
           meta={[
             {
-              property: 'og:title',
-              content: 'AGB - Cofinpro',
-            },
-            {
-              property: 'description',
+              name: 'Description',
               content:
                 'AGB/Disclaimer Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der…',
+            },
+            {
+              property: 'og:title',
+              content: 'AGB - Cofinpro',
             },
             {
               property: 'og:description',

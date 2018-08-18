@@ -122,16 +122,16 @@ class StartseiteTemplate extends React.Component {
           ]}
           meta={[
             {
+              name: 'Description',
+              content: `${graphQlResult.metaData.description.description}`,
+            },
+            {
               property: 'og:title',
               content: `${graphQlResult.metaData.title}`,
             },
             {
               name: 'keywords',
               content: `${graphQlResult.metaData.keywords.keywords}`,
-            },
-            {
-              name: 'description',
-              content: `${graphQlResult.metaData.description.description}`,
             },
             {
               property: 'og:description',

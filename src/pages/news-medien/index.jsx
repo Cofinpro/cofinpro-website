@@ -3,6 +3,8 @@ import React from 'react'
 import LinkButton from '../../components/buttons/LinkButton'
 import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
@@ -12,8 +14,19 @@ class NewsMedienVerteiler extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    let seoTitle = 'Unser Medienforum - Neues von Cofinpro - Unser Blog'
+    let seoDescription =
+      'Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas, und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie erfahren möchten, welche Neuigkeiten unsere Experten haben, sind Sie hier ganz richtig.'
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-7">

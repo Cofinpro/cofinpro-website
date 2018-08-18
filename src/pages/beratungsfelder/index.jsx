@@ -2,6 +2,9 @@ import React from 'react'
 
 import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
 import LinkButton from '../../components/buttons/LinkButton'
+
+import HtmlHeader from '../../components/HtmlHeader'
+
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
@@ -9,22 +12,26 @@ import {
 } from '../../components/images/ImageWrapper'
 
 class BeratungsfelderStartseite extends React.Component {
-  getCurrentUrl() {
-    if (typeof window !== 'undefined') {
-      return window.location.href
-    } else {
-      return ''
-    }
-  }
-
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const buttonLinkText = 'MEHR'
 
+    let seoTitle =
+      'Beratungsfelder - Management-, Fach- und Technologieberatung'
+    let seoDescription =
+      'Wir sind Experten für Kredit und Wertpapier und beraten führende Banken und Kapitalverwaltungsgesellschaften. Als Managementberater, Fachberater und Technologieberater haben wir die Zukunftsfähigkeit unserer Kunden im Blick.'
+
     return (
       <div>
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
+        />
+
         <div className="container padding-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-7">

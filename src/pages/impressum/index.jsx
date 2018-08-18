@@ -27,13 +27,13 @@ class Impressum extends React.Component {
           ]}
           meta={[
             {
-              property: 'og:title',
-              content: 'Impressum - Cofinpro',
-            },
-            {
-              property: 'Description',
+              name: 'Description',
               content:
                 'Impressum Cofinpro AG Untermainkai 27 - 28 60329 Frankfurt am Main Tel +49 (0) 69-2 99 20 87 60 Fax…',
+            },
+            {
+              property: 'og:title',
+              content: 'Impressum - Cofinpro',
             },
             {
               property: 'og:description',
