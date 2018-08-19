@@ -15,6 +15,8 @@ import NavigationBeratungsfelder from '../../components/navigation/NavigationBer
 
 import HtmlHeader from '../../components/HtmlHeader'
 
+import PageIntroText from '../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
@@ -60,8 +62,11 @@ class NewsMedienUebersichtTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Neues von Cofinpro</h1>
-              <p className="h4 bold-font d-none d-md-block">{siteHeader}</p>
-              <p className="d-block d-md-none">{siteHeader}</p>
+              <PageIntroText
+                content={{
+                  text: siteHeader,
+                }}
+              />
             </div>
           </div>
         </div>
@@ -79,7 +84,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-100-top margin-xs-80-top">
+        <div className="container margin-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h2 className="h2">{'Veröffentlichungen'}</h2>
@@ -105,8 +110,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             showButton: true,
           }}
           style={{
-            container: 'margin-60-top margin-xs-40-top ',
-            row: 'margin-60-top margin-xs-0-top',
+            row: 'margin-50-top margin-xs-0-top',
           }}
         />
         <div className="container margin-100-top margin-xs-80-top">
@@ -135,8 +139,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             showButton: true,
           }}
           style={{
-            container: 'margin-60-top margin-xs-40-top ',
-            row: 'margin-60-top margin-xs-0-top',
+            row: 'margin-50-top margin-xs-0-top',
           }}
         />
         <div className="container margin-120-top margin-xs-80-top">
@@ -152,9 +155,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className={'container margin-60-top margin-xs-60-top'}>
           <div className="row">
             <div className="col-12">
-              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
-                STUDIEN
-              </h3>
+              <h3 className="h4 margin-xs-20-bottom">STUDIEN</h3>
             </div>
           </div>
         </div>
@@ -172,16 +173,14 @@ class NewsMedienUebersichtTemplate extends React.Component {
             showButton: true,
           }}
           style={{
-            row: 'margin-40-top margin-xs-0-top',
+            row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
         <div className={'container margin-60-top margin-xs-60-top'}>
           <div className="row">
             <div className="col-12">
-              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
-                THESENPAPIERE
-              </h3>
+              <h3 className="h4 margin-xs-20-bottom">THESENPAPIERE</h3>
             </div>
           </div>
         </div>
@@ -199,16 +198,14 @@ class NewsMedienUebersichtTemplate extends React.Component {
             showButton: true,
           }}
           style={{
-            row: 'margin-40-top margin-xs-0-top',
+            row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
         <div className={'container margin-60-top margin-xs-60-top'}>
           <div className="row">
             <div className="col-12">
-              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
-                WHITEPAPERS
-              </h3>
+              <h3 className="h4 margin-xs-20-bottom">WHITEPAPERS</h3>
             </div>
           </div>
         </div>
@@ -226,16 +223,14 @@ class NewsMedienUebersichtTemplate extends React.Component {
             showButton: true,
           }}
           style={{
-            row: 'margin-40-top margin-xs-0-top',
+            row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
         <div className={'container margin-60-top margin-xs-60-top'}>
           <div className="row">
             <div className="col-12">
-              <h3 className="h4 margin-40-bottom margin-xs-20-bottom">
-                LOESUNGSSKIZZEN
-              </h3>
+              <h3 className="h4 margin-xs-20-bottom">LOESUNGSSKIZZEN</h3>
             </div>
           </div>
         </div>
@@ -253,7 +248,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             showButton: true,
           }}
           style={{
-            row: 'margin-40-top margin-xs-0-top',
+            row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
@@ -274,6 +269,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         </div>
         <DownloadPreviewTextAndImageLayout
           style={{ container: 'margin-40-top margin-xs-0-top' }}
+          content={{ showButton: false }}
         />
       </div>
     )

@@ -1,10 +1,9 @@
 import React from 'react'
 
 import LayoutVeroeffentlichungen from '../../news-medien-uebersicht/LayoutVeroeffentlichungen'
-
 import NavigationBeratungsfelder from '../../../components/navigation/NavigationBeratungsfelder'
-
 import HtmlHeader from '../../../components/HtmlHeader'
+import PageIntroText from '../../../components/text/PageIntroText'
 
 class VeroeffentlichungenArchivTemplate extends React.Component {
   render() {
@@ -45,10 +44,11 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Medien Archiv</h1>
-              <p className="h4 bold-font d-none d-md-block">
-                {siteDescription}
-              </p>
-              <p className="d-block d-md-none">{siteDescription}</p>
+              <PageIntroText
+                content={{
+                  text: siteDescription,
+                }}
+              />
             </div>
           </div>
         </div>
@@ -110,8 +110,7 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
                   showButton: false,
                 }}
                 style={{
-                  container: 'margin-60-top margin-xs-40-top ',
-                  row: 'margin-40-top margin-xs-0-top',
+                  row: 'margin-20-top margin-xs-0-top',
                 }}
               />
             </div>

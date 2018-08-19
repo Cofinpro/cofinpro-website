@@ -119,7 +119,7 @@ class LayoutDownloads extends React.Component {
           </div>
         )}
         {content.downloads.length === 0 && (
-          <p className="no-media-available-text">
+          <p className="margin-20-top margin-xs-0-top no-media-available-text">
             Keine Medien zu diesem Thema <br />in dieser Kategorie verfügbar
           </p>
         )}
@@ -128,7 +128,7 @@ class LayoutDownloads extends React.Component {
             <div className="col-12 col-md-4 order-2 order-md-1">
               {content.showButton && (
                 <LinkButton
-                  styleSpan="w-md-unset w-100 margin-20-top"
+                  styleSpan="w-md-unset w-100 margin-0-top margin-xs-20-top"
                   text={content.buttonText}
                   path={content.buttonLink}
                 />
@@ -139,14 +139,18 @@ class LayoutDownloads extends React.Component {
                 <ToggleWithButton
                   show={true}
                   dataTargetId={'more-md-' + content.id}
-                  style={{ container: 'd-none d-md-flex' }}
+                  style={{
+                    container: 'd-none d-md-flex',
+                  }}
                 />
               )}
               {convertedDownloads.length > 3 && (
                 <ToggleWithButton
                   show={true}
                   dataTargetId={'more-xs-' + content.id}
-                  style={{ container: 'd-flex d-md-none' }}
+                  style={{
+                    container: 'd-flex d-md-none margin-20-top',
+                  }}
                 />
               )}
             </div>

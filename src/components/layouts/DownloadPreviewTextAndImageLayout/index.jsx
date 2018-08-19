@@ -56,23 +56,25 @@ class DownloadPreviewTextAndImageLayout extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row margin-20-top">
-          <div className="col-12 col-md-3">
-            <LinkButton
-              text="ZU DEN MEDIEN"
-              path="/karriere/ueber-uns"
-              styleLink="d-none d-md-inline"
-              {...this.props}
-            />
-            <LinkButton
-              text="ZU DEN MEDIEN"
-              path="/karriere/ueber-uns"
-              styleLink="d-inline d-md-none"
-              styleSpan="w-100"
-              {...this.props}
-            />
+        {content.showButton && (
+          <div className="row margin-20-top">
+            <div className="col-12 col-md-3">
+              <LinkButton
+                text="ZU DEN MEDIEN"
+                path="/karriere/ueber-uns"
+                styleLink="d-none d-md-inline"
+                {...this.props}
+              />
+              <LinkButton
+                text="ZU DEN MEDIEN"
+                path="/karriere/ueber-uns"
+                styleLink="d-inline d-md-none"
+                styleSpan="w-100"
+                {...this.props}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }

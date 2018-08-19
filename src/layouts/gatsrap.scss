@@ -850,10 +850,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 80px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
 }
@@ -862,10 +862,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 60px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 60px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 60px;
   }
 }
@@ -874,10 +874,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 40px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 40px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 40px;
   }
 }
@@ -886,10 +886,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 20px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 20px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 20px;
   }
 }
@@ -936,6 +936,10 @@ a:hover {
 
 .margin-60-top {
   margin-top: 60px;
+}
+
+.margin-50-top {
+  margin-top: 50px;
 }
 
 .margin-40-top {
@@ -1123,6 +1127,8 @@ a:hover {
 .padding-20-bottom {
   padding-bottom: 20px;
 }
+
+
 
 .padding-xs-20-top {
   @include media-breakpoint-only(xs) {
