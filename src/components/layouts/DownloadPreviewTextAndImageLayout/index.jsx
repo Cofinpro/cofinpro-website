@@ -61,13 +61,13 @@ class DownloadPreviewTextAndImageLayout extends React.Component {
             <div className="col-12 col-md-3">
               <LinkButton
                 text="ZU DEN MEDIEN"
-                path="/karriere/ueber-uns"
+                path="/news-medien"
                 styleLink="d-none d-md-inline"
                 {...this.props}
               />
               <LinkButton
                 text="ZU DEN MEDIEN"
-                path="/karriere/ueber-uns"
+                path="/news-medien"
                 styleLink="d-inline d-md-none"
                 styleSpan="w-100"
                 {...this.props}
