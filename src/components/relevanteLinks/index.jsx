@@ -23,7 +23,7 @@ class RelevanteLinks extends React.Component {
         <div className="text-left margin-20-top">
           <p className="text-size-14">{title.toUpperCase()}</p>
 
-          {relevanteLinks.slice(0, 3).map((link, index) => (
+          {relevanteLinks.slice(0, 4).map((link, index) => (
             <p key={index} className="text-size-18">
               <Link className="text-dark" to={pathPrefix + link.url}>
                 {link.title}
@@ -31,10 +31,10 @@ class RelevanteLinks extends React.Component {
             </p>
           ))}
 
-          {relevanteLinks.length > 3 && (
+          {relevanteLinks.length > 4 && (
             <div className="collapse" id={'more-relevanteLinks'}>
               {relevanteLinks !== undefined &&
-                relevanteLinks.slice(3).map((link, index) => (
+                relevanteLinks.slice(4).map((link, index) => (
                   <p key={index} className="text-size-18">
                     <Link className="text-dark" to={pathPrefix + link.url}>
                       {link.title}
@@ -45,7 +45,7 @@ class RelevanteLinks extends React.Component {
           )}
 
           <div className="col-12 col-md-4 order-1 order-md-2 text-center margin-10-bottom">
-            {relevanteLinks.length > 3 && (
+            {relevanteLinks.length > 4 && (
               <ToggleWithButton
                 show={true}
                 dataTargetId={'more-relevanteLinks'}
