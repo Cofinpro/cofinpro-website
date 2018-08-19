@@ -4,8 +4,8 @@ import Helmet from 'react-helmet'
 import LinkButton from '../components/buttons/LinkButton'
 import ThreeIconsWithLinks from '../components/layouts/ThreeIconsWithLinks'
 
+import PageIntroText from '../components/text/PageIntroText'
 import FokusthemenLayout from '../components/layouts/FokusthemenLayout'
-
 import NewsMedienPreview from '../components/startseite/NewsMedienPreview'
 
 import HtmlHeader from '../components/HtmlHeader'
@@ -171,42 +171,24 @@ class Startseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-60-top margin-md-40-top margin-xs-20-top">
+        <div className="container margin-60-top margin-md-40-top margin-xs-10-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-8">
+            <div className="col-12 col-md-9 col-lg-8">
               <h1 className="h1">Hallo, hier ist Cofinpro</h1>
-              <p className="h4 normal-font d-none d-lg-block margin-20-top">
-                Wir sind die Management-, Fach- und Technologieberatung für
-                Deutschlands führende Banken und
-                Kapitalverwaltungsgesellschaften. <br />
-                <br />Als Experten für Kredit und Wertpapier begleiten und
-                navigieren wir unsere Kunden durch die Herausforderungen von
-                Digitalisierung, neuen Marktanforderungen und Regulatorik.
-              </p>
-              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
-                Wir sind die Management-, Fach- und Technologieberatung für
-                Deutschlands führende Banken und
-                Kapitalverwaltungsgesellschaften. <br />
-                <br />Als Experten für Kredit und Wertpapier begleiten und
-                navigieren wir unsere Kunden durch die Herausforderungen von
-                Digitalisierung, neuen Marktanforderungen und Regulatorik.
-              </p>
-              <p className="d-block normal-font d-md-none margin-20-top">
-                Wir sind die Management-, Fach- und Technologieberatung für
-                Deutschlands führende Banken und
-                Kapitalverwaltungsgesellschaften. <br />
-                <br />Als Experten für Kredit und Wertpapier begleiten und
-                navigieren wir unsere Kunden durch die Herausforderungen von
-                Digitalisierung, neuen Marktanforderungen und Regulatorik.
-              </p>
+              <PageIntroText
+                content={{
+                  text:
+                    'Wir sind die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Kapitalverwaltungsgesellschaften. Als Experten für Kredit und Wertpapier begleiten und navigieren wir unsere Kunden durch die Herausforderungen von Digitalisierung, neuen Marktanforderungen und Regulatorik.',
+                }}
+              />
               <LinkButton
-                styleLink="d-inline d-md-none margin-10-top"
-                styleSpan="margin-20-bottom w-100"
+                styleLink="d-inline d-md-none margin-20-top"
+                styleSpan="w-100"
                 text="BERATUNGSFELDER ÜBERSICHT"
                 path="/beratungsfelder"
               />
               <LinkButton
-                styleSpan="w-100 w-md-unset margin-10-top"
+                styleSpan="w-100 w-md-unset margin-20-top"
                 text="MEHR ÜBER COFINPRO"
                 path="/cofinpro"
               />

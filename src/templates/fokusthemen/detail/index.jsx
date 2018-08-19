@@ -8,6 +8,8 @@ import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
 
 import StockphotoWithExternalLink from '../../../components/images/StockphotoWithExternalLink'
 
+import PageIntroText from '../../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
@@ -130,9 +132,9 @@ class FokusthemenDetailTeamplate extends React.Component {
           }}
         />
 
-        <div className="container margin-40-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-md-8 col-lg-7">
               <div className="row">
                 <div className="col-6 col-md-4">
                   <ImageWrapper
@@ -142,13 +144,12 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
                 <div className="col-6 col-md-7" />
               </div>
-              <div className="row margin-40-top">
+              <div className="row margin-40-top margin-xs-20-top">
                 <div className="col-12">
                   <h1 className="h1">{graphQlResult.uberschriftGanzOben}</h1>
-                  <p className="h4 margin-20-top d-md-block d-none">
-                    {graphQlResult.headline.headline}
-                  </p>
-                  <p className="d-md-none">{graphQlResult.headline.headline}</p>
+                  <PageIntroText
+                    content={{ text: graphQlResult.headline.headline }}
+                  />
                 </div>
               </div>
             </div>
@@ -167,7 +168,7 @@ class FokusthemenDetailTeamplate extends React.Component {
         </div>
 
         {medien.length > 0 && (
-          <div className="container margin-120-top margin-xs-80-top">
+          <div className="container margin-100-top margin-xs-80-top">
             <div className="row d-md-flex">
               <div className="col-12 col-md-6">
                 <StockphotoWithExternalLink
@@ -224,7 +225,7 @@ class FokusthemenDetailTeamplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-60-top margin-xs-80-top">
+        <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-md-6" />
             <div className="col-md-6 margin-xs-20-top">

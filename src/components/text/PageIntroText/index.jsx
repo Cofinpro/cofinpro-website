@@ -9,13 +9,13 @@ class PageIntroText extends React.Component {
 
     return (
       <div className={style !== undefined ? style.container : ''}>
-        <p className="h4 normal-font d-none d-lg-block margin-20-top">
+        <p className="h4 normal-font d-none d-lg-block margin-20-top no-margin">
           {content.text}
         </p>
-        <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
+        <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top no-margin">
           {content.text}
         </p>
-        <p className="d-block normal-font d-md-none margin-20-top">
+        <p className="d-block normal-font d-md-none margin-20-top no-margin">
           {content.text}
         </p>
       </div>

@@ -100,7 +100,7 @@ class ContentseiteMax extends React.Component {
           }}
         />
 
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-9 col-lg-8">
               <h1 className="h1">{content.ueberschrift}</h1>

@@ -5,6 +5,8 @@ import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 
 import HtmlHeader from '../../components/HtmlHeader'
 
+import PageIntroText from '../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_SHARP,
@@ -27,28 +29,16 @@ class NewsMedienVerteiler extends React.Component {
             description: seoDescription,
           }}
         />
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-7">
               <h1 className="h1">Unser Medienforum</h1>
-              <p className="h4 normal-font d-none d-lg-block margin-20-top">
-                Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
-                und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
-                erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
-                Sie hier ganz richtig.
-              </p>
-              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
-                Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
-                und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
-                erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
-                Sie hier ganz richtig.
-              </p>
-              <p className="d-block normal-font d-md-none margin-20-top">
-                Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas,
-                und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie
-                erfahren möchten, welche Neuigkeiten unsere Experten haben, sind
-                Sie hier ganz richtig.
-              </p>
+              <PageIntroText
+                content={{
+                  text:
+                    'Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas, und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie erfahren möchten, welche Neuigkeiten unsere Experten haben, sind Sie hier ganz richtig.',
+                }}
+              />
             </div>
           </div>
         </div>
@@ -62,7 +52,7 @@ class NewsMedienVerteiler extends React.Component {
               />
             </div>
             <div className="col-12 col-md-6">
-              <h2 className="margin-20-bottom margin-xs-20-top">
+              <h2 className="h2 margin-20-bottom margin-xs-20-top">
                 Neues von Cofinpro
               </h2>
               <p>
@@ -85,7 +75,9 @@ class NewsMedienVerteiler extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6 order-2 order-md-1">
-              <h2 className="margin-20-bottom margin-xs-20-top">Unser Blog</h2>
+              <h2 className="h2 margin-20-bottom margin-xs-20-top">
+                Unser Blog
+              </h2>
               <p>
                 Was treiben unsere Technologieberater? Sehr viel, das ist schon
                 mal klar. Hier erfahren Sie aus erster Hand, welche Themen uns

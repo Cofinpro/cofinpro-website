@@ -42,24 +42,26 @@ class Projekt extends React.Component {
           }}
         />
 
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-lg-10 col-xl-8">
               <h1 className="h1">{graphQlResult.ueberschrift}</h1>
-              <h2 className="margin-20-top d-none d-md-block">
+              <h2 className="h2 margin-20-top d-none d-md-block">
                 {graphQlResult.unterueberschrift}
               </h2>
-              <p className="d-block d-md-none">
+              <p className="h2 d-block d-md-none">
                 {graphQlResult.unterueberschrift}
               </p>
             </div>
-            <div className="col-12 col-md-5 margin-0-top margin-xs-40-top">
-              <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
-            </div>
+            {/*
+              <div className="col-12 col-lg-5 margin-0-top margin-md-40-top">
+                <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
+              </div>
+            */}
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
+        <div className="container margin-120-top margin-md-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h3 className="h2">Ziele</h3>
