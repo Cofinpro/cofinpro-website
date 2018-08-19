@@ -32,8 +32,8 @@ class NavigationBeratungsfelder extends React.Component {
       <div>
         <div className={'container filter ' + styleClass}>
           <div className="row">
-            <div className="col-12 col-md-6">
-              <h4>FILTER</h4>
+            <div className="col-12 col-md-8 col-lg-6">
+              <p className="text-size-18 bold-font">FILTER</p>
               <p>{description}</p>
             </div>
           </div>

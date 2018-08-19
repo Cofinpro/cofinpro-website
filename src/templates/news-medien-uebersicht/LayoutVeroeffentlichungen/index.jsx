@@ -94,7 +94,7 @@ class LayoutVeroeffentlichungen extends React.Component {
                 </div>
               </div>
               {firstForElements.length > 2 && (
-                <div className="row justify-content-center margin-40-top margin-xs-20-top d-none d-md-block">
+                <div className="row justify-content-center margin-40-top margin-xs-20-top d-none d-md-flex">
                   <div className="col-12 col-md-8">
                     <StockphotoWithExternalLink
                       content={firstForElements}
@@ -118,7 +118,7 @@ class LayoutVeroeffentlichungen extends React.Component {
                 </div>
               )}
               {firstForElements.length > 3 && (
-                <div className="row margin-40-top margin-xs-20-top d-none d-md-block">
+                <div className="row margin-40-top margin-xs-20-top d-none d-md-flex">
                   <div className="col-12">
                     <StockphotoWithExternalLink
                       content={firstForElements}
@@ -136,7 +136,7 @@ class LayoutVeroeffentlichungen extends React.Component {
             elements={convertedDownloads}
             startIndex={4}
             endIndex={7}
-            style={{ row: 'margin-30-top margin-xs-10-top d-none d-md-flex' }}
+            style={{ row: 'margin-40-top margin-xs-10-top d-none d-md-flex' }}
           />
         )}
         {convertedDownloads.length > 2 && (
@@ -144,7 +144,7 @@ class LayoutVeroeffentlichungen extends React.Component {
             elements={convertedDownloads}
             startIndex={2}
             endIndex={5}
-            style={{ row: 'margin-30-top margin-xs-10-top d-flex d-md-none' }}
+            style={{ row: 'margin-40-top margin-xs-10-top d-flex d-md-none' }}
           />
         )}
         {convertedDownloads.length > 8 && (
@@ -168,7 +168,7 @@ class LayoutVeroeffentlichungen extends React.Component {
           </div>
         )}
         {content.elements.length === 0 && (
-          <p className="no-media-available-text">
+          <p className="margin-20-top no-media-available-text">
             Keine Medien zu diesem Thema <br />in dieser Kategorie verfügbar
           </p>
         )}
@@ -177,7 +177,7 @@ class LayoutVeroeffentlichungen extends React.Component {
             <div className="col-12 col-md-4 order-2 order-md-1">
               {content.showButton && (
                 <LinkButton
-                  styleSpan="w-md-unset w-100 margin-20-top"
+                  styleSpan="w-md-unset w-100 margin-0-top margin-xs-20-top"
                   text={content.buttonText}
                   path={content.buttonLink}
                 />
@@ -195,7 +195,7 @@ class LayoutVeroeffentlichungen extends React.Component {
                 <ToggleWithButton
                   show={true}
                   dataTargetId={'more-xs-' + content.id}
-                  style={{ container: 'd-flex d-md-none' }}
+                  style={{ container: 'd-flex d-md-none margin-20-top' }}
                 />
               )}
             </div>

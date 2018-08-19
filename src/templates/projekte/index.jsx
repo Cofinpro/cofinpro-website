@@ -6,6 +6,7 @@ import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 import ToggleWithButton from '../../components/buttons/ToggleWithButton'
 
 import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
+import PageIntroText from '../../components/text/PageIntroText'
 
 import HtmlHeader from '../../components/HtmlHeader'
 
@@ -66,12 +67,12 @@ class ProjekteUebersicht extends React.Component {
                               <div>
                                 <ContentfulMarkdownText
                                   text={'### ' + item.ueberschrift}
-                                  styleClasses="h4"
+                                  styleClasses="h4 text-md-1rem"
                                 />
                                 {item.unterueberschrift !== undefined && (
                                   <ContentfulMarkdownText
                                     text={' ' + item.unterueberschrift}
-                                    styleClasses="h5 text-md-normal"
+                                    styleClasses="h5 text-md-1rem"
                                   />
                                 )}
                               </div>
@@ -100,7 +101,7 @@ class ProjekteUebersicht extends React.Component {
                                       '### ' +
                                       props.projects[i + 1].ueberschrift
                                     }
-                                    styleClasses="h4"
+                                    styleClasses="h4 text-md-1rem"
                                   />
                                   {props.projects[i + 1].unterueberschrift !==
                                     undefined && (
@@ -109,7 +110,7 @@ class ProjekteUebersicht extends React.Component {
                                         ' ' +
                                         props.projects[i + 1].unterueberschrift
                                       }
-                                      styleClasses="h5 text-md-normal"
+                                      styleClasses="h5 text-md-1rem"
                                     />
                                   )}
                                 </div>
@@ -164,19 +165,11 @@ class ProjekteUebersicht extends React.Component {
             description: seoDescription,
           }}
         />
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-7">
               <h1 className="h1">{title}</h1>
-              <p className="h4 normal-font d-none d-lg-block margin-20-top">
-                {description}
-              </p>
-              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
-                {description}
-              </p>
-              <p className="d-block normal-font d-md-none margin-20-top">
-                {description}
-              </p>
+              <PageIntroText content={{ text: description }} />
             </div>
             <div className="col-12 col-md-6" />
           </div>
@@ -194,7 +187,7 @@ class ProjekteUebersicht extends React.Component {
           projects={firstShowProjects}
           images={backgroundImages}
           imageIndexOffset={0}
-          style={{ container: 'margin-100-top margin-xs-60-top' }}
+          style={{ container: 'margin-60-top' }}
         />
 
         <div className="collapse" id="collapse-more-projects">
@@ -205,15 +198,16 @@ class ProjekteUebersicht extends React.Component {
             style={{ container: '' }}
           />
         </div>
-
-        <div className="container margin-40-top">
-          <div className="row justify-content-center">
-            <ToggleWithButton
-              dataTargetId={'collapse-more-projects'}
-              show={true}
-            />
+        {moreProjects.length > 0 && (
+          <div className="container margin-40-top">
+            <div className="row justify-content-center">
+              <ToggleWithButton
+                dataTargetId={'collapse-more-projects'}
+                show={true}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     )
   }

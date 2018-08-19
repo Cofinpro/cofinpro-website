@@ -49,11 +49,11 @@ $h6-font-size: 0.875rem;
 $h1-font-size-sm: 1.5rem;
 $h1-font-size-md: 2.5rem;
 $h2-font-size-sm: 1.375rem;
-$h2-font-size-md: 2rem;
+$h2-font-size-md: 1.75rem;
 $h3-font-size-sm: 1.125rem;
-$h3-font-size-md: 1.75rem;
-$h4-font-size-sm: 1.125rem;
-$h4-font-size-md: 1.5rem;
+$h3-font-size-md: 1.5rem;
+$h4-font-size-sm: 1rem;
+$h4-font-size-md: 1.25rem;
 $h5-font-size-sm: 1rem;
 $h5-font-size-md: 1.125rem;
 $h6-font-size-sm: 0.75rem;
@@ -850,10 +850,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 80px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
 }
@@ -862,10 +862,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 60px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 60px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 60px;
   }
 }
@@ -874,10 +874,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 40px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 40px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 40px;
   }
 }
@@ -886,10 +886,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 20px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-bottom: 20px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-bottom: 20px;
   }
 }
@@ -916,6 +916,10 @@ a:hover {
   }
 }
 
+.margin-120-top-xs {
+  margin-top: 120px;
+}
+
 .margin-100-top {
   margin-top: 100px;
   @include media-breakpoint-only(xs) {
@@ -932,6 +936,10 @@ a:hover {
 
 .margin-60-top {
   margin-top: 60px;
+}
+
+.margin-50-top {
+  margin-top: 50px;
 }
 
 .margin-40-top {
@@ -952,6 +960,78 @@ a:hover {
 
 .margin-10-top {
   margin-top: 10px;
+}
+
+.margin-md-100-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 100px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 100px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 100px;
+  }
+}
+
+.margin-md-80-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(lg) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 80px;
+  }
+}
+
+.margin-md-60-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+}
+
+.margin-md-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 40px;
+  }
+}
+
+.margin-md-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 20px;
+  }
+}
+
+.margin-md-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 0px;
+  }
 }
 
 .margin-xs-80-top {
@@ -1008,78 +1088,6 @@ a:hover {
   }
 }
 
-.margin-md-100-top {
-  @include media-breakpoint-only(md) {
-    margin-top: 100px;
-  }
-  @include media-breakpoint-only(lg) {
-    margin-top: 100px;
-  }
-  @include media-breakpoint-only(xl) {
-    margin-top: 100px;
-  }
-}
-
-.margin-md-80-top {
-  @include media-breakpoint-only(md) {
-    margin-top: 80px;
-  }
-  @include media-breakpoint-only(lg) {
-    margin-top: 80px;
-  }
-  @include media-breakpoint-only(xl) {
-    margin-top: 80px;
-  }
-}
-
-.margin-md-60-top {
-  @include media-breakpoint-only(md) {
-    margin-top: 60px;
-  }
-  @include media-breakpoint-only(sm) {
-    margin-top: 60px;
-  }
-  @include media-breakpoint-only(xs) {
-    margin-top: 60px;
-  }
-}
-
-.margin-md-40-top {
-  @include media-breakpoint-only(md) {
-    margin-top: 40px;
-  }
-  @include media-breakpoint-only(lg) {
-    margin-top: 40px;
-  }
-  @include media-breakpoint-only(xl) {
-    margin-top: 40px;
-  }
-}
-
-.margin-md-20-top {
-  @include media-breakpoint-only(xs) {
-    margin-top: 20px;
-  }
-  @include media-breakpoint-only(sm) {
-    margin-top: 20px;
-  }
-  @include media-breakpoint-only(md) {
-    margin-top: 20px;
-  }
-}
-
-.margin-md-0-top {
-  @include media-breakpoint-only(xs) {
-    margin-top: 0px;
-  }
-  @include media-breakpoint-only(sm) {
-    margin-top: 0px;
-  }
-  @include media-breakpoint-only(md) {
-    margin-top: 0px;
-  }
-}
-
 .margin-20-left {
   margin-left: 20px;
 }
@@ -1119,6 +1127,8 @@ a:hover {
 .padding-20-bottom {
   padding-bottom: 20px;
 }
+
+
 
 .padding-xs-20-top {
   @include media-breakpoint-only(xs) {
@@ -1221,10 +1231,33 @@ a.link-button:hover {
   font-size: 18px;
 }
 
+.text-size-16 {
+  font-size: 16px;
+}
+
 .text-md-normal,
 .text-md-normal > p {
   @include media-breakpoint-only(md) {
     font-size: $font-size-lg;
+  }
+}
+
+.text-md-1rem,
+.text-md-1rem > p,
+.text-md-1rem > h1,
+.text-md-1rem > h2,
+.text-md-1rem > h3,
+.text-md-1rem > h4,
+.text-md-1rem > h5,
+.text-md-1rem > h6 {
+  @include media-breakpoint-only(xs) {
+    font-size: 1rem;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: 1rem;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: 1rem;
   }
 }
 

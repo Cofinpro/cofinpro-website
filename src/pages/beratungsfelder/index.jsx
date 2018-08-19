@@ -5,6 +5,8 @@ import LinkButton from '../../components/buttons/LinkButton'
 
 import HtmlHeader from '../../components/HtmlHeader'
 
+import PageIntroText from '../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_BOOTSTRAP,
@@ -32,26 +34,16 @@ class BeratungsfelderStartseite extends React.Component {
           }}
         />
 
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-7">
-              <h1 className="h1">Beratungsfelder</h1>
-              <p className="h4 margin-20-top d-md-block d-none">
-                Wir sind Experten für Kredit und Wertpapier und beraten führende
-                Banken und Kapitalverwaltungsgesellschaften. Als
-                Managementberater, Fachberater und Technologieberater haben wir
-                die Zukunftsfähigkeit unserer Kunden im Blick. Damit sie den
-                Herausforderungen nicht hinterher sind, sondern einen Schritt
-                voraus.
-              </p>
-              <p className="d-md-none">
-                Wir sind Experten für Kredit und Wertpapier und beraten führende
-                Banken und Kapitalverwaltungsgesellschaften. Als
-                Managementberater, Fachberater und Technologieberater haben wir
-                die Zukunftsfähigkeit unserer Kunden im Blick. Damit sie den
-                Herausforderungen nicht hinterher sind, sondern einen Schritt
-                voraus.
-              </p>
+            <div className="col-12 col-md-9 col-lg-7">
+              <h1 className="h1">Das sind unsere Beratungsfelder </h1>
+              <PageIntroText
+                content={{
+                  text:
+                    'Wir sind Experten für Kredit und Wertpapier und beraten führende Banken und Kapitalverwaltungsgesellschaften. Als Managementberater, Fachberater und Technologieberater haben wir die Zukunftsfähigkeit unserer Kunden im Blick. Damit sie den Herausforderungen nicht hinterher sind, sondern einen Schritt voraus.',
+                }}
+              />
             </div>
           </div>
         </div>
@@ -94,7 +86,7 @@ class BeratungsfelderStartseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
+        <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 d-md-none">
               <ImageWrapper
@@ -128,7 +120,7 @@ class BeratungsfelderStartseite extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-80-top">
+        <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <ImageWrapper

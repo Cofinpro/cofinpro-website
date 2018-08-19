@@ -39,7 +39,7 @@ class LayoutLinkRow extends React.Component {
                     <div className="col-12 col-md-6 col-lg-4 d-flex">
                       <LinkButtonV2 path={link.to} text={titleOfLink} />
                     </div>
-                    <div className="col-12 d-none d-lg-block col-lg-2 d-flex" />
+                    <div className="col-12 d-none d-lg-flex col-lg-2" />
                     <div className="col-12 col-md-6 col-lg-4 d-flex">
                       {links.length !== i + 1 && (
                         <LinkButtonV2
@@ -48,7 +48,7 @@ class LayoutLinkRow extends React.Component {
                         />
                       )}
                     </div>
-                    <div className="col-12 d-none d-lg-block col-lg-2 d-flex" />
+                    <div className="col-12 d-none d-lg-flex col-lg-2" />
                   </div>
                 )
               } else {

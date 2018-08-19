@@ -1,10 +1,10 @@
 import React from 'react'
 
 import LinkButton from '../../components/buttons/LinkButton'
+import PageIntroText from '../../components/text/PageIntroText'
 
 import FourFactsSmallLayout from '../../components/layouts/FourFactsSmallLayout'
 import DownloadPreviewTextAndImageLayout from '../../components/layouts/DownloadPreviewTextAndImageLayout'
-
 import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
 
 import HtmlHeader from '../../components/HtmlHeader'
@@ -36,22 +36,16 @@ class Startseite extends React.Component {
           }}
         />
 
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Über Cofinpro</h1>
-              <p className="h4 normal-font d-none d-lg-block margin-20-top">
-                Was tun wir, wie arbeiten wir und was macht uns aus? Hier
-                stellen wir uns vor.
-              </p>
-              <p className="h5 normal-font d-none d-md-block d-lg-none margin-20-top">
-                Was tun wir, wie arbeiten wir und was macht uns aus? Hier
-                stellen wir uns vor.
-              </p>
-              <p className="d-block normal-font d-md-none margin-20-top">
-                Was tun wir, wie arbeiten wir und was macht uns aus? Hier
-                stellen wir uns vor.
-              </p>
+              <PageIntroText
+                content={{
+                  text:
+                    'Was tun wir, wie arbeiten wir und was macht uns aus? Hier stellen wir uns vor.',
+                }}
+              />
               <LinkButton
                 styleLink="d-inline d-md-none"
                 styleSpan="margin-20-bottom w-100"
@@ -63,7 +57,7 @@ class Startseite extends React.Component {
         </div>
 
         <ThreeIconsWithLinks
-          styleClass="margin-80-top"
+          styleClass="margin-100-top"
           iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft="Managementberatung"
           iconMiddle={this.props.data.iconVorteilMitteSharp}
@@ -324,6 +318,7 @@ class Startseite extends React.Component {
         </div>
         <DownloadPreviewTextAndImageLayout
           style={{ container: 'margin-40-top margin-xs-0-top' }}
+          content={{ showButton: true }}
         />
       </div>
     )

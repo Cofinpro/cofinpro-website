@@ -5,6 +5,8 @@ import NavigationBeratungsfelder from '../../components/navigation/NavigationBer
 
 import HtmlHeader from '../../components/HtmlHeader'
 
+import PageIntroText from '../../components/text/PageIntroText'
+
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
@@ -32,25 +34,23 @@ class FokusthemenStartseite extends React.Component {
             description: seoDescription,
           }}
         />
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-8 col-md-6">
               <h1 className="h1">Fokusthemen</h1>
-              <p className="h4 margin-20-top d-md-block d-none">
-                Hier finden Sie alle unsere aktuellen Fokusthemen auf einen
-                Blick. Entdecken sie unsere Themenvielfalt.
-              </p>
-              <p className="d-md-none">
-                Hier finden Sie alle unsere aktuellen Fokusthemen auf einen
-                Blick. Entdecken sie unsere Themenvielfalt.
-              </p>
+              <PageIntroText
+                content={{
+                  text:
+                    'Hier finden Sie alle unsere aktuellen Fokusthemen auf einen Blick. Entdecken sie unsere Themenvielfalt.',
+                }}
+              />
             </div>
           </div>
         </div>
 
         <NavigationBeratungsfelder
           urlPrefix="fokusthemen"
-          styleClass="margin-60-top"
+          styleClass="margin-80-top"
           description={
             'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen? Wählen Sie selbst.'
           }

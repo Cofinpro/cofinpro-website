@@ -1,10 +1,9 @@
 import React from 'react'
 
 import LayoutDownloads from '../../news-medien-uebersicht/LayoutDownloads'
-
 import NavigationBeratungsfelder from '../../../components/navigation/NavigationBeratungsfelder'
-
 import HtmlHeader from '../../../components/HtmlHeader'
+import PageIntroText from '../../../components/text/PageIntroText'
 
 class LoesungsskizzenArchivTemplate extends React.Component {
   render() {
@@ -37,14 +36,15 @@ class LoesungsskizzenArchivTemplate extends React.Component {
             description: seoDescription,
           }}
         />
-        <div className="container padding-60-top padding-xs-20-top">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h1 className="h1">Medien Archiv</h1>
-              <p className="h4 bold-font d-none d-md-block">
-                {siteDescription}
-              </p>
-              <p className="d-block d-md-none">{siteDescription}</p>
+              <PageIntroText
+                content={{
+                  text: siteDescription,
+                }}
+              />
             </div>
           </div>
         </div>
