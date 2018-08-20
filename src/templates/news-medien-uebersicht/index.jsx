@@ -8,6 +8,7 @@ import DownloadPreviewTextAndImageLayout from '../../components/layouts/Download
 import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
 import HtmlHeader from '../../components/HtmlHeader'
 import PageIntroText from '../../components/text/PageIntroText'
+import PresseKontakt from '../../components/PresseKontakt'
 
 import './style.scss'
 
@@ -270,6 +271,13 @@ class NewsMedienUebersichtTemplate extends React.Component {
           content={{ showButton: false }}
           downloads={downloads}
         />
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 ">
+              <PresseKontakt />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
