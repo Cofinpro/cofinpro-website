@@ -62,10 +62,13 @@ class Startseite extends React.Component {
           styleClass="margin-100-top"
           iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft="Managementberatung"
+          linkLeft={'beratungsfelder/management'}
           iconMiddle={this.props.data.iconVorteilMitteSharp}
           titleMiddle="Fachberatungext"
+          linkMiddle={'beratungsfelder/fach'}
           iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight="Technologieberatung"
+          linkRight={'beratungsfelder/technologie'}
         />
 
         <div className="container margin-120-top margin-xs-80-top">
