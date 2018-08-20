@@ -351,5 +351,24 @@ export const pageQuery = graphql`
         }
       }
     }
+    contentfulDownloadEinteilung(id: { regex: "/c73AnGMvKTKcYcw08iKYse/" }) {
+      id
+      titel
+      downloads {
+        id
+        bild {
+          id
+        }
+        beschriftungDesDownloads
+        datei {
+          id
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
+      }
+    }
   }
 `
