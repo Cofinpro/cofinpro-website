@@ -348,16 +348,6 @@ export const pageQuery = graphql`
           contentType
         }
       }
-      downloadsImages {
-        id
-        title
-        description
-        file {
-          url
-          fileName
-          contentType
-        }
-      }
       downloads {
         id
         beschriftungDesDownloads
