@@ -9,6 +9,11 @@ ul.blue-bullet,
 div.blue-bullet ul {
 }
 
+div.blue-bullet ul li ul,
+ul.blue-bullet li ul {
+  margin-top: 20px;
+}
+
 ul.blue-bullet li,
 div.blue-bullet ul li {
   list-style-image: url('/img/blue-bullet-point.png');
