@@ -11,8 +11,8 @@ import HtmlHeader from '../../components/HtmlHeader'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_CONTENTFUL,
 } from '../../components/images/ImageWrapper'
 
 class Startseite extends React.Component {
@@ -20,7 +20,9 @@ class Startseite extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    console.log('PROPS: ' + JSON.stringify(this.props.data))
     const graphQlResult = this.props.data.contentfulBausteinCofinproFakten
+    const graphQlResultCofinpro = this.props.data.contentfulSeiteCofinpro
 
     let seoTitle =
       'Über Cofinpro - Was tun wir, wie arbeiten wir und was macht uns aus?'
@@ -197,60 +199,14 @@ class Startseite extends React.Component {
                 <div className="col-12 margin-20-bottom margin-xs-0-bottom">
                   <h3 className="h4">AUSZEICHNUNGEN</h3>
                 </div>
-                <div className="col-6 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 133,
-                      height: 88,
-                    }}
-                  />
-                </div>
-                <div className="col-6 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 133,
-                      height: 88,
-                    }}
-                  />
-                </div>
-                <div className="col-6 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 133,
-                      height: 88,
-                    }}
-                  />
-                </div>
-                <div className="col-6 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 133,
-                      height: 88,
-                    }}
-                  />
-                </div>
-                <div className="col-6 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 133,
-                      height: 88,
-                    }}
-                  />
-                </div>
-                <div className="col-6 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 133,
-                      height: 88,
-                    }}
-                  />
-                </div>
+                {graphQlResultCofinpro.auszeichnungen.map((image, index) => (
+                  <div key={index} className="col-6 margin-20-top">
+                    <ImageWrapper
+                      sourceType={SOURCE_TYP_CONTENTFUL}
+                      source={image}
+                    />
+                  </div>
+                ))}
               </div>
             </div>
             <div className="col-12 col-md-2" />
@@ -259,51 +215,18 @@ class Startseite extends React.Component {
                 <div className="col-12 margin-20-bottom margin-xs-60-top margin-xs-0-bottom">
                   <h3 className="h4">WIR UNTERSTÜTZEN</h3>
                 </div>
-                <div className="col-12 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 162,
-                      height: 64,
-                    }}
-                  />
-                </div>
-                <div className="col-12 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 162,
-                      height: 64,
-                    }}
-                  />
-                </div>
-                <div className="col-12 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 162,
-                      height: 64,
-                    }}
-                  />
-                </div>
-                <div className="col-12 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 162,
-                      height: 64,
-                    }}
-                  />
-                </div>
-                <div className="col-12 margin-20-top">
-                  <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
-                    source={{
-                      width: 162,
-                      height: 64,
-                    }}
-                  />
-                </div>
+                {graphQlResultCofinpro.unterstuetzen.map((image, index) => (
+                  <div className="col-12">
+                    <div className="row">
+                      <div key={index} className="col-6 margin-20-top">
+                        <ImageWrapper
+                          sourceType={SOURCE_TYP_CONTENTFUL}
+                          source={image}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -402,6 +325,42 @@ export const pageQuery = graphql`
     ) {
       sizes(quality: 60) {
         ...GatsbyImageSharpSizes
+      }
+    }
+    contentfulSeiteCofinpro {
+      auszeichnungen {
+        id
+        title
+        description
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      unterstuetzen {
+        id
+        title
+        description
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      downloadsImages {
+        id
+        title
+        description
+        file {
+          url
+          fileName
+          contentType
+        }
+      }
+      downloads {
+        id
+        beschriftungDesDownloads
       }
     }
   }
