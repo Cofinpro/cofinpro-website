@@ -16,6 +16,7 @@ import NavigationBeratungsfelder from '../../components/navigation/NavigationBer
 import HtmlHeader from '../../components/HtmlHeader'
 
 import PageIntroText from '../../components/text/PageIntroText'
+import PresseKontakt from '../../components/PresseKontakt'
 
 import {
   ImageWrapper,
@@ -271,6 +272,13 @@ class NewsMedienUebersichtTemplate extends React.Component {
           style={{ container: 'margin-40-top margin-xs-0-top' }}
           content={{ showButton: false }}
         />
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 ">
+              <PresseKontakt />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

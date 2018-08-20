@@ -6,6 +6,7 @@ import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
 import HtmlHeader from '../../components/HtmlHeader'
 
 import PageIntroText from '../../components/text/PageIntroText'
+import PresseKontakt from '../../components/PresseKontakt'
 
 import {
   ImageWrapper,
@@ -101,6 +102,14 @@ class NewsMedienVerteiler extends React.Component {
             </div>
           </div>
         </div>
+
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6 offset-md-6">
+              <PresseKontakt />
+            </div>
+          </div>
+        </div>
       </div>
     )
   }
@@ -110,7 +119,7 @@ export default NewsMedienVerteiler
 
 export const pageQuery = graphql`
   query newsMedienQuery {
-    newsImage: imageSharp(id: { regex: "/news-medien-a23/" }) {
+    newsImage: imageSharp(id: { regex: "/news-medien-b3/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
