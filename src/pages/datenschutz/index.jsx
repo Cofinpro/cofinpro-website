@@ -41,12 +41,12 @@ class Datenschutz extends React.Component {
           ]}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col">
-              <h1 className="h2 margin-md-bottom">Datenschutz</h1>
+              <h1 className="h1 margin-md-bottom">Datenschutz</h1>
 
-              <h2 className="h3">Datenschutzerklärung</h2>
+              <h2 className="h2">Datenschutzerklärung</h2>
 
               <p>
                 Wir freuen uns über Ihr Interesse an unserem Unternehmen. Der
@@ -62,7 +62,7 @@ class Datenschutz extends React.Component {
                 Website und Onlineangebote auf.
               </p>
 
-              <h2 className="h3">Personenbezogene Daten</h2>
+              <h2 className="h2">Personenbezogene Daten</h2>
 
               <p>
                 Personenbezogene Daten sind nach § 3 I Bundesdatenschutzgesetz
@@ -82,7 +82,7 @@ class Datenschutz extends React.Component {
                 Daten erhoben, verarbeitet oder genutzt.
               </p>
 
-              <h2 className="h3">Daten bei der Kontaktaufnahme</h2>
+              <h2 className="h2">Daten bei der Kontaktaufnahme</h2>
 
               <p>
                 Personenbezogene Daten, die Sie uns zum Zwecke der
@@ -101,7 +101,7 @@ class Datenschutz extends React.Component {
                 Zweckerfüllung gelöscht.
               </p>
 
-              <h2 className="h3">Allgemeine Datenweitergabe</h2>
+              <h2 className="h2">Allgemeine Datenweitergabe</h2>
 
               <p>
                 Werden uns personenbezogene Daten von Ihnen mitgeteilt, werden
@@ -113,7 +113,7 @@ class Datenschutz extends React.Component {
                 gesetzliche Bestimmungen wie Aufbewahrungsfristen notwendig ist.
               </p>
 
-              <h2 className="h3">
+              <h2 className="h2">
                 Einbindung von Diensten und Inhalten Dritter
               </h2>
 
@@ -135,7 +135,7 @@ class Datenschutz extends React.Component {
                 Datenschutzhinweise der jeweiligen Dritt-Anbieter.
               </p>
 
-              <h2 className="h3">Newsletter</h2>
+              <h2 className="h2">Newsletter</h2>
 
               <p>
                 Sofern Sie uns Ihr gesondertes Einverständnis geben, senden wir
@@ -157,7 +157,7 @@ class Datenschutz extends React.Component {
                 Kontaktmöglichkeiten erfolgen.
               </p>
 
-              <h2 className="h3">Zugriffsdaten/ Server-Logfiles</h2>
+              <h2 className="h2">Zugriffsdaten/ Server-Logfiles</h2>
 
               <p>
                 Wir erheben Daten über jeden Zugriff auf den Server (Logfiles).
@@ -170,7 +170,7 @@ class Datenschutz extends React.Component {
                 nicht gespeichert bzw. anonymisiert wird.
               </p>
 
-              <h2 className="h3">Allgemeine Aussagen zu Cookies</h2>
+              <h2 className="h2">Allgemeine Aussagen zu Cookies</h2>
 
               <p>
                 Bei einem Cookie handelt es sich um eine Textdatei, die beim
@@ -201,7 +201,7 @@ class Datenschutz extends React.Component {
                 http://www.youronlinechoices.com/uk/your-ad-choices/ verwalten.
               </p>
 
-              <h2 className="h3">Google Analytics Webtracking</h2>
+              <h2 className="h2">Google Analytics Webtracking</h2>
 
               <p>
                 Diese Website benutzt Google Analytics, einen Webanalysedienst
@@ -250,7 +250,7 @@ class Datenschutz extends React.Component {
                 gewährleisten.
               </p>
 
-              <h2 className="h3">
+              <h2 className="h2">
                 Datenverarbeitung im Rahmen des Bewerbungsverfahrens
               </h2>
 
@@ -297,7 +297,7 @@ class Datenschutz extends React.Component {
                 Beschwerden zur Verfügung steht.
               </p>
 
-              <h2 className="h3">
+              <h2 className="h2">
                 Widerrufs- und Widerspruchsrecht sowie Recht auf Auskunft,
                 Berichtigung, Löschung und Sperrung
               </h2>

@@ -41,12 +41,12 @@ class AGB extends React.Component {
           ]}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col">
-              <h1 className="h2 margin-md-bottom">AGB/Disclaimer</h1>
+              <h1 className="h1 margin-md-bottom">AGB/Disclaimer</h1>
 
-              <h2 className="h3">Haftung für Inhalte</h2>
+              <h2 className="h2">Haftung für Inhalte</h2>
 
               <p>
                 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
@@ -69,7 +69,7 @@ class AGB extends React.Component {
                 diese Inhalte umgehend entfernen.
               </p>
 
-              <h2 className="h3">Haftung für Links</h2>
+              <h2 className="h2">Haftung für Links</h2>
 
               <p>
                 Unser Angebot enthält Links zu externen Webseiten Dritter, auf
@@ -89,7 +89,7 @@ class AGB extends React.Component {
                 derartige Links umgehend entfernen.
               </p>
 
-              <h2 className="h3">Urheberrecht</h2>
+              <h2 className="h2">Urheberrecht</h2>
 
               <p>
                 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf

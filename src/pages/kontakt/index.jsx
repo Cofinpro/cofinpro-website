@@ -39,26 +39,25 @@ class Kontakt extends React.Component {
           ]}
         />
 
-        <div className="container">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12">
-              <h1 className="h2">KONTAKT</h1>
+              <h1 className="h1">KONTAKT</h1>
               <p>Hier finden Sie uns: </p>
 
               <p>
                 Cofinpro AG<br />
                 Untermainkai 27 - 28<br />
                 60329 Frankfurt am Main<br />
-                Tel +49 (0) 69-2 99 20 87 60<br />
-                Fax +49 (0) 69-2 99 20 87 61<br />
-                Mail{' '}
+                Tel +49 (0) 69 - 299 20 87 60<br />
+                Fax +49 (0) 69 - 299 20 87 61<br />
                 <a href="mailto:welcome@cofinpro.de">welcome@cofinpro.de</a>
               </p>
             </div>
           </div>
         </div>
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-5">
               <h2 className="h2">Kontakt für Bewerber</h2>
@@ -83,9 +82,9 @@ class Kontakt extends React.Component {
               />
 
               <p className="padding-md-top">
-                Fragen zum Bewerbungsprozess beantwortet Dir unser
-                <br />Human Resources-Team unter
-                <br />Tel + 49 (0) 69-2 99 20 87 60 und per E-Mail über
+                Fragen zum Bewerbungsprozess beantwortet Dir
+                <br />Fabienne Daum
+                <br />Tel +49 (0) 69 - 299 20 87 60 und per E-Mail über
                 <br />
                 <a href="mailto:karriere@cofinpro.de">karriere@cofinpro.de</a>
               </p>

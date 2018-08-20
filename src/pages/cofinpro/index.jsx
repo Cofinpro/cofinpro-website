@@ -197,10 +197,11 @@ class Startseite extends React.Component {
             </div>
           </div>
           <div className="row margin-60-top margin-xs-20-top">
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-6 col-lg-5">
               <div className="row">
                 <div className="col-12 margin-20-bottom margin-xs-0-bottom">
-                  <h3 className="h4">AUSZEICHNUNGEN</h3>
+                  <h3 className="h4 d-none d-md-block">AUSZEICHNUNGEN</h3>
+                  <h3 className="h3 d-block d-md-none">AUSZEICHNUNGEN</h3>
                 </div>
                 {graphQlResultCofinpro.auszeichnungen.map((image, index) => (
                   <div key={index} className="col-6 margin-20-top">
@@ -212,16 +213,17 @@ class Startseite extends React.Component {
                 ))}
               </div>
             </div>
-            <div className="col-12 col-md-2" />
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-1 col-lg-2" />
+            <div className="col-12 col-md-5 col-lg-5">
               <div className="row">
                 <div className="col-12 margin-20-bottom margin-xs-60-top margin-xs-0-bottom">
-                  <h3 className="h4">WIR UNTERSTÜTZEN</h3>
+                  <h3 className="h4 d-none d-md-block">WIR UNTERSTÜTZEN</h3>
+                  <h3 className="h3 d-block d-md-none">WIR UNTERSTÜTZEN</h3>
                 </div>
                 {graphQlResultCofinpro.unterstuetzen.map((image, index) => (
                   <div className="col-12">
                     <div className="row">
-                      <div key={index} className="col-6 margin-20-top">
+                      <div key={index} className="col-8 col-lg-6 margin-20-top">
                         <ImageWrapper
                           sourceType={SOURCE_TYP_CONTENTFUL}
                           source={image}

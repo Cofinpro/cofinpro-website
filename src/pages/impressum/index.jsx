@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
+import LinkButton from '../../components/buttons/LinkButton'
 
 class Impressum extends React.Component {
   getCurrentUrl() {
@@ -43,10 +43,10 @@ class Impressum extends React.Component {
           ]}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col">
-              <h1 className="h2 margin-md-bottom">Impressum</h1>
+              <h1 className="h1 margin-md-bottom">Impressum</h1>
 
               <p>
                 Cofinpro AG
@@ -89,20 +89,15 @@ class Impressum extends React.Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="container margin-20-top">
           <div className="row">
             <div className="col">
-              <ExternalLinkButton
+              <LinkButton
                 text="Datenschutz"
-                _href="https://cofinpro.de/datenschutz/"
-                _target="_blank"
-                styleLink="margin-sm-right"
+                path="/datenschutz"
+                styleSpan="margin-sm-right"
               />
-              <ExternalLinkButton
-                text="AGB/Disclaimer"
-                _href="https://cofinpro.de/agb/"
-                _target="_blank"
-              />
+              <LinkButton text="AGB/Disclaimer" path="/agb" />
             </div>
           </div>
         </div>

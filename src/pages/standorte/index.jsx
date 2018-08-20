@@ -47,7 +47,7 @@ class Standorte extends React.Component {
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12">
-              <h1 className="h2">STANDORTE</h1>
+              <h1 className="h1">STANDORTE</h1>
             </div>
           </div>
           <div className="row margin-40-top">
