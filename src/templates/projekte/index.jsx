@@ -66,7 +66,7 @@ class ProjekteUebersicht extends React.Component {
                             overlayElement={
                               <div>
                                 <ContentfulMarkdownText
-                                  text={'### ' + item.ueberschrift}
+                                  text={'## ' + item.ueberschrift}
                                   styleClasses="h4 text-md-1rem"
                                 />
                                 {item.unterueberschrift !== undefined && (
@@ -98,8 +98,7 @@ class ProjekteUebersicht extends React.Component {
                                 <div>
                                   <ContentfulMarkdownText
                                     text={
-                                      '### ' +
-                                      props.projects[i + 1].ueberschrift
+                                      '## ' + props.projects[i + 1].ueberschrift
                                     }
                                     styleClasses="h4 text-md-1rem"
                                   />
