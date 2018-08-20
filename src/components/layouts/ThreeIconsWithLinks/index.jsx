@@ -37,8 +37,8 @@ class ThreeIconsWithLinks extends React.Component {
                 sourceType={SOURCE_TYP_SHARP}
                 styleClasses="padding-20 icons"
               />
+              <p className="h5 padding-sm-top text-dark">{titleLeft}</p>
             </GatsbyLink>
-            <p className="h5 padding-sm-top">{titleLeft}</p>
           </div>
           <div className="col-4">
             <GatsbyLink to={linkMiddle}>
@@ -47,8 +47,8 @@ class ThreeIconsWithLinks extends React.Component {
                 sourceType={SOURCE_TYP_SHARP}
                 styleClasses="padding-20 icons"
               />
+              <p className="h5 padding-sm-top text-dark">{titleMiddle}</p>
             </GatsbyLink>
-            <p className="h5 padding-sm-top">{titleMiddle}</p>
           </div>
           <div className="col-4">
             <GatsbyLink to={linkRight}>
@@ -57,8 +57,8 @@ class ThreeIconsWithLinks extends React.Component {
                 sourceType={SOURCE_TYP_SHARP}
                 styleClasses="padding-20 icons"
               />
+              <p className="h5 padding-sm-top text-dark">{titleRight}</p>
             </GatsbyLink>
-            <p className="h5 padding-sm-top">{titleRight}</p>
           </div>
         </div>
       </div>
