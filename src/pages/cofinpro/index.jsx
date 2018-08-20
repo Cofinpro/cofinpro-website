@@ -20,9 +20,18 @@ class Startseite extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    console.log('PROPS: ' + JSON.stringify(this.props.data))
     const graphQlResult = this.props.data.contentfulBausteinCofinproFakten
     const graphQlResultCofinpro = this.props.data.contentfulSeiteCofinpro
+    const graphQlResultDownloads = this.props.data.contentfulDownloadEinteilung
+      .downloads
+
+    const downloads = graphQlResultDownloads.map(download => {
+      return {
+        href: `/pdf/contentful/${download.datei.id}.pdf`,
+        title: download.beschriftungDesDownloads,
+        image: download.bild,
+      }
+    })
 
     let seoTitle =
       'Über Cofinpro - Was tun wir, wie arbeiten wir und was macht uns aus?'
@@ -62,10 +71,13 @@ class Startseite extends React.Component {
           styleClass="margin-100-top"
           iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft="Managementberatung"
+          linkLeft={'beratungsfelder/management'}
           iconMiddle={this.props.data.iconVorteilMitteSharp}
           titleMiddle="Fachberatungext"
+          linkMiddle={'beratungsfelder/fach'}
           iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight="Technologieberatung"
+          linkRight={'beratungsfelder/technologie'}
         />
 
         <div className="container margin-120-top margin-xs-80-top">
@@ -218,7 +230,7 @@ class Startseite extends React.Component {
                   <h3 className="h3 d-block d-md-none">WIR UNTERSTÜTZEN</h3>
                 </div>
                 {graphQlResultCofinpro.unterstuetzen.map((image, index) => (
-                  <div className="col-12">
+                  <div key={index} className="col-12">
                     <div className="row">
                       <div key={index} className="col-8 col-lg-6 margin-20-top">
                         <ImageWrapper
@@ -244,6 +256,7 @@ class Startseite extends React.Component {
         <DownloadPreviewTextAndImageLayout
           style={{ container: 'margin-40-top margin-xs-0-top' }}
           content={{ showButton: true }}
+          downloads={downloads}
         />
       </div>
     )
@@ -358,15 +371,17 @@ export const pageQuery = graphql`
         id
         bild {
           id
-        }
-        beschriftungDesDownloads
-        datei {
-          id
+          title
+          description
           file {
             url
             fileName
             contentType
           }
+        }
+        beschriftungDesDownloads
+        datei {
+          id
         }
       }
     }

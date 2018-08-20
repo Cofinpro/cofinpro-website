@@ -2,6 +2,8 @@ import React from 'react'
 
 import { ImageWrapper, SOURCE_TYP_SHARP } from '../../images/ImageWrapper'
 
+import GatsbyLink from 'gatsby-link'
+
 import './style.scss'
 
 class ThreeIconsWithLinks extends React.Component {
@@ -10,10 +12,13 @@ class ThreeIconsWithLinks extends React.Component {
       styleClass,
       iconLeft,
       titleLeft,
+      linkLeft,
       iconMiddle,
       titleMiddle,
+      linkMiddle,
       iconRight,
       titleRight,
+      linkRight,
     } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -26,27 +31,33 @@ class ThreeIconsWithLinks extends React.Component {
       >
         <div className="row text-center">
           <div className="col-4">
-            <ImageWrapper
-              source={iconLeft}
-              sourceType={SOURCE_TYP_SHARP}
-              styleClasses="padding-20 icons"
-            />
+            <GatsbyLink to={linkLeft}>
+              <ImageWrapper
+                source={iconLeft}
+                sourceType={SOURCE_TYP_SHARP}
+                styleClasses="padding-20 icons"
+              />
+            </GatsbyLink>
             <p className="h5 padding-sm-top">{titleLeft}</p>
           </div>
           <div className="col-4">
-            <ImageWrapper
-              source={iconMiddle}
-              sourceType={SOURCE_TYP_SHARP}
-              styleClasses="padding-20 icons"
-            />
+            <GatsbyLink to={linkMiddle}>
+              <ImageWrapper
+                source={iconMiddle}
+                sourceType={SOURCE_TYP_SHARP}
+                styleClasses="padding-20 icons"
+              />
+            </GatsbyLink>
             <p className="h5 padding-sm-top">{titleMiddle}</p>
           </div>
           <div className="col-4">
-            <ImageWrapper
-              source={iconRight}
-              sourceType={SOURCE_TYP_SHARP}
-              styleClasses="padding-20 icons"
-            />
+            <GatsbyLink to={linkRight}>
+              <ImageWrapper
+                source={iconRight}
+                sourceType={SOURCE_TYP_SHARP}
+                styleClasses="padding-20 icons"
+              />
+            </GatsbyLink>
             <p className="h5 padding-sm-top">{titleRight}</p>
           </div>
         </div>

@@ -1,32 +1,30 @@
 import React from 'react'
-import Link from 'gatsby-link'
-
-import LinkButton from '../../components/buttons/LinkButton'
-import MobileToggleWithButton from '../../components/buttons/MobileToggleWithButton'
 
 import LayoutDownloads from './LayoutDownloads'
-import LayoutDownloadRow from './LayoutDownloadRow'
 import LayoutVeroeffentlichungen from './LayoutVeroeffentlichungen'
 import LayoutPressemeldungen from './LayoutPressemeldungen'
 
 import DownloadPreviewTextAndImageLayout from '../../components/layouts/DownloadPreviewTextAndImageLayout'
-
 import NavigationBeratungsfelder from '../../components/navigation/NavigationBeratungsfelder'
-
 import HtmlHeader from '../../components/HtmlHeader'
-
 import PageIntroText from '../../components/text/PageIntroText'
 import PresseKontakt from '../../components/PresseKontakt'
-
-import {
-  ImageWrapper,
-  SOURCE_TYP_SHARP,
-} from '../../components/images/ImageWrapper'
 
 import './style.scss'
 
 class NewsMedienUebersichtTemplate extends React.Component {
   render() {
+    const graphQlResultDownloads = this.props.data.contentfulDownloadEinteilung
+      .downloads
+
+    const downloads = graphQlResultDownloads.map(download => {
+      return {
+        href: `/pdf/contentful/${download.datei.id}.pdf`,
+        title: download.beschriftungDesDownloads,
+        image: download.bild,
+      }
+    })
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -271,6 +269,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <DownloadPreviewTextAndImageLayout
           style={{ container: 'margin-40-top margin-xs-0-top' }}
           content={{ showButton: false }}
+          downloads={downloads}
         />
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
@@ -390,6 +389,27 @@ export const pageQuery = graphql`
     ) {
       sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
+      }
+    }
+    contentfulDownloadEinteilung(id: { regex: "/c73AnGMvKTKcYcw08iKYse/" }) {
+      id
+      titel
+      downloads {
+        id
+        bild {
+          id
+          title
+          description
+          file {
+            url
+            fileName
+            contentType
+          }
+        }
+        beschriftungDesDownloads
+        datei {
+          id
+        }
       }
     }
   }

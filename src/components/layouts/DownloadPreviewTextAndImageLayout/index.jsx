@@ -1,16 +1,19 @@
 import React from 'react'
 
-import { ImageWrapper, SOURCE_TYP_PLACEHOLDER } from '../../images/ImageWrapper'
+import { ImageWrapper, SOURCE_TYP_CONTENTFUL } from '../../images/ImageWrapper'
 
 import LinkButton from '../../buttons/LinkButton'
 import DownloadButton from '../../buttons/DownloadButton'
 
 class DownloadPreviewTextAndImageLayout extends React.Component {
   render() {
-    const { content, style } = this.props
+    const { content, style, downloads } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    if (downloads === undefined || downloads === null || downloads.length < 1)
+      return null
 
     return (
       <div className={'container ' + style.container}>
@@ -19,22 +22,18 @@ class DownloadPreviewTextAndImageLayout extends React.Component {
             <div className="row">
               <div className="col-12 col-md-5 col-lg-3">
                 <ImageWrapper
-                  sourceType={SOURCE_TYP_PLACEHOLDER}
-                  source={{
-                    width: 210,
-                    height: 287,
-                  }}
+                  sourceType={SOURCE_TYP_CONTENTFUL}
+                  source={downloads[0].image}
                 />
               </div>
               <div className="col-12 col-md-1 col-lg-3" />
               <div className="col-12 col-md-5 col-lg-3">
-                <ImageWrapper
-                  sourceType={SOURCE_TYP_PLACEHOLDER}
-                  source={{
-                    width: 210,
-                    height: 287,
-                  }}
-                />
+                {downloads.length > 1 && (
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_CONTENTFUL}
+                    source={downloads[1].image}
+                  />
+                )}
               </div>
               <div className="col-12 col-md-1 col-lg-3" />
             </div>
@@ -43,14 +42,18 @@ class DownloadPreviewTextAndImageLayout extends React.Component {
             <div className="row">
               <div className="col-12 col-md-5 col-lg-3">
                 <DownloadButton
-                  text={'Karrieremagazin Ausgabe #1  \n Schubidu statt Mimimi'}
+                  _href={downloads[0].href}
+                  text={downloads[0].title}
                 />
               </div>
               <div className="col-12 col-md-1 col-lg-3" />
               <div className="col-12 col-md-5 col-lg-3">
-                <DownloadButton
-                  text={'Karrieremagazin Ausgabe #1  \n Schubidu statt Mimimi'}
-                />
+                {downloads.length > 1 && (
+                  <DownloadButton
+                    _href={downloads[1].href}
+                    text={downloads[1].title}
+                  />
+                )}
               </div>
               <div className="col-12 col-md-1 col-lg-3" />
             </div>
