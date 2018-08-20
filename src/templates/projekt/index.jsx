@@ -127,12 +127,6 @@ export const pageQuery = graphql`
     contentfulProjekt(id: { eq: $id }) {
       id
       relevanteBeratungsfelder
-      relevanteFokusthemen {
-        id
-        url
-        uberschriftGanzOben
-        unterueberschrift
-      }
       urlDerSeite
       ueberschrift
       unterueberschrift
