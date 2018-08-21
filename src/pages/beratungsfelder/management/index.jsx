@@ -185,7 +185,9 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    managementMatrixSharp: imageSharp(id: { regex: "/ManagementMatrix/" }) {
+    managementMatrixSharp: imageSharp(
+      id: { regex: "/Management-Beratungsmatrix/" }
+    ) {
       sizes(quality: 80) {
         ...GatsbyImageSharpSizes
       }
