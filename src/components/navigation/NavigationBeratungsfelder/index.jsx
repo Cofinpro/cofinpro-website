@@ -10,7 +10,7 @@ class NavigationBeratungsfelder extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const listItems = [
-      { text: 'Management', path: 'managementberatung' },
+      { text: 'Managementberatung', path: 'managementberatung' },
       { text: 'Fachberatung Kredit', path: 'fachberatung-kredit' },
       { text: 'Fachberatung Wertpapier', path: 'fachberatung-wertpapier' },
       { text: 'Technologieberatung', path: 'technologieberatung' },
