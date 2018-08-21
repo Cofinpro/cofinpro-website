@@ -10,7 +10,7 @@ class FokusThemenSmallLayout extends React.Component {
 
     return (
       <div>
-        <div className="container margin-120-top margin-xs-40-top">
+        <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-md-6">
               <h2 className="h2">{header}</h2>

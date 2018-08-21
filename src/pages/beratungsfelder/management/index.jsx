@@ -93,15 +93,8 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
           </div>
         </div>
-        <FokusThemenSmallLayout
-          header={'Wettbewerb nutzen um im Wettbewerb zu bleiben'}
-          text={
-            'Wir führen Auswahlverfahren durch und nehmen wir es gut und gerne in die Hand mit objektiven, nachhaltigen Entscheidungsgrundlagen, die Effizienz unserer Kunden entscheidend zu steigern.'
-          }
-          fokusthemen={fokusthemen}
-        />
-        <div className="container">
-          <div className="row margin-80-top">
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
             <div className="col-md-6">
               <h2 className="h2">Die Zukunft wird gut </h2>
               <p>
@@ -120,6 +113,13 @@ class BeratungsfelderManagementTemplate extends React.Component {
             </div>
           </div>
         </div>
+        <FokusThemenSmallLayout
+          header={'Wettbewerb nutzen um im Wettbewerb zu bleiben'}
+          text={
+            'Wir führen Auswahlverfahren durch und nehmen wir es gut und gerne in die Hand mit objektiven, nachhaltigen Entscheidungsgrundlagen, die Effizienz unserer Kunden entscheidend zu steigern.'
+          }
+          fokusthemen={fokusthemen}
+        />
         <div className="margin-120-top margin-xs-40-top">
           <ReferenzAndDownload
             content={{
