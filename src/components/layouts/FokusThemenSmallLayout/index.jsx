@@ -54,11 +54,11 @@ class FokusThemenSmallLayout extends React.Component {
                 {fokusthemen.length > 3 && (
                   <div className="margin-40-top margin-xs-20-top">
                     <FokusthemaPreview
-                      url={fokusthemen[4].url}
-                      header={fokusthemen[4].uberschriftGanzOben}
-                      subheader={fokusthemen[4].unterueberschrift}
+                      url={fokusthemen[3].url}
+                      header={fokusthemen[3].uberschriftGanzOben}
+                      subheader={fokusthemen[3].unterueberschrift}
                       color={'--grey-blue'}
-                      icon={fokusthemen[4].icon}
+                      icon={fokusthemen[3].icon}
                     />
                   </div>
                 )}

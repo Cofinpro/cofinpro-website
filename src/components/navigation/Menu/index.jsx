@@ -79,6 +79,11 @@ class Menu extends React.Component {
         pattern: '/fokusthemen.*',
       },
       {
+        name: 'DIGITALISIERUNG',
+        link: '/digitalisierung',
+        pattern: '/digitalisierung',
+      },
+      {
         name: 'PROJEKTE',
         link: '/projekte/managementberatung',
         pattern: '/projekte.*',

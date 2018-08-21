@@ -197,7 +197,7 @@ class Startseite extends React.Component {
         </div>
 
         <ThreeIconsWithLinks
-          styleClass="margin-80-top"
+          styleClass="d-none d-md-block margin-80-top"
           iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft="Managementberatung"
           linkLeft={'/beratungsfelder/management'}

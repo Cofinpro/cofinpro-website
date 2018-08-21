@@ -57,7 +57,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
         </div>
         <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
                 <div className="col-4 col-md-3 col-lg-2">
                   <ImageWrapper
@@ -82,12 +82,11 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-1" />
-            <div className="col-md-4">
-              <RelevanteLinks
+            <div className="col-md-3 col-lg-5">
+              {/*<RelevanteLinks
                 title="relevante fokusthemen"
                 relevanteLinks={relevantFocusFields}
-              />
+              />*/}
             </div>
           </div>
           <div className="row margin-120-top margin-xs-40-top">

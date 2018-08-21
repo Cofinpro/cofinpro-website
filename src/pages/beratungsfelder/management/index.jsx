@@ -62,7 +62,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
         </div>
         <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
                 <div className="col-4 col-md-3 col-lg-2">
                   <ImageWrapper
@@ -85,19 +85,18 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 style={{ container: 'margin-40-top margin-xs-0-top' }}
               />
             </div>
-            <div className="col-md-1" />
-            <div className="col-md-4">
-              <RelevanteLinks
+            <div className="col-12 col-md-3 col-lg-5">
+              {/*<RelevanteLinks
                 title="relevante fokusthemen"
                 relevanteLinks={relevantFocusFields}
-              />
+              />*/}
             </div>
           </div>
         </div>
         <FokusThemenSmallLayout
-          header={'Trends sind unser Ding'}
+          header={'Wettbewerb nutzen um im Wettbewerb zu bleiben'}
           text={
-            'Wir unterstützen unsere Kunden in ihrem Ziel, Digitalisierungsstrategien zu entwickeln, und begleiten sie auf ihrem Weg zur agilen Organisation. Themen, mit denen wir uns im Kontext der Digitalisierung aktuell beschäftigen, sind etwa digitale Transformation, Machine Learning, Unbundling Banks und Blockchain.'
+            'Wir führen Auswahlverfahren durch und nehmen wir es gut und gerne in die Hand mit objektiven, nachhaltigen Entscheidungsgrundlagen, die Effizienz unserer Kunden entscheidend zu steigern.'
           }
           fokusthemen={fokusthemen}
         />

@@ -1,44 +1,24 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-class AGB extends React.Component {
-  getCurrentUrl() {
-    if (typeof window !== 'undefined') {
-      return window.location.href
-    } else {
-      return ''
-    }
-  }
+import HtmlHeader from '../../components/HtmlHeader'
 
+class AGB extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    let seoTitle = 'AGB - Cofinpro'
+    let seoDescription =
+      'AGB/Disclaimer Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der…'
+
     return (
       <div className="min-view-height">
-        <Helmet
-          title="AGB - Cofinpro"
-          link={[
-            {
-              rel: 'canonical',
-              href: this.getCurrentUrl(),
-            },
-          ]}
-          meta={[
-            {
-              name: 'Description',
-              content:
-                'AGB/Disclaimer Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der…',
-            },
-            {
-              property: 'og:title',
-              content: 'AGB - Cofinpro',
-            },
-            {
-              property: 'og:description',
-              content:
-                'AGB/Disclaimer Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der…',
-            },
-          ]}
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
         />
 
         <div className="container padding-20-top padding-xs-20-top">

@@ -134,7 +134,7 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-7">
+            <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
                 <div className="col-6 col-md-4">
                   <ImageWrapper
@@ -153,14 +153,13 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-1" />
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-3 col-lg-5">
               <div className="row">
                 <div className="col-12">
-                  <RelevanteLinks
+                  {/*<RelevanteLinks
                     title="relevante beratungsfelder"
                     relevanteLinks={linksAndNamesForRevelantLinks}
-                  />
+                  />*/}
                 </div>
               </div>
             </div>

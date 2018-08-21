@@ -1,44 +1,24 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-class Datenschutz extends React.Component {
-  getCurrentUrl() {
-    if (typeof window !== 'undefined') {
-      return window.location.href
-    } else {
-      return ''
-    }
-  }
+import HtmlHeader from '../../components/HtmlHeader'
 
+class Datenschutz extends React.Component {
   render() {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    let seoTitle = 'Datenschutz - Cofinpro'
+    let seoDescription =
+      'Datenschutz Datenschutzerklärung Wir freuen uns über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten und Ihrer Privatsphäre bei…'
+
     return (
       <div className="min-view-height">
-        <Helmet
-          title="Datenschutz - Cofinpro"
-          link={[
-            {
-              rel: 'canonical',
-              href: this.getCurrentUrl(),
-            },
-          ]}
-          meta={[
-            {
-              name: 'Description',
-              content:
-                'Datenschutz Datenschutzerklärung Wir freuen uns über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten und Ihrer Privatsphäre bei…',
-            },
-            {
-              property: 'og:title',
-              content: 'Datenschutz - Cofinpro',
-            },
-            {
-              property: 'og:description',
-              content:
-                'Datenschutz Datenschutzerklärung Wir freuen uns über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten und Ihrer Privatsphäre bei…',
-            },
-          ]}
+        <HtmlHeader
+          direktData={{
+            title: seoTitle,
+            description: seoDescription,
+          }}
         />
 
         <div className="container padding-20-top padding-xs-20-top">

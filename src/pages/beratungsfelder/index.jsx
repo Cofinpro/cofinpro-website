@@ -49,7 +49,7 @@ class BeratungsfelderStartseite extends React.Component {
         </div>
 
         <ThreeIconsWithLinks
-          styleClass="margin-100-top"
+          styleClass="d-none d-md-block margin-100-top"
           iconLeft={this.props.data.iconVorteilLinksSharp}
           titleLeft={'Managementberatung'}
           linkLeft={'/beratungsfelder/management'}
