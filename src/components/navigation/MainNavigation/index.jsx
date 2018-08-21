@@ -73,7 +73,7 @@ class MainNavigation extends React.Component {
             <div className="container container-md-full-width">
               <div className="row">
                 <div className="col">
-                  <nav id="cofinpro-nav" className="navbar navbar-expand-xl">
+                  <nav className="cofinpro-nav navbar navbar-expand-xl">
                     <Menu
                       id="desktop-main-menu"
                       location={location}

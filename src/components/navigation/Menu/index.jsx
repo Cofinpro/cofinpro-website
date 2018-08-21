@@ -113,7 +113,6 @@ class Menu extends React.Component {
         <div className="d-block d-xl-none text-secondary margin-20-bottom">
           <p className="h5 d-inline">MENÜ</p>
           <button
-            id="close-button-menu"
             type="button"
             className="close d-inline"
             aria-label="Close"

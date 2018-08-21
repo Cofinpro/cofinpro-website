@@ -89,10 +89,7 @@ class SiteFooter extends React.Component {
                 </div>
                 <div className="row">
                   <div className="col-12 footer-pages-nav">
-                    <ul
-                      id="nav-footer"
-                      className="nav justify-content-center justify-content-md-start text-center text-md-left d-none d-md-flex"
-                    >
+                    <ul className="nav-footer nav justify-content-center justify-content-md-start text-center text-md-left d-none d-md-flex">
                       <li
                         className={
                           location.pathname === '/kontakt'
@@ -252,10 +249,7 @@ class SiteFooter extends React.Component {
 
                 <div className="row padding-footer-links footer-pages-nav">
                   <div className="col">
-                    <ul
-                      id="nav-footer"
-                      className="nav justify-content-center justify-content-md-end text-center text-md-right"
-                    >
+                    <ul className="nav-footer nav justify-content-center justify-content-md-end text-center text-md-right">
                       {locationUpdate.indexOf('/karriere') == 0 && (
                         <li
                           className={
