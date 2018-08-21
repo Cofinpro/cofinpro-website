@@ -79,7 +79,7 @@ class IconImage extends React.Component {
     return (
       <div className={'icon-image ' + style.container}>
         <div className={'icon-image__wrapper position-relative'}>
-          <img src={'/img/filler_fokus.png'} className={'img-fluid'} />
+          <img src={'/img/filler_fokus.png'} className={'img-fluid'} alt="" />
           <div className={'icon-image__icon-wrapper'}>{icon}</div>
           <div
             className={'icon-image__overlay image-overlay-top-left text-dark'}
