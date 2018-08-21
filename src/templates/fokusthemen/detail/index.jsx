@@ -277,7 +277,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 '.',
               button: {
                 text: 'Alle Publikationen zum Thema',
-                path: '/news-medien/managementberatung',
+                path: '/news-medien/alle-beratungsfelder',
               },
             },
           }}

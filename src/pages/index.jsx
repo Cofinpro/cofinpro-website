@@ -254,7 +254,7 @@ class Startseite extends React.Component {
               <LinkButton
                 styleSpan="w-100 w-md-unset"
                 text="NEWS&MEDIEN ÜBERSICHT"
-                path="/news-medien"
+                path="/news-medien/alle-beratungsfelder"
                 {...this.props}
               />
             </div>

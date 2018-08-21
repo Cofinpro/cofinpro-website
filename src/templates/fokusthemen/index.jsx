@@ -49,6 +49,16 @@ class FokusthemenStartseite extends React.Component {
         </div>
 
         <NavigationBeratungsfelder
+          links={[
+            { text: 'Managementberatung', path: '/managementberatung' },
+            { text: 'Fachberatung Kredit', path: '/fachberatung-kredit' },
+            {
+              text: 'Fachberatung Wertpapier',
+              path: '/fachberatung-wertpapier',
+            },
+            { text: 'Technologieberatung', path: '/technologieberatung' },
+            { text: 'Digitalisierung', path: '/digitalisierung' },
+          ]}
           urlPrefix="fokusthemen"
           styleClass="margin-80-top"
           description={

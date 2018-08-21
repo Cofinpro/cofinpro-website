@@ -5,21 +5,15 @@ import './style.scss'
 
 class NavigationBeratungsfelder extends React.Component {
   render() {
-    const { description, styleClass, urlPrefix } = this.props
+    const { links, description, styleClass, urlPrefix } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const listItems = [
-      { text: 'Managementberatung', path: 'managementberatung' },
-      { text: 'Fachberatung Kredit', path: 'fachberatung-kredit' },
-      { text: 'Fachberatung Wertpapier', path: 'fachberatung-wertpapier' },
-      { text: 'Technologieberatung', path: 'technologieberatung' },
-      { text: 'Digitalisierung', path: 'digitalisierung' },
-    ].map((data, i) => (
-      <div key={data.path} className="col-sm text-md-center filter-button">
-        <p>
+    const listItems = links.map((data, i) => (
+      <div key={data.path} className="col-sm text-lg-center filter-button">
+        <p className="text-size-14">
           <Link
-            to={`${pathPrefix}/${urlPrefix}/${data.path}`}
+            to={`${pathPrefix}/${urlPrefix}${data.path}`}
             activeClassName="active"
           >
             {data.text}
@@ -39,11 +33,11 @@ class NavigationBeratungsfelder extends React.Component {
           </div>
         </div>
         <div className={'container'}>
-          <div className="row d-none d-md-flex justify-content-center filter-button-group">
+          <div className="row d-none d-lg-flex justify-content-center filter-button-group">
             {listItems}
           </div>
-          <div className="row d-flex d-md-none justify-content-center">
-            <div className="col-12">
+          <div className="row d-flex d-lg-none">
+            <div className="col-12 col-md-8 col-lg-12">
               <div className="div filter-button-group">{listItems}</div>
             </div>
           </div>

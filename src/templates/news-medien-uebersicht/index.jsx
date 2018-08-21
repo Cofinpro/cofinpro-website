@@ -74,6 +74,20 @@ class NewsMedienUebersichtTemplate extends React.Component {
           <div className="row">
             <div className="col-12">
               <NavigationBeratungsfelder
+                links={[
+                  {
+                    text: 'Alle Beratungsfelder',
+                    path: '/alle-beratungsfelder',
+                  },
+                  { text: 'Managementberatung', path: '/managementberatung' },
+                  { text: 'Fachberatung Kredit', path: '/fachberatung-kredit' },
+                  {
+                    text: 'Fachberatung Wertpapier',
+                    path: '/fachberatung-wertpapier',
+                  },
+                  { text: 'Technologieberatung', path: '/technologieberatung' },
+                  { text: 'Digitalisierung', path: '/digitalisierung' },
+                ]}
                 urlPrefix="news-medien"
                 description={
                   'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren? Wählen Sie selbst. '

@@ -129,6 +129,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
       `./src/templates/news-medien-uebersicht/index.jsx`
     )
 
+    let dataAll = createNewBucket()
     let dataManagementBeratung = createNewBucket()
     let dataFachKreditBeratung = createNewBucket()
     let dataFachWertpapierBeratung = createNewBucket()
@@ -179,6 +180,12 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
       )
     }
 
+    insertBucketItemsToOtherBucket(dataManagementBeratung, dataAll)
+    insertBucketItemsToOtherBucket(dataFachKreditBeratung, dataAll)
+    insertBucketItemsToOtherBucket(dataFachWertpapierBeratung, dataAll)
+    insertBucketItemsToOtherBucket(dataTechnologieBeratung, dataAll)
+    insertBucketItemsToOtherBucket(dataDigitalisierungBeratung, dataAll)
+
     const templatePressemeldungSite = path.resolve(
       `./src/templates/content-max/index.jsx`
     )
@@ -227,6 +234,34 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     }
 
     createPage({
+      path: `/news-medien/alle-beratungsfelder`,
+      component: slash(template),
+      context: {
+        name: 'Alle Beratungsfelder',
+        url: '/alle-beratungsfelder',
+        input: dataAll,
+        siteHeader: 'Hier finden Sie gesammelte Neuigkeiten aus unserem Medienforum: von Fachartikeln über Pressemitteilungen bis zu Studien und Whitepapers.',
+        professionalPublications: 'Unsere Berater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
+        buttonTextProfessionalPublications: 'Alle Fachpublikationen',
+        pressReleases: 'Was wir mit unserer Beratung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
+        medien: 'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+        buttonTextPressRelease: 'Alle Pressemitteilungen',
+        buttonTextStudien: 'Alle Studien',
+        buttonTextThesen: 'Alle Thesenpapiere',
+        buttonTextWhitePaper: 'Alle Whitepapers',
+        buttonTextLösung: 'Alle Lösungsskizzen',
+        content: {
+          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/alle-beratungsfelder',
+          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/alle-beratungsfelder',
+          buttonStudienLink: '/news-medien/archiv/studien/alle-beratungsfelder',
+          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/alle-beratungsfelder',
+          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/alle-beratungsfelder',
+          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/alle-beratungsfelder',
+        },
+      },
+    })
+
+    createPage({
       path: `/news-medien/managementberatung`,
       component: slash(template),
       context: {
@@ -238,7 +273,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         buttonTextProfessionalPublications: 'Alle Fachpublikationen Managementberatung',
         pressReleases: 'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
         medien: 'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen Managementberatung ',
+        buttonTextPressRelease: 'Alle Pressemitteilungen Managementberatung',
         buttonTextStudien: 'Alle Studien Managementberatung',
         buttonTextThesen: 'Alle Thesenpapiere Managementberatung',
         buttonTextWhitePaper: 'Alle Whitepapers Managementberatung',
@@ -269,7 +304,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         pressReleases: 'Welche Wirkung unsere Fachberatung hat, machen wir gerne öffentlich. Hier geht es zur Übersicht über unsere Pressemeldungen zum Schwerpunkt Kredit.',
         medien: 'Was wir in der Fachberatung mit Schwerpunkt Kredit erarbeiten und entwickeln, halten wir in Fachformaten für Sie fest. Hier können Sie sie downloaden.',
         buttonTextPressRelease: 'Alle Pressemitteilungen Fachberatung Kredit',
-        buttonTextStudien: 'Alle Studien Kredit ',
+        buttonTextStudien: 'Alle Studien Kredit',
         buttonTextThesen: 'Alle Thesenpapiere Kredit ',
         buttonTextWhitePaper: 'Alle Whitepapers Kredit ',
         buttonTextLösung: 'Alle Lösungsskizzen Kredit ',
@@ -383,6 +418,15 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
 
     createDownloadsArchivSites(
+      dataAll.studien,
+      'Alle Beratungsfelder',
+      '/news-medien/archiv/studien/alle-beratungsfelder',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+      templateArchiveStudien,
+      createPage
+    )
+    createDownloadsArchivSites(
       dataManagementBeratung.studien,
       'Managementberatung',
       '/news-medien/archiv/studien/managementberatung',
@@ -434,6 +478,15 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
       `./src/templates/archiv/thesenpapiere/index.jsx`
     )
 
+    createDownloadsArchivSites(
+      dataAll.thesenpapiere,
+      'Alle Beratungsfelder',
+      '/news-medien/archiv/thesenpapiere/alle-beratungsfelder',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+      templateArchiveThesenpapiere,
+      createPage
+    )
     createDownloadsArchivSites(
       dataManagementBeratung.thesenpapiere,
       'Managementberatung',
@@ -487,6 +540,15 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
 
     createDownloadsArchivSites(
+      dataAll.whitepapers,
+      'Alle Beratungsfelder',
+      '/news-medien/archiv/whitepapers/alle-beratungsfelder',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+      templateArchiveWhitepapers,
+      createPage
+    )
+    createDownloadsArchivSites(
       dataManagementBeratung.whitepapers,
       'Managementberatung',
       '/news-medien/archiv/whitepapers/managementberatung',
@@ -539,6 +601,15 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
 
     createDownloadsArchivSites(
+      dataAll.loesungsskizzen,
+      'Alle Beratungsfelder',
+      '/news-medien/archiv/loesungsskizzen/alle-beratungsfelder',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+      templateArchiveLoesungsskizzen,
+      createPage
+    )
+    createDownloadsArchivSites(
       dataManagementBeratung.loesungsskizzen,
       'Managementberatung',
       '/news-medien/archiv/loesungsskizzen/managementberatung',
@@ -587,6 +658,14 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     // Veröffentlichungen Archiv
 
     createVeroeffentlichungenArchivSites(
+      dataAll,
+      'Alle Beratungsfelder',
+      '/news-medien/archiv/veroeffentlichungen/alle-beratungsfelder',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Unsere Managementberater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
+      createPage
+    )
+    createVeroeffentlichungenArchivSites(
       dataManagementBeratung,
       'Managementberatung',
       '/news-medien/archiv/veroeffentlichungen/managementberatung',
@@ -629,6 +708,14 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
 
     // Pressemeldungen Archiv
 
+    createPressemeldungenArchivSites(
+      dataAll,
+      'Alle Beratungsfelder',
+      '/news-medien/archiv/pressemeldungen/alle-beratungsfelder',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
+      createPage
+    )
     createPressemeldungenArchivSites(
       dataManagementBeratung,
       'Managementberatung',
@@ -968,5 +1055,57 @@ function createNewBucket() {
       current: [],
       archiv: [],
     },
+  }
+}
+
+function insertBucketItemsToOtherBucket(_from, _to) {
+  for (let i = 0; i < _from.pressemeldungen.current.length; ++i) {
+    _to.pressemeldungen.current.push(_from.pressemeldungen.current[i])
+  }
+  for (let i = 0; i < _from.pressemeldungen.archiv.length; ++i) {
+    _to.pressemeldungen.archiv.push(_from.pressemeldungen.archiv[i])
+  }
+
+  for (let i = 0; i < _from.veroeffentlichungen.all.length; ++i) {
+    _to.veroeffentlichungen.all.push(_from.veroeffentlichungen.all[i])
+  }
+  for (let i = 0; i < _from.veroeffentlichungen.links.length; ++i) {
+    _to.veroeffentlichungen.links.push(_from.veroeffentlichungen.links[i])
+  }
+  for (let i = 0; i < _from.veroeffentlichungen.downloads.length; ++i) {
+    _to.veroeffentlichungen.downloads.push(
+      _from.veroeffentlichungen.downloads[i]
+    )
+  }
+  for (let i = 0; i < _from.veroeffentlichungen.archiv.length; ++i) {
+    _to.veroeffentlichungen.archiv.push(_from.veroeffentlichungen.archiv[i])
+  }
+
+  for (let i = 0; i < _from.studien.current.length; ++i) {
+    _to.studien.current.push(_from.studien.current[i])
+  }
+  for (let i = 0; i < _from.studien.archiv.length; ++i) {
+    _to.studien.archiv.push(_from.studien.archiv[i])
+  }
+
+  for (let i = 0; i < _from.thesenpapiere.current.length; ++i) {
+    _to.thesenpapiere.current.push(_from.thesenpapiere.current[i])
+  }
+  for (let i = 0; i < _from.thesenpapiere.archiv.length; ++i) {
+    _to.thesenpapiere.archiv.push(_from.thesenpapiere.archiv[i])
+  }
+
+  for (let i = 0; i < _from.whitepapers.current.length; ++i) {
+    _to.whitepapers.current.push(_from.whitepapers.current[i])
+  }
+  for (let i = 0; i < _from.whitepapers.archiv.length; ++i) {
+    _to.whitepapers.archiv.push(_from.whitepapers.archiv[i])
+  }
+
+  for (let i = 0; i < _from.loesungsskizzen.current.length; ++i) {
+    _to.loesungsskizzen.current.push(_from.loesungsskizzen.current[i])
+  }
+  for (let i = 0; i < _from.loesungsskizzen.archiv.length; ++i) {
+    _to.loesungsskizzen.archiv.push(_from.loesungsskizzen.archiv[i])
   }
 }

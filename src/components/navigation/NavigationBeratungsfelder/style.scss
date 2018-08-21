@@ -33,6 +33,9 @@ $blue: #a5c5e8;
     @include media-breakpoint-only(sm) {
       margin-bottom: 1rem;
     }
+    @include media-breakpoint-only(md) {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -43,6 +46,9 @@ $blue: #a5c5e8;
         margin-bottom: 0px;
       }
       @include media-breakpoint-only(sm) {
+        margin-bottom: 0px;
+      }
+      @include media-breakpoint-only(md) {
         margin-bottom: 0px;
       }
     }
