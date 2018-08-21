@@ -14,7 +14,7 @@ class PresseKontakt extends React.Component {
           Fanina Karabelnik<br />
           Unternehmenskommunikation<br />
           +49 (0) 69 - 299 20 87 60<br />
-          Marketing@cofinpro.de<br />
+          <a href="mailto:Marketing@cofinpro.de">Marketing@cofinpro.de</a>
         </p>
         <p>
           <span className="h5 bold-font">
@@ -23,7 +23,9 @@ class PresseKontakt extends React.Component {
           <br />
           Claudia Thöring<br />
           +49 (0) 40 - 207 69 69 82<br />
-          Claudia.Thoering@corpnewsmedia.de
+          <a href="mailto:Claudia.Thoering@corpnewsmedia.de">
+            Claudia.Thoering@corpnewsmedia.de
+          </a>
         </p>
       </div>
     )

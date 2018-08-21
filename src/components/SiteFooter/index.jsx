@@ -67,13 +67,15 @@ class SiteFooter extends React.Component {
                 <div className="row">
                   <div className="col-12">
                     <p className="text-center text-md-left text-address margin-5-bottom">
-                      COFINPRO AG
+                      Cofinpro AG
                       <br />
                       Untermainkai 27-28
                       <br />
                       60329 Frankfurt am Main
                       <br />
-                      Tel: +49 (0) 69-2 99 20 87 60
+                      Tel +49 (0) 69 - 299 20 87 60
+                      <br />
+                      Fax +49 (0) 69 - 299 20 87 61
                       <br />
                       E-Mail:{' '}
                       <a
