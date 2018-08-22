@@ -71,5 +71,11 @@ module.exports = {
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`String.prototype.startsWith`],
+      },
+    },
   ],
 }

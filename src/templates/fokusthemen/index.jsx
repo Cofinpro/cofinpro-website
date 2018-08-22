@@ -14,7 +14,7 @@ import {
 
 class FokusthemenStartseite extends React.Component {
   render() {
-    const name = this.props.pathContext.id
+    const name = this.props.pathContext.name
     const url = this.props.pathContext.path
     const header = this.props.pathContext.header
     const description = this.props.pathContext.description

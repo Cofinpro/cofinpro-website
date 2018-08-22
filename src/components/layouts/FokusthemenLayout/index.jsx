@@ -77,7 +77,7 @@ class FokusthemenLayout extends React.Component {
       <div>
         <div className={'container ' + style.container}>
           <div className="row">
-            <div className="col-12 col-md-6 d-flex">
+            <div className="col-12 col-md-6">
               <div className="row">
                 <div className="col-12">
                   <h2 className="h2 margin-20-bottom">{header}</h2>
