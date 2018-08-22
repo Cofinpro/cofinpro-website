@@ -86,7 +86,7 @@ class CarrerOfferCarouselBox extends React.Component {
 
         <div className="row">
           <div className="col text-center">
-            <LinkButton text={buttonText} path="/jobs" />
+            <LinkButton text={buttonText} path="/karriere/jobs" />
           </div>
         </div>
       </div>
