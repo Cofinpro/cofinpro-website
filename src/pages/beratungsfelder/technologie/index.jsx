@@ -63,7 +63,9 @@ class BeratungsfelderTechnologie extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <h1 className="h1 margin-20-top">Technologieberatung</h1>
+                  <h1 className="h1 margin-20-top">
+                    Unsere Technologieberatung
+                  </h1>
                   <h2 className="h2 margin-20-top">
                     Wie sich IT und Zukunft<br />verbinden lassen
                   </h2>
@@ -88,18 +90,23 @@ class BeratungsfelderTechnologie extends React.Component {
         <div className="container">
           <div className="row margin-120-top margin-xs-40-top justify-content-center">
             <div className="col-md-10">
-              <h3 className="h2 text-primary text-center">Headline</h3>
+              <h3 className="h2 text-primary text-center">
+                Wir betrachten die Plattformen <br />unserer Kunden ganzheitlich
+              </h3>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.headlineImageSharp}
+                styleClasses={'margin-30-top'}
               />
             </div>
           </div>
         </div>
         <div className="container">
-          <div className="row margin-60-top">
+          <div className="row margin-120-top">
             <div className="col-md-6">
-              <h2>Zukunft? Bitte hier entlang </h2>
+              <h2>
+                Zukunft? <br />Bitte hier entlang
+              </h2>
             </div>
           </div>
           <div className="row margin justify-content-center">
@@ -160,7 +167,7 @@ class BeratungsfelderTechnologie extends React.Component {
               </p>
             </div>
           </div>
-          <div className="row margin-140-top margin-xs-40-top">
+          <div className="row margin-120-top margin-xs-40-top">
             <div className="col-md-6">
               <h3 className="h3">
                 Unsere Projektleistungen in der Technologieberatung in Kürze
@@ -168,8 +175,9 @@ class BeratungsfelderTechnologie extends React.Component {
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharp}
+                styleClasses={'margin-30-top'}
               />
-              <p className="margin-20-top margin-xs-20-top">
+              <p className="margin-40-top margin-xs-20-top">
                 <ul className="blue-bullet">
                   <li>
                     <b>
@@ -220,7 +228,7 @@ class BeratungsfelderTechnologie extends React.Component {
                   description:
                     'Welche Projekte haben wir im Kontext unserer Fokusthemen schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
                   button: {
-                    text: 'Alle Referenzen zum Thema',
+                    text: 'WEITERE REFERENZEN',
                     path: '/projekte/technologieberatung',
                   },
                 },
@@ -229,7 +237,7 @@ class BeratungsfelderTechnologie extends React.Component {
                   description:
                     'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema finden Sie hier.',
                   button: {
-                    text: 'Alle Publikationen zum Thema',
+                    text: 'WEITERE PUBLIKATIONEN',
                     path: '/news-medien/technologieberatung',
                   },
                 },

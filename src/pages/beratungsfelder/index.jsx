@@ -64,8 +64,7 @@ class BeratungsfelderStartseite extends React.Component {
                 Organisation, begleiten Auswahlverfahren, übernehmen das
                 Programmmanagementaufsatz und verantworten Vorhaben zur
                 Effizienzsteigerung bei führenden Finanzinstituten. Und auch
-                Zukunftsthemen gehören dazu, aktuell digitale Transformation,
-                Machine Learning, Unbundling Banks und Blockchain.
+                Zukunftsthemen gehören dazu.
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"

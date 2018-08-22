@@ -2,7 +2,7 @@ const _ = require('lodash')
 const path = require('path')
 const slash = require('slash')
 
-exports.create = function (graphql, createPage, backgroundImages, callback) {
+exports.create = function(graphql, createPage, backgroundImages, callback) {
   graphql(
     `
       {
@@ -58,7 +58,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA2pink: imageSharp(id: { regex: "/sharp-projekte-a2-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -71,7 +76,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA4grau: imageSharp(id: { regex: "/sharp-projekte-a4_gray/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -84,7 +94,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA6pink: imageSharp(id: { regex: "/sharp-projekte-a6-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -97,7 +112,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA7grau: imageSharp(id: { regex: "/sharp-projekte-a7-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -110,7 +130,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA9grau: imageSharp(id: { regex: "/sharp-projekte-a9-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -123,7 +148,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA10pink: imageSharp(id: { regex: "/sharp-projekte-a10-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -136,7 +166,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA11grau: imageSharp(id: { regex: "/sharp-projekte-a11-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -149,7 +184,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA14grau: imageSharp(id: { regex: "/sharp-projekte-a14-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -162,7 +202,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA15pink: imageSharp(id: { regex: "/sharp-projekte-a15-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -175,7 +220,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA16grau: imageSharp(id: { regex: "/sharp-projekte-a16-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -188,7 +238,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA22pink: imageSharp(id: { regex: "/sharp-projekte-a22-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -201,7 +256,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA24grau: imageSharp(id: { regex: "/sharp-projekte-a24-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -214,7 +274,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA29pink: imageSharp(id: { regex: "/sharp-projekte-a29-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -227,7 +292,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA31grau: imageSharp(id: { regex: "/sharp-projekte-a31-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -240,7 +310,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA34pink: imageSharp(id: { regex: "/sharp-projekte-a34-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -253,7 +328,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA35pink: imageSharp(id: { regex: "/sharp-projekte-a35-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -266,7 +346,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA37pink: imageSharp(id: { regex: "/sharp-projekte-a37-pink/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -279,7 +364,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA39grau: imageSharp(id: { regex: "/sharp-projekte-a39-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -292,7 +382,12 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
           }
         }
         stockA40grau: imageSharp(id: { regex: "/sharp-projekte-a40-grau/" }) {
-          sizes(quality: 100, maxWidth: 2000, maxHeight: 1200, cropFocus: CENTER) {
+          sizes(
+            quality: 100
+            maxWidth: 2000
+            maxHeight: 1200
+            cropFocus: CENTER
+          ) {
             src
             srcSet
             srcWebp
@@ -346,8 +441,11 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
         context: {
           id: 'Managementberatung',
           title: 'Unsere Projekte in der Managementberatung ',
-          description: 'Programmmanagement, Auswahlverfahren, Organisationsentwicklung oder Digitalisierungsstrategien sind nur wenige Stichwörter: Was sich auf diesem Feld bei uns in den vergangenen Jahren getan hat, zeigt unsere Projektauswahl.',
-          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.managementberatung,
+          description:
+            'Auswahlverfahren, Organisationsentwicklung oder Digitalisierungsstrategien sind nur wenige Stichwörter: Was sich auf diesem Feld bei uns in den vergangenen Jahren getan hat, zeigt unsere Projektauswahl.',
+          projects:
+            result.data.allContentfulProjekteZuordnung.edges[0].node
+              .managementberatung,
           stockImages: images,
         },
       })
@@ -359,8 +457,11 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
         context: {
           id: 'Fachberatung-Kredit',
           title: 'Unsere Projekte im Kreditgeschäft',
-          description: 'In den vergangenen Jahren hat sich auf unserem Kerngebiet viel getan: Was genau, zeigen wir hier anhand einer Auswahl unserer Projekte.',
-          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.fachberatungKredit,
+          description:
+            'In den vergangenen Jahren hat sich auf unserem Kerngebiet viel getan: Was genau, zeigen wir hier anhand einer Auswahl unserer Projekte.',
+          projects:
+            result.data.allContentfulProjekteZuordnung.edges[0].node
+              .fachberatungKredit,
           stockImages: images,
         },
       })
@@ -372,8 +473,11 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
         context: {
           id: 'Fachberatung-Wertpapier',
           title: 'Unsere Projekte im Wertpapiergeschäft',
-          description: 'Hier ist in den vergangenen Jahren viel passiert: Was genau wir in unserem Kerngebiet geleistet haben, zeigen wir mit einer exemplarischen Projektauswahl.',
-          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.fachberatungWertpapier,
+          description:
+            'Hier ist in den vergangenen Jahren viel passiert: Was genau wir in unserem Kerngebiet geleistet haben, zeigen wir mit einer exemplarischen Projektauswahl.',
+          projects:
+            result.data.allContentfulProjekteZuordnung.edges[0].node
+              .fachberatungWertpapier,
           stockImages: images,
         },
       })
@@ -385,8 +489,11 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
         context: {
           id: 'Technologieberatung',
           title: 'Unsere Projekte in der Technologieberatung',
-          description: 'Welche technologischen Antworten wir auf die Herausforderungen unserer Kunden haben? Hier finden Sie eine Auswahl exemplarischer Projekte.',
-          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.technologieberatung,
+          description:
+            'Welche technologischen Antworten wir auf die Herausforderungen unserer Kunden haben? Hier finden Sie eine Auswahl exemplarischer Projekte.',
+          projects:
+            result.data.allContentfulProjekteZuordnung.edges[0].node
+              .technologieberatung,
           stockImages: images,
         },
       })
@@ -398,8 +505,11 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
         context: {
           id: 'Digitalisierung',
           title: 'Unsere Projekte im Kontext von Digitalisierung',
-          description: 'Ob Digi-Ramp-up, Innovationslabore oder agile Organisation: Hier finden Sie eine Reihe exemplarischer Projekte aus dem Umfeld der Digitalisierung.',
-          projects: result.data.allContentfulProjekteZuordnung.edges[0].node.digitalisierung,
+          description:
+            'Ob Digi-Ramp-up, Innovationslabore oder agile Organisation: Hier finden Sie eine Reihe exemplarischer Projekte aus dem Umfeld der Digitalisierung.',
+          projects:
+            result.data.allContentfulProjekteZuordnung.edges[0].node
+              .digitalisierung,
           stockImages: images,
         },
       })
@@ -413,22 +523,27 @@ exports.create = function (graphql, createPage, backgroundImages, callback) {
     let indexOfImage = 0
 
     for (let i = 0; i < result.data.allContentfulProjekt.edges.length; ++i) {
-
       createPage({
-          path: `/projekte/${result.data.allContentfulProjekt.edges[i].node.urlDerSeite}`,
-          component: slash(templateDetail),
-          context: {
-            id: result.data.allContentfulProjekt.edges[i].node.id,
-            bigImage: images[indexOfImage],
-          },
-        })
-        ++indexOfImage
+        path: `/projekte/${
+          result.data.allContentfulProjekt.edges[i].node.urlDerSeite
+        }`,
+        component: slash(templateDetail),
+        context: {
+          id: result.data.allContentfulProjekt.edges[i].node.id,
+          bigImage: images[indexOfImage],
+        },
+      })
+      ++indexOfImage
 
       if (indexOfImage === images.length) {
         indexOfImage = 0
       }
 
-      console.log(`created page /projekte/${result.data.allContentfulProjekt.edges[i].node.urlDerSeite}.`)
+      console.log(
+        `created page /projekte/${
+          result.data.allContentfulProjekt.edges[i].node.urlDerSeite
+        }.`
+      )
     }
 
     callback(null)

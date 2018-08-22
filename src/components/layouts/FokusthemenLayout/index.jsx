@@ -245,14 +245,12 @@ class FokusthemenLayout extends React.Component {
                 />
               </div>
               <div className="col-4">
-                <ContentfulMarkdownText
-                  text={
-                    fokusthemen[6].headline !== undefined
-                      ? '„' + fokusthemen[6].headline.headline + '“'
-                      : ''
-                  }
-                  styleClasses="h4 h5-md margin-40-top"
-                />
+                <p className="h4 h5-md margin-40-top">
+                  Mit Teams aus Management-, Fach- und Technologieberatern
+                  unterstützen wir Banken und Kapitalverwaltungsgesellschaften,
+                  damit sie den unterschiedlichsten Herausforderungen gerecht
+                  werden.
+                </p>
               </div>
             </div>
           )}
