@@ -19,6 +19,17 @@ class StartseiteTemplate extends React.Component {
     }
   }
 
+  resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        $('#lottie').empty()
+        $('#intro').remove()
+        $('#introHeader').remove()
+        resolve('resolved')
+      }, 4000)
+    })
+  }
+
   componentDidMount() {
     $('#links-tech').hide()
     $('#links-fach').hide()
@@ -79,25 +90,29 @@ class StartseiteTemplate extends React.Component {
         StorageHelper.getFromSessionStorage('introPlayed') === undefined ||
         StorageHelper.getFromSessionStorage('introPlayed').length === 0
       ) {
-        const pathPrefix =
-          process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
-
         const script2 = document.createElement('script')
 
-        script2.src = pathPrefix + '/js/introHeader.js'
+        var rnd = Math.floor(Math.random() * 80000)
+
+        script2.id = 'introHeader'
+        script2.src = '/js/introHeader.js?r=' + rnd
         script2.async = false
 
         document.body.appendChild(script2)
 
         const script = document.createElement('script')
 
-        script.src = pathPrefix + '/js/intro.js'
+        script.id = 'intro'
+        script.src = '/js/intro.js?r=' + rnd
         script.async = false
 
         document.body.appendChild(script)
 
         StorageHelper.saveInSessionStorage('introPlayed', 'true')
+
+        this.resolveAfter2Seconds()
       } else {
+        $('#lottie').empty()
         $('#lottie').hide()
       }
     }

@@ -1,9 +1,7 @@
-import React from "react"
-
+import React from 'react'
 
 export default class HTML extends React.Component {
   render() {
-
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 

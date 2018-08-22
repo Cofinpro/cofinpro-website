@@ -39,16 +39,15 @@ $blue: #a5c5e8;
   }
 }
 
-
-  .filter-button:last-child > p {
-      margin-bottom: 0px;
-      @include media-breakpoint-only(xs) {
-        margin-bottom: 0px;
-      }
-      @include media-breakpoint-only(sm) {
-        margin-bottom: 0px;
-      }
-      @include media-breakpoint-only(md) {
-        margin-bottom: 0px;
-      }
-    }
+.filter-button:last-child > p {
+  margin-bottom: 0px;
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-bottom: 0px;
+  }
+}

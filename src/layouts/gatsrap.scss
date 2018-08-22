@@ -324,6 +324,27 @@ h6 {
   }
 }
 
+p.h4,
+span.h4,
+div.h4 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h4-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h4-font-size;
+  }
+}
+
 .h5,
 .h5 > h1,
 .h5 > h2,
@@ -350,7 +371,8 @@ h6 {
   }
 }
 
-.h5-md {
+.h5-md,
+p.h5-md {
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
   }
@@ -436,27 +458,6 @@ li.h6 {
   }
   @include media-breakpoint-only(xl) {
     font-size: $h6-font-size;
-  }
-}
-
-p.h4,
-span.h4,
-div.h4 {
-  font-family: apercu-regular-pro;
-  @include media-breakpoint-only(xs) {
-    font-size: $h4-font-size-sm;
-  }
-  @include media-breakpoint-only(sm) {
-    font-size: $h4-font-size-sm;
-  }
-  @include media-breakpoint-only(md) {
-    font-size: $h4-font-size-md;
-  }
-  @include media-breakpoint-only(lg) {
-    font-size: $h4-font-size;
-  }
-  @include media-breakpoint-only(xl) {
-    font-size: $h4-font-size;
   }
 }
 
@@ -1237,6 +1238,7 @@ a.link-button:hover {
   font-size: 16px;
 }
 
+p.text-md-normal,
 .text-md-normal,
 .text-md-normal > p {
   @include media-breakpoint-only(md) {
