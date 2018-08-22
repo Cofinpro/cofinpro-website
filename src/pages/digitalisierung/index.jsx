@@ -167,12 +167,12 @@ export const pageQuery = graphql`
         ...GatsbyImageSharpSizes
       }
     }
-    iconThemeTwoSharp: imageSharp(id: { regex: "/blockchain-color/" }) {
+    iconThemeTwoSharp: imageSharp(id: { regex: "/unbundlingbanks-color/" }) {
       sizes(quality: 70) {
         ...GatsbyImageSharpSizes
       }
     }
-    iconThemeThreeSharp: imageSharp(id: { regex: "/unbundlingbanks-color/" }) {
+    iconThemeThreeSharp: imageSharp(id: { regex: "/blockchain-color/" }) {
       sizes(quality: 70) {
         ...GatsbyImageSharpSizes
       }
