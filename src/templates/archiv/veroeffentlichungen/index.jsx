@@ -29,7 +29,7 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
       this.props.data.pressemeldungFourSharp,
     ]
 
-    let seoTitel = 'Veröffentlichungen Archiv - ' + name
+    let seoTitel = 'Fachpublikationen Archiv - ' + name
     let seoDescription = siteDescription
 
     return (
@@ -83,7 +83,7 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">{'Veröffentlichungen'}</h2>
+              <h2 className="h2">{'Fachpublikationen'}</h2>
               <p>{sectionDescription}</p>
             </div>
             <div className="col-12 col-md-6" />

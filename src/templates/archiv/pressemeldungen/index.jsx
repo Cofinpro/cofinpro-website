@@ -29,7 +29,7 @@ class PressemeldungArchivTemplate extends React.Component {
       this.props.data.veroeffentlichungenFourSharp,
     ]
 
-    let seoTitel = 'Pressemeldungen Archiv - ' + name
+    let seoTitel = 'Pressemitteilungen Archiv - ' + name
     let seoDescription = siteDescription
 
     return (
@@ -83,7 +83,7 @@ class PressemeldungArchivTemplate extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">{'Pressemeldungen'}</h2>
+              <h2 className="h2">{'Pressemitteilungen'}</h2>
               <p>{sectionDescription}</p>
             </div>
             <div className="col-12 col-md-6" />
@@ -116,8 +116,8 @@ class PressemeldungArchivTemplate extends React.Component {
               </div>
               <LayoutPressemeldungen
                 content={{
-                  id: 'pressemeldungen-' + i,
-                  header: 'Pressemeldungen',
+                  id: 'pressemitteilungen-' + i,
+                  header: 'Pressemitteilungen',
                   images: i % 2 === 0 ? firstSetOfImages : secondSetOfImages,
                   description: sectionDescription,
                   elements: input[key],

@@ -253,11 +253,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Was wir mit unserer Beratung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
         medien:
           'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen',
-        buttonTextStudien: 'Alle Studien',
-        buttonTextThesen: 'Alle Thesenpapiere',
-        buttonTextWhitePaper: 'Alle Whitepapers',
-        buttonTextLösung: 'Alle Lösungsskizzen',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen',
+        buttonTextStudien: 'Archiv Studien',
+        buttonTextThesen: 'Archiv Thesenpapiere',
+        buttonTextWhitePaper: 'Archiv Whitepapers',
+        buttonTextLösung: 'Archiv Lösungsskizzen',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/alle-beratungsfelder',
@@ -291,11 +291,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
         medien:
           'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen Managementberatung',
-        buttonTextStudien: 'Alle Studien Managementberatung',
-        buttonTextThesen: 'Alle Thesenpapiere Managementberatung',
-        buttonTextWhitePaper: 'Alle Whitepapers Managementberatung',
-        buttonTextLösung: 'Alle Lösungsskizzen Managementberatung',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Managementberatung',
+        buttonTextStudien: 'Archiv Studien Managementberatung',
+        buttonTextThesen: 'Archiv Thesenpapiere Managementberatung',
+        buttonTextWhitePaper: 'Archiv Whitepapers Managementberatung',
+        buttonTextLösung: 'Archiv Lösungsskizzen Managementberatung',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/managementberatung',
@@ -331,11 +331,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Welche Wirkung unsere Fachberatung hat, machen wir gerne öffentlich. Hier geht es zur Übersicht über unsere Pressemeldungen zum Schwerpunkt Kredit.',
         medien:
           'Was wir in der Fachberatung mit Schwerpunkt Kredit erarbeiten und entwickeln, halten wir in Fachformaten für Sie fest. Hier können Sie sie downloaden.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen Fachberatung Kredit',
-        buttonTextStudien: 'Alle Studien Kredit',
-        buttonTextThesen: 'Alle Thesenpapiere Kredit ',
-        buttonTextWhitePaper: 'Alle Whitepapers Kredit ',
-        buttonTextLösung: 'Alle Lösungsskizzen Kredit ',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Kredit',
+        buttonTextStudien: 'Archiv Studien Kredit',
+        buttonTextThesen: 'Archiv Thesenpapiere Kredit',
+        buttonTextWhitePaper: 'Archiv Whitepapers Kredit',
+        buttonTextLösung: 'Archiv Lösungsskizzen Kredit',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/fachberatung-kredit',
@@ -371,12 +371,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Was wir mit unserer Fachberatung erreichen, teilen wir gerne öffentlich. Hier finden Sie eine Übersicht über unsere Pressemeldungen zum Schwerpunkt Wertpapier.',
         medien:
           'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
-        buttonTextPressRelease:
-          'Alle Pressemitteilungen Fachberatung Wertpapier',
-        buttonTextStudien: 'Alle Studien Wertpapier',
-        buttonTextThesen: 'Alle Thesenpapiere Wertpapier',
-        buttonTextWhitePaper: 'Alle Whitepapers Wertpapier ',
-        buttonTextLösung: 'Alle Lösungsskizzen Wertpapier',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Wertpapier',
+        buttonTextStudien: 'Archiv Studien Wertpapier',
+        buttonTextThesen: 'Archiv Thesenpapiere Wertpapier',
+        buttonTextWhitePaper: 'Archiv Whitepapers Wertpapier ',
+        buttonTextLösung: 'Archiv Lösungsskizzen Wertpapier',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/fachberatung-wertpapier',
@@ -413,11 +412,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Was wir mit unserer Expertise erreichen, teilen wir gerne mit der Presse. Hier finden Sie unsere Meldungen rund um Technologieberatung.',
         medien:
           'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen Technologieberatung',
-        buttonTextStudien: 'Alle Studien Technologieberatung',
-        buttonTextThesen: 'Alle Thesenpapiere Technologieberatung ',
-        buttonTextWhitePaper: 'Alle Whitepapers Technologieberatung ',
-        buttonTextLösung: 'Alle Lösungsskizzen Technologieberatung ',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Technologieberatung',
+        buttonTextStudien: 'Archiv Studien Technologieberatung',
+        buttonTextThesen: 'Archiv Thesenpapiere Technologieberatung ',
+        buttonTextWhitePaper: 'Archiv Whitepapers Technologieberatung ',
+        buttonTextLösung: 'Archiv Lösungsskizzen Technologieberatung ',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/technologieberatung',
@@ -453,11 +452,11 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
         medien:
           'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen Digitalisierung',
-        buttonTextStudien: 'Alle Studien Digitalisierung',
-        buttonTextThesen: 'Alle Thesenpapiere Digitalisierung ',
-        buttonTextWhitePaper: 'Alle Whitepapers Digitalisierung',
-        buttonTextLösung: 'Alle Lösungsskizzen Digitalisierung ',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Digitalisierung',
+        buttonTextStudien: 'Archiv Studien Digitalisierung',
+        buttonTextThesen: 'Archiv Thesenpapiere Digitalisierung ',
+        buttonTextWhitePaper: 'Archiv Whitepapers Digitalisierung',
+        buttonTextLösung: 'Archiv Lösungsskizzen Digitalisierung ',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/digitalisierung',
