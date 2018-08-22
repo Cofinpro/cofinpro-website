@@ -248,7 +248,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Hier finden Sie gesammelte Neuigkeiten aus unserem Medienforum: von Fachartikeln über Pressemitteilungen bis zu Studien und Whitepapers.',
         professionalPublications:
           'Unsere Berater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
-        buttonTextProfessionalPublications: 'Alle Fachpublikationen',
+        buttonTextProfessionalPublications: 'Archiv Fachpublikationen',
         pressReleases:
           'Was wir mit unserer Beratung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
         medien:
@@ -286,7 +286,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
         professionalPublications:
           'Unsere Managementberater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
         buttonTextProfessionalPublications:
-          'Alle Fachpublikationen Managementberatung',
+          'Archiv Fachpublikationen Managementberatung',
         pressReleases:
           'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
         medien:
