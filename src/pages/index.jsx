@@ -202,7 +202,7 @@ class Startseite extends React.Component {
           titleLeft="Managementberatung"
           linkLeft={'/beratungsfelder/management'}
           iconMiddle={this.props.data.iconVorteilMitteSharp}
-          titleMiddle="Fachberatungext"
+          titleMiddle="Fachberatung"
           linkMiddle={'/beratungsfelder/fach'}
           iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight="Technologieberatung"
