@@ -966,10 +966,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-top: 100px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-top: 100px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-top: 100px;
   }
 }
@@ -978,10 +978,10 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-top: 80px;
   }
-  @include media-breakpoint-only(lg) {
+  @include media-breakpoint-only(sm) {
     margin-top: 80px;
   }
-  @include media-breakpoint-only(xl) {
+  @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
 }
@@ -1127,8 +1127,6 @@ a:hover {
 .padding-20-bottom {
   padding-bottom: 20px;
 }
-
-
 
 .padding-xs-20-top {
   @include media-breakpoint-only(xs) {
@@ -1355,4 +1353,8 @@ svg image[href$='img_20.jpg'] {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.not-visible {
+  visibility: hidden;
 }

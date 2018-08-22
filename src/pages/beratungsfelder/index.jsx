@@ -48,19 +48,6 @@ class BeratungsfelderStartseite extends React.Component {
           </div>
         </div>
 
-        <ThreeIconsWithLinks
-          styleClass="d-none d-md-block margin-100-top"
-          iconLeft={this.props.data.iconVorteilLinksSharp}
-          titleLeft={'Managementberatung'}
-          linkLeft={'/beratungsfelder/management'}
-          iconMiddle={this.props.data.iconVorteilMitteSharp}
-          titleMiddle={'Fachberatung'}
-          linkMiddle={'/beratungsfelder/fach'}
-          iconRight={this.props.data.iconVorteilRechtsSharp}
-          titleRight={'Technologieberatung'}
-          linkRight={'/beratungsfelder/technologie'}
-        />
-
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
@@ -81,8 +68,8 @@ class BeratungsfelderStartseite extends React.Component {
                 Machine Learning, Unbundling Banks und Blockchain.
               </p>
               <LinkButton
-                styleSpan="w-100 w-md-unset"
-                text={buttonLinkText}
+                styleSpan="w-100 w-md-unset margin-10-top"
+                text={'ZUR MANAGEMENTBERATUNG'}
                 path="/beratungsfelder/management"
               />
             </div>
@@ -104,13 +91,13 @@ class BeratungsfelderStartseite extends React.Component {
                 navigieren wir unsere Kunden durch die Herausforderungen von
                 Digitalisierung, neuen Marktanforderungen und Regulatorik und
                 konzipieren nutzenoptimierte Prozesse und Lösungen.<br />
-                <p />
+                <br />
                 &#8594; Kredit <br />
                 &#8594; Wertpapier
               </p>
               <LinkButton
-                styleSpan="w-100 w-md-unset"
-                text={buttonLinkText}
+                styleSpan="w-100 w-md-unset margin-10-top"
+                text={'ZUR FACHBERATUNG'}
                 path="/beratungsfelder/fach"
               />
             </div>
@@ -141,8 +128,8 @@ class BeratungsfelderStartseite extends React.Component {
                 die Innovation, von der Konzeption bis zur Praxis.
               </p>
               <LinkButton
-                styleSpan="w-100 w-md-unset"
-                text={buttonLinkText}
+                styleSpan="w-100 w-md-unset margin-10-top"
+                text={'ZUR TECHNOLOGIEBERATUNG'}
                 path="/beratungsfelder/technologie"
               />
             </div>

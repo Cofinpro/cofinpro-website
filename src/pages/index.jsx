@@ -182,13 +182,13 @@ class Startseite extends React.Component {
                 }}
               />
               <LinkButton
-                styleLink="d-inline d-md-none margin-20-top"
+                styleLink="d-inline d-md-none margin-10-top"
                 styleSpan="w-100"
                 text="BERATUNGSFELDER ÜBERSICHT"
                 path="/beratungsfelder"
               />
               <LinkButton
-                styleSpan="w-100 w-md-unset margin-20-top"
+                styleSpan="w-100 w-md-unset margin-10-top"
                 text="MEHR ÜBER COFINPRO"
                 path="/cofinpro"
               />
@@ -232,7 +232,7 @@ class Startseite extends React.Component {
                 />
               )}
             </div>
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-6 margin-xs-20-top">
               {medien.length > 1 && (
                 <NewsMedienPreview
                   content={{
@@ -249,11 +249,11 @@ class Startseite extends React.Component {
               )}
             </div>
           </div>
-          <div className="row">
+          <div className="row margin-20-top">
             <div className="col-12 col-md-12">
               <LinkButton
                 styleSpan="w-100 w-md-unset"
-                text="NEWS&MEDIEN ÜBERSICHT"
+                text="MEDIENFORUM ÜBERSICHT"
                 path="/news-medien/alle-beratungsfelder"
                 {...this.props}
               />

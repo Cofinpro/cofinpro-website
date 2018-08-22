@@ -285,7 +285,7 @@ class FokusthemenLayout extends React.Component {
                   {fokusthemen.length >= 10 && (
                     <div className="row">
                       <div className="col-4" />
-                      <div className="col-8 margin-40-top margin-120-bottom margin-md-20-top margin-md-0-bottom">
+                      <div className="col-8 margin-40-top margin-0-bottom margin-md-20-top margin-md-0-bottom">
                         <FokusthemaPreview
                           url={fokusthemen[9].url}
                           header={fokusthemen[9].uberschriftGanzOben}

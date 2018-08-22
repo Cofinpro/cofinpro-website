@@ -72,7 +72,11 @@ class NewsMedienPreview extends React.Component {
           </p>
         </div>
         <div className="col-12">
-          <ContentfulMarkdownText text={content.intro} {...this.props} />
+          <Link to={content.url} className="text-dark">
+            {content.intro}
+            {'... '}
+          </Link>
+          <Link to={content.url}>></Link>
         </div>
       </div>
     )

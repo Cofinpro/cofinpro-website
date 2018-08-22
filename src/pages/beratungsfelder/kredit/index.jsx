@@ -57,7 +57,7 @@ class BeratungsfelderKredit extends React.Component {
           <div className="row">
             <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
-                <div className="col-4 col-md-3 col-lg-2">
+                <div className="col-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
@@ -91,7 +91,7 @@ class BeratungsfelderKredit extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container margin-140-top margin-xs-60-top">
+        <div className="container margin-120-top margin-xs-60-top">
           <div className="row">
             <div className="col-md-6">
               <h2 className="h2">Im Wettbewerb bestehen</h2>
@@ -112,12 +112,13 @@ class BeratungsfelderKredit extends React.Component {
           </div>
         </div>
         <div className="container ">
-          <div className="row margin-140-top d-none d-md-block">
+          <div className="row margin-120-top d-none d-md-block">
             <div className="col-12">
               <h2 className="h2 text-primary text-center">Kreditprozess</h2>
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharp}
+                styleClasses={'margin-30-top'}
               />
             </div>
           </div>
@@ -145,13 +146,16 @@ class BeratungsfelderKredit extends React.Component {
                 wir die zu Ihnen passenden Konzepte, effiziente Prozesse und
                 agile IT-Lösungen entwickeln. So lassen sich Kosten senken, und
                 Sie können auf die Regularien und Marktanforderungen flexibel
-                reagieren. In den Themen Vertrieb, Antrags- und
-                Bestandsprozesse, Reporting und Meldewesen bringen wir unsere
-                Expertise in den Produktfeldern Konsumentenkredit,
-                Immobilienfinanzierung und Gewerbe- und Firmenkundenkredite ein,
-                aber auch jede Menge Einblicke in aktuelle Regulierungen. Und
-                natürlich sorgen wir auf Wunsch dafür, dass unsere Empfehlungen
-                auch in die Praxis umgesetzt werden.
+                reagieren.
+              </p>
+              <p>
+                In den Themen Vertrieb, Antrags- und Bestandsprozesse, Reporting
+                und Meldewesen bringen wir unsere Expertise in den
+                Produktfeldern Konsumentenkredit, Immobilienfinanzierung und
+                Gewerbe- und Firmenkundenkredite ein, aber auch jede Menge
+                Einblicke in aktuelle Regulierungen. Und natürlich sorgen wir
+                auf Wunsch dafür, dass unsere Empfehlungen auch in die Praxis
+                umgesetzt werden.
               </p>
             </div>
           </div>
@@ -162,7 +166,7 @@ class BeratungsfelderKredit extends React.Component {
           fokusthemen={fokusthemen}
         />
 
-        <div className="container margin-100-top">
+        <div className="container margin-120-top">
           <ReferenzAndDownload
             content={{
               right: {

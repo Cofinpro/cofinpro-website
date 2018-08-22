@@ -89,7 +89,7 @@ class Menu extends React.Component {
         pattern: '/projekte.*',
       },
       {
-        name: 'NEWS & MEDIEN',
+        name: 'MEDIENFORUM',
         link: '/news-medien',
         pattern: '/news-medien.*',
       },

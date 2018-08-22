@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 import RelevanteLinks from '../../../components/relevanteLinks'
 import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
@@ -51,7 +52,7 @@ class BeratungsfelderTechnologie extends React.Component {
           <div className="row">
             <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
-                <div className="col-4 col-md-3 col-lg-2">
+                <div className="col-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={
@@ -171,23 +172,41 @@ class BeratungsfelderTechnologie extends React.Component {
               <p className="margin-20-top margin-xs-20-top">
                 <ul className="blue-bullet">
                   <li>
-                    <b>Assessment und Roadmap:</b> Wir nehmen die Anforderungen
-                    an die IT unserer Kunden individuell auf, analysieren die
-                    aktuelle IT-Landschaft und erarbeiten zusammen eine Roadmap
-                    zur Weiterentwicklung.<p />
+                    <b>
+                      <Link to={'/fokusthemen/thema/assessment-und-roadmap'}>
+                        Assessment und Roadmap:
+                      </Link>
+                    </b>{' '}
+                    Wir nehmen die Anforderungen an die IT unserer Kunden
+                    individuell auf, analysieren die aktuelle IT-Landschaft und
+                    erarbeiten zusammen eine Roadmap zur Weiterentwicklung.<p />
                   </li>
                   <li>
-                    <b>Modernize:</b> Wir analysieren vorhandene Anwendungen und
-                    Architekturen technisch, erarbeiten Ansätze zur
-                    Modernisierung und bewerten sie im engen Austausch. Beim
-                    Konzeptionieren der IT-Architektur machen wir nicht halt,
-                    sondern setzen neue Lösungen auch um.<p />
+                    <b>
+                      <Link
+                        to={
+                          '/fokusthemen/thema/modernisierung-von-it-architekturen'
+                        }
+                      >
+                        Modernize:
+                      </Link>
+                    </b>{' '}
+                    Wir analysieren vorhandene Anwendungen und Architekturen
+                    technisch, erarbeiten Ansätze zur Modernisierung und
+                    bewerten sie im engen Austausch. Beim Konzeptionieren der
+                    IT-Architektur machen wir nicht halt, sondern setzen neue
+                    Lösungen auch um.<p />
                   </li>
                   <li>
-                    <b>Create:</b> Wir kümmern uns um den Aufbau neuer
-                    Plattformen für effizientere Prozessketten. Und wir schaffen
-                    modulare Architekturen für Kooperationspartner und
-                    B2B-Kunden sowie Lösungen für digitale Geschäftsmodelle.
+                    <b>
+                      <Link to={'/fokusthemen/thema/aufbau-neuer-plattformen'}>
+                        Create:
+                      </Link>
+                    </b>{' '}
+                    Wir kümmern uns um den Aufbau neuer Plattformen für
+                    effizientere Prozessketten. Und wir schaffen modulare
+                    Architekturen für Kooperationspartner und B2B-Kunden sowie
+                    Lösungen für digitale Geschäftsmodelle.
                   </li>
                 </ul>
               </p>

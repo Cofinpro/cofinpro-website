@@ -37,31 +37,44 @@ class BeratungsfelderFach extends React.Component {
         </div>
         <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-4 col-md-3 col-lg-2">
-              <ImageWrapper
-                sourceType={SOURCE_TYP_BOOTSTRAP}
-                source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
-              />
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row">
+                <div className="col-3 col-lg-2">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
+                  />
+                </div>
+              </div>
+              <div className="row margin-20-top">
+                <div className="col-md-12">
+                  <h1 className="h1">Unsere Fachberatung</h1>
+                  <h2 className="h2 margin-20-top d-none d-md-block">
+                    Wir sind Experten <br />für Kredit und Wertpapier
+                  </h2>
+                  <p className="d-block d-md-none">
+                    Wir sind Experten <br />für Kredit und Wertpapier
+                  </p>
+                  <PageIntroText
+                    content={{
+                      text:
+                        'Als Berater für führende Banken und Asset Manager rüsten wir unsere Kunden für die Zukunft. Um sie in Sachen Digitalisierung und Regulierung wettbewerbsfähig zu halten, setzen wir die Zirkelspitze dort an, wo unsere Kunden ihr Geschäft weiterentwickeln wollen. Denn fundierte Beratung soll Angebote kundenzentrierter, Prozesse wirksamer, Produkte innovativer und die Erfüllung regulatorischer Maßnahmen ressourceneffizienter machen.',
+                    }}
+                    style={{ container: 'margin-40-top margin-xs-0-top' }}
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="row margin-40-top">
-            <div className="col-md-7">
-              <h1 className="h1">Unsere Fachberatung</h1>
-              <h2 className="h2 margin-20-top d-none d-md-block">
-                Wir sind Experten <br />für Kredit und Wertpapier
-              </h2>
-              <p className="d-block d-md-none">
-                Wir sind Experten <br />für Kredit und Wertpapier
-              </p>
-              <PageIntroText
-                style={{ container: 'margin-40-top margin-xs-0-top' }}
-                content={{
-                  text:
-                    'Als Berater für führende Banken und Asset Manager rüsten wir unsere Kunden für die Zukunft. Um sie in Sachen Digitalisierung und Regulierung wettbewerbsfähig zu halten, setzen wir die Zirkelspitze dort an, wo unsere Kunden ihr Geschäft weiterentwickeln wollen. Denn fundierte Beratung soll Angebote kundenzentrierter, Prozesse wirksamer, Produkte innovativer und die Erfüllung regulatorischer Maßnahmen ressourceneffizienter machen.',
-                }}
-              />
-            </div>
-            <div className="col-md-5">
+            <div className="col-md-4 col-lg-5">
+              <div className="row d-none d-md-block">
+                <div className="col-3 col-lg-2">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
+                    styleClasses="img-fluid margin-20-bottom not-visible"
+                  />
+                </div>
+              </div>
               <LinkButton
                 text="Kreditgeschäft"
                 styleSpan="btn-lg btn-block margin-20-bottom margin-20-top"

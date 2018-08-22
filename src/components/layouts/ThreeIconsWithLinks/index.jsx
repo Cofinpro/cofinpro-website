@@ -25,8 +25,8 @@ class ThreeIconsWithLinks extends React.Component {
       <div className={'container threeIconsWithLinks ' + styleClass}>
         <div className="row text-center justify-content-center">
           <div className="col-6 col-md-4">
-            <div className="row">
-              <div className="col-8 offset-2 col-md-6 offset-md-3">
+            <div className="row justify-content-center">
+              <div className="col-8 col-md-8 col-lg-6 text-center">
                 <GatsbyLink to={linkLeft}>
                   <ImageWrapper
                     source={iconLeft}
@@ -38,8 +38,8 @@ class ThreeIconsWithLinks extends React.Component {
             </div>
           </div>
           <div className="col-6 col-md-4">
-            <div className="row">
-              <div className="col-8 offset-2 col-md-6 offset-md-3">
+            <div className="row justify-content-center">
+              <div className="col-8 col-md-8 col-lg-6 text-center">
                 <GatsbyLink to={linkMiddle}>
                   <ImageWrapper
                     source={iconMiddle}
@@ -51,8 +51,8 @@ class ThreeIconsWithLinks extends React.Component {
             </div>
           </div>
           <div className="col-6 col-md-4 margin-xs-40-top">
-            <div className="row">
-              <div className="col-8 offset-2 col-md-6 offset-md-3">
+            <div className="row justify-content-center">
+              <div className="col-8 col-md-8 col-lg-6 text-center">
                 <GatsbyLink to={linkRight}>
                   <ImageWrapper
                     source={iconRight}

@@ -59,7 +59,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
-                <div className="col-4 col-md-3 col-lg-2">
+                <div className="col-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={'/img/beratungsfelder/fach/Fachberatung-Icon.png'}
@@ -110,6 +110,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharp}
+                styleClasses={'margin-30-top'}
               />
             </div>
           </div>
@@ -121,6 +122,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.processImageSharpM}
+                styleClasses={'margin-30-top'}
               />
             </div>
           </div>
@@ -130,6 +132,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.process2ImageSharp}
+                styleClasses={'margin-30-top'}
               />
             </div>
           </div>
@@ -141,10 +144,11 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.process2ImageSharpM}
+                styleClasses={'margin-30-top'}
               />
             </div>
           </div>
-          <div className="row margin-100-top margin-xs-40-top">
+          <div className="row margin-120-top margin-xs-40-top">
             <div className="col-md-6" />
             <div className="col-md-6">
               <h2 className="h2">Alles greift ineinander</h2>
@@ -156,9 +160,12 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                 Finanzmarktnovellierungsgesetz, die Harmonisierung der
                 europäischen Wertpapierabwicklung und neue technologische Trends
                 wirken sich auf die Themenfelder unserer Kunden entlang des
-                ganzen Wertpapierprozesses aus. Es ist also nur konsequent,
-                unser Beratungsangebot ganzheitlich zu gestalten, damit so viele
-                Prozesse wie möglich sinnvoll ineinandergreifen.
+                ganzen Wertpapierprozesses aus.
+              </p>
+              <p>
+                Es ist also nur konsequent, unser Beratungsangebot ganzheitlich
+                zu gestalten, damit so viele Prozesse wie möglich sinnvoll
+                ineinandergreifen.
               </p>
             </div>
           </div>
@@ -168,7 +175,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           fokusthemen={fokusthemen}
         />
         <div className="container">
-          <div className="margin-100-top margin-xs-40-top">
+          <div className="margin-120-top margin-xs-40-top">
             <ReferenzAndDownload
               content={{
                 right: {

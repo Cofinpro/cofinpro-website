@@ -64,7 +64,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-9 col-lg-7">
               <div className="row">
-                <div className="col-4 col-md-3 col-lg-2">
+                <div className="col-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={
@@ -98,11 +98,10 @@ class BeratungsfelderManagementTemplate extends React.Component {
             <div className="col-md-6">
               <h2 className="h2">Die Zukunft wird gut </h2>
               <p>
-                Wir treiben die Organisationsentwicklung voran, übernehmen das
-                Programmmanagement und führen Auswahlverfahren durch. Mit
-                objektiven, nachhaltigen Entscheidungsgrundlagen nehmen wir es
-                gut und gerne in die Hand, die Effektivität und Effizienz
-                unserer Kunden entscheidend zu steigern.
+                Wir unterstützen unsere Kunden in ihrem Ziel,
+                Digitalisierungsstrategien zu entwickeln, treiben als Begleiter
+                bei der Digitalen Transformation die Organisationsentwicklung
+                voran.
               </p>
             </div>
             <div className="col-md-6">
@@ -114,13 +113,13 @@ class BeratungsfelderManagementTemplate extends React.Component {
           </div>
         </div>
         <FokusThemenSmallLayout
-          header={'Wettbewerb nutzen um im Wettbewerb zu bleiben'}
+          header={'Wettbewerb nutzen, um im Wettbewerb zu bleiben'}
           text={
-            'Wir führen Auswahlverfahren durch und nehmen wir es gut und gerne in die Hand mit objektiven, nachhaltigen Entscheidungsgrundlagen, die Effizienz unserer Kunden entscheidend zu steigern.'
+            'Wir führen Auswahlverfahren durch und nehmen mit objektiven, nachhaltigen Entscheidungsgrundlagen gut und gerne in die Hand, die Effizienz unserer Kunden entscheidend zu steigern.'
           }
           fokusthemen={fokusthemen}
         />
-        <div className="margin-120-top margin-xs-40-top">
+        <div className="margin-120-top margin-xs-100-top">
           <ReferenzAndDownload
             content={{
               right: {
@@ -128,7 +127,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 description:
                   'Welche Projekte haben wir im Kontext unserer Fokusthemen schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
                 button: {
-                  text: 'Alle Referenzen zum Thema',
+                  text: 'WEITERE REFERENZEN',
                   path: '/projekte/managementberatung',
                 },
               },
@@ -137,7 +136,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 description:
                   'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema finden Sie hier.',
                 button: {
-                  text: 'Alle Publikationen zum Thema',
+                  text: 'WEITERE PUBLIKATIONEN',
                   path: '/news-medien/managementberatung',
                 },
               },
