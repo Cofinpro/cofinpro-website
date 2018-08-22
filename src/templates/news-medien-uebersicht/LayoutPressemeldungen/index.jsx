@@ -158,11 +158,6 @@ class LayoutPressemeldungen extends React.Component {
             />
           </div>
         )}
-        {content.elements.length === 0 && (
-          <p className="margin-20-top no-media-available-text">
-            Keine Medien zu diesem Thema <br />in dieser Kategorie verfügbar
-          </p>
-        )}
         {(content.showButton || content.elements.length > 6) && (
           <div className="row margin-40-top margin-xs-0-top">
             <div className="col-12 col-md-4 order-2 order-md-1">
