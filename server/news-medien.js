@@ -1125,52 +1125,211 @@ function createNewBucket() {
 
 function insertBucketItemsToOtherBucket(_from, _to) {
   for (let i = 0; i < _from.pressemeldungen.current.length; ++i) {
-    _to.pressemeldungen.current.push(_from.pressemeldungen.current[i])
+    var found = false
+    for (let j = 0; j < _to.pressemeldungen.current.length; ++j) {
+      if (
+        _to.pressemeldungen.current[j].contentfulInternerName ===
+        _from.pressemeldungen.current[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.pressemeldungen.current.push(_from.pressemeldungen.current[i])
+    }
   }
   for (let i = 0; i < _from.pressemeldungen.archiv.length; ++i) {
-    _to.pressemeldungen.archiv.push(_from.pressemeldungen.archiv[i])
+    var found = false
+    for (let j = 0; j < _to.pressemeldungen.archiv.length; ++j) {
+      if (
+        _to.pressemeldungen.archiv[j].contentfulInternerName ===
+        _from.pressemeldungen.archiv[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.pressemeldungen.archiv.push(_from.pressemeldungen.archiv[i])
+    }
   }
 
   for (let i = 0; i < _from.veroeffentlichungen.all.length; ++i) {
-    _to.veroeffentlichungen.all.push(_from.veroeffentlichungen.all[i])
+    var found = false
+    for (let j = 0; j < _to.veroeffentlichungen.all.length; ++j) {
+      if (
+        _to.veroeffentlichungen.all[j].contentfulInternerName ===
+        _from.veroeffentlichungen.all[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.veroeffentlichungen.all.push(_from.veroeffentlichungen.all[i])
+    }
   }
   for (let i = 0; i < _from.veroeffentlichungen.links.length; ++i) {
-    _to.veroeffentlichungen.links.push(_from.veroeffentlichungen.links[i])
+    var found = false
+    for (let j = 0; j < _to.veroeffentlichungen.links.length; ++j) {
+      if (
+        _to.veroeffentlichungen.links[j].contentfulInternerName ===
+        _from.veroeffentlichungen.links[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.veroeffentlichungen.links.push(_from.veroeffentlichungen.links[i])
+    }
   }
   for (let i = 0; i < _from.veroeffentlichungen.downloads.length; ++i) {
-    _to.veroeffentlichungen.downloads.push(
-      _from.veroeffentlichungen.downloads[i]
-    )
+    var found = false
+    for (let j = 0; j < _to.veroeffentlichungen.downloads.length; ++j) {
+      if (
+        _to.veroeffentlichungen.downloads[j].contentfulInternerName ===
+        _from.veroeffentlichungen.downloads[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.veroeffentlichungen.downloads.push(
+        _from.veroeffentlichungen.downloads[i]
+      )
+    }
   }
   for (let i = 0; i < _from.veroeffentlichungen.archiv.length; ++i) {
-    _to.veroeffentlichungen.archiv.push(_from.veroeffentlichungen.archiv[i])
+    var found = false
+    for (let j = 0; j < _to.veroeffentlichungen.archiv.length; ++j) {
+      if (
+        _to.veroeffentlichungen.archiv[j].contentfulInternerName ===
+        _from.veroeffentlichungen.archiv[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.veroeffentlichungen.archiv.push(_from.veroeffentlichungen.archiv[i])
+    }
   }
 
   for (let i = 0; i < _from.studien.current.length; ++i) {
-    _to.studien.current.push(_from.studien.current[i])
+    var found = false
+    for (let j = 0; j < _to.studien.current.length; ++j) {
+      if (
+        _to.studien.current[j].contentfulInternerName ===
+        _from.studien.current[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.studien.current.push(_from.studien.current[i])
+    }
   }
+  console.log('copied studien current')
   for (let i = 0; i < _from.studien.archiv.length; ++i) {
-    _to.studien.archiv.push(_from.studien.archiv[i])
+    var found = false
+    for (let j = 0; j < _to.studien.archiv.length; ++j) {
+      if (
+        _to.studien.archiv[j].contentfulInternerName ===
+        _from.studien.archiv[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.studien.archiv.push(_from.studien.archiv[i])
+    }
   }
-
+  console.log('copied studien archiv')
   for (let i = 0; i < _from.thesenpapiere.current.length; ++i) {
-    _to.thesenpapiere.current.push(_from.thesenpapiere.current[i])
+    var found = false
+    for (let j = 0; j < _to.thesenpapiere.current.length; ++j) {
+      if (
+        _to.thesenpapiere.current[j].contentfulInternerName ===
+        _from.thesenpapiere.current[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.thesenpapiere.current.push(_from.thesenpapiere.current[i])
+    }
   }
+  console.log('copied thesenpapiere current')
   for (let i = 0; i < _from.thesenpapiere.archiv.length; ++i) {
-    _to.thesenpapiere.archiv.push(_from.thesenpapiere.archiv[i])
+    var found = false
+    for (let j = 0; j < _to.thesenpapiere.archiv.length; ++j) {
+      if (
+        _to.thesenpapiere.archiv[j].contentfulInternerName ===
+        _from.thesenpapiere.archiv[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.thesenpapiere.archiv.push(_from.thesenpapiere.archiv[i])
+    }
   }
-
+  console.log('copied thesenpapiere archiv')
   for (let i = 0; i < _from.whitepapers.current.length; ++i) {
-    _to.whitepapers.current.push(_from.whitepapers.current[i])
+    var found = false
+    for (let j = 0; j < _to.whitepapers.current.length; ++j) {
+      if (
+        _to.whitepapers.current[j].contentfulInternerName ===
+        _from.whitepapers.current[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.whitepapers.current.push(_from.whitepapers.current[i])
+    }
   }
+  console.log('copied whitepapers current')
   for (let i = 0; i < _from.whitepapers.archiv.length; ++i) {
-    _to.whitepapers.archiv.push(_from.whitepapers.archiv[i])
+    var found = false
+    for (let j = 0; j < _to.whitepapers.archiv.length; ++j) {
+      if (
+        _to.whitepapers.archiv[j].contentfulInternerName ===
+        _from.whitepapers.archiv[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.whitepapers.archiv.push(_from.whitepapers.archiv[i])
+    }
   }
-
+  console.log('copied whitepapers archiv')
   for (let i = 0; i < _from.loesungsskizzen.current.length; ++i) {
-    _to.loesungsskizzen.current.push(_from.loesungsskizzen.current[i])
+    var found = false
+    for (let j = 0; j < _to.loesungsskizzen.current.length; ++j) {
+      if (
+        _to.loesungsskizzen.current[j].contentfulInternerName ===
+        _from.loesungsskizzen.current[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.loesungsskizzen.current.push(_from.loesungsskizzen.current[i])
+    }
   }
+  console.log('copied loesungsskizzen current')
   for (let i = 0; i < _from.loesungsskizzen.archiv.length; ++i) {
-    _to.loesungsskizzen.archiv.push(_from.loesungsskizzen.archiv[i])
+    var found = false
+    for (let j = 0; j < _to.loesungsskizzen.archiv.length; ++j) {
+      if (
+        _to.loesungsskizzen.archiv[j].contentfulInternerName ===
+        _from.loesungsskizzen.archiv[i].contentfulInternerName
+      ) {
+        found = true
+      }
+    }
+    if (found === false) {
+      _to.loesungsskizzen.archiv.push(_from.loesungsskizzen.archiv[i])
+    }
   }
+  console.log('copied loesungsskizzen archiv')
 }
