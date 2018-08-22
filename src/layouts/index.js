@@ -1,7 +1,6 @@
 import React from 'react'
 import { siteMetadata } from '../../gatsby-config'
-import NavigationCareer from '../components/navigation/NavigationCareer'
-import SiteFooter from '../components/SiteFooter'
+
 import ChatBot from '../components/ChatBot'
 import emergence from 'emergence.js'
 import CookieBanner from 'react-cookie-banner'
@@ -10,6 +9,10 @@ import StorageHelper from '../utils/storageHelper'
 
 import './gatsrap.scss'
 import 'animate.css/animate.css'
+
+import MainNavigation from '../components/navigation/MainNavigation'
+import NavigationCareer from '../components/navigation/NavigationCareer'
+import SiteFooter from '../components/SiteFooter'
 
 class Template extends React.Component {
   constructor(props) {
@@ -107,12 +110,12 @@ class Template extends React.Component {
 
     const styles = {
       banner: {
-        position: 'fixed',
-        bottom: 0,
         fontFamily: 'Source Sans Pro',
         height: 57,
-        background: '#a9c5e8',
+        background:
+          'rgba(52, 64, 81, 0.88) url(/cookie.png) 20px 50% no-repeat',
         backgroundSize: '30px 30px',
+        backgroundColor: '',
         fontSize: '15px',
         fontWeight: 600,
       },
@@ -155,9 +158,13 @@ class Template extends React.Component {
     return (
       <div>
         <header>
+          <MainNavigation
+            location={location}
+            locationUpdate={this.state.locationUpdate}
+            {...this.props}
+          />
           <NavigationCareer
             locationUpdate={this.state.locationUpdate}
-            title={siteMetadata.title}
             {...this.props}
           />
         </header>{' '}
@@ -169,13 +176,13 @@ class Template extends React.Component {
         />
         <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />
         {/*<CookieBanner
-            className="cofinpro-cookie-banner"
-            styles={styles}
-            message={message}
-            buttonMessage="Ich habe verstanden!"
-            dismissOnScroll={false}
-            cookie="cofinpro-user-has-accepted-cookies"
-          />*/}
+          className="cofinpro-cookie-banner"
+          styles={styles}
+          message={message}
+          buttonMessage="Ich habe verstanden!"
+          dismissOnScroll={false}
+          cookie="cofinpro-user-has-accepted-cookies"
+        />*/}
       </div>
     )
   }

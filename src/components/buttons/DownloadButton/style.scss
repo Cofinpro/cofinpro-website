@@ -1,0 +1,14 @@
+.download-button {
+  display: flex;
+  align-items: center;
+  flex: auto;
+  p {
+    margin: 0px;
+  }
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.download-button .download-button__text {
+  color: #212529;
+}

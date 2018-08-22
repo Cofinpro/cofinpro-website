@@ -23,13 +23,13 @@ class Kontakt extends React.Component {
           link={[{ rel: 'canonical', href: this.getCurrentUrl() }]}
           meta={[
             {
-              property: 'og:title',
-              content: 'Kontakt - Cofinpro',
-            },
-            {
-              property: 'Description',
+              name: 'Description',
               content:
                 'Sie haben Fragen zu unserem Unternehmen oder unseren Leistungen? Treten Sie mit uns in Kontakt!',
+            },
+            {
+              property: 'og:title',
+              content: 'Kontakt - Cofinpro',
             },
             {
               property: 'og:description',
@@ -39,39 +39,56 @@ class Kontakt extends React.Component {
           ]}
         />
 
-        <div className="container padding-md-top-bottom">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-5">
-              <h1 className="h2">Kontakt für Bewerber</h1>
-
+            <div className="col-12">
+              <h1 className="h3">Kontakt</h1>
               <p>
-                Über unser Online-Bewerbungssystem hast du die Möglichkeit,
-                Deine vollständigen Bewerbungsunterlagen mit
+                Cofinpro AG<br />
+                Untermainkai 27 - 28<br />
+                60329 Frankfurt am Main<br />
+                Tel +49 (0) 69 - 299 20 87 60<br />
+                Fax +49 (0) 69 - 299 20 87 61<br />
+                <a href="mailto:welcome@cofinpro.de">welcome@cofinpro.de</a>
               </p>
+            </div>
+          </div>
+        </div>
 
-              <ul>
-                <li>Anschreiben</li>
-                <li>Lebenslauf</li>
-                <li>Kopien aller relevanten Zeugnisse</li>
-              </ul>
+        <div className="container padding-20-top padding-xs-20-top">
+          <div className="row">
+            <div className="col-12">
+              <h1 className="h3">Pressekontakt</h1>
+              <p>
+                Cofinpro AG<br />
+                Fanina Karabelnik<br />
+                Unternehmenskommunikation<br />
+                +49 (0) 69 - 299 20 87 60<br />
+                <a href="mailto:Marketing@cofinpro.de">Marketing@cofinpro.de</a>
+              </p>
+              <p>
+                Thöring & Stuhr Kommunikationsberatung<br />
+                Claudia Thöring<br />
+                +49 (0) 40 -2 07 69 69 82<br />
+                <a href="mailto:Claudia.Thoering@corpnewsmedia.de">
+                  Claudia.Thoering@corpnewsmedia.de
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
 
-              <p>an uns zu senden</p>
-
-              <ExternalLinkButton
-                text="INITIATIVBEWERBUNG ERFASSEN"
-                _href="https://recruitingapp-2586.umantis.com/Vacancies/InitiativeApplication/1"
-                _target="_blank"
-              />
-
-              <p className="padding-md-top">
-                Fragen zum Bewerbungsprozess beantwortet Dir unser
-                <br />Human Resources-Team unter
-                <br />Tel + 49 (0) 69-2 99 20 87 60 und per E-Mail über
-                <br />
+        <div className="container padding-20-top padding-xs-20-top">
+          <div className="row">
+            <div className="col-12">
+              <h1 className="h3">Kontakt für Bewerber</h1>
+              <p>
+                Cofinpro AG<br />
+                Fabienne Daum<br />
+                60329 Frankfurt am Main<br />
+                +49 (0) 69 - 299 20 87 60<br />
                 <a href="mailto:karriere@cofinpro.de">karriere@cofinpro.de</a>
               </p>
-
-              <LinkButton text="ALLE JOBS" path="/jobs" />
             </div>
           </div>
         </div>

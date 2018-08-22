@@ -24,7 +24,7 @@ class NewsPreview extends React.Component {
 
     return (
       <div>
-        <Link to={pathPrefix + '/pinnwand/' + url}>
+        <Link to={pathPrefix + '/karriere/pinnwand/' + url}>
           {imageFileSharp !== undefined && imageFileSharp !== null ? (
             <Img sizes={imageFileSharp != null && imageFileSharp.sizes} />
           ) : (
@@ -43,7 +43,7 @@ class NewsPreview extends React.Component {
           {description.length > 200
             ? description.substring(0, 200) + '...'
             : description}
-          &nbsp;<Link to={pathPrefix + '/pinnwand/' + url}>></Link>
+          &nbsp;<Link to={pathPrefix + '/karriere/pinnwand/' + url}>></Link>
         </p>
       </div>
     )

@@ -62,7 +62,11 @@ class CarrerOfferBox extends React.Component {
               if (i < 3) {
                 return (
                   <Link
-                    to={pathPrefix + '/stellenanzeige/' + anzeige.node.url}
+                    to={
+                      pathPrefix +
+                      '/karriere/stellenanzeige/' +
+                      anzeige.node.url
+                    }
                     className="text-dark"
                     key={'anzeige-link-' + i}
                   >

@@ -10,6 +10,9 @@ class ToggleButton extends React.Component {
     const dataTarget = this.props.dataTarget
     const id = this.props.id
 
+    const showElemForMore = this.props.showElemForMore
+    const showElemForLess = this.props.showElemForLess
+
     $('#' + dataTarget).collapse({ toggle: false })
 
     $('#button-collapse-' + id).click(function() {
@@ -24,6 +27,12 @@ class ToggleButton extends React.Component {
         $('#button-collapse-' + id + '>img.collapse-icon-down').removeClass(
           'd-none'
         )
+        if (showElemForMore !== undefined) {
+          $('#' + showElemForMore).show()
+        }
+        if (showElemForLess !== undefined) {
+          $('#' + showElemForLess).hide()
+        }
       } else if (
         $('#button-collapse-' + id + '>img.collapse-icon-up').hasClass('d-none')
       ) {
@@ -33,12 +42,24 @@ class ToggleButton extends React.Component {
         $('#button-collapse-' + id + '>img.collapse-icon-up').removeClass(
           'd-none'
         )
+        if (showElemForMore !== undefined) {
+          $('#' + showElemForMore).hide()
+        }
+        if (showElemForLess !== undefined) {
+          $('#' + showElemForLess).show()
+        }
       }
     })
   }
 
   render() {
-    const { id, dataTarget, style } = this.props
+    const {
+      id,
+      dataTarget,
+      showElemForMore,
+      showElemForLess,
+      style,
+    } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -56,12 +77,12 @@ class ToggleButton extends React.Component {
       >
         <img
           className="collapse-icon-down"
-          alt="Mehr Jobs zeigen"
+          alt="Mehr zeigen"
           src={pathPrefix + '/svg/icon_arrow_dotted_down_orange.svg'}
         />
         <img
           className="d-none collapse-icon-up"
-          alt="Weniger Jobs zeigen"
+          alt="Weniger zeigen"
           src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
         />
       </button>

@@ -1,0 +1,16 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+.no-media-available-text {
+  font-size: 24px;
+  color: #94bce5;
+
+  margin-bottom: 0px;
+
+  @include media-breakpoint-only(xs) {
+    font-size: 18px;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: 18px;
+  }
+}

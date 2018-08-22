@@ -16,21 +16,9 @@
   @include media-breakpoint-only(sm) {
     font-size: 0.75rem;
   }
-
-  @include media-breakpoint-only(md) {
-    margin-bottom: 0px;
-  }
-
-  @include media-breakpoint-only(lg) {
-    margin-bottom: 0px;
-  }
-
-  @include media-breakpoint-only(xl) {
-    margin-bottom: 0px;
-  }
 }
 
-#nav-footer {
+.nav-footer {
   li {
     font-size: 0.875rem;
 
@@ -45,18 +33,25 @@
 
   .nav-item.active {
     a {
+      padding-bottom: 2px;
       border-bottom: 1px solid white;
     }
   }
 
   .nav-item {
     a {
+      padding-bottom: 2px;
       border-bottom: 1px solid #847575;
     }
   }
 
   a.nav-link:hover {
+    padding-bottom: 2px;
     border-bottom: 1px solid white;
+  }
+
+  a.nav-link.firstLeft {
+    padding-left: 0px;
   }
 }
 
@@ -74,6 +69,9 @@
     margin-right: 0.5rem;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
+  }
+  a.nav-link.firstLeft {
+    margin-left: 0rem;
   }
 }
 
@@ -115,4 +113,10 @@ footer {
     padding-left: 6px;
     padding-right: 6px;
   }
+}
+
+#back-to-top {
+  height: 34px;
+  // display: flex !important;
+  justify-content: center;
 }

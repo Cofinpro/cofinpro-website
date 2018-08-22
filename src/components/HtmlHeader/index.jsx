@@ -13,14 +13,34 @@ class HtmlHeader extends React.Component {
   }
 
   render() {
-    const { dataFromCms } = this.props
+    const { dataFromCms, direktData } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    let title
+    let description
+    let keywords
+
+    if (dataFromCms !== undefined) {
+      title = dataFromCms.title
+      description =
+        dataFromCms.description !== null
+          ? dataFromCms.description.description
+          : null
+      keywords =
+        dataFromCms.keywords !== null ? dataFromCms.keywords.keywords : null
+    }
+
+    if (direktData !== undefined) {
+      title = direktData.title
+      description = direktData.description
+      keywords = direktData.keywords
+    }
 
     return (
       <div>
         <Helmet
-          title={dataFromCms.title}
+          title={title}
           link={[
             {
               rel: 'canonical',
@@ -29,28 +49,20 @@ class HtmlHeader extends React.Component {
           ]}
           meta={[
             {
+              name: 'Description',
+              content: `${description}`,
+            },
+            {
               property: 'og:title',
-              content: `${dataFromCms.title}`,
+              content: `${title}`,
             },
             {
               name: 'keywords',
-              content: `${dataFromCms.keywords.keywords}`,
-            },
-            {
-              name: 'description',
-              content: `${
-                dataFromCms.description !== null
-                  ? dataFromCms.description.description
-                  : null
-              }`,
+              content: `${keywords}`,
             },
             {
               property: 'og:description',
-              content: `${
-                dataFromCms.description !== null
-                  ? dataFromCms.description.description
-                  : null
-              }`,
+              content: `${description}`,
             },
           ]}
         />

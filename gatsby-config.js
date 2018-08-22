@@ -24,7 +24,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/static/img/contentful/`,
+        path: `${__dirname}/static/img/`,
       },
     },
     {
@@ -59,9 +59,23 @@ module.exports = {
         anonymize: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        icon: true,
+        viewBox: false,
+        // see https://github.com/smooth-code/svgr for a list of all options
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`String.prototype.startsWith`],
+      },
+    },
   ],
 }

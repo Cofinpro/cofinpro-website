@@ -25,7 +25,7 @@ class CarrerOfferPreview extends React.Component {
         className={'carrerOfferPreview border-img-blue ' + additionalStyleClass}
       >
         <Link
-          to={pathPrefix + '/stellenanzeige/' + anzeigeId}
+          to={pathPrefix + '/karriere/stellenanzeige/' + anzeigeId}
           className="text-dark"
         >
           <div className="padding-20">

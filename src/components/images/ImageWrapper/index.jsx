@@ -1,38 +1,34 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 
-import ContentfulImage from '../../images/ContentfulImage'
+import ContentfulImage from '../ContentfulImage'
+import BootstrapImage from '../BootstrapImage'
+import SharpImage from '../SharpImage'
+import IconImage from '../IconImage'
+import PlaceholderImage from '../PlaceholderImage'
+
+import './style.scss'
 
 const SOURCE_TYP_CONTENTFUL = 'Contentful'
 const SOURCE_TYP_SHARP = 'Sharp'
 const SOURCE_TYP_BOOTSTRAP = 'Bootstrap'
+const SOURCE_TYP_PLACEHOLDER = 'Placeholder'
+const SOURCE_TYP_ICON_IMAGE = 'Icon'
 
 class ImageWrapper extends React.Component {
   render() {
-    const { source, sourceType, styleClasses } = this.props
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+    const { source, sourceType, overlayElement, styleClasses } = this.props
 
     if (sourceType === SOURCE_TYP_CONTENTFUL) {
       return <ContentfulImage imageFile={source} styleClasses={styleClasses} />
     } else if (sourceType === SOURCE_TYP_SHARP) {
-      return <Img sizes={source.sizes} className={styleClasses} />
+      return <SharpImage {...this.props} />
     } else if (sourceType === SOURCE_TYP_BOOTSTRAP) {
-      return (
-        <img
-          src={source}
-          className={styleClasses == null ? 'img-fluid' : styleClasses}
-        />
-      )
-    } else {
-      return (
-        <img
-          src="http://via.placeholder.com/650x350"
-          class="img-fluid"
-          alt="Responsive image"
-        />
-      )
+      return <BootstrapImage {...this.props} />
+    } else if (sourceType === SOURCE_TYP_PLACEHOLDER) {
+      return <PlaceholderImage {...this.props} />
+    } else if (sourceType === SOURCE_TYP_ICON_IMAGE) {
+      return <IconImage {...this.props} />
     }
   }
 }
@@ -42,6 +38,8 @@ export default {
   SOURCE_TYP_CONTENTFUL,
   SOURCE_TYP_SHARP,
   SOURCE_TYP_BOOTSTRAP,
+  SOURCE_TYP_PLACEHOLDER,
+  SOURCE_TYP_ICON_IMAGE,
 }
 
 ImageWrapper.propTypes = {
@@ -65,12 +63,20 @@ ImageWrapper.propTypes = {
         srcSet: PropTypes.string,
       }),
     }),
+    PropTypes.shape({
+      width: PropTypes.number,
+      height: PropTypes.number,
+    }),
     PropTypes.string,
   ]),
   sourceType: PropTypes.oneOf([
     SOURCE_TYP_CONTENTFUL,
     SOURCE_TYP_SHARP,
     SOURCE_TYP_BOOTSTRAP,
+    SOURCE_TYP_PLACEHOLDER,
+    SOURCE_TYP_ICON_IMAGE,
   ]),
+  backgroundOverlay: PropTypes.any,
+  overlayElement: PropTypes.any,
   styleClasses: PropTypes.string,
 }

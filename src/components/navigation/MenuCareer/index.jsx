@@ -2,11 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 import PubSub from 'pubsub-js'
 
+import LinkButton from '../../buttons/LinkButton'
+
 import StorageHelper from '../../../utils/storageHelper'
 
 import './style.scss'
 
 import Kompetenzen from '../../../../data/Kompetenzen'
+
+import NavbarLinks from '../NavbarLinks'
 
 class MenuCareer extends React.Component {
   componentDidMount() {
@@ -14,10 +18,6 @@ class MenuCareer extends React.Component {
       if ($(e.target).is('a')) {
         $(this).collapse('hide')
       }
-    })
-
-    $('#close-button-menu').click(function() {
-      $('#navbarSupportedContent').collapse('hide')
     })
   }
 
@@ -43,7 +43,7 @@ class MenuCareer extends React.Component {
       this.getPerspective() === undefined ||
       this.getPerspective().length === 0
     ) {
-      return pathPrefix
+      return pathPrefix + '/'
     } else {
       return pathPrefix + '/' + this.getPerspective()
     }
@@ -65,118 +65,104 @@ class MenuCareer extends React.Component {
 
     const { location, locationUpdate } = this.props
 
-    var mainUrl = pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/'
+    var mainUrl =
+      pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
 
     var menuItems = [
       {
         name: 'HOME',
-        link: this.getPathPrefixPerspective() + '/landing',
-        pattern: '/.*/landing',
+        link: '/karriere' + this.getPathPrefixPerspective() + '/landing',
+        pattern: '/karriere/.*/landing',
       },
       {
         name: 'ÜBER UNS',
-        link: pathPrefix + '/ueber-uns',
-        pattern: '/ueber-uns',
+        link: pathPrefix + '/karriere/ueber-uns',
+        pattern: '/karriere/ueber-uns',
       },
       {
         name: 'DEINE KARRIERE',
-        link: this.getPathPrefixPerspective() + '/deine-karriere',
-        pattern: '/.*/deine-karriere',
+        link: '/karriere' + this.getPathPrefixPerspective() + '/deine-karriere',
+        pattern: '/karriere/.*/deine-karriere',
       },
       {
         name: 'DEINE ENTWICKLUNG',
-        link: this.getPathPrefixPerspective() + '/deine-entwicklung',
-        pattern: '/.*/deine-entwicklung',
+        link:
+          '/karriere' + this.getPathPrefixPerspective() + '/deine-entwicklung',
+        pattern: '/karriere/.*/deine-entwicklung',
       },
       {
         name: 'GEHALT & BENEFITS',
-        link: this.getPathPrefixPerspective() + '/gehalt-beteiligung',
-        pattern: '/.*/gehalt-beteiligung',
+        link:
+          '/karriere' + this.getPathPrefixPerspective() + '/gehalt-beteiligung',
+        pattern: '/karriere/.*/gehalt-beteiligung',
       },
       {
         name: 'WORK & LIFE',
-        link: pathPrefix + '/work-life',
-        pattern: '/work-life',
+        link: pathPrefix + '/karriere/work-life',
+        pattern: '/karriere/work-life',
       },
       {
         name: 'JOBS & BEWERBUNG',
-        link: pathPrefix + '/jobs-bewerbung',
-        pattern: '/jobs-bewerbung',
+        link: pathPrefix + '/karriere/jobs-bewerbung',
+        pattern: '/karriere/jobs-bewerbung',
       },
     ]
+
+    function hideMenu() {
+      $('#navbarSupportedContent').collapse('hide')
+    }
 
     return (
       <div
         className="collapse navbar-collapse main-navigation-bar"
         id="navbarSupportedContent"
-        hidden={locationUpdate === mainUrl ? true : false}
       >
         <div>
-          <a href="/" className="navbar-brand d-none d-lg-block">
-            <img
-              className="cofinpro-logo"
-              alt="Nächstes Bild"
-              src={pathPrefix + '/svg/karrierelogo.svg'}
-            />
-          </a>
+          <Link
+            to={location.pathname.startsWith('/karriere') ? '/karriere' : '/'}
+            className="navbar-brand d-none d-xl-block"
+          >
+            {location.pathname.startsWith('/karriere') === false ? (
+              <img
+                className="cofinpro-logo-startseite"
+                alt="Nächstes Bild"
+                src={pathPrefix + '/svg/logo_cofinpro.svg'}
+              />
+            ) : (
+              <img
+                className="cofinpro-logo-startseite"
+                alt="Nächstes Bild"
+                src={pathPrefix + '/svg/karrierelogo.svg'}
+              />
+            )}
+          </Link>
         </div>
-        <div className="d-block d-lg-none text-white margin-20-bottom">
-          <p className="h5 bold-font d-inline">MENÜ</p>
+        <div className="d-block d-xl-none text-secondary margin-20-bottom">
+          <p className="h5 d-inline">MENÜ</p>
           <button
-            id="close-button-menu"
             type="button"
             className="close d-inline"
             aria-label="Close"
+            onClick={hideMenu}
           >
             <img
               className="main-navigation-bar__img-close-button"
               alt="Menü schließen"
-              src={pathPrefix + '/svg/icon_close.svg'}
+              src={pathPrefix + '/svg/icon_close_blue.svg'}
             />
           </button>
         </div>
-        <ul
-          className="navbar-nav w-100 justify-content-end"
-          hidden={locationUpdate === mainUrl ? true : false}
-        >
-          {menuItems.map(function(menuItem, i) {
-            return (
-              <li
-                key={'navItemMenuCarrer-' + i}
-                className={
-                  location.pathname.match(menuItem.pattern)
-                    ? 'nav-item active'
-                    : 'nav-item'
-                }
-              >
-                <Link
-                  key={'linkMenuCarrer-' + i}
-                  to={menuItem.link}
-                  className="nav-link"
-                >
-                  {menuItem.name}
-                </Link>
-                {i < menuItems.length - 1 && (
-                  <div
-                    key={'lineContainerMenuCarrer-' + i}
-                    className="d-inline"
-                  >
-                    <img
-                      key={'dottedLineMenuCarrer-' + i}
-                      src={pathPrefix + '/img/nav-line.png'}
-                      className="d-inline d-lg-inline main-navigation-bar__dotted-line-horizontal"
-                    />
-                    <img
-                      key={'dottedLineVerticalMenuCarrer-' + i}
-                      src={pathPrefix + '/img/icon_dotted_line_vertical.png'}
-                      className="d-block d-lg-none main-navigation-bar__dotted-line-vertical"
-                    />
-                  </div>
-                )}
-              </li>
-            )
-          })}
-        </ul>
+        <NavbarLinks
+          location={location}
+          locationUpdate={locationUpdate}
+          menuItems={menuItems}
+        />
+        <LinkButton
+          text="HAUPTSEITE"
+          path="/"
+          styleLink={'d-inline d-xl-none'}
+          {...this.props}
+        />
       </div>
     )
   }
