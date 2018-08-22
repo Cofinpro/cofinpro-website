@@ -962,6 +962,10 @@ a:hover {
   margin-top: 10px;
 }
 
+.margin-5-top {
+  margin-top: 5px !important;
+}
+
 .margin-md-100-top {
   @include media-breakpoint-only(md) {
     margin-top: 100px;
@@ -1089,7 +1093,7 @@ a:hover {
 }
 
 .margin-20-left {
-  margin-left: 20px;
+  margin-left: 20px !important;
 }
 
 .padding-10 {
