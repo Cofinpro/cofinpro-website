@@ -157,7 +157,7 @@ class StellenanzeigeTemplate extends React.Component {
                 <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
                   einen von sechs weiteren deutschen Standorten unter
-                  <Link className="readmore" to={pathPrefix + '/jobs'}>
+                  <Link className="readmore" to={pathPrefix + '/karriere/jobs'}>
                     <span> Jobs </span>
                   </Link>
                   oder karriere@cofinpro.de.
@@ -175,7 +175,7 @@ class StellenanzeigeTemplate extends React.Component {
                 <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
                   einen von sechs weiteren deutschen Standorten unter
-                  <Link className="readmore" to={pathPrefix + '/jobs'}>
+                  <Link className="readmore" to={pathPrefix + '/karriere/jobs'}>
                     <span> Jobs </span>
                   </Link>
                   oder karriere@cofinpro.de.
@@ -193,7 +193,7 @@ class StellenanzeigeTemplate extends React.Component {
                 <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder
                   einen von sechs weiteren deutschen Standorten unter
-                  <Link className="readmore" to={pathPrefix + '/jobs'}>
+                  <Link className="readmore" to={pathPrefix + '/karriere/jobs'}>
                     <span> Jobs </span>
                   </Link>
                   oder karriere@cofinpro.de.

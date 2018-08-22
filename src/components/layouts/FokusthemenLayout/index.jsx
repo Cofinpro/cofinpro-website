@@ -83,7 +83,7 @@ class FokusthemenLayout extends React.Component {
                   <h2 className="h2 margin-20-bottom">{header}</h2>
                   <p>{description}</p>
                 </div>
-                <div className="col-12 d-none d-md-block align-self-end">
+                <div className="col-12 d-none d-md-block align-self-end margin-140-top margin-md-100-top margin-xs-0-top">
                   {fokusthemen.length >= 3 && (
                     <FokusthemaPreview
                       url={fokusthemen[2].url}
@@ -245,7 +245,7 @@ class FokusthemenLayout extends React.Component {
                 />
               </div>
               <div className="col-4">
-                <p className="h4 h5-md margin-40-top">
+                <p className="h4 text-md-normal margin-40-top margin-md-0-top">
                   Mit Teams aus Management-, Fach- und Technologieberatern
                   unterstützen wir Banken und Kapitalverwaltungsgesellschaften,
                   damit sie den unterschiedlichsten Herausforderungen gerecht
