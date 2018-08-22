@@ -93,7 +93,7 @@ class FokusthemenDetailTeamplate extends React.Component {
         let pressemeldung = graphQlResult.verlinktePressemeldungen[i]
         if (pressemeldung !== null) {
           medien.push({
-            hrefLink: `/pressemeldung/${pressemeldung.urlDerSeite}`,
+            hrefLink: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
             header: pressemeldung.ueberschrift,
             subHeader: pressemeldung.unteruebrschrift,
           })

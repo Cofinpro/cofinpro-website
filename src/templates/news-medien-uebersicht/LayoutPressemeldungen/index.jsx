@@ -19,7 +19,7 @@ class LayoutPressemeldungen extends React.Component {
 
     for (let i = 0; i < _input.length; ++i) {
       result.push({
-        to: '/pressemeldung/' + _input[i].urlDerSeite,
+        to: '/pressemitteilung/' + _input[i].urlDerSeite,
         nameTeil1: _input[i].ueberschrift,
         nameTeil2: _input[i].unteruebrschrift,
       })
@@ -29,7 +29,7 @@ class LayoutPressemeldungen extends React.Component {
 
   createDataForPreviewImage(_input) {
     return {
-      to: '/pressemeldung/' + _input.urlDerSeite,
+      to: '/pressemitteilung/' + _input.urlDerSeite,
       header: _input.ueberschrift,
       subHeader: _input.unteruebrschrift,
     }

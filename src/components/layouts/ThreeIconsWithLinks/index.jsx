@@ -34,7 +34,7 @@ class ThreeIconsWithLinks extends React.Component {
                   />
                 </div>
                 <div className="col-12 text-center">
-                  <p className="h5 padding-sm-top text-dark margin-10-top">
+                  <p className="h5 padding-sm-top text-dark margin-10-top bold-font">
                     {titleLeft}
                   </p>
                 </div>
@@ -51,7 +51,7 @@ class ThreeIconsWithLinks extends React.Component {
                   />
                 </div>
                 <div className="col-12 text-center">
-                  <p className="h5 padding-sm-top text-dark margin-10-top">
+                  <p className="h5 padding-sm-top text-dark margin-10-top bold-font">
                     {titleMiddle}
                   </p>
                 </div>
@@ -68,7 +68,7 @@ class ThreeIconsWithLinks extends React.Component {
                   />
                 </div>
                 <div className="col-12 text-center">
-                  <p className="h5 padding-sm-top text-dark margin-10-top">
+                  <p className="h5 padding-sm-top text-dark margin-10-top bold-font">
                     {titleRight}
                   </p>
                 </div>

@@ -71,7 +71,7 @@ class PressemeldungArchivTemplate extends React.Component {
                   { text: 'Technologieberatung', path: '/technologieberatung' },
                   { text: 'Digitalisierung', path: '/digitalisierung' },
                 ]}
-                urlPrefix="news-medien/archiv/pressemeldungen"
+                urlPrefix="news-medien/archiv/pressemitteilungen"
                 description={
                   'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren?  \n Wählen Sie selbst. '
                 }

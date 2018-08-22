@@ -66,7 +66,7 @@ class NewsMedienVerteiler extends React.Component {
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
-                text="MEHR"
+                text="ZU DEN MEDIEN"
                 path="/news-medien/alle-beratungsfelder"
               />
             </div>
@@ -77,7 +77,7 @@ class NewsMedienVerteiler extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6 order-2 order-md-1">
               <h2 className="h2 margin-20-bottom margin-xs-20-top">
-                Unser Blog
+                Unser Tech-Blog
               </h2>
               <p>
                 Was treiben unsere Technologieberater? Sehr viel, das ist schon
@@ -89,7 +89,7 @@ class NewsMedienVerteiler extends React.Component {
               </p>
               <ExternalLinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
-                text="MEHR"
+                text="ZUM BLOG"
                 _target="_blank"
                 _href="https://medium.com/cofinpro"
               />

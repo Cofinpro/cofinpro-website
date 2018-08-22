@@ -100,7 +100,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className="container margin-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">{'Veröffentlichungen'}</h2>
+              <h2 className="h2">{'Fachpublikationen'}</h2>
               <p>{professionalPublications}</p>
             </div>
             <div className="col-12 col-md-6" />
@@ -108,8 +108,8 @@ class NewsMedienUebersichtTemplate extends React.Component {
         </div>
         <LayoutVeroeffentlichungen
           content={{
-            id: 'veroeffentlichungen',
-            header: 'Veröffentlichungen',
+            id: 'fachpublikationen',
+            header: 'Fachpublikationen',
             images: [
               this.props.data.veroeffentlichungenOneSharp,
               this.props.data.veroeffentlichungenTwoSharp,
@@ -129,7 +129,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">{'Pressemeldungen'}</h2>
+              <h2 className="h2">{'Pressemitteilungen'}</h2>
               <p>{pressReleases}</p>
             </div>
             <div className="col-12 col-md-6" />
@@ -137,8 +137,8 @@ class NewsMedienUebersichtTemplate extends React.Component {
         </div>
         <LayoutPressemeldungen
           content={{
-            id: 'pressemeldungen',
-            header: 'Pressemeldungen',
+            id: 'pressemitteilungen',
+            header: 'Pressemitteilungen',
             images: [
               this.props.data.pressemeldungOneSharp,
               this.props.data.pressemeldungTwoSharp,
@@ -158,7 +158,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">Downloads</h2>
+              <h2 className="h2">Medien</h2>
               <p className="no-margin">{medien}</p>
             </div>
             <div className="col-12 col-md-6" />
@@ -243,7 +243,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
         <div className={'container margin-60-top margin-xs-60-top'}>
           <div className="row">
             <div className="col-12">
-              <h3 className="h4 margin-xs-20-bottom">LOESUNGSSKIZZEN</h3>
+              <h3 className="h4 margin-xs-20-bottom">LÖSUNGSSKIZZEN</h3>
             </div>
           </div>
         </div>

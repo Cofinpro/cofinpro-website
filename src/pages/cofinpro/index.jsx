@@ -49,12 +49,12 @@ class Startseite extends React.Component {
 
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-8 col-lg-6">
+            <div className="col-12 col-md-9 col-lg-7">
               <h1 className="h1">Über Cofinpro</h1>
               <PageIntroText
                 content={{
                   text:
-                    'Was tun wir, wie arbeiten wir und was macht uns aus? Hier stellen wir uns vor.',
+                    'Was tun wir, wie arbeiten wir und was macht uns aus?  \n Hier stellen wir uns vor.',
                 }}
               />
               <LinkButton
@@ -87,14 +87,16 @@ class Startseite extends React.Component {
               <p>
                 Unsere Experten konzentrieren sich auf Digitalisierung, neue
                 Marktanforderungen und Regulatorik in den Beratungsfeldern
-                Management-, Fach- und Technologieberatung. Wir bauen auf ein
-                Beratungskonzept, das alle Elemente der Wertschöpfungskette für
-                Unternehmen in der Finanzindustrie abdeckt. Als
-                Managementberater, Fachberater mit Fokus auf Kredit und
-                Wertpapier sowie Technologieberater für agile, zukunftsfähige
-                Architekturen bieten wir unseren Kunden zukunftsfähige Lösungen
-                für ihr Geschäftsmodell. Persönlich, unabhängig und im
-                vertrauensvollen Kontakt.
+                Management-, Fach- und Technologieberatung.
+              </p>
+              <p>
+                Wir bauen auf ein Beratungskonzept, das alle Elemente der
+                Wertschöpfungskette für Unternehmen in der Finanzindustrie
+                abdeckt. Als Managementberater, Fachberater mit Fokus auf Kredit
+                und Wertpapier sowie Technologieberater für agile,
+                zukunftsfähige Architekturen bieten wir unseren Kunden
+                zukunftsfähige Lösungen für ihr Geschäftsmodell. Persönlich,
+                unabhängig und im vertrauensvollen Kontakt.
               </p>
             </div>
             <div className="col-12 col-md-6 text-center">
@@ -155,7 +157,7 @@ class Startseite extends React.Component {
                 Verantwortung empfinden wir gegenüber unseren Kunden, unseren
                 Mitarbeitern und der Gesellschaft.
               </p>
-              <h3 className="h5">Ökonomische Verantwortung</h3>
+              <h3 className="h5 margin-30-top">Ökonomische Verantwortung</h3>
               <p>
                 Wir wünschen uns langfristige, faire Geschäftsbeziehungen, mit
                 denen sich nachhaltige Ergebnisse für unsere Kunden erreichen
@@ -163,7 +165,7 @@ class Startseite extends React.Component {
                 Mitarbeiter, denn mit all ihrer professionellen und menschlichen
                 Unterschiedlichkeit sind sie das Herz von Cofinpro.
               </p>
-              <h3 className="h5">Ökologische Verantwortung</h3>
+              <h3 className="h5 margin-30-top">Ökologische Verantwortung</h3>
               <p>
                 Unternehmen können wichtige Schritte tun, um die Umweltbelastung
                 gering zu halten. Deshalb kommt bei uns modernste Technik zum
@@ -174,7 +176,7 @@ class Startseite extends React.Component {
                 Großstadtverkehr. Für jeden gebuchten Flug zahlen wir außerdem
                 einen Ausgleich an die Initiative »Atmosfair«.
               </p>
-              <h3 className="h5">Soziale Verantwortung</h3>
+              <h3 className="h5 margin-30-top">Soziale Verantwortung</h3>
               <p>
                 Wir schätzen jedes Teammitglied, unabhängig von Geschlecht,
                 Ethnie, Alter, körperlicher Einschränkung, Religion oder

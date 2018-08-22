@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 var moment = require('moment')
 
-exports.create = function (graphql, createPage, createRedirect, callback) {
+exports.create = function(graphql, createPage, createRedirect, callback) {
   console.log('start graphql query: news medien.')
 
   graphql(
@@ -136,7 +136,8 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     let dataTechnologieBeratung = createNewBucket()
     let dataDigitalisierungBeratung = createNewBucket()
 
-    let veroeffentlichungenMap = [{
+    let veroeffentlichungenMap = [
+      {
         name: 'Managementberatung',
         bucket: dataManagementBeratung,
       },
@@ -191,34 +192,35 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     )
 
     for (
-      let i = 0; i < result.data.allContentfulPressemeldung.edges.length;
+      let i = 0;
+      i < result.data.allContentfulPressemeldung.edges.length;
       ++i
     ) {
       let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
 
       let pathToBigMiddleImage =
         pressemeldung.groesBildMitte !== undefined &&
-        pressemeldung.groesBildMitte !== null ?
-        '/' + pressemeldung.groesBildMitte.id + '/' :
-        '/unkown/'
+        pressemeldung.groesBildMitte !== null
+          ? '/' + pressemeldung.groesBildMitte.id + '/'
+          : '/unkown/'
       let pathToParagraphOneImage =
         pressemeldung.bildZuParagraph1 !== undefined &&
-        pressemeldung.bildZuParagraph1 !== null ?
-        '/' + pressemeldung.bildZuParagraph1.id + '/' :
-        '/unkown/'
+        pressemeldung.bildZuParagraph1 !== null
+          ? '/' + pressemeldung.bildZuParagraph1.id + '/'
+          : '/unkown/'
       let pathToParagraphTwoImage =
         pressemeldung.bildZuParagraph2 !== undefined &&
-        pressemeldung.bildZuParagraph2 !== null ?
-        '/' + pressemeldung.bildZuParagraph2.id + '/' :
-        '/unkown/'
+        pressemeldung.bildZuParagraph2 !== null
+          ? '/' + pressemeldung.bildZuParagraph2.id + '/'
+          : '/unkown/'
       let pathToParagraphThreeImage =
         pressemeldung.bildZuParagraph3 !== undefined &&
-        pressemeldung.bildZuParagraph3 !== null ?
-        '/' + pressemeldung.bildZuParagraph3.id + '/' :
-        '/unkown/'
+        pressemeldung.bildZuParagraph3 !== null
+          ? '/' + pressemeldung.bildZuParagraph3.id + '/'
+          : '/unkown/'
 
       createPage({
-        path: `/pressemeldung/${pressemeldung.urlDerSeite}`,
+        path: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
         component: slash(templatePressemeldungSite),
         context: {
           id: pressemeldung.id,
@@ -230,7 +232,9 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         },
       })
 
-      console.log(`created page /pressemeldung/${pressemeldung.urlDerSeite}.`)
+      console.log(
+        `created page /pressemitteilung/${pressemeldung.urlDerSeite}.`
+      )
     }
 
     createPage({
@@ -240,23 +244,32 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         name: 'Alle Beratungsfelder',
         url: '/alle-beratungsfelder',
         input: dataAll,
-        siteHeader: 'Hier finden Sie gesammelte Neuigkeiten aus unserem Medienforum: von Fachartikeln über Pressemitteilungen bis zu Studien und Whitepapers.',
-        professionalPublications: 'Unsere Berater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
+        siteHeader:
+          'Hier finden Sie gesammelte Neuigkeiten aus unserem Medienforum: von Fachartikeln über Pressemitteilungen bis zu Studien und Whitepapers.',
+        professionalPublications:
+          'Unsere Berater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
         buttonTextProfessionalPublications: 'Alle Fachpublikationen',
-        pressReleases: 'Was wir mit unserer Beratung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
-        medien: 'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+        pressReleases:
+          'Was wir mit unserer Beratung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
+        medien:
+          'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
         buttonTextPressRelease: 'Alle Pressemitteilungen',
         buttonTextStudien: 'Alle Studien',
         buttonTextThesen: 'Alle Thesenpapiere',
         buttonTextWhitePaper: 'Alle Whitepapers',
         buttonTextLösung: 'Alle Lösungsskizzen',
         content: {
-          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/alle-beratungsfelder',
-          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/alle-beratungsfelder',
+          buttonVeroeffentlichungenLink:
+            '/news-medien/archiv/veroeffentlichungen/alle-beratungsfelder',
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/alle-beratungsfelder',
           buttonStudienLink: '/news-medien/archiv/studien/alle-beratungsfelder',
-          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/alle-beratungsfelder',
-          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/alle-beratungsfelder',
-          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/alle-beratungsfelder',
+          buttonThesenpapiereLink:
+            '/news-medien/archiv/thesenpapiere/alle-beratungsfelder',
+          buttonWhitepaperLink:
+            '/news-medien/archiv/whitepapers/alle-beratungsfelder',
+          buttonLoesungLink:
+            '/news-medien/archiv/loesungsskizzen/alle-beratungsfelder',
         },
       },
     })
@@ -268,23 +281,33 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         name: 'Managementberatung',
         url: 'managementberatung',
         input: dataManagementBeratung,
-        siteHeader: 'Hier finden Sie gesammelte Neuigkeiten aus unserem Medienforum: von Fachartikeln über Pressemitteilungen bis zu Studien und Whitepapers.',
-        professionalPublications: 'Unsere Managementberater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
-        buttonTextProfessionalPublications: 'Alle Fachpublikationen Managementberatung',
-        pressReleases: 'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
-        medien: 'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+        siteHeader:
+          'Hier finden Sie gesammelte Neuigkeiten aus unserem Medienforum: von Fachartikeln über Pressemitteilungen bis zu Studien und Whitepapers.',
+        professionalPublications:
+          'Unsere Managementberater schreiben regelmäßig für Fachmedien über Trendthemen und Erfahrungen aus der Projektarbeit. Lesen Sie nach, was unsere Experten publizieren.',
+        buttonTextProfessionalPublications:
+          'Alle Fachpublikationen Managementberatung',
+        pressReleases:
+          'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
+        medien:
+          'Unsere Themen sind die Trends, die die Zukunft bewegen. Ergebnisse, Erkenntnisse und wichtige Erfahrungswerte halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
         buttonTextPressRelease: 'Alle Pressemitteilungen Managementberatung',
         buttonTextStudien: 'Alle Studien Managementberatung',
         buttonTextThesen: 'Alle Thesenpapiere Managementberatung',
         buttonTextWhitePaper: 'Alle Whitepapers Managementberatung',
         buttonTextLösung: 'Alle Lösungsskizzen Managementberatung',
         content: {
-          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/managementberatung',
-          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/managementberatung',
+          buttonVeroeffentlichungenLink:
+            '/news-medien/archiv/veroeffentlichungen/managementberatung',
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/managementberatung',
           buttonStudienLink: '/news-medien/archiv/studien/managementberatung',
-          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/managementberatung',
-          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/managementberatung',
-          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/managementberatung',
+          buttonThesenpapiereLink:
+            '/news-medien/archiv/thesenpapiere/managementberatung',
+          buttonWhitepaperLink:
+            '/news-medien/archiv/whitepapers/managementberatung',
+          buttonLoesungLink:
+            '/news-medien/archiv/loesungsskizzen/managementberatung',
         },
       },
     })
@@ -298,23 +321,33 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         name: 'Fachberatung-Kredit',
         url: 'fachberatung-kredit',
         input: dataFachKreditBeratung,
-        siteHeader: 'Hier finden Sie alle Neuigkeiten aus unserem Cofinpro-Medienforum: von Fachpublikationen über Pressemeldungen bis zu Studien, Whitepapers und Lösungsskizzen. ',
-        professionalPublications: 'Unsere Fachberater schreiben regelmäßig für Fachmedien über Kreditthemen. Lesen Sie nach, welchen Trends sich unsere Experten widmen.',
-        buttonTextProfessionalPublications: 'Alle Publikationen Fachberatung Kredit ',
-        pressReleases: 'Welche Wirkung unsere Fachberatung hat, machen wir gerne öffentlich. Hier geht es zur Übersicht über unsere Pressemeldungen zum Schwerpunkt Kredit.',
-        medien: 'Was wir in der Fachberatung mit Schwerpunkt Kredit erarbeiten und entwickeln, halten wir in Fachformaten für Sie fest. Hier können Sie sie downloaden.',
+        siteHeader:
+          'Hier finden Sie alle Neuigkeiten aus unserem Cofinpro-Medienforum: von Fachpublikationen über Pressemeldungen bis zu Studien, Whitepapers und Lösungsskizzen. ',
+        professionalPublications:
+          'Unsere Fachberater schreiben regelmäßig für Fachmedien über Kreditthemen. Lesen Sie nach, welchen Trends sich unsere Experten widmen.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Fachberatung Kredit ',
+        pressReleases:
+          'Welche Wirkung unsere Fachberatung hat, machen wir gerne öffentlich. Hier geht es zur Übersicht über unsere Pressemeldungen zum Schwerpunkt Kredit.',
+        medien:
+          'Was wir in der Fachberatung mit Schwerpunkt Kredit erarbeiten und entwickeln, halten wir in Fachformaten für Sie fest. Hier können Sie sie downloaden.',
         buttonTextPressRelease: 'Alle Pressemitteilungen Fachberatung Kredit',
         buttonTextStudien: 'Alle Studien Kredit',
         buttonTextThesen: 'Alle Thesenpapiere Kredit ',
         buttonTextWhitePaper: 'Alle Whitepapers Kredit ',
         buttonTextLösung: 'Alle Lösungsskizzen Kredit ',
         content: {
-          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/fachberatung-kredit',
-          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/fachberatung-kredit',
+          buttonVeroeffentlichungenLink:
+            '/news-medien/archiv/veroeffentlichungen/fachberatung-kredit',
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/fachberatung-kredit',
           buttonStudienLink: '/news-medien/archiv/studien/fachberatung-kredit',
-          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/fachberatung-kredit',
-          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/fachberatung-kredit',
-          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/fachberatung-kredit',
+          buttonThesenpapiereLink:
+            '/news-medien/archiv/thesenpapiere/fachberatung-kredit',
+          buttonWhitepaperLink:
+            '/news-medien/archiv/whitepapers/fachberatung-kredit',
+          buttonLoesungLink:
+            '/news-medien/archiv/loesungsskizzen/fachberatung-kredit',
         },
       },
     })
@@ -328,23 +361,35 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         name: 'Fachberatung-Wertpapier',
         url: 'fachberatung-wertpapier',
         input: dataFachWertpapierBeratung,
-        siteHeader: 'Hier finden Sie alles Wissenswerte aus unserem Medienforum: von Neuigkeiten wie Fachartikel über Pressemeldungen bis zu Whitepapers und themenbezogenen Studien.',
-        professionalPublications: 'Lesen Sie nach, über welche Trendthemen aus dem Wertpapierbereich unsere Experten für Fachmedien schreiben.',
-        buttonTextProfessionalPublications: 'Alle Publikationen Fachberatung Wertpapier',
-        pressReleases: 'Was wir mit unserer Fachberatung erreichen, teilen wir gerne öffentlich. Hier finden Sie eine Übersicht über unsere Pressemeldungen zum Schwerpunkt Wertpapier.',
-        medien: 'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
-        buttonTextPressRelease: 'Alle Pressemitteilungen Fachberatung Wertpapier',
+        siteHeader:
+          'Hier finden Sie alles Wissenswerte aus unserem Medienforum: von Neuigkeiten wie Fachartikel über Pressemeldungen bis zu Whitepapers und themenbezogenen Studien.',
+        professionalPublications:
+          'Lesen Sie nach, über welche Trendthemen aus dem Wertpapierbereich unsere Experten für Fachmedien schreiben.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Fachberatung Wertpapier',
+        pressReleases:
+          'Was wir mit unserer Fachberatung erreichen, teilen wir gerne öffentlich. Hier finden Sie eine Übersicht über unsere Pressemeldungen zum Schwerpunkt Wertpapier.',
+        medien:
+          'Ergebnisse, Erkenntnisse und Erfahrungen aus der Fachberatung halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
+        buttonTextPressRelease:
+          'Alle Pressemitteilungen Fachberatung Wertpapier',
         buttonTextStudien: 'Alle Studien Wertpapier',
         buttonTextThesen: 'Alle Thesenpapiere Wertpapier',
         buttonTextWhitePaper: 'Alle Whitepapers Wertpapier ',
         buttonTextLösung: 'Alle Lösungsskizzen Wertpapier',
         content: {
-          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/fachberatung-wertpapier',
-          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/fachberatung-wertpapier',
-          buttonStudienLink: '/news-medien/archiv/studien/fachberatung-wertpapier',
-          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/fachberatung-wertpapier',
-          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/fachberatung-wertpapier',
-          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/fachberatung-wertpapier',
+          buttonVeroeffentlichungenLink:
+            '/news-medien/archiv/veroeffentlichungen/fachberatung-wertpapier',
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/fachberatung-wertpapier',
+          buttonStudienLink:
+            '/news-medien/archiv/studien/fachberatung-wertpapier',
+          buttonThesenpapiereLink:
+            '/news-medien/archiv/thesenpapiere/fachberatung-wertpapier',
+          buttonWhitepaperLink:
+            '/news-medien/archiv/whitepapers/fachberatung-wertpapier',
+          buttonLoesungLink:
+            '/news-medien/archiv/loesungsskizzen/fachberatung-wertpapier',
         },
       },
     })
@@ -358,23 +403,33 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         name: 'Technologieberatung',
         url: 'technologieberatung',
         input: dataTechnologieBeratung,
-        siteHeader: 'Hier finden Sie jede Menge Wissenswertes aus unserem Cofinpro-Medienforum: von Neuigkeiten wie Fachartikel über Pressemeldungen bis zu Whitepapers und themenbezogenen Studien.',
-        professionalPublications: 'Unsere Technologieberater schreiben regelmäßig für Fachmedien über ihre Projekte und Herausforderungen. Lesen Sie nach, was unsere Experten bewegt.',
-        buttonTextProfessionalPublications: 'Alle Publikationen Technologieberatung',
-        pressReleases: 'Was wir mit unserer Expertise erreichen, teilen wir gerne mit der Presse. Hier finden Sie unsere Meldungen rund um Technologieberatung.',
-        medien: 'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
+        siteHeader:
+          'Hier finden Sie jede Menge Wissenswertes aus unserem Cofinpro-Medienforum: von Neuigkeiten wie Fachartikel über Pressemeldungen bis zu Whitepapers und themenbezogenen Studien.',
+        professionalPublications:
+          'Unsere Technologieberater schreiben regelmäßig für Fachmedien über ihre Projekte und Herausforderungen. Lesen Sie nach, was unsere Experten bewegt.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Technologieberatung',
+        pressReleases:
+          'Was wir mit unserer Expertise erreichen, teilen wir gerne mit der Presse. Hier finden Sie unsere Meldungen rund um Technologieberatung.',
+        medien:
+          'Welche Erkenntnisse, Ergebnisse und Erfahrungen bringen unsere Berater aus Technologieprojekten mit? In diesen Fachformaten zum Download halten wir es für Sie fest.',
         buttonTextPressRelease: 'Alle Pressemitteilungen Technologieberatung',
         buttonTextStudien: 'Alle Studien Technologieberatung',
         buttonTextThesen: 'Alle Thesenpapiere Technologieberatung ',
         buttonTextWhitePaper: 'Alle Whitepapers Technologieberatung ',
         buttonTextLösung: 'Alle Lösungsskizzen Technologieberatung ',
         content: {
-          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/technologieberatung',
-          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/technologieberatung',
+          buttonVeroeffentlichungenLink:
+            '/news-medien/archiv/veroeffentlichungen/technologieberatung',
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/technologieberatung',
           buttonStudienLink: '/news-medien/archiv/studien/technologieberatung',
-          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/technologieberatung',
-          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/technologieberatung',
-          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/technologieberatung',
+          buttonThesenpapiereLink:
+            '/news-medien/archiv/thesenpapiere/technologieberatung',
+          buttonWhitepaperLink:
+            '/news-medien/archiv/whitepapers/technologieberatung',
+          buttonLoesungLink:
+            '/news-medien/archiv/loesungsskizzen/technologieberatung',
         },
       },
     })
@@ -388,23 +443,33 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
         name: 'Digitalisierung',
         url: 'digitalisierung',
         input: dataDigitalisierungBeratung,
-        siteHeader: 'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
-        professionalPublications: 'Unsere Experten verfassen regelmäßig Fachbeiträge rund um die jüngsten Digitalisierungsthemen. Welchen Trends sie sich in ihren Artikeln widmen? Lesen Sie einfach nach.',
-        buttonTextProfessionalPublications: 'Alle Publikationen Digitalisierung',
-        pressReleases: 'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
-        medien: 'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
+        siteHeader:
+          'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+        professionalPublications:
+          'Unsere Experten verfassen regelmäßig Fachbeiträge rund um die jüngsten Digitalisierungsthemen. Welchen Trends sie sich in ihren Artikeln widmen? Lesen Sie einfach nach.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Digitalisierung',
+        pressReleases:
+          'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
+        medien:
+          'Welche Erkenntnisse und Erfahrungen unsere Digitalisierungsexperten im Projektumfeld erarbeiten, halten wir regelmäßig in Fachformaten zum Download fest.',
         buttonTextPressRelease: 'Alle Pressemitteilungen Digitalisierung',
         buttonTextStudien: 'Alle Studien Digitalisierung',
         buttonTextThesen: 'Alle Thesenpapiere Digitalisierung ',
         buttonTextWhitePaper: 'Alle Whitepapers Digitalisierung',
         buttonTextLösung: 'Alle Lösungsskizzen Digitalisierung ',
         content: {
-          buttonVeroeffentlichungenLink: '/news-medien/archiv/veroeffentlichungen/digitalisierung',
-          buttonPressemeldungenLink: '/news-medien/archiv/pressemeldungen/digitalisierung',
+          buttonVeroeffentlichungenLink:
+            '/news-medien/archiv/veroeffentlichungen/digitalisierung',
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/digitalisierung',
           buttonStudienLink: '/news-medien/archiv/studien/digitalisierung',
-          buttonThesenpapiereLink: '/news-medien/archiv/thesenpapiere/digitalisierung',
-          buttonWhitepaperLink: '/news-medien/archiv/whitepapers/digitalisierung',
-          buttonLoesungLink: '/news-medien/archiv/loesungsskizzen/digitalisierung',
+          buttonThesenpapiereLink:
+            '/news-medien/archiv/thesenpapiere/digitalisierung',
+          buttonWhitepaperLink:
+            '/news-medien/archiv/whitepapers/digitalisierung',
+          buttonLoesungLink:
+            '/news-medien/archiv/loesungsskizzen/digitalisierung',
         },
       },
     })
@@ -711,7 +776,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     createPressemeldungenArchivSites(
       dataAll,
       'Alle Beratungsfelder',
-      '/news-medien/archiv/pressemeldungen/alle-beratungsfelder',
+      '/news-medien/archiv/pressemitteilungen/alle-beratungsfelder',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
       createPage
@@ -719,7 +784,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     createPressemeldungenArchivSites(
       dataManagementBeratung,
       'Managementberatung',
-      '/news-medien/archiv/pressemeldungen/managementberatung',
+      '/news-medien/archiv/pressemitteilungen/managementberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Managementberatung bewirken, teilen wir natürlich gerne. Hier finden Sie eine Übersicht über Pressemeldungen aus unserem Haus.',
       createPage
@@ -727,7 +792,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     createPressemeldungenArchivSites(
       dataFachKreditBeratung,
       'Fachberatung-Kredit',
-      '/news-medien/archiv/pressemeldungen/fachberatung-kredit',
+      '/news-medien/archiv/pressemitteilungen/fachberatung-kredit',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Welche Wirkung unsere Fachberatung hat, machen wir gerne öffentlich. Hier geht es zur Übersicht über unsere Pressemeldungen zum Schwerpunkt Kredit.',
       createPage
@@ -735,7 +800,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     createPressemeldungenArchivSites(
       dataFachWertpapierBeratung,
       'Fachberatung-Wertpapier',
-      '/news-medien/archiv/pressemeldungen/fachberatung-wertpapier',
+      '/news-medien/archiv/pressemitteilungen/fachberatung-wertpapier',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Fachberatung erreichen, teilen wir gerne öffentlich. Hier finden Sie eine Übersicht über unsere Pressemeldungen zum Schwerpunkt Wertpapier.',
       createPage
@@ -743,7 +808,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     createPressemeldungenArchivSites(
       dataTechnologieBeratung,
       'Technologieberatung',
-      '/news-medien/archiv/pressemeldungen/technologieberatung',
+      '/news-medien/archiv/pressemitteilungen/technologieberatung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Expertise erreichen, teilen wir gerne mit der Presse. Hier finden Sie unsere Meldungen rund um Technologieberatung.',
       createPage
@@ -751,7 +816,7 @@ exports.create = function (graphql, createPage, createRedirect, callback) {
     createPressemeldungenArchivSites(
       dataDigitalisierungBeratung,
       'Digitalisierung',
-      '/news-medien/archiv/pressemeldungen/digitalisierung',
+      '/news-medien/archiv/pressemitteilungen/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
       createPage
@@ -971,7 +1036,7 @@ function createYearToVeroeffentlichungenMap(_input) {
   var ordered = {}
   Object.keys(yearToElementsMap)
     .reverse()
-    .forEach(function (key) {
+    .forEach(function(key) {
       ordered['year-' + key] = yearToElementsMap[key]
     })
   return ordered
@@ -996,7 +1061,7 @@ function createYearToPressemeldungenMap(_input) {
   var ordered = {}
   Object.keys(yearToElementsMap)
     .reverse()
-    .forEach(function (key) {
+    .forEach(function(key) {
       ordered['year-' + key] = yearToElementsMap[key]
     })
   return ordered
@@ -1021,7 +1086,7 @@ function createYearToDownloadsMap(_input) {
   var ordered = {}
   Object.keys(yearToElementsMap)
     .reverse()
-    .forEach(function (key) {
+    .forEach(function(key) {
       ordered['year-' + key] = yearToElementsMap[key]
     })
   return ordered
