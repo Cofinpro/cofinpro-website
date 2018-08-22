@@ -49,7 +49,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Frankfurt</p>
+              <p>Frankfurt</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -79,7 +79,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Karlsruhe</p>
+              <p>Karlsruhe</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -109,7 +109,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Berlin</p>
+              <p>Berlin</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -139,7 +139,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">München</p>
+              <p>München</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -169,7 +169,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Hamburg</p>
+              <p>Hamburg</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -193,7 +193,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Hannover</p>
+              <p>Hannover</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -217,7 +217,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Dresden</p>
+              <p>Dresden</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -241,7 +241,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Köln</p>
+              <p>Köln</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
@@ -265,7 +265,7 @@ class Standorte extends React.Component {
           </div>
           <div className="row margin-40-top">
             <div className="col-12">
-              <p className="h4">Stuttgart</p>
+              <p>Stuttgart</p>
             </div>
             <div className="col-12 col-md-5 col-lg-4">
               <a
