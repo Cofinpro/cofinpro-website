@@ -18,20 +18,37 @@ class LayoutPressemeldungen extends React.Component {
     let result = []
 
     for (let i = 0; i < _input.length; ++i) {
+      const DATE_OPTIONS = {
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+      }
       result.push({
         to: '/pressemitteilung/' + _input[i].urlDerSeite,
         nameTeil1: _input[i].ueberschrift,
         nameTeil2: _input[i].unteruebrschrift,
+        datum: new Date(_input[i].verffentlichungsdatum).toLocaleDateString(
+          'de-DE',
+          DATE_OPTIONS
+        ),
       })
     }
     return result
   }
 
   createDataForPreviewImage(_input) {
+    const DATE_OPTIONS = {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }
     return {
       to: '/pressemitteilung/' + _input.urlDerSeite,
       header: _input.ueberschrift,
-      subHeader: _input.unteruebrschrift,
+      subHeader: new Date(_input.verffentlichungsdatum).toLocaleDateString(
+        'de-DE',
+        DATE_OPTIONS
+      ),
     }
   }
 

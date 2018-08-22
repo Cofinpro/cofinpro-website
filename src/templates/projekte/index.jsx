@@ -89,7 +89,9 @@ class ProjekteUebersicht extends React.Component {
                         <div className={'col-12 ' + secondColumnWidth}>
                           <Link
                             className="d-block text-dark"
-                            to={'/projekte/' + item.urlDerSeite}
+                            to={
+                              '/projekte/' + props.projects[i + 1].urlDerSeite
+                            }
                           >
                             <ImageWrapper
                               sourceType={SOURCE_TYP_SHARP}

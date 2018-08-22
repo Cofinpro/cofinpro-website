@@ -37,7 +37,15 @@ class LayoutLinkRow extends React.Component {
                 return (
                   <div className="row" key={i}>
                     <div className="col-12 col-md-6 col-lg-4 d-flex">
-                      <LinkButtonV2 path={link.to} text={titleOfLink} />
+                      <LinkButtonV2
+                        path={link.to}
+                        text={titleOfLink}
+                        child={
+                          <p className="text-dark text-size-14 margin-5-top margin-20-left">
+                            {links[i].datum}
+                          </p>
+                        }
+                      />
                     </div>
                     <div className="col-12 d-none d-lg-flex col-lg-2" />
                     <div className="col-12 col-md-6 col-lg-4 d-flex">
@@ -45,6 +53,11 @@ class LayoutLinkRow extends React.Component {
                         <LinkButtonV2
                           path={links[i + 1].to}
                           text={titleOfLinkTwo}
+                          child={
+                            <p className="text-dark text-size-14 margin-5-top margin-20-left">
+                              {links[i + 1].datum}
+                            </p>
+                          }
                         />
                       )}
                     </div>

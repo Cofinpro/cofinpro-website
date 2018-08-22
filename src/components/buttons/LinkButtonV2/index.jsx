@@ -7,7 +7,7 @@ import './style.scss'
 
 class LinkButtonV2 extends React.Component {
   render() {
-    const { text, path, styleContainer } = this.props
+    const { text, path, child, styleContainer } = this.props
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -21,10 +21,13 @@ class LinkButtonV2 extends React.Component {
           alt="Link Icon"
           src={pathPrefix + '/svg/icon_arrow_dotted_right.svg'}
         />
-        <ContentfulMarkdownText
-          text={text}
-          styleClasses="link-button-v2__text h5 bold-font no-margin margin-20-left"
-        />
+        <div className="d-flex flex-column">
+          <ContentfulMarkdownText
+            text={text}
+            styleClasses="link-button-v2__text h5 bold-font no-margin margin-20-left"
+          />
+          {child}
+        </div>
       </Link>
     )
   }
