@@ -80,7 +80,7 @@ class FokusthemenLayout extends React.Component {
             <div className="col-12 col-md-6 d-flex">
               <div className="row">
                 <div className="col-12">
-                  <h2 className="h2">{header}</h2>
+                  <h2 className="h2 margin-20-bottom">{header}</h2>
                   <p>{description}</p>
                 </div>
                 <div className="col-12 d-none d-md-block align-self-end">

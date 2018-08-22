@@ -166,8 +166,54 @@ class FokusthemenDetailTeamplate extends React.Component {
           </div>
         </div>
 
+        <div className="container margin-120-top margin-xs-20-top">
+          <div className="row">
+            <div className="col-12 col-md-6 margin-xs-80-top">
+              <h2 className="h2">Die Herausforderung</h2>
+              <div className="blue-bullet">
+                {graphQlResult.herausforderung !== undefined &&
+                graphQlResult.herausforderung !== null ? (
+                  <ContentfulMarkdownText
+                    text={graphQlResult.herausforderung.herausforderung}
+                  />
+                ) : null}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-40-top margin-xs-20-top">
+          <div className="row">
+            <div className="col-12 offset-md-6 col-md-6 margin-xs-40-top">
+              <h2 className="h2">Unser Lösungsansatz</h2>
+              <div className="blue-bullet">
+                {graphQlResult.loesungsansatz !== undefined &&
+                graphQlResult.loesungsansatz !== null ? (
+                  <ContentfulMarkdownText
+                    text={graphQlResult.loesungsansatz.loesungsansatz}
+                  />
+                ) : null}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-80-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6 margin-xs-20-top">
+              <h2 className="h2">Ihr Nutzen</h2>
+              <div className="blue-bullet">
+                {graphQlResult.nutzen !== undefined &&
+                graphQlResult.nutzen !== null ? (
+                  <ContentfulMarkdownText text={graphQlResult.nutzen.nutzen} />
+                ) : null}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {medien.length > 0 && (
-          <div className="container margin-100-top margin-xs-80-top">
+          <div className="container margin-120-top margin-xs-80-top">
             <div className="row d-md-flex">
               <div className="col-12 col-md-6">
                 <StockphotoWithExternalLink
@@ -200,60 +246,20 @@ class FokusthemenDetailTeamplate extends React.Component {
             </div>
           </div>
         )}
-
-        <div className="container margin-40-top margin-xs-20-top">
-          <div className="row">
-            <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top">
-              <h2 className="h2">Die Herausforderung</h2>
-              <div className="blue-bullet">
-                {graphQlResult.herausforderung !== undefined &&
-                graphQlResult.herausforderung !== null ? (
-                  <ContentfulMarkdownText
-                    text={graphQlResult.herausforderung.herausforderung}
-                  />
-                ) : null}
-              </div>
-            </div>
-            <div className="col-12 col-md-6 order-1 order-md-2">
-              <StockphotoWithExternalLink
-                content={medien}
-                images={stockImages}
-                indexOfElelement={3}
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="container margin-100-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-md-6" />
-            <div className="col-md-6 margin-xs-20-top">
-              <h2 className="h2">Unser Lösungsansatz</h2>
-              <div className="blue-bullet">
-                {graphQlResult.loesungsansatz !== undefined &&
-                graphQlResult.loesungsansatz !== null ? (
-                  <ContentfulMarkdownText
-                    text={graphQlResult.loesungsansatz.loesungsansatz}
-                  />
-                ) : null}
+        {medien.length > 3 && (
+          <div className="container margin-40-top margin-xs-20-top">
+            <div className="row">
+              <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top" />
+              <div className="col-12 col-md-6 order-1 order-md-2">
+                <StockphotoWithExternalLink
+                  content={medien}
+                  images={stockImages}
+                  indexOfElelement={3}
+                />
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="container margin-100-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-md-6 margin-xs-20-top">
-              <h2 className="h2">Ihr Nutzen</h2>
-              <div className="blue-bullet">
-                {graphQlResult.nutzen !== undefined &&
-                graphQlResult.nutzen !== null ? (
-                  <ContentfulMarkdownText text={graphQlResult.nutzen.nutzen} />
-                ) : null}
-              </div>
-            </div>
-          </div>
-        </div>
+        )}
 
         <ReferenzAndDownload
           style={{ container: 'margin-120-top margin-xs-80-top' }}
