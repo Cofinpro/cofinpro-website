@@ -97,15 +97,17 @@ class NewsMedienUebersichtTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-80-top">
-          <div className="row">
-            <div className="col-12 col-md-6">
-              <h2 className="h2">{'Fachpublikationen'}</h2>
-              <p>{professionalPublications}</p>
+        {input.veroeffentlichungen.all.length > 0 && (
+          <div className="container margin-80-top">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <h2 className="h2">{'Fachpublikationen'}</h2>
+                <p>{professionalPublications}</p>
+              </div>
+              <div className="col-12 col-md-6" />
             </div>
-            <div className="col-12 col-md-6" />
           </div>
-        </div>
+        )}
         <LayoutVeroeffentlichungen
           content={{
             id: 'fachpublikationen',
@@ -120,21 +122,24 @@ class NewsMedienUebersichtTemplate extends React.Component {
             elements: input.veroeffentlichungen.all,
             buttonText: buttonTextProfessionalPublications,
             buttonLink: innerContent.buttonVeroeffentlichungenLink,
-            showButton: true,
+            showButton: input.veroeffentlichungen.all.length > 0,
           }}
           style={{
             row: 'margin-50-top margin-xs-0-top',
           }}
         />
-        <div className="container margin-100-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-12 col-md-6">
-              <h2 className="h2">{'Pressemitteilungen'}</h2>
-              <p>{pressReleases}</p>
+
+        {input.pressemeldungen.current.length > 0 && (
+          <div className="container margin-100-top margin-xs-80-top">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <h2 className="h2">{'Pressemitteilungen'}</h2>
+                <p>{pressReleases}</p>
+              </div>
+              <div className="col-12 col-md-6" />
             </div>
-            <div className="col-12 col-md-6" />
           </div>
-        </div>
+        )}
         <LayoutPressemeldungen
           content={{
             id: 'pressemitteilungen',
@@ -149,7 +154,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             elements: input.pressemeldungen.current,
             buttonText: buttonTextPressRelease,
             buttonLink: innerContent.buttonPressemeldungenLink,
-            showButton: true,
+            showButton: input.pressemeldungen.current.length > 0,
           }}
           style={{
             row: 'margin-50-top margin-xs-0-top',
@@ -165,13 +170,15 @@ class NewsMedienUebersichtTemplate extends React.Component {
           </div>
         </div>
 
-        <div className={'container margin-60-top margin-xs-60-top'}>
-          <div className="row">
-            <div className="col-12">
-              <h3 className="h4 margin-xs-20-bottom">STUDIEN</h3>
+        {input.studien.current.length > 0 && (
+          <div className={'container margin-60-top margin-xs-60-top'}>
+            <div className="row">
+              <div className="col-12">
+                <h3 className="h4 margin-xs-20-bottom">STUDIEN</h3>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <LayoutDownloads
           content={{
             id: 'STUDIEN',
@@ -183,20 +190,22 @@ class NewsMedienUebersichtTemplate extends React.Component {
             downloads: input.studien.current,
             buttonText: buttonTextStudien,
             buttonLink: innerContent.buttonStudienLink,
-            showButton: true,
+            showButton: input.studien.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
-        <div className={'container margin-60-top margin-xs-60-top'}>
-          <div className="row">
-            <div className="col-12">
-              <h3 className="h4 margin-xs-20-bottom">THESENPAPIERE</h3>
+        {input.thesenpapiere.current.length > 0 && (
+          <div className={'container margin-60-top margin-xs-60-top'}>
+            <div className="row">
+              <div className="col-12">
+                <h3 className="h4 margin-xs-20-bottom">THESENPAPIERE</h3>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <LayoutDownloads
           content={{
             id: 'THESENPAPIERE',
@@ -208,20 +217,22 @@ class NewsMedienUebersichtTemplate extends React.Component {
             downloads: input.thesenpapiere.current,
             buttonText: buttonTextThesen,
             buttonLink: innerContent.buttonThesenpapiereLink,
-            showButton: true,
+            showButton: input.thesenpapiere.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
-        <div className={'container margin-60-top margin-xs-60-top'}>
-          <div className="row">
-            <div className="col-12">
-              <h3 className="h4 margin-xs-20-bottom">WHITEPAPERS</h3>
+        {input.whitepapers.current.length > 0 && (
+          <div className={'container margin-60-top margin-xs-60-top'}>
+            <div className="row">
+              <div className="col-12">
+                <h3 className="h4 margin-xs-20-bottom">WHITEPAPERS</h3>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <LayoutDownloads
           content={{
             id: 'WHITEPAPERS',
@@ -233,20 +244,22 @@ class NewsMedienUebersichtTemplate extends React.Component {
             downloads: input.whitepapers.current,
             buttonText: buttonTextWhitePaper,
             buttonLink: innerContent.buttonWhitepaperLink,
-            showButton: true,
+            showButton: input.whitepapers.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
-        <div className={'container margin-60-top margin-xs-60-top'}>
-          <div className="row">
-            <div className="col-12">
-              <h3 className="h4 margin-xs-20-bottom">LÖSUNGSSKIZZEN</h3>
+        {input.loesungsskizzen.current.length > 0 && (
+          <div className={'container margin-60-top margin-xs-60-top'}>
+            <div className="row">
+              <div className="col-12">
+                <h3 className="h4 margin-xs-20-bottom">LÖSUNGSSKIZZEN</h3>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <LayoutDownloads
           content={{
             id: 'LOESUNGSSKIZZEN',
@@ -258,7 +271,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             downloads: input.loesungsskizzen.current,
             buttonText: buttonTextLösung,
             buttonLink: innerContent.buttonLoesungLink,
-            showButton: true,
+            showButton: input.loesungsskizzen.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',

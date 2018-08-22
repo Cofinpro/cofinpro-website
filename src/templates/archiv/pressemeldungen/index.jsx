@@ -95,7 +95,7 @@ class PressemeldungArchivTemplate extends React.Component {
             <div className="row">
               <div className="col-12">
                 <p className="no-media-available-text">
-                  Keine Medien zu diesem Thema <br />in dieser Kategorie
+                  Es sind keine Medien zu diesem Thema in dieser Kategorie
                   verfügbar
                 </p>
               </div>
