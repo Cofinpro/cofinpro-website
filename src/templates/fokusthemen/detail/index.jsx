@@ -166,7 +166,7 @@ class FokusthemenDetailTeamplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-xs-20-top">
+        <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6 margin-xs-80-top">
               <h2 className="h2">Die Herausforderung</h2>
@@ -198,7 +198,7 @@ class FokusthemenDetailTeamplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-80-top margin-xs-80-top">
+        <div className="container margin-40-top margin-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-6 margin-xs-20-top">
               <h2 className="h2">Ihr Nutzen</h2>
@@ -271,7 +271,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 graphQlResult.uberschriftGanzOben +
                 '.',
               button: {
-                text: 'Alle Referenzen zum Thema',
+                text: 'ALLE REFERENZEN',
                 path: '/projekte/managementberatung',
               },
             },
@@ -282,7 +282,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 graphQlResult.uberschriftGanzOben +
                 '.',
               button: {
-                text: 'Alle Publikationen zum Thema',
+                text: 'ALLE PUBLIKATIONEN',
                 path: '/news-medien/alle-beratungsfelder',
               },
             },

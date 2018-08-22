@@ -53,15 +53,17 @@ class Projekt extends React.Component {
                 {graphQlResult.unterueberschrift}
               </p>
             </div>
-            {/*
-              <div className="col-12 col-lg-5 margin-0-top margin-md-40-top">
-                <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
-              </div>
-            */}
           </div>
         </div>
 
-        <div className="container margin-120-top margin-md-80-top">
+        <div className="container margin-60-top padding-xs-20-top">
+          <div className="row">
+            <div className="col-12 col-md-10 offset-md-1">
+              <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
+            </div>
+          </div>
+        </div>
+        <div className="container margin-60-top margin-md-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
               <h3 className="h2">Ziele</h3>

@@ -69,7 +69,7 @@ class LoesungsskizzenArchivTemplate extends React.Component {
                 ]}
                 urlPrefix="news-medien/archiv/loesungsskizzen"
                 description={
-                  'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren? Wählen Sie selbst. '
+                  'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren?  \n Wählen Sie selbst. '
                 }
               />
             </div>

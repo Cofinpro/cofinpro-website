@@ -36,10 +36,13 @@ class ThemaDigitalisierung extends React.Component {
           <div className="row">
             <div className="col-12 col-md-9 col-lg-7">
               <h1 className="h1">Unsere Themen in der Digitalisierung</h1>
+              <h2 className="h2 margin-20-top d-none d-md-block">
+                »Wandel auf Knopfdruck funktioniert nicht. Die digitale
+                Transformation wird Jahre dauern.«
+              </h2>
               <PageIntroText
                 content={{
-                  text:
-                    'Wandel auf Knopfdruck funktioniert nicht. Die digitale Transformation wird Jahre dauern.«\n\n Gerald Prior, Vorstand Cofinpro AG',
+                  text: 'Gerald Prior, Vorstand Cofinpro AG',
                 }}
               />
             </div>
@@ -53,17 +56,19 @@ class ThemaDigitalisierung extends React.Component {
                 Wo liegen unsere Stärken in der Digitalisierung?
               </h2>
               <p>
-                Sämtliche unserer Leistungen sind auf führende
-                Finanzdienstleister zugeschnitten. Nachdem zunächst die
-                Modernisierung exemplarischer Geschäftsmodelle, der Aufbau von
-                Innovationslaboren und die Digitalisierungsstrategie im
-                Vordergrund stand, ist nun die Renovierung etablierter
-                Vorgehensweisen, die Prozesskettenstraffung, der konsequente
-                Transfer von Best Practices aus Keimzellen in Fachbereichen
-                sowie die ganzheitliche Digitale Transformation ins Zentrum
-                gerückt. Bei der Umsetzung dieser herausfordernden Agenda
-                unterstützen wir Finanzinstitute mit einem fokussierten
-                Beratungsangebot quer über unsere Beratungsfelder.
+                Unsere Leistungen sind auf führende Finanzdienstleister
+                zugeschnitten. Zunächst stand die Modernisierung exemplarischer
+                Geschäftsmodelle, der Aufbau von Innovationslaboren und die
+                Digitalisierungsstrategie im Vordergrund.{' '}
+              </p>
+              <p>
+                Nun ist die Renovierung etablierter Vorgehensweisen, die
+                Prozesskettenstraffung, der konsequente Transfer von Best
+                Practices aus Keimzellen in Fachbereichen sowie die
+                ganzheitliche Digitale Transformation ins Zentrum gerückt. Bei
+                der Umsetzung dieser herausfordernden Agenda unterstützen wir
+                Finanzinstitute mit einem fokussierten Beratungsangebot quer
+                über unsere Beratungsfelder.
               </p>
             </div>
           </div>
@@ -87,7 +92,7 @@ class ThemaDigitalisierung extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-140-top margin-md-100-top margin-xs-80-top">
+        <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
               <h2 className="h2">Trends sind unser Ding</h2>
@@ -106,7 +111,7 @@ class ThemaDigitalisierung extends React.Component {
         <ThreeIconsWithLinks
           styleClass="margin-40-top"
           iconLeft={this.props.data.iconThemeOneSharp}
-          titleLeft="Maschine Learning/KI"
+          titleLeft="Machine Learning"
           linkLeft={'/fokusthemen/thema/machine-learning'}
           iconMiddle={this.props.data.iconThemeTwoSharp}
           titleMiddle="Unbundling Banks"
@@ -124,7 +129,7 @@ class ThemaDigitalisierung extends React.Component {
               description:
                 'Welche Projekte haben wir im Kontext Digitaliserung schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
               button: {
-                text: 'Alle Referenzen zum Thema',
+                text: 'ALLE REFERENZEN',
                 path: '/projekte/digitalisierung',
               },
             },
@@ -133,7 +138,7 @@ class ThemaDigitalisierung extends React.Component {
               description:
                 'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema Digitalisierung finden Sie hier.',
               button: {
-                text: 'Alle Publikationen zum Thema',
+                text: 'ALLE PUBLIKATIONEN',
                 path: '/news-medien/digitalisierung',
               },
             },

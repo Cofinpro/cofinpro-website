@@ -62,7 +62,7 @@ class FokusthemenStartseite extends React.Component {
           urlPrefix="fokusthemen"
           styleClass="margin-80-top"
           description={
-            'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen? Wählen Sie selbst.'
+            'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen?  \n Wählen Sie selbst.'
           }
         />
 

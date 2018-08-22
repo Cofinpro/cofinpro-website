@@ -504,7 +504,7 @@ exports.create = function(graphql, createPage, backgroundImages, callback) {
         component: slash(template),
         context: {
           id: 'Digitalisierung',
-          title: 'Unsere Projekte im Kontext von Digitalisierung',
+          title: 'Unsere Projekte im Kontext der Digitalisierung',
           description:
             'Ob Digi-Ramp-up, Innovationslabore oder agile Organisation: Hier finden Sie eine Reihe exemplarischer Projekte aus dem Umfeld der Digitalisierung.',
           projects:
