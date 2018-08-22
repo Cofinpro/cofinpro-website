@@ -1,8 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
-import LinkButton from '../../components/buttons/LinkButton'
+import DownloadButton from '../../components/buttons/DownloadButton'
 
 import {
   ImageWrapper,
@@ -19,8 +18,6 @@ class Standorte extends React.Component {
   }
 
   render() {
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
     return (
       <div className="min-view-height">
         <Helmet
@@ -74,7 +71,10 @@ class Standorte extends React.Component {
                 Tel +49 (0) 69-2 99 20 87 60<br />
                 Fax +49 (0) 69-2 99 20 87 61
               </p>
-              <p>Anfahrtsskizze</p>
+              <DownloadButton
+                _href={'/pdf/anfahrt/cofinpro_anfahrt_frankfurt.pdf'}
+                text={'Anfahrtsskizze'}
+              />
             </div>
           </div>
           <div className="row margin-40-top">
@@ -101,7 +101,10 @@ class Standorte extends React.Component {
                 Tel +49 (0) 721-50 99 87 31<br />
                 Fax +49 (0) 69-2 99 20 87 61<br />
               </p>
-              <p>Anfahrtsskizze</p>
+              <DownloadButton
+                _href={'/pdf/anfahrt/cofinpro_anfahrt_karlsruhe.pdf'}
+                text={'Anfahrtsskizze'}
+              />
             </div>
           </div>
           <div className="row margin-40-top">
@@ -128,7 +131,10 @@ class Standorte extends React.Component {
                 Tel +49 (0) 30-27 57 99 33<br />
                 Fax +49 (0) 69-2 99 20 87 61<br />
               </p>
-              <p>Anfahrtsskizze</p>
+              <DownloadButton
+                _href={'/pdf/anfahrt/cofinpro_anfahrt_berlin.pdf'}
+                text={'Anfahrtsskizze'}
+              />
             </div>
           </div>
           <div className="row margin-40-top">
@@ -155,7 +161,10 @@ class Standorte extends React.Component {
                 Tel +49 (0) 89-57 95 90<br />
                 Fax +49 (0) 89-57 95 92 00<br />
               </p>
-              <p>Anfahrtsskizze</p>
+              <DownloadButton
+                _href={'/pdf/anfahrt/cofinpro_anfahrt_muenchen.pdf'}
+                text={'Anfahrtsskizze'}
+              />
             </div>
           </div>
           <div className="row margin-40-top">
