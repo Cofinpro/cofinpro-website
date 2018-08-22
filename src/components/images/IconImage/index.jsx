@@ -6,6 +6,7 @@ import { ReactComponent as BlockchainIcon } from '../../../../static/svg/Fokusth
 import { ReactComponent as BonitaetspruefungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/bonitaetspruefung.svg'
 import { ReactComponent as DatagovernanceIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/datagovernance.svg'
 import { ReactComponent as DigitalisierungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/digitalisierung.svg'
+import { ReactComponent as DigitaleTransformationIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/digitaletransformation.svg'
 import { ReactComponent as KundenbindungIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kundenbindung.svg'
 import { ReactComponent as KostenprogrammIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kostenprogramm.svg'
 import { ReactComponent as KundenorientiertIcon } from '../../../../static/svg/Fokusthemen_Trendthemen/schwarz/kundenorientiert.svg'
@@ -50,6 +51,8 @@ class IconImage extends React.Component {
       icon = <DatagovernanceIcon />
     } else if (source === 'Digitalisierung') {
       icon = <DigitalisierungIcon />
+    } else if (source === 'Digitale-Transformation') {
+      icon = <DigitaleTransformationIcon />
     } else if (source === 'Kostenprogramm') {
       icon = <KostenprogrammIcon />
     } else if (source === 'Kundenbindung') {
