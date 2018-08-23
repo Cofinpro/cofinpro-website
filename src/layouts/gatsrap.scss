@@ -1,12 +1,3 @@
-// Colors
-//
-// Grayscale and brand colors for use across Bootstrap.
-
-// Start with assigning color names to specific hex values.
-//
-// Color system
-//
-
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -18,7 +9,6 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black: #000 !default;
-
 $blue: #a9c5e8 !default;
 $indigo: #3f51b5 !default;
 $purple: #673ab7 !default;
@@ -31,8 +21,6 @@ $green: #8bc34a !default;
 $teal: #009688 !default;
 $cyan: #00bcd4 !default;
 $brown: #847575 !default;
-
-// Reassign color vars to semantic color scheme
 $theme-colors: (
     primary: $orange,
     secondary: $blue,
@@ -44,18 +32,35 @@ $theme-colors: (
     dark: $gray-800
   )
   !default;
-
+$display3-size: 3.75rem !default;
+$display4-size: 3.375rem !default;
 $font-family-sans-serif: apercu-regular-pro;
 $font-family-monospace: apercu-regular-pro;
 $font-family-base: apercu-regular-pro;
-
-$font-size-base: 1.125rem !default;
-$font-size-lg: ($font-size-base * 1.25) !default;
-$font-size-sm: ($font-size-base * 0.875) !default;
-
+$font-size-base: 0.875rem !default;
+$font-size-lg: 1rem !default;
+$font-size-sm: 0.875rem !default;
+$h1-font-size: 3rem;
+$h2-font-size: 2.25rem;
+$h3-font-size: 1.75rem;
+$h4-font-size: 1.5rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 0.875rem;
+$h1-font-size-sm: 1.5rem;
+$h1-font-size-md: 2.5rem;
+$h2-font-size-sm: 1.375rem;
+$h2-font-size-md: 1.75rem;
+$h3-font-size-sm: 1.125rem;
+$h3-font-size-md: 1.5rem;
+$h4-font-size-sm: 1rem;
+$h4-font-size-md: 1.25rem;
+$h5-font-size-sm: 1rem;
+$h5-font-size-md: 1.125rem;
+$h6-font-size-sm: 0.75rem;
+$h6-font-size-md: 0.875rem;
+$headings-font-family: inherit !default;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
-
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,
@@ -63,48 +68,411 @@ $grid-breakpoints: (
   lg: 992px,
   xl: 1200px
 );
-
 $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
   xl: 1140px
 );
-
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+main {
+  margin-top: 76px;
+  @include media-breakpoint-only(lg) {
+    margin-top: 104px;
+  }
+  @include media-breakpoint-only(xl) {
+    margin-top: 104px;
+  }
+}
+
+.p-font-large-lg {
+  font-size: 1.125rem;
+  @include media-breakpoint-only(xs) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-sm;
+  }
+  p {
+    font-size: 1.125rem;
+    @include media-breakpoint-only(xs) {
+      font-size: $font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.p-font-large-md {
+  font-size: 1.125rem;
+  @include media-breakpoint-only(xs) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size-sm;
+  }
+  p {
+    font-size: 1.125rem;
+    @include media-breakpoint-only(xs) {
+      font-size: $font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.p-font-large {
+  font-size: 1.125rem;
+}
+
+p,
+li,
+.p {
+  @include media-breakpoint-only(xs) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-base;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $font-size-lg;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $font-size-lg;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: apercu-bold-pro;
+}
+
+.h1,
+.h1 > h1,
+.h1 > h2,
+.h1 > h3,
+.h1 > h4,
+.h1 > h5,
+.h1 > h6 {
+  font-family: apercu-bold-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h1-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h1-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h1-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h1-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h1-font-size;
+  }
+}
+
+.h2,
+.h2 > h1,
+.h2 > h2,
+.h2 > h3,
+.h2 > h4,
+.h2 > h5,
+.h2 > h6 {
+  font-family: apercu-bold-pro;
+  margin-bottom: 1rem;
+  @include media-breakpoint-only(xs) {
+    font-size: $h2-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h2-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h2-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h2-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h2-font-size;
+  }
+}
+
+.h3,
+.h3 > h1,
+.h3 > h2,
+.h3 > h3,
+.h3 > h4,
+.h3 > h5,
+.h3 > h6 {
+  font-family: apercu-bold-pro;
+  font-size: $h3-font-size;
+
+  @include media-breakpoint-only(xs) {
+    font-size: $h3-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h3-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h3-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h3-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h3-font-size;
+  }
+
+  p {
+    @include media-breakpoint-only(xs) {
+      font-size: $h3-font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $h3-font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $h3-font-size-md;
+    }
+    @include media-breakpoint-only(lg) {
+      font-size: $h3-font-size;
+    }
+    @include media-breakpoint-only(xl) {
+      font-size: $h3-font-size;
+    }
+  }
+}
+
+.h4,
+.h4 > h1,
+.h4 > h2,
+.h4 > h3,
+.h4 > h4,
+.h4 > h5,
+.h4 > h6 {
+  font-family: apercu-bold-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h4-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h4-font-size;
+  }
+  p {
+    @include media-breakpoint-only(xs) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $h4-font-size-md;
+    }
+    @include media-breakpoint-only(lg) {
+      font-size: $h4-font-size;
+    }
+    @include media-breakpoint-only(xl) {
+      font-size: $h4-font-size;
+    }
+  }
+}
+
+.h4-md {
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+
+  p {
+    @include media-breakpoint-only(xs) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $h4-font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $h4-font-size-md;
+    }
+  }
+}
+
+p.h4,
+span.h4,
+div.h4 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h4-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h4-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h4-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h4-font-size;
+  }
+}
+
+.h5,
+.h5 > h1,
+.h5 > h2,
+.h5 > h3,
+.h5 > h4,
+.h5 > h5,
+.h5 > h6,
+.h5 > p {
+  font-family: apercu-bold-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h5-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h5-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h5-font-size;
+  }
+}
+
+.h5-md,
+p.h5-md {
+  @include media-breakpoint-only(xs) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h5-font-size-md;
+  }
+
+  p {
+    @include media-breakpoint-only(xs) {
+      font-size: $h5-font-size-sm;
+    }
+    @include media-breakpoint-only(sm) {
+      font-size: $h5-font-size-sm;
+    }
+    @include media-breakpoint-only(md) {
+      font-size: $h5-font-size-md;
+    }
+  }
+}
+
+.h6,
+.h6 > h1,
+.h6 > h2,
+.h6 > h3,
+.h6 > h4,
+.h6 > h5,
+.h6 > h6 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h6-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h6-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h6-font-size;
+  }
+}
+
+p.h5,
+span.h5,
+div.h5 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h5-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h5-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h5-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h5-font-size;
+  }
+}
+
+li.h6 {
+  font-family: apercu-regular-pro;
+  @include media-breakpoint-only(xs) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: $h6-font-size-sm;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: $h6-font-size-md;
+  }
+  @include media-breakpoint-only(lg) {
+    font-size: $h6-font-size;
+  }
+  @include media-breakpoint-only(xl) {
+    font-size: $h6-font-size;
+  }
+}
+
+a:hover {
+  color: black;
+}
 
 .news-content {
   margin-top: 1rem;
 }
 
-#navbarSupportedContent {
-  @include media-breakpoint-only(xs) {
-    background-color: $orange;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
-  @include media-breakpoint-only(sm) {
-    background-color: $orange;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
-  @include media-breakpoint-only(md) {
-    background-color: $orange;
-    padding: 2rem;
-    margin-top: 1rem;
-  }
-  @include media-breakpoint-only(lg) {
-    background-color: white;
-  }
-  @include media-breakpoint-only(xl) {
-    background-color: white;
-  }
-}
-
-#navbarCareerContent {
+#nav-menu-competence {
   background-color: $blue;
   padding: 2rem;
-  margin-top: 1rem;
+  /*opacity: 0.95;*/
 }
 
 .min-view-height {
@@ -116,22 +484,59 @@ $container-max-widths: (
   padding-bottom: 8rem;
 }
 
+.filler-box-320 {
+  margin-top: 320px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-240 {
+  margin-top: 240px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-120 {
+  margin-top: 120px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-220 {
+  margin-top: 220px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.filler-box-200 {
+  margin-top: 200px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
 .filler-box-two {
   padding-top: 4rem;
   padding-bottom: 4rem;
-}
-
-.space-button-left-right {
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-.inline-link {
-  display: inline;
-}
-
-.sub-line {
-  font-size: 1.125rem;
 }
 
 .bg-brown {
@@ -142,16 +547,22 @@ $container-max-widths: (
   background-color: $orange-light;
 }
 
-.icon-social-media {
-  width: 2rem;
-}
-
 .img-md-padding {
   padding: 1.5rem;
 }
 
 .padding-sm {
   padding: 1rem;
+}
+
+.padding-lg {
+  padding: 0rem;
+  @include media-breakpoint-only(lg) {
+    padding: 1rem;
+  }
+  @include media-breakpoint-only(xl) {
+    padding: 1rem;
+  }
 }
 
 .padding-md {
@@ -184,6 +595,10 @@ $container-max-widths: (
 
 .padding-md-bottom {
   padding-bottom: 2rem;
+}
+
+.padding-lg-bottom {
+  padding-bottom: 4rem;
 }
 
 .padding-sm-top {
@@ -221,6 +636,10 @@ $container-max-widths: (
   margin-top: 2rem;
 }
 
+.margin-lg-top {
+  margin-top: 4rem;
+}
+
 .margin-sm-bottom {
   margin-bottom: 1rem;
 }
@@ -229,27 +648,28 @@ $container-max-widths: (
   margin-bottom: 2rem;
 }
 
+.margin-sm-right {
+  margin-right: 1rem;
+}
+
+.margin-md-right {
+  margin-right: 2rem;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-margin {
+  margin: 0;
+}
+
 .no-margin-bottom {
   margin-bottom: 0rem;
 }
 
-.no-padding-bottom {
-  padding-bottom: 0rem;
-}
-
 .stellenangebote-box {
-  border: 3px dashed #a9c5e8;
-}
-
-a.darken:hover img {
-  /*-webkit-filter: grayscale(1);
-  filter: grayscale(1);*/
-}
-
-.nav-dotted-line-vertical {
-  height: 15px;
-  margin-right: 0.3rem;
-  margin-left: 0.3rem;
+  border: 3px solid #a9c5e8;
 }
 
 #carouselCaptionsArbeitsplatz,
@@ -260,12 +680,10 @@ a.darken:hover img {
     font-size: 2rem;
     color: #ec7b1a !important;
   }
-
   @include media-breakpoint-only(md) {
     .carousel-control-prev {
       left: -62px;
     }
-
     .carousel-control-next {
       right: -62px;
     }
@@ -274,7 +692,6 @@ a.darken:hover img {
     .carousel-control-prev {
       left: -96px;
     }
-
     .carousel-control-next {
       right: -96px;
     }
@@ -283,50 +700,10 @@ a.darken:hover img {
     .carousel-control-prev {
       left: -96px;
     }
-
     .carousel-control-next {
       right: -96px;
     }
   }
-}
-
-.ytp-large-play-button {
-  visibility: hidden !important;
-}
-
-.jobangebote-technologie-box {
-  border: 3px dashed $orange;
-}
-
-.jobangebote-studenten-box {
-  border: 3px dashed $blue;
-}
-
-.jobangebote-andere-box {
-  border: 3px dashed $orange;
-}
-
-.social-media-icon-carousel {
-  height: 30px;
-  padding-left: 14px;
-  padding-right: 14px;
-
-  @include media-breakpoint-only(xs) {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  @include media-breakpoint-only(sm) {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
-  @include media-breakpoint-only(md) {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-.cofinpro-logo-startseite {
-  margin-top: 24px;
 }
 
 #button-pinnwand-collapse,
@@ -335,25 +712,655 @@ a.darken:hover img {
   border: none;
   box-shadow: none;
   cursor: pointer;
-
   i {
     color: $orange;
     font-size: 2rem;
   }
 }
 
-#button-startseite-collapse:focus {
-  outline: none;
+.negative-margin-100-top {
+  margin-top: -100px;
 }
 
-.invisible {
+.negative-margin-80-top {
+  margin-top: -80px;
+}
+
+.negative-margin-md-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: -40px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: -40px;
+  }
+}
+
+.negative-margin-60-top {
+  margin-top: -60px;
+}
+
+.negative-margin-40-top {
+  margin-top: -40px;
+}
+
+.margin-120-bottom {
+  margin-bottom: 120px;
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+
+.margin-100-bottom {
+  margin-bottom: 100px;
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+
+.margin-md-0-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-bottom: 0px;
+  }
+}
+
+.margin-80-bottom {
+  margin-bottom: 80px;
+}
+
+.margin-60-bottom {
+  margin-bottom: 60px;
+}
+
+.margin-40-bottom {
+  margin-bottom: 40px;
+}
+
+.margin-20-bottom {
+  margin-bottom: 20px;
+}
+
+.margin-10-bottom {
+  margin-bottom: 10px;
+}
+
+.margin-5-bottom {
+  margin-bottom: 5px;
+}
+
+.margin-xs-80-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+}
+
+.margin-xs-60-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 60px;
+  }
+}
+
+.margin-xs-40-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 40px;
+  }
+}
+
+.margin-xs-20-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 20px;
+  }
+}
+
+.margin-xs-0-bottom {
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 00px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 00px;
+  }
+}
+
+.margin-md-80-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 80px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 80px;
+  }
+}
+
+.margin-md-60-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 60px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 60px;
+  }
+}
+
+.margin-md-40-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 40px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 40px;
+  }
+}
+
+.margin-md-20-bottom {
+  @include media-breakpoint-only(md) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-bottom: 20px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-bottom: 20px;
+  }
+}
+
+.margin-180-top {
+  margin-top: 180px;
+}
+
+.margin-160-top {
+  margin-top: 160px;
+}
+
+.margin-140-top {
+  margin-top: 140px;
+}
+
+.margin-120-top {
+  margin-top: 120px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+
+.margin-120-top-xs {
+  margin-top: 120px;
+}
+
+.margin-100-top {
+  margin-top: 100px;
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+
+.margin-80-top {
+  margin-top: 80px;
+}
+
+.margin-60-top {
+  margin-top: 60px;
+}
+
+.margin-50-top {
+  margin-top: 50px;
+}
+
+.margin-40-top {
+  margin-top: 40px;
+}
+
+.margin-30-top {
+  margin-top: 30px;
+}
+
+.margin-24-top {
+  margin-top: 24px;
+}
+
+.margin-20-top {
+  margin-top: 20px;
+}
+
+.margin-10-top {
+  margin-top: 10px;
+}
+
+.margin-5-top {
+  margin-top: 5px !important;
+}
+
+.margin-md-100-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 100px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 100px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 100px;
+  }
+}
+
+.margin-md-80-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+}
+
+.margin-md-60-top {
+  @include media-breakpoint-only(md) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+}
+
+.margin-md-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 40px;
+  }
+}
+
+.margin-md-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 20px;
+  }
+}
+
+.margin-md-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(md) {
+    margin-top: 0px;
+  }
+}
+
+.margin-xs-80-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 80px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 80px;
+  }
+}
+
+.margin-xs-60-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 60px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 60px;
+  }
+}
+
+.margin-xs-40-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 40px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 40px;
+  }
+}
+
+.margin-xs-20-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+}
+
+.margin-xs-10-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 20px;
+  }
+}
+
+.margin-xs-0-top {
+  @include media-breakpoint-only(xs) {
+    margin-top: 0px;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-top: 0px;
+  }
+}
+
+.margin-20-left {
+  margin-left: 20px !important;
+}
+
+.padding-10 {
+  padding: 10px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.padding-60-top {
+  padding-top: 60px;
+}
+
+.padding-40-top {
+  padding-top: 40px;
+}
+
+.padding-25-top {
+  padding-top: 25px;
+}
+
+.padding-20-top {
+  padding-top: 20px;
+}
+
+.padding-60-bottom {
+  padding-bottom: 60px;
+}
+
+.padding-40-bottom {
+  padding-bottom: 40px;
+}
+
+.padding-20-bottom {
+  padding-bottom: 20px;
+}
+
+.padding-xs-20-top {
+  @include media-breakpoint-only(xs) {
+    padding-top: 20px;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-top: 20px;
+  }
+}
+
+.line-black {
+  color: rgb(17, 13, 13);
+}
+
+.border-primary-dashed {
+  border: 3px dashed $orange;
+}
+
+.close {
+  opacity: 1;
+}
+
+.container-md-full-width {
+  @include media-breakpoint-only(xs) {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+  }
+  @include media-breakpoint-only(sm) {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+  }
+  @include media-breakpoint-only(md) {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    max-width: 100%;
+  }
+}
+
+.link-button {
+  span {
+    border-style: dashed;
+    border-width: 2px;
+    border-radius: 0px;
+  }
+}
+
+a.link-button:hover {
+  text-decoration: none;
+}
+
+.normal-font {
+  font-family: apercu-regular-pro;
+}
+
+.bold-font {
+  font-family: apercu-bold-pro !important;
+}
+
+#lottie {
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  text-align: center;
+  opacity: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9000;
+}
+
+.text-small {
+  font-size: 12px;
+}
+
+.text-sm-small {
+  @include media-breakpoint-only(xs) {
+    font-size: 12px;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: 12px;
+  }
+}
+
+.text-size-14 {
+  font-size: 14px;
+}
+
+.text-size-18 {
+  font-size: 18px;
+}
+
+.text-size-16 {
+  font-size: 16px;
+}
+
+p.text-md-normal,
+.text-md-normal,
+.text-md-normal > p {
+  @include media-breakpoint-only(md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.text-md-1rem,
+.text-md-1rem > p,
+.text-md-1rem > h1,
+.text-md-1rem > h2,
+.text-md-1rem > h3,
+.text-md-1rem > h4,
+.text-md-1rem > h5,
+.text-md-1rem > h6 {
+  @include media-breakpoint-only(xs) {
+    font-size: 1rem;
+  }
+  @include media-breakpoint-only(sm) {
+    font-size: 1rem;
+  }
+  @include media-breakpoint-only(md) {
+    font-size: 1rem;
+  }
+}
+
+svg image[href$='img_20.jpg'] {
+  @include media-breakpoint-only(xs) {
+    visibility: hidden;
+  }
+  @include media-breakpoint-only(sm) {
+    visibility: hidden;
+  }
+}
+
+.display-none {
+  display: none !important;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+  padding-right: 0;
+  padding-left: 0;
+  .row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .row > .col,
+  .row > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.no-gutters-mobile {
+  @include media-breakpoint-only(xs) {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .row > .col,
+    .row > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  @include media-breakpoint-only(sm) {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    .row {
+      margin-right: 0;
+      margin-left: 0;
+    }
+    .row > .col,
+    .row > [class*='col-'] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+.w-md-unset {
+  @include media-breakpoint-only(md) {
+    width: unset !important;
+  }
+  @include media-breakpoint-only(lg) {
+    width: unset !important;
+  }
+  @include media-breakpoint-only(xl) {
+    width: unset !important;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.img-svg {
+  width: 100% \9;
+}
+
+.beratungs-icons {
+  max-width: 140px;
+}
+
+.text-underline:hover {
+  text-decoration: underline;
+}
+
+.flex-box-content-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.not-visible {
   visibility: hidden;
-}
-
-.no-padding-left {
-  padding-left: 0px;
-}
-
-.padding-0 {
-  padding: 0px;
 }

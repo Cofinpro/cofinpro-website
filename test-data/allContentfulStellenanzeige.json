@@ -1,10 +1,67 @@
 {
   "data": {
-    "allContentfulStellenanzeige": {
+    "allContentfulSeiteStellenanzeige": {
       "edges": [
         {
           "node": {
-            "id": "c3N1YD3jqhyY0cU8OSY4eGw",
+            "id": "c3tOKzlpams482SmK0mIiig",
+            "url": "managementberater-vertrieblich",
+            "metaData": {
+              "title": "Job als Managementberater mit Vertriebsexpertise im Bankenumfeld ",
+              "keywords": {
+                "keywords": "Job,\nManagementberater,\nVertrieb"
+              },
+              "description": {
+                "description": "Du bist ein Tausendsassa und behältst den Überblick? Cofinpro berät führende Banken und Asset Manager und fördert Deine Karriere vom ersten Tag."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "unbefristet",
+            "art": "Vollzeit",
+            "titel": "Managementberater mit Vertriebsexpertise im Bankenumfeld (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              },
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir neue Wege statt alte Pfade?",
+            "bildStellenanzeige": {
+              "id": "c587LircWwUyYmwmaQ2oUEo",
+              "title": "03-0569-Stefan-Grass-Wert Illu Mgmt",
+              "description": "",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/587LircWwUyYmwmaQ2oUEo/c23c95568a9957ee617c69e9d453f5ea/03-0569-Stefan-Grass-Wert_Illu_Mgmt.jpg",
+                "fileName": "03-0569-Stefan-Grass-Wert_Illu_Mgmt.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Neukundenakquise von Banken und Kapitalverwaltungsgesellschaften\n- Begleitung initialer Beratungsprojekte und Programme bei Neukunden \n- eigenverantwortliche Account-Planung und -Organisation "
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- mindestens 10 Jahre Berufserfahrung als Unternehmensberater\n- Vertriebserfahrung im Projektgeschäft\n- belastbares Netzwerk in führenden Banken und Kapitalverwaltungsgesellschaften\n- Kenntnisse im Beratungsfeld Kredit & Wertpapier oder Technologie  \n- hervorragendes Know-how im Projektmanagement\n- sehr gute Deutsch- und gute Englischkenntnisse\n"
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage "
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/300/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1mkk5fyrqE20SeUiW6k6c2",
+            "url": "projektmanager",
             "metaData": {
               "title": "Job als Projektmanager in der Unternehmensberatung",
               "keywords": {
@@ -18,17 +75,22 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Projektmanager (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              },
+              {
+                "name": "technologischer-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Sinnstiften statt Stromlinienschwimmen?",
             "bildStellenanzeige": {
               "id": "c46J8dnmMGsaiuEcOOKcYme",
               "title": "08-1153-Marco-Moczarski-Methodik-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/46J8dnmMGsaiuEcOOKcYme/072aa2470690b7727fbdc35265781cd1/08-1153-Marco-Moczarski-Methodik-Senior.jpg",
-                "fileName": "08-1153-Marco-Moczarski-Methodik-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/46J8dnmMGsaiuEcOOKcYme/fe6e61b3933a9bc86081d7b4471378cf/c46J8dnmMGsaiuEcOOKcYme.jpg",
+                "fileName": "c46J8dnmMGsaiuEcOOKcYme.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -37,7 +99,7 @@
             },
             "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
             "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Planen, Durchführen und Steuern von Regulierungs- und Digitalisierungsvorhaben unserer Kunden\n- zentraler Ansprechpartner für Kunden und Mitarbeiter rund um Deine Projekte\n- Verantwortung für\n- adäquate Aufwandskalkulation sowie Einhaltung der Termin-, Leistungs- und Budgetpläne unter Berücksichtigung von Änderungsanforderungen\n- Leitung großer Projektteams inklusive Eskalationsmanagement und Sicherstellung optimaler Teamauslastung\n- effizientes Qualitäts- und Testmanagement\n- Moderation von (Kunden-) Workshops, Stakeholder-Steuerung und Verhandlungen\n- adressatengerechtes Reporting (Gremien, Lenkungsausschüsse, Team-Meetings)\n- Steuerung der Zusammenarbeit mit anderen Dienstleistern und Partnern"
+              "spaltenInfoBeschreibungLinksLang": "- Planen, Durchführen und Steuern von Regulierungs- und Digitalisierungsvorhaben unserer Kunden\n- zentraler Ansprechpartner für Kunden und Mitarbeiter rund um Deine Projekte\n- Verantwortung für adäquate Aufwandskalkulation sowie Einhaltung der Termin-, Leistungs- und Budgetpläne unter Berücksichtigung von Änderungsanforderungen\n- Leitung großer Projektteams inklusive Eskalationsmanagement und Sicherstellung optimaler Teamauslastung\n- effizientes Qualitäts- und Testmanagement\n- Moderation von (Kunden-) Workshops, Stakeholder-Steuerung und Verhandlungen\n- adressatengerechtes Reporting (Gremien, Lenkungsausschüsse, Team-Meetings)\n- Steuerung der Zusammenarbeit mit anderen Dienstleistern und Partnern"
             },
             "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
             "spaltenInfoBeschreibungMitte": {
@@ -54,7 +116,276 @@
         },
         {
           "node": {
+            "id": "KmdoWNS6Gssc2cA68aAmC",
+            "url": "managementberater",
+            "metaData": {
+              "title": "Job: Managementberater an neun Standorten",
+              "keywords": {
+                "keywords": "Job Management Beratung"
+              },
+              "description": {
+                "description": "Bei Cofinpro erwarten Dich permanente Förderung, Mitgestaltung von Zeitgeistthemen und viel Platz zum Einmischen in aktuelle Projekte in ganz Deutschland."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "unbefristet",
+            "art": "Vollzeit",
+            "titel": "Managementberater (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              },
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Know-how statt Guess what?",
+            "bildStellenanzeige": {
+              "id": "c6YJTzxiQ7KgySIoAoUcc62",
+              "title": "03-0569-Stefan-Ankert-Wert-Senior-mit_illu_mgmt",
+              "description": "",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/6YJTzxiQ7KgySIoAoUcc62/e3745e2f80daf90dddc62b3276a28168/03-0569-Stefan-Ankert-Wert-Senior-ohne.jpg",
+                "fileName": "03-0569-Stefan-Ankert-Wert-Senior-ohne.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Managementberatung für führende Finanzdienstleister \n- Aufbau, Gestaltung und Veränderung durch die Konzeption neuer Geschäftsmodelle und die smarte Verknüpfung von Strategie und Business  \n- Angebotserstellung und Mitwirkung bei der Themenentwicklung unseres Managementberatungsportfolios"
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- Beratungskompetenz auf Managementebene\n- Fachwissen und methodisches Know-how\n- Kenntnisse in den Bereichen Digitalisierung, Organisationsentwicklung und Programm-Setup\n- hervorragendes Auftreten\n- sehr gute Deutsch- und gute Englischkenntnisse "
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/301/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3MVkNHjZHyKI2Osie828QO",
+            "url": "software-architect-java",
+            "metaData": {
+              "title": "Job: Software Architect Java in der Unternehmensberatung",
+              "keywords": {
+                "keywords": "Job"
+              },
+              "description": {
+                "description": "Gestalte mit Cofinpro die Zukunft: Als Technologie-, Fach- und Managementberater denken wir immer einen Schritt voraus – und suchen dafür einfach Dich."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "unbefristet",
+            "art": "Vollzeit",
+            "titel": "Software Architect Java (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Rambazamba statt Pillepalle?",
+            "bildStellenanzeige": {
+              "id": "c80B8mKLwk08CEcaUgQq4",
+              "title": "12-1543-Jo╠êrg-Ramser-Tech-Senior",
+              "description": "TECH_Software_Architect_Java_Joerg_R",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/80B8mKLwk08CEcaUgQq4/5bff60d45773a93b2544084a9fa33546/c80B8mKLwk08CEcaUgQq4.jpg",
+                "fileName": "c80B8mKLwk08CEcaUgQq4.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Kundenberatung zu komplexen, innovativen System-/Software- Architekturen sowie Verantwortung für deren Konzeption und Implementierung\n- Analyse der Anwendungslandschaften unserer Kunden und Erarbeitung von Optimierungsmaßnahmen sowie neuen Zielarchitekturen auf zukunftsfähigen Plattformen\n- Mitarbeiter-Coaching, Leitung von Entwicklungsteams und Mitwirkung bei der Definition unseres technologischen Angebots\n- kontinuierliche persönliche Weiterentwicklung durch agile Teamarbeit"
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- mindestens acht Jahre Berufserfahrung in der Konzeption von Softwarearchitekturen\n- sehr gute Kenntnisse von Standards und Methoden des Softwarearchitekturentwurfs sowie von Java und JavaEE\n- praktische Erfahrung im Modellieren von Softwaresystemen (UML, SysML oder Archimate) sowie deren Konzeption und Dokumentation nach gängigen Standards (etwa arc42)\n- Erfahrung in agilen Projektmethoden (Scrum, DevOps) sowie in der Führung von agilen Teams\n- Begeisterung für Software-Architektur und Interesse an Technologieberatung\n- abgeschlossenes Hochschulstudium der (Wirtschafts-) Informatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- Tech-Events\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/288/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c7gLvKKOllmAu0k6IQEkUeQ",
+            "url": "java-werkstudent",
+            "metaData": {
+              "title": "Java Werkstudent in der Technologie-Beratung ",
+              "keywords": {
+                "keywords": "Job, Java, Werkstudent, Karriere"
+              },
+              "description": {
+                "description": "Kickstart für Deine Karriere als Technical Consultant gefällig? Cofinpro unterstützt Dich bei Deiner Weiterentwicklung und fordert Dich immer neu heraus."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "befristet",
+            "art": "Teilzeit",
+            "titel": "JAVA-Werkstudent (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "studenten"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Abenteuer statt Alltagsleier?",
+            "bildStellenanzeige": {
+              "id": "c5Q0OCFpjjOa4WMCKwyOuOs",
+              "title": "22-2706-Melise-Akcay-DHBW-Studentin",
+              "description": "FACH_PraktikanIn_Melise_A",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/5Q0OCFpjjOa4WMCKwyOuOs/3cde754292bacc2bef79f971a6ff6181/c5Q0OCFpjjOa4WMCKwyOuOs.jpg",
+                "fileName": "c5Q0OCFpjjOa4WMCKwyOuOs.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Teamarbeit mit unseren Entwicklern für neue Systeme und Architekturen unter Einsatz neuester Technologien\n- eigenverantwortliche Entwicklung von technischen Lösungsbausteinen\n- Begleitung unserer Beraterteams beim Kunden vor Ort und Projektmitarbeit"
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- Du studierst in den letzten Semestern Deines Bachelor- oder Masterstudiums, idealerweise im Fach (Wirtschafts-) Informatik oder vergleichbar\n- Begeisterung für und erste Programmiererfahrung mit Web-Frameworks (Angular, jQuery) und Backend-Technologien (JAVA/JEE, RESTfull communication)\n- Abstraktionsvermögen und Analysefähigkeit\n- Lust auf Teamarbeit und After-Work\n- sehr gute Deutsch- und gute Englischkenntnisse"
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- After-Work\n- Feedback & Fortbildung\n- Firmenevents\n- Tech-Events\nund vieles mehr"
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/298/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c1Bh0JRr77CkUgmAKWeoeqE",
+            "url": "senior-full-stack-entwickler-java",
+            "metaData": {
+              "title": "Job als Senior Full Stack Entwickler Java in der Beratung",
+              "keywords": {
+                "keywords": "Job"
+              },
+              "description": {
+                "description": "Du machst Schwieriges einfach? Bestens. Cofinpro wächst und sucht Technologen, die mitmischen, aufmischen und sich einmischen."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "unbefristet",
+            "art": "Vollzeit",
+            "titel": "Senior Full Stack Entwickler Java (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Aufmucken statt Klappehalten?",
+            "bildStellenanzeige": {
+              "id": "c1PbUnqlQbyGk8WoSe8kuuc",
+              "title": "02-0499-Daniel-Eichsteller-Tech-Junior",
+              "description": "",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/1PbUnqlQbyGk8WoSe8kuuc/b792c6953763d711064998a662c0e722/c1PbUnqlQbyGk8WoSe8kuuc.jpg",
+                "fileName": "c1PbUnqlQbyGk8WoSe8kuuc.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Gestaltung von Konzeption, Entwicklung und Optimierung komplexer, innovativer Softwarelösungen unter Einsatz neuester Technologien und agiler Vorgehensweisen in direkter Kundenzusammenarbeit\n- Lösung von technischen und konzeptionellen Herausforderungen wie Continuous Delivery-Prozesse und Performance-Optimierung mit Fokus auf User Experience\n- Verantwortung für die Konzeption, Dokumentation und Architektur von Frontends, Schnittstellen oder Teilsystemen\n- Mitarbeiter-Coaching, Leitung von Entwicklungsteams und Mitwirkung bei der Definition unseres technologischen Angebots\n- kontinuierliche persönliche Weiterentwicklung durch agile Teamarbeit"
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufserfahrung als Full Stack Entwickler\n- sehr gute Kenntnisse von Java und JavaEE\n- praktische Erfahrung mit modernen JavaScript Frameworks (Angular, React) und JSF\n- Expertise in der Entwicklung und Integration von REST- oder WebServices sowie im Umgang mit Application-Servern (JBoss-AS/Wildfly)\n- umfangreiche Kenntnisse im Unit- und Integration-Testing von Anwendungen\n- Erfahrung in agilen Projektmethoden (Scrum, DevOps)\n- Begeisterung für Technologie und Interesse an Technologieberatung\n- abgeschlossenes Hochschulstudium der (Wirtschafts-) Informatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- Tech-Events\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/287/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c5c9gI1bnU4ao2I0Qa2cmE2",
+            "url": "senior-business-consultant-kredit",
+            "metaData": {
+              "title": "Job: Senior Business Consultant Kredit an neun Standorten",
+              "keywords": {
+                "keywords": "Job"
+              },
+              "description": {
+                "description": "Deine Expertise für interdisziplinäre Teams: Cofinpro gestaltet Lösungen für die Herausforderungen der Gegenwart und wünscht sich: einfach Dich."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "unbefristet",
+            "art": "Vollzeit",
+            "titel": "Senior Business Consultant Kredit (w/m) - Baufinanzierung, Konsumentenfinanzierung, Firmenkundenkredite oder Gewerbekredit",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Möglichmacher statt Hasenfüße?",
+            "bildStellenanzeige": {
+              "id": "c4BuidOpLyUmgoSow0ysCME",
+              "title": "17-1956-Alexa-Schulz-Kredit-Senior",
+              "description": "",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/c62d777eb2cf1eaa0056311aed300a99/c4BuidOpLyUmgoSow0ysCME.jpg",
+                "fileName": "c4BuidOpLyUmgoSow0ysCME.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Entwicklung von Digitalisierungs- und/oder Prozessoptimierungsvorhaben im Kreditgeschäft\n- End-to-End-Gestaltung digitaler Zielprozesse\n- Durchführen von Vorstudien und Erstellung von Business Case-Berechnungen\n- Erhebung, Analyse und Priorisierung fachlicher Anforderungen\n- Spezifikation von fachlichen Lösungen (Fachkonzepte, User Stories)\n- Unterstützung bei der Angebotserstellung sowie Mitwirkung bei der Themenentwicklung unseres Kreditportfolios\n- Kommunikation und Abstimmung mit Projekt-Stakeholdern"
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufs- und Projekterfahrung bei Banken oder im Consulting für Finanzdienstleister\n- bankfachliche Expertise im Bereich Baufinanzierung, Konsumentenfinanzierung, Firmenkundenkredite oder Gewerbekredite\n- sehr gute Kenntnisse in aktueller Regulatorik (MaRisk, Basel III, KWGMeldewesen)\n- Überblick über Digitalisierungstrends im Kreditgeschäft\n- sehr gute methodische Kenntnisse in Anforderungsmanagement, Konzeption und im Projektmanagement\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/273/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
             "id": "c4KvtvJIC0o028IwEKWM6MI",
+            "url": "berufsbegleitender-master-wirtschaftsinformatik",
             "metaData": {
               "title": "Berufsbegleitender Master Wirtschaftsinformatik im Consulting",
               "keywords": {
@@ -68,17 +399,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Berufsbegleitender Master Wirtschaftsinformatik (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Abenteuer statt Alltagsleier?",
             "bildStellenanzeige": {
               "id": "c5g1h8VnqkgeEsucQGcKUSg",
               "title": "10-1354-Jonas-Brehm-Praktikant",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/5g1h8VnqkgeEsucQGcKUSg/8cece367f3c5f63d61cca66ba5f43534/10-1354-Jonas-Brehm-Praktikant.jpg",
-                "fileName": "10-1354-Jonas-Brehm-Praktikant.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/5g1h8VnqkgeEsucQGcKUSg/32fcd58ff5269aaf65016b1aa9ed6b82/c5g1h8VnqkgeEsucQGcKUSg.jpg",
+                "fileName": "c5g1h8VnqkgeEsucQGcKUSg.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -105,6 +438,7 @@
         {
           "node": {
             "id": "c1gJwJI7duy48Q44wKGwk6M",
+            "url": "berufsbegleitender-master-wirtschaftsinformatik-2",
             "metaData": {
               "title": "Berufsbegleitender Master Wirtschaftsinformatik im Consulting",
               "keywords": {
@@ -118,17 +452,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Berufsbegleitender Master Wirtschaftsinformatik (w/m)",
-            "perspektiveLink": {
-              "name": "studenten"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "studenten"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Abenteuer statt Alltagsleier?",
             "bildStellenanzeige": {
               "id": "c5g1h8VnqkgeEsucQGcKUSg",
               "title": "10-1354-Jonas-Brehm-Praktikant",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/5g1h8VnqkgeEsucQGcKUSg/8cece367f3c5f63d61cca66ba5f43534/10-1354-Jonas-Brehm-Praktikant.jpg",
-                "fileName": "10-1354-Jonas-Brehm-Praktikant.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/5g1h8VnqkgeEsucQGcKUSg/32fcd58ff5269aaf65016b1aa9ed6b82/c5g1h8VnqkgeEsucQGcKUSg.jpg",
+                "fileName": "c5g1h8VnqkgeEsucQGcKUSg.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -154,107 +490,8 @@
         },
         {
           "node": {
-            "id": "c1mkk5fyrqE20SeUiW6k6c2",
-            "metaData": {
-              "title": "Job als Projektmanager in der Unternehmensberatung",
-              "keywords": {
-                "keywords": "Job"
-              },
-              "description": {
-                "description": "Du bist ein Tausendsassa und behältst den Überblick? Cofinpro berät führende Banken und Asset Manager und fördert Deine Karriere vom ersten Tag."
-              }
-            },
-            "ort": "Alle",
-            "befristung": "unbefristet",
-            "art": "Vollzeit",
-            "titel": "Projektmanager (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
-            "ueberschriftGanzOben": "Du wünschst Dir Sinnstiften statt Stromlinienschwimmen?",
-            "bildStellenanzeige": {
-              "id": "c46J8dnmMGsaiuEcOOKcYme",
-              "title": "08-1153-Marco-Moczarski-Methodik-Senior",
-              "description": "",
-              "file": {
-                "url": "//images.contentful.com/niza6hilizwt/46J8dnmMGsaiuEcOOKcYme/072aa2470690b7727fbdc35265781cd1/08-1153-Marco-Moczarski-Methodik-Senior.jpg",
-                "fileName": "08-1153-Marco-Moczarski-Methodik-Senior.jpg",
-                "contentType": "image/jpeg"
-              }
-            },
-            "absatzEins": {
-              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
-            },
-            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
-            "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Planen, Durchführen und Steuern von Regulierungs- und Digitalisierungsvorhaben unserer Kunden\n- zentraler Ansprechpartner für Kunden und Mitarbeiter rund um Deine Projekte\n- Verantwortung für\n- adäquate Aufwandskalkulation sowie Einhaltung der Termin-, Leistungs- und Budgetpläne unter Berücksichtigung von Änderungsanforderungen\n- Leitung großer Projektteams inklusive Eskalationsmanagement und Sicherstellung optimaler Teamauslastung\n- effizientes Qualitäts- und Testmanagement\n- Moderation von (Kunden-) Workshops, Stakeholder-Steuerung und Verhandlungen\n- adressatengerechtes Reporting (Gremien, Lenkungsausschüsse, Team-Meetings)\n- Steuerung der Zusammenarbeit mit anderen Dienstleistern und Partnern"
-            },
-            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
-            "spaltenInfoBeschreibungMitte": {
-              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufserfahrung in der ganzheitlichen, eigenverantwortlichen Projektleitung\n- Expertise im klassischen und agilen Projektmanagement, idealerweise durch entsprechende Zertifizierungen (IPMA, GPM, PMI, SCRUM)\n- Produkt- und Prozesskenntnisse von Banken und/oder Asset Managern oder technologische Expertise\n- lösungsorientiert-strukturiertes Vorgehen in projektkritischen Situationen, Belastbarkeit und Durchsetzungsvermögen\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften, (Wirtschafts-) Informatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
-            },
-            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
-            "spaltenInfoBeschreibungRechts": {
-              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
-            },
-            "uMantis": {
-              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/276/Application/CheckLogin/1?lang=ger"
-            }
-          }
-        },
-        {
-          "node": {
-            "id": "c5c9gI1bnU4ao2I0Qa2cmE2",
-            "metaData": {
-              "title": "Job: Senior Business Consultant Kredit an neun Standorten",
-              "keywords": {
-                "keywords": "Job"
-              },
-              "description": {
-                "description": "Deine Expertise für interdisziplinäre Teams: Cofinpro gestaltet Lösungen für die Herausforderungen der Gegenwart und wünscht sich: einfach Dich."
-              }
-            },
-            "ort": "Alle",
-            "befristung": "unbefristet",
-            "art": "Vollzeit",
-            "titel": "Senior Business Consultant Kredit (w/m) - Baufinanzierung, Konsumentenfinanzierung, Firmenkundenkredite oder Gewerbekredit",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
-            "ueberschriftGanzOben": "Du wünschst Dir Möglichmacher statt Hasenfüße?",
-            "bildStellenanzeige": {
-              "id": "c4BuidOpLyUmgoSow0ysCME",
-              "title": "17-1956-Alexa-Schulz-Kredit-Senior",
-              "description": "",
-              "file": {
-                "url": "//images.contentful.com/niza6hilizwt/4BuidOpLyUmgoSow0ysCME/0d2bc640943b13bb202918ab10cbae17/17-1956-Alexa-Schulz-Kredit-Senior.jpg",
-                "fileName": "17-1956-Alexa-Schulz-Kredit-Senior.jpg",
-                "contentType": "image/jpeg"
-              }
-            },
-            "absatzEins": {
-              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
-            },
-            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
-            "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Entwicklung von Digitalisierungs- und/oder Prozessoptimierungsvorhaben im Kreditgeschäft\n- End-to-End-Gestaltung digitaler Zielprozesse\n- Durchführen von Vorstudien und Erstellung von Business Case-Berechnungen\n- Erhebung, Analyse und Priorisierung fachlicher Anforderungen\n- Spezifikation von fachlichen Lösungen (Fachkonzepte, User Stories)\n- Unterstützung bei der Angebotserstellung sowie Mitwirkung bei der Themenentwicklung unseres Kreditportfolios\n- Kommunikation und Abstimmung mit Projekt-Stakeholdern"
-            },
-            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
-            "spaltenInfoBeschreibungMitte": {
-              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufs- und Projekterfahrung bei Banken oder im Consulting für Finanzdienstleister\n- bankfachliche Expertise im Bereich Baufinanzierung, Konsumentenfinanzierung, Firmenkundenkredite oder Gewerbekredite\n- sehr gute Kenntnisse in aktueller Regulatorik (MaRisk, Basel III, KWGMeldewesen)\n- Überblick über Digitalisierungstrends im Kreditgeschäft\n- sehr gute methodische Kenntnisse in Anforderungsmanagement, Konzeption und im Projektmanagement\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse (User Story, Customer Journey, Scrum, Nexus)\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften, Wirtschaftsinformatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
-            },
-            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
-            "spaltenInfoBeschreibungRechts": {
-              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
-            },
-            "uMantis": {
-              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/273/Application/CheckLogin/1?lang=ger"
-            }
-          }
-        },
-        {
-          "node": {
             "id": "c4uMfmILAI88OCyAcgaU4KA",
+            "url": "business-consultant-kredit",
             "metaData": {
               "title": "Job als Business Consultant Kredit an neun Standorten",
               "keywords": {
@@ -268,17 +505,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Business Consultant Kredit (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Fortschritt statt Sitzfleisch?",
             "bildStellenanzeige": {
               "id": "c5qc37QxMQwoEYq6AYUi6ak",
               "title": "11-1457-Alexander-Christau-Kredit-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/5qc37QxMQwoEYq6AYUi6ak/ca42f00cc18d9ec45165e44fbdeb869c/11-1457-Alexander-Christau-Kredit-Senior.jpg",
-                "fileName": "11-1457-Alexander-Christau-Kredit-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/5qc37QxMQwoEYq6AYUi6ak/d0a79ee53451dfd436d7bfd97b3c964b/c5qc37QxMQwoEYq6AYUi6ak.jpg",
+                "fileName": "c5qc37QxMQwoEYq6AYUi6ak.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -305,6 +544,7 @@
         {
           "node": {
             "id": "c399Hy5QXviyEGsE6CyAUOQ",
+            "url": "senior-business-consultant-digitalisierung",
             "metaData": {
               "title": "Senior Business Consultant Digitalisierung an neun Standorten",
               "keywords": {
@@ -318,17 +558,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior Business Consultant Digitalisierung (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Feuerwerk statt Pustekuchen?",
             "bildStellenanzeige": {
               "id": "SypfZygiE6MogU6U4SeaE",
               "title": "15-1832-Peter-Zepetzauer-Kredit",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/SypfZygiE6MogU6U4SeaE/033f77221e97b92231a69605404008e9/15-1832-Peter-Zepetzauer-Kredit.jpg",
-                "fileName": "15-1832-Peter-Zepetzauer-Kredit.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/SypfZygiE6MogU6U4SeaE/fff88f871ef0794cf1a70d42e3c8a3e6/SypfZygiE6MogU6U4SeaE.jpg",
+                "fileName": "SypfZygiE6MogU6U4SeaE.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -355,6 +597,7 @@
         {
           "node": {
             "id": "c5x0SbBB8uQeQQgMCmkggya",
+            "url": "product-owner-digitalisierung-wertpapier",
             "metaData": {
               "title": "Job: Product Owner Digitalisierung Wertpapier in der Beratung",
               "keywords": {
@@ -368,17 +611,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Product Owner Digitalisierung Wertpapier (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Feuerwerk statt Pustekuchen?",
             "bildStellenanzeige": {
               "id": "nbfYKhyCe4ISk40Uw88mE",
               "title": "06-0960-Sven-Thiele-Wert-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/nbfYKhyCe4ISk40Uw88mE/e68fed6e2d17d505ce6b6c38a18c23d5/06-0960-Sven-Thiele-Wert-Senior.jpg",
-                "fileName": "06-0960-Sven-Thiele-Wert-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/nbfYKhyCe4ISk40Uw88mE/92c7c52dd5171452be1b191c60cfa345/nbfYKhyCe4ISk40Uw88mE.jpg",
+                "fileName": "nbfYKhyCe4ISk40Uw88mE.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -405,6 +650,7 @@
         {
           "node": {
             "id": "c71fE9gwc6s2QeA0Yu0iSkG",
+            "url": "senior-business-consultant-regulatorik",
             "metaData": {
               "title": "Job: Senior Business Consultant Regulatorik in der Beratung",
               "keywords": {
@@ -418,17 +664,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior Business Consultant Regulatorik (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Feuerwerk statt Pustekuchen?",
             "bildStellenanzeige": {
               "id": "c31F9uXjOo0q0OKig2I6uIm",
               "title": "04-0723-Melanie-Purger-Wert-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/31F9uXjOo0q0OKig2I6uIm/e045ced1e4a3549d391abaa0a240b0cc/04-0723-Melanie-Purger-Wert-Senior.jpg",
-                "fileName": "04-0723-Melanie-Purger-Wert-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/31F9uXjOo0q0OKig2I6uIm/0a81cfe4a8aa2a1f3a61e748f4e0c3cc/c31F9uXjOo0q0OKig2I6uIm.jpg",
+                "fileName": "c31F9uXjOo0q0OKig2I6uIm.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -455,6 +703,7 @@
         {
           "node": {
             "id": "c2FpWqAm9eoCk8mk0IE4kWO",
+            "url": "senior-business-analyst-asset-management",
             "metaData": {
               "title": "Job als Business Analyst Asset Management in der Beratung",
               "keywords": {
@@ -468,17 +717,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior Business Analyst Asset Management (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Feuerwerk statt Pustekuchen?",
             "bildStellenanzeige": {
               "id": "c3Io9SAEvReYCQ4G8WuuKOO",
               "title": "03-0569-Stefan-Ankert-Wert-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/3Io9SAEvReYCQ4G8WuuKOO/b78854ded928b69e62d4742b2500d37e/03-0569-Stefan-Ankert-Wert-Senior.jpg",
-                "fileName": "03-0569-Stefan-Ankert-Wert-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/3Io9SAEvReYCQ4G8WuuKOO/905f1eff47af92de099d67650198e6cf/c3Io9SAEvReYCQ4G8WuuKOO.jpg",
+                "fileName": "c3Io9SAEvReYCQ4G8WuuKOO.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -505,6 +756,7 @@
         {
           "node": {
             "id": "c58LL7defSg2QQMkaOgY4io",
+            "url": "business-consultant-regulatorik",
             "metaData": {
               "title": "Job als Business Consultant Regulatorik an neun Standorten",
               "keywords": {
@@ -518,17 +770,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Business Consultant Regulatorik (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir klipp & klar statt Wischiwaschi?",
             "bildStellenanzeige": {
               "id": "c4MPPqBxbby44YeoSgYM6QQ",
               "title": "16-1891-Kristina-Gru╠ênwald-Wert-Junior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/4MPPqBxbby44YeoSgYM6QQ/dad9ede202e08a9db09edf0a23d9c57e/16-1891-Kristina-Gru_____nwald-Wert-Junior.jpg",
-                "fileName": "16-1891-Kristina-Gru╠ênwald-Wert-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/4MPPqBxbby44YeoSgYM6QQ/702ca930d5194f6b50fefa661dc9296c/c4MPPqBxbby44YeoSgYM6QQ.jpg",
+                "fileName": "c4MPPqBxbby44YeoSgYM6QQ.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -555,6 +809,7 @@
         {
           "node": {
             "id": "c1zo5P1wfFWAWkCmAmSaIMW",
+            "url": "praktikant-in-der-technologieberatung",
             "metaData": {
               "title": "Praktikum in der Technologie-Beratung an neun Standorten",
               "keywords": {
@@ -568,17 +823,19 @@
             "befristung": "befristet",
             "art": "Vollzeit",
             "titel": "Praktikant in der Technologieberatung (w/m)",
-            "perspektiveLink": {
-              "name": "studenten"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "studenten"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Abenteuer statt Alltagsleier?",
             "bildStellenanzeige": {
               "id": "c5Q0OCFpjjOa4WMCKwyOuOs",
               "title": "22-2706-Melise-Akcay-DHBW-Studentin",
               "description": "FACH_PraktikanIn_Melise_A",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/5Q0OCFpjjOa4WMCKwyOuOs/52015b88cae00ace9e9517c1fda2c826/22-2706-Melise-Akcay-DHBW-Studentin.jpg",
-                "fileName": "22-2706-Melise-Akcay-DHBW-Studentin.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/5Q0OCFpjjOa4WMCKwyOuOs/3cde754292bacc2bef79f971a6ff6181/c5Q0OCFpjjOa4WMCKwyOuOs.jpg",
+                "fileName": "c5Q0OCFpjjOa4WMCKwyOuOs.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -605,6 +862,7 @@
         {
           "node": {
             "id": "c9V2aXs3ZhmuuoU6qcU2qQ",
+            "url": "praktikant-in-der-fachberatung",
             "metaData": {
               "title": "Praktikum in der Unternehmensberatung an neun Standorten",
               "keywords": {
@@ -618,17 +876,19 @@
             "befristung": "befristet",
             "art": "Vollzeit",
             "titel": "Praktikant in der Fachberatung (w/m)",
-            "perspektiveLink": {
-              "name": "studenten"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "studenten"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Abenteuer statt Alltagsleier?",
             "bildStellenanzeige": {
               "id": "c5Q0OCFpjjOa4WMCKwyOuOs",
               "title": "22-2706-Melise-Akcay-DHBW-Studentin",
               "description": "FACH_PraktikanIn_Melise_A",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/5Q0OCFpjjOa4WMCKwyOuOs/52015b88cae00ace9e9517c1fda2c826/22-2706-Melise-Akcay-DHBW-Studentin.jpg",
-                "fileName": "22-2706-Melise-Akcay-DHBW-Studentin.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/5Q0OCFpjjOa4WMCKwyOuOs/3cde754292bacc2bef79f971a6ff6181/c5Q0OCFpjjOa4WMCKwyOuOs.jpg",
+                "fileName": "c5Q0OCFpjjOa4WMCKwyOuOs.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -655,6 +915,7 @@
         {
           "node": {
             "id": "c3SbhE9XWJymaGY6Qoiiw28",
+            "url": "dhbw-student-wirtschaftsinformatik",
             "metaData": {
               "title": "Duales Studium Wirtschaftsinformatik Consulting DHBW Karlsruhe",
               "keywords": {
@@ -668,17 +929,19 @@
             "befristung": "befristet",
             "art": "Vollzeit",
             "titel": "DHBW-Student Wirtschaftsinformatik (w/m)",
-            "perspektiveLink": {
-              "name": "studenten"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "studenten"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Abenteuer statt Alltagsleier?",
             "bildStellenanzeige": {
               "id": "sWTx2k9yDeEUsYOimkqOq",
               "title": "07-1082-Majlen-Hermann-Stip-Junior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/sWTx2k9yDeEUsYOimkqOq/f7bbc59ccfcd19ffdacb6bd3b691c0a8/07-1082-Majlen-Hermann-Stip-Junior.jpg",
-                "fileName": "07-1082-Majlen-Hermann-Stip-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/sWTx2k9yDeEUsYOimkqOq/760701f46b41f8c9197f1a0190cc000d/sWTx2k9yDeEUsYOimkqOq.jpg",
+                "fileName": "sWTx2k9yDeEUsYOimkqOq.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -705,6 +968,7 @@
         {
           "node": {
             "id": "c3sOs22uoFak2AYEm2Aku0K",
+            "url": "senior-backend-entwickler-java",
             "metaData": {
               "title": "Job: Senior Back End Entwickler Java im Consulting",
               "keywords": {
@@ -718,17 +982,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior Backend Entwickler Java (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Fassaufmachen statt Süßholzraspeln?",
             "bildStellenanzeige": {
               "id": "c2ptEraok0k6uiQuGkScoMK",
               "title": "14-1658-Michael-Heck-Tech-Senior",
               "description": "TECH_professional_Senior_Backend_Entw_Java_Michael_H",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/2ptEraok0k6uiQuGkScoMK/4eb4773a47818c4727deda5c5e1ddb6b/14-1658-Michael-Heck-Tech-Senior.jpg",
-                "fileName": "14-1658-Michael-Heck-Tech-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/2ptEraok0k6uiQuGkScoMK/a0b495e4d9cdb2268b8b64948f182758/c2ptEraok0k6uiQuGkScoMK.jpg",
+                "fileName": "c2ptEraok0k6uiQuGkScoMK.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -755,6 +1021,7 @@
         {
           "node": {
             "id": "c5ZJFdhzI6kAaUWIscAC88w",
+            "url": "junior-entwickler-java",
             "metaData": {
               "title": "Job als Junior Entwickler Java im Consulting",
               "keywords": {
@@ -768,17 +1035,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Junior Entwickler Java (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Superkräfte statt Endgegner?",
             "bildStellenanzeige": {
               "id": "c306hUxPjgQMcOeScyWYyIc",
               "title": "13-1627-Michael-Etzbach-Tech-Junior",
               "description": "TECH_Junior_Entw_Java_Michel_E",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/306hUxPjgQMcOeScyWYyIc/abc3479318f4276dbfd8f1691515828a/13-1627-Michael-Etzbach-Tech-Junior.jpg",
-                "fileName": "13-1627-Michael-Etzbach-Tech-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/306hUxPjgQMcOeScyWYyIc/bb5e11f7d2d6dafd19a29ecf5b7eb041/c306hUxPjgQMcOeScyWYyIc.jpg",
+                "fileName": "c306hUxPjgQMcOeScyWYyIc.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -805,6 +1074,7 @@
         {
           "node": {
             "id": "c2yleEHNdnuoaIwC0M40ocu",
+            "url": "fachlicher-junior-consultant",
             "metaData": {
               "title": "Job als fachlicher Junior Consultant an neun Standorten",
               "keywords": {
@@ -818,17 +1088,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Junior Consultant (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir kurze Wege statt lange Nächte?",
             "bildStellenanzeige": {
               "id": "c7tGcHUCncI68meeKuYIgUk",
               "title": "20-2227-Aljana-Scharrer-Kredit-Junior",
               "description": "FACH_Junior_Consultant_Aljana_A",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/7tGcHUCncI68meeKuYIgUk/d01068bd23711a2dbbef5aa9ea299c37/20-2227-Aljana-Scharrer-Kredit-Junior.jpg",
-                "fileName": "20-2227-Aljana-Scharrer-Kredit-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/7tGcHUCncI68meeKuYIgUk/f8afe26f747b73980ea375507578d80e/c7tGcHUCncI68meeKuYIgUk.jpg",
+                "fileName": "c7tGcHUCncI68meeKuYIgUk.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -854,57 +1126,8 @@
         },
         {
           "node": {
-            "id": "c3MVkNHjZHyKI2Osie828QO",
-            "metaData": {
-              "title": "Job: Software Architect Java in der Unternehmensberatung",
-              "keywords": {
-                "keywords": "Job"
-              },
-              "description": {
-                "description": "Gestalte mit Cofinpro die Zukunft: Als Technologie-, Fach- und Managementberater denken wir immer einen Schritt voraus – und suchen dafür einfach Dich."
-              }
-            },
-            "ort": "Alle",
-            "befristung": "unbefristet",
-            "art": "Vollzeit",
-            "titel": "Software Architect Java (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
-            "ueberschriftGanzOben": "Du wünschst Dir Rambazamba statt Pillepalle?",
-            "bildStellenanzeige": {
-              "id": "c80B8mKLwk08CEcaUgQq4",
-              "title": "12-1543-Jo╠êrg-Ramser-Tech-Senior",
-              "description": "TECH_Software_Architect_Java_Joerg_R",
-              "file": {
-                "url": "//images.contentful.com/niza6hilizwt/80B8mKLwk08CEcaUgQq4/bc83d71dec1443bc7d4375bbf7d96c68/12-1543-Jo_____rg-Ramser-Tech-Senior.jpg",
-                "fileName": "12-1543-Jo╠êrg-Ramser-Tech-Senior.jpg",
-                "contentType": "image/jpeg"
-              }
-            },
-            "absatzEins": {
-              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
-            },
-            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
-            "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Kundenberatung zu komplexen, innovativen System-/Software- Architekturen sowie Verantwortung für deren Konzeption und Implementierung\n- Analyse der Anwendungslandschaften unserer Kunden und Erarbeitung von Optimierungsmaßnahmen sowie neuen Zielarchitekturen auf zukunftsfähigen Plattformen\n- Mitarbeiter-Coaching, Leitung von Entwicklungsteams und Mitwirkung bei der Definition unseres technologischen Angebots\n- kontinuierliche persönliche Weiterentwicklung durch agile Teamarbeit"
-            },
-            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
-            "spaltenInfoBeschreibungMitte": {
-              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufserfahrung als Full Stack Entwickler\n- sehr gute Kenntnisse von C# und des .NET Frameworks (ASP.NET, WPF)\n- mindestens acht Jahre Berufserfahrung in der Konzeption von Softwarearchitekturen\n- sehr gute Kenntnisse von Standards und Methoden des Softwarearchitekturentwurfs sowie von Java und JavaEE\n- praktische Erfahrung im Modellieren von Softwaresystemen (UML, SysML oder Archimate) sowie deren Konzeption und Dokumentation nach gängigen Standards (etwa arc42)\n- Erfahrung in agilen Projektmethoden (Scrum, DevOps) sowie in der Führung von agilen Teams\n- Begeisterung für Software-Architektur und Interesse an Technologieberatung\n- abgeschlossenes Hochschulstudium der (Wirtschafts-) Informatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
-            },
-            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
-            "spaltenInfoBeschreibungRechts": {
-              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- Tech-Events\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
-            },
-            "uMantis": {
-              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/288/Application/CheckLogin/1?lang=ger"
-            }
-          }
-        },
-        {
-          "node": {
             "id": "c4b7VT1PZe8GsUQ0uQQUggk",
+            "url": "senior-frontend-entwickler",
             "metaData": {
               "title": "Job: Front End Entwickler in der Unternehmensberatung",
               "keywords": {
@@ -918,17 +1141,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior Frontend Entwickler (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir bunte Hunde statt Gewohnheitstiere?",
             "bildStellenanzeige": {
               "id": "c4z14Ktt6B2G68C0GeA2ymq",
               "title": "21-2446-Valentino-Pola-Tech-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/4z14Ktt6B2G68C0GeA2ymq/07a8f826c79688aa94da72b9b670f9ee/21-2446-Valentino-Pola-Tech-Senior.jpg",
-                "fileName": "21-2446-Valentino-Pola-Tech-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/4z14Ktt6B2G68C0GeA2ymq/7879c7230708e0d97e9c24de08e1b206/c4z14Ktt6B2G68C0GeA2ymq.jpg",
+                "fileName": "c4z14Ktt6B2G68C0GeA2ymq.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -955,6 +1180,7 @@
         {
           "node": {
             "id": "c3NCJ4Z9Gs0G0Q0AgkkWy68",
+            "url": "senior-full-stack-entwickler-net",
             "metaData": {
               "title": "Job als Senior Full Stack Entwickler .NET im Consulting",
               "keywords": {
@@ -968,17 +1194,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior Full Stack Entwickler .NET (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir große Sprünge statt Kleinklein?",
             "bildStellenanzeige": {
               "id": "c2PGItCpVGo20aaAe26CEeo",
               "title": "21-2310-Valentino-Pola-Tech-Senior",
               "description": "TECH_Senior_Full_STack_Entw_.NET_Valentino_P",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/2PGItCpVGo20aaAe26CEeo/f5c738fd12cc1a17577695d17170f9f6/21-2310-Valentino-Pola-Tech-Senior.jpg",
-                "fileName": "21-2310-Valentino-Pola-Tech-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/2PGItCpVGo20aaAe26CEeo/c9f675079b70a82d0ee7354528979a43/c2PGItCpVGo20aaAe26CEeo.jpg",
+                "fileName": "c2PGItCpVGo20aaAe26CEeo.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1005,6 +1233,7 @@
         {
           "node": {
             "id": "c2jhU8VFZCUiuG2CM0WmacS",
+            "url": "senior-net-entwickler",
             "metaData": {
               "title": "Job: Senior .NET-Entwickler im Consulting",
               "keywords": {
@@ -1018,17 +1247,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Senior .NET Entwickler (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-professional"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir feste Größen statt lose Enden?",
             "bildStellenanzeige": {
               "id": "c4ZldZzT0rey86UqK6oeiws",
               "title": "14-1644-Michael-Heck-Tech-Senior",
               "description": "TECH_Senior_.NET_Entw_Michael_H",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/4ZldZzT0rey86UqK6oeiws/93d23ba1576bf43fe2c21b1be45b8ff0/14-1644-Michael-Heck-Tech-Senior.jpg",
-                "fileName": "14-1644-Michael-Heck-Tech-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/4ZldZzT0rey86UqK6oeiws/57482e59c1e6704b1b8e2dd98bf142dc/c4ZldZzT0rey86UqK6oeiws.jpg",
+                "fileName": "c4ZldZzT0rey86UqK6oeiws.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1055,6 +1286,7 @@
         {
           "node": {
             "id": "c5WYxyIHI1qm8g0WWqWcasO",
+            "url": "net-entwickler",
             "metaData": {
               "title": "Job als .NET-Entwickler in der Unternehmensberatung",
               "keywords": {
@@ -1068,17 +1300,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": ".NET Entwickler (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir feine Kerle statt Schwachmaten?",
             "bildStellenanzeige": {
               "id": "c2ECXdvjuHqCsgOyMckiKYU",
               "title": "02-0488-Daniel-Eichsteller-Tech-Junior",
               "description": "TECH_.NET_Entw_Daniel_E",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/2ECXdvjuHqCsgOyMckiKYU/279bffd4020cdc795ba9bed764492ac8/02-0488-Daniel-Eichsteller-Tech-Junior.jpg",
-                "fileName": "02-0488-Daniel-Eichsteller-Tech-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/2ECXdvjuHqCsgOyMckiKYU/9c89f2909c371d2fa1ca9e73cda8f982/c2ECXdvjuHqCsgOyMckiKYU.jpg",
+                "fileName": "c2ECXdvjuHqCsgOyMckiKYU.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1105,6 +1339,7 @@
         {
           "node": {
             "id": "c2EuwRAeqJOyegOQyag4ei2",
+            "url": "backend-entwickler-java",
             "metaData": {
               "title": "Job als Back End Entwickler Java in der Unternehmensberatung",
               "keywords": {
@@ -1118,17 +1353,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Backend Entwickler Java (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir neue Wege statt alte Pfade?",
             "bildStellenanzeige": {
               "id": "c6uTfP5H2BUIc48acYOoYsq",
               "title": "02-0506-Daniel-Eichsteller-Tech-Junior",
               "description": "TECH_Absolvent_Backend_Entw_Java_Daniel_E",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/6uTfP5H2BUIc48acYOoYsq/46cf33b12dd6f0252be6956a59978a8d/02-0506-Daniel-Eichsteller-Tech-Junior.jpg",
-                "fileName": "02-0506-Daniel-Eichsteller-Tech-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/6uTfP5H2BUIc48acYOoYsq/33c9caef9777b3c403fcd53518758d60/c6uTfP5H2BUIc48acYOoYsq.jpg",
+                "fileName": "c6uTfP5H2BUIc48acYOoYsq.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1155,6 +1392,7 @@
         {
           "node": {
             "id": "c7g8npKGI4ouOg0AIAO0CME",
+            "url": "full-stack-entwickler-java",
             "metaData": {
               "title": "Job: Full Stack Entwickler Java im Consulting",
               "keywords": {
@@ -1168,17 +1406,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Full Stack Entwickler Java (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Know-how statt Guess what?",
             "bildStellenanzeige": {
               "id": "c57s6yFwTKoeaciseSU6mgy",
               "title": "01-0428-Andreas-Fischer-Tech-Junior",
               "description": "TECH_Absolvent_Andreas_Fischer",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/57s6yFwTKoeaciseSU6mgy/6c6cee556c994801bab8b88b95c4684a/01-0428-Andreas-Fischer-Tech-Junior.jpg",
-                "fileName": "01-0428-Andreas-Fischer-Tech-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/57s6yFwTKoeaciseSU6mgy/550705e9f92012361a14a38bb3982852/c57s6yFwTKoeaciseSU6mgy.jpg",
+                "fileName": "c57s6yFwTKoeaciseSU6mgy.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1204,57 +1444,8 @@
         },
         {
           "node": {
-            "id": "c3MGMlnkBh6e6S6ucwkQi0K",
-            "metaData": {
-              "title": "Job: Business Consultant Digitalisierung an neun Standorten",
-              "keywords": {
-                "keywords": "Job"
-              },
-              "description": {
-                "description": "Bei Cofinpro erwarten Dich permanente Förderung, Mitgestaltung von Zeitgeistthemen und viel Platz zum Einmischen in aktuelle Projekte in ganz Deutschland."
-              }
-            },
-            "ort": "Alle",
-            "befristung": "unbefristet",
-            "art": "Vollzeit",
-            "titel": "Business Consultant Digitalisierung (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-absolvent"
-            },
-            "ueberschriftGanzOben": "Du wünschst Dir Aufmucken & statt Klappehalten?",
-            "bildStellenanzeige": {
-              "id": "c6hbstGb6k8MUUIWI4W44uo",
-              "title": "18-2097-Simon-Mangel-Wert-Junior",
-              "description": "",
-              "file": {
-                "url": "//images.contentful.com/niza6hilizwt/6hbstGb6k8MUUIWI4W44uo/e402c37585452593b472f41bd51926d4/18-2097-Simon-Mangel-Wert-Junior.jpg",
-                "fileName": "18-2097-Simon-Mangel-Wert-Junior.jpg",
-                "contentType": "image/jpeg"
-              }
-            },
-            "absatzEins": {
-              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
-            },
-            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
-            "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Design und Umsetzung von Digitalisierungsvorhaben in interdisziplinären, agilen Teams\n- Erhebung, Analyse und Priorisierung fachlicher Anforderungen für komplexe Angebote im Wertpapierbereich\n- Spezifikation von fachlichen Lösungen (User Stories)\n- Kommunikation und Abstimmung mit Fachbereichen, dem Scrum-Entwicklungsteam und weiteren Projekt-Stakeholdern\n"
-            },
-            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
-            "spaltenInfoBeschreibungMitte": {
-              "spaltenInfoBeschreibungMitte": "- Berufs- oder Projekterfahrung bei Banken, Kapitalverwaltungsgesellschaften oder im Consulting für Finanzdienstleister\n- gute Produkt- und Prozesskenntnisse im Wertpapiergeschäft von Banken oder Asset Managern\n- gute Kenntnisse und praktische Erfahrung in agiler Methodik (User Story, Customer Journey, Scrum, Nexus)\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften, Wirtschaftsinformatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse\n"
-            },
-            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
-            "spaltenInfoBeschreibungRechts": {
-              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
-            },
-            "uMantis": {
-              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/290/Application/CheckLogin/1?lang=ger"
-            }
-          }
-        },
-        {
-          "node": {
             "id": "c3GAK33ebbOeawG0OEisa24",
+            "url": "business-analyst-asset-management",
             "metaData": {
               "title": "Job als Business Analyst Asset Management in der Beratung",
               "keywords": {
@@ -1268,17 +1459,19 @@
             "befristung": "unbefristet",
             "art": "Teilzeit",
             "titel": "Business Analyst Asset Management (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir klipp & klar statt Wischiwaschi?",
             "bildStellenanzeige": {
               "id": "c2s992GlBLO2eQGWuu42UMG",
               "title": "19-2137-Samuel-Bornemann-Wert-Junior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/2s992GlBLO2eQGWuu42UMG/aa889b0515a47bbd6ec6b1cd09556b53/19-2137-Samuel-Bornemann-Wert-Junior.jpg",
-                "fileName": "19-2137-Samuel-Bornemann-Wert-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/2s992GlBLO2eQGWuu42UMG/d627846cbfde709713e34216e14e2755/c2s992GlBLO2eQGWuu42UMG.jpg",
+                "fileName": "c2s992GlBLO2eQGWuu42UMG.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1304,57 +1497,8 @@
         },
         {
           "node": {
-            "id": "c6zlaBIuNS8gUIm04MIc8Ac",
-            "metaData": {
-              "title": "Job als Product Owner Digitalisierung in der Beratung",
-              "keywords": {
-                "keywords": "Job"
-              },
-              "description": {
-                "description": "Cofinpro berät führende Banken und Asset Manager: Mit Deiner Expertise führst Du ein agiles Team aus Entwicklern, Designern und Business-Analysten."
-              }
-            },
-            "ort": "Alle",
-            "befristung": "unbefristet",
-            "art": "Vollzeit",
-            "titel": "Product Owner Digitalisierung Kredit (w/m)",
-            "perspektiveLink": {
-              "name": "fachlicher-professional"
-            },
-            "ueberschriftGanzOben": "Du wünschst Dir Möglichmacher statt Hasenfüße?",
-            "bildStellenanzeige": {
-              "id": "c6MMeSW8cdqoe82WYCa2O8u",
-              "title": "23-2865-Stefan-Gra├ƒ-Kredit-Senior",
-              "description": "",
-              "file": {
-                "url": "//images.contentful.com/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/ab4c984168d70d9740247aecddfad668/23-2865-Stefan-Gra_____-Kredit-Senior.jpg",
-                "fileName": "23-2865-Stefan-Gra├ƒ-Kredit-Senior.jpg",
-                "contentType": "image/jpeg"
-              }
-            },
-            "absatzEins": {
-              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
-            },
-            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
-            "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Führung eines agilen Teams aus Business-Analysten, Entwicklern und Designern\n- Entwicklung werthaltiger Lösungen im Team gemäß der strategischen Roadmap unserer Kunden\n- erster Ansprechpartner in strategischen, fachlichen und methodischen Beratungsfragen\n- Moderation von Workshops mit Entscheidungsträgern, Priorisierung fachlicher und technischer Anforderungen im Product Backlog,Steuerung der Erstellung von User Stories\n- Entwicklung der strategischen Kooperation mit Banken und Technologiepartnern in Digitalisierungsvorhaben\n"
-            },
-            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
-            "spaltenInfoBeschreibungMitte": {
-              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufserfahrung als Product Owner und/oder SCRUM Master\n- Kenntnisse agiler Umfelder und Methoden\n- starke Analyse- und Konzeptionsfähigkeit sowie Proaktion\n- Teamspirit: Lust auf gemeinsame Erfolge\n- bankfachliche Expertise im Bereich Baufinanzierung, Konsumentenfinanzierung, Firmenkundenkredite oder Gewerbekredite\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften, Wirtschaftsinformatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse\n"
-            },
-            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
-            "spaltenInfoBeschreibungRechts": {
-              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
-            },
-            "uMantis": {
-              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/272/Application/CheckLogin/1?lang=ger"
-            }
-          }
-        },
-        {
-          "node": {
             "id": "c1sToSlnE8Ew4UcEKYimim0",
+            "url": "full-stack-entwickler-net",
             "metaData": {
               "title": "Job: Full Stack Entwickler .NET in der Unternehmensberatung",
               "keywords": {
@@ -1368,17 +1512,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Full Stack Entwickler .NET (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Mitmischen statt Stillsitzen?",
             "bildStellenanzeige": {
               "id": "c3k6ub8gcfmgckyKkwSWeIY",
               "title": "01-0381-Andreas-Fischer-Tech-Junior",
               "description": "TECH_Full_Stack_Entw_.NET_Andreas_F",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/3k6ub8gcfmgckyKkwSWeIY/fef0c9cdcc19b52d0343319b7a94bf87/01-0381-Andreas-Fischer-Tech-Junior.jpg",
-                "fileName": "01-0381-Andreas-Fischer-Tech-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/3k6ub8gcfmgckyKkwSWeIY/59c0d84e2dfd3783d13af9ca3ddbfb97/c3k6ub8gcfmgckyKkwSWeIY.jpg",
+                "fileName": "c3k6ub8gcfmgckyKkwSWeIY.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1404,31 +1550,34 @@
         },
         {
           "node": {
-            "id": "c1Bh0JRr77CkUgmAKWeoeqE",
+            "id": "c6zlaBIuNS8gUIm04MIc8Ac",
+            "url": "product-owner-digitalisierung-kredit",
             "metaData": {
-              "title": "Job als Senior Full Stack Entwickler Java in der Beratung",
+              "title": "Job als Product Owner Digitalisierung in der Beratung",
               "keywords": {
                 "keywords": "Job"
               },
               "description": {
-                "description": "Du machst Schwieriges einfach? Bestens. Cofinpro wächst und sucht Technologen, die mitmischen, aufmischen und sich einmischen."
+                "description": "Cofinpro berät führende Banken und Asset Manager: Mit Deiner Expertise führst Du ein agiles Team aus Entwicklern, Designern und Business-Analysten."
               }
             },
             "ort": "Alle",
             "befristung": "unbefristet",
             "art": "Vollzeit",
-            "titel": "Senior Full Stack Entwickler Java (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-professional"
-            },
-            "ueberschriftGanzOben": "Du wünschst Dir Aufmucken statt Klappehalten?",
+            "titel": "Product Owner Digitalisierung Kredit (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-professional"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Möglichmacher statt Hasenfüße?",
             "bildStellenanzeige": {
-              "id": "c1PbUnqlQbyGk8WoSe8kuuc",
-              "title": "02-0499-Daniel-Eichsteller-Tech-Junior",
+              "id": "c6MMeSW8cdqoe82WYCa2O8u",
+              "title": "23-2865-Stefan-Gra├ƒ-Kredit-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/1PbUnqlQbyGk8WoSe8kuuc/b7da58ef1bf6e1bf831500b8d6e6ab87/02-0499-Daniel-Eichsteller-Tech-Junior.jpg",
-                "fileName": "02-0499-Daniel-Eichsteller-Tech-Junior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/6MMeSW8cdqoe82WYCa2O8u/87c1f0ba1b6c0d3975ab3139dc91ea57/c6MMeSW8cdqoe82WYCa2O8u.jpg",
+                "fileName": "c6MMeSW8cdqoe82WYCa2O8u.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1437,24 +1586,25 @@
             },
             "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
             "spaltenInfoBeschreibungLinksLang": {
-              "spaltenInfoBeschreibungLinksLang": "- Gestaltung von Konzeption, Entwicklung und Optimierung komplexer, innovativer Softwarelösungen unter Einsatz neuester Technologien und agiler Vorgehensweisen in direkter Kundenzusammenarbeit\n- Lösung von technischen und konzeptionellen Herausforderungen wie Continuous Delivery-Prozesse und Performance-Optimierung mit Fokus auf User Experience\n- Verantwortung für die Konzeption, Dokumentation und Architektur von Frontends, Schnittstellen oder Teilsystemen\n- Mitarbeiter-Coaching, Leitung von Entwicklungsteams und Mitwirkung bei der Definition unseres technologischen Angebots\n- kontinuierliche persönliche Weiterentwicklung durch agile Teamarbeit"
+              "spaltenInfoBeschreibungLinksLang": "- Führung eines agilen Teams aus Business-Analysten, Entwicklern und Designern\n- Entwicklung werthaltiger Lösungen im Team gemäß der strategischen Roadmap unserer Kunden\n- erster Ansprechpartner in strategischen, fachlichen und methodischen Beratungsfragen\n- Moderation von Workshops mit Entscheidungsträgern, Priorisierung fachlicher und technischer Anforderungen im Product Backlog,Steuerung der Erstellung von User Stories\n- Entwicklung der strategischen Kooperation mit Banken und Technologiepartnern in Digitalisierungsvorhaben\n"
             },
             "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
             "spaltenInfoBeschreibungMitte": {
-              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufserfahrung als Full Stack Entwickler\n- sehr gute Kenntnisse von Java und JavaEE\n- praktische Erfahrung mit modernen JavaScript Frameworks (Angular, React) und JSF\n- Expertise in der Entwicklung und Integration von REST- oder WebServices sowie im Umgang mit Application-Servern (JBoss-AS/Wildfly)\n- umfangreiche Kenntnisse im Unit- und Integration-Testing von Anwendungen\n- Erfahrung in agilen Projektmethoden (Scrum, DevOps)\n- Begeisterung für Technologie und Interesse an Technologieberatung\n- abgeschlossenes Hochschulstudium der (Wirtschafts-) Informatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse\n- abgeschlossenes Hochschulstudium der (Wirtschafts-) Informatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse"
+              "spaltenInfoBeschreibungMitte": "- mindestens fünf Jahre Berufserfahrung als Product Owner und/oder SCRUM Master\n- Kenntnisse agiler Umfelder und Methoden\n- starke Analyse- und Konzeptionsfähigkeit sowie Proaktion\n- Teamspirit: Lust auf gemeinsame Erfolge\n- bankfachliche Expertise im Bereich Baufinanzierung, Konsumentenfinanzierung, Firmenkundenkredite oder Gewerbekredite\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften, Wirtschaftsinformatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse\n"
             },
             "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
             "spaltenInfoBeschreibungRechts": {
-              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- Tech-Events\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
             },
             "uMantis": {
-              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/287/Application/CheckLogin/1?lang=ger"
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/272/Application/CheckLogin/1?lang=ger"
             }
           }
         },
         {
           "node": {
             "id": "c2vFgUFEzCg28yCaQKGSA4a",
+            "url": "frontend-entwickler",
             "metaData": {
               "title": "Job: Front End Entwickler in der Unternehmensberatung",
               "keywords": {
@@ -1468,17 +1618,19 @@
             "befristung": "unbefristet",
             "art": "Vollzeit",
             "titel": "Frontend Entwickler (w/m)",
-            "perspektiveLink": {
-              "name": "technologischer-absolvent"
-            },
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "technologischer-absolvent"
+              }
+            ],
             "ueberschriftGanzOben": "Du wünschst Dir Schubidu statt Mimimi?",
             "bildStellenanzeige": {
               "id": "c1xl26f0AyEaaIywS2cIEAc",
               "title": "21-2525-Valentino-Pola-Tech-Senior",
               "description": "",
               "file": {
-                "url": "//images.contentful.com/niza6hilizwt/1xl26f0AyEaaIywS2cIEAc/8971188581866083c23bf84a3e518784/21-2525-Valentino-Pola-Tech-Senior.jpg",
-                "fileName": "21-2525-Valentino-Pola-Tech-Senior.jpg",
+                "url": "//images.ctfassets.net/niza6hilizwt/1xl26f0AyEaaIywS2cIEAc/4f56198f794213448f4a41b287e0ffac/c1xl26f0AyEaaIywS2cIEAc.jpg",
+                "fileName": "c1xl26f0AyEaaIywS2cIEAc.jpg",
                 "contentType": "image/jpeg"
               }
             },
@@ -1499,6 +1651,59 @@
             },
             "uMantis": {
               "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/279/Application/CheckLogin/1?lang=ger"
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "c3MGMlnkBh6e6S6ucwkQi0K",
+            "url": "business-consultant-digitalisierung",
+            "metaData": {
+              "title": "Job: Business Consultant Digitalisierung an neun Standorten",
+              "keywords": {
+                "keywords": "Job"
+              },
+              "description": {
+                "description": "Bei Cofinpro erwarten Dich permanente Förderung, Mitgestaltung von Zeitgeistthemen und viel Platz zum Einmischen in aktuelle Projekte in ganz Deutschland."
+              }
+            },
+            "ort": "Alle",
+            "befristung": "unbefristet",
+            "art": "Vollzeit",
+            "titel": "Business Consultant Digitalisierung (w/m)",
+            "zuordnungZuKompetenzen": [
+              {
+                "name": "fachlicher-absolvent"
+              }
+            ],
+            "ueberschriftGanzOben": "Du wünschst Dir Aufmucken statt Klappehalten?",
+            "bildStellenanzeige": {
+              "id": "c6hbstGb6k8MUUIWI4W44uo",
+              "title": "18-2097-Simon-Mangel-Wert-Junior",
+              "description": "",
+              "file": {
+                "url": "//images.ctfassets.net/niza6hilizwt/6hbstGb6k8MUUIWI4W44uo/85b884cfec4d77fbff63d442a95bc368/c6hbstGb6k8MUUIWI4W44uo.jpg",
+                "fileName": "c6hbstGb6k8MUUIWI4W44uo.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "absatzEins": {
+              "absatzEins": "Cofinpro ist die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier konzentrieren wir uns auf Digitalisierung, neue Marktanforderungen und dynamische Regulatorik. Als Arbeitgeber legen wir Wert auf eine anerkennende Unternehmenskultur, stellen Kompetenz vor Hierarchie und bieten jede Menge Mitgestaltung. Auch das macht uns immer wieder zum »Great Place to Work«."
+            },
+            "spaltenInfoTitelLinks": "WAS DEINEN JOB AUSMACHT",
+            "spaltenInfoBeschreibungLinksLang": {
+              "spaltenInfoBeschreibungLinksLang": "- Design und Umsetzung von Digitalisierungsvorhaben in interdisziplinären, agilen Teams\n- Erhebung, Analyse und Priorisierung fachlicher Anforderungen für komplexe Angebote im Wertpapierbereich\n- Spezifikation von fachlichen Lösungen (User Stories)\n- Kommunikation und Abstimmung mit Fachbereichen, dem Scrum-Entwicklungsteam und weiteren Projekt-Stakeholdern\n"
+            },
+            "spaltenInfoTitelMitte": "WAS WIR UNS VON DIR WÜNSCHEN",
+            "spaltenInfoBeschreibungMitte": {
+              "spaltenInfoBeschreibungMitte": "- Berufs- oder Projekterfahrung bei Banken, Kapitalverwaltungsgesellschaften oder im Consulting für Finanzdienstleister\n- gute Produkt- und Prozesskenntnisse im Wertpapiergeschäft von Banken oder Asset Managern\n- gute Kenntnisse und praktische Erfahrung in agiler Methodik (User Story, Customer Journey, Scrum, Nexus)\n- abgeschlossenes Hochschulstudium der Wirtschaftswissenschaften, Wirtschaftsinformatik oder vergleichbar\n- sehr gute Deutsch- und gute Englischkenntnisse\n"
+            },
+            "spaltenInfoTitelRechts": "WAS WIR DIR BIETEN",
+            "spaltenInfoBeschreibungRechts": {
+              "spaltenInfoBeschreibungRechts": "- Aktienbeteiligung\n- Benefitmodell\n- Feedback & Fortbildung\n- Firmenevents\n- flexible Arbeitszeitmodelle\n- Kinderbetreuungszuschuss\n- Mobilität\n- unbefristeter Arbeitsvertrag\n- 30+ Urlaubstage"
+            },
+            "uMantis": {
+              "uMantis": "https://recruitingapp-2586.umantis.com/Vacancies/290/Application/CheckLogin/1?lang=ger"
             }
           }
         }

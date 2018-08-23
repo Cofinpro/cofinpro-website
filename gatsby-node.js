@@ -8,12 +8,36 @@ var moment = require('moment')
 const axios = require('axios')
 
 var stellenAnzeigenJson = require('./test-data/allContentfulStellenanzeige.json')
-
 var testDataAllContentfulAsset = require('./test-data/allContentfulAsset.json')
+
+const contentfulImageService = require('./server/contentfulImageService')
+const pagePinnwand = require('./server/karriere/pagePinnwand')
+const pagesNews = require('./server/karriere/pagesNews')
+const pagesStellenanzeigen = require('./server/karriere/pagesStellenanzeigen')
+const pageStellenmarkt = require('./server/karriere/pageStellenmarkt')
+const pageDeineEntwicklung = require('./server/karriere/pageDeineEntwicklung')
+const pagesDeineKarriere = require('./server/karriere/pagesDeineKarriere')
+const pageJobBewerbung = require('./server/karriere/pageJobBewerbung')
+const pagesGehaltBenefits = require('./server/karriere/pagesGehaltBenefits')
+const pageLanding = require('./server/karriere/pageLanding')
+const pageStartseiteKarriere = require('./server/karriere/pageStartseiteKarriere')
+const pagesUeberUns = require('./server/karriere/pagesUeberUns')
+const pageWorkLife = require('./server/karriere/pageWorkLife')
+const pagesFokusthemen = require('./server/pagesFokusthemen')
+
+const pageProjekte = require('./server/projekte')
+const pageNewsMedien = require('./server/news-medien')
 
 const runWithTestData = false
 
 const pathPrefix = ''
+
+let globalGraphql = null
+let globalCreatePage = null
+let globalCreateRedirect = null
+let globalBackgroundImages = []
+
+let globalNews = []
 
 // Implement the Gatsby API “createPages”. This is called after the Gatsby
 // bootstrap is finished so you have access to any information necessary to
@@ -21,65 +45,407 @@ const pathPrefix = ''
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage, createRedirect } = boundActionCreators
 
-  moment.locale('de')
+  globalGraphql = graphql
+  globalCreatePage = createPage
+  globalCreateRedirect = createRedirect
 
-  var stellenAnzeigen
-  var news
+  moment.locale('de')
 
   return new Promise((resolve, reject) => {
     async.waterfall(
       [
-        async.apply(
-          refreshImages,
-          graphql,
-          createPage,
-          createRedirect,
-          stellenAnzeigen,
-          news
-        ),
-        getStellenanzeigen,
-        createStellenanzeigen,
+        async.apply(contentfulImageService.refreshImages, globalGraphql),
         getNews,
-        createPinnwand,
-        createNews,
-        createStellenmarkt,
-        createUeberUns,
-        createDeineKarriere,
-        createDeineEntwicklung,
-        createStart,
-        createGehaltBenefits,
-        createWorkLife,
-        createJobsBewerbung,
-        createStartseite,
-        createRedirects,
+        getStockImages,
+        createPages,
       ],
       function(error, success) {
         resolve()
         console.log('done')
-        return alert('Done!')
       }
     )
   })
 }
 
-function getNews(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  var isTest = false
+function createPages(callback) {
+  var asyncTasks = []
 
-  if (isTest) {
-    news = stellenAnzeigenJson
+  asyncTasks.push(
+    async.apply(
+      pagesStellenanzeigen.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
+  )
+  asyncTasks.push(
+    async.apply(pagePinnwand.create, globalCreatePage, globalNews)
+  )
+  asyncTasks.push(async.apply(pagesNews.create, globalCreatePage, globalNews))
+  asyncTasks.push(
+    async.apply(pageStellenmarkt.create, globalGraphql, globalCreatePage)
+  )
+  asyncTasks.push(
+    async.apply(pagesUeberUns.create, globalGraphql, globalCreatePage)
+  )
+  asyncTasks.push(
+    async.apply(
+      pagesDeineKarriere.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
+  )
+  asyncTasks.push(
+    async.apply(
+      pageDeineEntwicklung.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
+  )
+  asyncTasks.push(
+    async.apply(
+      pageLanding.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect,
+      globalNews
+    )
+  )
+  asyncTasks.push(
+    async.apply(
+      pagesGehaltBenefits.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
+  )
+  asyncTasks.push(
+    async.apply(pageWorkLife.create, globalGraphql, globalCreatePage)
+  )
+  asyncTasks.push(
+    async.apply(pageJobBewerbung.create, globalGraphql, globalCreatePage)
+  )
+  asyncTasks.push(
+    async.apply(pageStartseiteKarriere.create, globalGraphql, globalCreatePage)
+  )
+  asyncTasks.push(
+    async.apply(
+      pagesFokusthemen.create,
+      globalGraphql,
+      globalCreatePage,
+      globalCreateRedirect
+    )
+  )
 
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+  asyncTasks.push(
+    async.apply(
+      pageProjekte.create,
+      globalGraphql,
+      globalCreatePage,
+      globalBackgroundImages
+    )
+  )
+
+  asyncTasks.push(
+    async.apply(
+      pageNewsMedien.create,
+      globalGraphql,
+      globalCreatePage,
+      globalBackgroundImages
+    )
+  )
+
+  async.waterfall(asyncTasks, function() {
+    // All tasks are done now
+    callback()
+  })
+}
+
+function createSharpImage(graphql, sharpParameter, originalImg, callback) {
+  if (originalImg === undefined || originalImg === null) {
+    callback(null, null)
   } else {
-    graphql(`
+    graphql(
+      `
+        {
+        resultImage: imageSharp(id: { regex: "/` +
+        originalImg.id +
+        `/" }) {
+                              sizes(` +
+        sharpParameter +
+        `) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+                          }
+                      }
+                  }
+              `
+    ).then(result => {
+      callback(null, result.data.resultImage)
+    })
+  }
+}
+
+function getStockImages(callback) {
+  globalGraphql(`
+    {
+      architektur1ImageSharp: imageSharp(id: { regex: "/stock_architektur_1/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur2ImageSharp: imageSharp(id: { regex: "/stock_architektur_2/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur4ImageSharp: imageSharp(id: { regex: "/stock_architektur_4/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur6ImageSharp: imageSharp(id: { regex: "/stock_architektur_6/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur7ImageSharp: imageSharp(id: { regex: "/stock_architektur_7/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur9ImageSharp: imageSharp(id: { regex: "/stock_architektur_9/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur10ImageSharp: imageSharp(
+        id: { regex: "/stock_architektur_10/" }
+      ) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      architektur11ImageSharp: imageSharp(
+        id: { regex: "/stock_architektur_11/" }
+      ) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht46ImageSharp: imageSharp(id: { regex: "/stock_licht_46/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht2ImageSharp: imageSharp(id: { regex: "/stock_licht_2/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht3ImageSharp: imageSharp(id: { regex: "/stock_licht_3/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht4ImageSharp: imageSharp(id: { regex: "/stock_licht_4/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht41ImageSharp: imageSharp(id: { regex: "/stock_licht_41/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht42ImageSharp: imageSharp(id: { regex: "/stock_licht_42/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht31ImageSharp: imageSharp(id: { regex: "/stock_licht_31/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+      licht22ImageSharp: imageSharp(id: { regex: "/stock_licht_22/" }) {
+        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          originalImg
+          originalName
+          base64
+          aspectRatio
+          sizes
+        }
+      }
+    }
+`).then(result => {
+    globalBackgroundImages.length = 0
+
+    globalBackgroundImages.push(result.data.architektur1ImageSharp)
+    globalBackgroundImages.push(result.data.architektur2ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht46ImageSharp)
+    globalBackgroundImages.push(result.data.licht2ImageSharp)
+
+    globalBackgroundImages.push(result.data.architektur4ImageSharp)
+    globalBackgroundImages.push(result.data.architektur6ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht31ImageSharp)
+    globalBackgroundImages.push(result.data.licht22ImageSharp)
+
+    globalBackgroundImages.push(result.data.architektur7ImageSharp)
+    globalBackgroundImages.push(result.data.architektur9ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht3ImageSharp)
+    globalBackgroundImages.push(result.data.licht4ImageSharp)
+
+    globalBackgroundImages.push(result.data.architektur10ImageSharp)
+    globalBackgroundImages.push(result.data.architektur11ImageSharp)
+
+    globalBackgroundImages.push(result.data.licht41ImageSharp)
+    globalBackgroundImages.push(result.data.licht42ImageSharp)
+
+    callback(null)
+  })
+}
+
+function getNews(callback) {
+  globalGraphql(`
       {
-        allContentfulNews(
+        allContentfulSeiteNews(
           sort: { fields: [datumFuerDieAnzeige], order: DESC }
         ) {
           edges {
@@ -96,6 +462,10 @@ function getNews(
               }
               parent {
                 id
+              }
+              url
+              zugeordnetePerspektivenKompetenz  {
+                name
               }
               titel
               titelbild {
@@ -116,115 +486,7 @@ function getNews(
               absatz1 {
                 absatz1
               }
-            }
-          }
-        }
-      }
-    `).then(result => {
-      news = result.data.allContentfulNews.edges
-
-      news.forEach(function(object, index) {
-        if (object.node.datumFuerDieAnzeige != null) {
-          object.node.datumFuerDieAnzeige = moment(
-            object.node.datumFuerDieAnzeige,
-            'YYYY-MM-DD'
-          ).format('L')
-        }
-      })
-
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-    })
-  }
-}
-
-function createPinnwand(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  const template = path.resolve(`./src/templates/pinnwand.jsx`)
-
-  createPage({
-    path: `/pinnwand`,
-    component: slash(template),
-    context: {
-      allNews: news,
-    },
-  })
-
-  console.log(`created page /pinnwand.`)
-
-  callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-}
-
-function createNews(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  const template = path.resolve(`./src/templates/news.jsx`)
-
-  _.each(news, edge => {
-    createPage({
-      path: `pinnwand/news/${edge.node.id}`,
-      component: slash(template),
-      context: {
-        id: edge.node.id,
-        news: edge,
-      },
-    })
-
-    console.log(`created page pinnwand/news/${edge.node.id}.`)
-  })
-
-  callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-}
-
-function getStellenanzeigen(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  var isTest = false
-
-  if (isTest) {
-    stellenAnzeigen = stellenAnzeigenJson.data.allContentfulStellenanzeige.edges
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  } else {
-    graphql(`
-      {
-        allContentfulStellenanzeige {
-          edges {
-            node {
-              id
-              metaData {
-                title
-                keywords {
-                  keywords
-                }
-                description {
-                  description
-                }
-              }
-              ort
-              befristung
-              art
-              titel
-              perspektiveLink {
-                name
-              }
-              ueberschriftGanzOben
-              bildStellenanzeige {
+              newsBild {
                 id
                 title
                 description
@@ -234,572 +496,58 @@ function getStellenanzeigen(
                   contentType
                 }
               }
-              absatzEins {
-                absatzEins
-              }
-              spaltenInfoTitelLinks
-              spaltenInfoBeschreibungLinksLang {
-                spaltenInfoBeschreibungLinksLang
-              }
-              spaltenInfoTitelMitte
-              spaltenInfoBeschreibungMitte {
-                spaltenInfoBeschreibungMitte
-              }
-              spaltenInfoTitelRechts
-              spaltenInfoBeschreibungRechts {
-                spaltenInfoBeschreibungRechts
-              }
-              uMantis {
-                uMantis
+              absatz2 {
+                absatz2
               }
             }
           }
         }
       }
     `).then(result => {
-      stellenAnzeigen = result.data.allContentfulStellenanzeige.edges
+    globalNews = result.data.allContentfulSeiteNews.edges
 
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-    })
-  }
-}
-
-function createStellenanzeigen(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  const template = path.resolve(`./src/templates/stellenanzeige.jsx`)
-
-  _.each(stellenAnzeigen, edge => {
-    createPage({
-      path: `/stellenanzeige/${edge.node.id}`,
-      component: slash(template),
-      context: {
-        id: edge.node.id,
-        stellenAnzeige: edge,
-        stellenAnzeigen: stellenAnzeigen,
-      },
-    })
-
-    console.log(`created page stellenanzeige/${edge.node.id}.`)
-  })
-
-  callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-}
-
-function createStellenmarkt(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulStellenmarkt(limit: 1000) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const template = path.resolve(`./src/templates/stellenmarkt.jsx`)
-
-    _.each(result.data.allContentfulStellenmarkt.edges, edge => {
-      createPage({
-        path: `/jobs`,
-        component: slash(template),
-        context: {
-          id: edge.node.id,
-          stellenAnzeigen: stellenAnzeigen,
-        },
-      })
-
-      console.log(`created page /jobs.`)
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createUeberUns(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulUeberUns(limit: 1000) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const ueberUnsTemplate = path.resolve(`./src/templates/ueber-uns.jsx`)
-
-    _.each(result.data.allContentfulUeberUns.edges, edge => {
-      createPage({
-        path: `/ueber-uns`,
-        component: slash(ueberUnsTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
-
-      console.log('created page ueber-uns.')
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createDeineKarriere(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulDeineKarriere(limit: 1000) {
-          edges {
-            node {
-              id
-              perspektive {
-                name
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const deineKarriereTemplate = path.resolve(
-      `./src/templates/deine-karriere.jsx`
-    )
-
-    _.each(result.data.allContentfulDeineKarriere.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/deine-karriere`,
-        component: slash(deineKarriereTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
-
-      console.log(`created page ${edge.node.perspektive.name}/deine-karriere`)
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createDeineEntwicklung(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulDeineEntwicklung(limit: 1000) {
-          edges {
-            node {
-              id
-              perspektive {
-                name
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const deineEntwicklungTemplate = path.resolve(
-      `./src/templates/deine-entwicklung.jsx`
-    )
-
-    _.each(result.data.allContentfulDeineEntwicklung.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/deine-entwicklung`,
-        component: slash(deineEntwicklungTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
-
-      console.log(
-        `created page ${edge.node.perspektive.name}/deine-entwicklung`
-      )
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createStart(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulStartseitePerspektive(limit: 1000) {
-          edges {
-            node {
-              id
-              perspektive {
-                name
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const landingTemplate = path.resolve(`./src/templates/landing.jsx`)
-
-    var topNews = []
-    var numberOfTopsNews = 2
-
-    for (var i = 0; i < news.length; ++i) {
-      if (i < numberOfTopsNews) {
-        topNews.push(news[i])
-      }
-    }
-
-    _.each(result.data.allContentfulStartseitePerspektive.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/landing`,
-        component: slash(landingTemplate),
-        context: {
-          id: edge.node.id,
-          anzeigen: stellenAnzeigen,
-          topNews: topNews,
-        },
-      })
-
-      console.log(`created page ${edge.node.perspektive.name}/landing`)
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createGehaltBenefits(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulGehaltBenefits(limit: 1000) {
-          edges {
-            node {
-              id
-              perspektive {
-                name
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const gehaltBeteiligungTemplate = path.resolve(
-      `./src/templates/gehalt-beteiligung.jsx`
-    )
-
-    _.each(result.data.allContentfulGehaltBenefits.edges, edge => {
-      createPage({
-        path: `${edge.node.perspektive.name}/gehalt-beteiligung`,
-        component: slash(gehaltBeteiligungTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
-
-      console.log(
-        `created page ${edge.node.perspektive.name}/gehalt-beteiligung`
-      )
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createWorkLife(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulWorkLife(limit: 1000) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const workLifeTemplate = path.resolve(`./src/templates/work-life.jsx`)
-
-    _.each(result.data.allContentfulWorkLife.edges, edge => {
-      createPage({
-        path: `/work-life`,
-        component: slash(workLifeTemplate),
-        context: {
-          id: edge.node.id,
-        },
-      })
-
-      console.log('created page work life.')
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createJobsBewerbung(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulJobsBewerbung(limit: 1000) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const template = path.resolve(`./src/templates/jobs-bewerbung.jsx`)
-
-    _.each(result.data.allContentfulJobsBewerbung.edges, edge => {
-      createPage({
-        path: `/jobs-bewerbung`,
-        component: slash(template),
-        context: {
-          id: edge.node.id,
-          stellenAnzeigen: stellenAnzeigen,
-        },
-      })
-
-      console.log(`created page /jobs-bewerbung`)
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createStartseite(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        allContentfulWahlDerKompetenz(limit: 1) {
-          edges {
-            node {
-              id
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    const template = path.resolve(`./src/templates/startseite.jsx`)
-
-    _.each(result.data.allContentfulWahlDerKompetenz.edges, edge => {
-      createPage({
-        path: `/`,
-        component: slash(template),
-        context: {
-          id: edge.node.id,
-        },
-      })
-
-      console.log(`created page /index.jsx`)
-    })
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function createRedirects(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  graphql(
-    `
-      {
-        site {
-          siteMetadata {
-            redirects {
-              from
-              to
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    for (var i = 0; i < result.data.site.siteMetadata.redirects.length; ++i) {
-      createRedirect({
-        fromPath: pathPrefix + result.data.site.siteMetadata.redirects[i].from,
-        redirectInBrowser: true,
-        toPath: pathPrefix + result.data.site.siteMetadata.redirects[i].to,
-      })
-
-      console.log(
-        `created redirect from` +
-          result.data.site.siteMetadata.redirects[i].from +
-          ' to:' +
-          result.data.site.siteMetadata.redirects[i].to
-      )
-    }
-
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  })
-}
-
-function refreshImages(
-  graphql,
-  createPage,
-  createRedirect,
-  stellenAnzeigen,
-  news,
-  callback
-) {
-  if (runWithTestData) {
-    _.each(testDataAllContentfulAsset.data.allContentfulAsset.edges, edge => {
-      var fileName = edge.node.file.fileName
-      var newFileName =
-        edge.node.id +
-        fileName.substring(fileName.lastIndexOf('.'), fileName.length)
-      var path = './static/img/contentful/' + newFileName
-
-      if (!existsAsset(path)) {
-        console.log('asset for id:' + edge.node.id + ' not found.')
-
-        var url = 'http:' + edge.node.file.url
-
-        getAndStoreAssetFromContentful(url, path)
+    globalNews.forEach(function(object, index) {
+      if (object.node.datumFuerDieAnzeige != null) {
+        object.node.datumFuerDieAnzeige = moment(
+          object.node.datumFuerDieAnzeige,
+          'YYYY-MM-DD'
+        ).format('L')
       }
     })
 
-    callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
-  } else {
-    graphql(
-      `
+    var itemsProcessed = 0
+
+    globalNews.forEach((item, index, array) => {
+      console.log('creating sharp images for news:' + item.node.titel)
+
+      async.parallel(
         {
-          allContentfulAsset(limit: 1000) {
-            edges {
-              node {
-                id
-                file {
-                  url
-                  fileName
-                  contentType
-                }
-              }
-            }
+          titelBild: async.apply(
+            createSharpImage,
+            globalGraphql,
+            'maxWidth: 2000, maxHeight: 1250, quality: 60, cropFocus: CENTER',
+            item.node.titelbild
+          ),
+          newsBild: async.apply(
+            createSharpImage,
+            globalGraphql,
+            'maxWidth: 1800, quality: 60',
+            item.node.newsBild
+          ),
+        },
+        function(err, results) {
+          itemsProcessed++
+
+          item.node.titelbildSharp = results.titelBild
+          item.node.newsBildSharp = results.newsBild
+
+          if (itemsProcessed === globalNews.length) {
+            console.log('finished sharp images for all news.')
+
+            callback(null)
           }
         }
-      `
-    ).then(result => {
-      _.each(result.data.allContentfulAsset.edges, edge => {
-        var fileName = edge.node.file.fileName
-        var newFileName =
-          edge.node.id +
-          fileName.substring(fileName.lastIndexOf('.'), fileName.length)
-        var path = './static/img/contentful/' + newFileName
-
-        if (!existsAsset(path)) {
-          console.log('asset for id:' + edge.node.id + ' not found.')
-
-          var url = 'http:' + edge.node.file.url
-
-          getAndStoreAssetFromContentful(url, path)
-        }
-      })
-
-      callback(null, graphql, createPage, createRedirect, stellenAnzeigen, news)
+      )
     })
-  }
-}
-
-function getAndStoreAssetFromContentful(_url, _path) {
-  console.log('getting file from url:' + _url)
-  console.log('storing file under path:' + _path)
-
-  axios({
-    method: 'get',
-    url: _url,
-    responseType: 'stream',
-  }).then(function(response) {
-    response.data.pipe(fs.createWriteStream(_path))
   })
-}
-
-function existsAsset(_path) {
-  if (fs.existsSync(_path)) {
-    return true
-  }
-  return false
 }

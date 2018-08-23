@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
-import get from 'lodash/get'
 import { Launcher } from 'react-chat-window'
 
 import './style.scss'
@@ -9,7 +7,29 @@ class ChatBot extends React.Component {
   constructor() {
     super()
     this.state = {
-      messageList: [],
+      messageList: [
+        {
+          type: 'text',
+          author: 'them',
+          data: { text: 'Hi, ich bin der Cofinpro Recruiting-Chatbot!' },
+        },
+        {
+          type: 'text',
+          author: 'them',
+          data: {
+            text:
+              'Viele nette Cofinpros haben mich mit Wissen gefüttert, und seitdem ist es meine Lieblingsbeschäftigung, Deine Fragen zu beantworten. Über alles, was mit Deiner Karriere und Weiterentwicklung bei Cofinpro zu tun hat, weiß ich bestens Bescheid (auch wenn ich noch weiter dazulerne).',
+          },
+        },
+        {
+          type: 'text',
+          author: 'them',
+          data: {
+            text:
+              'Du willst mehr über unsere Beratung und den Bewerbungsprozess erfahren? Dann schieß einfach los.',
+          },
+        },
+      ],
       newMessagesCount: 0,
       isOpen: false,
       client:
@@ -20,16 +40,8 @@ class ChatBot extends React.Component {
           : null,
     }
   }
-  componentDidMount() {
-    if (this.state.messageList.length == 0) {
-      this._sendMessage(
-        'Hi, ich bin der Recruiting ChatBot der Cofinpro. Ich kenne mich mit den folgenden Themen aus: Deine persönliche bzw. professionelle Weiterentwicklung bei uns oder auch wie der Bewerbungsprozess so abläuft. Fragen zu den Auswahltagen und Telefoninterviews kann ich natürlich auch benatworten. Mit den Themen wie Beratung oder unseren Projekten bin ich auch vertraut.'
-      )
-    }
-  }
 
   _onMessageWasSent(message) {
-    console.log(message)
     if (message.author === 'me') {
       var context = this
 
@@ -90,16 +102,28 @@ class ChatBot extends React.Component {
   }
 
   render() {
-    const {} = this.props
+    const { locationUpdate } = this.props
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    var urlFragmentPers = pathPrefix != null && pathPrefix.length > 2 ? 1 : 0
+
+    var mainUrl =
+      pathPrefix != null && pathPrefix.length > 2 ? pathPrefix : '/karriere'
+
     return (
-      <div>
+      <div
+        hidden={
+          locationUpdate === mainUrl ||
+          locationUpdate.indexOf('/karriere') !== 0
+            ? true
+            : false
+        }
+      >
         <Launcher
           agentProfile={{
             teamName: 'Cofinpro ChatBot #beta',
-            imageUrl: pathPrefix + '/img/chat_icon.jpg',
+            imageUrl: null,
           }}
           onMessageWasSent={this._onMessageWasSent.bind(this)}
           messageList={this.state.messageList}

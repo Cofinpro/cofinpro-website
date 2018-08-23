@@ -1,5 +1,7 @@
 {
- "name": "App",
+ "name": "Cofinpro",
+ "short_name": "Cofinpro",
+ "description": "Webseite der Cofinpro.",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",

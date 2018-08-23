@@ -1,0 +1,16 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+.space-button-left-right {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  @include media-breakpoint-only(xs) {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+  @include media-breakpoint-only(sm) {
+    margin-right: 0rem;
+    margin-left: 0rem;
+  }
+}

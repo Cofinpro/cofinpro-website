@@ -8,96 +8,23 @@ module.exports = {
     author: 'Benjamin Tenke',
     twitter: 'cofinpro_ag',
     siteUrl: `https://www.karriere-cofinpro.de`,
-    redirects: [
-      {
-        from: '/undefined/deine-entwicklung',
-        to: '/',
-      },
-      {
-        from: '/deine-entwicklung',
-        to: '/',
-      },
-      {
-        from: '/undefined/gehalt-beteiligung',
-        to: '/',
-      },
-      {
-        from: '/gehalt-beteiligung',
-        to: '/',
-      },
-      {
-        from: '/undefined/deine-karriere',
-        to: '/',
-      },
-      {
-        from: '/deine-karriere',
-        to: '/',
-      },
-      {
-        from: '/undefined/landing',
-        to: '/',
-      },
-      {
-        from: '/landing',
-        to: '/',
-      },
-      {
-        from: '/stellenmarkt',
-        to: '/jobs',
-      },
-      {
-        from: '/stellenprofil-informatiker',
-        to: '/jobs',
-      },
-      {
-        from: '/job-empfehlung',
-        to: '/jobs',
-      },
-      {
-        from: '/soziale-vielfalt-bei-cofinpro',
-        to: '/ueber-uns',
-      },
-      {
-        from: '/bewerbung-einreichen',
-        to: '/jobs-bewerbung',
-      },
-      {
-        from: '/weiterentwicklung',
-        to: '/fachlicher-professional/deine-entwicklung',
-      },
-      {
-        from: '/gehaltsmodel',
-        to: '/fachlicher-professional/gehalt-beteiligung',
-      },
-      {
-        from: '/impressum-karriere',
-        to: '/impressum',
-      },
-      {
-        from: '/auszeichnungen',
-        to: '/ueber-uns',
-      },
-      {
-        from: '/bewerbungsprozess',
-        to: '/jobs-bewerbung',
-      },
-      {
-        from: '/zukuenftige-kollegen',
-        to: '/ueber-uns',
-      },
-      {
-        from: '/laufbahnmodell',
-        to: '/fachlicher-professional/deine-karriere',
-      },
-    ],
   },
   pathPrefix: '/',
   plugins: [
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/img/`,
       },
     },
     {
@@ -114,15 +41,11 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-images',
-          },
-          {
             resolve: 'gatsby-remark-responsive-iframe',
             options: {
               wrapperStyle: 'margin-bottom: 1.0725rem',
             },
           },
-          'gatsby-remark-prismjs',
           'gatsby-remark-copy-linked-files',
           'gatsby-remark-smartypants',
           'gatsby-remark-autolink-headers',
@@ -136,10 +59,23 @@ module.exports = {
         anonymize: true,
       },
     },
+    {
+      resolve: 'gatsby-plugin-svgr',
+      options: {
+        icon: true,
+        viewBox: false,
+        // see https://github.com/smooth-code/svgr for a list of all options
+      },
+    },
     'gatsby-plugin-sass',
     'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-twitter',
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`String.prototype.startsWith`],
+      },
+    },
   ],
 }

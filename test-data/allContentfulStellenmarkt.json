@@ -1,0 +1,73 @@
+{
+  "data": {
+    "allContentfulSeiteStellenmarkt": {
+      "edges": [
+        {
+          "node": {
+            "id": "c26aYRRlXYYOKSwkWIsKUke",
+            "metaData": {
+              "id": "c5sARtcd8eAaOiUE2aawK8Y",
+              "title":
+                "Jobs als Consultant in der Unternehmensberatung: Cofinpro ",
+              "keywords": {
+                "keywords": "Jobs , Stellenmarkt, Cofinpro"
+              },
+              "description": {
+                "description":
+                  "Hey, wie wär’s mit uns beiden? Hier findest Du alle freien Jobs für fachliche und technologische Berater, Studenten und Backoffice bei Cofinpro."
+              }
+            },
+            "parent": {
+              "id": "Seite - Stellenmarkt"
+            },
+            "contentfulTitel": "Stellenmarkt - Seite",
+            "hauptueberschrift": "Unsere Jobbörse",
+            "titelbild": {
+              "id": "c4fVDpxMf16ym6WGeuamWCW",
+              "title": "Khola Amid HR Tafel ",
+              "description": "Khola Amid HR Tafel ",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4fVDpxMf16ym6WGeuamWCW/dc169f128c1acbeff4f36b4d6de15ce5/09-1247-Khola-Ahmad-HR-2-kleiner_min.jpg",
+                "fileName": "09-1247-Khola-Ahmad-HR-2-kleiner_min.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c4fVDpxMf16ym6WGeuamWCW",
+              "title": "Khola Amid HR Tafel ",
+              "description": "Khola Amid HR Tafel ",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/4fVDpxMf16ym6WGeuamWCW/dc169f128c1acbeff4f36b4d6de15ce5/09-1247-Khola-Ahmad-HR-2-kleiner_min.jpg",
+                "fileName": "09-1247-Khola-Ahmad-HR-2-kleiner_min.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "beschreibungUntertitel": "JOBS BEI COFINPRO",
+            "beschreibungTitel": "Was wünschst Du Dir?",
+            "beschreibungAbsatz1": {
+              "beschreibungAbsatz1":
+                "Diese Frage finden wir ziemlich wichtig. Weil wir möchten, dass es Dir bei Cofinpro gutgeht und Du Dich entfalten kannst. Und auch, weil wir selbst Menschen sind, die zwar für ihre Jobs brennen, die aber auch nach der Arbeit intensiv leben wollen. "
+            },
+            "beschreibungAbsatz2": {
+              "beschreibungAbsatz2":
+                "Bestimmt hast Du schon mal die Erfahrung gemacht, dass Du Dich verbiegen musstest, damit es für andere rundläuft. Auf unserer Wunschliste steht etwas anderes: Menschen, die mit uns Großes bewegen möchten. Die sich trauen, um die Ecke zu denken und dabei auch mal kantig zu sein. Kurz: Wir wünschen uns einfach Dich."
+            },
+            "callToActionText": {
+              "callToActionText":
+                "War nicht der richtige Job dabei? \nMacht nichts, wir wollen Dich trotzdem kennenlernen. "
+            },
+            "linkZurInitiativBewerbung": {
+              "linkBezeichnung": "INITIATIV BEI COFINPRO BEWERBEN",
+              "linkZurExternenQuelle": {
+                "linkZurExternenQuelle":
+                  "https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg width="23px" height="15px" viewBox="0 0 23 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style> svg { cursor: pointer; } </style>
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Stellenmarkt-Mobile" transform="translate(-150.000000, -2569.000000)" stroke="#EE7D00">
+            <g id="arrow_stage" transform="translate(162.000000, 2577.500000) scale(-1, -1) rotate(-90.000000) translate(-162.000000, -2577.500000) translate(156.000000, 2566.000000)">
+                <g id="Page-1">
+                    <path d="M10.6493,22.4519 L2.4663,14.3229" id="Stroke-1" stroke-width="3" stroke-dasharray="3.296,3.296"></path>
+                    <path d="M3.6353,8.516 L11.8183,0.387" id="Stroke-3" stroke-width="3" stroke-dasharray="3.296,3.296"></path>
+                    <polyline id="Stroke-5" stroke-width="3" points="1.2973 13.1609 0.1283 11.9999 1.2973 10.8389"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

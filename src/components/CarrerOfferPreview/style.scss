@@ -1,18 +1,22 @@
 .carrerOfferPreview {
+  height: 100%;
 
+  a:hover {
+    text-decoration: none;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  p.no-margin-bottom {
+    margin-bottom: 0rem;
+  }
+
+  .inner {
     height: 100%;
-    border: 3px dashed #A9C5E8;
+  }
 
-    p.no-margin-bottom {
-        margin-bottom: 0rem;
-    }
-
-    .inner {
-        height: 100%;
-    }
-
-    .stellenanzeige-link {
-
-    }
-
+  .stellenanzeige-link {
+  }
 }

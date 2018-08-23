@@ -1,7 +1,7 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import get from 'lodash/get'
+
+import LinkButton from '../../components/buttons/LinkButton'
 
 class Impressum extends React.Component {
   getCurrentUrl() {
@@ -27,13 +27,13 @@ class Impressum extends React.Component {
           ]}
           meta={[
             {
-              property: 'og:title',
-              content: 'Impressum - Cofinpro',
-            },
-            {
-              property: 'Description',
+              name: 'Description',
               content:
                 'Impressum Cofinpro AG Untermainkai 27 - 28 60329 Frankfurt am Main Tel +49 (0) 69-2 99 20 87 60 Fax…',
+            },
+            {
+              property: 'og:title',
+              content: 'Impressum - Cofinpro',
             },
             {
               property: 'og:description',
@@ -43,68 +43,64 @@ class Impressum extends React.Component {
           ]}
         />
 
-        <div className="container padding-lg-top-bottom">
+        <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col text-center">
-              <h1 className="margin-md-bottom">Impressum</h1>
+            <div className="col">
+              <h1 className="h1 margin-md-bottom">Impressum</h1>
 
               <p>
                 Cofinpro AG
                 <br />Untermainkai 27 - 28
                 <br />60329 Frankfurt am Main
-                <br />Tel +49 (0) 69-2 99 20 87 60
-                <br />Fax +49 (0) 69-2 99 20 87 61
-                <br />welcome@cofinpro.de
+                <br />Tel +49 (0) 69 - 299 20 87 60
+                <br />Fax +49 (0) 69 - 299 20 87 61
+                <br />
+                <a href="mailto:welcome@cofinpro.de">welcome@cofinpro.de</a>
               </p>
 
               <p>
-                Sitz der Gesellschaft
+                <span className="bold-font">Sitz der Gesellschaft</span>
                 <br />Frankfurt
               </p>
 
               <p>
-                Handelsregister
+                <span className="bold-font">Handelsregister</span>
                 <br />HRB 10 29 30
                 <br />Amtsgericht Frankfurt am Main
               </p>
 
               <p>
-                USt-ID
+                <span className="bold-font">USt-ID</span>
                 <br />DE 814 878 661
               </p>
 
               <p>
-                Vorsitzender des Aufsichtsrates
+                <span className="bold-font">
+                  Vorsitzender des Aufsichtsrates
+                </span>
                 <br />Markus Bohner
               </p>
 
               <p>
-                Vorstand
+                <span className="bold-font">Vorstand</span>
                 <br />Gerald Prior (Vorsitzender)
-                <br />Christine Naber
+                <br />Christine Martin
               </p>
             </div>
           </div>
         </div>
 
-        <div className="container padding-sm-top-bottom text-center">
-          <a
-            name="Datenschutz"
-            href="https://cofinpro.de/datenschutz/"
-            target="_blank"
-          >
-            Datenschutz
-          </a>
-        </div>
-
-        <div className="container padding-sm-top-bottom text-center">
-          <a
-            name="AGB/Disclaimer"
-            href="https://cofinpro.de/agb/"
-            target="_blank"
-          >
-            AGB/Disclaimer
-          </a>
+        <div className="container margin-20-top">
+          <div className="row">
+            <div className="col">
+              <LinkButton
+                text="Datenschutz"
+                path="/datenschutz"
+                styleSpan="margin-sm-right"
+              />
+              <LinkButton text="AGB/Disclaimer" path="/agb" />
+            </div>
+          </div>
         </div>
       </div>
     )

@@ -10,7 +10,29 @@ if (process.env.NODE_ENV === 'production') {
   }
 }
 
+const apercuFontCssFile = require('!raw-loader!../static/css/apercu-regular.css')
+const otherCssCssFile = require('!raw-loader!../static/css/other.css')
+
+const jQueryJsFile = require('!raw-loader!../static/js/jquery-3.2.1.min.js')
+const popperJsFile = require('!raw-loader!../static/js/popper.min.js')
+const bootstrapJsFile = require('!raw-loader!../static/js/bootstrap.min.js')
+const apiAiJsFile = require('!raw-loader!../static/js/ApiAi.min.js')
+
 export default class HTML extends React.Component {
+  renderCssFile(_cssFile, _id) {
+    let innerHtmlCss = (
+      <style id={'css-' + _id} dangerouslySetInnerHTML={{ __html: _cssFile }} />
+    )
+    return innerHtmlCss
+  }
+
+  renderJsFile(_jsFile, _id) {
+    let innerHtmlJs = (
+      <script id={'js-' + _id} dangerouslySetInnerHTML={{ __html: _jsFile }} />
+    )
+    return innerHtmlJs
+  }
+
   render() {
     const head = Helmet.rewind()
     let css
@@ -36,24 +58,10 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          {css}
           <link
             href={pathPrefix + '/favicon/favicon.ico'}
             rel="icon"
             type="image/x-icon"
-          />
-          <link
-            rel="stylesheet"
-            href={pathPrefix + '/css/font-awesome.min.css'}
-          />
-          <link
-            rel="stylesheet"
-            href={pathPrefix + '/css/apercu-regular.css'}
-          />
-          <link rel="stylesheet" href={pathPrefix + '/css/botui.min.css'} />
-          <link
-            rel="stylesheet"
-            href={pathPrefix + '/css/botui-theme-default.css'}
           />
           <link
             rel="apple-touch-icon"
@@ -128,6 +136,9 @@ export default class HTML extends React.Component {
           <meta name="msapplication-TileColor" content="#ffffff" />
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
+          {css}
+          {this.renderCssFile(apercuFontCssFile, 'apercuFont')}
+          {this.renderCssFile(otherCssCssFile, 'other')}
         </head>
         <body>
           <div
@@ -135,10 +146,10 @@ export default class HTML extends React.Component {
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
-          <script src="https://code.jquery.com/jquery-3.2.1.min.js" />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" />
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" />
-          <script src={pathPrefix + '/js/ApiAi.min.js'} />
+          {this.renderJsFile(jQueryJsFile, 'jQuery')}
+          {this.renderJsFile(popperJsFile, 'popper')}
+          {this.renderJsFile(bootstrapJsFile, 'bootstrap')}
+          {this.renderJsFile(apiAiJsFile, 'apiAi')}
         </body>
       </html>
     )

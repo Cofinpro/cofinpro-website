@@ -1,0 +1,39 @@
+.img-consultant {
+  cursor: pointer;
+}
+#desktop-links-fach p,
+#desktop-links-tech p {
+  margin-bottom: 0.4rem;
+}
+
+#desktop-links-fach {
+  display: none;
+}
+#desktop-links-tech {
+  display: none;
+}
+#links-fach {
+  display: none;
+}
+#links-tech {
+  display: none;
+}
+#button-startseite-collapse:focus {
+  outline: none;
+}
+
+.two-column-text {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+#desktop-wahl-fach:hover,
+#desktop-wahl-tech:hover {
+  text-decoration: underline;
+}
+.link-style {
+  cursor: pointer;
+}
+.link-style:hover {
+  text-decoration: underline;
+}

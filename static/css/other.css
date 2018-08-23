@@ -1,0 +1,62 @@
+.border-img-blue {
+  border: 4px solid;
+  -webkit-border-image: url('/img/CP_Border_2.png') 50 stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/img/CP_Border_2.png') 50 stretch; /* Opera 11-12.1 */
+  border-image: url('/img/CP_Border_2.png') 50 stretch;
+}
+
+ul.blue-bullet,
+div.blue-bullet ul {
+}
+
+div.blue-bullet ul li ul,
+ul.blue-bullet li ul {
+  margin-top: 20px;
+}
+
+ul.blue-bullet li,
+div.blue-bullet ul li {
+  list-style-image: url('/img/blue-bullet-point.png');
+  margin-bottom: 20px;
+}
+
+.border-img-svg {
+  border: 4px solid #a9c5e8;
+}
+
+.border-img-svg--blue {
+  border: 4px solid;
+  -webkit-border-image: url('/svg/border/border_complete_2_blue.svg') 50 stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/svg/border/border_complete_2_blue.svg') 50 stretch; /* Opera 11-12.1 */
+  border-image: url('/svg/border/border_complete_2_blue.svg') 50 stretch;
+}
+
+.border-img-svg--orange {
+  border: 4px solid;
+  -webkit-border-image: url('/svg/border/border_complete_2_orange.svg') 50
+    stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/svg/border/border_complete_2_orange.svg') 50 stretch; /* Opera 11-12.1 */
+  border-image: url('/svg/border/border_complete_2_orange.svg') 50 stretch;
+}
+
+.border-img-svg--yellow {
+  border: 4px solid;
+  -webkit-border-image: url('/svg/border/border_complete_2_yellow.svg') 50
+    stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/svg/border/border_complete_2_yellow.svg') 50 stretch; /* Opera 11-12.1 */
+  border-image: url('/svg/border/border_complete_2_yellow.svg') 50 stretch;
+}
+
+.border-img-svg--pink {
+  border: 4px solid;
+  -webkit-border-image: url('/svg/border/border_complete_2_pink.svg') 50 stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/svg/border/border_complete_2_pink.svg') 50 stretch; /* Opera 11-12.1 */
+  border-image: url('/svg/border/border_complete_2_pink.svg') 50 stretch;
+}
+
+.border-img-svg--grey {
+  border: 4px solid;
+  -webkit-border-image: url('/svg/border/border_complete_2_grey.svg') 50 stretch; /* Safari 3.1-5 */
+  -o-border-image: url('/svg/border/border_complete_2_grey.svg') 50 stretch; /* Opera 11-12.1 */
+  border-image: url('/svg/border/border_complete_2_grey.svg') 50 stretch;
+}

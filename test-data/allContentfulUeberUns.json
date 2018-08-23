@@ -1,0 +1,387 @@
+{
+  "data": {
+    "allContentfulSeiteUeberUns": {
+      "edges": [
+        {
+          "node": {
+            "id": "c6wYk0qk5kAwaoqUgMaWYYo",
+            "metaData": {
+              "title":
+                "Unternehmensberatung Frankfurt, Berlin, München: Über Cofinpro",
+              "keywords": {
+                "keywords":
+                  "Unternehmensberatung, Frankfurt, Berlin, München, Cofinpro"
+              },
+              "description": {
+                "description":
+                  "Wir sind Mitdenker, Nachdenker, Zukunftsdenker: Alles über die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager."
+              }
+            },
+            "parent": {
+              "id": "Seite - Ueber uns"
+            },
+            "titel": "UEBER UNS - ALLGEMEIN - Seite",
+            "hauptueberschrift": "Mitdenker, Nachdenker, Zukunftsdenker",
+            "titelbild": {
+              "id": "i5z64mRL3MqkYemoiKUmk",
+              "title": "ueberuns buehne desktop",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/i5z64mRL3MqkYemoiKUmk/39d159b2d7ae2d5d63b6d69af367cf07/ueberuns_buehne_desktop.jpg",
+                "fileName": "ueberuns_buehne_desktop.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "titelbildKlein": {
+              "id": "c2ztVTVzkxKAeCowiIa0siI",
+              "title": "ueber uns buehne mobile",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/2ztVTVzkxKAeCowiIa0siI/aa4e478cb79e431497d2e7b5d6049311/ueber_uns_buehne_mobile.jpg",
+                "fileName": "ueber_uns_buehne_mobile.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "beschreibungUntertitel": "WER WIR SIND",
+            "beschreibungTitel": "So ist Cofinpro",
+            "beschreibungAbsatz1": {
+              "beschreibungAbsatz1":
+                "Wir sind die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Asset Manager. Als Experten für Kredit und Wertpapier begleitet und navigiert Cofinpro seine Kunden durch die Herausforderungen von Digitalisierung, neuen Marktanforderungen und Regulatorik."
+            },
+            "beschreibungAbsatz2": {
+              "beschreibungAbsatz2":
+                "Was wir tun, tun wir persönlich und unabhängig. Mit unseren neun Standorten in Hamburg, Berlin, Hannover, Dresden, Köln, Frankfurt am Main, Karlsruhe, Stuttgart und München und mehr als 125 festangestellten Mitarbeitern entwickeln wir seit 2007 vertrauensvolle Lösungen im vertrauten Kundenkontakt. Damit unsere Kunden im Wettbewerb bestehen, liefern wir"
+            },
+            "spaltenTopTitelLinks": "MANAGEMENTBERATUNG:",
+            "spaltenTopTextLinks": {
+              "spaltenTopTextLinks":
+                "Gestaltung und Umsetzung neuer Geschäftsmodelle"
+            },
+            "spaltenTopBildLinks": {
+              "id": "ZEiMMpHD0Ium86MUc6oi0",
+              "title": "Managementberatung",
+              "description": "Managementberatung",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/ZEiMMpHD0Ium86MUc6oi0/3ee880364bd55f7e1adbfa4ffb2224cc/MB.jpg",
+                "fileName": "MB.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "spaltenTopTitelMitte": "FACHBERATUNG:",
+            "spaltenTopTextMitte": {
+              "spaltenTopTextMitte": "nutzenorientierte Konzepte und Lösungen"
+            },
+            "spaltenTopBildMitte": {
+              "id": "c14zZzUPkdQy4gMImWEWAMS",
+              "title": "Fachberatung",
+              "description": "Fachberatung",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/14zZzUPkdQy4gMImWEWAMS/af1782d87c2c8266c8bfd193a338b633/fach.jpg",
+                "fileName": "fach.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "spaltenTopTitelRechts": "TECHNOLOGISCHE BERATUNG:",
+            "spaltenTopTextRechts": {
+              "spaltenTopTextRechts":
+                "agile IT-Architekturen und moderne Digitalisierungslösungen"
+            },
+            "spaltenTopBildRechts": {
+              "id": "c6jYnfcyIh2Q4Mm4YMiI822",
+              "title": "Technologieberatung",
+              "description": "Technologieberatung",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/6jYnfcyIh2Q4Mm4YMiI822/440370f3bb73b4fb62919e5ea7ed0408/tech.jpg",
+                "fileName": "tech.jpg",
+                "contentType": "image/jpeg"
+              }
+            },
+            "ersteTextboxUntertitel": "WIE WIR SIND",
+            "ersteTextboxTitel": "Ein Yeah auf die Vielfalt",
+            "ersteTextboxInhalt": {
+              "ersteTextboxInhalt":
+                "Was prägt unser Consulting? Zum einen\nnatürlich die Finanzexpertise und die Liebe\nzur Technologie. Vor allem aber ist Cofinpro\ndie Summe unserer Mitarbeiter. Damit\nmeinen wir nicht die Berufstitel der\nFachberater und Technologen, Studenten\nund Praktikanten sowie deren zahlreiche\nUnterstützer im Backoffice. Wir meinen die\nschrägen Charaktere und die geraden Typen,\ndie Querköpfe und die Virtuosen, die stillen \nTüftler und die nimmermüden\nDiskussionsführer.\n\nEs sind diese in jeder Hinsicht\nunterschiedlichen Menschen, die unser Team\nzu dem machen, was es ist: ein grandioses,\nheterogenes Ensemble, das sich gemeinsam\nzu den besten Projektergebnissen anspornt,\nlacht, flucht, durchhält und seine Erfolge am\nliebsten miteinander feiert. Verlässlich und\nfamiliär. Auf Augenhöhe, mit Rückgrat."
+            },
+            "zweiteTextboxUntertitel": "WAS WIR BEITRAGEN",
+            "zweiteTextboxTitel": "Von A bis Öko",
+            "zweiteTextboxInhalt": {
+              "zweiteTextboxInhalt":
+                "Dass wir uns langfristige und auf fairen\nBedingungen aufgebaute Geschäfts- und\nMitarbeiterbeziehungen sowie nachhaltige\nErgebnisse für unsere Kunden wünschen, ist\nselbstverständlich. Das schließt aber auch die\nVerantwortung für unser gesellschaftliches\nFundament ein: die Erhaltung unserer\nsozialen, ökonomischen und ökologischen\nGrundlagen.\n\nFür Unternehmen gibt es auch in der\nhochmobilen Gegenwart menschen- und\numweltfreundliche Lösungen. Modernste\nTechnik, mit der sich die Umweltbelastung\nminimieren lässt. Fahrzeuge, die unsere\nMitarbeiter mobil halten und das ökologische\nGewissen schonen. Oder die gleich\nemissionsfrei sind, so wie unsere E-Roller.\nUm für Ausgleich zu sorgen, zahlen wir\naußerdem für jeden gebuchten Flug eine\nAbgabe an die Initiative [»Atmosfair«](https://www.atmosfair.de/de \"Atmosfair\")."
+            },
+            "dritteTextboxUntertitel": "WAS UNS WICHTIG IST",
+            "dritteTextboxTitel": "Unser Call of Duty",
+            "dritteTextboxInhalt": {
+              "dritteTextboxInhalt":
+                "Herausforderungen sind in unserer\ndynamischen Branche keine Probleme,\nsondern Veränderungsmöglichkeiten. Für\nunseren Teamspirit gilt, dass wir uns\nIntegrität und Respekt untereinander nicht\nnur wünschen, sondern von der\nManagementebene ausgehend verpflichtend\numsetzen. Dafür haben wir die »Charta der\nVielfalt« unterzeichnet, und wir sind Mitglied\nder Initiative [»Fair Company«](https://www.faircompany.de/ \"fair company\"), für die\nungerechte Arbeitsbedingungen und\nDiskriminierung nicht in Frage kommen.\n\nEin wenig stolz möchten wir hier erwähnen,\ndass wir 2017 bereits zum siebten Mal als\n[»Great Place to Work«](http://www.greatplacetowork.de/ \"great place to work\") ausgezeichnet\nwurden und damit zu den 100 besten\nArbeitgebern Deutschlands gehören. 2017\nwurden wir noch dazu mit dem Sonderpreis\n»Trust-Champion« in Gold bedacht und zur\nbesten Unternehmensberatung unserer\nGrößenordnung gewählt."
+            },
+            "karrieremagazin": {
+              "untertitel": "Cofinpro Karrieremagazin",
+              "titel": "Hier kannst Du uns richtig kennenlernen",
+              "bild": {
+                "id": "j5IGhbFvoIO8WUWQ0SyEI",
+                "title": "20180423-cofinpro-magazine15638",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/j5IGhbFvoIO8WUWQ0SyEI/a444c4bb02fce04a478fdaec101166ec/20180423-cofinpro-magazine15638.jpg",
+                  "fileName": "20180423-cofinpro-magazine15638.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "beschreibung": {
+                "beschreibung":
+                  "An Glücksgefühlen mangelt es uns bei Cofinpro ohnehin nicht, dafür sorgen großartige Projekte und unsere schillernd brillanten Expertenteams.  \nAber, Achtung Preisfrage: Was fehlte uns noch zum absolut restlosen, zum vollkommenen, makellosen Glück? Unser eigenes Magazin!  \nUnd das haben wir jetzt. Es ist bunt wie wir, strahlt wie wir, ist prallgepackt mit Infos, News und Anekdoten aus unserem Geschäfts- und Kollegenleben, Interviews und Zukunftsvisionen – und einfach wunderschön. Wer eine Ausgabe haben möchte, braucht uns nur persönlich kennenlernen. Oder diesem [Link](https://www.karriere.cofinpro.de/pdfs/magazin/1) folgen, so kannst Du das gute Stück sekundenschnell Dein Eigen nennen."
+              }
+            },
+            "raeumlichkeitenUntertitel": "WO WIR ARBEITEN",
+            "raeumlichkeitenTitel": "So sieht’s aus",
+            "raeumlichkeitenBilder": [
+              {
+                "id": "c6YSRiyGNYAOiMeQGgMsEye",
+                "title": "Aussenansicht Cofinpro Office",
+                "description": "Aussenansicht Cofinpro Office",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/6YSRiyGNYAOiMeQGgMsEye/6290947ab3adc35607227462b3426bb2/Aussenansicht_2_optimiert.jpg",
+                  "fileName": "Aussenansicht_2_optimiert.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              {
+                "id": "c11FcICzQg6WkaEiSa8sO06",
+                "title": "Weiterbildung",
+                "description": "Weiterbildung",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/11FcICzQg6WkaEiSa8sO06/96c8cd1d05cf8e3975aa59fdf9a66ebc/weiterbildung_optimiert.jpg",
+                  "fileName": "weiterbildung_optimiert.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            ],
+            "raeumlichkeitenBeschreibung": {
+              "raeumlichkeitenBeschreibung":
+                "Als Consultant bringst Du Dein Können vor allem bei unseren Kunden vor Ort ein, aber Deine Homebase ist einer unserer neun Cofinpro-Standorte. Hier triffst Du Dich regelmäßig zum Austausch mit Deinen Kollegen, zum Beispiel in unserem Headquarter in Frankfurt am Main. Weil wir uns nicht hinter Bürotüren verschanzen, kannst Du hier schon vom Empfangsraum aufs malerische Mainufer sehen."
+            },
+            "kollegenUntertitel": "DEINE NEUEN KOLLEGEN",
+            "kollegenTitel": "Hey, Du auch hier?",
+            "kollegenZitat": {
+              "kollegenZitat":
+                "»Ich wollte nicht nur eine Nummer sein, sondern von Anfang an mitentscheiden können und Verantwortung übernehmen. Das hat geklappt.«"
+            },
+            "videoLink1":
+              "https://www.youtube.com/embed/qAKhHDswiAU?rel=0&modestbranding=1&showinfo=0",
+            "videoLink2":
+              "https://www.youtube.com/embed/mN1O4tZtlcw?rel=0&modestbranding=1&showinfo=0",
+            "videoLink3":
+              "https://www.youtube.com/embed/Ib-mA4p-GaE?rel=0&modestbranding=1&showinfo=0",
+            "videoLink4":
+              "https://www.youtube.com/embed/2xBxV2alTtA?rel=0&modestbranding=1&showinfo=0",
+            "testimonialsVonUeberUns": [
+              {
+                "titel": "TESTIMONIAL - Daniel Eichsteller — Expert Consultant",
+                "ueberschrift": "DEINE NEUEN KOLLEGEN",
+                "zitat": {
+                  "zitat":
+                    "»Ich wollte nicht nur eine Nummer sein, sondern von Anfang an mitentscheiden können und Verantwortung übernehmen. Das hat geklappt.«"
+                },
+                "linkVonYouTubeVideo":
+                  "https://www.youtube.com/embed/qAKhHDswiAU?rel=0&modestbranding=1&showinfo=0",
+                "autor": "Daniel Eichsteller",
+                "autorTitel": "Expert Consultant",
+                "buttonText": "MEHR INTERVIEWS"
+              },
+              {
+                "titel": "TESTIMONIAL - Jörg Ramser — Partner",
+                "ueberschrift": "DEINE NEUEN KOLLEGEN",
+                "zitat": {
+                  "zitat":
+                    "»Es bedeutet mir viel, in der Unternehmensentwicklung mitwirken zu können. Genauso wichtig ist mir aber der wertschätzende Umgang miteinander – die Arbeit macht einfach Spaß.«"
+                },
+                "linkVonYouTubeVideo":
+                  "https://www.youtube.com/embed/mN1O4tZtlcw?rel=0&modestbranding=1&showinfo=0",
+                "autor": "Jörg Ramser",
+                "autorTitel": "Partner",
+                "buttonText": "MEHR INTERVIEWS"
+              },
+              {
+                "titel": "TESTIMONIAL - Sven Thiele — Director",
+                "ueberschrift": "DEINE NEUEN KOLLEGEN",
+                "zitat": {
+                  "zitat":
+                    "»Ich will abends nach Hause gehen und sagen: ‚Du hast was beigetragen, Du hast ein Ergebnis.’ Mein superspannendes Projekt erfüllt mir diesen Wunsch seit drei Jahren.«"
+                },
+                "linkVonYouTubeVideo":
+                  "https://www.youtube.com/embed/Ib-mA4p-GaE?rel=0&modestbranding=1&showinfo=0",
+                "autor": "Sven Thiele",
+                "autorTitel": "Director",
+                "buttonText": "MEHR INTERVIEWS"
+              },
+              {
+                "titel": "TESTIMONIAL - Kristina Grünwald — Expert Consultant",
+                "ueberschrift": "DEINE NEUEN KOLLEGEN",
+                "zitat": {
+                  "zitat":
+                    "»Du hast was konzipiert in Deinen ersten paar Monaten und die Kunden können es direkt sehen. Das war ein super Gefühl.«"
+                },
+                "linkVonYouTubeVideo":
+                  "https://www.youtube.com/embed/2xBxV2alTtA?rel=0&modestbranding=1&showinfo=0",
+                "autor": "Kristina Grünwald",
+                "autorTitel": "Expert Consultant",
+                "buttonText": "MEHR INTERVIEWS"
+              }
+            ],
+            "kollegenAuthorZitat": "Daniel Eichsteller — Expert Consultant",
+            "projekte": {
+              "untertitel": "WIE WIR ARBEITEN",
+              "titel": "Projekt: Zukunft",
+              "bild": {
+                "id": "c6xxgBCpy8wgcUoicYOyIOU",
+                "title": "Cofinpro Referenzen",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/6xxgBCpy8wgcUoicYOyIOU/4ba1db01afe11c384d3b6435c661938b/Referenz_3.jpg",
+                  "fileName": "Referenz_3.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "beschreibung": {
+                "beschreibung":
+                  "Schillernd, vielfältig, richtungsweisend: Unser Projektportfolio könnte auch glatt als Beschreibung unseres Teams durchgehen. Als bekannte Spezialisten für Digitalisierung erfinden wir jeden Tag ein Stück Zukunft mit. Mal erstellen wir Vorstudien, mal begleiten wir Regulierungsvorhaben. Für und mit unseren Kunden entwickeln wir digitale Angebote, ob als Tochterunternehmen oder als Innovationslabor. Wie das konkret aussieht? Schau mal hier: [»VisualVest«](https://www.visualvest.de/ \"VisualVest | Dein Geld verdient mehr\") und [»VR-Finanzguide«](https://www.vr-finanzguide.de)."
+              }
+            },
+            "faktenCofinpro": {
+              "name": "Fakt - Cofinpro Landing",
+              "untertitel": null,
+              "titel": "Cofinpro auf einen Blick",
+              "fakt1Titel": "Gründung",
+              "fakt1Text": "2007",
+              "fakt1Bild": {
+                "id": "c1Wj3WrxfIk2ceeYCuuqQMG",
+                "title": "cp icons neuZeichenfläche 4",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/1Wj3WrxfIk2ceeYCuuqQMG/8cc0b24ad8e41f358d44146fd1e6be5e/cp_icons_neuZeichenfla__che_4.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 4.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "fakt2Titel": "Mitarbeiter",
+              "fakt2Text": "140",
+              "fakt2Bild": {
+                "id": "HeP4zV61oIkuqkEwWQCs",
+                "title": "cp icons neuZeichenfläche 1",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/HeP4zV61oIkuqkEwWQCs/7bc7b553936d137a267d5eff8e20395b/cp_icons_neuZeichenfla__che_1.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 1.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "fakt3Titel": "Grundkapital in Mio. €",
+              "fakt3Text": "1,775",
+              "fakt3Bild": {
+                "id": "c4eVMah1w7e86qEWMIESoUm",
+                "title": "cp icons neuZeichenfläche 2",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/4eVMah1w7e86qEWMIESoUm/6d65b10569609f9c0563e4c96d607e39/cp_icons_neuZeichenfla__che_2.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 2.jpg",
+                  "contentType": "image/jpeg"
+                }
+              },
+              "fakt4Titel": "Standorte",
+              "fakt4Text": "9",
+              "fakt4Bild": {
+                "id": "c4WuDIaYvq8sSISkOOcuY6S",
+                "title": "cp icons neuZeichenfläche 3",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/4WuDIaYvq8sSISkOOcuY6S/c26115dbe7fb1e10a3a7294fc8e807ab/cp_icons_neuZeichenfla__che_3.jpg",
+                  "fileName": "cp_icons_neuZeichenfläche 3.jpg",
+                  "contentType": "image/jpeg"
+                }
+              }
+            },
+            "auszeichnungenBilder": [
+              {
+                "id": "UC6iBrhlYse0ymWsOc8Wi",
+                "title": "gptw",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/UC6iBrhlYse0ymWsOc8Wi/60ff1f0568e599303d279efb5f1f0409/gptw_2018_transparent.png",
+                  "fileName": "gptw_2018_transparent.png",
+                  "contentType": "image/png"
+                }
+              },
+              {
+                "id": "c68HmgJ7s6kowcYc6csQOKc",
+                "title": "vielfalt",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/68HmgJ7s6kowcYc6csQOKc/a397f65880ce28af6b03140d6dcf6b94/vielfalt.png",
+                  "fileName": "vielfalt.png",
+                  "contentType": "image/png"
+                }
+              },
+              {
+                "id": "c5mvn4Qh5QW2Ai6OcSscqsg",
+                "title": "fair company logo 2018",
+                "description": "fair company logo 2018",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/5mvn4Qh5QW2Ai6OcSscqsg/8dc630f6b43907eb9390bab635e24e81/fair-company-company-2018.png",
+                  "fileName": "fair-company-company-2018.png",
+                  "contentType": "image/png"
+                }
+              },
+              {
+                "id": "c7yiM5zhIwEU0mW0W8qIQ8Y",
+                "title": "kununu-top-company-clean",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/7yiM5zhIwEU0mW0W8qIQ8Y/91a55edcaf05f72800f7208c0fb69330/kununu-top-company-clean.png",
+                  "fileName": "kununu-top-company-clean.png",
+                  "contentType": "image/png"
+                }
+              },
+              {
+                "id": "BqlKRaeNigaqeuuKE0aKY",
+                "title": "kununu-open-company-clean",
+                "description": "",
+                "file": {
+                  "url":
+                    "//images.ctfassets.net/niza6hilizwt/BqlKRaeNigaqeuuKE0aKY/17152a5bb2dfc30f48344c32721f8aee/kununu-open-company-clean.png",
+                  "fileName": "kununu-open-company-clean.png",
+                  "contentType": "image/png"
+                }
+              }
+            ],
+            "standorte": {
+              "id": "c6HJoMHavYWeW2qUOiYo404",
+              "title": "karte",
+              "description": "",
+              "file": {
+                "url":
+                  "//images.ctfassets.net/niza6hilizwt/6HJoMHavYWeW2qUOiYo404/faea80dec6800df1ee55cd32ea7c9784/karte.jpg",
+                "fileName": "karte.jpg",
+                "contentType": "image/jpeg"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

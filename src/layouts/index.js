@@ -1,17 +1,18 @@
 import React from 'react'
-import { Link, navigateTo } from 'gatsby-link'
 import { siteMetadata } from '../../gatsby-config'
-import SiteNavi from '../components/SiteNavi'
-import SiteFooter from '../components/SiteFooter'
+
 import ChatBot from '../components/ChatBot'
 import emergence from 'emergence.js'
+import CookieBanner from 'react-cookie-banner'
 
 import StorageHelper from '../utils/storageHelper'
 
 import './gatsrap.scss'
 import 'animate.css/animate.css'
-import 'prismjs/themes/prism-okaidia.css'
-import 'devicon/devicon.min.css'
+
+import MainNavigation from '../components/navigation/MainNavigation'
+import NavigationCareer from '../components/navigation/NavigationCareer'
+import SiteFooter from '../components/SiteFooter'
 
 class Template extends React.Component {
   constructor(props) {
@@ -107,15 +108,81 @@ class Template extends React.Component {
 
     const handlePerspectiveChange = handlePerspectiveChange
 
+    const styles = {
+      banner: {
+        fontFamily: 'Source Sans Pro',
+        height: 57,
+        background:
+          'rgba(52, 64, 81, 0.88) url(/cookie.png) 20px 50% no-repeat',
+        backgroundSize: '30px 30px',
+        backgroundColor: '',
+        fontSize: '15px',
+        fontWeight: 600,
+      },
+      button: {
+        border: '1px solid white',
+        borderRadius: 4,
+        height: 32,
+        lineHeight: '32px',
+        background: 'transparent',
+        color: 'white',
+        fontSize: '14px',
+        fontWeight: 600,
+        opacity: 1,
+        right: 20,
+        marginTop: -18,
+      },
+      message: {
+        display: 'block',
+        padding: '9px 67px',
+        lineHeight: 1.3,
+        textAlign: 'left',
+        marginRight: 244,
+        color: 'white',
+      },
+      link: {
+        textDecoration: 'none',
+        fontWeight: 'bold',
+      },
+    }
+
+    const message = (
+      <span>
+        Cofinpro.de benutzt Cookies, um seinen Besuchern das beste
+        Webseiten-Erlebnis zu ermöglichen. <br /> Weiterführende Informationen
+        erhalten Sie in der{' '}
+        <a href="https://cofinpro.de/datenschutz/">Datenschutzerklärung</a>
+      </span>
+    )
+
     return (
       <div>
-        <SiteNavi
+        <header>
+          <MainNavigation
+            location={location}
+            locationUpdate={this.state.locationUpdate}
+            {...this.props}
+          />
+          <NavigationCareer
+            locationUpdate={this.state.locationUpdate}
+            {...this.props}
+          />
+        </header>{' '}
+        <main>{children({ ...this.props })}</main>
+        <SiteFooter
           locationUpdate={this.state.locationUpdate}
           title={siteMetadata.title}
           {...this.props}
-        />{' '}
-        {children({ ...this.props })}
-        <SiteFooter title={siteMetadata.title} {...this.props} />
+        />
+        <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />
+        {/*<CookieBanner
+          className="cofinpro-cookie-banner"
+          styles={styles}
+          message={message}
+          buttonMessage="Ich habe verstanden!"
+          dismissOnScroll={false}
+          cookie="cofinpro-user-has-accepted-cookies"
+        />*/}
       </div>
     )
   }

@@ -1,0 +1,26 @@
+@import 'node_modules/bootstrap/scss/functions';
+@import 'node_modules/bootstrap/scss/variables';
+@import 'node_modules/bootstrap/scss/mixins';
+
+.carrerOfferPreview.border-img-blue.jobangebote-technologie-box {
+  border: 3px dashed $orange;
+  -webkit-border-image: none;
+  -o-border-image: none;
+  border-image: none;
+}
+
+.carrerOfferPreview.border-img-blue.jobangebote-andere-box {
+  border: 3px dashed $orange;
+  -webkit-border-image: none;
+  -o-border-image: none;
+  border-image: none;
+}
+
+.btn-transparent,
+.btn-transparent:hover,
+.btn-transparent:focus {
+  background: none;
+  background-color: none;
+  border: none;
+  box-shadow: none;
+}
