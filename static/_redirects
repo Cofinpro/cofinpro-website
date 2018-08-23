@@ -3,6 +3,7 @@
 /landing              /karriere/landing 301!
 /deine-entwicklung    /karriere 301!
 /deine-karriere   /karriere 301!
+/boxes/karrierestufen/ /karriere 301!
 /gehalt-beteiligung   /karriere 301!
 /undefined/landing    /karriere 301!
 /undefined/deine-entwicklung /karriere 301!
@@ -83,6 +84,9 @@
 
 # Alte Seite die Links der Hauptseiten
 
+/download/folder-karriere/ /news-medien/alle-beratungsfelder 301!
+/boxes/ueber-uns/ / 301!
+/unternehmen/ /cofinpro 301!
 /presse/ /news-medien/alle-beratungsfelder 301!
 /downloads/ /news-medien/alle-beratungsfelder 301!
 /fachpublikationen/ /news-medien/alle-beratungsfelder 301!
@@ -103,7 +107,7 @@
 /business-rules/ /beratungsfelder/technologie 301!
 /business-process-management-systeme/ /beratungsfelder/technologie 301!
 /business-agility/ /beratungsfelder/technologie 301!
-/analytical-credit-dataset-anacredit/
+/analytical-credit-dataset-anacredit/ /beratungsfelder/kredit 301!
 /karriere/impressum-karriere/ /impressum 301!
 /flexible-reporting-architekturen/ /beratungsfelder/technologie 301!
 /bcbs-239-reporting/ /beratungsfelder/kredit 301!
