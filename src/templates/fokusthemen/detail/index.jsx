@@ -178,7 +178,6 @@ class FokusthemenDetailTeamplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6 margin-xs-80-top">
               <h2 className="h2">Die Herausforderung</h2>
-              <h2>{linksAndNamesForRevelantLinks.length}</h2>
               <div className="blue-bullet">
                 {graphQlResult.herausforderung !== undefined &&
                 graphQlResult.herausforderung !== null ? (
