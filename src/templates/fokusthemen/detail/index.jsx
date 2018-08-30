@@ -26,24 +26,32 @@ class FokusthemenDetailTeamplate extends React.Component {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/management',
+          urlNewsUndMedien: '/news-medien/managementberatung',
+          urlProjekte: '/projekte/managementberatung',
         })
       }
       if (graphQlResult.relevanteBeratungsfelder[i] === 'Kreditgeschäft') {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/kredit',
+          urlNewsUndMedien: '/news-medien/fachberatung-kredit',
+          urlProjekte: '/projekte/fachberatung-kredit',
         })
       }
       if (graphQlResult.relevanteBeratungsfelder[i] === 'Wertpapiergeschäft') {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/wertpapier',
+          urlNewsUndMedien: '/news-medien/fachberatung-wertpapier',
+          urlProjekte: '/projekte/fachberatung-wertpapier',
         })
       }
       if (graphQlResult.relevanteBeratungsfelder[i] === 'Technologieberatung') {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/technologie',
+          urlNewsUndMedien: '/news-medien/technologieberatung',
+          urlProjekte: '/projekte/technologieberatung',
         })
       }
     }
@@ -170,6 +178,7 @@ class FokusthemenDetailTeamplate extends React.Component {
           <div className="row">
             <div className="col-12 col-md-6 margin-xs-80-top">
               <h2 className="h2">Die Herausforderung</h2>
+              <h2>{linksAndNamesForRevelantLinks.length}</h2>
               <div className="blue-bullet">
                 {graphQlResult.herausforderung !== undefined &&
                 graphQlResult.herausforderung !== null ? (
@@ -260,34 +269,35 @@ class FokusthemenDetailTeamplate extends React.Component {
             </div>
           </div>
         )}
-
-        <ReferenzAndDownload
-          style={{ container: 'margin-120-top margin-xs-80-top' }}
-          content={{
-            right: {
-              header: 'Referenzprojekte',
-              description:
-                'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
-                graphQlResult.uberschriftGanzOben +
-                '.',
-              button: {
-                text: 'ALLE REFERENZEN',
-                path: '/projekte/managementberatung',
+        {linksAndNamesForRevelantLinks.slice(0, 1).map(link => (
+          <ReferenzAndDownload
+            style={{ container: 'margin-120-top margin-xs-80-top' }}
+            content={{
+              right: {
+                header: 'Referenzprojekte',
+                description:
+                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
+                  graphQlResult.uberschriftGanzOben +
+                  '.',
+                button: {
+                  text: 'ALLE REFERENZEN',
+                  path: link.urlProjekte,
+                },
               },
-            },
-            left: {
-              header: 'Medien',
-              description:
-                'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
-                graphQlResult.uberschriftGanzOben +
-                '.',
-              button: {
-                text: 'ALLE PUBLIKATIONEN',
-                path: '/news-medien/alle-beratungsfelder',
+              left: {
+                header: 'Medien',
+                description:
+                  'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
+                  graphQlResult.uberschriftGanzOben +
+                  '.',
+                button: {
+                  text: 'ALLE PUBLIKATIONEN',
+                  path: link.urlNewsUndMedien,
+                },
               },
-            },
-          }}
-        />
+            }}
+          />
+        ))}
       </div>
     )
   }
