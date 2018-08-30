@@ -62,7 +62,7 @@ class BeratungsfelderStartseite extends React.Component {
                 In der Managementberatung entwickeln wir
                 Digitalisierungsstrategien, bereiten den Weg zur agilen
                 Organisation, begleiten Auswahlverfahren, übernehmen das
-                Programmmanagementaufsatz und verantworten Vorhaben zur
+                Programmmanagement und verantworten Vorhaben zur
                 Effizienzsteigerung bei führenden Finanzinstituten. Und auch
                 Zukunftsthemen gehören dazu.
               </p>
