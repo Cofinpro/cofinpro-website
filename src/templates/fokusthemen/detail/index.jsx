@@ -227,7 +227,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 <StockphotoWithExternalLink
                   content={medien}
                   images={stockImages}
-                  indexOfElelement={0}
+                  indexOfElelement={1}
                 />
               </div>
               <div className="col-md-6 col-12 margin-xs-20-top">
@@ -237,7 +237,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                     <StockphotoWithExternalLink
                       content={medien}
                       images={stockImages}
-                      indexOfElelement={1}
+                      indexOfElelement={0}
                     />
                   </div>
                 </div>
