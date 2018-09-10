@@ -83,8 +83,8 @@ class HeroImageLayout extends React.Component {
         </div>
         <div className="container container-md-full-width">
           {imageSmall !== null ? (
-            <div className="row">
-              <div className="col-12 col-lg-10 offset-lg-1">
+            <div className="row no-margin">
+              <div className="col-12 col-lg-10 offset-lg-1 no-padding">
                 {titleImage !== undefined && titleImage !== null ? (
                   <div className="d-none d-md-block">
                     {isOverlayActive !== undefined && isOverlayActive ? (

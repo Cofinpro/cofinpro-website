@@ -142,9 +142,9 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-9 col-lg-7">
-              <div className="row">
-                <div className="col-6 col-md-4">
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row d-flex d-md-none">
+                <div className="col-6 col-sm-4 col-md-4">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={srcOficonTopLeft}
@@ -152,7 +152,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
                 <div className="col-6 col-md-7" />
               </div>
-              <div className="row margin-40-top margin-xs-20-top">
+              <div className="row margin-xs-20-top">
                 <div className="col-12">
                   <h1 className="h1">{graphQlResult.uberschriftGanzOben}</h1>
                   <PageIntroText
@@ -161,13 +161,14 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="col-12 col-md-1 d-block d-lg-none" />
             <div className="col-12 col-md-3 col-lg-5">
-              <div className="row">
-                <div className="col-12">
-                  {/*<RelevanteLinks
-                    title="relevante beratungsfelder"
-                    relevanteLinks={linksAndNamesForRevelantLinks}
-                  />*/}
+              <div className="row d-none d-md-flex justify-content-end">
+                <div className="col-12 col-md-12 col-lg-6">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={srcOficonTopLeft}
+                  />
                 </div>
               </div>
             </div>
@@ -176,7 +177,7 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
-            <div className="col-12 col-md-6 margin-xs-80-top">
+            <div className="col-12 col-md-6">
               <h2 className="h2">Die Herausforderung</h2>
               <div className="blue-bullet">
                 {graphQlResult.herausforderung !== undefined &&
@@ -268,35 +269,36 @@ class FokusthemenDetailTeamplate extends React.Component {
             </div>
           </div>
         )}
-        {graphQlResult.videoYoutubeUrl !== undefined && (
-          <div className="container margin-120-top margin-xs-80-top">
-            <div className="row">
-              <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top">
-                <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
-                <ContentfulMarkdownText
-                  text={
-                    graphQlResult.videoBeschreibung !== undefined
-                      ? graphQlResult.videoBeschreibung.videoBeschreibung
-                      : null
-                  }
-                />
-              </div>
-              <div className="col-12 col-md-6 order-1 order-md-2">
-                <div className="embed-responsive embed-responsive-16by9">
-                  <iframe
-                    className="embed-responsive-item"
-                    title="Digitale Transformation bei Cofinpro"
-                    src={graphQlResult.videoYoutubeUrl.replace(
-                      '/watch?v=',
-                      '/embed/'
-                    )}
-                    allowFullScreen
+        {graphQlResult.videoYoutubeUrl !== undefined &&
+          graphQlResult.videoYoutubeUrl !== null && (
+            <div className="container margin-120-top margin-xs-80-top">
+              <div className="row">
+                <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
+                  <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
+                  <ContentfulMarkdownText
+                    text={
+                      graphQlResult.videoBeschreibung !== undefined
+                        ? graphQlResult.videoBeschreibung.videoBeschreibung
+                        : null
+                    }
                   />
+                </div>
+                <div className="col-12 col-md-6 order-1 order-md-2">
+                  <div className="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      className="embed-responsive-item"
+                      title="Digitale Transformation bei Cofinpro"
+                      src={graphQlResult.videoYoutubeUrl.replace(
+                        '/watch?v=',
+                        '/embed/'
+                      )}
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
         {linksAndNamesForRevelantLinks.slice(0, 1).map(link => (
           <ReferenzAndDownload
             style={{ container: 'margin-120-top margin-xs-80-top' }}

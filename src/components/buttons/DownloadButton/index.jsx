@@ -18,12 +18,7 @@ class DownloadButton extends React.Component {
         rel="noopener"
         className={'download-button ' + styleContainer}
       >
-        <img
-          height="25"
-          width="27"
-          alt="Download"
-          src={pathPrefix + '/svg/download arrow.svg'}
-        />
+        <img alt="Download" src={pathPrefix + '/svg/download arrow.svg'} />
         <ContentfulMarkdownText
           text={text}
           styleClasses="download-button__text h5 bold-font no-margin margin-20-left"
