@@ -228,22 +228,10 @@ class FokusthemenDetailTeamplate extends React.Component {
                 <StockphotoWithExternalLink
                   content={medien}
                   images={stockImages}
-                  indexOfElelement={1}
+                  indexOfElelement={0}
                 />
-              </div>
-              <div className="col-md-6 col-12 margin-xs-20-top">
-                <div className="row">
-                  <div className="col-12 col-md-4" />
+                <div className="row justify-content-center margin-40-top margin-xs-20-top">
                   <div className="col-12 col-md-8">
-                    <StockphotoWithExternalLink
-                      content={medien}
-                      images={stockImages}
-                      indexOfElelement={0}
-                    />
-                  </div>
-                </div>
-                <div className="row margin-40-top margin-xs-20-top">
-                  <div className="col-md-8 col-12">
                     <StockphotoWithExternalLink
                       content={medien}
                       images={stockImages}
@@ -252,19 +240,23 @@ class FokusthemenDetailTeamplate extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
-        {medien.length > 3 && (
-          <div className="container margin-40-top margin-xs-20-top">
-            <div className="row">
-              <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top" />
-              <div className="col-12 col-md-6 order-1 order-md-2">
-                <StockphotoWithExternalLink
-                  content={medien}
-                  images={stockImages}
-                  indexOfElelement={3}
-                />
+              <div className="col-md-6 col-12 margin-xs-20-top">
+                <div className="row justify-content-center">
+                  <div className="col-md-8 col-12">
+                    <StockphotoWithExternalLink
+                      content={medien}
+                      images={stockImages}
+                      indexOfElelement={1}
+                    />
+                  </div>
+                </div>
+                <div className="margin-40-top margin-xs-20-top">
+                  <StockphotoWithExternalLink
+                    content={medien}
+                    images={stockImages}
+                    indexOfElelement={3}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -299,8 +291,9 @@ class FokusthemenDetailTeamplate extends React.Component {
               </div>
             </div>
           )}
-        {linksAndNamesForRevelantLinks.slice(0, 1).map(link => (
+        {linksAndNamesForRevelantLinks.slice(0, 1).map((link, i) => (
           <ReferenzAndDownload
+            key={i}
             style={{ container: 'margin-120-top margin-xs-80-top' }}
             content={{
               right: {
@@ -387,22 +380,22 @@ export const pageQuery = graphql`
       }
       videoYoutubeUrl
     }
-    stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24/" }) {
+    stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14/" }) {
+    stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26/" }) {
+    stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2/" }) {
+    stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
