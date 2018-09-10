@@ -268,6 +268,35 @@ class FokusthemenDetailTeamplate extends React.Component {
             </div>
           </div>
         )}
+        {graphQlResult.videoYoutubeUrl !== undefined && (
+          <div className="container margin-120-top margin-xs-80-top">
+            <div className="row">
+              <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top">
+                <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
+                <ContentfulMarkdownText
+                  text={
+                    graphQlResult.videoBeschreibung !== undefined
+                      ? graphQlResult.videoBeschreibung.videoBeschreibung
+                      : null
+                  }
+                />
+              </div>
+              <div className="col-12 col-md-6 order-1 order-md-2">
+                <div className="embed-responsive embed-responsive-16by9">
+                  <iframe
+                    className="embed-responsive-item"
+                    title="Digitale Transformation bei Cofinpro"
+                    src={graphQlResult.videoYoutubeUrl.replace(
+                      '/watch?v=',
+                      '/embed/'
+                    )}
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         {linksAndNamesForRevelantLinks.slice(0, 1).map(link => (
           <ReferenzAndDownload
             style={{ container: 'margin-120-top margin-xs-80-top' }}
@@ -350,6 +379,11 @@ export const pageQuery = graphql`
           description
         }
       }
+      videoUeberschrift
+      videoBeschreibung {
+        videoBeschreibung
+      }
+      videoYoutubeUrl
     }
     stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
