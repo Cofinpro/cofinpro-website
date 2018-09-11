@@ -70,11 +70,6 @@ class MenuCareer extends React.Component {
 
     var menuItems = [
       {
-        name: 'HOME',
-        link: '/karriere' + this.getPathPrefixPerspective() + '/landing',
-        pattern: '/karriere/.*/landing',
-      },
-      {
         name: 'ÜBER UNS',
         link: pathPrefix + '/karriere/ueber-uns',
         pattern: '/karriere/ueber-uns',
@@ -119,7 +114,11 @@ class MenuCareer extends React.Component {
       >
         <div>
           <Link
-            to={location.pathname.startsWith('/karriere') ? '/karriere' : '/'}
+            to={
+              location.pathname.startsWith('/karriere')
+                ? '/karriere' + this.getPathPrefixPerspective() + '/landing'
+                : '/'
+            }
             className="navbar-brand d-none d-xl-block"
           >
             {location.pathname.startsWith('/karriere') === false ? (

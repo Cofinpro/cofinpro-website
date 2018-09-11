@@ -20,6 +20,7 @@ class LinkButtonV2 extends React.Component {
         <img
           alt="Link Icon"
           src={pathPrefix + '/svg/icon_arrow_dotted_right.svg'}
+          className="link-icon-arrow-right"
         />
         <div className="d-flex flex-column">
           <ContentfulMarkdownText

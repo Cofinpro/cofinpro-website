@@ -42,7 +42,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
               <div className="d-none d-md-block">
@@ -62,8 +62,8 @@ class BeratungsfelderManagementTemplate extends React.Component {
         </div>
         <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-9 col-lg-7">
-              <div className="row">
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row d-flex d-md-none">
                 <div className="col-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
@@ -85,11 +85,18 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 style={{ container: 'margin-40-top margin-xs-0-top' }}
               />
             </div>
+            <div className="col-12 col-md-1 d-block d-lg-none" />
             <div className="col-12 col-md-3 col-lg-5">
-              {/*<RelevanteLinks
-                title="relevante fokusthemen"
-                relevanteLinks={relevantFocusFields}
-              />*/}
+              <div className="row d-none d-md-flex justify-content-end">
+                <div className="col-12 col-md-12 col-lg-6">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={
+                      '/img/beratungsfelder/management/Managementberatung-Icon.png'
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

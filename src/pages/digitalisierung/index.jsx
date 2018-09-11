@@ -34,8 +34,18 @@ class ThemaDigitalisierung extends React.Component {
 
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-9 col-lg-7">
-              <h1 className="h1">Unsere Themen in der Digitalisierung</h1>
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row d-flex d-md-none">
+                <div className="col-3 col-lg-2">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/icons/fokusthema/digitalisierung-color.png'}
+                  />
+                </div>
+              </div>
+              <h1 className="h1 margin-xs-20-top">
+                Unsere Themen in der Digitalisierung
+              </h1>
               <h2 className="h2 margin-20-top d-none d-md-block">
                 »Wandel auf Knopfdruck funktioniert nicht. Die digitale
                 Transformation wird Jahre dauern.«
@@ -45,6 +55,17 @@ class ThemaDigitalisierung extends React.Component {
                   text: 'Gerald Prior, Vorstand Cofinpro AG',
                 }}
               />
+            </div>
+            <div className="col-12 col-md-1 d-block d-lg-none" />
+            <div className="col-12 col-md-3 col-lg-5">
+              <div className="row d-none d-md-flex justify-content-end">
+                <div className="col-12 col-md-12 col-lg-6">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={'/img/icons/fokusthema/digitalisierung-color.png'}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

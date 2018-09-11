@@ -152,7 +152,7 @@ class Startseite extends React.Component {
           }}
         />
 
-        <div className="container">
+        <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-12">
               <div className="d-none d-md-block">

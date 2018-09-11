@@ -58,7 +58,7 @@ class Projekt extends React.Component {
 
         <div className="container margin-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-10 offset-md-1">
+            <div className="col-12 col-md-8 offset-md-2">
               <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
             </div>
           </div>

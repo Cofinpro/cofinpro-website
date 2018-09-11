@@ -30,7 +30,7 @@ class BeratungsfelderTechnologie extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
               <div className="d-none d-md-block">
@@ -50,8 +50,8 @@ class BeratungsfelderTechnologie extends React.Component {
         </div>
         <div className="container margin-60-top margin-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-9 col-lg-7">
-              <div className="row">
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row d-flex d-md-none">
                 <div className="col-3 col-lg-2">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
@@ -63,7 +63,7 @@ class BeratungsfelderTechnologie extends React.Component {
               </div>
               <div className="row">
                 <div className="col-12">
-                  <h1 className="h1 margin-20-top">
+                  <h1 className="h1 margin-xs-20-top">
                     Unsere Technologieberatung
                   </h1>
                   <h2 className="h2 margin-20-top">
@@ -79,11 +79,18 @@ class BeratungsfelderTechnologie extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-3 col-lg-5">
-              {/*<RelevanteLinks
-                title="relevante fokusthemen"
-                relevanteLinks={relevantFocusFields}
-              />*/}
+            <div className="col-12 col-md-1 d-block d-lg-none" />
+            <div className="col-12 col-md-3 col-lg-5">
+              <div className="row d-none d-md-flex justify-content-end">
+                <div className="col-12 col-md-12 col-lg-6">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={
+                      '/img/beratungsfelder/technologie/Technologie-Icon.png'
+                    }
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

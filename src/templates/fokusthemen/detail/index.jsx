@@ -142,9 +142,9 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-9 col-lg-7">
-              <div className="row">
-                <div className="col-6 col-md-4">
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row d-flex d-md-none">
+                <div className="col-6 col-sm-4 col-md-4">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={srcOficonTopLeft}
@@ -152,7 +152,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
                 <div className="col-6 col-md-7" />
               </div>
-              <div className="row margin-40-top margin-xs-20-top">
+              <div className="row margin-xs-20-top">
                 <div className="col-12">
                   <h1 className="h1">{graphQlResult.uberschriftGanzOben}</h1>
                   <PageIntroText
@@ -161,13 +161,14 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="col-12 col-md-1 d-block d-lg-none" />
             <div className="col-12 col-md-3 col-lg-5">
-              <div className="row">
-                <div className="col-12">
-                  {/*<RelevanteLinks
-                    title="relevante beratungsfelder"
-                    relevanteLinks={linksAndNamesForRevelantLinks}
-                  />*/}
+              <div className="row d-none d-md-flex justify-content-end">
+                <div className="col-12 col-md-12 col-lg-6">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={srcOficonTopLeft}
+                  />
                 </div>
               </div>
             </div>
@@ -176,7 +177,7 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
-            <div className="col-12 col-md-6 margin-xs-80-top">
+            <div className="col-12 col-md-6">
               <h2 className="h2">Die Herausforderung</h2>
               <div className="blue-bullet">
                 {graphQlResult.herausforderung !== undefined &&
@@ -227,22 +228,10 @@ class FokusthemenDetailTeamplate extends React.Component {
                 <StockphotoWithExternalLink
                   content={medien}
                   images={stockImages}
-                  indexOfElelement={1}
+                  indexOfElelement={0}
                 />
-              </div>
-              <div className="col-md-6 col-12 margin-xs-20-top">
-                <div className="row">
-                  <div className="col-12 col-md-4" />
+                <div className="row justify-content-center margin-40-top margin-xs-20-top">
                   <div className="col-12 col-md-8">
-                    <StockphotoWithExternalLink
-                      content={medien}
-                      images={stockImages}
-                      indexOfElelement={0}
-                    />
-                  </div>
-                </div>
-                <div className="row margin-40-top margin-xs-20-top">
-                  <div className="col-md-8 col-12">
                     <StockphotoWithExternalLink
                       content={medien}
                       images={stockImages}
@@ -251,25 +240,60 @@ class FokusthemenDetailTeamplate extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
-        {medien.length > 3 && (
-          <div className="container margin-40-top margin-xs-20-top">
-            <div className="row">
-              <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top" />
-              <div className="col-12 col-md-6 order-1 order-md-2">
-                <StockphotoWithExternalLink
-                  content={medien}
-                  images={stockImages}
-                  indexOfElelement={3}
-                />
+              <div className="col-md-6 col-12 margin-xs-20-top">
+                <div className="row justify-content-center">
+                  <div className="col-md-8 col-12">
+                    <StockphotoWithExternalLink
+                      content={medien}
+                      images={stockImages}
+                      indexOfElelement={1}
+                    />
+                  </div>
+                </div>
+                <div className="margin-40-top margin-xs-20-top">
+                  <StockphotoWithExternalLink
+                    content={medien}
+                    images={stockImages}
+                    indexOfElelement={3}
+                  />
+                </div>
               </div>
             </div>
           </div>
         )}
-        {linksAndNamesForRevelantLinks.slice(0, 1).map(link => (
+        {graphQlResult.videoYoutubeUrl !== undefined &&
+          graphQlResult.videoYoutubeUrl !== null && (
+            <div className="container margin-120-top margin-xs-80-top">
+              <div className="row">
+                <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
+                  <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
+                  <ContentfulMarkdownText
+                    text={
+                      graphQlResult.videoBeschreibung !== undefined
+                        ? graphQlResult.videoBeschreibung.videoBeschreibung
+                        : null
+                    }
+                  />
+                </div>
+                <div className="col-12 col-md-6 order-1 order-md-2">
+                  <div className="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      className="embed-responsive-item"
+                      title="Digitale Transformation bei Cofinpro"
+                      src={graphQlResult.videoYoutubeUrl.replace(
+                        '/watch?v=',
+                        '/embed/'
+                      )}
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        {linksAndNamesForRevelantLinks.slice(0, 1).map((link, i) => (
           <ReferenzAndDownload
+            key={i}
             style={{ container: 'margin-120-top margin-xs-80-top' }}
             content={{
               right: {
@@ -350,23 +374,28 @@ export const pageQuery = graphql`
           description
         }
       }
+      videoUeberschrift
+      videoBeschreibung {
+        videoBeschreibung
+      }
+      videoYoutubeUrl
     }
-    stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24/" }) {
+    stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14/" }) {
+    stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26/" }) {
+    stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2/" }) {
+    stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }

@@ -78,10 +78,10 @@ $container-max-widths: (
 main {
   margin-top: 76px;
   @include media-breakpoint-only(lg) {
-    margin-top: 104px;
+    margin-top: 96px;
   }
   @include media-breakpoint-only(xl) {
-    margin-top: 104px;
+    margin-top: 96px;
   }
 }
 
@@ -746,6 +746,10 @@ a:hover {
   margin-top: -40px;
 }
 
+.negative-margin-30-top {
+  margin-top: -30px;
+}
+
 .margin-120-bottom {
   margin-bottom: 120px;
   @include media-breakpoint-only(xs) {
@@ -1096,6 +1100,8 @@ a:hover {
 .margin-20-left {
   margin-left: 20px !important;
 }
+
+
 
 .padding-10 {
   padding: 10px;
