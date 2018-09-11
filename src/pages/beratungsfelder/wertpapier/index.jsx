@@ -37,7 +37,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
               <div className="d-none d-md-block">
