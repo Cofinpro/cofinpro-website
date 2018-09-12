@@ -23,6 +23,7 @@ class ThemaDigitalisierung extends React.Component {
     let seoDescription =
       'Sämtliche unserer Leistungen sind auf führende Finanzdienstleister zugeschnitten. Nachdem zunächst die Modernisierung exemplarischer Geschäftsmodelle, der Aufbau von Innovationslaboren und die Digitalisierungsstrategie im Vordergrund stand, ist nun die Renovierung etablierter Vorgehensweisen, die Prozesskettenstraffung, der konsequente Transfer von Best Practices aus Keimzellen in Fachbereichen sowie die ganzheitliche Digitale Transformation ins Zentrum gerückt.'
 
+    let videoUrl = 'https://www.youtube.com/watch?v=hZziK7DNUXM'
     return (
       <div>
         <HtmlHeader
@@ -108,6 +109,25 @@ class ThemaDigitalisierung extends React.Component {
               <ImageWrapper
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.ueberblickDigitalisierungMobileSharp}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-40-top">
+          <div className="row">
+            <div className="col-6">
+              <h2 className="h4 text-center font-italic">
+                "Was bedeutet die Digitale Transformation für
+                Finanzdiensleister?
+                <br />Die richtigen Weichen zu stellen."
+              </h2>
+            </div>
+            <div className="col-6">
+              <iframe
+                className="iframe-size"
+                src={videoUrl.replace('/watch?v=', '/embed/')}
+                allowFullScreen
               />
             </div>
           </div>
