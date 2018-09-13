@@ -209,6 +209,28 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <Link
                         className="text-dark"
+                        to={pathPrefix + '/karriere/andere/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'andere'
+                          )
+                        }}
+                      >
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveAndereSharp.sizes
+                          }
+                          className="img-consultant padding-sm-top-bottom"
+                        />
+                        <h3 className="h5 link-black padding-sm-top-bottom">
+                          ANDERE EXPERTISE
+                        </h3>
+                      </Link>
+                    </div>
+                    <div className="col-12 col-md-3 d-none d-md-block">
+                      <Link
+                        className="text-dark"
                         to={pathPrefix + '/karriere/studenten/landing'}
                         onClick={() => {
                           StorageHelper.saveInSessionStorage(
@@ -226,28 +248,6 @@ class StartseiteTemplate extends React.Component {
                         />
                         <h3 className="h5 link-black padding-sm-top-bottom">
                           STUDENT
-                        </h3>
-                      </Link>
-                    </div>
-                    <div className="col-12 col-md-3 d-none d-md-block">
-                      <Link
-                        className="text-dark"
-                        to={pathPrefix + '/karriere/andere/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'andere'
-                          )
-                        }}
-                      >
-                        <Img
-                          sizes={
-                            this.props.data.bildFuerPerspektiveAndereSharp.sizes
-                          }
-                          className="img-consultant padding-sm-top-bottom"
-                        />
-                        <h3 className="h5 link-black padding-sm-top-bottom">
-                          ANDERE EXPERTISE
                         </h3>
                       </Link>
                     </div>
@@ -425,6 +425,26 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-6 text-center">
                       <Link
                         className="text-dark"
+                        to={pathPrefix + '/karriere/andere/landing'}
+                        onClick={() => {
+                          StorageHelper.saveInSessionStorage(
+                            'perspective',
+                            'andere'
+                          )
+                        }}
+                      >
+                        <Img
+                          sizes={
+                            this.props.data.bildFuerPerspektiveAndereSharp.sizes
+                          }
+                          className="img-consultant margin-20-bottom img-wahl-andere"
+                        />
+                        <h3 className="h5">ANDERE EXPERTISE</h3>
+                      </Link>
+                    </div>
+                    <div className="col-6 text-center">
+                      <Link
+                        className="text-dark"
                         to={pathPrefix + '/karriere/studenten/landing'}
                         onClick={() => {
                           StorageHelper.saveInSessionStorage(
@@ -441,26 +461,6 @@ class StartseiteTemplate extends React.Component {
                           className="img-consultant margin-20-bottom img-wahl-student"
                         />
                         <h3 className="h5">STUDENT</h3>
-                      </Link>
-                    </div>
-                    <div className="col-6 text-center">
-                      <Link
-                        className="text-dark"
-                        to={pathPrefix + '/karriere/andere/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'andere'
-                          )
-                        }}
-                      >
-                        <Img
-                          sizes={
-                            this.props.data.bildFuerPerspektiveAndereSharp.sizes
-                          }
-                          className="img-consultant margin-20-bottom img-wahl-andere"
-                        />
-                        <h3 className="h5">ANDERE EXPERTISE</h3>
                       </Link>
                     </div>
                   </div>
