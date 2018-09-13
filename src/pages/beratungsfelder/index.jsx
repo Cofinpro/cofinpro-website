@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 
 import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
 import LinkButton from '../../components/buttons/LinkButton'
@@ -89,10 +90,12 @@ class BeratungsfelderStartseite extends React.Component {
                 Als Spezialisten für Kredit und Wertpapier begleiten und
                 navigieren wir unsere Kunden durch die Herausforderungen von
                 Digitalisierung, neuen Marktanforderungen und Regulatorik und
-                konzipieren nutzenoptimierte Prozesse und Lösungen.<br />
+                konzipieren nutzenoptimierte Prozesse und Lösungen.
+              </p>
+              <p>
+                <Link to="/beratungsfelder/kredit">&#8594; Kredit</Link>
                 <br />
-                &#8594; Kredit <br />
-                &#8594; Wertpapier
+                <Link to="/beratungsfelder/wertpapier">&#8594; Wertpapier</Link>
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"

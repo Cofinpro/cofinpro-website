@@ -46,10 +46,10 @@ class Projekt extends React.Component {
           <div className="row">
             <div className="col-12 col-lg-10 col-xl-8">
               <h1 className="h1">{graphQlResult.ueberschrift}</h1>
-              <h2 className="h2 margin-20-top d-none d-md-block">
+              <h2 className="h2 normal-font margin-20-top d-none d-md-block">
                 {graphQlResult.unterueberschrift}
               </h2>
-              <p className="h2 d-block d-md-none">
+              <p className="h2 normal-font d-block d-md-none">
                 {graphQlResult.unterueberschrift}
               </p>
             </div>
@@ -58,7 +58,7 @@ class Projekt extends React.Component {
 
         <div className="container margin-60-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-10 offset-md-1">
+            <div className="col-12 col-md-8 offset-md-2">
               <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
             </div>
           </div>

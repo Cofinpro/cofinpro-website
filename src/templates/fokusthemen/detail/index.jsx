@@ -26,24 +26,32 @@ class FokusthemenDetailTeamplate extends React.Component {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/management',
+          urlNewsUndMedien: '/news-medien/managementberatung',
+          urlProjekte: '/projekte/managementberatung',
         })
       }
       if (graphQlResult.relevanteBeratungsfelder[i] === 'Kreditgeschäft') {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/kredit',
+          urlNewsUndMedien: '/news-medien/fachberatung-kredit',
+          urlProjekte: '/projekte/fachberatung-kredit',
         })
       }
       if (graphQlResult.relevanteBeratungsfelder[i] === 'Wertpapiergeschäft') {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/wertpapier',
+          urlNewsUndMedien: '/news-medien/fachberatung-wertpapier',
+          urlProjekte: '/projekte/fachberatung-wertpapier',
         })
       }
       if (graphQlResult.relevanteBeratungsfelder[i] === 'Technologieberatung') {
         linksAndNamesForRevelantLinks.push({
           title: graphQlResult.relevanteBeratungsfelder[i],
           url: '/beratungsfelder/technologie',
+          urlNewsUndMedien: '/news-medien/technologieberatung',
+          urlProjekte: '/projekte/technologieberatung',
         })
       }
     }
@@ -134,9 +142,9 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
-            <div className="col-12 col-md-9 col-lg-7">
-              <div className="row">
-                <div className="col-6 col-md-4">
+            <div className="col-12 col-md-8 col-lg-7">
+              <div className="row d-flex d-md-none">
+                <div className="col-6 col-sm-4 col-md-4">
                   <ImageWrapper
                     sourceType={SOURCE_TYP_BOOTSTRAP}
                     source={srcOficonTopLeft}
@@ -144,7 +152,7 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
                 <div className="col-6 col-md-7" />
               </div>
-              <div className="row margin-40-top margin-xs-20-top">
+              <div className="row margin-xs-20-top">
                 <div className="col-12">
                   <h1 className="h1">{graphQlResult.uberschriftGanzOben}</h1>
                   <PageIntroText
@@ -153,13 +161,14 @@ class FokusthemenDetailTeamplate extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="col-12 col-md-1 d-block d-lg-none" />
             <div className="col-12 col-md-3 col-lg-5">
-              <div className="row">
-                <div className="col-12">
-                  {/*<RelevanteLinks
-                    title="relevante beratungsfelder"
-                    relevanteLinks={linksAndNamesForRevelantLinks}
-                  />*/}
+              <div className="row d-none d-md-flex justify-content-end">
+                <div className="col-12 col-md-12 col-lg-6">
+                  <ImageWrapper
+                    sourceType={SOURCE_TYP_BOOTSTRAP}
+                    source={srcOficonTopLeft}
+                  />
                 </div>
               </div>
             </div>
@@ -168,7 +177,7 @@ class FokusthemenDetailTeamplate extends React.Component {
 
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
-            <div className="col-12 col-md-6 margin-xs-80-top">
+            <div className="col-12 col-md-6">
               <h2 className="h2">Die Herausforderung</h2>
               <div className="blue-bullet">
                 {graphQlResult.herausforderung !== undefined &&
@@ -221,20 +230,8 @@ class FokusthemenDetailTeamplate extends React.Component {
                   images={stockImages}
                   indexOfElelement={0}
                 />
-              </div>
-              <div className="col-md-6 col-12 margin-xs-20-top">
-                <div className="row">
-                  <div className="col-12 col-md-4" />
+                <div className="row justify-content-center margin-40-top margin-xs-20-top">
                   <div className="col-12 col-md-8">
-                    <StockphotoWithExternalLink
-                      content={medien}
-                      images={stockImages}
-                      indexOfElelement={1}
-                    />
-                  </div>
-                </div>
-                <div className="row margin-40-top margin-xs-20-top">
-                  <div className="col-md-8 col-12">
                     <StockphotoWithExternalLink
                       content={medien}
                       images={stockImages}
@@ -243,51 +240,87 @@ class FokusthemenDetailTeamplate extends React.Component {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        )}
-        {medien.length > 3 && (
-          <div className="container margin-40-top margin-xs-20-top">
-            <div className="row">
-              <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-80-top" />
-              <div className="col-12 col-md-6 order-1 order-md-2">
-                <StockphotoWithExternalLink
-                  content={medien}
-                  images={stockImages}
-                  indexOfElelement={3}
-                />
+              <div className="col-md-6 col-12 margin-xs-20-top">
+                <div className="row justify-content-center">
+                  <div className="col-md-8 col-12">
+                    <StockphotoWithExternalLink
+                      content={medien}
+                      images={stockImages}
+                      indexOfElelement={1}
+                    />
+                  </div>
+                </div>
+                <div className="margin-40-top margin-xs-20-top">
+                  <StockphotoWithExternalLink
+                    content={medien}
+                    images={stockImages}
+                    indexOfElelement={3}
+                  />
+                </div>
               </div>
             </div>
           </div>
         )}
-
-        <ReferenzAndDownload
-          style={{ container: 'margin-120-top margin-xs-80-top' }}
-          content={{
-            right: {
-              header: 'Referenzprojekte',
-              description:
-                'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
-                graphQlResult.uberschriftGanzOben +
-                '.',
-              button: {
-                text: 'ALLE REFERENZEN',
-                path: '/projekte/managementberatung',
+        {graphQlResult.videoYoutubeUrl !== undefined &&
+          graphQlResult.videoYoutubeUrl !== null && (
+            <div className="container margin-120-top margin-xs-80-top">
+              <div className="row">
+                <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
+                  <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
+                  <ContentfulMarkdownText
+                    text={
+                      graphQlResult.videoBeschreibung !== undefined
+                        ? graphQlResult.videoBeschreibung.videoBeschreibung
+                        : null
+                    }
+                  />
+                </div>
+                <div className="col-12 col-md-6 order-1 order-md-2">
+                  <div className="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      className="embed-responsive-item"
+                      title="Digitale Transformation bei Cofinpro"
+                      src={graphQlResult.videoYoutubeUrl.replace(
+                        '/watch?v=',
+                        '/embed/'
+                      )}
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        {linksAndNamesForRevelantLinks.slice(0, 1).map((link, i) => (
+          <ReferenzAndDownload
+            key={i}
+            style={{ container: 'margin-120-top margin-xs-80-top' }}
+            content={{
+              right: {
+                header: 'Referenzprojekte',
+                description:
+                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
+                  graphQlResult.uberschriftGanzOben +
+                  '.',
+                button: {
+                  text: 'ALLE REFERENZEN',
+                  path: link.urlProjekte,
+                },
               },
-            },
-            left: {
-              header: 'Medien',
-              description:
-                'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
-                graphQlResult.uberschriftGanzOben +
-                '.',
-              button: {
-                text: 'ALLE PUBLIKATIONEN',
-                path: '/news-medien/alle-beratungsfelder',
+              left: {
+                header: 'Medien',
+                description:
+                  'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
+                  graphQlResult.uberschriftGanzOben +
+                  '.',
+                button: {
+                  text: 'ALLE PUBLIKATIONEN',
+                  path: link.urlNewsUndMedien,
+                },
               },
-            },
-          }}
-        />
+            }}
+          />
+        ))}
       </div>
     )
   }
@@ -341,23 +374,28 @@ export const pageQuery = graphql`
           description
         }
       }
+      videoUeberschrift
+      videoBeschreibung {
+        videoBeschreibung
+      }
+      videoYoutubeUrl
     }
-    stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24/" }) {
+    stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14/" }) {
+    stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26/" }) {
+    stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }
     }
-    stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2/" }) {
+    stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2-/" }) {
       sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
         ...GatsbyImageSharpSizes
       }

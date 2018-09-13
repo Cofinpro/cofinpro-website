@@ -1,6 +1,6 @@
 .download-button {
   display: flex;
-  align-items: center;
+  align-items: start;
   flex: auto;
   p {
     margin: 0px;
@@ -11,4 +11,8 @@
 
 .download-button .download-button__text {
   color: #212529;
+}
+
+.download-button img {
+  padding-top: 4px;
 }

@@ -17,7 +17,7 @@ class BeratungsfelderFach extends React.Component {
 
     return (
       <div>
-        <div className="container">
+        <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
               <div className="d-none d-md-block">
@@ -49,10 +49,10 @@ class BeratungsfelderFach extends React.Component {
               <div className="row margin-20-top">
                 <div className="col-md-12">
                   <h1 className="h1">Unsere Fachberatung</h1>
-                  <h2 className="h2 margin-20-top d-none d-md-block">
+                  <h2 className="h2 normal-font margin-20-top d-none d-md-block">
                     Wir sind Experten <br />für Kredit und Wertpapier
                   </h2>
-                  <p className="d-block d-md-none">
+                  <p className="normal-font d-block d-md-none">
                     Wir sind Experten <br />für Kredit und Wertpapier
                   </p>
                   <PageIntroText

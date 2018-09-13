@@ -60,9 +60,9 @@ class FokusthemenStartseite extends React.Component {
             { text: 'Digitalisierung', path: '/digitalisierung' },
           ]}
           urlPrefix="fokusthemen"
-          styleClass="margin-80-top"
+          styleClass={'margin-80-top margin-xs-40-top'}
           description={
-            'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen?  \n Wählen Sie selbst.'
+            'Aus welchem unserer Beratungsfelder möchten Sie Fokusthemen ansehen? Wählen Sie selbst.'
           }
         />
 
