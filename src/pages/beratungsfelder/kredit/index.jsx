@@ -167,6 +167,10 @@ class BeratungsfelderKredit extends React.Component {
         </div>
 
         <FokusThemenFachLayout
+          style={{
+            container: '',
+            textCol: 'col-md-5',
+          }}
           text={'Unsere Themen rund um Fachberatung im Kreditgeschäft:'}
           fokusthemen={fokusthemen}
         />

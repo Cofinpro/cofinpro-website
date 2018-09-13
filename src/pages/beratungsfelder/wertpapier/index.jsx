@@ -176,6 +176,9 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           </div>
         </div>
         <FokusThemenFachLayout
+          style={{
+            textCol: 'col-md-5',
+          }}
           text={'Unsere Themen rund um Fachberatung im Wertpapiergeschäft:'}
           fokusthemen={fokusthemen}
         />

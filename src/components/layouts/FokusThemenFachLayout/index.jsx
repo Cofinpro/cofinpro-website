@@ -6,17 +6,23 @@ class FokusThemenFachLayout extends React.Component {
   render() {
     const pathPrefix = process.env_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { header, text, fokusthemen, containerStyle } = this.props
+    const { header, text, fokusthemen, style } = this.props
+
+    let containerStyle =
+      style !== undefined && style.container !== undefined
+        ? style.container
+        : ''
+    let textColStyle =
+      style !== undefined && style.textCol !== undefined ? style.textCol : ''
 
     return (
       <div>
         {fokusthemen.length > 0 && (
           <div className={'container ' + containerStyle}>
             <div className="row margin-60-top margin-xs-20-top">
-              <div className="col-md-5">
+              <div className={'col-12 ' + textColStyle}>
                 <h3 className="h4">{text}</h3>
               </div>
-              <div className="col-md-7" />
             </div>
             <div className="row ">
               <div className="col-md-6 margin-100-top margin-xs-20-top">

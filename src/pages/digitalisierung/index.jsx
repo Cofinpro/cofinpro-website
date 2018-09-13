@@ -173,7 +173,10 @@ class ThemaDigitalisierung extends React.Component {
         />
 
         <FokusThemenFachLayout
-          containerStyle="margin-120-top margin-xs-80-top"
+          style={{
+            container: 'margin-120-top margin-xs-80-top',
+            textCol: '',
+          }}
           text={'Unsere Themen rund um die Digitalisierung:'}
           fokusthemen={fokusthemen}
         />
