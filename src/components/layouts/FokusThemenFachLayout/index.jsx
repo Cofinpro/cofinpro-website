@@ -6,17 +6,23 @@ class FokusThemenFachLayout extends React.Component {
   render() {
     const pathPrefix = process.env_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { header, text, fokusthemen } = this.props
+    const { header, text, fokusthemen, style } = this.props
+
+    let containerStyle =
+      style !== undefined && style.container !== undefined
+        ? style.container
+        : ''
+    let textColStyle =
+      style !== undefined && style.textCol !== undefined ? style.textCol : ''
 
     return (
       <div>
         {fokusthemen.length > 0 && (
-          <div className="container">
+          <div className={'container ' + containerStyle}>
             <div className="row margin-60-top margin-xs-20-top">
-              <div className="col-md-5">
+              <div className={'col-12 ' + textColStyle}>
                 <h3 className="h4">{text}</h3>
               </div>
-              <div className="col-md-7" />
             </div>
             <div className="row ">
               <div className="col-md-6 margin-100-top margin-xs-20-top">
@@ -83,11 +89,11 @@ class FokusThemenFachLayout extends React.Component {
                       <div className="col-md-2" />
                       <div className="col-12 col-md-10">
                         <FokusthemaPreview
-                          url={fokusthemen[4].url}
-                          header={fokusthemen[4].uberschriftGanzOben}
-                          subheader={fokusthemen[4].unterueberschrift}
+                          url={fokusthemen[5].url}
+                          header={fokusthemen[5].uberschriftGanzOben}
+                          subheader={fokusthemen[5].unterueberschrift}
                           color={'--yellow-blue'}
-                          icon={fokusthemen[4].icon}
+                          icon={fokusthemen[5].icon}
                         />
                       </div>
                     </div>
@@ -98,11 +104,11 @@ class FokusThemenFachLayout extends React.Component {
                   <div className="row margin-xs-20-top">
                     <div className="col-md-10">
                       <FokusthemaPreview
-                        url={fokusthemen[5].url}
-                        header={fokusthemen[5].uberschriftGanzOben}
-                        subheader={fokusthemen[5].unterueberschrift}
+                        url={fokusthemen[4].url}
+                        header={fokusthemen[4].uberschriftGanzOben}
+                        subheader={fokusthemen[4].unterueberschrift}
                         color={'--grey-blue'}
-                        icon={fokusthemen[5].icon}
+                        icon={fokusthemen[4].icon}
                       />
                     </div>
                   </div>

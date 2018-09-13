@@ -74,7 +74,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 </div>
               </div>
               <h1 className="h1 margin-20-top">Managementberatung</h1>
-              <h2 className="h2 margin-20-top">
+              <h2 className="h2 normal-font margin-20-top">
                 Wie wir Geschäftsmodelle gestalten und optimieren
               </h2>
               <PageIntroText

@@ -58,6 +58,7 @@ $h5-font-size-sm: 1rem;
 $h5-font-size-md: 1.125rem;
 $h6-font-size-sm: 0.75rem;
 $h6-font-size-md: 0.875rem;
+$headings-margin-bottom: 10px;
 $headings-font-family: inherit !default;
 $grid-columns: 12;
 $grid-gutter-width: 30px;
@@ -151,6 +152,8 @@ main {
 p,
 li,
 .p {
+  hyphens: auto;
+
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
@@ -179,6 +182,7 @@ h4,
 h5,
 h6 {
   font-family: apercu-bold-pro;
+  hyphens: auto;
 }
 
 .h1,
@@ -1527,7 +1531,6 @@ svg image[href$='img_20.jpg'] {
   visibility: hidden;
 }
 
-.iframe-size {
-  height: 250px;
-  width: 400px;
+.link-button > span.btn.btn-outline-primary {
+  padding-bottom: 3px;
 }

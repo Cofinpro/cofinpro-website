@@ -4,7 +4,7 @@ import PageIntroText from '../../components/text/PageIntroText'
 
 import ReferenzAndDownload from '../../components/ReferenzAndDownload'
 import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
-import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import FokusThemenFachLayout from '../../components/layouts/FokusThemenFachLayout'
 
 import HtmlHeader from '../../components/HtmlHeader'
 
@@ -24,6 +24,35 @@ class ThemaDigitalisierung extends React.Component {
     let seoTitle = 'Unsere Themen in der Digitalisierung'
     let seoDescription =
       'Sämtliche unserer Leistungen sind auf führende Finanzdienstleister zugeschnitten. Nachdem zunächst die Modernisierung exemplarischer Geschäftsmodelle, der Aufbau von Innovationslaboren und die Digitalisierungsstrategie im Vordergrund stand, ist nun die Renovierung etablierter Vorgehensweisen, die Prozesskettenstraffung, der konsequente Transfer von Best Practices aus Keimzellen in Fachbereichen sowie die ganzheitliche Digitale Transformation ins Zentrum gerückt.'
+
+    var fokusthemen = []
+
+    let fokusthema = this.props.data.allContentfulFokusthemaEinteilung.edges[0]
+      .node
+
+    for (
+      let i = 0;
+      i < fokusthema.fokusthemenDigitalisierungsseite.length;
+      ++i
+    ) {
+      fokusthemen.push(fokusthema.fokusthemenDigitalisierungsseite[i])
+    }
+
+    let relevantFocusFields = []
+
+    for (
+      let i = 0;
+      i < fokusthema.fokusthemenDigitalisierungsseite.length;
+      ++i
+    ) {
+      relevantFocusFields.push({
+        title:
+          fokusthema.fokusthemenDigitalisierungsseite[i].uberschriftGanzOben,
+        url:
+          '/fokusthemen/thema/' +
+          fokusthema.fokusthemenDigitalisierungsseite[i].url,
+      })
+    }
 
     return (
       <div>
@@ -48,7 +77,7 @@ class ThemaDigitalisierung extends React.Component {
               <h1 className="h1 margin-xs-20-top">
                 Unsere Themen in der Digitalisierung
               </h1>
-              <h2 className="h2 margin-20-top d-none d-md-block">
+              <h2 className="h2 normal-font margin-20-top d-none d-md-block">
                 »Wandel auf Knopfdruck funktioniert nicht. Die digitale
                 Transformation wird Jahre dauern.«
               </h2>
@@ -127,7 +156,7 @@ class ThemaDigitalisierung extends React.Component {
             <div className="col-12 col-md-6 order-1 order-md-2">
               <div className="embed-responsive embed-responsive-16by9">
                 <iframe
-                  className="iframe-size"
+                  className=""
                   src={videoUrl.replace('/watch?v=', '/embed/')}
                   allowFullScreen
                 />
@@ -165,6 +194,15 @@ class ThemaDigitalisierung extends React.Component {
           linkRight={'/fokusthemen/thema/blockchain'}
         />
 
+        <FokusThemenFachLayout
+          style={{
+            container: 'margin-120-top margin-xs-80-top',
+            textCol: '',
+          }}
+          text={'Unsere Themen rund um die Digitalisierung:'}
+          fokusthemen={fokusthemen}
+        />
+
         <ReferenzAndDownload
           style={{ container: 'margin-120-top margin-xs-80-top' }}
           content={{
@@ -197,6 +235,23 @@ export default ThemaDigitalisierung
 
 export const pageQuery = graphql`
   query digitalisierungQuery {
+    allContentfulFokusthemaEinteilung {
+      edges {
+        node {
+          fokusthemenDigitalisierungsseite {
+            id
+            url
+            uberschriftGanzOben
+            unterueberschrift
+            icon
+            relevanteBeratungsfelder
+            headline {
+              headline
+            }
+          }
+        }
+      }
+    }
     ueberblickDigitalisierungDesktopSharp: imageSharp(
       id: { regex: "/Digitalisierung-Uebersicht-Desktop/" }
     ) {

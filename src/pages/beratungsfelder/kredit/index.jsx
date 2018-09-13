@@ -67,10 +67,10 @@ class BeratungsfelderKredit extends React.Component {
               <div className="row margin-20-top">
                 <div className="col-md-12">
                   <h1 className="h1 margin-xs-20-top">Kreditgeschäft</h1>
-                  <h2 className="h2 margin-20-top d-none d-md-block">
+                  <h2 className="h2 normal-font margin-20-top d-none d-md-block">
                     Unsere Fachberatung im Kreditgeschäft
                   </h2>
-                  <p className="d-block d-md-none">
+                  <p className="normal-font d-block d-md-none">
                     Unsere Fachberatung im Kreditgeschäft
                   </p>
                   <PageIntroText
@@ -167,6 +167,10 @@ class BeratungsfelderKredit extends React.Component {
         </div>
 
         <FokusThemenFachLayout
+          style={{
+            container: '',
+            textCol: 'col-md-5',
+          }}
           text={'Unsere Themen rund um Fachberatung im Kreditgeschäft:'}
           fokusthemen={fokusthemen}
         />

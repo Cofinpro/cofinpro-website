@@ -69,7 +69,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
               <div className="row">
                 <div className="col-md-12">
                   <h1 className="h1 margin-xs-20-top">Wertpapiergeschäft</h1>
-                  <h2 className="h2 margin-20-top">
+                  <h2 className="h2 normal-font margin-20-top">
                     Unsere Fachberatung im Wertpapiergeschäft
                   </h2>
                   <PageIntroText
@@ -176,6 +176,9 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
           </div>
         </div>
         <FokusThemenFachLayout
+          style={{
+            textCol: 'col-md-5',
+          }}
           text={'Unsere Themen rund um Fachberatung im Wertpapiergeschäft:'}
           fokusthemen={fokusthemen}
         />
