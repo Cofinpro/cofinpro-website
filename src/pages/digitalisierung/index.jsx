@@ -1,10 +1,10 @@
 import React from 'react'
 
-import LinkButton from '../../components/buttons/LinkButton'
 import PageIntroText from '../../components/text/PageIntroText'
 
 import ReferenzAndDownload from '../../components/ReferenzAndDownload'
 import ThreeIconsWithLinks from '../../components/layouts/ThreeIconsWithLinks'
+import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
 
 import HtmlHeader from '../../components/HtmlHeader'
 
@@ -16,6 +16,8 @@ import {
 
 class ThemaDigitalisierung extends React.Component {
   render() {
+    const graphQlResult = this.props.data.contentfulFokusthema
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -23,7 +25,6 @@ class ThemaDigitalisierung extends React.Component {
     let seoDescription =
       'Sämtliche unserer Leistungen sind auf führende Finanzdienstleister zugeschnitten. Nachdem zunächst die Modernisierung exemplarischer Geschäftsmodelle, der Aufbau von Innovationslaboren und die Digitalisierungsstrategie im Vordergrund stand, ist nun die Renovierung etablierter Vorgehensweisen, die Prozesskettenstraffung, der konsequente Transfer von Best Practices aus Keimzellen in Fachbereichen sowie die ganzheitliche Digitale Transformation ins Zentrum gerückt.'
 
-    let videoUrl = 'https://www.youtube.com/watch?v=hZziK7DNUXM'
     return (
       <div>
         <HtmlHeader
@@ -114,24 +115,36 @@ class ThemaDigitalisierung extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-40-top">
-          <div className="row">
-            <div className="col-6">
-              <h2 className="h4 text-center font-italic">
-                "Was bedeutet die Digitale Transformation für
-                Finanzdiensleister?
-                <br />Die richtigen Weichen zu stellen."
-              </h2>
+        {graphQlResult.videoYoutubeUrl !== undefined &&
+          graphQlResult.videoYoutubeUrl !== null && (
+            <div className="container margin-120-top margin-xs-80-top">
+              <div className="row">
+                <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
+                  <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
+                  <ContentfulMarkdownText
+                    text={
+                      graphQlResult.videoBeschreibung !== undefined
+                        ? graphQlResult.videoBeschreibung.videoBeschreibung
+                        : null
+                    }
+                  />
+                </div>
+                <div className="col-12 col-md-6 order-1 order-md-2">
+                  <div className="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      className="embed-responsive-item"
+                      title="Digitale Transformation bei Cofinpro"
+                      src={graphQlResult.videoYoutubeUrl.replace(
+                        '/watch?v=',
+                        '/embed/'
+                      )}
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="col-6">
-              <iframe
-                className="iframe-size"
-                src={videoUrl.replace('/watch?v=', '/embed/')}
-                allowFullScreen
-              />
-            </div>
-          </div>
-        </div>
+          )}
 
         <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
           <div className="row">
@@ -194,6 +207,41 @@ export default ThemaDigitalisierung
 
 export const pageQuery = graphql`
   query digitalisierungQuery {
+    contentfulFokusthema {
+      id
+      url
+      icon
+      uberschriftGanzOben
+      headline {
+        headline
+      }
+      herausforderung {
+        herausforderung
+      }
+      loesungsansatz {
+        loesungsansatz
+      }
+      nutzen {
+        nutzen
+      }
+      relevanteBeratungsfelder
+      verlinkteVeroeffentlichungen {
+        id
+        ueberschrift
+        unterUeberschrift
+        urlDerVerffentlichung
+        pdfDatei {
+          id
+          title
+          description
+        }
+      }
+      videoUeberschrift
+      videoBeschreibung {
+        videoBeschreibung
+      }
+      videoYoutubeUrl
+    }
     ueberblickDigitalisierungDesktopSharp: imageSharp(
       id: { regex: "/Digitalisierung-Uebersicht-Desktop/" }
     ) {
