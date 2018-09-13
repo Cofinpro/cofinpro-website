@@ -16,7 +16,7 @@ import {
 
 class ThemaDigitalisierung extends React.Component {
   render() {
-    const graphQlResult = this.props.data.contentfulFokusthema
+    let videoUrl = 'https://www.youtube.com/watch?v=hZziK7DNUXM'
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
@@ -115,36 +115,26 @@ class ThemaDigitalisierung extends React.Component {
           </div>
         </div>
 
-        {graphQlResult.videoYoutubeUrl !== undefined &&
-          graphQlResult.videoYoutubeUrl !== null && (
-            <div className="container margin-120-top margin-xs-80-top">
-              <div className="row">
-                <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
-                  <h2 className="h2">{graphQlResult.videoUeberschrift}</h2>
-                  <ContentfulMarkdownText
-                    text={
-                      graphQlResult.videoBeschreibung !== undefined
-                        ? graphQlResult.videoBeschreibung.videoBeschreibung
-                        : null
-                    }
-                  />
-                </div>
-                <div className="col-12 col-md-6 order-1 order-md-2">
-                  <div className="embed-responsive embed-responsive-16by9">
-                    <iframe
-                      className="embed-responsive-item"
-                      title="Digitale Transformation bei Cofinpro"
-                      src={graphQlResult.videoYoutubeUrl.replace(
-                        '/watch?v=',
-                        '/embed/'
-                      )}
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
+              <h2 className="h2">Digitale Transformation bei Cofinpro</h2>
+              <p>
+                Was bedeutet die Digitale Transformation für Finanzdiensleister?
+                Die richtigen Weichen zu stellen.
+              </p>
+            </div>
+            <div className="col-12 col-md-6 order-1 order-md-2">
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe
+                  className="iframe-size"
+                  src={videoUrl.replace('/watch?v=', '/embed/')}
+                  allowFullScreen
+                />
               </div>
             </div>
-          )}
+          </div>
+        </div>
 
         <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
           <div className="row">
@@ -207,41 +197,6 @@ export default ThemaDigitalisierung
 
 export const pageQuery = graphql`
   query digitalisierungQuery {
-    contentfulFokusthema {
-      id
-      url
-      icon
-      uberschriftGanzOben
-      headline {
-        headline
-      }
-      herausforderung {
-        herausforderung
-      }
-      loesungsansatz {
-        loesungsansatz
-      }
-      nutzen {
-        nutzen
-      }
-      relevanteBeratungsfelder
-      verlinkteVeroeffentlichungen {
-        id
-        ueberschrift
-        unterUeberschrift
-        urlDerVerffentlichung
-        pdfDatei {
-          id
-          title
-          description
-        }
-      }
-      videoUeberschrift
-      videoBeschreibung {
-        videoBeschreibung
-      }
-      videoYoutubeUrl
-    }
     ueberblickDigitalisierungDesktopSharp: imageSharp(
       id: { regex: "/Digitalisierung-Uebersicht-Desktop/" }
     ) {
