@@ -137,6 +137,7 @@ main {
 p,
 li,
 .p {
+  hyphens: auto;
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
@@ -161,6 +162,7 @@ h4,
 h5,
 h6 {
   font-family: apercu-bold-pro;
+  hyphens: auto;
 }
 
 .h1,
