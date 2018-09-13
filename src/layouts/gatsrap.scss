@@ -76,11 +76,14 @@ $container-max-widths: (
   xl: 1140px
 );
 @import 'node_modules/bootstrap/scss/bootstrap.scss';
+
 main {
   margin-top: 76px;
+
   @include media-breakpoint-only(lg) {
     margin-top: 96px;
   }
+
   @include media-breakpoint-only(xl) {
     margin-top: 96px;
   }
@@ -88,23 +91,30 @@ main {
 
 .p-font-large-lg {
   font-size: 1.125rem;
+
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $font-size-sm;
   }
+
   p {
     font-size: 1.125rem;
+
     @include media-breakpoint-only(xs) {
       font-size: $font-size-sm;
     }
+
     @include media-breakpoint-only(sm) {
       font-size: $font-size-sm;
     }
+
     @include media-breakpoint-only(md) {
       font-size: $font-size-sm;
     }
@@ -113,17 +123,22 @@ main {
 
 .p-font-large-md {
   font-size: 1.125rem;
+
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $font-size-sm;
   }
+
   p {
     font-size: 1.125rem;
+
     @include media-breakpoint-only(xs) {
       font-size: $font-size-sm;
     }
+
     @include media-breakpoint-only(sm) {
       font-size: $font-size-sm;
     }
@@ -138,18 +153,23 @@ p,
 li,
 .p {
   hyphens: auto;
+
   @include media-breakpoint-only(xs) {
     font-size: $font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $font-size-base;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $font-size-lg;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $font-size-lg;
   }
@@ -173,18 +193,23 @@ h6 {
 .h1 > h5,
 .h1 > h6 {
   font-family: apercu-bold-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h1-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h1-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h1-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h1-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h1-font-size;
   }
@@ -198,18 +223,24 @@ h6 {
 .h2 > h5,
 .h2 > h6 {
   font-family: apercu-bold-pro;
+  margin-bottom: 1rem;
+
   @include media-breakpoint-only(xs) {
     font-size: $h2-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h2-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h2-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h2-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h2-font-size;
   }
@@ -228,15 +259,19 @@ h6 {
   @include media-breakpoint-only(xs) {
     font-size: $h3-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h3-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h3-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h3-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h3-font-size;
   }
@@ -245,15 +280,19 @@ h6 {
     @include media-breakpoint-only(xs) {
       font-size: $h3-font-size-sm;
     }
+
     @include media-breakpoint-only(sm) {
       font-size: $h3-font-size-sm;
     }
+
     @include media-breakpoint-only(md) {
       font-size: $h3-font-size-md;
     }
+
     @include media-breakpoint-only(lg) {
       font-size: $h3-font-size;
     }
+
     @include media-breakpoint-only(xl) {
       font-size: $h3-font-size;
     }
@@ -268,34 +307,44 @@ h6 {
 .h4 > h5,
 .h4 > h6 {
   font-family: apercu-bold-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h4-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h4-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h4-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h4-font-size;
   }
+
   p {
     @include media-breakpoint-only(xs) {
       font-size: $h4-font-size-sm;
     }
+
     @include media-breakpoint-only(sm) {
       font-size: $h4-font-size-sm;
     }
+
     @include media-breakpoint-only(md) {
       font-size: $h4-font-size-md;
     }
+
     @include media-breakpoint-only(lg) {
       font-size: $h4-font-size;
     }
+
     @include media-breakpoint-only(xl) {
       font-size: $h4-font-size;
     }
@@ -306,9 +355,11 @@ h6 {
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h4-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h4-font-size-md;
   }
@@ -317,9 +368,11 @@ h6 {
     @include media-breakpoint-only(xs) {
       font-size: $h4-font-size-sm;
     }
+
     @include media-breakpoint-only(sm) {
       font-size: $h4-font-size-sm;
     }
+
     @include media-breakpoint-only(md) {
       font-size: $h4-font-size-md;
     }
@@ -330,18 +383,23 @@ p.h4,
 span.h4,
 div.h4 {
   font-family: apercu-regular-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h4-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h4-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h4-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h4-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h4-font-size;
   }
@@ -356,18 +414,23 @@ div.h4 {
 .h5 > h6,
 .h5 > p {
   font-family: apercu-bold-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h5-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h5-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h5-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h5-font-size;
   }
@@ -378,9 +441,11 @@ p.h5-md {
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h5-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h5-font-size-md;
   }
@@ -389,9 +454,11 @@ p.h5-md {
     @include media-breakpoint-only(xs) {
       font-size: $h5-font-size-sm;
     }
+
     @include media-breakpoint-only(sm) {
       font-size: $h5-font-size-sm;
     }
+
     @include media-breakpoint-only(md) {
       font-size: $h5-font-size-md;
     }
@@ -406,18 +473,23 @@ p.h5-md {
 .h6 > h5,
 .h6 > h6 {
   font-family: apercu-regular-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h6-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h6-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h6-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h6-font-size;
   }
@@ -427,18 +499,23 @@ p.h5,
 span.h5,
 div.h5 {
   font-family: apercu-regular-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h5-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h5-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h5-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h5-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h5-font-size;
   }
@@ -446,18 +523,23 @@ div.h5 {
 
 li.h6 {
   font-family: apercu-regular-pro;
+
   @include media-breakpoint-only(xs) {
     font-size: $h6-font-size-sm;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: $h6-font-size-sm;
   }
+
   @include media-breakpoint-only(md) {
     font-size: $h6-font-size-md;
   }
+
   @include media-breakpoint-only(lg) {
     font-size: $h6-font-size;
   }
+
   @include media-breakpoint-only(xl) {
     font-size: $h6-font-size;
   }
@@ -488,9 +570,11 @@ a:hover {
 
 .filler-box-320 {
   margin-top: 320px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
@@ -498,9 +582,11 @@ a:hover {
 
 .filler-box-240 {
   margin-top: 240px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
@@ -508,9 +594,11 @@ a:hover {
 
 .filler-box-120 {
   margin-top: 120px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
@@ -518,9 +606,11 @@ a:hover {
 
 .filler-box-220 {
   margin-top: 220px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
@@ -528,9 +618,11 @@ a:hover {
 
 .filler-box-200 {
   margin-top: 200px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
@@ -559,9 +651,11 @@ a:hover {
 
 .padding-lg {
   padding: 0rem;
+
   @include media-breakpoint-only(lg) {
     padding: 1rem;
   }
+
   @include media-breakpoint-only(xl) {
     padding: 1rem;
   }
@@ -682,26 +776,32 @@ a:hover {
     font-size: 2rem;
     color: #ec7b1a !important;
   }
+
   @include media-breakpoint-only(md) {
     .carousel-control-prev {
       left: -62px;
     }
+
     .carousel-control-next {
       right: -62px;
     }
   }
+
   @include media-breakpoint-only(lg) {
     .carousel-control-prev {
       left: -96px;
     }
+
     .carousel-control-next {
       right: -96px;
     }
   }
+
   @include media-breakpoint-only(xl) {
     .carousel-control-prev {
       left: -96px;
     }
+
     .carousel-control-next {
       right: -96px;
     }
@@ -714,6 +814,7 @@ a:hover {
   border: none;
   box-shadow: none;
   cursor: pointer;
+
   i {
     color: $orange;
     font-size: 2rem;
@@ -732,9 +833,11 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: -40px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: -40px;
   }
+
   @include media-breakpoint-only(md) {
     margin-top: -40px;
   }
@@ -754,9 +857,11 @@ a:hover {
 
 .margin-120-bottom {
   margin-bottom: 120px;
+
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
   }
@@ -764,9 +869,11 @@ a:hover {
 
 .margin-100-bottom {
   margin-bottom: 100px;
+
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
   }
@@ -776,9 +883,11 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-bottom: 0px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 0px;
   }
+
   @include media-breakpoint-only(md) {
     margin-bottom: 0px;
   }
@@ -812,6 +921,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
   }
@@ -821,6 +931,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-bottom: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 60px;
   }
@@ -830,6 +941,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-bottom: 40px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 40px;
   }
@@ -839,6 +951,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-bottom: 20px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 20px;
   }
@@ -848,6 +961,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-bottom: 00px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 00px;
   }
@@ -857,9 +971,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 80px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-bottom: 80px;
   }
@@ -869,9 +985,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 60px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-bottom: 60px;
   }
@@ -881,9 +999,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 40px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 40px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-bottom: 40px;
   }
@@ -893,9 +1013,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-bottom: 20px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-bottom: 20px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-bottom: 20px;
   }
@@ -915,9 +1037,11 @@ a:hover {
 
 .margin-120-top {
   margin-top: 120px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 80px;
   }
@@ -929,9 +1053,11 @@ a:hover {
 
 .margin-100-top {
   margin-top: 100px;
+
   @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 80px;
   }
@@ -977,9 +1103,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-top: 100px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 100px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-top: 100px;
   }
@@ -989,9 +1117,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-top: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 80px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
@@ -1001,9 +1131,11 @@ a:hover {
   @include media-breakpoint-only(md) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
@@ -1013,9 +1145,11 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 40px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 40px;
   }
+
   @include media-breakpoint-only(md) {
     margin-top: 40px;
   }
@@ -1025,9 +1159,11 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 20px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 20px;
   }
+
   @include media-breakpoint-only(md) {
     margin-top: 20px;
   }
@@ -1037,9 +1173,11 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 0px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 0px;
   }
+
   @include media-breakpoint-only(md) {
     margin-top: 0px;
   }
@@ -1049,6 +1187,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 80px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 80px;
   }
@@ -1058,6 +1197,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 60px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 60px;
   }
@@ -1067,6 +1207,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 40px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 40px;
   }
@@ -1076,6 +1217,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 20px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 20px;
   }
@@ -1085,6 +1227,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 20px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 20px;
   }
@@ -1094,6 +1237,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     margin-top: 0px;
   }
+
   @include media-breakpoint-only(sm) {
     margin-top: 0px;
   }
@@ -1143,6 +1287,7 @@ a:hover {
   @include media-breakpoint-only(xs) {
     padding-top: 20px;
   }
+
   @include media-breakpoint-only(sm) {
     padding-top: 20px;
   }
@@ -1168,6 +1313,7 @@ a:hover {
     margin-right: 0px;
     max-width: 100%;
   }
+
   @include media-breakpoint-only(sm) {
     padding-left: 0px;
     padding-right: 0px;
@@ -1175,6 +1321,7 @@ a:hover {
     margin-right: 0px;
     max-width: 100%;
   }
+
   @include media-breakpoint-only(md) {
     padding-left: 0px;
     padding-right: 0px;
@@ -1227,6 +1374,7 @@ a.link-button:hover {
   @include media-breakpoint-only(xs) {
     font-size: 12px;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: 12px;
   }
@@ -1263,9 +1411,11 @@ p.text-md-normal,
   @include media-breakpoint-only(xs) {
     font-size: 1rem;
   }
+
   @include media-breakpoint-only(sm) {
     font-size: 1rem;
   }
+
   @include media-breakpoint-only(md) {
     font-size: 1rem;
   }
@@ -1275,6 +1425,7 @@ svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(xs) {
     visibility: hidden;
   }
+
   @include media-breakpoint-only(sm) {
     visibility: hidden;
   }
@@ -1289,10 +1440,12 @@ svg image[href$='img_20.jpg'] {
   margin-left: 0;
   padding-right: 0;
   padding-left: 0;
+
   .row {
     margin-right: 0;
     margin-left: 0;
   }
+
   .row > .col,
   .row > [class*='col-'] {
     padding-right: 0;
@@ -1306,25 +1459,30 @@ svg image[href$='img_20.jpg'] {
     margin-left: 0;
     padding-right: 0;
     padding-left: 0;
+
     .row {
       margin-right: 0;
       margin-left: 0;
     }
+
     .row > .col,
     .row > [class*='col-'] {
       padding-right: 0;
       padding-left: 0;
     }
   }
+
   @include media-breakpoint-only(sm) {
     margin-right: 0;
     margin-left: 0;
     padding-right: 0;
     padding-left: 0;
+
     .row {
       margin-right: 0;
       margin-left: 0;
     }
+
     .row > .col,
     .row > [class*='col-'] {
       padding-right: 0;
@@ -1337,9 +1495,11 @@ svg image[href$='img_20.jpg'] {
   @include media-breakpoint-only(md) {
     width: unset !important;
   }
+
   @include media-breakpoint-only(lg) {
     width: unset !important;
   }
+
   @include media-breakpoint-only(xl) {
     width: unset !important;
   }

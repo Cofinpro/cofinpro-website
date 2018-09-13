@@ -1,6 +1,5 @@
 import React from 'react'
 
-import LinkButton from '../../components/buttons/LinkButton'
 import PageIntroText from '../../components/text/PageIntroText'
 
 import ReferenzAndDownload from '../../components/ReferenzAndDownload'
@@ -17,6 +16,8 @@ import {
 
 class ThemaDigitalisierung extends React.Component {
   render() {
+    let videoUrl = 'https://www.youtube.com/watch?v=hZziK7DNUXM'
+
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
@@ -139,6 +140,27 @@ class ThemaDigitalisierung extends React.Component {
                 sourceType={SOURCE_TYP_SHARP}
                 source={this.props.data.ueberblickDigitalisierungMobileSharp}
               />
+            </div>
+          </div>
+        </div>
+
+        <div className="container margin-120-top margin-xs-80-top">
+          <div className="row">
+            <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
+              <h2 className="h2">Digitale Transformation bei Cofinpro</h2>
+              <p>
+                Was bedeutet die Digitale Transformation für Finanzdiensleister?
+                Die richtigen Weichen zu stellen.
+              </p>
+            </div>
+            <div className="col-12 col-md-6 order-1 order-md-2">
+              <div className="embed-responsive embed-responsive-16by9">
+                <iframe
+                  className=""
+                  src={videoUrl.replace('/watch?v=', '/embed/')}
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>
