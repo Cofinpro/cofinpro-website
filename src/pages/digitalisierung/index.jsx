@@ -46,7 +46,7 @@ class ThemaDigitalisierung extends React.Component {
               <h1 className="h1 margin-xs-20-top">
                 Unsere Themen in der Digitalisierung
               </h1>
-              <h2 className="h2 margin-20-top d-none d-md-block">
+              <h2 className="h2 normal-font margin-20-top d-none d-md-block">
                 »Wandel auf Knopfdruck funktioniert nicht. Die digitale
                 Transformation wird Jahre dauern.«
               </h2>

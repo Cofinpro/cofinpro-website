@@ -66,7 +66,7 @@ class BeratungsfelderTechnologie extends React.Component {
                   <h1 className="h1 margin-xs-20-top">
                     Unsere Technologieberatung
                   </h1>
-                  <h2 className="h2 margin-20-top">
+                  <h2 className="h2 normal-font margin-20-top">
                     Wie sich IT und Zukunft<br />verbinden lassen
                   </h2>
                   <PageIntroText
