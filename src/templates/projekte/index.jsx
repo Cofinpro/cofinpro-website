@@ -188,9 +188,9 @@ class ProjekteUebersicht extends React.Component {
             { text: 'Digitalisierung', path: '/digitalisierung' },
           ]}
           urlPrefix="projekte"
-          styleClass="margin-80-top"
+          styleClass={'margin-80-top margin-xs-40-top'}
           description={
-            'Aus welchem unserer Beratungsfelder möchten Sie Projekte ansehen?  \n Wählen Sie selbst.'
+            'Aus welchem unserer Beratungsfelder möchten Sie Projekte ansehen? Wählen Sie selbst.'
           }
         />
 

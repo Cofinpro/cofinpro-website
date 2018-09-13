@@ -12,7 +12,10 @@ class NavigationBeratungsfelder extends React.Component {
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     const listItems = links.map((data, i) => (
-      <div key={data.path} className="col-sm text-lg-center filter-button">
+      <div
+        key={data.path}
+        className="col-sm text-lg-center filter-button d-flex justify-content-center align-items-center"
+      >
         <p className="text-size-14">
           <Link
             to={`${pathPrefix}/${urlPrefix}${data.path}`}
@@ -28,7 +31,7 @@ class NavigationBeratungsfelder extends React.Component {
       <div>
         <div className={'container filter ' + styleClass}>
           <div className="row">
-            <div className="col-12 col-md-10 col-lg-8">
+            <div className="col-12">
               <ContentfulMarkdownText text={description.toUpperCase()} />
             </div>
           </div>

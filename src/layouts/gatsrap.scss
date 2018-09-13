@@ -1101,8 +1101,6 @@ a:hover {
   margin-left: 20px !important;
 }
 
-
-
 .padding-10 {
   padding: 10px;
 }
@@ -1369,4 +1367,8 @@ svg image[href$='img_20.jpg'] {
 
 .not-visible {
   visibility: hidden;
+}
+
+.link-button > span.btn.btn-outline-primary {
+  padding-bottom: 3px;
 }

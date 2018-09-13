@@ -70,32 +70,27 @@ class NewsMedienUebersichtTemplate extends React.Component {
           </div>
         </div>
 
-        <div className="container margin-80-top margin-xs-40-top">
-          <div className="row">
-            <div className="col-12">
-              <NavigationBeratungsfelder
-                links={[
-                  {
-                    text: 'Alle Beratungsfelder',
-                    path: '/alle-beratungsfelder',
-                  },
-                  { text: 'Managementberatung', path: '/managementberatung' },
-                  { text: 'Fachberatung Kredit', path: '/fachberatung-kredit' },
-                  {
-                    text: 'Fachberatung Wertpapier',
-                    path: '/fachberatung-wertpapier',
-                  },
-                  { text: 'Technologieberatung', path: '/technologieberatung' },
-                  { text: 'Digitalisierung', path: '/digitalisierung' },
-                ]}
-                urlPrefix="news-medien"
-                description={
-                  'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren?  \n Wählen Sie selbst. '
-                }
-              />
-            </div>
-          </div>
-        </div>
+        <NavigationBeratungsfelder
+          links={[
+            {
+              text: 'Alle Beratungsfelder',
+              path: '/alle-beratungsfelder',
+            },
+            { text: 'Managementberatung', path: '/managementberatung' },
+            { text: 'Fachberatung Kredit', path: '/fachberatung-kredit' },
+            {
+              text: 'Fachberatung Wertpapier',
+              path: '/fachberatung-wertpapier',
+            },
+            { text: 'Technologieberatung', path: '/technologieberatung' },
+            { text: 'Digitalisierung', path: '/digitalisierung' },
+          ]}
+          urlPrefix="news-medien"
+          description={
+            'Aus welchem unserer Beratungsfelder möchten Sie Neuigkeiten erfahren? Wählen Sie selbst. '
+          }
+          styleClass={'margin-80-top margin-xs-40-top'}
+        />
 
         {input.veroeffentlichungen.all.length > 0 && (
           <div className="container margin-80-top">
