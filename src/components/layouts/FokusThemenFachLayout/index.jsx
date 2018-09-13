@@ -6,12 +6,12 @@ class FokusThemenFachLayout extends React.Component {
   render() {
     const pathPrefix = process.env_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    const { header, text, fokusthemen } = this.props
+    const { header, text, fokusthemen, containerStyle } = this.props
 
     return (
       <div>
         {fokusthemen.length > 0 && (
-          <div className="container">
+          <div className={'container ' + containerStyle}>
             <div className="row margin-60-top margin-xs-20-top">
               <div className="col-md-5">
                 <h3 className="h4">{text}</h3>
@@ -83,11 +83,11 @@ class FokusThemenFachLayout extends React.Component {
                       <div className="col-md-2" />
                       <div className="col-12 col-md-10">
                         <FokusthemaPreview
-                          url={fokusthemen[4].url}
-                          header={fokusthemen[4].uberschriftGanzOben}
-                          subheader={fokusthemen[4].unterueberschrift}
+                          url={fokusthemen[5].url}
+                          header={fokusthemen[5].uberschriftGanzOben}
+                          subheader={fokusthemen[5].unterueberschrift}
                           color={'--yellow-blue'}
-                          icon={fokusthemen[4].icon}
+                          icon={fokusthemen[5].icon}
                         />
                       </div>
                     </div>
@@ -98,11 +98,11 @@ class FokusThemenFachLayout extends React.Component {
                   <div className="row margin-xs-20-top">
                     <div className="col-md-10">
                       <FokusthemaPreview
-                        url={fokusthemen[5].url}
-                        header={fokusthemen[5].uberschriftGanzOben}
-                        subheader={fokusthemen[5].unterueberschrift}
+                        url={fokusthemen[4].url}
+                        header={fokusthemen[4].uberschriftGanzOben}
+                        subheader={fokusthemen[4].unterueberschrift}
                         color={'--grey-blue'}
-                        icon={fokusthemen[5].icon}
+                        icon={fokusthemen[4].icon}
                       />
                     </div>
                   </div>
