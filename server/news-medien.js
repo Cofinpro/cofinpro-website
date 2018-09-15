@@ -245,19 +245,19 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
         url: '/alle-beratungsfelder',
         input: dataAll,
         siteHeader:
-          'Im Cofinpro-Medienforum teilen wir unser geballtes Wissen: von Presseinformationen, über Fachpublikationen bis hin zu Studien.',
+          'Im Cofinpro-Medienforum teilen wir unser geballtes Wissen: von Presseinformationen über Fachpublikationen bis hin zu Studien.',
         professionalPublications:
-          'Unsere Berater sind gefragte Autoren. Wenn Sie sich einen Eindruck verschaffen wollen, was wir in der Fachpresse zu sagen haben, lesen Sie hier.',
-        buttonTextProfessionalPublications: 'Archiv Fachpublikationen',
+          'Unsere Berater sind gefragte Autoren. Wenn Sie sich einen Eindruck verschaffen wollen, was wir in der Fachpresse zu sagen haben, lesen Sie einfach hier nach.',
         pressReleases:
-          'Digitalisierung, Regulatorik, innovative Technologien? Und was bedeutet das für die Banken? Mit diesen Themen setzen wir uns in unseren Presseinformationen auseinander.',
+          'Digitalisierung, Regulatorik, innovative Technologien: Was bedeutet das für die Banken? Mit diesen Themen setzen wir uns in unseren Presseinformationen auseinander.',
         medien:
-          'Branchenspezifische Themen strukturiert aufbereitet? Dazu können Sie in unseren Studien, Thesenpapieren, Whitepapers und Lösungsskizzen schmökern.',
-        buttonTextPressRelease: 'Archiv Pressemitteilungen',
-        buttonTextStudien: 'Archiv Studien',
-        buttonTextThesen: 'Archiv Thesenpapiere',
-        buttonTextWhitePaper: 'Archiv Whitepapers',
-        buttonTextLösung: 'Archiv Lösungsskizzen',
+          'Branchenspezifische Themen, strukturiert aufbereitet: Das finden Sie in unseren Studien, Thesenpapieren, Whitepapers und Lösungsskizzen.',
+        buttonTextProfessionalPublications: 'Zum Fachpublikationen-Archiv',
+        buttonTextPressRelease: 'Zum Pressemitteilungen-Archiv',
+        buttonTextStudien: 'Zum Studien-Archiv',
+        buttonTextThesen: 'Zum Thesenpapier-Archiv',
+        buttonTextWhitePaper: 'Zum Whitepaper-Archiv',
+        buttonTextLösung: 'Zum Lösungsskizzen-Archiv',
         content: {
           buttonVeroeffentlichungenLink:
             '/news-medien/archiv/veroeffentlichungen/alle-beratungsfelder',
@@ -285,12 +285,12 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Im Medienforum finden Sie gesammelte Neuigkeiten aus der Managementberatung: von Fachartikeln über Pressemitteilungen bis hin zu Studien und Whitepapers.',
         professionalPublications:
           'Unsere Managementberater schreiben regelmäßig für Fachmedien über Trendthemen und branchenspezifische Herausforderungen. Lesen Sie nach, was unsere Experten publizieren.',
-        buttonTextProfessionalPublications:
-          'Archiv Fachpublikationen Managementberatung',
         pressReleases:
           'Was bewegt die Banken und Kapitalverwaltungsgesellschaften? Was wir wissen, teilen wir natürlich gerne in unseren Pressemeldungen.',
         medien:
           'Unsere Themen in der Managementberatung sind die Trends, die die Zukunft bewegen. Ergebnisse und Erkenntnisse halten wir regelmäßig in Fachformaten für Sie fest, die Sie hier herunterladen können.',
+        buttonTextProfessionalPublications:
+          'Archiv Fachpublikationen Managementberatung',
         buttonTextPressRelease: 'Archiv Pressemitteilungen Managementberatung',
         buttonTextStudien: 'Archiv Studien Managementberatung',
         buttonTextThesen: 'Archiv Thesenpapiere Managementberatung',
@@ -325,12 +325,12 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
           'Hier finden Sie alle Neuigkeiten aus unserem Cofinpro-Medienforum rund um das Kreditgeschäft: von Fachpublikationen über Pressemeldungen bis hin zu Studien, Whitepapers und Lösungsskizzen.',
         professionalPublications:
           'Unsere Fachberater schreiben regelmäßig für Fachmedien über Kreditthemen. Lesen Sie nach, mit welchen Fragestellungen sich unsere Experten beschäftigen.',
-        buttonTextProfessionalPublications:
-          'Alle Publikationen Fachberatung Kredit ',
         pressReleases:
           'Was tut sich im Kreditgeschäft? Hier geht es zur Übersicht unserer Pressemeldungen zum Schwerpunkt Kredit.',
         medien:
           'Was wir in der Fachberatung Kredit evaluieren, halten wir in Fachformaten wie beispielsweise Lösungsskizzen oder Whitepapers fest. Hier können Sie sie downloaden.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Fachberatung Kredit ',
         buttonTextPressRelease: 'Archiv Pressemitteilungen Kredit',
         buttonTextStudien: 'Archiv Studien Kredit',
         buttonTextThesen: 'Archiv Thesenpapiere Kredit',
@@ -362,15 +362,15 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
         url: 'fachberatung-wertpapier',
         input: dataFachWertpapierBeratung,
         siteHeader:
-          'Hier im Medienforum finden Sie alles Wissenswerte im Kontext Wertpapier: von Fachartikeln über Pressemeldungen bis zu Whitepapers und themenbezogenen Studien.',
+          'Hier im Medienforum finden Sie alles Wissenswerte im Kontext von Wertpapier: von Fachartikeln über Pressemeldungen bis zu Whitepapers und themenbezogenen Studien.',
         professionalPublications:
           'Lesen Sie nach, über welche Themen aus dem Wertpapierbereich unsere Experten für Fachmedien schreiben.',
-        buttonTextProfessionalPublications:
-          'Alle Publikationen Fachberatung Wertpapier',
         pressReleases:
           'Mit welchen Wertpapierthemen wir uns auseinandersetzen, teilen wir gerne öffentlich. Hier finden Sie eine Übersicht über unsere Pressemeldungen in diesem Schwerpunkt.',
         medien:
           'Ergebnisse und Erkenntnisse rund um Wertpapierprozesse halten wir in ausgesuchten Fachformaten für Sie fest, die Sie hier downloaden können.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Fachberatung Wertpapier',
         buttonTextPressRelease: 'Archiv Pressemitteilungen Wertpapier',
         buttonTextStudien: 'Archiv Studien Wertpapier',
         buttonTextThesen: 'Archiv Thesenpapiere Wertpapier',
@@ -403,15 +403,15 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
         url: 'technologieberatung',
         input: dataTechnologieBeratung,
         siteHeader:
-          'Hier finden Sie jede Menge Wissenswertes im Kontext Technologieberatung: Neuigkeiten von Fachartikeln über Lösungsskizzen bis zu Whitepapers liegen im Medienforum bereit.',
+          'Hier finden Sie jede Menge Wissenswertes im Kontext von Technologieberatung: Neuigkeiten von Fachartikeln über Lösungsskizzen bis zu Whitepapers liegen im Medienforum bereit.',
         professionalPublications:
           'Unsere Technologieberater schreiben regelmäßig für Fachmedien. Lesen Sie nach, was unsere Experten bewegt.',
-        buttonTextProfessionalPublications:
-          'Alle Publikationen Technologieberatung',
         pressReleases:
           'Hier finden Sie unsere Meldungen rund um Technologieberatung.',
         medien:
           'Welche Erkenntnisse und Erfahrungen haben unsere Technologieberater gewonnen? In diesen Fachformaten zum Download halten wir es für Sie fest.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Technologieberatung',
         buttonTextPressRelease: 'Archiv Pressemitteilungen Technologieberatung',
         buttonTextStudien: 'Archiv Studien Technologieberatung',
         buttonTextThesen: 'Archiv Thesenpapiere Technologieberatung ',
@@ -443,15 +443,15 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
         url: 'digitalisierung',
         input: dataDigitalisierungBeratung,
         siteHeader:
-          'Hier teilen wir jede Menge Digitalisierungsneuigkeiten aus unserem Medienforum mit Ihnen: Fachpublikationen, Pressemitteilungen oder auch Studien und Thesenpapiere können Sie hier digital erleben.',
+          'Hier teilen wir jede Menge Digitalisierungsneuigkeiten aus unserem Medienforum mit Ihnen: Fachpublikationen, Pressemitteilungen oder auch Studien und Thesenpapiere können Sie hier digital erhalten.',
         professionalPublications:
           'Was unsere Berater in Fachbeiträgen zu Fragestellungen der Digitalisierung zu sagen haben? Lesen Sie einfach nach.',
-        buttonTextProfessionalPublications:
-          'Alle Publikationen Digitalisierung',
         pressReleases:
           'Was wir der Presse mitteilen? Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
         medien:
-          'Ob Studien, Thesenpapiere, Whitepapers oder Videos: diverse Fachformate zum Thema Digitalisierung können Sie hier kennenlernen.',
+          'Ob Studien, Thesenpapiere, Whitepapers oder Videos: Diverse Fachformate zum Thema Digitalisierung können Sie hier kennenlernen.',
+        buttonTextProfessionalPublications:
+          'Alle Publikationen Digitalisierung',
         buttonTextPressRelease: 'Archiv Pressemitteilungen Digitalisierung',
         buttonTextStudien: 'Archiv Studien Digitalisierung',
         buttonTextThesen: 'Archiv Thesenpapiere Digitalisierung ',

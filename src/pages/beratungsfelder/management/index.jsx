@@ -106,9 +106,9 @@ class BeratungsfelderManagementTemplate extends React.Component {
               <h2 className="h2">Die Zukunft wird gut </h2>
               <p>
                 Wir unterstützen unsere Kunden in ihrem Ziel,
-                Digitalisierungsstrategien zu entwickeln, treiben als Begleiter
-                bei der Digitalen Transformation die Organisationsentwicklung
-                voran.
+                Digitalisierungsstrategien zu entwickeln, und treiben als
+                Begleiter bei der Digitalen Transformation die
+                Organisationsentwicklung voran.
               </p>
             </div>
             <div className="col-md-6">
@@ -120,9 +120,9 @@ class BeratungsfelderManagementTemplate extends React.Component {
           </div>
         </div>
         <FokusThemenSmallLayout
-          header={'Wettbewerb nutzen, um im Wettbewerb zu bleiben'}
+          header={'Im Wettbewerb schön oben bleiben'}
           text={
-            'Wir führen Auswahlverfahren durch und nehmen mit objektiven, nachhaltigen Entscheidungsgrundlagen gut und gerne in die Hand, die Effizienz unserer Kunden entscheidend zu steigern.'
+            'Wir führen Auswahlverfahren durch und nehmen es gut und gerne in die Hand, mit objektiven, nachhaltigen Entscheidungsgrundlagen die Effizienz unserer Kunden entscheidend zu steigern.'
           }
           fokusthemen={fokusthemen}
         />
@@ -134,7 +134,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 description:
                   'Welche Projekte haben wir im Kontext unserer Fokusthemen schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
                 button: {
-                  text: 'WEITERE REFERENZEN',
+                  text: 'ZU DEN REFERENZEN',
                   path: '/projekte/managementberatung',
                 },
               },
@@ -143,7 +143,7 @@ class BeratungsfelderManagementTemplate extends React.Component {
                 description:
                   'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema finden Sie hier.',
                 button: {
-                  text: 'WEITERE PUBLIKATIONEN',
+                  text: 'ZU DEN PUBLIKATIONEN',
                   path: '/news-medien/managementberatung',
                 },
               },

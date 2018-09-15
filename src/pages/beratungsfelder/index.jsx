@@ -64,8 +64,7 @@ class BeratungsfelderStartseite extends React.Component {
                 Digitalisierungsstrategien, bereiten den Weg zur agilen
                 Organisation, begleiten Auswahlverfahren, übernehmen das
                 Programmmanagement und verantworten Vorhaben zur
-                Effizienzsteigerung bei führenden Finanzinstituten. Und auch
-                Zukunftsthemen gehören dazu.
+                Effizienzsteigerung bei führenden Finanzinstituten.
               </p>
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"

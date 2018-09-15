@@ -156,7 +156,7 @@ class BeratungsfelderKredit extends React.Component {
               <p>
                 In den Themen Vertrieb, Antrags- und Bestandsprozesse, Reporting
                 und Meldewesen bringen wir unsere Expertise in den
-                Produktfeldern Konsumentenkredit, Immobilienfinanzierung und
+                Produktfeldern Konsumentenkredit, Immobilienfinanzierung sowie
                 Gewerbe- und Firmenkundenkredite ein, aber auch jede Menge
                 Einblicke in aktuelle Regulierungen. Und natürlich sorgen wir
                 auf Wunsch dafür, dass unsere Empfehlungen auch in die Praxis

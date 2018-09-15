@@ -41,7 +41,7 @@ class FokusthemenStartseite extends React.Component {
               <PageIntroText
                 content={{
                   text:
-                    'Hier finden Sie alle unsere aktuellen Fokusthemen auf einen Blick. Entdecken sie unsere Themenvielfalt.',
+                    'Hier finden Sie unsere aktuellen Fokusthemen auf einen Blick. So viel vorweg: Die Vielfalt ist groß.',
                 }}
               />
             </div>

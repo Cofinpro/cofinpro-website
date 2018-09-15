@@ -172,22 +172,36 @@ class Startseite extends React.Component {
                 Einsatz, und wir übergeben ausgedientes Equipment dem
                 Recycling-Kreislauf. Es versteht sich, dass unsere Fahrzeuge den
                 aktuellsten Umweltschutzrichtlinien entsprechen. Und sowieso
-                rauschen immer mehr von uns mit Elektrorollern durch den
+                rauschen immer mehr von uns auf Elektrorollern durch den
                 Großstadtverkehr. Für jeden gebuchten Flug zahlen wir außerdem
-                einen Ausgleich an die Initiative »Atmosfair«.
+                einen Ausgleich an die Initiative{' '}
+                <a
+                  href="https://www.charta-der-vielfalt.de/unterzeichnen/unterzeichner-innen/zeige/cofinpro-ag/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  »Atmosfair«
+                </a>.
               </p>
               <h3 className="h5 margin-30-top">Soziale Verantwortung</h3>
               <p>
                 Wir schätzen jedes Teammitglied, unabhängig von Geschlecht,
                 Ethnie, Alter, körperlicher Einschränkung, Religion oder
-                Lebensstil. Um das offiziell zu machen, haben wir die »Charta
-                der Vielfalt« unterzeichnet. Damit gehören wir zum größten
-                deutschen Netzwerk für Diversity Management. Als Mitglied der
-                Initiative »Fair Company« hält sich Cofinpro an die ethischen
-                Grundregeln der Arbeitswelt. Wir lehnen die Ausbeutung von
-                Berufseinsteigern ab, genauso wie jede Form von Korruption. Seit
-                unserer Gründung wurden wir übrigens immer wieder als »Great
-                Place to Work« ausgezeichnet.
+                Lebensstil. Um das offiziell zu machen, haben wir die{' '}
+                <a
+                  href="https://www.atmosfair.de"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  »Charta der Vielfalt«
+                </a>{' '}
+                unterzeichnet. Damit gehören wir zum größten deutschen Netzwerk
+                für Diversity Management. Als Mitglied der Initiative »Fair
+                Company« hält sich Cofinpro an die ethischen Grundregeln der
+                Arbeitswelt. Wir lehnen die Ausbeutung von Berufseinsteigern ab,
+                genauso wie jede Form von Korruption. Seit unserer Gründung
+                wurden wir übrigens immer wieder als »Great Place to Work«
+                ausgezeichnet.
               </p>
             </div>
           </div>
