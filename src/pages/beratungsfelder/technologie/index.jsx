@@ -205,7 +205,7 @@ class BeratungsfelderTechnologie extends React.Component {
                       >
                         Modernize:
                       </Link>
-                    </b>
+                    </b>{' '}
                     Wir analysieren vorhandene Anwendungen und Architekturen
                     technisch, erarbeiten Ansätze zur Modernisierung und
                     bewerten sie im engen Austausch. Beim Konzeptionieren der

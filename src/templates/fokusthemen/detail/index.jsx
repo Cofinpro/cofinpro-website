@@ -299,7 +299,7 @@ class FokusthemenDetailTeamplate extends React.Component {
               right: {
                 header: 'Referenzprojekte',
                 description:
-                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl ' +
+                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl zum Thema ' +
                   graphQlResult.uberschriftGanzOben +
                   '.',
                 button: {

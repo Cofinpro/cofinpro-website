@@ -189,7 +189,7 @@ class Startseite extends React.Component {
               />
               <LinkButton
                 styleSpan="w-100 w-md-unset margin-10-top"
-                text="MEHR ÜBER COFINPRO"
+                text="MEHR ÜBER UNS"
                 path="/cofinpro"
               />
             </div>

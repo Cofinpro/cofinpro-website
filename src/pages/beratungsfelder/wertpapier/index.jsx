@@ -75,7 +75,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
                   <PageIntroText
                     content={{
                       text:
-                        'Langjährige Erfahrung im Wertpapiergeschäft, tiefes methodisches Wissen und hohe Projektmanagementkompetenz macht uns zu führenden Beratern.',
+                        'Langjährige Erfahrung im Wertpapiergeschäft, tiefes methodisches Wissen und hohe Projektmanagement-Kompetenz macht uns zu führenden Beratern.',
                     }}
                     style={{ container: 'margin-40-top margin-xs-0-top' }}
                   />
@@ -158,14 +158,17 @@ class BeratungsfelderWertpapierTemplate extends React.Component {
             <div className="col-md-6">
               <h2 className="h2">Alles greift ineinander</h2>
               <p className="text-left margin-20-top">
-                Das Wertpapiergeschäft unserer Kunden wird sowohl in Deutschland
-                als auch global von immer stärkerer Regulierung bestimmt, von
-                anhaltendem Niedrigzinsumfeld und hohem Kostensenkungsdruck.
-                Anforderungen wie MiFID II / MiFIR, PRIIPs und das
-                Finanzmarktnovellierungsgesetz, die Harmonisierung der
-                europäischen Wertpapierabwicklung und neue technologische Trends
-                wirken sich auf die Themenfelder unserer Kunden entlang des
-                ganzen Wertpapierprozesses aus.
+                Was bewegt Cofinpro im Wertpapiergeschäft? Hier geben wir einen
+                Überblick. Mit unseren Themen in diesem Bereich fokussieren wir
+                uns auf die Wertpapierprozesse von Banken und
+                Kapitalverwaltungsgesellschaften. Der Markt hat sich in den
+                vergangenen Jahren stark verändert. In Deutschland und weltweit
+                greifen immer stärkere Regulierungsmechanismen, Stichworte wie
+                MiFID II/ MiFIR, PRIIPs und das Finanzmarktnovellierungsgesetz,
+                die Harmonisierung der europäischen Wertpapierabwicklung sowie
+                technologische Neuerungen und Trendthemen machen das Bestehen im
+                Wettbewerb schwieriger denn je. Hier setzen wir mit einem
+                ganzheitlichen Beratungsprozess für unsere Kunden an.
               </p>
               <p>
                 Es ist also nur konsequent, unser Beratungsangebot ganzheitlich

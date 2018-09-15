@@ -303,7 +303,7 @@ class FokusthemenLayout extends React.Component {
               <div className="col-12 col-md-4 order-2 order-md-1">
                 <LinkButton
                   styleSpan="w-100 w-md-unset"
-                  text="FOKUSTHEMEN ÜBERSICHT"
+                  text="ZUR FOKUSTHEMEN-ÜBERSICHT"
                   path="/fokusthemen/managementberatung"
                 />
               </div>
