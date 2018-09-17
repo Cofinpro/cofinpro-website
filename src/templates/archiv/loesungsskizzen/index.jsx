@@ -74,7 +74,7 @@ class LoesungsskizzenArchivTemplate extends React.Component {
         <div className="container margin-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6">
-              <h2 className="h2">{'LOESUNGSSKIZZEN'}</h2>
+              <h2 className="h2">{'LÖSUNGSSKIZZEN'}</h2>
               <p>{sectionDescription}</p>
             </div>
             <div className="col-12 col-md-6" />
@@ -108,7 +108,7 @@ class LoesungsskizzenArchivTemplate extends React.Component {
               <LayoutDownloads
                 content={{
                   id: 'LOESUNGSSKIZZEN',
-                  header: 'LOESUNGSSKIZZEN',
+                  header: 'LÖSUNGSSKIZZEN',
                   images: i % 2 === 0 ? firstSetOfImages : secondSetOfImages,
                   description: sectionDescription,
                   downloads: input[key],
