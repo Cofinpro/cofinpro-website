@@ -209,7 +209,7 @@ class ThemaDigitalisierung extends React.Component {
             right: {
               header: 'Referenzprojekte',
               description:
-                'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl zum Thema Digitale Transformation.',
+                'Welche Projekte haben wir im Kontext Digitalisierung schon gemeistert und welches Kundenziel stand dahinter? Welche Schritte waren notwendig, welchen Mehrwert konnten wir leisten und welchen Nutzen haben wir bewirkt? In diesem Überblick erfahren Sie es.',
               button: {
                 text: 'ZU DEN REFERENZEN',
                 path: '/projekte/digitalisierung',
@@ -218,7 +218,7 @@ class ThemaDigitalisierung extends React.Component {
             left: {
               header: 'Medien',
               description:
-                'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema Digitale Transformation.',
+                'Wissen soll nicht ungeteilt bleiben. Unsere Einschätzungen zu spannenden Fragen für Fachmedien aufzuschreiben oder als Pressemeldungen kundzutun, das lassen wir uns nicht nehmen. Sämtliche Veröffentlichungen zum Thema Digitalisierung finden Sie hier.',
               button: {
                 text: 'ZU DEN PUBLIKATIONEN',
                 path: '/news-medien/digitalisierung',
