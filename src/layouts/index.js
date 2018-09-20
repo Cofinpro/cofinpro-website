@@ -148,10 +148,10 @@ class Template extends React.Component {
 
     const message = (
       <span>
-        Cofinpro.de benutzt Cookies, um seinen Besuchern das beste
-        Webseiten-Erlebnis zu ermöglichen. <br /> Weiterführende Informationen
-        erhalten Sie in der{' '}
-        <a href="https://cofinpro.de/datenschutz/">Datenschutzerklärung</a>
+        Cofinpro.de benutzt Cookies, um seinen Besuchern das beste Webseiten -
+        Erlebnis zu ermöglichen. <br /> Weiterführende Informationen erhalten
+        Sie in der{' '}
+        <a href="https://cofinpro.de/datenschutz/"> Datenschutzerklärung </a>{' '}
       </span>
     )
 
@@ -162,27 +162,32 @@ class Template extends React.Component {
             location={location}
             locationUpdate={this.state.locationUpdate}
             {...this.props}
-          />
+          />{' '}
           <NavigationCareer
             locationUpdate={this.state.locationUpdate}
             {...this.props}
-          />
+          />{' '}
         </header>{' '}
-        <main>{children({ ...this.props })}</main>
+        <main>
+          {' '}
+          {children({
+            ...this.props,
+          })}{' '}
+        </main>{' '}
         <SiteFooter
           locationUpdate={this.state.locationUpdate}
           title={siteMetadata.title}
           {...this.props}
-        />
-        <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />
+        />{' '}
+        <ChatBot locationUpdate={this.state.locationUpdate} {...this.props} />{' '}
         {/*<CookieBanner
-          className="cofinpro-cookie-banner"
-          styles={styles}
-          message={message}
-          buttonMessage="Ich habe verstanden!"
-          dismissOnScroll={false}
-          cookie="cofinpro-user-has-accepted-cookies"
-        />*/}
+                  className="cofinpro-cookie-banner"
+                  styles={styles}
+                  message={message}
+                  buttonMessage="Ich habe verstanden!"
+                  dismissOnScroll={false}
+                  cookie="cofinpro-user-has-accepted-cookies"
+                />*/}{' '}
       </div>
     )
   }
