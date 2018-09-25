@@ -191,51 +191,44 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       `./src/templates/content-max/index.jsx`
     )
 
-    for (
-      let i = 0;
-      i < result.data.allContentfulPressemeldung.edges.length;
-      ++i
-    ) {
-      let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
+    createPressemeldungPages(result, createPage, templatePressemeldungSite)
 
-      let pathToBigMiddleImage =
-        pressemeldung.groesBildMitte !== undefined &&
-        pressemeldung.groesBildMitte !== null
-          ? '/' + pressemeldung.groesBildMitte.id + '/'
-          : '/unkown/'
-      let pathToParagraphOneImage =
-        pressemeldung.bildZuParagraph1 !== undefined &&
-        pressemeldung.bildZuParagraph1 !== null
-          ? '/' + pressemeldung.bildZuParagraph1.id + '/'
-          : '/unkown/'
-      let pathToParagraphTwoImage =
-        pressemeldung.bildZuParagraph2 !== undefined &&
-        pressemeldung.bildZuParagraph2 !== null
-          ? '/' + pressemeldung.bildZuParagraph2.id + '/'
-          : '/unkown/'
-      let pathToParagraphThreeImage =
-        pressemeldung.bildZuParagraph3 !== undefined &&
-        pressemeldung.bildZuParagraph3 !== null
-          ? '/' + pressemeldung.bildZuParagraph3.id + '/'
-          : '/unkown/'
-
-      createPage({
-        path: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
-        component: slash(templatePressemeldungSite),
-        context: {
-          id: pressemeldung.id,
-          bigMiddleImageId: pathToBigMiddleImage,
-          paragraphOneImageId: pathToParagraphOneImage,
-          paragraphTwoImageId: pathToParagraphTwoImage,
-          paragraphThreeImageId: pathToParagraphThreeImage,
-          content: pressemeldung,
-        },
-      })
-
-      console.log(
-        `created page /pressemitteilung/${pressemeldung.urlDerSeite}.`
-      )
+    var date_sort_desc = function(date1, date2) {
+      // This is a comparison function that will result in dates being sorted in
+      // DESCENDING order.
+      date1 = new Date(date1)
+      date2 = new Date(date2)
+      if (date1 > date2) return -1
+      if (date1 < date2) return 1
+      return 0
     }
+
+    ;['loesungsskizzen', 'studien', 'thesenpapiere', 'whitepapers'].forEach(
+      topic => {
+        console.log(topic)
+        dataAll[topic].current = dataAll[topic].current.sort((x, y) => {
+          return date_sort_desc(
+            x.datumDerVerffentlichung,
+            y.datumDerVerffentlichung
+          )
+        })
+      }
+    )
+
+    dataAll.veroeffentlichungen.all = dataAll.veroeffentlichungen.all.sort(
+      (x, y) => {
+        return date_sort_desc(
+          x.datumDerVerffentlichung,
+          y.datumDerVerffentlichung
+        )
+      }
+    )
+
+    dataAll.pressemeldungen.current = dataAll.pressemeldungen.current.sort(
+      (x, y) => {
+        return date_sort_desc(x.verffentlichungsdatum, y.verffentlichungsdatum)
+      }
+    )
 
     createPage({
       path: `/news-medien/alle-beratungsfelder`,
@@ -823,6 +816,53 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
 
     callback(null)
   })
+}
+
+function createPressemeldungPages(
+  result,
+  createPage,
+  templatePressemeldungSite
+) {
+  for (
+    let i = 0;
+    i < result.data.allContentfulPressemeldung.edges.length;
+    ++i
+  ) {
+    let pressemeldung = result.data.allContentfulPressemeldung.edges[i].node
+    let pathToBigMiddleImage =
+      pressemeldung.groesBildMitte !== undefined &&
+      pressemeldung.groesBildMitte !== null
+        ? '/' + pressemeldung.groesBildMitte.id + '/'
+        : '/unkown/'
+    let pathToParagraphOneImage =
+      pressemeldung.bildZuParagraph1 !== undefined &&
+      pressemeldung.bildZuParagraph1 !== null
+        ? '/' + pressemeldung.bildZuParagraph1.id + '/'
+        : '/unkown/'
+    let pathToParagraphTwoImage =
+      pressemeldung.bildZuParagraph2 !== undefined &&
+      pressemeldung.bildZuParagraph2 !== null
+        ? '/' + pressemeldung.bildZuParagraph2.id + '/'
+        : '/unkown/'
+    let pathToParagraphThreeImage =
+      pressemeldung.bildZuParagraph3 !== undefined &&
+      pressemeldung.bildZuParagraph3 !== null
+        ? '/' + pressemeldung.bildZuParagraph3.id + '/'
+        : '/unkown/'
+    createPage({
+      path: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
+      component: slash(templatePressemeldungSite),
+      context: {
+        id: pressemeldung.id,
+        bigMiddleImageId: pathToBigMiddleImage,
+        paragraphOneImageId: pathToParagraphOneImage,
+        paragraphTwoImageId: pathToParagraphTwoImage,
+        paragraphThreeImageId: pathToParagraphThreeImage,
+        content: pressemeldung,
+      },
+    })
+    console.log(`created page /pressemitteilung/${pressemeldung.urlDerSeite}.`)
+  }
 }
 
 function extractAllDownloadsToBucket(_downloads, _bucket, _identifier) {
