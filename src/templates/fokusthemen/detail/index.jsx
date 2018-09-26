@@ -68,6 +68,18 @@ class FokusthemenDetailTeamplate extends React.Component {
 
     let medien = []
 
+    if (graphQlResult.verlinkteDownloads !== null) {
+      for (let i = 0; i < graphQlResult.verlinkteDownloads.length; ++i) {
+        let download = graphQlResult.verlinkteDownloads[i]
+        if (download !== null && download.datei !== null) {
+          medien.push({
+            hrefLink: `/pdf/contentful/${download.datei.id}.pdf`,
+            header: download.beschriftungDesDownloads,
+          })
+        }
+      }
+    }
+
     if (graphQlResult.verlinkteVeroeffentlichungen !== null) {
       for (
         let i = 0;
@@ -104,18 +116,6 @@ class FokusthemenDetailTeamplate extends React.Component {
             hrefLink: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
             header: pressemeldung.ueberschrift,
             subHeader: pressemeldung.unteruebrschrift,
-          })
-        }
-      }
-    }
-
-    if (graphQlResult.verlinkteDownloads !== null) {
-      for (let i = 0; i < graphQlResult.verlinkteDownloads.length; ++i) {
-        let download = graphQlResult.verlinkteDownloads[i]
-        if (download !== null && download.datei !== null) {
-          medien.push({
-            hrefLink: `/pdf/contentful/${download.datei.id}.pdf`,
-            header: download.beschriftungDesDownloads,
           })
         }
       }
