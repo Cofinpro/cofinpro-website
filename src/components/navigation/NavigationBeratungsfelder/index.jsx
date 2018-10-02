@@ -16,7 +16,7 @@ class NavigationBeratungsfelder extends React.Component {
         key={data.path}
         className="col-sm text-lg-center filter-button d-flex justify-content-center align-items-center"
       >
-        <p className="text-size-14">
+        <p className="beratungsfelder-text text-size-14">
           <Link
             to={`${pathPrefix}/${urlPrefix}${data.path}`}
             activeClassName="active"
