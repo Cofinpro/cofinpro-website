@@ -11,7 +11,7 @@ class PlaceholderImage extends React.Component {
       <div>
         <img
           src={
-            'http://via.placeholder.com/' + source.width + 'x' + source.height
+            'https://via.placeholder.com/' + source.width + 'x' + source.height
           }
           className={'img-fluid ' + styleClasses}
           alt="Responsive image"
