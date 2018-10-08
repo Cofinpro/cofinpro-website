@@ -147,10 +147,13 @@ class ThemaDigitalisierung extends React.Component {
         <div className="container margin-120-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-6 order-2 order-md-1 margin-xs-20-top">
-              <h2 className="h2">Digitale Transformation bei Cofinpro</h2>
+              <h2 className="h2">So geht Digitale Transformation</h2>
               <p>
-                Was bedeutet die Digitale Transformation für Finanzdiensleister?
-                Die richtigen Weichen zu stellen.
+                Insiderwissen gefällig? Wir haben die erste B2B-Studien zur
+                Digitalen Transformation in der Finanzindustrie veröffentlicht,
+                und die Ergebnisse sind, gelinde gesagt, überraschend. Was genau
+                kam heraus, wo lauern Gefahren und wo funkeln Chancen? Unser
+                Vorstand Gerald Prior erläutert, bewertet und ordnet ein.
               </p>
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
