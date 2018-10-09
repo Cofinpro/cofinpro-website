@@ -25,6 +25,7 @@
     "gatsby-plugin-polyfill-io": "^1.0.4",
     "gatsby-plugin-preact": "1.0.14",
     "gatsby-plugin-react-helmet": "2.0.11",
+    "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sass": "1.0.26",
     "gatsby-plugin-sharp": "^1.6.48",
     "gatsby-plugin-sitemap": "1.2.7",

@@ -163,9 +163,9 @@ class StellenanzeigeTemplate extends React.Component {
                   oder karriere@cofinpro.de.
                 </p>
                 <p className="p-small">
-                  Bei Fragen zu deiner Bewerbung hat Fabienne Daum (Tel. +49 (0)
-                  69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot ein
-                  offenes Fenster für dich.
+                  Bei Fragen zu deiner Bewerbung hat unser Recruitingteam (Tel.
+                  +49 (0) 69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot
+                  ein offenes Fenster für dich.
                 </p>
               </div>
               <div className="w-75 d-none d-md-block d-lg-none mx-auto padding-sm-bottom stellenanzeige-call-to-action">
@@ -181,9 +181,9 @@ class StellenanzeigeTemplate extends React.Component {
                   oder karriere@cofinpro.de.
                 </p>
                 <p className="p-small">
-                  Bei Fragen zu deiner Bewerbung hat Fabienne Daum (Tel. +49 (0)
-                  69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot ein
-                  offenes Fenster für dich.
+                  Bei Fragen zu deiner Bewerbung hat unser Recruitingteam (Tel.
+                  +49 (0) 69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot
+                  ein offenes Fenster für dich.
                 </p>
               </div>
               <div className="w-100 d-block d-md-none mx-auto padding-sm-bottom">
@@ -199,9 +199,9 @@ class StellenanzeigeTemplate extends React.Component {
                   oder karriere@cofinpro.de.
                 </p>
                 <p className="p-small">
-                  Bei Fragen zu deiner Bewerbung hat Fabienne Daum (Tel. +49 (0)
-                  69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot ein
-                  offenes Fenster für dich.
+                  Bei Fragen zu deiner Bewerbung hat unser Recruitingteam (Tel.
+                  +49 (0) 69 / 2 99 20 87 60) ein offenes Ohr und unser Chatbot
+                  ein offenes Fenster für dich.
                 </p>
               </div>
               <ExternalLinkButton

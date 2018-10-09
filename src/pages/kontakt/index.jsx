@@ -84,7 +84,7 @@ class Kontakt extends React.Component {
               <h1 className="h3">Kontakt für Bewerber</h1>
               <p>
                 Cofinpro AG<br />
-                Fabienne Daum<br />
+                Recruiting<br />
                 60329 Frankfurt am Main<br />
                 +49 (0) 69 - 299 20 87 60<br />
                 <a href="mailto:karriere@cofinpro.de">karriere@cofinpro.de</a>

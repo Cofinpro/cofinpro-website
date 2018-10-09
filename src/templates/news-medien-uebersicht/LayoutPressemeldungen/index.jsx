@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 import LinkButton from '../../../components/buttons/LinkButton'
 import ToggleWithButton from '../../../components/buttons/ToggleWithButton'
@@ -13,35 +12,28 @@ import {
   SOURCE_TYP_SHARP,
 } from '../../../components/images/ImageWrapper'
 
-class LayoutPressemeldungen extends React.Component {
-  createDataStructureForLinkRow(_input) {
-    let result = []
+const DATE_OPTIONS = {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+}
 
-    for (let i = 0; i < _input.length; ++i) {
-      const DATE_OPTIONS = {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-      }
-      result.push({
-        to: '/pressemitteilung/' + _input[i].urlDerSeite,
-        nameTeil1: _input[i].ueberschrift,
-        nameTeil2: _input[i].unteruebrschrift,
-        datum: new Date(_input[i].verffentlichungsdatum).toLocaleDateString(
+class LayoutPressemeldungen extends React.Component {
+  createDataStructureForLinkRow(input) {
+    return input.map(x => {
+      return {
+        to: '/pressemitteilung/' + x.urlDerSeite,
+        nameTeil1: x.ueberschrift,
+        nameTeil2: x.unteruebrschrift,
+        datum: new Date(x.verffentlichungsdatum).toLocaleDateString(
           'de-DE',
           DATE_OPTIONS
         ),
-      })
-    }
-    return result
+      }
+    })
   }
 
   createDataForPreviewImage(_input) {
-    const DATE_OPTIONS = {
-      year: 'numeric',
-      month: '2-digit',
-      day: '2-digit',
-    }
     return {
       to: '/pressemitteilung/' + _input.urlDerSeite,
       header: _input.ueberschrift,
