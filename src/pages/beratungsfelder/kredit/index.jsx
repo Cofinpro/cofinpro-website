@@ -149,8 +149,8 @@ class BeratungsfelderKredit extends React.Component {
                 langjährige Praxiserfahrung mit wirksamen Beratungsmethoden und
                 technischem Know-how. Es ist diese Kompetenzbündelung, mit der
                 wir die zu Ihnen passenden Konzepte, effiziente Prozesse und
-                agile IT-Lösungen entwickeln. So lassen sich Kosten senken, und
-                Sie können auf die Regularien und Marktanforderungen flexibel
+                agile Lösungen entwickeln. So lassen sich Kosten senken, und Sie
+                können auf die Regularien und Marktanforderungen flexibel
                 reagieren.
               </p>
               <p>

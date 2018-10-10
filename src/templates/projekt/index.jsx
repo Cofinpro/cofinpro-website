@@ -7,7 +7,7 @@ import HtmlHeader from '../../components/HtmlHeader'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_SHARP,
+  SOURCE_TYP_BOOTSTRAP,
 } from '../../components/images/ImageWrapper'
 
 class Projekt extends React.Component {
@@ -15,12 +15,6 @@ class Projekt extends React.Component {
     const graphQlResult = this.props.data.contentfulProjekt
 
     var mainImage = this.props.pathContext.bigImage
-
-    //var allStockImages = this.props.pathContext.allImages
-    //var indexOfimage = this.props.pathContext.indexOfImage
-
-    const pathPrefix =
-      process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
     let seoTitle = 'Projekt: ' + graphQlResult.ueberschrift
 
@@ -59,7 +53,10 @@ class Projekt extends React.Component {
         <div className="container margin-60-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 offset-md-2">
-              <ImageWrapper sourceType={SOURCE_TYP_SHARP} source={mainImage} />
+              <ImageWrapper
+                sourceType={SOURCE_TYP_BOOTSTRAP}
+                source={mainImage}
+              />
             </div>
           </div>
         </div>
