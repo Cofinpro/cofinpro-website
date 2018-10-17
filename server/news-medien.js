@@ -202,7 +202,6 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       if (date1 < date2) return 1
       return 0
     }
-
     ;['loesungsskizzen', 'studien', 'thesenpapiere', 'whitepapers'].forEach(
       topic => {
         console.log(topic)

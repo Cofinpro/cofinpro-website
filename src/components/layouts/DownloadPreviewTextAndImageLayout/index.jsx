@@ -24,6 +24,7 @@ class DownloadPreviewTextAndImageLayout extends React.Component {
                 <ImageWrapper
                   sourceType={SOURCE_TYP_CONTENTFUL}
                   source={downloads[0].image}
+                  styleClasses="download-image"
                 />
               </div>
               <div className="col-12 col-md-1 col-lg-3" />
@@ -32,6 +33,7 @@ class DownloadPreviewTextAndImageLayout extends React.Component {
                   <ImageWrapper
                     sourceType={SOURCE_TYP_CONTENTFUL}
                     source={downloads[1].image}
+                    styleClasses="download-image"
                   />
                 )}
               </div>
