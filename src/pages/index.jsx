@@ -138,6 +138,12 @@ class Startseite extends React.Component {
       )
     }
 
+    function medien_date_sort(a, b) {
+      return new Date(b.date).getTime() - new Date(a.date).getTime()
+    }
+
+    medien.sort(medien_date_sort)
+
     let seoTitle =
       'Cofinpro - Die Experten für Management-, Fach- und Technologieberatung'
     let seoDescription =
