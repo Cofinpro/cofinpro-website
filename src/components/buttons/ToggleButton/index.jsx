@@ -59,6 +59,7 @@ class ToggleButton extends React.Component {
       showElemForMore,
       showElemForLess,
       style,
+      innerButtonContent,
     } = this.props
 
     const pathPrefix =
@@ -85,6 +86,7 @@ class ToggleButton extends React.Component {
           alt="Weniger zeigen"
           src={pathPrefix + '/svg/icon_arrow_dotted_up_orange.svg'}
         />
+        {innerButtonContent}
       </button>
     )
   }

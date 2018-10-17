@@ -12,6 +12,7 @@ import HtmlHeader from '../../components/HtmlHeader'
 
 import {
   ImageWrapper,
+  SOURCE_TYP_BOOTSTRAP,
   SOURCE_TYP_SHARP,
 } from '../../components/images/ImageWrapper'
 
@@ -61,7 +62,7 @@ class ProjekteUebersicht extends React.Component {
                           to={'/projekte/' + item.urlDerSeite}
                         >
                           <ImageWrapper
-                            sourceType={SOURCE_TYP_SHARP}
+                            sourceType={SOURCE_TYP_BOOTSTRAP}
                             source={props.images[props.imageIndexOffset + i]}
                             overlayElement={
                               <div>
@@ -94,7 +95,7 @@ class ProjekteUebersicht extends React.Component {
                             }
                           >
                             <ImageWrapper
-                              sourceType={SOURCE_TYP_SHARP}
+                              sourceType={SOURCE_TYP_BOOTSTRAP}
                               source={backgroundImages[i + 1]}
                               overlayElement={
                                 <div>

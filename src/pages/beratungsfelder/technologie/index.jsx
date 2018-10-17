@@ -134,7 +134,7 @@ class BeratungsfelderTechnologie extends React.Component {
                   <li>
                     <b>Ecosystems: </b> Regulatorik (PSD2) beschleunigt
                     Marktveränderungen, der Trend zur stärkeren Spezialisierung
-                    der Banken wird gefördert. Hier kommt Unbundling Banks in
+                    der Banken wird gefördert. Hier kommt Unbundling Banks ins
                     Spiel. Banken entscheiden für jedes ihrer Produkte, ob sie
                     es selbst herstellen, von anderen einkaufen oder anderen
                     anbieten. Damit steigen die Anforderungen an die
