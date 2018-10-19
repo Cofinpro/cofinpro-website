@@ -47,7 +47,7 @@ class Startseite extends React.Component {
 
     for (let i = 0; i < _input.length; ++i) {
       result.push({
-        to: _input[i].urlDerSeite,
+        to: 'pressemitteilung/' + _input[i].urlDerSeite,
         linkType: 'internal',
         header: _input[i].ueberschrift,
         subHeader: _input[i].unteruebrschrift,
