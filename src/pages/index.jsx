@@ -188,12 +188,14 @@ class Startseite extends React.Component {
                 }}
               />
               <LinkButton
+                id="button-beratungsfelder-uebersicht"
                 styleLink="d-inline d-md-none margin-10-top"
                 styleSpan="w-100"
                 text="BERATUNGSFELDER ÜBERSICHT"
                 path="/beratungsfelder"
               />
               <LinkButton
+                id="button-mehr-ueber-uns"
                 styleSpan="w-100 w-md-unset margin-10-top"
                 text="MEHR ÜBER UNS"
                 path="/cofinpro"

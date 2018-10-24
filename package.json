@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "babel-eslint": "8.0.2",
+    "cypress": "^3.1.0",
     "devicon": "git+https://github.com/konpa/devicon.git#v2.2",
     "emergence.js": "1.1.2",
     "eslint": "4.11.0",
@@ -107,6 +108,7 @@
     "lint:text": "textlint src/pages/**/index.md",
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress run --record --key 6d5c4768-0bb4-423b-80ab-733bcafced3a"
   }
 }
