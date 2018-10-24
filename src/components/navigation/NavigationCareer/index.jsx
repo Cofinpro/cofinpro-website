@@ -107,7 +107,12 @@ class NavigationCareer extends React.Component {
                         <nav
                           id="cofinpro-nav-career"
                           className="navbar"
-                          hidden={locationUpdate === mainUrl ? true : false}
+                          hidden={
+                            locationUpdate === mainUrl ||
+                            locationUpdate === mainUrl + '/'
+                              ? true
+                              : false
+                          }
                         >
                           <div className="d-flex w-100 justify-content-between align-items-center">
                             <div>
@@ -212,6 +217,12 @@ class NavigationCareer extends React.Component {
                           path="/"
                           styleLink={'d-none d-xl-inline'}
                           styleSpan={'btn-sm margin-20-left'}
+                          hidden={
+                            locationUpdate === mainUrl ||
+                            locationUpdate === mainUrl + '/'
+                              ? true
+                              : false
+                          }
                           {...this.props}
                         />
                       </nav>
