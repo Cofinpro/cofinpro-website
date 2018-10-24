@@ -223,25 +223,25 @@ export const pageQuery = graphql`
     $paragraphThreeImageId: String!
   ) {
     bigMiddleImageSharp: imageSharp(id: { regex: $bigMiddleImageId }) {
-      sizes(quality: 90, maxWidth: 1600) {
+      sizes(quality: 90, maxWidth: 1200) {
         ...GatsbyImageSharpSizes
       }
     }
     paragraphOneImageSharp: imageSharp(id: { regex: $paragraphOneImageId }) {
-      sizes(quality: 90, maxWidth: 1600) {
-        ...GatsbyImageSharpSizes
+      sizes(quality: 90, maxWidth: 800) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
     paragraphTwoImageSharp: imageSharp(id: { regex: $paragraphTwoImageId }) {
-      sizes(quality: 90, maxWidth: 1600) {
-        ...GatsbyImageSharpSizes
+      sizes(quality: 90, maxWidth: 800) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
     paragraphThreeImageSharp: imageSharp(
       id: { regex: $paragraphThreeImageId }
     ) {
-      sizes(quality: 90, maxWidth: 1600) {
-        ...GatsbyImageSharpSizes
+      sizes(quality: 90, maxWidth: 800) {
+        ...GatsbyImageSharpSizes_withWebp_noBase64
       }
     }
   }

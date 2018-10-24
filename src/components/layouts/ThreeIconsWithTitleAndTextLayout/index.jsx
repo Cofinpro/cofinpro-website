@@ -33,7 +33,7 @@ class ThreeIconsWithTitleAndTextLayout extends React.Component {
               sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
             />
-            <h4 className="p padding-sm-bottom">{titleLeft}</h4>
+            <h4 className="p padding-sm-bottom margin-20-top">{titleLeft}</h4>
             <p className="">{textLeft}</p>
           </div>
           <div className="col-6 col-md-4">
@@ -47,7 +47,7 @@ class ThreeIconsWithTitleAndTextLayout extends React.Component {
               sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
             />
-            <h4 className="p padding-sm-bottom">{titleMiddle}</h4>
+            <h4 className="p padding-sm-bottom margin-20-top">{titleMiddle}</h4>
             <p className="">{textMiddle}</p>
           </div>
           <div className="col-6 col-md-4">
@@ -61,7 +61,7 @@ class ThreeIconsWithTitleAndTextLayout extends React.Component {
               sourceType={SOURCE_TYP_SHARP}
               styleClasses="img-fluid d-none d-md-block w-50 mx-auto padding-sm-bottom"
             />
-            <h4 className="p padding-sm-bottom">{titleRight}</h4>
+            <h4 className="p padding-sm-bottom margin-20-top">{titleRight}</h4>
             <p className="">{textRight}</p>
           </div>
         </div>

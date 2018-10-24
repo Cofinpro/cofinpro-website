@@ -135,6 +135,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     let dataFachWertpapierBeratung = createNewBucket()
     let dataTechnologieBeratung = createNewBucket()
     let dataDigitalisierungBeratung = createNewBucket()
+    let dataUnternehmenAllgemein = createNewBucket()
 
     let veroeffentlichungenMap = [
       {
@@ -156,6 +157,10 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       {
         name: 'Digitalisierung',
         bucket: dataDigitalisierungBeratung,
+      },
+      {
+        name: 'Unternehmen',
+        bucket: dataUnternehmenAllgemein,
       },
     ]
 
@@ -186,6 +191,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     insertBucketItemsToOtherBucket(dataFachWertpapierBeratung, dataAll)
     insertBucketItemsToOtherBucket(dataTechnologieBeratung, dataAll)
     insertBucketItemsToOtherBucket(dataDigitalisierungBeratung, dataAll)
+    insertBucketItemsToOtherBucket(dataUnternehmenAllgemein, dataAll)
 
     const templatePressemeldungSite = path.resolve(
       `./src/templates/content-max/index.jsx`
@@ -461,6 +467,25 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
             '/news-medien/archiv/whitepapers/digitalisierung',
           buttonLoesungLink:
             '/news-medien/archiv/loesungsskizzen/digitalisierung',
+        },
+      },
+    })
+
+    createPage({
+      path: `/news-medien/unternehmen`,
+      component: slash(template),
+      context: {
+        name: 'Unternehmen',
+        url: 'unternehmen',
+        input: dataUnternehmenAllgemein,
+        siteHeader:
+          'Im Medienforum finden Sie gesammelte Neuigkeiten zum Unternehmen.',
+        pressReleases:
+          'Was bewegt die Banken und Kapitalverwaltungsgesellschaften? Was wir wissen, teilen wir natürlich gerne in unseren Pressemeldungen.',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Unternehmen',
+        content: {
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/unternehmen',
         },
       },
     })
@@ -810,6 +835,14 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       '/news-medien/archiv/pressemitteilungen/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
+      createPage
+    )
+    createPressemeldungenArchivSites(
+      dataUnternehmenAllgemein,
+      'Unternehmen',
+      '/news-medien/archiv/pressemitteilungen/unternehmen',
+      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
+      'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Unternehmen.',
       createPage
     )
 

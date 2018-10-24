@@ -44,6 +44,8 @@ class NewsMedienUebersichtTemplate extends React.Component {
     var buttonTextLösung = this.props.pathContext.buttonTextLösung
     var weAboutUs = this.props.pathContext.weAboutUs
 
+    console.log(input)
+
     var innerContent = this.props.pathContext.content
 
     let seoTitle = 'Neues von Cofinpro - ' + name
@@ -84,6 +86,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             },
             { text: 'Technologieberatung', path: '/technologieberatung' },
             { text: 'Digitalisierung', path: '/digitalisierung' },
+            { text: 'Unternehmen', path: '/unternehmen' },
           ]}
           urlPrefix="news-medien"
           description={
