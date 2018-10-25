@@ -8,3 +8,4 @@ public/
 yarn-error.log
 static/img/contentful/
 
+*.mp4
