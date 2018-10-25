@@ -14,7 +14,11 @@ class NavbarLinks extends React.Component {
     return (
       <ul
         className="navbar-nav w-100 justify-content-end"
-        hidden={locationUpdate === mainUrl ? true : false}
+        hidden={
+          locationUpdate === mainUrl || locationUpdate === mainUrl + '/'
+            ? true
+            : false
+        }
       >
         {menuItems.map(function(menuItem, i) {
           return (

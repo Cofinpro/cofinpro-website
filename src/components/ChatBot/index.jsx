@@ -115,7 +115,7 @@ class ChatBot extends React.Component {
       <div
         hidden={
           locationUpdate === mainUrl ||
-          locationUpdate.indexOf('/karriere') !== 0
+          locationUpdate.startsWith('/karriere') !== 0
             ? true
             : false
         }
