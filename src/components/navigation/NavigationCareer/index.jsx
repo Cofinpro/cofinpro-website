@@ -215,14 +215,13 @@ class NavigationCareer extends React.Component {
                         <LinkButton
                           text="HAUPTSEITE"
                           path="/"
-                          styleLink={'d-none d-xl-inline'}
-                          styleSpan={'btn-sm margin-20-left'}
-                          hidden={
+                          styleLink={
                             locationUpdate === mainUrl ||
                             locationUpdate === mainUrl + '/'
-                              ? true
-                              : false
+                              ? 'd-none d-xl-inline not-visible'
+                              : 'd-none d-xl-inline'
                           }
+                          styleSpan={'btn-sm margin-20-left'}
                           {...this.props}
                         />
                       </nav>
