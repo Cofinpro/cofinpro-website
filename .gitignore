@@ -8,4 +8,8 @@ public/
 yarn-error.log
 static/img/contentful/
 
+# cypress files
+screenshots
+videos
 *.mp4
+

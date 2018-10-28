@@ -1,4 +1,5 @@
 {
   "projectId": "97z2pp",
-  "ignoreTestFiles": "/**/examples/*.js"
+  "ignoreTestFiles": "/**/examples/*.js",
+  "baseUrl": "http://localhost:8000"
 }
