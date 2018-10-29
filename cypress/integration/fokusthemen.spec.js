@@ -1,5 +1,5 @@
-describe('Seite - Projekte', () => {
-  const beratungsfelder = [
+describe('Seite - Fokusthemen', () => {
+  const fokusthemen = [
     {
       key: 'Managementberatung',
       path: 'managementberatung',
@@ -28,12 +28,12 @@ describe('Seite - Projekte', () => {
   ]
 
   beforeEach(() => {
-    cy.visit('/projekte/managementberatung')
+    cy.visit('/fokusthemen/managementberatung')
   })
 
-  it('should open managementberatung as default for projekte', () => {
+  it('should open managementberatung as default for fokusthemen', () => {
     cy.location().should(location => {
-      expect(location.pathname).to.eq('/projekte/managementberatung')
+      expect(location.pathname).to.eq('/fokusthemen/managementberatung')
     })
 
     cy.get('.beratungsfelder-text > .active').should('contain', 'Management')
@@ -44,9 +44,11 @@ describe('Seite - Projekte', () => {
       .get('.img-fluid')
       .first()
       .click({ force: true })
-    cy.contains('Ziele')
-    cy.contains('Aufgaben')
-    cy.contains('Ergebnisse')
+    cy.contains('Herausforderung')
+    cy.contains('Lösungsansatz')
+    cy.contains('Nutzen')
+    cy.contains('Referenzprojekte')
+    cy.contains('Medien')
   })
 
   describe('Beratungsfelder', () => {
@@ -54,10 +56,10 @@ describe('Seite - Projekte', () => {
       // no idea why they are rendered all the time twice
       cy
         .get('.beratungsfelder-text')
-        .should('have.length', beratungsfelder.length * 2)
+        .should('have.length', fokusthemen.length * 2)
     })
 
-    beratungsfelder.forEach(beratungsfeld => {
+    fokusthemen.forEach(beratungsfeld => {
       describe(beratungsfeld.key, () => {
         beforeEach(() => {
           cy
@@ -68,10 +70,12 @@ describe('Seite - Projekte', () => {
 
         it('should have the right url and selected href', () => {
           cy.location().should(location => {
-            expect(location.pathname).to.eq(`/projekte/${beratungsfeld.path}`)
+            expect(location.pathname).to.eq(
+              `/fokusthemen/${beratungsfeld.path}`
+            )
           })
 
-          cy.get('.h1').should('contain', beratungsfeld.header)
+          cy.get('.h2').should('contain', beratungsfeld.header)
         })
 
         it('should have a header element', () => {
