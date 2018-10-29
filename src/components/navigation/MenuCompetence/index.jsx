@@ -136,7 +136,11 @@ class MenuCompetence extends React.Component {
       <div
         className="collapse"
         id="nav-menu-competence"
-        hidden={locationUpdate === mainUrl ? true : false}
+        hidden={
+          locationUpdate === mainUrl || locationUpdate === mainUrl + '/'
+            ? true
+            : false
+        }
       >
         <div className="d-block text-white margin-20-bottom">
           <p className="h5 bold-font d-inline">DEINE KOMPETENZ</p>
