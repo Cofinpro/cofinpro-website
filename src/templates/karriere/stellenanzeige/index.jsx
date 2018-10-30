@@ -30,11 +30,11 @@ class StellenanzeigeTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
-    function handleApplyNowClick(e) {
+    function handleApplyNowClick(jobTitle) {
       ReactGA.event({
         category: 'Application',
         action: 'Submit an application',
-        label: 'User wants to apply',
+        label: 'User wants to apply as ' + jobTitle,
       })
     }
 
@@ -218,7 +218,7 @@ class StellenanzeigeTemplate extends React.Component {
                 text="JETZT BEWERBEN"
                 _href={graphQlResult.uMantis.uMantis}
                 _target="_blank"
-                handleClick={handleApplyNowClick}
+                handleClick={() => handleApplyNowClick(graphQlResult.titel)}
               />
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import Link from 'gatsby-link'
 import PubSub from 'pubsub-js'
 
@@ -39,6 +40,14 @@ class CarrerOfferBox extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    function handleViewJobOfferClick(jobTitle) {
+      ReactGA.event({
+        category: 'Navigation',
+        action: 'View job offer',
+        label: 'User is navigating to job offer: ' + jobTitle,
+      })
+    }
+
     var buckets = []
 
     for (var i = 0; i < anzeigen.length; i++) {
@@ -69,6 +78,9 @@ class CarrerOfferBox extends React.Component {
                     }
                     className="text-dark"
                     key={'anzeige-link-' + i}
+                    onClick={() => {
+                      handleViewJobOfferClick(anzeige.node.titel)
+                    }}
                   >
                     <div
                       className="row padding-sm-top"

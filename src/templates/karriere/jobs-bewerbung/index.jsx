@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 
 import CarrerOfferCarouselBox from '../../../components/CarrerOfferCarouselBox'
 import SiteHeaderContent from '../../../components/SiteHeaderContent'
@@ -33,6 +34,15 @@ class JobsBewerbungTemplate extends React.Component {
 
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
+
+    function handleApplyNowClick(e) {
+      ReactGA.event({
+        category: 'Application',
+        action: 'Submit an application',
+        label: 'User wants to apply initiative.',
+      })
+    }
+
     return (
       <div>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
@@ -151,6 +161,7 @@ class JobsBewerbungTemplate extends React.Component {
                     }
                     _target="_blank"
                     styleSpan="space-button-left-right w-100"
+                    handleClick={handleApplyNowClick}
                   />
                 </div>
               </div>

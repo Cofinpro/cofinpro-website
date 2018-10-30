@@ -21,11 +21,11 @@ class CarrerOfferPreview extends React.Component {
 
     const additionalStyleClass = styleClass !== null ? styleClass : ''
 
-    function handleViewJobOfferClick(e) {
+    function handleViewJobOfferClick(jobTitle) {
       ReactGA.event({
         category: 'Navigation',
         action: 'View job offer',
-        label: 'User is navigating to a job offer',
+        label: 'User is navigating to job offer: ' + jobTitle,
       })
     }
 
@@ -36,7 +36,7 @@ class CarrerOfferPreview extends React.Component {
         <Link
           to={pathPrefix + '/karriere/stellenanzeige/' + anzeigeId}
           className="text-dark"
-          onClick={handleViewJobOfferClick}
+          onClick={() => handleViewJobOfferClick(title)}
         >
           <div className="padding-20">
             <div>
