@@ -10,6 +10,8 @@ import StorageHelper from '../utils/storageHelper'
 import './gatsrap.scss'
 import 'animate.css/animate.css'
 
+import ReactGA from 'react-ga';
+
 import MainNavigation from '../components/navigation/MainNavigation'
 import NavigationCareer from '../components/navigation/NavigationCareer'
 import SiteFooter from '../components/SiteFooter'
@@ -87,6 +89,7 @@ class Template extends React.Component {
         })
       }
     })
+    ReactGA.initialize('UA-111444132-1', {debug: true});
   }
 
   componentDidMount() {
