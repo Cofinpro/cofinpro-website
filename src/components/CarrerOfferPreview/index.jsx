@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import ReactGA from 'react-ga'
 
 import './style.scss'
 
@@ -20,6 +21,14 @@ class CarrerOfferPreview extends React.Component {
 
     const additionalStyleClass = styleClass !== null ? styleClass : ''
 
+    function handleViewJobOfferClick(jobTitle) {
+      ReactGA.event({
+        category: 'Navigation',
+        action: 'View job offer',
+        label: 'User is navigating to job offer: ' + jobTitle,
+      })
+    }
+
     return (
       <div
         className={'carrerOfferPreview border-img-blue ' + additionalStyleClass}
@@ -27,6 +36,7 @@ class CarrerOfferPreview extends React.Component {
         <Link
           to={pathPrefix + '/karriere/stellenanzeige/' + anzeigeId}
           className="text-dark"
+          onClick={() => handleViewJobOfferClick(title)}
         >
           <div className="padding-20">
             <div>

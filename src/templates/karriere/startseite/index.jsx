@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import Img from 'gatsby-image'
@@ -125,6 +126,16 @@ class StartseiteTemplate extends React.Component {
     const pathPrefix =
       process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__
 
+    function handleUserSelectsCompetenceClick(competence) {
+      StorageHelper.saveInSessionStorage('perspective', competence)
+
+      ReactGA.event({
+        category: 'Application',
+        action: 'User selects competence',
+        label: 'User identifies himself with: ' + competence,
+      })
+    }
+
     return (
       <div>
         <Helmet
@@ -210,12 +221,9 @@ class StartseiteTemplate extends React.Component {
                       <Link
                         className="text-dark"
                         to={pathPrefix + '/karriere/andere/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'andere'
-                          )
-                        }}
+                        onClick={() =>
+                          handleUserSelectsCompetenceClick('andere')
+                        }
                       >
                         <Img
                           sizes={
@@ -232,12 +240,9 @@ class StartseiteTemplate extends React.Component {
                       <Link
                         className="text-dark"
                         to={pathPrefix + '/karriere/studenten/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'studenten'
-                          )
-                        }}
+                        onClick={() =>
+                          handleUserSelectsCompetenceClick('studenten')
+                        }
                       >
                         <Img
                           sizes={
@@ -262,12 +267,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/fachlicher-absolvent/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'fachlicher-absolvent'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5">
                             > Absolvent & Young Professional
@@ -280,12 +284,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/fachlicher-professional/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'fachlicher-professional'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5">> Professional</h3>
                         </Link>
@@ -299,12 +302,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/technologischer-absolvent/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'technologischer-absolvent'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5">
                             > Absolvent & Young Professional
@@ -317,12 +319,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/technologischer-professional/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'technologischer-professional'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5">> Professional</h3>
                         </Link>
@@ -349,12 +350,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/fachlicher-absolvent/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'fachlicher-absolvent'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5 link-black">
                             > Absolvent & Young Professional
@@ -365,12 +365,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/fachlicher-professional/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'fachlicher-professional'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5 link-black">> Professional</h3>
                         </Link>
@@ -392,12 +391,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/technologischer-absolvent/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'technologischer-absolvent'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5 link-black">
                             > Absolvent & Young Professional
@@ -408,12 +406,11 @@ class StartseiteTemplate extends React.Component {
                             pathPrefix +
                             '/karriere/technologischer-professional/landing'
                           }
-                          onClick={() => {
-                            StorageHelper.saveInSessionStorage(
-                              'perspective',
+                          onClick={() =>
+                            handleUserSelectsCompetenceClick(
                               'technologischer-professional'
                             )
-                          }}
+                          }
                         >
                           <h3 className="h5 link-black">> Professional</h3>
                         </Link>
@@ -426,12 +423,9 @@ class StartseiteTemplate extends React.Component {
                       <Link
                         className="text-dark"
                         to={pathPrefix + '/karriere/andere/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'andere'
-                          )
-                        }}
+                        onClick={() =>
+                          handleUserSelectsCompetenceClick('andere')
+                        }
                       >
                         <Img
                           sizes={
@@ -446,12 +440,9 @@ class StartseiteTemplate extends React.Component {
                       <Link
                         className="text-dark"
                         to={pathPrefix + '/karriere/studenten/landing'}
-                        onClick={() => {
-                          StorageHelper.saveInSessionStorage(
-                            'perspective',
-                            'studenten'
-                          )
-                        }}
+                        onClick={() =>
+                          handleUserSelectsCompetenceClick('studenten')
+                        }
                       >
                         <Img
                           sizes={
