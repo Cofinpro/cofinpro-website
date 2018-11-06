@@ -67,6 +67,7 @@ class BeratungsfelderStartseite extends React.Component {
                 Effizienzsteigerung bei führenden Finanzinstituten.
               </p>
               <LinkButton
+                id="button-zur-managementberatung"
                 styleSpan="w-100 w-md-unset margin-10-top"
                 text={'ZUR MANAGEMENTBERATUNG'}
                 path="/beratungsfelder/management"
@@ -97,6 +98,7 @@ class BeratungsfelderStartseite extends React.Component {
                 <Link to="/beratungsfelder/wertpapier">&#8594; Wertpapier</Link>
               </p>
               <LinkButton
+                id="button-zur-fachberatung"
                 styleSpan="w-100 w-md-unset margin-10-top"
                 text={'ZUR FACHBERATUNG'}
                 path="/beratungsfelder/fach"
@@ -129,6 +131,7 @@ class BeratungsfelderStartseite extends React.Component {
                 die Innovation, von der Konzeption bis zur Praxis.
               </p>
               <LinkButton
+                id="button-zur-technologieberatung"
                 styleSpan="w-100 w-md-unset margin-10-top"
                 text={'ZUR TECHNOLOGIEBERATUNG'}
                 path="/beratungsfelder/technologie"
