@@ -4,10 +4,10 @@ module.exports = {
     description:
       'Wir sind sehr stolz darauf, dass wir unseren Mitarbeitern ein optimales Arbeitsu' +
       'mfeld bieten können. Starten Sie jetzt Ihre Karriere bei Cofinpro.',
-    url: 'https://www.karriere-cofinpro.de',
+    url: 'https://www.cofinpro.de',
     author: 'Benjamin Tenke',
     twitter: 'cofinpro_ag',
-    siteUrl: `https://www.karriere-cofinpro.de`,
+    siteUrl: `https://www.cofinpro.de`,
   },
   pathPrefix: '/',
   plugins: [

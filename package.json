@@ -72,7 +72,8 @@
     "striptags": "3.1.0",
     "textlint": "9.1.1",
     "textlint-rule-preset-ja-spacing": "2.0.1",
-    "textlint-rule-preset-japanese": "2.0.0"
+    "textlint-rule-preset-japanese": "2.0.0",
+    "xml-js": "^1.6.8"
   },
   "keywords": [
     "gatsby",
@@ -109,6 +110,7 @@
     "lint:textfix": "textlint --fix src/pages/**/index.md",
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress": "cypress run --record --key 6d5c4768-0bb4-423b-80ab-733bcafced3a"
+    "cypress": "cypress run --record --key 6d5c4768-0bb4-423b-80ab-733bcafced3a",
+    "open-cypress": "npx cypress open"
   }
 }
