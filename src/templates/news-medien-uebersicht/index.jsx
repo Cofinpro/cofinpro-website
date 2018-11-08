@@ -86,7 +86,7 @@ class NewsMedienUebersichtTemplate extends React.Component {
             },
             { text: 'Technologieberatung', path: '/technologieberatung' },
             { text: 'Digitalisierung', path: '/digitalisierung' },
-            { text: 'Unternehmen', path: '/unternehmen' },
+            { text: 'Cofinpro', path: '/cofinpro' },
           ]}
           urlPrefix="news-medien"
           description={
@@ -158,16 +158,20 @@ class NewsMedienUebersichtTemplate extends React.Component {
             row: 'margin-50-top margin-xs-0-top',
           }}
         />
-        <div className="container margin-120-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-12 col-md-6">
-              <h2 className="h2">Medien</h2>
-              <p className="no-margin">{medien}</p>
+        {(input.whitepapers.current.length > 0 ||
+          input.studien.current.length > 0 ||
+          input.thesenpapiere.current.length > 0 ||
+          input.loesungsskizzen.current.length > 0) && (
+          <div className="container margin-120-top margin-xs-80-top">
+            <div className="row">
+              <div className="col-12 col-md-6">
+                <h2 className="h2">Medien</h2>
+                <p className="no-margin">{medien}</p>
+              </div>
+              <div className="col-12 col-md-6" />
             </div>
-            <div className="col-12 col-md-6" />
           </div>
-        </div>
-
+        )}
         {input.studien.current.length > 0 && (
           <div className={'container margin-60-top margin-xs-60-top'}>
             <div className="row">

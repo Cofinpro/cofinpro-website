@@ -471,26 +471,28 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       },
     })
 
+    console.log(`created page /news-medien/digitalisierung.`)
+
     createPage({
-      path: `/news-medien/unternehmen`,
+      path: `/news-medien/cofinpro`,
       component: slash(template),
       context: {
-        name: 'Unternehmen',
-        url: 'unternehmen',
+        name: 'Cofinpro',
+        url: 'cofinpro',
         input: dataUnternehmenAllgemein,
         siteHeader:
-          'Im Medienforum finden Sie gesammelte Neuigkeiten zum Unternehmen.',
+          'Was tut sich in unserem Unternehmen und womit sorgen wir gerade für Wirbel? Hier finden Sie alle Beiträge dazu aus unserem Medienforum.',
         pressReleases:
-          'Was bewegt die Banken und Kapitalverwaltungsgesellschaften? Was wir wissen, teilen wir natürlich gerne in unseren Pressemeldungen.',
-        buttonTextPressRelease: 'Archiv Pressemitteilungen Unternehmen',
+          'Stillstand? Kennen wir nicht. Was sich bei Cofinpro tut, teilen wir natürlich auch der Presse mit. Zum Nachlesen bitte hier entlang.',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Cofinpro',
         content: {
           buttonPressemeldungenLink:
-            '/news-medien/archiv/pressemitteilungen/unternehmen',
+            '/news-medien/archiv/pressemitteilungen/cofinpro',
         },
       },
     })
 
-    console.log(`created page /news-medien/digitalisierung.`)
+    console.log(`created page /news-medien/cofinpro.`)
 
     // Studien Archiv
 
@@ -839,10 +841,10 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     )
     createPressemeldungenArchivSites(
       dataUnternehmenAllgemein,
-      'Unternehmen',
-      '/news-medien/archiv/pressemitteilungen/unternehmen',
-      'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
-      'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Unternehmen.',
+      'Cofinpro',
+      '/news-medien/archiv/pressemitteilungen/cofinpro',
+      'Hier finden Sie sämtliche Pressemitteilungen zu Neuigkeiten aus unserem Unternehmen, fein säuberlich archiviert.',
+      'Welche Neuigkeiten gibt’s aus unserem Unternehmen und womit machen wir Wirbel? Hier können Sie es nachlesen.',
       createPage
     )
 

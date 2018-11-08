@@ -14,20 +14,6 @@ import {
 
 class BeratungsfelderTechnologie extends React.Component {
   render() {
-    let focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung
-      .edges[0].node
-
-    let relevantFocusFields = []
-
-    for (let i = 0; i < focusThemsWrapper.fokusthemenTechnologie.length; ++i) {
-      relevantFocusFields.push({
-        title: focusThemsWrapper.fokusthemenTechnologie[i].uberschriftGanzOben,
-        url:
-          '/fokusthemen/thema/' +
-          focusThemsWrapper.fokusthemenTechnologie[i].url,
-      })
-    }
-
     return (
       <div>
         <div className="container negative-margin-30-top">
@@ -120,58 +106,56 @@ class BeratungsfelderTechnologie extends React.Component {
             <div className="col-md-6">
               <p>
                 Auf diese Plattformen für unterschiedliche Zielgruppen
-                fokussieren wir uns:<p />
-                <ul className="blue-bullet">
-                  <li>
-                    <b>Customer Experience: </b>Diese Plattform stellt den
-                    B2C-Kunden in den Mittelpunkt. Eine hohe User Experience
-                    ermöglicht den digitalen Vertrieb (komplexer)
-                    Finanzprodukte. Die Analyse des Kundenverhaltens hilft, ihn
-                    lückenlos zu verstehen. Durch die flexible Anpassbarkeit
-                    können Änderungen im Markt bzw. geändertes Kundenverhalten
-                    schnell abgebildet werden.<p />
-                  </li>
-                  <li>
-                    <b>Ecosystems: </b> Regulatorik (PSD2) beschleunigt
-                    Marktveränderungen, der Trend zur stärkeren Spezialisierung
-                    der Banken wird gefördert. Hier kommt Unbundling Banks ins
-                    Spiel. Banken entscheiden für jedes ihrer Produkte, ob sie
-                    es selbst herstellen, von anderen einkaufen oder anderen
-                    anbieten. Damit steigen die Anforderungen an die
-                    Interoperabilität von IT-Systemen. Mit dieser Plattform
-                    setzen wir auf die Bereitstellung und Verwaltung von APIs,
-                    die Modularisierung der Systemlandschaft und auf die
-                    Anbindung von Legacy-Systemen zur Abbildung fachlicher
-                    Services.<p />
-                  </li>
-                  <li>
-                    <b>Information Systems: </b>Diese Plattform automatisiert
-                    fachliche Prozesse im Unternehmen Ende-zu-Ende und macht sie
-                    so effizienter.
-                  </li>
-                </ul>
+                fokussieren wir uns:
               </p>
+              <ul className="blue-bullet">
+                <li>
+                  <b>Customer Experience: </b>Diese Plattform stellt den
+                  B2C-Kunden in den Mittelpunkt. Eine hohe User Experience
+                  ermöglicht den digitalen Vertrieb (komplexer) Finanzprodukte.
+                  Die Analyse des Kundenverhaltens hilft, ihn lückenlos zu
+                  verstehen. Durch die flexible Anpassbarkeit können Änderungen
+                  im Markt bzw. geändertes Kundenverhalten schnell abgebildet
+                  werden.
+                </li>
+                <li>
+                  <b>Ecosystems: </b> Regulatorik (PSD2) beschleunigt
+                  Marktveränderungen, der Trend zur stärkeren Spezialisierung
+                  der Banken wird gefördert. Hier kommt Unbundling Banks ins
+                  Spiel. Banken entscheiden für jedes ihrer Produkte, ob sie es
+                  selbst herstellen, von anderen einkaufen oder anderen
+                  anbieten. Damit steigen die Anforderungen an die
+                  Interoperabilität von IT-Systemen. Mit dieser Plattform setzen
+                  wir auf die Bereitstellung und Verwaltung von APIs, die
+                  Modularisierung der Systemlandschaft und auf die Anbindung von
+                  Legacy-Systemen zur Abbildung fachlicher Services.
+                </li>
+                <li>
+                  <b>Information Systems: </b>Diese Plattform automatisiert
+                  fachliche Prozesse im Unternehmen Ende-zu-Ende und macht sie
+                  so effizienter.
+                </li>
+              </ul>
             </div>
             <div className="col-md-6">
               <p>
                 Um diese Plattformen zu entwickeln, bauen wir ein starkes
                 Fundament. Dafür verwenden wir die aktuellste
-                Entwicklungs-Infrastruktur, die unter anderem beinhaltet:<p />
-                <ul className="blue-bullet">
-                  <li>
-                    moderne Methoden im Software Engineering wie DevOps und
-                    Scrum<p />
-                  </li>
-                  <li>
-                    Continuous Delivery zur automatisierten und schnellen
-                    Bereitstellung von Software in kurzen Zyklen<p />
-                  </li>
-                  <li>
-                    Toolchains zur Steigerung von Effizienz und Qualität
-                    innerhalb der Software-Entwicklung
-                  </li>
-                </ul>
+                Entwicklungs-Infrastruktur, die unter anderem beinhaltet:
               </p>
+              <ul className="blue-bullet">
+                <li>
+                  moderne Methoden im Software Engineering wie DevOps und Scrum
+                </li>
+                <li>
+                  Continuous Delivery zur automatisierten und schnellen
+                  Bereitstellung von Software in kurzen Zyklen
+                </li>
+                <li>
+                  Toolchains zur Steigerung von Effizienz und Qualität innerhalb
+                  der Software-Entwicklung
+                </li>
+              </ul>
             </div>
           </div>
           <div className="row margin-120-top margin-xs-40-top">
@@ -184,47 +168,45 @@ class BeratungsfelderTechnologie extends React.Component {
                 source={this.props.data.processImageSharp}
                 styleClasses={'margin-30-top'}
               />
-              <p className="margin-40-top margin-xs-20-top">
-                <ul className="blue-bullet">
-                  <li>
-                    <b>
-                      <Link to={'/fokusthemen/thema/assessment-und-roadmap'}>
-                        Assessment und Roadmap:
-                      </Link>
-                    </b>{' '}
-                    Wir nehmen die Anforderungen an die IT unserer Kunden
-                    individuell auf, analysieren die aktuelle IT-Landschaft und
-                    erarbeiten zusammen eine Roadmap zur Weiterentwicklung.<p />
-                  </li>
-                  <li>
-                    <b>
-                      <Link
-                        to={
-                          '/fokusthemen/thema/modernisierung-von-it-architekturen'
-                        }
-                      >
-                        Modernize:
-                      </Link>
-                    </b>{' '}
-                    Wir analysieren vorhandene Anwendungen und Architekturen
-                    technisch, erarbeiten Ansätze zur Modernisierung und
-                    bewerten sie im engen Austausch. Beim Konzeptionieren der
-                    IT-Architektur machen wir nicht halt, sondern setzen neue
-                    Lösungen auch um.<p />
-                  </li>
-                  <li>
-                    <b>
-                      <Link to={'/fokusthemen/thema/aufbau-neuer-plattformen'}>
-                        Create:
-                      </Link>
-                    </b>{' '}
-                    Wir kümmern uns um den Aufbau neuer Plattformen für
-                    effizientere Prozessketten. Und wir schaffen modulare
-                    Architekturen für Kooperationspartner und B2B-Kunden sowie
-                    Lösungen für digitale Geschäftsmodelle.
-                  </li>
-                </ul>
-              </p>
+              <ul className="blue-bullet margin-40-top margin-xs-20-top">
+                <li>
+                  <b>
+                    <Link to={'/fokusthemen/thema/assessment-und-roadmap'}>
+                      Assessment und Roadmap:
+                    </Link>
+                  </b>{' '}
+                  Wir nehmen die Anforderungen an die IT unserer Kunden
+                  individuell auf, analysieren die aktuelle IT-Landschaft und
+                  erarbeiten zusammen eine Roadmap zur Weiterentwicklung.
+                </li>
+                <li>
+                  <b>
+                    <Link
+                      to={
+                        '/fokusthemen/thema/modernisierung-von-it-architekturen'
+                      }
+                    >
+                      Modernize:
+                    </Link>
+                  </b>{' '}
+                  Wir analysieren vorhandene Anwendungen und Architekturen
+                  technisch, erarbeiten Ansätze zur Modernisierung und bewerten
+                  sie im engen Austausch. Beim Konzeptionieren der
+                  IT-Architektur machen wir nicht halt, sondern setzen neue
+                  Lösungen auch um.
+                </li>
+                <li>
+                  <b>
+                    <Link to={'/fokusthemen/thema/aufbau-neuer-plattformen'}>
+                      Create:
+                    </Link>
+                  </b>{' '}
+                  Wir kümmern uns um den Aufbau neuer Plattformen für
+                  effizientere Prozessketten. Und wir schaffen modulare
+                  Architekturen für Kooperationspartner und B2B-Kunden sowie
+                  Lösungen für digitale Geschäftsmodelle.
+                </li>
+              </ul>
             </div>
           </div>
           <div className="margin-120-top margin-xs-40-top">

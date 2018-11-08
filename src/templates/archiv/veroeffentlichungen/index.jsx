@@ -43,7 +43,7 @@ class VeroeffentlichungenArchivTemplate extends React.Component {
         <div className="container padding-20-top padding-xs-20-top">
           <div className="row">
             <div className="col-12 col-md-8 col-lg-6">
-              <h1 className="h1">Medien Archiv</h1>
+              <h1 className="h1">Medien-Archiv</h1>
               <PageIntroText
                 content={{
                   text: siteDescription,
