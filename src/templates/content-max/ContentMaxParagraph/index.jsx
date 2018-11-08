@@ -29,6 +29,7 @@ class ContentMaxParagraph extends React.Component {
                 <ImageWrapper
                   sourceType={SOURCE_TYP_SHARP}
                   source={content.image}
+                  styleClasses="news-media-paragraph"
                 />
               )}
           </div>

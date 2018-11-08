@@ -135,6 +135,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     let dataFachWertpapierBeratung = createNewBucket()
     let dataTechnologieBeratung = createNewBucket()
     let dataDigitalisierungBeratung = createNewBucket()
+    let dataUnternehmenAllgemein = createNewBucket()
 
     let veroeffentlichungenMap = [
       {
@@ -156,6 +157,10 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       {
         name: 'Digitalisierung',
         bucket: dataDigitalisierungBeratung,
+      },
+      {
+        name: 'Unternehmen',
+        bucket: dataUnternehmenAllgemein,
       },
     ]
 
@@ -186,6 +191,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     insertBucketItemsToOtherBucket(dataFachWertpapierBeratung, dataAll)
     insertBucketItemsToOtherBucket(dataTechnologieBeratung, dataAll)
     insertBucketItemsToOtherBucket(dataDigitalisierungBeratung, dataAll)
+    insertBucketItemsToOtherBucket(dataUnternehmenAllgemein, dataAll)
 
     const templatePressemeldungSite = path.resolve(
       `./src/templates/content-max/index.jsx`
@@ -466,6 +472,27 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     })
 
     console.log(`created page /news-medien/digitalisierung.`)
+
+    createPage({
+      path: `/news-medien/cofinpro`,
+      component: slash(template),
+      context: {
+        name: 'Cofinpro',
+        url: 'cofinpro',
+        input: dataUnternehmenAllgemein,
+        siteHeader:
+          'Was tut sich in unserem Unternehmen und womit sorgen wir gerade für Wirbel? Hier finden Sie alle Beiträge dazu aus unserem Medienforum.',
+        pressReleases:
+          'Stillstand? Kennen wir nicht. Was sich bei Cofinpro tut, teilen wir natürlich auch der Presse mit. Zum Nachlesen bitte hier entlang.',
+        buttonTextPressRelease: 'Archiv Pressemitteilungen Cofinpro',
+        content: {
+          buttonPressemeldungenLink:
+            '/news-medien/archiv/pressemitteilungen/cofinpro',
+        },
+      },
+    })
+
+    console.log(`created page /news-medien/cofinpro.`)
 
     // Studien Archiv
 
@@ -810,6 +837,14 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       '/news-medien/archiv/pressemitteilungen/digitalisierung',
       'Hier teilen wir jede Menge Neuigkeiten aus unserem Medienforum mit Ihnen: von  Fachpublikationen über Pressemitteilungen bis zu themenbezogenen Studien, Whitepapers und Lösungsskizzen.',
       'Was wir mit unserer Expertise bewirken, teilen wir natürlich gerne. Hier finden Sie unsere Pressemeldungen rund um den Schwerpunkt Digitalisierung.',
+      createPage
+    )
+    createPressemeldungenArchivSites(
+      dataUnternehmenAllgemein,
+      'Cofinpro',
+      '/news-medien/archiv/pressemitteilungen/cofinpro',
+      'Hier finden Sie sämtliche Pressemitteilungen zu Neuigkeiten aus unserem Unternehmen, fein säuberlich archiviert.',
+      'Welche Neuigkeiten gibt’s aus unserem Unternehmen und womit machen wir Wirbel? Hier können Sie es nachlesen.',
       createPage
     )
 
