@@ -1,5 +1,7 @@
 # cofinpro-website
 
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+
 ## Wo liegen die Builds die auf den Webseiten verwendet werden?
 
 Die Webseiten werden auf https://www.netlify.com/ gehostet. Einloggen kann man sich unter https://app.netlify.com/.
