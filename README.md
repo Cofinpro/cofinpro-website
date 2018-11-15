@@ -1,8 +1,6 @@
 # cofinpro-website
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/d71f22c05871cef458ab/maintainability)](https://codeclimate.com/github/Cofinpro/cofinpro-website/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/d71f22c05871cef458ab/test_coverage)](https://codeclimate.com/github/Cofinpro/cofinpro-website/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/d71f22c05871cef458ab/maintainability)](https://codeclimate.com/github/Cofinpro/cofinpro-website/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/d71f22c05871cef458ab/test_coverage)](https://codeclimate.com/github/Cofinpro/cofinpro-website/test_coverage)
 
 ## Wo liegen die Builds die auf den Webseiten verwendet werden?
 
