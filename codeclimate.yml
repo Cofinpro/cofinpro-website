@@ -1,6 +1,4 @@
+---
+version: "2"
 exclude_patterns:
-- "**/static/"
-- "static/js/bootstrap.min.js"
-- "static/js/ApiAi.min.js"
-- "static/js/jquery-3.2.1.min.js"
-- "static/js/popper.min.js"
+  - .static/
