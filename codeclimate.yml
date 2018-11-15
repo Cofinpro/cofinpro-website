@@ -2,3 +2,5 @@
 version: "2"
 exclude_patterns:
   - .static/
+  - .static/js/
+  - .static/js/bootstrap.min.js
