@@ -1,6 +1,6 @@
 # cofinpro-website
 
-[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/codeclimate/codeclimate)
+[![Code Climate](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/Cofinpro/cofinpro-website)
 
 ## Wo liegen die Builds die auf den Webseiten verwendet werden?
 
