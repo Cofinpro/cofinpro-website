@@ -77,5 +77,11 @@ module.exports = {
         features: [`String.prototype.startsWith`],
       },
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: '1861009390683463',
+      },
+    },
   ],
 }
