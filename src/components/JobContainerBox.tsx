@@ -43,19 +43,24 @@ class JobContainerBox extends React.Component<Props, State> {
   componentDidMount() {
     const componentId = this.props.id;
 
-    $('#stellenmarkt-box-' + componentId + '-collapse-area').collapse({
+    const collapseArea = $(`#stellenmarkt-box-${componentId}-collapse-area`);
+    const collapseButton = $(`#button-${componentId}-collapse`);
+    const collapseDown = $(`#${componentId} > img.collapse-icon-down`);
+    const collapseUp = $(`#${componentId} > img.collapse-icon-up`);
+
+    collapseArea.collapse({
       toggle: false,
     });
 
-    $('#button-' + componentId + '-collapse').click(() => {
-      $('#stellenmarkt-box-' + componentId + '-collapse-area').collapse('toggle');
+    collapseButton.click(() => {
+      collapseArea.collapse('toggle');
 
-      if ($('#' + componentId + '>img.collapse-icon-down').hasClass('d-none')) {
-        $('#' + componentId + '>img.collapse-icon-up').addClass('d-none');
-        $('#' + componentId + '>img.collapse-icon-down').removeClass('d-none');
-      } else if ($('#' + componentId + '>img.collapse-icon-up').hasClass('d-none')) {
-        $('#' + componentId + '>img.collapse-icon-down').addClass('d-none');
-        $('#' + componentId + '>img.collapse-icon-up').removeClass('d-none');
+      if (collapseDown.hasClass('d-none')) {
+        collapseUp.addClass('d-none');
+        collapseDown.removeClass('d-none');
+      } else if (collapseUp.hasClass('d-none')) {
+        collapseDown.addClass('d-none');
+        collapseUp.removeClass('d-none');
       }
     });
   }

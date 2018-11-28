@@ -44,22 +44,11 @@ class NewsPreviewNewest extends React.Component<Props, State> {
 
     let filteredNews = [];
 
-    for (let i = 0; i < content.news.length; i++) {
-      let perspektiven = [];
-
-      for (let j = 0; j < content.news[i].node.zugeordnetePerspektivenKompetenz.length; ++j) {
-        perspektiven.push(content.news[i].node.zugeordnetePerspektivenKompetenz[j].name);
-      }
-
-      if (
-        this.state.perspektive === null ||
-        this.state.perspektive.trim().length < 1 ||
-        perspektiven.indexOf(this.state.perspektive) > -1
-      ) {
-        if (filteredNews.length < 2) {
-          filteredNews.push(content.news[i]);
-        }
-      }
+    if (this.state.perspektive === null || this.state.perspektive.trim().length < 1) {
+      filteredNews = content.news
+        .filter((x: any) => x.node.zugeordnetePerspektivenKompetenz.some((y: any) => y.name === this.state.perspektive))
+        .slice(0, 1)
+        .map((x: any) => x.node);
     }
 
     return (
@@ -79,18 +68,18 @@ class NewsPreviewNewest extends React.Component<Props, State> {
         <div className="row">
           <div className="col-12 col-md-1" />
           {filteredNews.length > 0
-            ? filteredNews.map((news, index) => {
+            ? filteredNews.map((news: any, index: number) => {
                 return (
-                  <div className="col-12 col-md-5" key={'news-column-' + index}>
+                  <div className="col-12 col-md-5" key={`news-column-${index}`}>
                     <NewsPreview
-                      key={'news-NewsPreview-' + index}
-                      createdAt={news.node.datumFuerDieAnzeige}
-                      title={news.node.ueberschrift}
-                      description={news.node.kurzeBeschreibung !== null ? news.node.kurzeBeschreibung.kurzeBeschreibung : null}
-                      newsId={news.node.id}
-                      imageFile={news.node.titelbild}
-                      imageFileSharp={news.node.titelbildSharp}
-                      url={news.node.url}
+                      key={`news-NewsPreview-${index}`}
+                      createdAt={news.datumFuerDieAnzeige}
+                      title={news.ueberschrift}
+                      description={news.kurzeBeschreibung !== null ? news.kurzeBeschreibung.kurzeBeschreibung : null}
+                      // TODO: newsId={news.id} *is not used*
+                      imageFile={news.titelbild}
+                      imageFileSharp={news.titelbildSharp}
+                      url={news.url}
                       {...this.props}
                     />
                   </div>

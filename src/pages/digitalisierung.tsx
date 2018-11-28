@@ -20,13 +20,7 @@ class ThemaDigitalisierung extends React.Component<Props> {
       'Sämtliche unserer Leistungen sind auf führende Finanzdienstleister zugeschnitten. Nachdem zunächst die Modernisierung exemplarischer Geschäftsmodelle, der Aufbau von Innovationslaboren und die Digitalisierungsstrategie im Vordergrund stand, ist nun die Renovierung etablierter Vorgehensweisen, die Prozesskettenstraffung, der konsequente Transfer von Best Practices aus Keimzellen in Fachbereichen sowie die ganzheitliche Digitale Transformation ins Zentrum gerückt.';
 
     const fokusthema = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
-    const fokusthemen = fokusthema.map(x => x.fokusthemenDigitalisierungsseite);
-    const relevantFocusFields = fokusthemen.map(x => {
-      return {
-        title: x.uberschriftGanzOben,
-        url: `/fokusthemen/thema/${x.url}`,
-      };
-    });
+    const fokusthemen = fokusthema.map((x: any) => x.fokusthemenDigitalisierungsseite);
 
     return (
       <div>

@@ -9,8 +9,66 @@ import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 import { SharpImage } from '../models/SharpImage';
 
+class Media {
+  public to: string = '';
+  public linkType: string = '';
+  public header: string = '';
+  public subHeader: string = '';
+  public date: any = undefined;
+  public description: string = '';
+  public publishedBy: string = ''; // TODO: is never set
+}
+
+class DownloadMedia extends Media {
+  constructor(input: any) {
+    super();
+    this.to = `/pdf/contentful/${input.datei.id}.pdf`;
+    this.linkType = 'external';
+    this.header = input.beschriftungDesDownloads;
+    this.date = input.datumDerVerffentlichung;
+    this.description = input.beschreibung !== null ? input.beschreibung.beschreibung : null;
+  }
+}
+
+class VeroeffentlichungMedia extends Media {
+  constructor(input: any) {
+    super();
+    this.to = this.getUrl(input);
+    this.linkType = 'external';
+    this.header = input.ueberschrift;
+    this.subHeader = input.unterUeberschrift;
+    this.date = input.datumDerVerffentlichung;
+    this.description = input.beschreibung !== null ? input.beschreibung.beschreibung : null;
+  }
+
+  private getUrl(input: any): string {
+    if (!!input.urlDerVerffentlichung) {
+      return input.urlDerVerffentlichung;
+    }
+    if (!!input.pdfDatei) {
+      return `/pdf/contentful/${input.pdfDatei.id}.pdf`;
+    }
+
+    return '';
+  }
+}
+
+class PressemeldungMedia extends Media {
+  constructor(input: any) {
+    super();
+    this.to = `pressemitteilung/${input.urlDerSeite}`;
+    this.linkType = 'internal';
+    this.header = input.ueberschrift;
+    this.subHeader = input.unteruebrschrift;
+    this.date = input.verffentlichungsdatum;
+    this.description = input.introText !== null ? input.introText.introText : null;
+  }
+}
+
 interface Props {
   data: {
+    allContentfulFokusthemaEinteilung: any;
+    allContentfulMedienEinteilung: any;
     titelBildDesktopSharp: SharpImage;
     titelBildMobileSharp: SharpImage;
     iconVorteilLinksSharp: SharpImage;
@@ -22,106 +80,35 @@ interface Props {
 }
 
 class Startseite extends React.Component<Props> {
-  getCurrentUrl(): string {
-    if (typeof window !== 'undefined') {
-      return window.location.href;
+  getMedien(medienEinteilung: any): Media[] {
+    let medien: any[] = [];
+
+    if (medienEinteilung.startseiteVerlinkungZuDownloads !== null) {
+      medien = [...medien, medienEinteilung.startseiteVerlinkungZuDownloads.map((x: any) => new DownloadMedia(x))];
     }
 
-    return '';
-  }
-
-  createMediaDataStructureForDownloads(_input) {
-    const result = [];
-
-    for (let i = 0; i < _input.length; ++i) {
-      result.push({
-        to: `/pdf/contentful/${_input[i].datei.id}.pdf`,
-        linkType: 'external',
-        header: _input[i].beschriftungDesDownloads,
-        date: _input[i].datumDerVerffentlichung,
-        description: _input[i].beschreibung !== null ? _input[i].beschreibung.beschreibung : null,
-      });
-    }
-    return result;
-  }
-
-  createMediaDataStructureForPressemeldung(_input) {
-    const result = [];
-
-    for (let i = 0; i < _input.length; ++i) {
-      result.push({
-        to: 'pressemitteilung/' + _input[i].urlDerSeite,
-        linkType: 'internal',
-        header: _input[i].ueberschrift,
-        subHeader: _input[i].unteruebrschrift,
-        date: _input[i].verffentlichungsdatum,
-        description: _input[i].introText !== null ? _input[i].introText.introText : null,
-      });
-    }
-    return result;
-  }
-
-  createMediaDataStructureForVeroeffentlichung(_input) {
-    const result = [];
-
-    for (let i = 0; i < _input.length; ++i) {
-      let url = '';
-      if (_input[i].urlDerVerffentlichung !== undefined && _input[i].urlDerVerffentlichung !== null) {
-        url = _input[i].urlDerVerffentlichung;
-      }
-      if (_input[i].pdfDatei !== undefined && _input[i].pdfDatei !== null) {
-        url = `/pdf/contentful/${_input[i].pdfDatei.id}.pdf`;
-      }
-
-      result.push({
-        to: url,
-        linkType: 'external',
-        header: _input[i].ueberschrift,
-        subHeader: _input[i].unterUeberschrift,
-        date: _input[i].datumDerVerffentlichung,
-        description: _input[i].beschreibung !== null ? _input[i].beschreibung.beschreibung : null,
-      });
-    }
-    return result;
-  }
-
-  render() {
-    let fokusthemen = [];
-
-    const focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
-
-    for (let i = 0; i < focusThemsWrapper.fokusthemenStartseite.length; ++i) {
-      fokusthemen.push(focusThemsWrapper.fokusthemenStartseite[i]);
+    if (medienEinteilung.startseiteVerlinkungZuVeroeffentlichungen !== null) {
+      medien = [...medien, medienEinteilung.startseiteVerlinkungZuVeroeffentlichungen.map((x: any) => new VeroeffentlichungMedia(x))];
     }
 
-    let medienEinteilung = {};
-    const edges = this.props.data.allContentfulMedienEinteilung.edges;
-
-    for (let i = 0; i < edges.length; ++i) {
-      if (edges[i].node.id === 'A2YNdv1hwOCuGueqyCiMO') {
-        medienEinteilung = edges[i].node;
-      }
+    if (medienEinteilung.startseiteVerlinkungZuPressemeldungen !== null) {
+      medien = [...medien, medienEinteilung.startseiteVerlinkungZuPressemeldungen.map((x: any) => new PressemeldungMedia(x))];
     }
 
-    let medien = [];
-
-    if (medienEinteilung.startseiteVerlinkungZuDownloads != null) {
-      medien = medien.concat(this.createMediaDataStructureForDownloads(medienEinteilung.startseiteVerlinkungZuDownloads));
-    }
-
-    if (medienEinteilung.startseiteVerlinkungZuVeroeffentlichungen != null) {
-      medien = medien.concat(this.createMediaDataStructureForVeroeffentlichung(medienEinteilung.startseiteVerlinkungZuVeroeffentlichungen));
-    }
-
-    if (medienEinteilung.startseiteVerlinkungZuPressemeldungen != null) {
-      medien = medien.concat(this.createMediaDataStructureForPressemeldung(medienEinteilung.startseiteVerlinkungZuPressemeldungen));
-    }
-
-    function medien_date_sort(a, b) {
+    function medien_date_sort(a: any, b: any) {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
     }
 
-    medien.sort(medien_date_sort);
+    return medien.sort(medien_date_sort);
+  }
+
+  render() {
+    const focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
+    const fokusthemen = focusThemsWrapper.fokusthemenStartseite.map((x: any) => x);
+
+    const medienEinteilungWrapper = this.props.data.allContentfulMedienEinteilung.edges;
+    const medienEinteilung = medienEinteilungWrapper.find((x: any) => x.node.id === 'A2YNdv1hwOCuGueqyCiMO').node;
+    const medien = this.getMedien(medienEinteilung);
 
     const seoTitle = 'Cofinpro - Die Experten für Management-, Fach- und Technologieberatung';
     const seoDescription =

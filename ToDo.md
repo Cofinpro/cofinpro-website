@@ -1,7 +1,11 @@
 * TODO (nicht komplett)
 
-src\components\JobContainerBox.tsx
-src\components\NewsPreviewNewest.tsx
+src\layout\*
+
+src\pages\index.tsx
+
+src\pages\fokusthemen\digiLayout\index.jsx
+    Brauchen wir die Datei noch?
 
 src\components\images\ImageWrapper.tsx
     interfaces für die einzelnen Images anlegen und das Mapping umstellen von SourceTyp auf switch typeof
@@ -20,3 +24,6 @@ Missing NPM packages:
 
 
 // TODO: imageFile={testimonial.bildTestimonial} *is not used*
+// TODO: newsId={news.id} *is not used*
+// TODO: content={{ showButton: true }} *is not used*
+public publishedBy: string = ''; // TODO: is never set

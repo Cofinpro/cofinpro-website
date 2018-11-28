@@ -18,7 +18,7 @@ class Startseite extends React.Component<Props> {
     const graphQlResultCofinpro = this.props.data.contentfulSeiteCofinpro;
     const graphQlResultDownloads = this.props.data.contentfulDownloadEinteilung.downloads;
 
-    const downloads = graphQlResultDownloads.map(download => {
+    const downloads = graphQlResultDownloads.map((download: any) => {
       return {
         href: `/pdf/contentful/${download.datei.id}.pdf`,
         title: download.beschriftungDesDownloads,
@@ -189,7 +189,7 @@ class Startseite extends React.Component<Props> {
                   <h3 className="h4 d-none d-md-block">AUSZEICHNUNGEN</h3>
                   <h3 className="h3 d-block d-md-none">AUSZEICHNUNGEN</h3>
                 </div>
-                {graphQlResultCofinpro.auszeichnungen.map((image, index) => (
+                {graphQlResultCofinpro.auszeichnungen.map((image: any, index: number) => (
                   <div key={index} className="col-6 margin-20-top">
                     <ImageWrapper sourceType={SourceTyp.Contentful} source={image} />
                   </div>
@@ -203,7 +203,7 @@ class Startseite extends React.Component<Props> {
                   <h3 className="h4 d-none d-md-block">WIR UNTERSTÜTZEN</h3>
                   <h3 className="h3 d-block d-md-none">WIR UNTERSTÜTZEN</h3>
                 </div>
-                {graphQlResultCofinpro.unterstuetzen.map((image, index) => (
+                {graphQlResultCofinpro.unterstuetzen.map((image: any, index: number) => (
                   <div key={index} className="col-12">
                     <div className="row">
                       <div key={index} className="col-8 col-lg-6 margin-20-top">
@@ -226,7 +226,7 @@ class Startseite extends React.Component<Props> {
         </div>
         <DownloadPreviewTextAndImageLayout
           style={{ container: 'margin-40-top margin-xs-0-top' }}
-          content={{ showButton: true }}
+          // TODO: content={{ showButton: true }} *is not used*
           downloads={downloads}
         />
       </div>
