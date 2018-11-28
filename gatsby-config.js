@@ -1,81 +1,79 @@
-module.exports = {
-  siteMetadata: {
-    title: 'Cofinpro Karriere Seite',
-    description:
-      'Wir sind sehr stolz darauf, dass wir unseren Mitarbeitern ein optimales Arbeitsu' +
-      'mfeld bieten können. Starten Sie jetzt Ihre Karriere bei Cofinpro.',
-    url: 'https://www.karriere-cofinpro.de',
-    author: 'Benjamin Tenke',
-    twitter: 'cofinpro_ag',
-    siteUrl: `https://www.karriere-cofinpro.de`,
+require('source-map-support').install();
+require('ts-node').register({
+  compilerOptions: {
+    module: 'commonjs',
+    target: 'es2017',
   },
-  pathPrefix: '/',
+});
+
+const config = require('./config/SiteConfig').default;
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
+
+module.exports = {
+  pathPrefix: config.pathPrefix,
+  siteMetadata: {
+    siteUrl: config.siteUrl + pathPrefix,
+  },
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-offline',
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-manifest',
+    'gatsby-plugin-catch-links',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-lodash',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
+        name: 'post',
+        path: `${__dirname}/static`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static/img/`,
+        id: config.Google_Tag_Manager_ID,
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
       },
     },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: 'niza6hilizwt',
-        accessToken:
-          'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
-      },
-    },
-    'gatsby-transformer-json',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-responsive-iframe',
+            resolve: 'gatsby-remark-external-links',
             options: {
-              wrapperStyle: 'margin-bottom: 1.0725rem',
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
             },
           },
-          'gatsby-remark-copy-linked-files',
-          'gatsby-remark-smartypants',
+          'gatsby-remark-prismjs',
           'gatsby-remark-autolink-headers',
         ],
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: 'gatsby-plugin-typography',
       options: {
-        trackingId: 'UA-111444132-1',
-        anonymize: true,
+        pathToConfigModule: 'src/utils/typography.ts',
       },
     },
     {
-      resolve: 'gatsby-plugin-svgr',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: true,
-        viewBox: false,
-        // see https://github.com/smooth-code/svgr for a list of all options
+        name: config.siteTitle,
+        short_name: config.siteTitleAlt,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: config.favicon,
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-remove-serviceworker',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
-    {
-      resolve: `gatsby-plugin-polyfill-io`,
-      options: {
-        features: [`String.prototype.startsWith`],
-      },
-    },
-  ],
-}
+  ]
+};

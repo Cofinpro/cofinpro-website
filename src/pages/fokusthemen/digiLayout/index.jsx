@@ -1,12 +1,12 @@
 import React from 'react'
 
-import ReferenzAndDownload from '../../../components/ReferenzAndDownload'
-import ContentfulMarkdownText from '../../../components/ContentfulMarkdownText'
+import ReferenzAndDownload from 'components/ReferenzAndDownload'
+import ContentfulMarkdownText from 'components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
-} from '../../../components/images/ImageWrapper'
+} from 'components/images/ImageWrapper'
 
 class FokusthemenDigitalisierung extends React.Component {
   render() {

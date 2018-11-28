@@ -1,6 +1,6 @@
 import React from 'react'
 
-import RelevanteLinks from '../../../components/relevanteLinks'
+import RelevanteLinks from 'components/relevanteLinks'
 
 class ContentseiteMin extends React.Component {
   render() {

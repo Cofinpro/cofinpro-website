@@ -1,13 +1,13 @@
 import React from 'react'
 
-import RelevanteLinks from '../../components/relevanteLinks'
-import ExternalLinkButton from '../../components/buttons/ExternalLinkButton'
-import ContentfulMarkdownText from '../../components/ContentfulMarkdownText'
+import RelevanteLinks from 'components/relevanteLinks'
+import ExternalLinkButton from 'components/buttons/ExternalLinkButton'
+import ContentfulMarkdownText from 'components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
   SOURCE_TYP_PLACEHOLDER,
-} from '../../components/images/ImageWrapper'
+} from 'components/images/ImageWrapper'
 
 class ContentseiteMax extends React.Component {
   render() {
