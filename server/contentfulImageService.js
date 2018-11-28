@@ -1,10 +1,5 @@
 const _ = require(`lodash`)
-const Promise = require(`bluebird`)
-const path = require(`path`)
-const slash = require(`slash`)
-var async = require('async')
 const fs = require(`fs-extra`)
-var moment = require('moment')
 const axios = require('axios')
 
 var runWithTestData = false
@@ -52,50 +47,27 @@ exports.refreshImages = function(graphql, callback) {
       var itemsProcessed = 0
 
       _.each(result.data.allContentfulAsset.edges, edge => {
-        if (edge.node.file !== undefined && edge.node.file !== null) {
-          var fileName = edge.node.file.fileName
-          var newFileName =
-            edge.node.id +
-            fileName.substring(fileName.lastIndexOf('.'), fileName.length)
+        if (edge.node.file === undefined || edge.node.file === null) {
+          return
+        }
 
-          var path = ''
+        var path = getDestinationPath(edge)
+        console.log('checking if asset exists under:' + path)
 
-          console.log('new file name:' + newFileName)
+        if (path !== '' && !existsAsset(path)) {
+          console.log('asset for id:' + edge.node.id + ' not found.')
 
-          if (isImage(newFileName)) {
-            path = './static/img/contentful/' + newFileName
-          } else if (isPdf(newFileName)) {
-            path = './static/pdf/contentful/' + newFileName
-          }
+          var url = 'http:' + edge.node.file.url
 
-          console.log('checking if asset exists under:' + path)
+          console.log('getting file from url:' + url)
+          console.log('storing file under path:' + path)
 
-          if (path !== '' && !existsAsset(path)) {
-            console.log('asset for id:' + edge.node.id + ' not found.')
-
-            var url = 'http:' + edge.node.file.url
-
-            console.log('getting file from url:' + url)
-            console.log('storing file under path:' + path)
-
-            axios({
-              method: 'get',
-              url: url,
-              responseType: 'stream',
-            }).then(function(response) {
-              response.data.pipe(fs.createWriteStream(path))
-              itemsProcessed++
-
-              if (
-                itemsProcessed === result.data.allContentfulAsset.edges.length
-              ) {
-                setTimeout(function() {
-                  callback(null)
-                  console.log('timeout completed')
-                }, 5000)
-              }
-            })
-          } else {
+          axios({
+            method: 'get',
+            url: url,
+            responseType: 'stream',
+          }).then(function(response) {
+            response.data.pipe(fs.createWriteStream(path))
             itemsProcessed++
 
             if (
@@ -106,6 +78,15 @@ exports.refreshImages = function(graphql, callback) {
                 console.log('timeout completed')
               }, 5000)
             }
+          })
+        } else {
+          itemsProcessed++
+
+          if (itemsProcessed === result.data.allContentfulAsset.edges.length) {
+            setTimeout(function() {
+              callback(null)
+              console.log('timeout completed')
+            }, 5000)
           }
         }
       })
@@ -113,28 +94,31 @@ exports.refreshImages = function(graphql, callback) {
   }
 }
 
-function existsAsset(_path) {
-  if (fs.existsSync(_path)) {
-    return true
+function getDestinationPath(edge) {
+  var fileName = edge.node.file.fileName
+  var newFileName =
+    edge.node.id +
+    fileName.substring(fileName.lastIndexOf('.'), fileName.length)
+
+  console.log('new file name:' + newFileName)
+
+  if (isImage(newFileName)) {
+    return './static/img/contentful/' + newFileName
+  } else if (isPdf(newFileName)) {
+    return './static/pdf/contentful/' + newFileName
   }
-  return false
 }
 
 function isImage(_fileName) {
-  if (
-    _fileName.toLowerCase().endsWith('.jpg') ||
-    _fileName.toLowerCase().endsWith('.jpeg') ||
-    _fileName.toLowerCase().endsWith('.png') ||
-    _fileName.toLowerCase().endsWith('.ico')
-  ) {
-    return true
-  }
-  return false
+  return ['.jpg', '.jpeg', '.png', '.ico'].some(x =>
+    _fileName.toLowerCase().endsWith(x)
+  )
 }
 
 function isPdf(_fileName) {
-  if (_fileName.toLowerCase().endsWith('.pdf')) {
-    return true
-  }
-  return false
+  return _fileName.toLowerCase().endsWith('.pdf')
+}
+
+function existsAsset(_path) {
+  return fs.existsSync(_path)
 }
