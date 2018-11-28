@@ -6,16 +6,20 @@ import './HeroImageLayout.scss';
 
 interface Props {
   title: string;
-  imageFile: any;
+  imageFile?: any;
   imageSmall?: any;
-  titleTag: string;
+  titleTag?: string;
   titleImage: string;
   titleImageSmall?: string;
-  isOverlayActive: boolean;
+  isOverlayActive?: boolean;
 }
 
 class HeroImageLayout extends React.Component<Props> {
-  getTitleElement(titleTag: string, title: any) {
+  getTitleElement(titleTag: string | undefined, title: any) {
+    if (titleTag === undefined) {
+      return null;
+    }
+
     switch (titleTag) {
       case 'h1':
         return <h1 className="h1">{title}</h1>;
@@ -94,9 +98,7 @@ class HeroImageLayout extends React.Component<Props> {
                 ) : (
                   <ImageWrapper source={imageFile} sourceType={SourceTyp.Contentful} styleClasses="img-fluid d-none d-md-block" />
                 )}
-                {(titleImageSmall === undefined || titleImageSmall === null) &&
-                (titleImageSmall === undefined || titleImageSmall === null) &&
-                (titleImage !== undefined && titleImage !== null) ? (
+                {(titleImageSmall === undefined || titleImageSmall === null) && (titleImage !== undefined && titleImage !== null) ? (
                   <div className="d-block d-md-none">
                     {isOverlayActive !== undefined && isOverlayActive ? <div className="image-overlay-gradient" /> : null}
                     <ImageWrapper source={titleImage} sourceType={SourceTyp.Sharp} />

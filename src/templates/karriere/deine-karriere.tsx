@@ -107,7 +107,7 @@ class LaufbahnTemplate extends React.Component<Props> {
                 author={graphQlResult.testimonial.autor}
                 authorTitle={graphQlResult.testimonial.autorTitel}
                 videoUrl={graphQlResult.testimonial.linkVonYouTubeVideo}
-                imageFile={graphQlResult.testimonial.bildTestimonial}
+                // TODO: imageFile={graphQlResult.testimonial.bildTestimonial}
               />
             </div>
           </div>

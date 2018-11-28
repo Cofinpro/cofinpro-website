@@ -38,6 +38,7 @@ interface Props {
   overlayElement?: any;
   styleClasses?: any;
   style?: any;
+  showOverlay?: boolean; // TODO: Gibt es eigenlitch garnicht! Sollten wir löschen!
 }
 
 export class ImageWrapper extends React.Component<Props> {

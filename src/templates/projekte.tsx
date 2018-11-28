@@ -8,14 +8,32 @@ import PageIntroText from 'components/PageIntroText';
 import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 
-class ProjekteUebersicht extends React.Component {
+interface Props {
+  pathContext: {
+    title: string;
+    description: string;
+    projects: any[];
+    stockImages: any[];
+  };
+}
+
+interface LayoutProps {
+  projects: any[];
+  images: any[];
+  imageIndexOffset: number;
+  style: {
+    container: string;
+  };
+}
+
+class ProjekteUebersicht extends React.Component<Props> {
   render() {
     // tslint:disable-next-line:function-name
-    function Layout(props) {
+    function Layout(props: LayoutProps) {
       return (
-        <div className={'container ' + props.style.container}>
-          {props.projects.map((item, i) => {
-            if (i % 2 === 0) {
+        <div className={`container ${props.style.container}`}>
+          {props.projects.map((item, index) => {
+            if (index % 2 === 0) {
               let firstColumnWidth;
               let secondColumnWidth;
               let rowAlignment;
@@ -24,7 +42,7 @@ class ProjekteUebersicht extends React.Component {
                 secondColumnWidth = 'col-md-12';
                 firstColumnWidth = 'col-md-8';
                 rowAlignment = 'align-items-end margin-xs-0-top';
-                if (projects.length !== i + 1) {
+                if (projects.length !== index + 1) {
                   rowAlignment += ' negative-margin-80-top negative-margin-md-40-top';
                 } else {
                   rowAlignment += ' margin-40-top';
@@ -39,19 +57,19 @@ class ProjekteUebersicht extends React.Component {
               }
 
               return (
-                <div key={i} className={'row ' + rowAlignment}>
+                <div key={index} className={`row ${rowAlignment}`}>
                   <div className="col-12 col-md-6">
                     <div className="row margin-xs-20-top justify-content-center">
-                      <div className={'col-12 ' + firstColumnWidth}>
-                        <Link className="d-block text-dark" to={'/projekte/' + item.urlDerSeite}>
+                      <div className={`col-12 ${firstColumnWidth}`}>
+                        <Link className="d-block text-dark" to={`/projekte/${item.urlDerSeite}`}>
                           <ImageWrapper
                             sourceType={SourceTyp.Bootstrap}
-                            source={props.images[props.imageIndexOffset + i]}
+                            source={props.images[props.imageIndexOffset + index]}
                             overlayElement={
                               <div>
-                                <ContentfulMarkdownText text={'## ' + item.ueberschrift} styleClasses="h4 text-md-1rem" />
+                                <ContentfulMarkdownText text={`## ${item.ueberschrift}`} styleClasses="h4 text-md-1rem" />
                                 {item.unterueberschrift !== undefined && (
-                                  <ContentfulMarkdownText text={' ' + item.unterueberschrift} styleClasses="h5 text-md-1rem" />
+                                  <ContentfulMarkdownText text={` ${item.unterueberschrift}`} styleClasses="h5 text-md-1rem" />
                                 )}
                               </div>
                             }
@@ -61,23 +79,23 @@ class ProjekteUebersicht extends React.Component {
                       </div>
                     </div>
                   </div>
-                  {props.projects.length !== i + 1 && (
+                  {props.projects.length !== index + 1 && (
                     <div className="col-12 col-md-6">
                       <div className="row margin-xs-20-top justify-content-center">
-                        <div className={'col-12 ' + secondColumnWidth}>
-                          <Link className="d-block text-dark" to={'/projekte/' + props.projects[i + 1].urlDerSeite}>
+                        <div className={`col-12 ${secondColumnWidth}`}>
+                          <Link className="d-block text-dark" to={`/projekte/${props.projects[index + 1].urlDerSeite}`}>
                             <ImageWrapper
-                              sourceType={SOURCE_TYP_BOOTSTRAP}
-                              source={backgroundImages[i + 1]}
+                              sourceType={SourceTyp.Bootstrap}
+                              source={backgroundImages[index + 1]}
                               overlayElement={
                                 <div>
                                   <ContentfulMarkdownText
-                                    text={'## ' + props.projects[i + 1].ueberschrift}
+                                    text={`## ${props.projects[index + 1].ueberschrift}`}
                                     styleClasses="h4 text-md-1rem"
                                   />
-                                  {props.projects[i + 1].unterueberschrift !== undefined && (
+                                  {props.projects[index + 1].unterueberschrift !== undefined && (
                                     <ContentfulMarkdownText
-                                      text={' ' + props.projects[i + 1].unterueberschrift}
+                                      text={` ${props.projects[index + 1].unterueberschrift}`}
                                       styleClasses="h5 text-md-1rem"
                                     />
                                   )}
@@ -100,7 +118,6 @@ class ProjekteUebersicht extends React.Component {
       );
     }
 
-
     let bigSmallSwitch = false;
 
     const title = this.props.pathContext.title;
@@ -108,16 +125,8 @@ class ProjekteUebersicht extends React.Component {
     const projects = this.props.pathContext.projects;
     const backgroundImages = this.props.pathContext.stockImages;
 
-    const firstShowProjects = [];
-    const moreProjects = [];
-
-    for (let i = 0; i < projects.length; ++i) {
-      if (i < 8) {
-        firstShowProjects.push(projects[i]);
-      } else if (i >= 8 && i < 16) {
-        moreProjects.push(projects[i]);
-      }
-    }
+    const firstShowProjects = projects.slice(0, 8);
+    const moreProjects = projects.slice(8, 16);
 
     const seoTitel = title;
     const seoDescription = description;

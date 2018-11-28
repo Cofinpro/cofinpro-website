@@ -54,7 +54,7 @@ class LayoutVeroeffentlichungen extends React.Component<Props> {
 
     const convertedDownloads = this.createDataStructureForDataRow(content.elements);
 
-    const firstForElements = content.elements.slice(0, 3).map((x: any) => {
+    const firstForElements = content.elements.slice(0, 4).map((x: any) => {
       if (x.dataType === 'file') {
         return this.createDataForPreviewImageByFile(x);
       }

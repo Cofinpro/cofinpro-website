@@ -280,7 +280,7 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
         </div>
         <DownloadPreviewTextAndImageLayout
           style={{ container: 'margin-40-top margin-xs-0-top' }}
-          content={{ showButton: false }}
+          // TODO: content={{ showButton: false }}
           downloads={downloads}
         />
         <div className="container margin-120-top margin-xs-80-top">

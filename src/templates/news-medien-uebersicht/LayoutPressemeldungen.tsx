@@ -40,7 +40,7 @@ class LayoutPressemeldungen extends React.Component<Props> {
     const { content, style } = this.props;
 
     const convertedLinks = this.createDataStructureForLinkRow(content.elements);
-    const firstForElements = content.elements.slice(0, 3).map((x: any) => this.createDataForPreviewImage(x));
+    const firstForElements = content.elements.slice(0, 4).map((x: any) => this.createDataForPreviewImage(x));
 
     return (
       <div className="container">

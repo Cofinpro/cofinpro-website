@@ -6,7 +6,11 @@ import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import HtmlHeader from 'components/HtmlHeader';
 import LinkButton from 'components/buttons/LinkButton';
 
-class NewsTemplate extends React.Component {
+interface Props {
+  pathContext: any;
+}
+
+class NewsTemplate extends React.Component<Props> {
   render() {
     const news = this.props.pathContext.news.node;
 

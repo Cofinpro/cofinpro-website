@@ -4,6 +4,9 @@ src\layout\*
 
 src\pages\index.tsx
 
+src\templates\karriere\*
+src\templates\fokusthemenDetail.tsx
+
 src\pages\fokusthemen\digiLayout\index.jsx
     Brauchen wir die Datei noch?
 
@@ -20,10 +23,6 @@ src\components\ChatBot.tsx
 Missing NPM packages:
     gatsby-image
     react-marked-markdown
+    universal-cookie
 
-
-
-// TODO: imageFile={testimonial.bildTestimonial} *is not used*
-// TODO: newsId={news.id} *is not used*
-// TODO: content={{ showButton: true }} *is not used*
-public publishedBy: string = ''; // TODO: is never set
+Nach // TODO: suchen!!!

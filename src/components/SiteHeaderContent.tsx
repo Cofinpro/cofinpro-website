@@ -7,12 +7,16 @@ interface Props {
   subtitle: string;
   text1: string;
   text2: string;
-  titleTag: string;
-  subtitleTag: string;
+  titleTag?: string;
+  subtitleTag?: string;
 }
 
 class SiteHeaderContent extends React.Component<Props> {
-  getTitleElement(titleTag: string, title: string) {
+  getTitleElement(titleTag: string | undefined, title: string) {
+    if (titleTag === undefined) {
+      return null;
+    }
+
     switch (titleTag) {
       case 'h1':
         return <h1 className="h2 margin-sm-bottom">{title}</h1>;
@@ -31,7 +35,11 @@ class SiteHeaderContent extends React.Component<Props> {
     }
   }
 
-  getSubTitleElement(subtitleTag: string, subtitle: string) {
+  getSubTitleElement(subtitleTag: string | undefined, subtitle: string) {
+    if (subtitleTag === undefined) {
+      return null;
+    }
+
     switch (subtitleTag) {
       case 'h1':
         return <h1 className="h6 normal-font">{subtitle}</h1>;

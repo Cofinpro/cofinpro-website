@@ -11,53 +11,31 @@ interface Paragraph {
   image: SharpImage;
 }
 
-class ContentseiteMax extends React.Component {
+interface Props {
+  pathContext: {
+    content: any;
+    paragraphThreeImageSharp: SharpImage;
+  };
+  data: any;
+}
+
+class ContentseiteMax extends React.Component<Props> {
   render() {
     const content = this.props.pathContext.content;
 
-    let paragraphOne: Paragraph;
-    let paragraphTwo: Paragraph;
+    const paragraphOne: Paragraph = {
+      text: content.paragraph1 ? content.paragraph1.paragraph1 : undefined,
+      image: this.props.data.paragraphOneImageSharp,
+    };
+
+    const paragraphTwo: Paragraph = {
+      text: content.paragraph2 ? content.paragraph2.paragraph2 : undefined,
+      image: this.props.data.paragraphTwoImageSharp,
+    };
+
     const paragraphThree = undefined;
 
-    if (content.paragraph1 !== undefined && content.paragraph1 !== null) {
-      if (typeof paragraphOne === 'undefined') {
-        paragraphOne = {};
-      }
-      paragraphOne.text = content.paragraph1.paragraph1;
-    }
-
-    if (this.props.data.paragraphOneImageSharp !== undefined && this.props.data.paragraphOneImageSharp !== null) {
-      if (typeof paragraphOne === 'undefined') {
-        paragraphOne = {};
-      }
-      paragraphOne.image = this.props.data.paragraphOneImageSharp;
-    }
-
-    if (content.paragraph2 !== undefined && content.paragraph2 !== null) {
-      if (typeof paragraphTwo === 'undefined') {
-        paragraphTwo = {};
-      }
-      paragraphTwo.text = content.paragraph2.paragraph2;
-    }
-
-    if (this.props.data.paragraphTwoImageSharp !== undefined && this.props.data.paragraphTwoImageSharp !== null) {
-      if (typeof paragraphTwo === 'undefined') {
-        paragraphTwo = {};
-      }
-      paragraphTwo.image = this.props.data.paragraphTwoImageSharp;
-    }
-
-    let middleImageIsNotPresent = false;
-
-    if (this.props.data.bigMiddleImageSharp === undefined || this.props.data.bigMiddleImageSharp === null) {
-      middleImageIsNotPresent = true;
-    }
-
-    let paragrapOneSpaceToTop = 'margin-120-top';
-
-    if (middleImageIsNotPresent) {
-      paragrapOneSpaceToTop = 'margin-40-top';
-    }
+    const paragrapOneSpaceToTop = !!this.props.data.bigMiddleImageSharp ? 'margin-40-top' : 'margin-120-top';
 
     const DATE_OPTIONS = {
       year: 'numeric',
@@ -65,19 +43,10 @@ class ContentseiteMax extends React.Component {
       day: '2-digit',
     };
 
-    let seoTitle = content.ueberschrift;
-
-    if (content.unteruebrschrift !== undefined && content.unteruebrschrift !== null) {
-      seoTitle = seoTitle + '-' + content.unteruebrschrift.unteruebrschrift;
-    }
-
-    let seoDescription;
-
-    if (content.introText !== undefined) {
-      seoDescription = content.introText.introText.substring(0, 215);
-    } else {
-      seoDescription = seoTitle;
-    }
+    const seoTitle = !!content.unteruebrschrift
+      ? `${content.ueberschrift}-${content.unteruebrschrift.unteruebrschrift}`
+      : content.ueberschrift;
+    const seoDescription = !!content.introText ? content.introText.introText.substring(0, 215) : seoTitle;
 
     return (
       <div>
@@ -122,31 +91,29 @@ class ContentseiteMax extends React.Component {
             </div>
           )}
 
-        {paragraphOne !== undefined &&
-          paragraphOne !== null && (
-            <ContentMaxParagraph
-              content={{
-                image: paragraphOne.image,
-                text: paragraphOne.text,
-                orderText: 'order-md-1',
-                orderPicture: 'order-md-2',
-              }}
-              style={{ container: paragrapOneSpaceToTop + ' margin-xs-40-top' }}
-            />
-          )}
+        {(paragraphOne.text !== undefined || paragraphOne.image !== undefined) && (
+          <ContentMaxParagraph
+            content={{
+              image: paragraphOne.image,
+              text: paragraphOne.text,
+              orderText: 'order-md-1',
+              orderPicture: 'order-md-2',
+            }}
+            style={{ container: `${paragrapOneSpaceToTop} margin-xs-40-top` }}
+          />
+        )}
 
-        {paragraphTwo !== undefined &&
-          paragraphTwo !== null && (
-            <ContentMaxParagraph
-              content={{
-                image: paragraphTwo.image,
-                text: paragraphTwo.text,
-                orderText: 'order-md-2',
-                orderPicture: 'order-md-1',
-              }}
-              style={{ container: 'margin-100-top margin-xs-80-top' }}
-            />
-          )}
+        {(paragraphTwo.text !== undefined || paragraphTwo.image !== undefined) && (
+          <ContentMaxParagraph
+            content={{
+              image: paragraphTwo.image,
+              text: paragraphTwo.text,
+              orderText: 'order-md-2',
+              orderPicture: 'order-md-1',
+            }}
+            style={{ container: 'margin-100-top margin-xs-80-top' }}
+          />
+        )}
 
         {paragraphThree !== undefined &&
           paragraphThree !== null && (

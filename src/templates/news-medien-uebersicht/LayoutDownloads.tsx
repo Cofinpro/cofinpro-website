@@ -31,7 +31,7 @@ class LayoutDownloads extends React.Component<Props> {
     const { content, style } = this.props;
 
     const convertedDownloads = this.createDataStructureForDownloadRow(content.downloads);
-    const firstTwoElements = content.downloads.slice(0, 1).map((x: any) => this.createDataForPreviewImage(x));
+    const firstTwoElements = content.downloads.slice(0, 2).map((x: any) => this.createDataForPreviewImage(x));
 
     return (
       <div className={'container'}>
