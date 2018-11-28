@@ -40,7 +40,7 @@ class FokusthemenLayout extends React.Component<Props> {
           <ContentfulMarkdownText
             text={
               fokusthemen[indexOfFokusthemaWithText].headline !== undefined
-                ? '„' + fokusthemen[indexOfFokusthemaWithText].headline.headline + '“'
+                ? `„${fokusthemen[indexOfFokusthemaWithText].headline.headline}“`
                 : ''
             }
             styleClasses="h3 h4-md margin-40-top"
@@ -61,7 +61,7 @@ class FokusthemenLayout extends React.Component<Props> {
 
     return (
       <div>
-        <div className={'container ' + style.container}>
+        <div className={`container ${style.container}`}>
           <div className="row">
             <div className="col-12 col-md-6">
               <div className="row">
@@ -115,44 +115,44 @@ class FokusthemenLayout extends React.Component<Props> {
           </div>
 
           <div className="row d-flex d-md-none">
-            {fokusthemen.map((item, i) => {
-              if (i < 3) {
+            {fokusthemen.map((x, index) => {
+              if (index < 3) {
                 return (
-                  <div className="col-12 margin-20-top" key={'fokusthema-mobile-' + i}>
+                  <div className="col-12 margin-20-top" key={`fokusthema-mobile-${index}`}>
                     <FokusthemaPreview
-                      url={fokusthemen[i].url}
-                      header={fokusthemen[i].uberschriftGanzOben}
-                      subheader={fokusthemen[i].unterueberschrift}
-                      color={this.colorSchema[i]}
-                      icon={fokusthemen[i].icon}
+                      url={x.url}
+                      header={x.uberschriftGanzOben}
+                      subheader={x.unterueberschrift}
+                      color={this.colorSchema[index]}
+                      icon={x.icon}
                     />
                   </div>
                 );
-              } else {
-                return null;
               }
+
+              return null;
             })}
             {mobileFokusthemaText}
           </div>
           {fokusthemen.length > 3 && (
             <div className="row d-flex d-md-none">
               <div className="collapse" id="collapse-more-fokusthemen">
-                {fokusthemen.map((item, i) => {
-                  if (i >= 3 && i < 10) {
+                {fokusthemen.map((x, index) => {
+                  if (index >= 3 && index < 10) {
                     return (
-                      <div className="col-12 margin-20-top" key={'fokusthema-mobile-' + i}>
+                      <div className="col-12 margin-20-top" key={`fokusthema-mobile-${index}`}>
                         <FokusthemaPreview
-                          url={fokusthemen[i].url}
-                          header={fokusthemen[i].uberschriftGanzOben}
-                          subheader={fokusthemen[i].unterueberschrift}
-                          color={this.colorSchema[i]}
-                          icon={fokusthemen[i].icon}
+                          url={x.url}
+                          header={x.uberschriftGanzOben}
+                          subheader={x.unterueberschrift}
+                          color={this.colorSchema[index]}
+                          icon={x.icon}
                         />
                       </div>
                     );
-                  } else {
-                    return null;
                   }
+
+                  return null;
                 })}
               </div>
               <div className="col-12">
@@ -161,7 +161,7 @@ class FokusthemenLayout extends React.Component<Props> {
             </div>
           )}
           {fokusthemen.length >= 4 && (
-            <div className={'row d-none d-md-flex ' + styleClassContainer4till6}>
+            <div className={`row d-none d-md-flex ${styleClassContainer4till6}`}>
               <div className="col-1" />
               <div className="col-6">
                 {fokusthemen.length >= 5 && (
@@ -175,7 +175,7 @@ class FokusthemenLayout extends React.Component<Props> {
                 )}
               </div>
               <div className="col-5">
-                <div className={'row ' + styleColFokusthema3}>
+                <div className={`row ${styleColFokusthema3}`}>
                   <div className="col-2" />
                   <div className="col-10">
                     {fokusthemen.length >= 4 && (
@@ -226,8 +226,8 @@ class FokusthemenLayout extends React.Component<Props> {
               </div>
             </div>
           )}
-          <div className={'row d-none d-md-flex ' + styleRowFokusthema8}>
-            <div className={'col-6 ' + styleColFokusthema8}>
+          <div className={`row d-none d-md-flex ${styleRowFokusthema8}`}>
+            <div className={`col-6 ${styleColFokusthema8}`}>
               {fokusthemen.length >= 9 && (
                 <FokusthemaPreview
                   url={fokusthemen[8].url}

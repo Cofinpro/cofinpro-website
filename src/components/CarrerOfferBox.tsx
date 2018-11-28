@@ -33,7 +33,7 @@ class CarrerOfferBox extends React.Component<Props, State> {
     PubSub.unsubscribe(this.token);
   }
 
-  subscriber(msg, data) {
+  subscriber(msg: any, data: any) {
     if (this.state.perspektive !== data) {
       this.setState({
         perspektive: data,
@@ -57,7 +57,7 @@ class CarrerOfferBox extends React.Component<Props, State> {
     let buckets = [];
     if (this.state.perspektive == null || this.state.perspektive.trim().length < 1) {
       buckets = anzeigen.map(anzeige => {
-        return anzeige.node.zuordnungZuKompetenzen.map(zuordnung => {
+        return anzeige.node.zuordnungZuKompetenzen.map((zuordnung: any) => {
           if (zuordnung.name === this.state.perspektive) {
             return anzeige;
           }

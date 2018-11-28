@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import ContentfulMarkdownText from '../ContentfulMarkdownText';
 import CarouselControlPrevNext from '../CarouselControlPrevNext';
 
+import './ManagementBoardCarousel.scss';
+
 interface Props {
   carouselId: string;
   mitglieder: any[];

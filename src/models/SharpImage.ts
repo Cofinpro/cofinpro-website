@@ -7,4 +7,5 @@ export interface SharpImage {
     fileName: string;
     contentType: string;
   };
+  sizes: any;
 }

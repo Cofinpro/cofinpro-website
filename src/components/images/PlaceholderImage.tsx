@@ -1,12 +1,9 @@
 import React from 'react';
 
 interface Props {
-  source: {
-    width: number;
-    height: number;
-  };
-  styleClasses: any;
-  overlayElement: any;
+  source: any;
+  styleClasses?: any;
+  overlayElement?: any;
 }
 
 class PlaceholderImage extends React.Component<Props> {

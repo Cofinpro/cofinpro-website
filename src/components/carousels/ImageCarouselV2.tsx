@@ -4,6 +4,8 @@ import Img from 'gatsby-image';
 import ContentfulImage from '../images/ContentfulImage';
 import CarouselControlPrevNext from '../CarouselControlPrevNext';
 
+import './ImageCarousel.scss';
+
 interface Props {
   carouselId: string;
   contentfulImages: any;

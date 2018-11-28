@@ -40,10 +40,10 @@ class NavbarLinks extends React.Component<Props> {
               )}
               {menuItem.children !== undefined && menuItem.children.length > 0 ? (
                 <ul className="d-flex d-xl-none nav-item-child">
-                  {menuItem.children.map((menuChild, index) => {
+                  {menuItem.children.map((menuChild: any, i: number) => {
                     return (
                       <li
-                        key={`navigation-list-child-item-${index}`}
+                        key={`navigation-list-child-item-${i}`}
                         className={
                           location.pathname.match(menuChild.pattern) ? 'nav-item margin-20-left active' : 'nav-item margin-20-left'
                         }

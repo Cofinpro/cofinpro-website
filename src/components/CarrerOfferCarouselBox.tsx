@@ -34,7 +34,7 @@ class CarrerOfferCarouselBox extends React.Component<Props, State> {
     PubSub.unsubscribe(this.token);
   }
 
-  subscriber(msg, data) {
+  subscriber(msg: any, data: any) {
     if (this.state.perspektive !== data) {
       this.setState({
         perspektive: data,

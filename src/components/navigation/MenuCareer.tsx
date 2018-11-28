@@ -58,32 +58,32 @@ class MenuCareer extends React.Component<Props> {
     const menuItems = [
       {
         name: 'ÜBER UNS',
-        link: pathPrefix + '/karriere/ueber-uns',
+        link: `${pathPrefix}/karriere/ueber-uns`,
         pattern: '/karriere/ueber-uns',
       },
       {
         name: 'DEINE KARRIERE',
-        link: '/karriere' + this.getPathPrefixPerspective() + '/deine-karriere',
+        link: `/karriere${this.getPathPrefixPerspective()}/deine-karriere`,
         pattern: '/karriere/.*/deine-karriere',
       },
       {
         name: 'DEINE ENTWICKLUNG',
-        link: '/karriere' + this.getPathPrefixPerspective() + '/deine-entwicklung',
+        link: `/karriere${this.getPathPrefixPerspective()}/deine-entwicklung`,
         pattern: '/karriere/.*/deine-entwicklung',
       },
       {
         name: 'GEHALT & BENEFITS',
-        link: '/karriere' + this.getPathPrefixPerspective() + '/gehalt-beteiligung',
+        link: `/karriere${this.getPathPrefixPerspective()}/gehalt-beteiligung`,
         pattern: '/karriere/.*/gehalt-beteiligung',
       },
       {
         name: 'WORK & LIFE',
-        link: pathPrefix + '/karriere/work-life',
+        link: `${pathPrefix}//karriere/work-life`,
         pattern: '/karriere/work-life',
       },
       {
         name: 'JOBS & BEWERBUNG',
-        link: pathPrefix + '/karriere/jobs-bewerbung',
+        link: `${pathPrefix}//karriere/jobs-bewerbung`,
         pattern: '/karriere/jobs-bewerbung',
       },
     ];
@@ -96,7 +96,7 @@ class MenuCareer extends React.Component<Props> {
       <div className="collapse navbar-collapse main-navigation-bar" id="navbarSupportedContent">
         <div>
           <Link
-            to={location.pathname.startsWith('/karriere') ? '/karriere' + this.getPathPrefixPerspective() + '/landing' : '/'}
+            to={location.pathname.startsWith('/karriere') ? `/karriere${this.getPathPrefixPerspective()}/landing` : '/'}
             className="navbar-brand d-none d-xl-block"
           >
             {location.pathname.startsWith('/karriere') === false ? (

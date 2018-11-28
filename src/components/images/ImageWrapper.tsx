@@ -26,13 +26,13 @@ interface Image2 {
   };
 }
 
-interface Image3 {
+interface PlaceholderImageModel {
   width: number;
   height: number;
 }
 
 interface Props {
-  source: SharpImageModel | Image2 | Image3 | string;
+  source: SharpImageModel | Image2 | PlaceholderImageModel | string;
   sourceType: SourceTyp;
   backgroundOverlay?: any;
   overlayElement?: any;
@@ -55,7 +55,7 @@ export class ImageWrapper extends React.Component<Props> {
         return <PlaceholderImage {...this.props} />;
       case SourceTyp.Icon:
         // tslint:disable-next-line:prettier
-        // return <IconImage {...this.props} />;
+        // TODO return <IconImage {...this.props} />;
         throw new Error('Brauchen wir IconImage noch?');
       default:
         return null;

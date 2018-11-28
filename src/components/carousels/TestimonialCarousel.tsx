@@ -3,6 +3,8 @@ import React from 'react';
 import TestimonialLayout from '../layouts/TestimonialLayout';
 import CarouselControlPrevNext from '../CarouselControlPrevNext';
 
+import './TestimonialCarousel.scss';
+
 interface Props {
   carouselId: string;
   testimonials: any;
@@ -25,7 +27,7 @@ class TestimonialCarousel extends React.Component<Props> {
                     author={testimonial.autor}
                     authorTitle={testimonial.autorTitel}
                     videoUrl={testimonial.linkVonYouTubeVideo}
-                    imageFile={testimonial.bildTestimonial}
+                    // TODO: imageFile={testimonial.bildTestimonial} *is not used*
                     showCarouselSliderIcons={true}
                     carouselId={carouselId}
                   />

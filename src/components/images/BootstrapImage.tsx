@@ -2,8 +2,8 @@ import React from 'react';
 
 interface Props {
   source: any;
-  styleClasses: any;
-  overlayElement: any;
+  styleClasses?: any;
+  overlayElement?: any;
 }
 
 class BootstrapImage extends React.Component<Props> {

@@ -15,17 +15,34 @@ interface Props {
 }
 
 class HeroImageLayout extends React.Component<Props> {
+  getTitleElement(titleTag: string, title: any) {
+    switch (titleTag) {
+      case 'h1':
+        return <h1 className="h1">{title}</h1>;
+      case 'h2':
+        return <h2 className="h1">{title}</h2>;
+      case 'h3':
+        return <h3 className="h1">{title}</h3>;
+      case 'h4':
+        return <h4 className="h1">{title}</h4>;
+      case 'h5':
+        return <h5 className="h1">{title}</h5>;
+      case 'h6':
+        return <h6 className="h1">{title}</h6>;
+      default:
+        return <h3 className="h1">{title}</h3>;
+    }
+  }
+
   render() {
     const { title, imageFile, imageSmall, titleTag, titleImage, titleImageSmall, isOverlayActive } = this.props;
-
-    let titleElement;
 
     let tempTitleElement;
 
     if (title.indexOf(' ') === -1) {
       tempTitleElement = title;
     } else if (title.split(' ').length === 2) {
-      let twoWords = title.split(' ');
+      const twoWords = title.split(' ');
 
       tempTitleElement = (
         <span>
@@ -33,11 +50,11 @@ class HeroImageLayout extends React.Component<Props> {
         </span>
       );
     } else {
-      let s = title;
+      const s = title;
 
       let middle = Math.floor(s.length / 2);
-      let before = s.lastIndexOf(' ', middle);
-      let after = s.indexOf(' ', middle + 1);
+      const before = s.lastIndexOf(' ', middle);
+      const after = s.indexOf(' ', middle + 1);
 
       if (middle - before < after - middle) {
         middle = before;
@@ -45,8 +62,8 @@ class HeroImageLayout extends React.Component<Props> {
         middle = after;
       }
 
-      let s1 = s.substr(0, middle);
-      let s2 = s.substr(middle + 1);
+      const s1 = s.substr(0, middle);
+      const s2 = s.substr(middle + 1);
 
       tempTitleElement = (
         <span>
@@ -55,21 +72,7 @@ class HeroImageLayout extends React.Component<Props> {
       );
     }
 
-    if (titleTag !== null && titleTag === 'h1') {
-      titleElement = <h1 className="h1">{tempTitleElement}</h1>;
-    } else if (titleTag !== null && titleTag === 'h2') {
-      titleElement = <h2 className="h1">{tempTitleElement}</h2>;
-    } else if (titleTag !== null && titleTag === 'h3') {
-      titleElement = <h3 className="h1">{tempTitleElement}</h3>;
-    } else if (titleTag !== null && titleTag === 'h4') {
-      titleElement = <h4 className="h1">{tempTitleElement}</h4>;
-    } else if (titleTag !== null && titleTag === 'h5') {
-      titleElement = <h5 className="h1">{tempTitleElement}</h5>;
-    } else if (titleTag !== null && titleTag === 'h6') {
-      titleElement = <h6 className="h1">{tempTitleElement}</h6>;
-    } else {
-      titleElement = <h3 className="h1">{tempTitleElement}</h3>;
-    }
+    const titleElement = this.getTitleElement(titleTag, tempTitleElement);
 
     return (
       <div className="hero-image">

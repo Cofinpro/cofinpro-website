@@ -5,8 +5,18 @@ import StorageHelper from '../utils/storageHelper';
 import NewsPreview from './NewsPreview';
 import LinkButton from './buttons/LinkButton';
 
-class NewsPreviewNewest extends React.Component {
-  constructor(props) {
+interface Props {
+  content: any;
+}
+
+interface State {
+  perspektive: any;
+}
+
+class NewsPreviewNewest extends React.Component<Props, State> {
+  private token: any;
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       perspektive: StorageHelper.getFromSessionStorage('perspective'),
@@ -21,7 +31,7 @@ class NewsPreviewNewest extends React.Component {
     PubSub.unsubscribe(this.token);
   }
 
-  subscriber(msg, data) {
+  subscriber(msg: any, data: any) {
     if (this.state.perspektive !== data) {
       this.setState({
         perspektive: data,
@@ -69,11 +79,11 @@ class NewsPreviewNewest extends React.Component {
         <div className="row">
           <div className="col-12 col-md-1" />
           {filteredNews.length > 0
-            ? filteredNews.map((news, i) => {
+            ? filteredNews.map((news, index) => {
                 return (
-                  <div className="col-12 col-md-5" key={'news-column-' + i}>
+                  <div className="col-12 col-md-5" key={'news-column-' + index}>
                     <NewsPreview
-                      key={'news-NewsPreview-' + i}
+                      key={'news-NewsPreview-' + index}
                       createdAt={news.node.datumFuerDieAnzeige}
                       title={news.node.ueberschrift}
                       description={news.node.kurzeBeschreibung !== null ? news.node.kurzeBeschreibung.kurzeBeschreibung : null}

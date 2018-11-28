@@ -9,10 +9,10 @@ interface Style {
 
 interface Props {
   source: any;
-  style: Style;
-  styleClasses: any;
-  overlayElement: any;
-  backgroundOverlay: any;
+  style?: Style;
+  styleClasses?: any;
+  overlayElement?: any;
+  backgroundOverlay?: any;
 }
 
 class SharpImage extends React.Component<Props> {

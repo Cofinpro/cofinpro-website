@@ -57,7 +57,9 @@ class CarrerOffersCarousel extends React.Component<Props, State> {
       const buckets = [];
       let tempBucket = [];
 
+      // tslint:disable-next-line:no-increment-decrement
       for (let i = 0; i < itemsData.length; i++) {
+        // tslint:disable-next-line:no-increment-decrement
         for (let j = 0; j < itemsData[i].node.zuordnungZuKompetenzen.length; ++j) {
           if (perspective == null || perspective.trim().length < 1 || itemsData[i].node.zuordnungZuKompetenzen[j].name === perspective) {
             if (blacklistedItem == null || blacklistedItem !== itemsData[i].node.id) {

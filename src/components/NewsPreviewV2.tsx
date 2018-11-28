@@ -5,8 +5,17 @@ import Img from 'gatsby-image';
 import ContentfulImage from './images/ContentfulImage';
 
 import './NewsPreviewV2.scss';
+import { SharpImage } from 'models/SharpImage';
 
-class NewsPreviewV2 extends React.Component {
+interface Props {
+  createdAt: any;
+  description: string;
+  url: string;
+  imageFile: any;
+  imageFileSharp: SharpImage;
+}
+
+class NewsPreviewV2 extends React.Component<Props> {
   render() {
     const { createdAt, description, url, imageFile, imageFileSharp } = this.props;
 
@@ -14,7 +23,7 @@ class NewsPreviewV2 extends React.Component {
 
     return (
       <div>
-        <Link to={pathPrefix + '/karriere/pinnwand/' + url}>
+        <Link to={`${pathPrefix}/karriere/pinnwand/${url}`}>
           {imageFileSharp !== undefined && imageFileSharp !== null ? (
             <Img sizes={imageFileSharp != null && imageFileSharp.sizes} />
           ) : (
@@ -26,9 +35,9 @@ class NewsPreviewV2 extends React.Component {
           <br />
         </p>
         <p className="news-text">
-          {description.length > 200 ? description.substring(0, 200) + '...' : description}
+          {description.length > 200 ? `${description.substring(0, 200)}...` : description}
           &nbsp;
-          <Link to={pathPrefix + '/karriere/pinnwand/' + url}>></Link>
+          <Link to={`${pathPrefix}/karriere/pinnwand/${url}`}>></Link>
         </p>
       </div>
     );

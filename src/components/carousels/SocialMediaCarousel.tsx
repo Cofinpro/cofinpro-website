@@ -6,6 +6,8 @@ import ContentfulMarkdownText from '../ContentfulMarkdownText';
 import CarouselControlPrevNext from '../CarouselControlPrevNext';
 import StorageHelper from 'utils/storageHelper';
 
+import './SocialMediaCarousel.scss';
+
 interface Props {
   carouselId: string;
   socialMediaPosts: any;
@@ -34,7 +36,7 @@ class SocialMediaCarousel extends React.Component<Props, State> {
     PubSub.unsubscribe(this.token);
   }
 
-  subscriber(msg, data) {
+  subscriber(msg: any, data: any) {
     if (this.state.perspektive !== data) {
       this.setState({
         perspektive: data,
@@ -45,22 +47,12 @@ class SocialMediaCarousel extends React.Component<Props, State> {
   render() {
     const { carouselId, socialMediaPosts, sharpImages } = this.props;
 
-    const filteredSocialMediaPosts = [];
+    let filteredSocialMediaPosts = [];
 
-    for (let i = 0; i < socialMediaPosts.edges.length; i++) {
-      const perspektiven = [];
-
-      for (let j = 0; j < socialMediaPosts.edges[i].node.perspektiven.length; ++j) {
-        perspektiven.push(socialMediaPosts.edges[i].node.perspektiven[j].name);
-      }
-
-      if (
-        this.state.perspektive === null ||
-        this.state.perspektive.trim().length < 1 ||
-        perspektiven.indexOf(this.state.perspektive) > -1
-      ) {
-        filteredSocialMediaPosts.push(socialMediaPosts.edges[i].node);
-      }
+    if (this.state.perspektive === null || this.state.perspektive.trim().length < 1) {
+      filteredSocialMediaPosts = socialMediaPosts.edges
+        .filter((x: any) => x.node.perspektiven.some((y: any) => y.name === this.state.perspektive))
+        .map((x: any) => x.node);
     }
 
     if (filteredSocialMediaPosts.length > 0) {
@@ -68,14 +60,8 @@ class SocialMediaCarousel extends React.Component<Props, State> {
         <div>
           <div id={`carousel-${carouselId}`} className="carousel  socialMediaCarousel" data-ride="carousel">
             <div className="carousel-inner">
-              {filteredSocialMediaPosts.map((mediaPost, index) => {
-                let imageSharp;
-
-                for (let j = 0; j < sharpImages.length; j++) {
-                  if (sharpImages[j].sizes.originalName.indexOf(mediaPost.bildDesPosts.id) !== -1) {
-                    imageSharp = sharpImages[j];
-                  }
-                }
+              {filteredSocialMediaPosts.map((mediaPost: any, index: number) => {
+                const imageSharp = sharpImages.find(x => x.sizes.originalName.indexOf(mediaPost.bildDesPosts.id) !== -1);
 
                 return (
                   <div className={`text-center carousel-item ${index === 0 ? ' active' : ''}`} key={`carousel-item-${index}-${carouselId}`}>
