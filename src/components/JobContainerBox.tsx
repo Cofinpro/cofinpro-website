@@ -11,7 +11,7 @@ interface Props {
   boxTitle: string;
   filter: string[];
   boxStyle: any;
-  additionalColumn: any;
+  additionalColumn?: any;
   rowDefinition: any;
   borderStyleFallback: any;
 }

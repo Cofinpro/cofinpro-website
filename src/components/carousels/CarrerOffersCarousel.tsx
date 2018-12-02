@@ -11,7 +11,7 @@ import './CarrerOffersCarousel';
 interface Props {
   id: string;
   itemPerSlideLimiter: any;
-  blacklistedItem: any;
+  blacklistedItem?: any;
   itemsData: any[];
   perspective?: string;
 }

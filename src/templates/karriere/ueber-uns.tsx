@@ -16,7 +16,12 @@ import ImageCarouselV2 from 'components/carousels/ImageCarouselV2';
 import TestimonialCarousel from 'components/carousels/TestimonialCarousel';
 import ManagementBoardCarousel from 'components/carousels/ManagementBoardCarousel';
 
-class UeberUnsTemplate extends React.Component {
+interface Props {
+  data: any;
+  pathContext: any;
+}
+
+class UeberUnsTemplate extends React.Component<Props> {
   componentDidMount() {
     $('#carousel-auszeichnungen').carousel({
       interval: 2000,
@@ -269,18 +274,18 @@ class UeberUnsTemplate extends React.Component {
             <div className="col-12 col-md-6 col-lg-5" />
           </div>
           <div className="row d-none d-md-flex justify-content-end margin-40-top">
-            {graphQlResult.managementBoardMitglieder.map((mitglied, index) => {
+            {graphQlResult.managementBoardMitglieder.map((mitglied: any, index: number) => {
               if (index < 3) {
                 return (
-                  <div className="col-3 " key={'column-mitglied-' + index}>
+                  <div className="col-3 " key={`column-mitglied-${index}`}>
                     <ImageTitleCollapseTextLayout
-                      key={'mitglied-mb-' + index}
-                      id={index}
+                      key={`mitglied-mb-${index}`}
+                      id={`mitglied-mb-${index}`}
                       content={{
                         title: mitglied.titel,
                         subtitle: mitglied.untertitel,
                         text: mitglied.beschreibung.beschreibung,
-                        image: mbImagesSharp[mitglied.bild.id + '.jpg'],
+                        image: mbImagesSharp[`${mitglied.bild.id}.jpg`],
                       }}
                     />
                   </div>
@@ -291,18 +296,18 @@ class UeberUnsTemplate extends React.Component {
             })}
           </div>
           <div className="row d-none d-md-flex justify-content-start margin-40-top">
-            {graphQlResult.managementBoardMitglieder.map((mitglied, index) => {
+            {graphQlResult.managementBoardMitglieder.map((mitglied: any, index: number) => {
               if (index >= 3 && index < 6) {
                 return (
-                  <div className="col-3 " key={'column-mitglied-' + index}>
+                  <div className="col-3 " key={`column-mitglied-${index}`}>
                     <ImageTitleCollapseTextLayout
-                      key={'mitglied-mb-' + index}
-                      id={index}
+                      key={`mitglied-mb-${index}`}
+                      id={`mitglied-mb-${index}`}
                       content={{
                         title: mitglied.titel,
                         subtitle: mitglied.untertitel,
                         text: mitglied.beschreibung.beschreibung,
-                        image: mbImagesSharp[mitglied.bild.id + '.jpg'],
+                        image: mbImagesSharp[`${mitglied.bild.id}.jpg`],
                       }}
                     />
                   </div>
@@ -313,18 +318,18 @@ class UeberUnsTemplate extends React.Component {
             })}
           </div>
           <div className="row d-none d-md-flex justify-content-end margin-40-top">
-            {graphQlResult.managementBoardMitglieder.map((mitglied, index) => {
+            {graphQlResult.managementBoardMitglieder.map((mitglied: any, index: number) => {
               if (index >= 6) {
                 return (
-                  <div className="col-3 " key={'column-mitglied-' + index}>
+                  <div className="col-3 " key={`column-mitglied-${index}`}>
                     <ImageTitleCollapseTextLayout
-                      key={'mitglied-mb-' + index}
-                      id={index}
+                      key={`mitglied-mb-${index}`}
+                      id={`mitglied-mb-${index}`}
                       content={{
                         title: mitglied.titel,
                         subtitle: mitglied.untertitel,
                         text: mitglied.beschreibung.beschreibung,
-                        image: mbImagesSharp[mitglied.bild.id + '.jpg'],
+                        image: mbImagesSharp[`${mitglied.bild.id}.jpg`],
                       }}
                     />
                   </div>

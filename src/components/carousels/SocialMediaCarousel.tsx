@@ -48,8 +48,9 @@ class SocialMediaCarousel extends React.Component<Props, State> {
     const { carouselId, socialMediaPosts, sharpImages } = this.props;
 
     let filteredSocialMediaPosts = [];
-
     if (this.state.perspektive === null || this.state.perspektive.trim().length < 1) {
+      filteredSocialMediaPosts = socialMediaPosts.edges.map((x: any) => x.node);
+    } else {
       filteredSocialMediaPosts = socialMediaPosts.edges
         .filter((x: any) => x.node.perspektiven.some((y: any) => y.name === this.state.perspektive))
         .map((x: any) => x.node);

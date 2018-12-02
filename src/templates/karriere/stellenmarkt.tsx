@@ -6,11 +6,11 @@ import HtmlHeader from 'components/HtmlHeader';
 import ExternalLinkButton from 'components/buttons/ExternalLinkButton';
 import JobContainerBox from 'components/JobContainerBox';
 
-class StellenmarktTemplate extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+interface Props {
+  data: any;
+}
 
+class StellenmarktTemplate extends React.Component<Props> {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteStellenmarkt;
 
@@ -46,7 +46,7 @@ class StellenmarktTemplate extends React.Component {
           boxTitle="JOBANGEBOTE FÜR FACHBERATER"
           filter={['fachlicher-professional', 'fachlicher-absolvent']}
           boxStyle="border-img-blue"
-          columnDefinition="col-12 col-md-10 col-lg-8"
+          // TODO: columnDefinition="col-12 col-md-10 col-lg-8"
           rowDefinition="row justify-content-start"
           borderStyleFallback="secondary"
           {...this.props}
@@ -58,7 +58,7 @@ class StellenmarktTemplate extends React.Component {
           boxTitle="JOBANGEBOTE FÜR TECHNOLOGIE-BERATER"
           filter={['technologischer-professional', 'technologischer-absolvent']}
           boxStyle="jobangebote-technologie-box"
-          columnDefinition="col-12 col-md-10 col-lg-8"
+          // TODO: columnDefinition="col-12 col-md-10 col-lg-8"
           rowDefinition="row justify-content-end"
           borderStyleFallback="primary"
           {...this.props}

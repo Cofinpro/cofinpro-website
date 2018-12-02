@@ -6,18 +6,21 @@ import Img from 'gatsby-image';
 
 import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import ToggleButton from 'components/buttons/ToggleButton';
-
-import StorageHelper from '../utils/storageHelper';
+import StorageHelper from '../../utils/storageHelper';
 
 import './startseite.scss';
 
-class StartseiteTemplate extends React.Component {
+interface Props {
+  data: any;
+}
+
+class StartseiteTemplate extends React.Component<Props> {
   getCurrentUrl() {
     if (typeof window !== 'undefined') {
       return window.location.href;
-    } else {
-      return '';
     }
+
+    return '';
   }
 
   resolveAfter2Seconds() {
@@ -31,6 +34,7 @@ class StartseiteTemplate extends React.Component {
     });
   }
 
+  // TODO: do it with css animations ;)
   componentDidMount() {
     $('#links-tech').hide();
     $('#links-fach').hide();
@@ -38,7 +42,7 @@ class StartseiteTemplate extends React.Component {
     $('#desktop-links-tech').hide();
     $('#desktop-links-fach').hide();
 
-    $('#desktop-wahl-fach').click(function() {
+    $('#desktop-wahl-fach').click(() => {
       $('#desktop-links-tech').hide();
       $('#desktop-links-fach').fadeIn(500);
 
@@ -50,7 +54,7 @@ class StartseiteTemplate extends React.Component {
       );
     });
 
-    $('#desktop-wahl-tech').click(function() {
+    $('#desktop-wahl-tech').click(() => {
       $('#desktop-links-fach').hide();
       $('#desktop-links-tech').fadeIn(500);
 
@@ -62,7 +66,7 @@ class StartseiteTemplate extends React.Component {
       );
     });
 
-    $('#img-wahl-tech').click(function() {
+    $('#img-wahl-tech').click(() => {
       $('#links-fach').hide();
       $('#links-tech').fadeIn(500);
 
@@ -74,7 +78,7 @@ class StartseiteTemplate extends React.Component {
       );
     });
 
-    $('#img-wahl-fach').click(function() {
+    $('#img-wahl-fach').click(() => {
       $('#links-tech').hide();
       $('#links-fach').fadeIn(500);
 
@@ -93,10 +97,10 @@ class StartseiteTemplate extends React.Component {
       ) {
         const script2 = document.createElement('script');
 
-        var rnd = Math.floor(Math.random() * 80000);
+        const rnd = Math.floor(Math.random() * 80000);
 
         script2.id = 'introHeader';
-        script2.src = '/js/introHeader.js?r=' + rnd;
+        script2.src = `/js/introHeader.js?r=${rnd}`;
         script2.async = false;
 
         document.body.appendChild(script2);
@@ -104,7 +108,7 @@ class StartseiteTemplate extends React.Component {
         const script = document.createElement('script');
 
         script.id = 'intro';
-        script.src = '/js/intro.js?r=' + rnd;
+        script.src = `/js/intro.js?r=${rnd}`;
         script.async = false;
 
         document.body.appendChild(script);
@@ -117,7 +121,6 @@ class StartseiteTemplate extends React.Component {
         $('#lottie').hide();
       }
     }
-    //$('#lottie').hide()
   }
 
   render() {
@@ -125,13 +128,13 @@ class StartseiteTemplate extends React.Component {
 
     const pathPrefix = process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__;
 
-    function handleUserSelectsCompetenceClick(competence) {
+    function handleUserSelectsCompetenceClick(competence: any) {
       StorageHelper.saveInSessionStorage('perspective', competence);
 
       ReactGA.event({
         category: 'Application',
         action: 'User selects competence',
-        label: 'User identifies himself with: ' + competence,
+        label: `User identifies himself with: ${competence}`,
       });
     }
 
@@ -205,7 +208,7 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <Link
                         className="text-dark"
-                        to={pathPrefix + '/karriere/andere/landing'}
+                        to={`${pathPrefix}/karriere/andere/landing`}
                         onClick={() => handleUserSelectsCompetenceClick('andere')}
                       >
                         <Img
@@ -218,7 +221,7 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <Link
                         className="text-dark"
-                        to={pathPrefix + '/karriere/studenten/landing'}
+                        to={`${pathPrefix}/karriere/studenten/landing`}
                         onClick={() => handleUserSelectsCompetenceClick('studenten')}
                       >
                         <Img
@@ -235,7 +238,7 @@ class StartseiteTemplate extends React.Component {
                       <div id="desktop-links-fach">
                         <Link
                           className=""
-                          to={pathPrefix + '/karriere/fachlicher-absolvent/landing'}
+                          to={`${pathPrefix}/karriere/fachlicher-absolvent/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('fachlicher-absolvent')}
                         >
                           <h3 className="h5">> Absolvent & Young Professional</h3>
@@ -243,7 +246,7 @@ class StartseiteTemplate extends React.Component {
                         <p> oder </p>
                         <Link
                           className=""
-                          to={pathPrefix + '/karriere/fachlicher-professional/landing'}
+                          to={`${pathPrefix}/karriere/fachlicher-professional/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('fachlicher-professional')}
                         >
                           <h3 className="h5">> Professional</h3>
@@ -254,7 +257,7 @@ class StartseiteTemplate extends React.Component {
                       <div id="desktop-links-tech">
                         <Link
                           className=""
-                          to={pathPrefix + '/karriere/technologischer-absolvent/landing'}
+                          to={`${pathPrefix}/karriere/technologischer-absolvent/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('technologischer-absolvent')}
                         >
                           <h3 className="h5">> Absolvent & Young Professional</h3>
@@ -262,7 +265,7 @@ class StartseiteTemplate extends React.Component {
                         <p> oder </p>
                         <Link
                           className=""
-                          to={pathPrefix + '/karriere/technologischer-professional/landing'}
+                          to={`${pathPrefix}/karriere/technologischer-professional/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('technologischer-professional')}
                         >
                           <h3 className="h5">> Professional</h3>
@@ -281,13 +284,13 @@ class StartseiteTemplate extends React.Component {
                       </div>
                       <div id="links-fach">
                         <Link
-                          to={pathPrefix + '/karriere/fachlicher-absolvent/landing'}
+                          to={`${pathPrefix}/karriere/fachlicher-absolvent/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('fachlicher-absolvent')}
                         >
                           <h3 className="h5 link-black">> Absolvent & Young Professional</h3>
                         </Link>
                         <Link
-                          to={pathPrefix + '/karriere/fachlicher-professional/landing'}
+                          to={`${pathPrefix}/karriere/fachlicher-professional/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('fachlicher-professional')}
                         >
                           <h3 className="h5 link-black">> Professional</h3>
@@ -301,13 +304,13 @@ class StartseiteTemplate extends React.Component {
                       </div>
                       <div id="links-tech">
                         <Link
-                          to={pathPrefix + '/karriere/technologischer-absolvent/landing'}
+                          to={`${pathPrefix}/karriere/technologischer-absolvent/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('technologischer-absolvent')}
                         >
                           <h3 className="h5 link-black">> Absolvent & Young Professional</h3>
                         </Link>
                         <Link
-                          to={pathPrefix + '/karriere/technologischer-professional/landing'}
+                          to={`${pathPrefix}/karriere/technologischer-professional/landing`}
                           onClick={() => handleUserSelectsCompetenceClick('technologischer-professional')}
                         >
                           <h3 className="h5 link-black">> Professional</h3>
@@ -320,7 +323,7 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-6 text-center">
                       <Link
                         className="text-dark"
-                        to={pathPrefix + '/karriere/andere/landing'}
+                        to={`${pathPrefix}/karriere/andere/landing`}
                         onClick={() => handleUserSelectsCompetenceClick('andere')}
                       >
                         <Img
@@ -333,7 +336,7 @@ class StartseiteTemplate extends React.Component {
                     <div className="col-6 text-center">
                       <Link
                         className="text-dark"
-                        to={pathPrefix + '/karriere/studenten/landing'}
+                        to={`${pathPrefix}/karriere/studenten/landing`}
                         onClick={() => handleUserSelectsCompetenceClick('studenten')}
                       >
                         <Img

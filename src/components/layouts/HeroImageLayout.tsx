@@ -9,7 +9,7 @@ interface Props {
   imageFile?: any;
   imageSmall?: any;
   titleTag?: string;
-  titleImage: string;
+  titleImage?: string;
   titleImageSmall?: string;
   isOverlayActive?: boolean;
 }

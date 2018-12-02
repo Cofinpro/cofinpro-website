@@ -8,48 +8,69 @@ import StockphotoWithExternalLink from 'components/images/StockphotoWithExternal
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 
-class FokusthemenDetailTeamplate extends React.Component {
+interface Link {
+  title: string;
+  url: string;
+  urlNewsUndMedien: string;
+  urlProjekte: string;
+}
+
+interface Medien {
+  hrefLink: string;
+  header: string;
+  subHeader: string;
+}
+
+interface Props {
+  data: {
+    contentfulFokusthema: any;
+    stockImageOne: any;
+    stockImageTwo: any;
+    stockImageThree: any;
+    stockImageFour: any;
+  };
+}
+
+class FokusthemenDetailTeamplate extends React.Component<Props> {
   render() {
     const graphQlResult = this.props.data.contentfulFokusthema;
 
-    const linksAndNamesForRevelantLinks = [];
+    const linksAndNamesForRevelantLinks: Link[] = graphQlResult.relevanteBeratungsfelder.map((beratungsfeld: string) => {
+      switch (beratungsfeld) {
+        case 'Managementberatung':
+          return {
+            title: beratungsfeld,
+            url: '/beratungsfelder/management',
+            urlNewsUndMedien: '/news-medien/managementberatung',
+            urlProjekte: '/projekte/managementberatung',
+          } as Link;
+        case 'Kreditgeschäft':
+          return {
+            title: beratungsfeld,
+            url: '/beratungsfelder/kredit',
+            urlNewsUndMedien: '/news-medien/fachberatung-kredit',
+            urlProjekte: '/projekte/fachberatung-kredit',
+          } as Link;
+        case 'Wertpapiergeschäft':
+          return {
+            title: beratungsfeld,
+            url: '/beratungsfelder/wertpapier',
+            urlNewsUndMedien: '/news-medien/fachberatung-wertpapier',
+            urlProjekte: '/projekte/fachberatung-wertpapier',
+          } as Link;
+        case 'Technologieberatung':
+          return {
+            title: beratungsfeld,
+            url: '/beratungsfelder/technologie',
+            urlNewsUndMedien: '/news-medien/technologieberatung',
+            urlProjekte: '/projekte/technologieberatung',
+          } as Link;
+        default:
+          return;
+      }
+    });
 
-    for (let i = 0; i < graphQlResult.relevanteBeratungsfelder.length; ++i) {
-      if (graphQlResult.relevanteBeratungsfelder[i] === 'Managementberatung') {
-        linksAndNamesForRevelantLinks.push({
-          title: graphQlResult.relevanteBeratungsfelder[i],
-          url: '/beratungsfelder/management',
-          urlNewsUndMedien: '/news-medien/managementberatung',
-          urlProjekte: '/projekte/managementberatung',
-        });
-      }
-      if (graphQlResult.relevanteBeratungsfelder[i] === 'Kreditgeschäft') {
-        linksAndNamesForRevelantLinks.push({
-          title: graphQlResult.relevanteBeratungsfelder[i],
-          url: '/beratungsfelder/kredit',
-          urlNewsUndMedien: '/news-medien/fachberatung-kredit',
-          urlProjekte: '/projekte/fachberatung-kredit',
-        });
-      }
-      if (graphQlResult.relevanteBeratungsfelder[i] === 'Wertpapiergeschäft') {
-        linksAndNamesForRevelantLinks.push({
-          title: graphQlResult.relevanteBeratungsfelder[i],
-          url: '/beratungsfelder/wertpapier',
-          urlNewsUndMedien: '/news-medien/fachberatung-wertpapier',
-          urlProjekte: '/projekte/fachberatung-wertpapier',
-        });
-      }
-      if (graphQlResult.relevanteBeratungsfelder[i] === 'Technologieberatung') {
-        linksAndNamesForRevelantLinks.push({
-          title: graphQlResult.relevanteBeratungsfelder[i],
-          url: '/beratungsfelder/technologie',
-          urlNewsUndMedien: '/news-medien/technologieberatung',
-          urlProjekte: '/projekte/technologieberatung',
-        });
-      }
-    }
-
-    const srcOficonTopLeft = '/img/icons/fokusthema/' + graphQlResult.icon.toLowerCase() + '-color.png';
+    const srcOficonTopLeft = `/img/icons/fokusthema/${graphQlResult.icon.toLowerCase()}-color.png`;
 
     const stockImages = [
       this.props.data.stockImageOne,
@@ -58,67 +79,62 @@ class FokusthemenDetailTeamplate extends React.Component {
       this.props.data.stockImageFour,
     ];
 
-    const medien = [];
+    let medien: Medien[] = [];
 
-    if (graphQlResult.verlinkteDownloads !== null) {
-      for (let i = 0; i < graphQlResult.verlinkteDownloads.length; ++i) {
-        const download = graphQlResult.verlinkteDownloads[i];
-        if (download !== null && download.datei !== null) {
-          medien.push({
+    if (graphQlResult.verlinkteDownloads) {
+      const downloadMedien = graphQlResult.verlinkteDownloads.map((download: any) => {
+        if (download.datei !== null) {
+          return {
             hrefLink: `/pdf/contentful/${download.datei.id}.pdf`,
             header: download.beschriftungDesDownloads,
-          });
+          } as Medien;
         }
-      }
+      });
+
+      medien = [...medien, downloadMedien];
     }
 
-    if (graphQlResult.verlinkteVeroeffentlichungen !== null) {
-      for (let i = 0; i < graphQlResult.verlinkteVeroeffentlichungen.length; ++i) {
-        const veroeffentlichungen = graphQlResult.verlinkteVeroeffentlichungen[i];
-        if (veroeffentlichungen !== null) {
-          if (veroeffentlichungen.urlDerVerffentlichung !== null) {
-            medien.push({
-              hrefLink: veroeffentlichungen.urlDerVerffentlichung,
-              header: veroeffentlichungen.ueberschrift,
-              subHeader: veroeffentlichungen.unterUeberschrift,
-            });
-          }
-          if (veroeffentlichungen.pdfDatei !== null) {
-            medien.push({
-              hrefLink: `/pdf/contentful/${veroeffentlichungen.pdfDatei.id}.pdf`,
-              header: veroeffentlichungen.ueberschrift,
-              subHeader: veroeffentlichungen.unterUeberschrift,
-            });
-          }
+    if (graphQlResult.verlinkteVeroeffentlichungen) {
+      const veroeffentlichungenMedien = graphQlResult.verlinkteVeroeffentlichungen.map((veroeffentlichung: any) => {
+        if (veroeffentlichung.urlDerVerffentlichung) {
+          return {
+            hrefLink: veroeffentlichung.urlDerVerffentlichung,
+            header: veroeffentlichung.ueberschrift,
+            subHeader: veroeffentlichung.unterUeberschrift,
+          } as Medien;
         }
-      }
+        if (veroeffentlichung.pdfDatei) {
+          return {
+            hrefLink: `/pdf/contentful/${veroeffentlichung.pdfDatei.id}.pdf`,
+            header: veroeffentlichung.ueberschrift,
+            subHeader: veroeffentlichung.unterUeberschrift,
+          } as Medien;
+        }
+
+        medien = [...medien, veroeffentlichungenMedien];
+      });
     }
 
-    if (graphQlResult.verlinktePressemeldungen !== null) {
-      for (let i = 0; i < graphQlResult.verlinktePressemeldungen.length; ++i) {
-        const pressemeldung = graphQlResult.verlinktePressemeldungen[i];
-        if (pressemeldung !== null) {
-          medien.push({
-            hrefLink: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
-            header: pressemeldung.ueberschrift,
-            subHeader: pressemeldung.unteruebrschrift,
-          });
-        }
-      }
+    if (graphQlResult.verlinktePressemeldungen) {
+      const pressemeldungenMedien = graphQlResult.verlinktePressemeldungen.map((pressemeldung: any) => {
+        return {
+          hrefLink: `/pressemitteilung/${pressemeldung.urlDerSeite}`,
+          header: pressemeldung.ueberschrift,
+          subHeader: pressemeldung.unteruebrschrift,
+        } as Medien;
+      });
+
+      medien = [...medien, pressemeldungenMedien];
     }
 
     const seoTitel = graphQlResult.uberschriftGanzOben;
-    let seoDescription = seoTitel;
-
-    if (graphQlResult.headline !== undefined && graphQlResult.headline !== null) {
-      seoDescription = graphQlResult.headline.headline;
-    }
+    const seoDescription = !!graphQlResult.headline ? graphQlResult.headline.headline : seoTitel;
 
     return (
       <div>
         <HtmlHeader
           direktData={{
-            title: 'Fokusthema: ' + seoTitel,
+            title: `Fokusthema: ${seoTitel}`,
             description: seoDescription,
           }}
         />
@@ -243,10 +259,9 @@ class FokusthemenDetailTeamplate extends React.Component {
             content={{
               right: {
                 header: 'Referenzprojekte',
-                description:
-                  'Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl zum Thema ' +
-                  graphQlResult.uberschriftGanzOben +
-                  '.',
+                description: `Welche Projekte haben wir im Umfeld unserer Fokusthemen bereits gemeistert und was war das Kundenziel? Welche Schritte waren nötig, welchen Beitrag konnten wir leisten und welchen Nutzen haben wir bewirkt? Hier erfahren Sie es anhand einer Auswahl zum Thema ${
+                  graphQlResult.uberschriftGanzOben
+                }.`,
                 button: {
                   text: 'ALLE REFERENZEN',
                   path: link.urlProjekte,
@@ -254,10 +269,9 @@ class FokusthemenDetailTeamplate extends React.Component {
               },
               left: {
                 header: 'Medien',
-                description:
-                  'Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ' +
-                  graphQlResult.uberschriftGanzOben +
-                  '.',
+                description: `Wissen soll man teilen. Unsere Einschätzungen rund um spannende Fragen für Fachmedien aufzuschreiben oder in Form von Pressemitteilungen kundzutun, das lassen wir uns nicht nehmen. Hier finden Sie sämtliche Veröffentlichungen zum Thema ${
+                  graphQlResult.uberschriftGanzOben
+                }.`,
                 button: {
                   text: 'ALLE PUBLIKATIONEN',
                   path: link.urlNewsUndMedien,

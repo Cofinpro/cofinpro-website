@@ -56,13 +56,11 @@ class CarrerOfferBox extends React.Component<Props, State> {
 
     let buckets = [];
     if (this.state.perspektive == null || this.state.perspektive.trim().length < 1) {
-      buckets = anzeigen.map(anzeige => {
-        return anzeige.node.zuordnungZuKompetenzen.map((zuordnung: any) => {
-          if (zuordnung.name === this.state.perspektive) {
-            return anzeige;
-          }
-        });
-      });
+      buckets = anzeigen.map((x: any) => x.node);
+    } else {
+      buckets = anzeigen
+        .filter((x: any) => x.node.zuordnungZuKompetenzen.some((y: any) => y.name === this.state.perspektive))
+        .map((x: any) => x.node);
     }
 
     if (buckets.length > 0) {
@@ -73,18 +71,18 @@ class CarrerOfferBox extends React.Component<Props, State> {
               if (index < 3) {
                 return (
                   <Link
-                    to={`${pathPrefix}/karriere/stellenanzeige/${anzeige.node.url}`}
+                    to={`${pathPrefix}/karriere/stellenanzeige/${anzeige.url}`}
                     className="text-dark"
                     key={`anzeige-link-${index}`}
                     onClick={() => {
-                      handleViewJobOfferClick(anzeige.node.titel);
+                      handleViewJobOfferClick(anzeige.titel);
                     }}
                   >
                     <div className="row padding-sm-top" key={`anzeige-row-${index}`}>
                       <div className="col-10 col-md-10 col-lg-10" key={`anzeige-col-${index}`}>
                         <div className="" key={`anzeige-padding-${index}`}>
                           <p className="no-margin-bottom text-left" key={`anzeige-text-${index}`}>
-                            {anzeige.node.titel}
+                            {anzeige.titel}
                           </p>
                         </div>
                       </div>

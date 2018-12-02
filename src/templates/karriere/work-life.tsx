@@ -7,8 +7,17 @@ import SiteHeaderContent from 'components/SiteHeaderContent';
 import HtmlHeader from 'components/HtmlHeader';
 import ImageCarouselV2 from 'components/carousels/ImageCarouselV2';
 import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
+import { SharpImage } from 'models/SharpImage';
 
-class WorkLifeTemplate extends React.Component {
+interface Props {
+  data: any;
+  pathContext: {
+    infoBoxLinksBilderSharp: SharpImage;
+    infoboxRechtsBilderSharp: SharpImage;
+  };
+}
+
+class WorkLifeTemplate extends React.Component<Props> {
   componentDidMount() {
     $('#carousel-adventsworkshop').carousel({
       interval: 4000,
@@ -71,9 +80,9 @@ class WorkLifeTemplate extends React.Component {
               <div className="row">
                 <div className="col-12 col-lg-8">
                   {graphQlResult.infoboxLinksPoints.length > 0
-                    ? graphQlResult.infoboxLinksPoints.map((point, i) => {
+                    ? graphQlResult.infoboxLinksPoints.map((point: any, index: number) => {
                         return (
-                          <p key={'point-' + i}>
+                          <p key={`point-${index}`}>
                             <span className="bold-font">
                               {point.ueberschrift}
                               &nbsp;

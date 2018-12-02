@@ -10,21 +10,23 @@ import ExternalLinkButton from 'components/buttons/ExternalLinkButton';
 
 import './stellenanzeige.scss';
 
-class StellenanzeigeTemplate extends React.Component {
-render() {
-    const { location } = this.props;
+interface Props {
+  data: any;
+}
 
+class StellenanzeigeTemplate extends React.Component<Props> {
+  render() {
     const graphQlResult = this.props.data.contentfulSeiteStellenanzeige;
 
     const stellenAnzeigen = this.props.data.allContentfulSeiteStellenanzeige.edges;
 
     const pathPrefix = process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__;
 
-    function handleApplyNowClick(jobTitle) {
+    function handleApplyNowClick(jobTitle: string) {
       ReactGA.event({
         category: 'Application',
         action: 'Submit an application',
-        label: 'User wants to apply as ' + jobTitle,
+        label: `User wants to apply as ${jobTitle}`,
       });
     }
 
@@ -51,25 +53,25 @@ render() {
         <div className="container margin-40-bottom">
           <div className="row">
             <div className="col-4 col-md-2">
-              <img src={pathPrefix + '/img/stellenanzeige/icon_1.jpg'} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
+              <img src={`${pathPrefix}/img/stellenanzeige/icon_1.jpg`} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
             </div>
             <div className="col-4 col-md-2">
-              <img src={pathPrefix + '/img/stellenanzeige/icon_2.jpg'} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
+              <img src={`${pathPrefix}/img/stellenanzeige/icon_2.jpg`} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
             </div>
             <div className="col-4 col-md-2">
-              <img src={pathPrefix + '/img/stellenanzeige/icon_3.jpg'} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
-            </div>
-            <div className="col-4 col-md-2">
-              <div className="margin-20-top b-block d-md-none" />
-              <img src={pathPrefix + '/img/stellenanzeige/icon_4.jpg'} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
+              <img src={`${pathPrefix}/img/stellenanzeige/icon_3.jpg`} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
             </div>
             <div className="col-4 col-md-2">
               <div className="margin-20-top b-block d-md-none" />
-              <img src={pathPrefix + '/img/stellenanzeige/icon_5.jpg'} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
+              <img src={`${pathPrefix}/img/stellenanzeige/icon_4.jpg`} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
             </div>
             <div className="col-4 col-md-2">
               <div className="margin-20-top b-block d-md-none" />
-              <img src={pathPrefix + '/img/stellenanzeige/icon_6.jpg'} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
+              <img src={`${pathPrefix}/img/stellenanzeige/icon_5.jpg`} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
+            </div>
+            <div className="col-4 col-md-2">
+              <div className="margin-20-top b-block d-md-none" />
+              <img src={`${pathPrefix}/img/stellenanzeige/icon_6.jpg`} className="img-fluid padding-lg" alt="Icons Stellenangebot" />
             </div>
           </div>
         </div>
@@ -104,7 +106,7 @@ render() {
                 <p className="h4 text-primary">Wir passen zu Deiner Wunschliste?</p>
                 <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder einen von sechs weiteren deutschen Standorten unter
-                  <Link className="readmore" to={pathPrefix + '/karriere/jobs'}>
+                  <Link className="readmore" to={`${pathPrefix}/karriere/jobs`}>
                     <span> Jobs </span>
                   </Link>
                   oder karriere@cofinpro.de.
@@ -118,7 +120,7 @@ render() {
                 <p className="h4 text-primary">Wir passen zu Deiner Wunschliste?</p>
                 <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder einen von sechs weiteren deutschen Standorten unter
-                  <Link className="readmore" to={pathPrefix + '/karriere/jobs'}>
+                  <Link className="readmore" to={`${pathPrefix}/karriere/jobs`}>
                     <span> Jobs </span>
                   </Link>
                   oder karriere@cofinpro.de.
@@ -132,7 +134,7 @@ render() {
                 <p className="h4 text-primary">Wir passen zu Deiner Wunschliste?</p>
                 <p className="p-small">
                   Dann bewirb Dich jetzt für Frankfurt, München, Berlin oder einen von sechs weiteren deutschen Standorten unter
-                  <Link className="readmore" to={pathPrefix + '/karriere/jobs'}>
+                  <Link className="readmore" to={`${pathPrefix}/karriere/jobs`}>
                     <span> Jobs </span>
                   </Link>
                   oder karriere@cofinpro.de.

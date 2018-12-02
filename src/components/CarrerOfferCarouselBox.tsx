@@ -9,7 +9,7 @@ interface Props {
   titel: string;
   stellenAnzeigen: any;
   buttonText: string;
-  blacklistedItem: any;
+  blacklistedItem?: any;
 }
 
 interface State {

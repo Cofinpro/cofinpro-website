@@ -8,10 +8,22 @@ import StorageHelper from 'utils/storageHelper';
 
 import './pinnwand.scss';
 
-class PinnwandTemplate extends React.Component {
-  constructor(props) {
+interface Props {
+  pathContext: {
+    allNews: any[];
+  };
+}
+
+interface State {
+  perspektive: any;
+}
+
+class PinnwandTemplate extends React.Component<Props, State> {
+  private readonly THRESHOLD = 8;
+  private token: any;
+
+  constructor(props: Props) {
     super(props);
-    this.threshold = 8;
     this.state = {
       perspektive: StorageHelper.getFromSessionStorage('perspective'),
     };
@@ -33,7 +45,7 @@ class PinnwandTemplate extends React.Component {
     PubSub.unsubscribe(this.token);
   }
 
-  subscriber(msg, data) {
+  subscriber(msg: any, data: any) {
     if (this.state.perspektive !== data) {
       this.setState({
         perspektive: data,
@@ -42,35 +54,22 @@ class PinnwandTemplate extends React.Component {
   }
 
   render() {
+    // TODO: slice directly oldNews and currentNews ;)
     const allNews = this.props.pathContext.allNews;
+    const oldNewsExists = allNews.length > this.THRESHOLD;
+    const threshold = this.THRESHOLD;
 
-    var oldNewsExists;
-
-    var threshold = this.threshold;
-
-    if (allNews.length > this.threshold) {
-      oldNewsExists = true;
+    let filteredNews = [];
+    if (this.state.perspektive === null || this.state.perspektive.trim().length < 1) {
+      filteredNews = allNews.map((x: any) => x.node);
+    } else {
+      filteredNews = allNews
+        .filter((x: any) => x.node.zugeordnetePerspektivenKompetenz.some((y: any) => y.name === this.state.perspektive))
+        .map((x: any) => x.node);
     }
 
-    var filteredNews = [];
-
-    for (var i = 0; i < allNews.length; i++) {
-      var perspektiven = [];
-
-      for (var j = 0; j < allNews[i].node.zugeordnetePerspektivenKompetenz.length; ++j) {
-        perspektiven.push(allNews[i].node.zugeordnetePerspektivenKompetenz[j].name);
-      }
-
-      if (
-        this.state.perspektive === null ||
-        this.state.perspektive.trim().length < 1 ||
-        perspektiven.indexOf(this.state.perspektive) > -1
-      ) {
-        filteredNews.push(allNews[i]);
-      }
-    }
-
-    function OldNews(props) {
+    // tslint:disable-next-line:function-name
+    function OldNews(props: any) {
       if (!props.oldNewsExists) {
         return null;
       }
@@ -79,12 +78,12 @@ class PinnwandTemplate extends React.Component {
           <div className="container">
             <div className="row">
               {props.allNews != null && props.allNews.length > 0
-                ? props.allNews.map((edge, i) => {
-                    if (i >= threshold) {
+                ? props.allNews.map((edge: any, index: number) => {
+                    if (index >= threshold) {
                       return (
-                        <div className="col-12 col-md-6 margin-20-bottom" key={'news-column-old-' + i}>
+                        <div className="col-12 col-md-6 margin-20-bottom" key={`news-column-old-${index}`}>
                           <NewsPreview
-                            key={'news-NewsPreview-old-' + i}
+                            key={`news-NewsPreview-old-${index}`}
                             createdAt={edge.node.datumFuerDieAnzeige}
                             title={edge.node.ueberschrift}
                             description={edge.node.kurzeBeschreibung !== null ? edge.node.kurzeBeschreibung.kurzeBeschreibung : null}
@@ -96,9 +95,9 @@ class PinnwandTemplate extends React.Component {
                           />
                         </div>
                       );
-                    } else {
-                      return null;
                     }
+
+                    return null;
                   })
                 : null}
             </div>
@@ -144,26 +143,26 @@ class PinnwandTemplate extends React.Component {
 
           <div className="row">
             {filteredNews != null && filteredNews.length > 0
-              ? filteredNews.map((edge, i) => {
-                  if (i < threshold) {
+              ? filteredNews.map((edge, index) => {
+                  if (index < this.THRESHOLD) {
                     return (
-                      <div className="col-12 col-md-6 margin-20-bottom" key={'news-column-' + i}>
+                      <div className="col-12 col-md-6 margin-20-bottom" key={`news-column-${index}`}>
                         <NewsPreview
-                          key={'news-NewsPreview-' + i}
-                          createdAt={edge.node.datumFuerDieAnzeige}
-                          title={edge.node.ueberschrift}
-                          description={edge.node.kurzeBeschreibung !== null ? edge.node.kurzeBeschreibung.kurzeBeschreibung : null}
-                          newsId={edge.node.id}
-                          imageFile={edge.node.titelbild}
-                          imageFileSharp={edge.node.titelbildSharp}
-                          url={edge.node.url}
+                          key={`news-NewsPreview-${index}`}
+                          createdAt={edge.datumFuerDieAnzeige}
+                          title={edge.ueberschrift}
+                          description={edge.kurzeBeschreibung !== null ? edge.kurzeBeschreibung.kurzeBeschreibung : null}
+                          // TODO: newsId={edge.id}
+                          imageFile={edge.titelbild}
+                          imageFileSharp={edge.titelbildSharp}
+                          url={edge.url}
                           {...this.props}
                         />
                       </div>
                     );
-                  } else {
-                    return null;
                   }
+
+                  return null;
                 })
               : null}
           </div>
@@ -171,7 +170,7 @@ class PinnwandTemplate extends React.Component {
 
         <OldNews oldNewsExists={oldNewsExists} allNews={filteredNews} {...this.props} />
 
-        <div className={'container ' + (allNews.length <= threshold ? 'invisible' : '')}>
+        <div className={`container ${allNews.length <= this.THRESHOLD ? 'invisible' : ''}`}>
           <div className="row margin-md-top-bottom">
             <div className="col-12 text-center">
               <ToggleButton id="pinnwand" dataTarget={'oldNewsContent'} />

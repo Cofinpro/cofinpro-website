@@ -11,7 +11,17 @@ import CarrerOfferBox from 'components/CarrerOfferBox';
 import HtmlHeader from 'components/HtmlHeader';
 import LinkButton from 'components/buttons/LinkButton';
 
-class LandingTemplate extends React.Component {
+interface Props {
+  data: any;
+  pathContext: {
+    titelBildDesktop: any;
+    titelBildMobile: any;
+    socialMediaPostBilder: any;
+    cofinproNews: any;
+  };
+}
+
+class LandingTemplate extends React.Component<Props> {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteLandingPerspektive;
 
@@ -94,12 +104,13 @@ class LandingTemplate extends React.Component {
               </div>
               {graphQlResult.testimonialLinkeBox !== null && graphQlResult.testimonialLinkeBox.length > 0 ? (
                 <TestimonialLayout
+                  carouselId={'landing'}
                   title={graphQlResult.testimonialLinkeBox[0].ueberschrift}
                   text={graphQlResult.testimonialLinkeBox[0].zitat.zitat}
                   author={graphQlResult.testimonialLinkeBox[0].autor}
                   authorTitle={graphQlResult.testimonialLinkeBox[0].autorTitel}
                   videoUrl={graphQlResult.testimonialLinkeBox[0].linkVonYouTubeVideo}
-                  imageFile={graphQlResult.testimonialLinkeBox[0].bildTestimonial}
+                  // TODO: imageFile={graphQlResult.testimonialLinkeBox[0].bildTestimonial}
                 />
               ) : null}
             </div>
@@ -139,26 +150,26 @@ class LandingTemplate extends React.Component {
             </div>
             <div className="col-12 text-center margin-20-top padding-sm-bottom">
               <a href="https://www.facebook.com/Cofinpro" target="_blank" rel="noopener" title="facebook">
-                <img src={pathPrefix + '/img/icons/facebook.png'} alt="cofinpro facebook profile" className="social-media-icon-carousel" />
+                <img src={`${pathPrefix}/img/icons/facebook.png`} alt="cofinpro facebook profile" className="social-media-icon-carousel" />
               </a>
               <a href="http://instagram.com/cofinpro_ag" target="_blank" rel="noopener" title="instagram">
                 <img
-                  src={pathPrefix + '/img/icons/instagram.png'}
+                  src={`${pathPrefix}/img/icons/instagram.png`}
                   alt="cofinpro instagram profile"
                   className="social-media-icon-carousel"
                 />
               </a>
               <a href="https://twitter.com/cofinpro_ag" target="_blank" rel="noopener" title="twitter">
-                <img src={pathPrefix + '/img/icons/twitter.png'} alt="cofinpro twitter profile" className="social-media-icon-carousel" />
+                <img src={`${pathPrefix}/img/icons/twitter.png`} alt="cofinpro twitter profile" className="social-media-icon-carousel" />
               </a>
               <a href="https://www.youtube.com/channel/UC7sM2sP8l2E60A4rZrA6ZTQ" target="_blank" rel="noopener" title="you tube">
-                <img src={pathPrefix + '/img/icons/youtube.png'} alt="cofinpro youtube profile" className="social-media-icon-carousel" />
+                <img src={`${pathPrefix}/img/icons/youtube.png`} alt="cofinpro youtube profile" className="social-media-icon-carousel" />
               </a>
               <a href="https://www.linkedin.com/company/846504/" target="_blank" rel="noopener" title="linkedin">
-                <img src={pathPrefix + '/img/icons/linkedin.png'} alt="cofinpro linkedin profile" className="social-media-icon-carousel" />
+                <img src={`${pathPrefix}/img/icons/linkedin.png`} alt="cofinpro linkedin profile" className="social-media-icon-carousel" />
               </a>
               <a href="https://www.xing.com/companies/cofinproag" target="_blank" rel="noopener" title="xing">
-                <img src={pathPrefix + '/img/icons/xing.png'} alt="cofinpro xing profile" className="social-media-icon-carousel" />
+                <img src={`${pathPrefix}/img/icons/xing.png`} alt="cofinpro xing profile" className="social-media-icon-carousel" />
               </a>
             </div>
           </div>

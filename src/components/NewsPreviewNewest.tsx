@@ -45,6 +45,8 @@ class NewsPreviewNewest extends React.Component<Props, State> {
     let filteredNews = [];
 
     if (this.state.perspektive === null || this.state.perspektive.trim().length < 1) {
+      filteredNews = content.news.slice(0, 1).map((x: any) => x.node);
+    } else {
       filteredNews = content.news
         .filter((x: any) => x.node.zugeordnetePerspektivenKompetenz.some((y: any) => y.name === this.state.perspektive))
         .slice(0, 1)
