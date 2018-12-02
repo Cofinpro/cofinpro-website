@@ -1,7 +1,6 @@
 const _ = require(`lodash`)
 const path = require(`path`)
 const slash = require(`slash`)
-var moment = require('moment')
 
 exports.create = function(graphql, createPage, createRedirect, callback) {
   console.log('start graphql query: news medien.')

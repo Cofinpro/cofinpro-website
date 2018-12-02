@@ -1,14 +1,7 @@
 const _ = require(`lodash`)
 const Promise = require(`bluebird`)
-const path = require(`path`)
-const slash = require(`slash`)
 var async = require('async')
-const fs = require(`fs-extra`)
 var moment = require('moment')
-const axios = require('axios')
-
-var stellenAnzeigenJson = require('./test-data/allContentfulStellenanzeige.json')
-var testDataAllContentfulAsset = require('./test-data/allContentfulAsset.json')
 
 const contentfulImageService = require('./server/contentfulImageService')
 const pagePinnwand = require('./server/karriere/pagePinnwand')
@@ -27,10 +20,6 @@ const pagesFokusthemen = require('./server/pagesFokusthemen')
 
 const pageProjekte = require('./server/projekte')
 const pageNewsMedien = require('./server/news-medien')
-
-const runWithTestData = false
-
-const pathPrefix = ''
 
 let globalGraphql = null
 let globalCreatePage = null

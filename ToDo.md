@@ -2,10 +2,6 @@
 
 src\layout\*
 
-src\pages\index.tsx
-
-src\templates\karriere\*
-
 src\pages\fokusthemen\digiLayout\index.jsx
     Brauchen wir die Datei noch?
 
