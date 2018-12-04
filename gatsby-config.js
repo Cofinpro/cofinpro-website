@@ -23,21 +23,22 @@ module.exports = {
     'gatsby-plugin-manifest',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
-    'gatsby-plugin-lodash',
+    // 'gatsby-plugin-lodash',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    'gatsby-transformer-json',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'post',
-        path: `${__dirname}/static`,
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
     {
-      resolve: `gatsby-plugin-google-tagmanager`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        id: config.Google_Tag_Manager_ID,
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
+        name: `images`,
+        path: `${__dirname}/static/img/`,
       },
     },
     {
@@ -57,9 +58,11 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-typography',
+      resolve: `gatsby-source-contentful`,
       options: {
-        pathToConfigModule: 'src/utils/typography.ts',
+        spaceId: 'niza6hilizwt',
+        accessToken:
+          'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
       },
     },
     {
@@ -69,8 +72,6 @@ module.exports = {
         short_name: config.siteTitleAlt,
         description: config.siteDescription,
         start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
         display: 'standalone',
         icon: config.favicon,
       },

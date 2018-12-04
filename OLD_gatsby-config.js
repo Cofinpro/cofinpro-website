@@ -11,31 +11,35 @@ module.exports = {
   },
   pathPrefix: '/',
   plugins: [
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/static/img/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: 'niza6hilizwt',
-        accessToken:
-          'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
-      },
-    },
-    'gatsby-transformer-json',
+    // 'gatsby-plugin-sharp',
+    // 'gatsby-transformer-sharp',
+    // 'gatsby-plugin-sass',
+    'gatsby-plugin-remove-serviceworker',
+    // 'gatsby-plugin-react-helmet',
+    // 'gatsby-plugin-sitemap',
+    // 'gatsby-transformer-json',
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `src`,
+    //     path: `${__dirname}/src/`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/static/img/`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: 'niza6hilizwt',
+    //     accessToken:
+    //       'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
+    //   },
+    // },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -59,18 +63,15 @@ module.exports = {
         anonymize: true,
       },
     },
-    {
-      resolve: 'gatsby-plugin-svgr',
-      options: {
-        icon: true,
-        viewBox: false,
-        // see https://github.com/smooth-code/svgr for a list of all options
-      },
-    },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-remove-serviceworker',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sitemap',
+    // WE DO NOT NEED IT ANYMORE
+    // {
+    //   resolve: 'gatsby-plugin-svgr',
+    //   options: {
+    //     icon: true,
+    //     viewBox: false,
+    //     // see https://github.com/smooth-code/svgr for a list of all options
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-polyfill-io`,
       options: {

@@ -1,11 +1,18 @@
 {
-  "name": "gatsby-starter-typescirpt-power-blog",
-  "description": "gatsyby blog template with typescript and tslint",
-  "version": "1.0.0",
-  "author": "Majid Hajian ( mhadaily@gmail.com )",
+  "name": "cofinpro-website",
+  "description": "Cofinpro Webseite",
+  "version": "2.0.0",
+  "author": "Cofinpro AG",
+  "contributors": [
+    "Benjamin Tenke <benjamin.tenke@cofinpro.de>",
+    "Kevin Kessenich <kevin.kessenich@cofinpro.de"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Cofinpro/cofinpro-website.git"
+  },
   "keywords": [
-    "gatsby, typescript",
-    "blog"
+    "cofinpro"
   ],
   "license": "MIT",
   "main": "n/a",
@@ -28,22 +35,25 @@
     "@types/styled-components": "^4.0.1",
     "@types/typography": "^0.16.0",
     "babel-plugin-styled-components": "^1.8.0",
-    "gatsby": "^2.0.25",
+    "gatsby": "^2.0.61",
     "gatsby-plugin-catch-links": "^2.0.5",
     "gatsby-plugin-lodash": "^3.0.1",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.7",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
+    "gatsby-plugin-sharp": "^2.0.14",
     "gatsby-plugin-sitemap": "^2.0.1",
     "gatsby-plugin-styled-components": "^3.0.0",
     "gatsby-plugin-typescript": "^2.0.0",
-    "gatsby-plugin-typography": "^2.2.0",
     "gatsby-remark-autolink-headers": "^2.0.7",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.0.2",
+    "gatsby-source-contentful": "^2.0.17",
     "gatsby-source-filesystem": "^2.0.4",
+    "gatsby-transformer-json": "^2.1.6",
     "gatsby-transformer-remark": "^2.1.7",
+    "gatsby-transformer-sharp": "^2.1.9",
     "gh-pages": "^2.0.1",
     "husky": "^1.1.2",
     "lint-staged": "^7.3.0",
@@ -75,7 +85,6 @@
   "dependencies": {
     "bootstrap": "^4.1.3",
     "gatsby-link": "^2.0.6",
-    "gatsby-plugin-google-tagmanager": "^2.0.5",
     "jquery": "^3.3.1",
     "pubsub-js": "^1.7.0",
     "react-ga": "^2.5.5-0"
