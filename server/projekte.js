@@ -92,7 +92,7 @@ exports.create = function(graphql, createPage, backgroundImages, callback) {
 
     //images.push('sharp-projekte-a40-grau.jpg')
 
-    const template = path.resolve(`./src/templates/projekte/index.jsx`)
+    const template = path.resolve(`./src/templates/projekte.tsx`)
 
     if (result.data.allContentfulProjekteZuordnung.edges.length > 0) {
       createPage({
@@ -178,7 +178,7 @@ exports.create = function(graphql, createPage, backgroundImages, callback) {
 
     // Detailseiten Projekte ab hier
 
-    const templateDetail = path.resolve(`./src/templates/projekt/index.jsx`)
+    const templateDetail = path.resolve(`./src/templates/projekt.tsx`)
 
     let indexOfImage = 0
 

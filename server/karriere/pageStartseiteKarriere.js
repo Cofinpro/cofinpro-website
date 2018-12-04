@@ -33,7 +33,7 @@ exports.create = function(graphql, createPage, callback) {
     console.log(`ended query for index.html`)
 
     const template = path.resolve(
-      `./src/templates/karriere/startseite/index.jsx`
+      `./src/templates/karriere/startseite.tsx`
     )
 
     _.each(result.data.allContentfulSeiteStartseiteKarriere.edges, edge => {
@@ -53,7 +53,7 @@ exports.create = function(graphql, createPage, callback) {
         },
       })
 
-      console.log(`created page /karriere/index.jsx`)
+      console.log(`created page /karriere.tsx`)
     })
 
     callback(null)

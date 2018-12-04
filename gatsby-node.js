@@ -30,14 +30,6 @@ let globalBackgroundImages = []
 
 let globalNews = []
 
-// exports.onCreateNode = ({ node, actions }) => {
-//   const { createNodeField } = actions;
-//   if (node.internal.type === 'MarkdownRemark' && _.has(node, 'frontmatter') && _.has(node.frontmatter, 'title')) {
-//     const slug = `${_.kebabCase(node.frontmatter.title)}`;
-//     createNodeField({ node, name: 'slug', value: slug });
-//   }
-// };
-
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
                              resolve: {
@@ -58,7 +50,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     async.waterfall(
       [
-        async.apply(contentfulImageService.refreshImages, globalGraphql),
+        // TODO: async.apply(contentfulImageService.refreshImages, globalGraphql),
         getNews,
         getStockImages,
         createPages,
@@ -89,9 +81,9 @@ function createPages(callback) {
   asyncTasks.push(
     async.apply(pageStellenmarkt.create, globalGraphql, globalCreatePage)
   )
-  asyncTasks.push(
-    async.apply(pagesUeberUns.create, globalGraphql, globalCreatePage)
-  )
+  // TODO: asyncTasks.push(
+  //   async.apply(pagesUeberUns.create, globalGraphql, globalCreatePage)
+  // )
   asyncTasks.push(
     async.apply(
       pagesDeineKarriere.create,

@@ -21,7 +21,7 @@ exports.create = function(graphql, createPage, callback) {
     console.log(`end query for page /jobs.`)
 
     const template = path.resolve(
-      `./src/templates/karriere/stellenmarkt/index.jsx`
+      `./src/templates/karriere/stellenmarkt.tsx`
     )
 
     _.each(result.data.allContentfulSeiteStellenmarkt.edges, edge => {

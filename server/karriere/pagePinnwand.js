@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 
 exports.create = function(createPage, news, callback) {
-  const template = path.resolve(`./src/templates/karriere/pinnwand/index.jsx`)
+  const template = path.resolve(`./src/templates/karriere/pinnwand.tsx`)
 
   createPage({
     path: `/karriere/pinnwand`,

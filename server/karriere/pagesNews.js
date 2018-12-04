@@ -3,7 +3,7 @@ const path = require(`path`)
 const slash = require(`slash`)
 
 exports.create = function(createPage, news, callback) {
-  const template = path.resolve(`./src/templates/karriere/news/index.jsx`)
+  const template = path.resolve(`./src/templates/karriere/news.tsx`)
 
   _.each(news, edge => {
     createPage({

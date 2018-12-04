@@ -55,7 +55,7 @@ exports.create = function(graphql, createPage, callback) {
     `
   ).then(result => {
     const workLifeTemplate = path.resolve(
-      `./src/templates/karriere/work-life/index.jsx`
+      `./src/templates/karriere/work-life.tsx`
     )
 
     console.log('finished query work life.')
@@ -139,7 +139,7 @@ function createSharpImages(
                         sizes
                         }
                     }
-                }          
+                }
             `
     ).then(result => {
       resultImages.push(result.data.resultImage)

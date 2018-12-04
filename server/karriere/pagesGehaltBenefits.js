@@ -41,7 +41,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     console.log('end graphql query: allContentfulSeiteGehaltBenefits.')
 
     const gehaltBeteiligungTemplate = path.resolve(
-      `./src/templates/karriere/gehalt-beteiligung/index.jsx`
+      `./src/templates/karriere/gehalt-beteiligung.tsx`
     )
 
     createRedirect({

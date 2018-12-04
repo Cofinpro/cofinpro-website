@@ -52,7 +52,7 @@ exports.create = function(graphql, createPage, callback) {
     console.log('end graphql query: allContentfulSeiteUeberUns.')
 
     const ueberUnsTemplate = path.resolve(
-      `./src/templates/karriere/ueber-uns/index.jsx`
+      `./src/templates/karriere/ueber-uns.tsx`
     )
 
     const managementBoardMitgliederImages = []
@@ -143,7 +143,7 @@ function createSharpImages(
                         sizes
                         }
                     }
-                }          
+                }
             `
     ).then(result => {
       resultImages.push(result.data.resultImage)

@@ -125,7 +125,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     console.log('end graphql query: news medien.')
 
     const template = path.resolve(
-      `./src/templates/news-medien-uebersicht/index.jsx`
+      `./src/templates/news-medien-uebersicht/NewsMedienUebersicht.tsx`
     )
 
     let dataAll = createNewBucket()
@@ -193,7 +193,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     insertBucketItemsToOtherBucket(dataUnternehmenAllgemein, dataAll)
 
     const templatePressemeldungSite = path.resolve(
-      `./src/templates/content-max/index.jsx`
+      `./src/templates/ContentMax.tsx`
     )
 
     createPressemeldungPages(result, createPage, templatePressemeldungSite)
@@ -496,7 +496,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     // Studien Archiv
 
     const templateArchiveStudien = path.resolve(
-      `./src/templates/archiv/studien/index.jsx`
+      `./src/templates/archiv/studien.tsx`
     )
 
     createDownloadsArchivSites(
@@ -557,7 +557,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     // Thesenpapiere Archiv
 
     const templateArchiveThesenpapiere = path.resolve(
-      `./src/templates/archiv/thesenpapiere/index.jsx`
+      `./src/templates/archiv/thesenpapiere.tsx`
     )
 
     createDownloadsArchivSites(
@@ -618,7 +618,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     // Whitepapers Archiv
 
     const templateArchiveWhitepapers = path.resolve(
-      `./src/templates/archiv/whitepapers/index.jsx`
+      `./src/templates/archiv/whitepapers.tsx`
     )
 
     createDownloadsArchivSites(
@@ -679,7 +679,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     // Lösungsskizzen Archiv
 
     const templateArchiveLoesungsskizzen = path.resolve(
-      `./src/templates/archiv/loesungsskizzen/index.jsx`
+      `./src/templates/archiv/loesungsskizzen.tsx`
     )
 
     createDownloadsArchivSites(
@@ -1017,7 +1017,7 @@ function createVeroeffentlichungenArchivSites(
   createPage
 ) {
   const template = path.resolve(
-    `./src/templates/archiv/veroeffentlichungen/index.jsx`
+    `./src/templates/archiv/veroeffentlichungen.tsx`
   )
 
   let inputData = createYearToVeroeffentlichungenMap(_data)
@@ -1045,7 +1045,7 @@ function createPressemeldungenArchivSites(
   createPage
 ) {
   const template = path.resolve(
-    `./src/templates/archiv/pressemeldungen/index.jsx`
+    `./src/templates/archiv/pressemeldungen.tsx`
   )
 
   let inputData = createYearToPressemeldungenMap(_data)

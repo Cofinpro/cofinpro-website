@@ -25,7 +25,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     console.log('end graphql query: allContentfulSeiteStellenanzeige.')
 
     const template = path.resolve(
-      `./src/templates/karriere/stellenanzeige/index.jsx`
+      `./src/templates/karriere/stellenanzeige.tsx`
     )
 
     _.each(result.data.allContentfulSeiteStellenanzeige.edges, edge => {

@@ -69,7 +69,7 @@ exports.create = function(graphql, createPage, createRedirect, news, callback) {
     `
   ).then(result => {
     const landingTemplate = path.resolve(
-      `./src/templates/karriere/landing/index.jsx`
+      `./src/templates/karriere/landing.tsx`
     )
 
     createRedirect({
@@ -166,7 +166,7 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
                         sizes
                         }
                     }
-                }          
+                }
             `
   ).then(result => {
     callback(null, result.data.resultImage)
@@ -203,7 +203,7 @@ function createSharpImages(
                         sizes
                         }
                     }
-                }          
+                }
             `
     ).then(result => {
       resultImages.push(result.data.resultImage)

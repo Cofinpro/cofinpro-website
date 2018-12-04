@@ -41,7 +41,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
     console.log('end graphql query: allContentfulSeiteDeineKarriere.')
 
     const deineKarriereTemplate = path.resolve(
-      `./src/templates/karriere/deine-karriere/index.jsx`
+      `./src/templates/karriere/deine-karriere.tsx`
     )
 
     createRedirect({

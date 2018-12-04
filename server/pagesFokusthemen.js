@@ -99,7 +99,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
   ).then(result => {
     console.log('end graphql query: allContentfulFokusthemaEinteilung.')
 
-    const template = path.resolve(`./src/templates/fokusthemen/index.jsx`)
+    const template = path.resolve(`./src/templates/fokusthemen.tsx`)
 
     if (result.data.allContentfulFokusthemaEinteilung.edges.length > 0) {
       createPage({
@@ -205,7 +205,7 @@ exports.create = function(graphql, createPage, createRedirect, callback) {
       // Detailseiten Fokusthemen ab hier
 
       const templateDetail = path.resolve(
-        `./src/templates/fokusthemen/detail/index.jsx`
+        `./src/templates/fokusthemenDetail.tsx`
       )
 
       for (

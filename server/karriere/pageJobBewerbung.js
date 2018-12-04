@@ -38,7 +38,7 @@ exports.create = function(graphql, createPage, callback) {
     console.log('end graphql query: allContentfulSeiteJobsBewerbung.')
 
     const template = path.resolve(
-      `./src/templates/karriere/jobs-bewerbung/index.jsx`
+      `./src/templates/karriere/jobs-bewerbung.tsx`
     )
 
     _.each(result.data.allContentfulSeiteJobsBewerbung.edges, edge => {
