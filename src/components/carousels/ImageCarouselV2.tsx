@@ -25,7 +25,7 @@ class ImageCarouselV2 extends React.Component<Props> {
               ? sharpImages.map((image: any, index: number) => {
                   return (
                     <div className={`carousel-item ${index === 0 ? ' active' : ''}`} key={`carousel-item-${index}`}>
-                      <Img className="d-block w-100" sizes={image.sizes} key={`carousel-item-image-${index}`} />
+                      <Img className="d-block w-100" fluid={image.sizes} key={`carousel-item-image-${index}`} />
                     </div>
                   );
                 })

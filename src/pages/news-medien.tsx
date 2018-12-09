@@ -100,13 +100,13 @@ export default NewsMedienVerteiler;
 export const pageQuery = graphql`
   query newsMedienQuery {
     newsImage: imageSharp(id: { regex: "/news-medien-b3/" }) {
-      sizes(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     blogImage: imageSharp(id: { regex: "/news-medien-blog/" }) {
-      sizes(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 800, maxHeight: 460, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

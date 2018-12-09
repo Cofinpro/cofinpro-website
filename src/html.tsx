@@ -1,12 +1,12 @@
 import React from 'react';
 
-const apercuFontCssFile = require('!raw-loader!../static/css/apercu-regular.css');
-const otherCssCssFile = require('!raw-loader!../static/css/other.css');
+// const apercuFontCssFile = require('!raw-loader!../static/css/apercu-regular.css');
+// const otherCssCssFile = require('!raw-loader!../static/css/other.css');
 
-const jQueryJsFile = require('!raw-loader!../static/js/jquery-3.2.1.min.js');
-const popperJsFile = require('!raw-loader!../static/js/popper.min.js');
-const bootstrapJsFile = require('!raw-loader!../static/js/bootstrap.min.js');
-const apiAiJsFile = require('!raw-loader!../static/js/ApiAi.min.js');
+// const jQueryJsFile = require('!raw-loader!../static/js/jquery-3.2.1.min.js');
+// const popperJsFile = require('!raw-loader!../static/js/popper.min.js');
+// const bootstrapJsFile = require('!raw-loader!../static/js/bootstrap.min.js');
+// const apiAiJsFile = require('!raw-loader!../static/js/ApiAi.min.js');
 
 interface Props {
   headComponents: any;
@@ -68,16 +68,16 @@ export default class HTML extends React.Component<Props> {
           <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
           <meta name="theme-color" content="#ffffff" />
           {css}
-          {this.renderCssFile(apercuFontCssFile, 'apercuFont')}
-          {this.renderCssFile(otherCssCssFile, 'other')}
+          {/* TODO: {this.renderCssFile(apercuFontCssFile, 'apercuFont')}
+          {this.renderCssFile(otherCssCssFile, 'other')} */}
         </head>
         <body>
           <div id="___gatsby" dangerouslySetInnerHTML={{ __html: this.props.body }} />
           {this.props.postBodyComponents}
-          {this.renderJsFile(jQueryJsFile, 'jQuery')}
+          {/* TODO: {this.renderJsFile(jQueryJsFile, 'jQuery')}
           {this.renderJsFile(popperJsFile, 'popper')}
           {this.renderJsFile(bootstrapJsFile, 'bootstrap')}
-          {this.renderJsFile(apiAiJsFile, 'apiAi')}
+          {this.renderJsFile(apiAiJsFile, 'apiAi')} */}
         </body>
       </html>
     );

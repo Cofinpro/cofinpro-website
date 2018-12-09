@@ -27,7 +27,7 @@ class SharpImage extends React.Component<Props> {
     return (
       <div className={`image-container ${styleT.container !== undefined ? styleT.container : ''}`}>
         <div className={`svg-image position-relative ${styleT.border}`}>
-          <Img sizes={source.sizes} className={styleClasses} />
+          <Img fluid={source.sizes} className={styleClasses} />
           {backgroundOverlay}
           {overlayElement !== undefined && <div className={`image-overlay-top-left ${styleT.overlay}`}>{overlayElement}</div>}
         </div>

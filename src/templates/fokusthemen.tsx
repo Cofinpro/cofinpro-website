@@ -6,7 +6,7 @@ import HtmlHeader from 'components/HtmlHeader';
 import PageIntroText from 'components/PageIntroText';
 
 interface Props {
-  pathContext: {
+  pageContext: {
     name: string;
     header: string;
     description: string;
@@ -16,10 +16,10 @@ interface Props {
 
 class FokusthemenStartseite extends React.Component<Props> {
   render() {
-    const name = this.props.pathContext.name;
-    const header = this.props.pathContext.header;
-    const description = this.props.pathContext.description;
-    const fokusthemen = this.props.pathContext.fokusthemen;
+    const name = this.props.pageContext.name;
+    const header = this.props.pageContext.header;
+    const description = this.props.pageContext.description;
+    const fokusthemen = this.props.pageContext.fokusthemen;
 
     const seoTitel = `Fokusthemen - ${name}`;
     const seoDescription = `${seoTitel} - Hier finden Sie alle unsere aktuellen Fokusthemen auf einen Blick. Entdecken sie unsere Themenvielfalt.`;

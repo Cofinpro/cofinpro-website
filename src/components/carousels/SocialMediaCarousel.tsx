@@ -67,7 +67,7 @@ class SocialMediaCarousel extends React.Component<Props, State> {
                 return (
                   <div className={`text-center carousel-item ${index === 0 ? ' active' : ''}`} key={`carousel-item-${index}-${carouselId}`}>
                     <a href={mediaPost.urlDesPosts.urlDesPosts} target="_blank" rel="noopener">
-                      <Img sizes={imageSharp.sizes} />
+                      <Img fluid={imageSharp.sizes} />
                     </a>
                     <ContentfulMarkdownText
                       text={mediaPost.textDesPosts.textDesPosts}

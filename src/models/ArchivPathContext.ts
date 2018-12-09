@@ -1,4 +1,4 @@
-export interface ArchivPathContext {
+export interface ArchivpageContext {
   name: string;
   input: any;
   siteDescription: string;

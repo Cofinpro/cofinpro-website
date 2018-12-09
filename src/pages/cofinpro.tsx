@@ -294,18 +294,18 @@ export const pageQuery = graphql`
       }
     }
     iconVorteilLinksSharp: imageSharp(id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilMitteSharp: imageSharp(id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilRechtsSharp: imageSharp(id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     contentfulSeiteCofinpro {

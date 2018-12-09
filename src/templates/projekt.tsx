@@ -7,7 +7,7 @@ import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 
 interface Props {
   data: any;
-  pathContext: {
+  pageContext: {
     bigImage: any;
   };
 }
@@ -15,7 +15,7 @@ interface Props {
 class Projekt extends React.Component<Props> {
   render() {
     const graphQlResult = this.props.data.contentfulProjekt;
-    const mainImage = this.props.pathContext.bigImage;
+    const mainImage = this.props.pageContext.bigImage;
 
     let seoTitle = `Projekt: ${graphQlResult.ueberschrift}`;
     if (graphQlResult.unterueberschrift !== undefined && graphQlResult.unterueberschrift !== null) {

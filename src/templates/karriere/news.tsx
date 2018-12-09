@@ -7,12 +7,12 @@ import HtmlHeader from 'components/HtmlHeader';
 import LinkButton from 'components/buttons/LinkButton';
 
 interface Props {
-  pathContext: any;
+  pageContext: any;
 }
 
 class NewsTemplate extends React.Component<Props> {
   render() {
-    const news = this.props.pathContext.news.node;
+    const news = this.props.pageContext.news.node;
 
     return (
       <div>
@@ -26,7 +26,7 @@ class NewsTemplate extends React.Component<Props> {
               <p className="margin-40-top">{news.datumFuerDieAnzeige}</p>
               <ContentfulMarkdownText text={news.absatz1 !== null ? news.absatz1.absatz1 : ''} {...this.props} />
               {news.newsBildSharp !== undefined && news.newsBildSharp !== null ? (
-                <Img sizes={news.newsBildSharp.sizes} className="margin-20-bottom" />
+                <Img fluid={news.newsBildSharp.sizes} className="margin-20-bottom" />
               ) : null}
               <ContentfulMarkdownText text={news.absatz2 !== null ? news.absatz2.absatz2 : ''} {...this.props} />
               <LinkButton text="ZUR PINNWAND" path="/karriere/pinnwand" />

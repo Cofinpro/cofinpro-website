@@ -13,7 +13,7 @@ interface Paragraph {
 }
 
 interface Props {
-  pathContext: {
+  pageContext: {
     content: any;
     paragraphThreeImageSharp: SharpImage;
   };
@@ -22,7 +22,7 @@ interface Props {
 
 class ContentseiteMax extends React.Component<Props> {
   render() {
-    const content = this.props.pathContext.content;
+    const content = this.props.pageContext.content;
 
     const paragraphOne: Paragraph = {
       text: content.paragraph1 ? content.paragraph1.paragraph1 : undefined,
@@ -120,7 +120,7 @@ class ContentseiteMax extends React.Component<Props> {
           paragraphThree !== null && (
             <ContentMaxParagraph
               content={{
-                image: this.props.pathContext.paragraphThreeImageSharp,
+                image: this.props.pageContext.paragraphThreeImageSharp,
                 text: content.paragraphThree.text,
                 orderText: 'order-md-1',
                 orderPicture: 'order-md-2',
@@ -164,23 +164,23 @@ export const pageQuery = graphql`
     $paragraphThreeImageId: String!
   ) {
     bigMiddleImageSharp: imageSharp(id: { regex: $bigMiddleImageId }) {
-      sizes(quality: 90, maxWidth: 1200) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 90, maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
       }
     }
     paragraphOneImageSharp: imageSharp(id: { regex: $paragraphOneImageId }) {
-      sizes(quality: 90, maxWidth: 800) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
+      fluid(quality: 90, maxWidth: 800) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
     paragraphTwoImageSharp: imageSharp(id: { regex: $paragraphTwoImageId }) {
-      sizes(quality: 90, maxWidth: 800) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
+      fluid(quality: 90, maxWidth: 800) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
     paragraphThreeImageSharp: imageSharp(id: { regex: $paragraphThreeImageId }) {
-      sizes(quality: 90, maxWidth: 800) {
-        ...GatsbyImageSharpSizes_withWebp_noBase64
+      fluid(quality: 90, maxWidth: 800) {
+        ...GatsbyImageSharpFluid_withWebp_noBase64
       }
     }
   }

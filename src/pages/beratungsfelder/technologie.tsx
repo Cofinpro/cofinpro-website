@@ -203,33 +203,33 @@ export const pageQuery = graphql`
       }
     }
     titelBildDesktopSharp: imageSharp(id: { regex: "/Technologie-Titelbild-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildMobileSharp: imageSharp(id: { regex: "/Technologie-Titelbild-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconImageSharp: imageSharp(id: { regex: "/technologieberatung/" }) {
-      sizes(quality: 100, maxWidth: 200) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 200) {
+        ...GatsbyImageSharpFluid
       }
     }
     headlineImageSharp: imageSharp(id: { regex: "/tech3/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
     processImageSharp: imageSharp(id: { regex: "/tech4/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
     processImageSharpM: imageSharp(id: { regex: "/tech4_m/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

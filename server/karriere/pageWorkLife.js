@@ -125,7 +125,7 @@ function createSharpImages(
                 resultImage: imageSharp(id: { regex: "/` +
         image.id +
         `/" }) {
-                        sizes(` +
+                        fluid(` +
         sharpParameter +
         `) {
                         src

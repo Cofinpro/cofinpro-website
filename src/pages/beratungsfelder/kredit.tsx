@@ -182,23 +182,23 @@ export const pageQuery = graphql`
       }
     }
     titelBildDesktopSharp: imageSharp(id: { regex: "/Kredit-Titelbild-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildMobileSharp: imageSharp(id: { regex: "/Kredit-Titelbild-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     processImageSharp: imageSharp(id: { regex: "/fb1/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
     processImageSharpM: imageSharp(id: { regex: "/kreditprozessmobile/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

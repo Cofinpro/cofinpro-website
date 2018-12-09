@@ -14,7 +14,7 @@ import LinkButton from 'components/buttons/LinkButton';
 
 interface Props {
   data: any;
-  pathContext: {
+  pageContext: {
     titelBildDesktop: any;
     titelBildMobile: any;
     socialMediaPostBilder: any;
@@ -30,13 +30,13 @@ class LandingTemplate extends React.Component<Props> {
 
     const contentfulSocialMediaPost = this.props.data.allContentfulSocialMediaPost;
 
-    const titelBildDesktop = this.props.pathContext.titelBildDesktop;
-    const titelBildMobile = this.props.pathContext.titelBildMobile;
-    const socialMediaPostBilder = this.props.pathContext.socialMediaPostBilder;
+    const titelBildDesktop = this.props.pageContext.titelBildDesktop;
+    const titelBildMobile = this.props.pageContext.titelBildMobile;
+    const socialMediaPostBilder = this.props.pageContext.socialMediaPostBilder;
 
     const pathPrefix = process.env.NODE_ENV === 'development' ? '' : __PATH_PREFIX__;
 
-    const cofinproNews = this.props.pathContext.cofinproNews;
+    const cofinproNews = this.props.pageContext.cofinproNews;
 
     return (
       <div>

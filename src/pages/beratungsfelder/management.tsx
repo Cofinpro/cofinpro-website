@@ -137,18 +137,18 @@ export const pageQuery = graphql`
       }
     }
     titelBildDesktopSharp: imageSharp(id: { regex: "/Management-Titelbild-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildMobileSharp: imageSharp(id: { regex: "/Management-Titelbild-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     managementMatrixSharp: imageSharp(id: { regex: "/Management-Beratungsmatrix/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

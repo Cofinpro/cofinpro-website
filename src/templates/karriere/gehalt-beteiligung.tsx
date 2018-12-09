@@ -430,28 +430,28 @@ export const pageQuery = graphql`
       }
     }
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

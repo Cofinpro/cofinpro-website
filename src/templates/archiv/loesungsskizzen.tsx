@@ -6,7 +6,7 @@ import NavigationBeratungsfelder from 'components/navigation/NavigationBeratungs
 import HtmlHeader from 'components/HtmlHeader';
 import PageIntroText from 'components/PageIntroText';
 import { SharpImage } from 'models/SharpImage';
-import { ArchivPathContext } from 'models/ArchivPathContext';
+import { ArchivpageContext } from 'models/ArchivpageContext';
 
 interface Props {
   data: {
@@ -15,15 +15,15 @@ interface Props {
     thesenpapierOneSharp: SharpImage;
     thesenpapierTwoSharp: SharpImage;
   };
-  pathContext: ArchivPathContext;
+  pageContext: ArchivpageContext;
 }
 
 class LoesungsskizzenArchivTemplate extends React.Component<Props> {
   render() {
-    const name = this.props.pathContext.name;
-    const input = this.props.pathContext.input;
-    const siteDescription = this.props.pathContext.siteDescription;
-    const sectionDescription = this.props.pathContext.sectionDescription;
+    const name = this.props.pageContext.name;
+    const input = this.props.pageContext.input;
+    const siteDescription = this.props.pageContext.siteDescription;
+    const sectionDescription = this.props.pageContext.sectionDescription;
 
     const firstSetOfImages = [this.props.data.loesungsskizzenOneSharp, this.props.data.loesungsskizzenTwoSharp];
     const secondSetOfImages = [this.props.data.thesenpapierOneSharp, this.props.data.thesenpapierTwoSharp];
@@ -129,23 +129,23 @@ export default LoesungsskizzenArchivTemplate;
 export const pageQuery = graphql`
   query loesungsskizzenArchivQuery {
     loesungsskizzenOneSharp: imageSharp(id: { regex: "/medien-loesungsskizzen-b32/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     loesungsskizzenTwoSharp: imageSharp(id: { regex: "/medien-loesungsskizzen-b26/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     thesenpapierOneSharp: imageSharp(id: { regex: "/medien-thesenpapiere-a26/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     thesenpapierTwoSharp: imageSharp(id: { regex: "/medien-thesenpapiere-a6/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

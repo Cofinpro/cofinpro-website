@@ -323,38 +323,38 @@ export const pageQuery = graphql`
       }
     }
     iconVorteilLinksSharp: imageSharp(id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilMitteSharp: imageSharp(id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilRechtsSharp: imageSharp(id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildDesktopSharp: imageSharp(id: { regex: "/Startseite-Titelbild-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildMobileSharp: imageSharp(id: { regex: "/Startseite-Titelbild-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     newsMedienLinks: imageSharp(id: { regex: "/startseite-b12/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     newsMedienRechts: imageSharp(id: { regex: "/startseite-b17/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

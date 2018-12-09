@@ -38,8 +38,8 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
                            });
 };
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage, createRedirect } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage, createRedirect } = actions
 
   globalGraphql = graphql
   globalCreatePage = createPage
@@ -169,7 +169,7 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
         resultImage: imageSharp(id: { regex: "/` +
         originalImg.id +
         `/" }) {
-                              sizes(` +
+                              fluid(` +
         sharpParameter +
         `) {
           src
@@ -195,7 +195,7 @@ function getStockImages(callback) {
   globalGraphql(`
     {
       architektur1ImageSharp: imageSharp(id: { regex: "/stock_architektur_1/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -208,7 +208,7 @@ function getStockImages(callback) {
         }
       }
       architektur2ImageSharp: imageSharp(id: { regex: "/stock_architektur_2/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -221,7 +221,7 @@ function getStockImages(callback) {
         }
       }
       architektur4ImageSharp: imageSharp(id: { regex: "/stock_architektur_4/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -234,7 +234,7 @@ function getStockImages(callback) {
         }
       }
       architektur6ImageSharp: imageSharp(id: { regex: "/stock_architektur_6/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -247,7 +247,7 @@ function getStockImages(callback) {
         }
       }
       architektur7ImageSharp: imageSharp(id: { regex: "/stock_architektur_7/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -260,7 +260,7 @@ function getStockImages(callback) {
         }
       }
       architektur9ImageSharp: imageSharp(id: { regex: "/stock_architektur_9/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -275,7 +275,7 @@ function getStockImages(callback) {
       architektur10ImageSharp: imageSharp(
         id: { regex: "/stock_architektur_10/" }
       ) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -290,7 +290,7 @@ function getStockImages(callback) {
       architektur11ImageSharp: imageSharp(
         id: { regex: "/stock_architektur_11/" }
       ) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -303,7 +303,7 @@ function getStockImages(callback) {
         }
       }
       licht46ImageSharp: imageSharp(id: { regex: "/stock_licht_46/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -316,7 +316,7 @@ function getStockImages(callback) {
         }
       }
       licht2ImageSharp: imageSharp(id: { regex: "/stock_licht_2/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -329,7 +329,7 @@ function getStockImages(callback) {
         }
       }
       licht3ImageSharp: imageSharp(id: { regex: "/stock_licht_3/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -342,7 +342,7 @@ function getStockImages(callback) {
         }
       }
       licht4ImageSharp: imageSharp(id: { regex: "/stock_licht_4/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -355,7 +355,7 @@ function getStockImages(callback) {
         }
       }
       licht41ImageSharp: imageSharp(id: { regex: "/stock_licht_41/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -368,7 +368,7 @@ function getStockImages(callback) {
         }
       }
       licht42ImageSharp: imageSharp(id: { regex: "/stock_licht_42/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -381,7 +381,7 @@ function getStockImages(callback) {
         }
       }
       licht31ImageSharp: imageSharp(id: { regex: "/stock_licht_31/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp
@@ -394,7 +394,7 @@ function getStockImages(callback) {
         }
       }
       licht22ImageSharp: imageSharp(id: { regex: "/stock_licht_22/" }) {
-        sizes(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
+        fluid(quality: 100, maxWidth: 1600, maxHeight: 1000, cropFocus: CENTER) {
           src
           srcSet
           srcWebp

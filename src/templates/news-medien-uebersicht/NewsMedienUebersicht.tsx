@@ -12,7 +12,7 @@ import PresseKontakt from 'components/PresseKontakt';
 
 import './NewsMedienUebersicht.scss';
 
-interface PathContext {
+interface PageContext {
   name: string;
   input: any;
   siteHeader: string;
@@ -29,7 +29,7 @@ interface PathContext {
 }
 
 interface Props {
-  pathContext: PathContext;
+  pageContext: PageContext;
   data: any;
 }
 
@@ -45,11 +45,11 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
       };
     });
 
-    const pathContext: PathContext = this.props.pathContext;
-    const innerContent = pathContext.content;
+    const pageContext: PageContext = this.props.pageContext;
+    const innerContent = pageContext.content;
 
-    const seoTitle = `Neues von Cofinpro - ${pathContext.name}`;
-    const seoDescription = pathContext.siteHeader;
+    const seoTitle = `Neues von Cofinpro - ${pageContext.name}`;
+    const seoDescription = pageContext.siteHeader;
 
     return (
       <div>
@@ -65,7 +65,7 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
               <h1 className="h1">Neues von Cofinpro</h1>
               <PageIntroText
                 content={{
-                  text: pathContext.siteHeader,
+                  text: pageContext.siteHeader,
                 }}
               />
             </div>
@@ -93,12 +93,12 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
           styleClass={'margin-80-top margin-xs-40-top'}
         />
 
-        {pathContext.input.veroeffentlichungen.all.length > 0 && (
+        {pageContext.input.veroeffentlichungen.all.length > 0 && (
           <div className="container margin-80-top">
             <div className="row">
               <div className="col-12 col-md-6">
                 <h2 className="h2">{'Fachpublikationen'}</h2>
-                <p>{pathContext.professionalPublications}</p>
+                <p>{pageContext.professionalPublications}</p>
               </div>
               <div className="col-12 col-md-6" />
             </div>
@@ -114,23 +114,23 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
               this.props.data.veroeffentlichungenThreeSharp,
               this.props.data.veroeffentlichungenFourSharp,
             ],
-            description: pathContext.professionalPublications,
-            elements: pathContext.input.veroeffentlichungen.all,
-            buttonText: pathContext.buttonTextProfessionalPublications,
+            description: pageContext.professionalPublications,
+            elements: pageContext.input.veroeffentlichungen.all,
+            buttonText: pageContext.buttonTextProfessionalPublications,
             buttonLink: innerContent.buttonVeroeffentlichungenLink,
-            showButton: pathContext.input.veroeffentlichungen.all.length > 0,
+            showButton: pageContext.input.veroeffentlichungen.all.length > 0,
           }}
           style={{
             row: 'margin-50-top margin-xs-0-top',
           }}
         />
 
-        {pathContext.input.pressemeldungen.current.length > 0 && (
+        {pageContext.input.pressemeldungen.current.length > 0 && (
           <div className="container margin-100-top margin-xs-80-top">
             <div className="row">
               <div className="col-12 col-md-6">
                 <h2 className="h2">{'Pressemitteilungen'}</h2>
-                <p>{pathContext.pressReleases}</p>
+                <p>{pageContext.pressReleases}</p>
               </div>
               <div className="col-12 col-md-6" />
             </div>
@@ -146,31 +146,31 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
               this.props.data.pressemeldungThreeSharp,
               this.props.data.pressemeldungFourSharp,
             ],
-            description: pathContext.pressReleases,
-            elements: pathContext.input.pressemeldungen.current,
-            buttonText: pathContext.buttonTextPressRelease,
+            description: pageContext.pressReleases,
+            elements: pageContext.input.pressemeldungen.current,
+            buttonText: pageContext.buttonTextPressRelease,
             buttonLink: innerContent.buttonPressemeldungenLink,
-            showButton: pathContext.input.pressemeldungen.current.length > 0,
+            showButton: pageContext.input.pressemeldungen.current.length > 0,
           }}
           style={{
             row: 'margin-50-top margin-xs-0-top',
           }}
         />
-        {(pathContext.input.whitepapers.current.length > 0 ||
-          pathContext.input.studien.current.length > 0 ||
-          pathContext.input.thesenpapiere.current.length > 0 ||
-          pathContext.input.loesungsskizzen.current.length > 0) && (
+        {(pageContext.input.whitepapers.current.length > 0 ||
+          pageContext.input.studien.current.length > 0 ||
+          pageContext.input.thesenpapiere.current.length > 0 ||
+          pageContext.input.loesungsskizzen.current.length > 0) && (
           <div className="container margin-120-top margin-xs-80-top">
             <div className="row">
               <div className="col-12 col-md-6">
                 <h2 className="h2">Medien</h2>
-                <p className="no-margin">{pathContext.medien}</p>
+                <p className="no-margin">{pageContext.medien}</p>
               </div>
               <div className="col-12 col-md-6" />
             </div>
           </div>
         )}
-        {pathContext.input.studien.current.length > 0 && (
+        {pageContext.input.studien.current.length > 0 && (
           <div className={'container margin-60-top margin-xs-60-top'}>
             <div className="row">
               <div className="col-12">
@@ -184,17 +184,17 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
             id: 'STUDIEN',
             header: 'STUDIEN',
             images: [this.props.data.studienOneSharp, this.props.data.studienTwoSharp],
-            downloads: pathContext.input.studien.current,
-            buttonText: pathContext.buttonTextStudien,
+            downloads: pageContext.input.studien.current,
+            buttonText: pageContext.buttonTextStudien,
             buttonLink: innerContent.buttonStudienLink,
-            showButton: pathContext.input.studien.current.length > 0,
+            showButton: pageContext.input.studien.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
-        {pathContext.input.thesenpapiere.current.length > 0 && (
+        {pageContext.input.thesenpapiere.current.length > 0 && (
           <div className={'container margin-60-top margin-xs-60-top'}>
             <div className="row">
               <div className="col-12">
@@ -208,17 +208,17 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
             id: 'THESENPAPIERE',
             header: 'THESENPAPIERE',
             images: [this.props.data.thesenpapierOneSharp, this.props.data.thesenpapierTwoSharp],
-            downloads: pathContext.input.thesenpapiere.current,
-            buttonText: pathContext.buttonTextThesen,
+            downloads: pageContext.input.thesenpapiere.current,
+            buttonText: pageContext.buttonTextThesen,
             buttonLink: innerContent.buttonThesenpapiereLink,
-            showButton: pathContext.input.thesenpapiere.current.length > 0,
+            showButton: pageContext.input.thesenpapiere.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
-        {pathContext.input.whitepapers.current.length > 0 && (
+        {pageContext.input.whitepapers.current.length > 0 && (
           <div className={'container margin-60-top margin-xs-60-top'}>
             <div className="row">
               <div className="col-12">
@@ -232,17 +232,17 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
             id: 'WHITEPAPERS',
             header: 'WHITEPAPERS',
             images: [this.props.data.whitepapersOneSharp, this.props.data.whitepapersTwoSharp],
-            downloads: pathContext.input.whitepapers.current,
-            buttonText: pathContext.buttonTextWhitePaper,
+            downloads: pageContext.input.whitepapers.current,
+            buttonText: pageContext.buttonTextWhitePaper,
             buttonLink: innerContent.buttonWhitepaperLink,
-            showButton: pathContext.input.whitepapers.current.length > 0,
+            showButton: pageContext.input.whitepapers.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
           }}
         />
 
-        {pathContext.input.loesungsskizzen.current.length > 0 && (
+        {pageContext.input.loesungsskizzen.current.length > 0 && (
           <div className={'container margin-60-top margin-xs-60-top'}>
             <div className="row">
               <div className="col-12">
@@ -256,10 +256,10 @@ class NewsMedienUebersichtTemplate extends React.Component<Props> {
             id: 'LOESUNGSSKIZZEN',
             header: 'LÖSUNGSSKIZZEN',
             images: [this.props.data.loesungsskizzenOneSharp, this.props.data.loesungsskizzenTwoSharp],
-            downloads: pathContext.input.loesungsskizzen.current,
-            buttonText: pathContext.buttonTextLösung,
+            downloads: pageContext.input.loesungsskizzen.current,
+            buttonText: pageContext.buttonTextLösung,
             buttonLink: innerContent.buttonLoesungLink,
-            showButton: pathContext.input.loesungsskizzen.current.length > 0,
+            showButton: pageContext.input.loesungsskizzen.current.length > 0,
           }}
           style={{
             row: 'margin-20-top margin-xs-0-top',
@@ -301,83 +301,83 @@ export default NewsMedienUebersichtTemplate;
 export const pageQuery = graphql`
   query newsMediaOverviewQuery {
     veroeffentlichungenOneSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a14/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     veroeffentlichungenTwoSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a29/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     veroeffentlichungenThreeSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a16/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     veroeffentlichungenFourSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a1/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungOneSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b50/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungTwoSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b3/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungThreeSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b2/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungFourSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b39/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     studienOneSharp: imageSharp(id: { regex: "/medien-studien-a42/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     studienTwoSharp: imageSharp(id: { regex: "/medien-studien-a7/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     thesenpapierOneSharp: imageSharp(id: { regex: "/medien-thesenpapiere-a26/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     thesenpapierTwoSharp: imageSharp(id: { regex: "/medien-thesenpapiere-a6/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     whitepapersOneSharp: imageSharp(id: { regex: "/medien-whitepapers-b8/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     whitepapersTwoSharp: imageSharp(id: { regex: "/medien-whitepapers-b31/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     loesungsskizzenOneSharp: imageSharp(id: { regex: "/medien-loesungsskizzen-b32/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     loesungsskizzenTwoSharp: imageSharp(id: { regex: "/medien-loesungsskizzen-b26/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     contentfulDownloadEinteilung(id: { regex: "/c73AnGMvKTKcYcw08iKYse/" }) {

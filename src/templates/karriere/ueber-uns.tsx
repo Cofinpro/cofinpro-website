@@ -18,7 +18,7 @@ import ManagementBoardCarousel from 'components/carousels/ManagementBoardCarouse
 
 interface Props {
   data: any;
-  pathContext: any;
+  pageContext: any;
 }
 
 class UeberUnsTemplate extends React.Component<Props> {
@@ -31,7 +31,7 @@ class UeberUnsTemplate extends React.Component<Props> {
   render() {
     const graphQlResult = this.props.data.contentfulSeiteUeberUns;
 
-    const mbImagesSharp = this.props.pathContext.mbImagesSharp;
+    const mbImagesSharp = this.props.pageContext.mbImagesSharp;
 
     return (
       <div>
@@ -697,38 +697,38 @@ export const pageQuery = graphql`
       }
     }
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     projektBildSharp: imageSharp(id: { regex: $projektBildId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     karrieremagazinSharp: imageSharp(id: { regex: $karrieremagazinId }) {
-      sizes(maxWidth: 1600, quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

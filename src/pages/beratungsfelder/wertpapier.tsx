@@ -186,33 +186,33 @@ export const pageQuery = graphql`
       }
     }
     titelBildDesktopSharp: imageSharp(id: { regex: "/Wertpapier-Titelbild-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildMobileSharp: imageSharp(id: { regex: "/Wertpapier-Titelbild-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     processImageSharp: imageSharp(id: { regex: "/fb2/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
     process2ImageSharp: imageSharp(id: { regex: "/fb3/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
     processImageSharpM: imageSharp(id: { regex: "/prozessmobile2/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
     process2ImageSharpM: imageSharp(id: { regex: "/prozessmobile3/" }) {
-      sizes(quality: 100) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

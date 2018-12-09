@@ -275,8 +275,8 @@ export const pageQuery = graphql`
       }
     }
     bildStellenanzeigeSharp: imageSharp(id: { regex: $bildStellenanzeigeId }) {
-      sizes(maxWidth: 1600, quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

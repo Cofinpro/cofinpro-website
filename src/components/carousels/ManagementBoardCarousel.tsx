@@ -24,7 +24,7 @@ class ManagementBoardCarousel extends React.Component<Props> {
               return (
                 <div className={`carousel-item ${index === 0 ? ' active' : ''}`} key={mitglied.id}>
                   <div>
-                    <Img sizes={mbImagesSharp[`${mitglied.bild.id}.jpg`].sizes} className="margin-20-bottom" />
+                    <Img fluid={mbImagesSharp[`${mitglied.bild.id}.jpg`].sizes} className="margin-20-bottom" />
                     <div className="d-block d-md-none margin-20-bottom">
                       <CarouselControlPrevNext sliderId={`carousel-${carouselId}`} version={2} />
                     </div>

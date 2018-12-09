@@ -100,13 +100,13 @@ export default BeratungsfelderFach;
 export const pageQuery = graphql`
   query BeratungsfelderFachQuery {
     titelBildDesktopSharp: imageSharp(id: { regex: "/Fachberatung-Titelbild-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 2000) {
+        ...GatsbyImageSharpFluid
       }
     }
     titelBildMobileSharp: imageSharp(id: { regex: "/Fachberatung-Titelbild-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

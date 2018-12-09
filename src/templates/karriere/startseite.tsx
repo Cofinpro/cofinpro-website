@@ -195,13 +195,13 @@ class StartseiteTemplate extends React.Component<Props> {
                   <div className="row text-center">
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-fach">
-                        <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant padding-sm-top-bottom" />
+                        <Img fluid={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant padding-sm-top-bottom" />
                         <h3 className="h5 link-black link-style padding-sm-top-bottom">FACHBERATER</h3>
                       </div>
                     </div>
                     <div className="col-12 col-md-3 d-none d-md-block">
                       <div id="desktop-wahl-tech">
-                        <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant padding-sm-top-bottom" />
+                        <Img fluid={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant padding-sm-top-bottom" />
                         <h3 className="h5 link-black link-style padding-sm-top-bottom">TECHNOLOGISCHER BERATER</h3>
                       </div>
                     </div>
@@ -212,7 +212,7 @@ class StartseiteTemplate extends React.Component<Props> {
                         onClick={() => handleUserSelectsCompetenceClick('andere')}
                       >
                         <Img
-                          sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes}
+                          fluid={this.props.data.bildFuerPerspektiveAndereSharp.sizes}
                           className="img-consultant padding-sm-top-bottom"
                         />
                         <h3 className="h5 link-black padding-sm-top-bottom">ANDERE EXPERTISE</h3>
@@ -225,7 +225,7 @@ class StartseiteTemplate extends React.Component<Props> {
                         onClick={() => handleUserSelectsCompetenceClick('studenten')}
                       >
                         <Img
-                          sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes}
+                          fluid={this.props.data.bildFuerPerspektiveStudentSharp.sizes}
                           className="img-consultant padding-sm-top-bottom"
                         />
                         <h3 className="h5 link-black padding-sm-top-bottom">STUDENT</h3>
@@ -279,7 +279,7 @@ class StartseiteTemplate extends React.Component<Props> {
                   <div className="row d-flex-inline d-md-none margin-20-bottom">
                     <div className="col-6 text-center">
                       <div id="img-wahl-fach">
-                        <Img sizes={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant margin-20-bottom" />
+                        <Img fluid={this.props.data.bildFuerPerspektiveFachSharp.sizes} className="img-consultant margin-20-bottom" />
                         <h3 className="h5 link-black">FACHBERATER</h3>
                       </div>
                       <div id="links-fach">
@@ -299,7 +299,7 @@ class StartseiteTemplate extends React.Component<Props> {
                     </div>
                     <div className="col-6 text-center">
                       <div id="img-wahl-tech">
-                        <Img sizes={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant margin-20-bottom" />
+                        <Img fluid={this.props.data.bildFuerPerspektiveTechSharp.sizes} className="img-consultant margin-20-bottom" />
                         <h3 className="h5 link-black">TECHNOLOGIE-BERATER</h3>
                       </div>
                       <div id="links-tech">
@@ -327,7 +327,7 @@ class StartseiteTemplate extends React.Component<Props> {
                         onClick={() => handleUserSelectsCompetenceClick('andere')}
                       >
                         <Img
-                          sizes={this.props.data.bildFuerPerspektiveAndereSharp.sizes}
+                          fluid={this.props.data.bildFuerPerspektiveAndereSharp.sizes}
                           className="img-consultant margin-20-bottom img-wahl-andere"
                         />
                         <h3 className="h5">ANDERE EXPERTISE</h3>
@@ -340,7 +340,7 @@ class StartseiteTemplate extends React.Component<Props> {
                         onClick={() => handleUserSelectsCompetenceClick('studenten')}
                       >
                         <Img
-                          sizes={this.props.data.bildFuerPerspektiveStudentSharp.sizes}
+                          fluid={this.props.data.bildFuerPerspektiveStudentSharp.sizes}
                           className="img-consultant margin-20-bottom img-wahl-student"
                         />
                         <h3 className="h5">STUDENT</h3>
@@ -437,23 +437,23 @@ export const pageQuery = graphql`
       }
     }
     bildFuerPerspektiveFachSharp: imageSharp(id: { regex: $bildFuerPerspektiveFachId }) {
-      sizes(maxWidth: 1600, quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     bildFuerPerspektiveTechSharp: imageSharp(id: { regex: $bildFuerPerspektiveTechId }) {
-      sizes(maxWidth: 1600, quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     bildFuerPerspektiveStudentSharp: imageSharp(id: { regex: $bildFuerPerspektiveStudentId }) {
-      sizes(maxWidth: 1600, quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     bildFuerPerspektiveAndereSharp: imageSharp(id: { regex: $bildFuerPerspektiveAndereId }) {
-      sizes(maxWidth: 1600, quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

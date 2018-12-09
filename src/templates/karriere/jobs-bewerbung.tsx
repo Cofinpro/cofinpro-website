@@ -361,28 +361,28 @@ export const pageQuery = graphql`
       }
     }
     imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     ansprechpartnerEinsBildSharp: imageSharp(id: { regex: $ansprechpartnerEinsBildId }) {
-      sizes(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     ansprechpartnerZweiBildSharp: imageSharp(id: { regex: $ansprechpartnerZweiBildId }) {
-      sizes(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 2000, maxHeight: 1335, quality: 60, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     gptwSharp: imageSharp(id: { regex: $gptwId }) {
-      sizes(maxWidth: 1600, quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

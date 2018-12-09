@@ -6,7 +6,7 @@ import NavigationBeratungsfelder from 'components/navigation/NavigationBeratungs
 import HtmlHeader from 'components/HtmlHeader';
 import PageIntroText from 'components/PageIntroText';
 import { SharpImage } from 'models/SharpImage';
-import { ArchivPathContext } from 'models/ArchivPathContext';
+import { ArchivpageContext } from 'models/ArchivpageContext';
 
 interface Props {
   data: {
@@ -19,15 +19,15 @@ interface Props {
     veroeffentlichungenThreeSharp: SharpImage;
     veroeffentlichungenFourSharp: SharpImage;
   };
-  pathContext: ArchivPathContext;
+  pageContext: ArchivpageContext;
 }
 
 class VeroeffentlichungenArchivTemplate extends React.Component<Props> {
   render() {
-    const name = this.props.pathContext.name;
-    const input = this.props.pathContext.input;
-    const siteDescription = this.props.pathContext.siteDescription;
-    const sectionDescription = this.props.pathContext.sectionDescription;
+    const name = this.props.pageContext.name;
+    const input = this.props.pageContext.input;
+    const siteDescription = this.props.pageContext.siteDescription;
+    const sectionDescription = this.props.pageContext.sectionDescription;
 
     const firstSetOfImages = [
       this.props.data.veroeffentlichungenOneSharp,
@@ -144,43 +144,43 @@ export default VeroeffentlichungenArchivTemplate;
 export const pageQuery = graphql`
   query veroeffentlichungenArchivQuery {
     veroeffentlichungenOneSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a14/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     veroeffentlichungenTwoSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a29/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     veroeffentlichungenThreeSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a16/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     veroeffentlichungenFourSharp: imageSharp(id: { regex: "/medien-veroeffentlichungen-a1/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungOneSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b50/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungTwoSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b3/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungThreeSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b2/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     pressemeldungFourSharp: imageSharp(id: { regex: "/medien-pressemeldungen-b39/" }) {
-      sizes(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

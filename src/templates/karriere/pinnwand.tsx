@@ -9,7 +9,7 @@ import StorageHelper from 'utils/storageHelper';
 import './pinnwand.scss';
 
 interface Props {
-  pathContext: {
+  pageContext: {
     allNews: any[];
   };
 }
@@ -55,7 +55,7 @@ class PinnwandTemplate extends React.Component<Props, State> {
 
   render() {
     // TODO: slice directly oldNews and currentNews ;)
-    const allNews = this.props.pathContext.allNews;
+    const allNews = this.props.pageContext.allNews;
     const oldNewsExists = allNews.length > this.THRESHOLD;
     const threshold = this.THRESHOLD;
 

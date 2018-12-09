@@ -152,7 +152,7 @@ function createSharpImage(graphql, sharpParameter, originalImg, callback) {
       resultImage: imageSharp(id: { regex: "/` +
       originalImg.id +
       `/" }) {
-                            sizes(` +
+                            fluid(` +
       sharpParameter +
       `) {
                         src
@@ -189,7 +189,7 @@ function createSharpImages(
                 resultImage: imageSharp(id: { regex: "/` +
         image.id +
         `/" }) {
-                        sizes(` +
+                        fluid(` +
         sharpParameter +
         `) {
                         src

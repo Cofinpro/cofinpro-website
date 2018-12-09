@@ -196,28 +196,28 @@ export const pageQuery = graphql`
       }
     }
     ueberblickDigitalisierungDesktopSharp: imageSharp(id: { regex: "/Digitalisierung-Uebersicht-Desktop/" }) {
-      sizes(quality: 80, maxWidth: 1800) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 1800) {
+        ...GatsbyImageSharpFluid
       }
     }
     ueberblickDigitalisierungMobileSharp: imageSharp(id: { regex: "/Digitalisierung-Uebersicht-Mobile/" }) {
-      sizes(quality: 80) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconThemeOneSharp: imageSharp(id: { regex: "/machinelearning-color/" }) {
-      sizes(quality: 70) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 70) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconThemeTwoSharp: imageSharp(id: { regex: "/unbundlingbanks-color/" }) {
-      sizes(quality: 70) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 70) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconThemeThreeSharp: imageSharp(id: { regex: "/blockchain-color/" }) {
-      sizes(quality: 70) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 70) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

@@ -111,38 +111,38 @@ export default BeratungsfelderStartseite;
 export const pageQuery = graphql`
   query BeratungsfelderQuery {
     imageCool: imageSharp {
-      sizes(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpSizes
+      fluid(maxWidth: 1600, quality: 90) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilLinksSharp: imageSharp(id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilMitteSharp: imageSharp(id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     iconVorteilRechtsSharp: imageSharp(id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }) {
-      sizes(quality: 60) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 60) {
+        ...GatsbyImageSharpFluid
       }
     }
     mngmtHeroImageSharp: imageSharp(id: { regex: "/Management-Titelbild-Mobile/" }) {
-      sizes(quality: 80, maxWidth: 800) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 800) {
+        ...GatsbyImageSharpFluid
       }
     }
     fachHeroImageSharp: imageSharp(id: { regex: "/Fachberatung-Titelbild-Mobile/" }) {
-      sizes(quality: 80, maxWidth: 800) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 800) {
+        ...GatsbyImageSharpFluid
       }
     }
     techHeroImageSharp: imageSharp(id: { regex: "/Technologie-Titelbild-Mobile/" }) {
-      sizes(quality: 80, maxWidth: 800) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 80, maxWidth: 800) {
+        ...GatsbyImageSharpFluid
       }
     }
   }

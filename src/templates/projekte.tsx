@@ -9,7 +9,7 @@ import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 
 interface Props {
-  pathContext: {
+  pageContext: {
     title: string;
     description: string;
     projects: any[];
@@ -120,10 +120,10 @@ class ProjekteUebersicht extends React.Component<Props> {
 
     let bigSmallSwitch = false;
 
-    const title = this.props.pathContext.title;
-    const description = this.props.pathContext.description;
-    const projects = this.props.pathContext.projects;
-    const backgroundImages = this.props.pathContext.stockImages;
+    const title = this.props.pageContext.title;
+    const description = this.props.pageContext.description;
+    const projects = this.props.pageContext.projects;
+    const backgroundImages = this.props.pageContext.stockImages;
 
     const firstShowProjects = projects.slice(0, 8);
     const moreProjects = projects.slice(8, 16);

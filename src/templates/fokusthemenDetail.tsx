@@ -340,23 +340,23 @@ export const pageQuery = graphql`
       videoYoutubeUrl
     }
     stockImageOne: imageSharp(id: { regex: "/fokusthema-stockbild-b24-/" }) {
-      sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     stockImageTwo: imageSharp(id: { regex: "/fokusthema-stockbild-b14-/" }) {
-      sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     stockImageThree: imageSharp(id: { regex: "/fokusthema-stockbild-a26-/" }) {
-      sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
     stockImageFour: imageSharp(id: { regex: "/fokusthema-stockbild-b2-/" }) {
-      sizes(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
-        ...GatsbyImageSharpSizes
+      fluid(quality: 100, maxWidth: 800, maxHeight: 492, cropFocus: CENTER) {
+        ...GatsbyImageSharpFluid
       }
     }
   }
