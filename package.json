@@ -38,6 +38,7 @@
     "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.8.0",
     "gatsby": "^2.0.61",
+    "gatsby-image": "^2.0.22",
     "gatsby-plugin-catch-links": "^2.0.5",
     "gatsby-plugin-lodash": "^3.0.1",
     "gatsby-plugin-manifest": "^2.0.5",
