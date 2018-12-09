@@ -1,5 +1,11 @@
 * TODO (nicht komplett)
 
+Layout in Pages einbauen
+    https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#remove-or-refactor-layout-components
+
+Don't query nodes by id
+    https://www.gatsbyjs.org/docs/migrating-from-v1-to-v2/#dont-query-nodes-by-id
+
 src\layout\*
 
 src\pages\fokusthemen\digiLayout\index.jsx
@@ -14,10 +20,5 @@ src\components\images\IconImage.tsx => DELETE?
 
 src\components\ChatBot.tsx
     Uff :(
-
-Missing NPM packages:
-    gatsby-image
-    react-marked-markdown
-    universal-cookie
 
 Nach // TODO: suchen!!!
