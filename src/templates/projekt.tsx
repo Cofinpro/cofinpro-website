@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import HtmlHeader from 'components/HtmlHeader';

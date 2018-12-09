@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import LayoutDownloads from './LayoutDownloads';
 import LayoutVeroeffentlichungen from './LayoutVeroeffentlichungen';

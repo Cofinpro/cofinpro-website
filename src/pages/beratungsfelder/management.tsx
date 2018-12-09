@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import FokusThemenSmallLayout from 'components/layouts/FokusThemenSmallLayout';

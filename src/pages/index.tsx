@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import LinkButton from 'components/buttons/LinkButton';
 import ThreeIconsWithLinks from 'components/layouts/ThreeIconsWithLinks';

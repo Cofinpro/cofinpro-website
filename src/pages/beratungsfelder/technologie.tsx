@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import PageIntroText from 'components/PageIntroText';

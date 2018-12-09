@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import FourFactsLayout from 'components/layouts/FourFactsLayout';
 import TestimonialLayout from 'components/layouts/TestimonialLayout';

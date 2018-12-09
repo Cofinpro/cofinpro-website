@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import LinkButton from 'components/buttons/LinkButton';
 import PageIntroText from 'components/PageIntroText';
@@ -12,7 +13,7 @@ interface Props {
   data: any;
 }
 
-class Startseite extends React.Component<Props> {
+class Cofinpro extends React.Component<Props> {
   render() {
     const graphQlResult = this.props.data.contentfulBausteinCofinproFakten;
     const graphQlResultCofinpro = this.props.data.contentfulSeiteCofinpro;
@@ -234,7 +235,7 @@ class Startseite extends React.Component<Props> {
   }
 }
 
-export default Startseite;
+export default Cofinpro;
 
 export const pageQuery = graphql`
   query cofinproQuery {

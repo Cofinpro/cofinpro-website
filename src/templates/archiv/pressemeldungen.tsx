@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import LayoutPressemeldungen from '../news-medien-uebersicht/LayoutPressemeldungen';
 import NavigationBeratungsfelder from 'components/navigation/NavigationBeratungsfelder';

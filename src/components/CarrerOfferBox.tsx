@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PubSub from 'pubsub-js';
 
 import StorageHelper from '../utils/storageHelper';

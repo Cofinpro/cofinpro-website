@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
+import { Link } from 'gatsby';
 
 import { ImageWrapper, SourceTyp } from '../images/ImageWrapper';
 import { SharpImage } from 'models/SharpImage';
@@ -25,7 +25,7 @@ class ThreeIconsWithLinks extends React.Component<Props> {
       <div className={`container threeIconsWithLinks ${styleClass}`}>
         <div className="row text-center justify-content-center">
           <div className="col-6 col-md-4">
-            <GatsbyLink to={linkLeft}>
+            <Link to={linkLeft}>
               <div className="row justify-content-center">
                 <div className="col-8 col-md-8 col-lg-6 text-center">
                   <ImageWrapper source={iconLeft} sourceType={SourceTyp.Sharp} />
@@ -34,10 +34,10 @@ class ThreeIconsWithLinks extends React.Component<Props> {
                   <p className="h5 padding-sm-top text-dark margin-10-top bold-font">{titleLeft}</p>
                 </div>
               </div>
-            </GatsbyLink>
+            </Link>
           </div>
           <div className="col-6 col-md-4">
-            <GatsbyLink to={linkMiddle}>
+            <Link to={linkMiddle}>
               <div className="row justify-content-center">
                 <div className="col-8 col-md-8 col-lg-6 text-center">
                   <ImageWrapper source={iconMiddle} sourceType={SourceTyp.Sharp} />
@@ -46,10 +46,10 @@ class ThreeIconsWithLinks extends React.Component<Props> {
                   <p className="h5 padding-sm-top text-dark margin-10-top bold-font">{titleMiddle}</p>
                 </div>
               </div>
-            </GatsbyLink>
+            </Link>
           </div>
           <div className="col-6 col-md-4 margin-xs-40-top">
-            <GatsbyLink to={linkRight}>
+            <Link to={linkRight}>
               <div className="row justify-content-center">
                 <div className="col-8 col-md-8 col-lg-6 text-center">
                   <ImageWrapper source={iconRight} sourceType={SourceTyp.Sharp} />
@@ -58,7 +58,7 @@ class ThreeIconsWithLinks extends React.Component<Props> {
                   <p className="h5 padding-sm-top text-dark margin-10-top bold-font">{titleRight}</p>
                 </div>
               </div>
-            </GatsbyLink>
+            </Link>
           </div>
         </div>
       </div>

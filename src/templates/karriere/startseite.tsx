@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Img from 'gatsby-image';
 

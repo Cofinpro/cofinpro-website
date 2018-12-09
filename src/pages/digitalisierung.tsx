@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import PageIntroText from 'components/PageIntroText';
 import ReferenzAndDownload from 'components/ReferenzAndDownload';

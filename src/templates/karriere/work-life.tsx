@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import ThreeIconsWithTextLayout from 'components/layouts/ThreeIconsWithTextLayout';
 import HeroImageLayout from 'components/layouts/HeroImageLayout';

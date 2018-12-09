@@ -1,7 +1,7 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import HtmlHeader from 'components/HtmlHeader';
-
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import StockphotoWithExternalLink from 'components/images/StockphotoWithExternalLink';

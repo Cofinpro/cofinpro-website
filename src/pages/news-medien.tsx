@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import LinkButton from 'components/buttons/LinkButton';
 import ExternalLinkButton from 'components/buttons/ExternalLinkButton';

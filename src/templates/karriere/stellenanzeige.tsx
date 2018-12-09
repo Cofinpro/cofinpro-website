@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import ReactGA from 'react-ga';
 
 import HeroImageLayout from 'components/layouts/HeroImageLayout';

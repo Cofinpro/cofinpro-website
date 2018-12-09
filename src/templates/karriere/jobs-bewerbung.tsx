@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
+import { graphql } from 'gatsby';
 
 import CarrerOfferCarouselBox from 'components/CarrerOfferCarouselBox';
 import SiteHeaderContent from 'components/SiteHeaderContent';
