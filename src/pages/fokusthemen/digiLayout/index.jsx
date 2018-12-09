@@ -5,7 +5,7 @@ import ContentfulMarkdownText from 'components/ContentfulMarkdownText'
 
 import {
   ImageWrapper,
-  SOURCE_TYP_PLACEHOLDER,
+  SourceTyp,
 } from 'components/images/ImageWrapper'
 
 class FokusthemenDigitalisierung extends React.Component {
@@ -16,7 +16,7 @@ class FokusthemenDigitalisierung extends React.Component {
           <div className="row">
             <div className="col-md-2 col-4">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
+                sourceType={SourceTyp.Placeholder}
                 source={{
                   width: 400,
                   height: 350,
@@ -58,7 +58,7 @@ class FokusthemenDigitalisierung extends React.Component {
           <div className="row d-md-flex">
             <div className="col-md-6 col-12">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
+                sourceType={SourceTyp.Placeholder}
                 source={{
                   width: 1200,
                   height: 800,
@@ -76,7 +76,7 @@ class FokusthemenDigitalisierung extends React.Component {
                 <div className="col-4 d-none d-md-block" />
                 <div className="col-md-8 col-12">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    sourceType={SourceTyp.Placeholder}
                     source={{
                       width: 1200,
                       height: 800,
@@ -93,7 +93,7 @@ class FokusthemenDigitalisierung extends React.Component {
               <div className="row margin-40-top">
                 <div className="col-md-8 col-12">
                   <ImageWrapper
-                    sourceType={SOURCE_TYP_PLACEHOLDER}
+                    sourceType={SourceTyp.Placeholder}
                     source={{
                       width: 1200,
                       height: 800,
@@ -115,7 +115,7 @@ class FokusthemenDigitalisierung extends React.Component {
           <div className="row">
             <div className="col-12 d-md-none">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
+                sourceType={SourceTyp.Placeholder}
                 source={{
                   width: 600,
                   height: 350,
@@ -133,7 +133,7 @@ class FokusthemenDigitalisierung extends React.Component {
             </div>
             <div className="col-md-6 d-md-block d-none">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
+                sourceType={SourceTyp.Placeholder}
                 source={{
                   width: 600,
                   height: 350,
@@ -149,7 +149,7 @@ class FokusthemenDigitalisierung extends React.Component {
             Unser Angebot umfasst unterschiedliche Aspekte der Digitalisierung
           </h3>
           <ImageWrapper
-            sourceType={SOURCE_TYP_PLACEHOLDER}
+            sourceType={SourceTyp.Placeholder}
             source={{
               width: 1200,
               height: 650,
@@ -161,7 +161,7 @@ class FokusthemenDigitalisierung extends React.Component {
           <div className="row">
             <div className="col-12 d-md-none">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
+                sourceType={SourceTyp.Placeholder}
                 source={{
                   width: 600,
                   height: 350,
@@ -179,7 +179,7 @@ class FokusthemenDigitalisierung extends React.Component {
             </div>
             <div className="col-md-6 d-md-block d-none">
               <ImageWrapper
-                sourceType={SOURCE_TYP_PLACEHOLDER}
+                sourceType={SourceTyp.Placeholder}
                 source={{
                   width: 600,
                   height: 350,

@@ -1,18 +1,16 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 
-import ChatBot from '../components/ChatBot';
 import emergence from 'emergence.js';
 
+import ChatBot from '../components/ChatBot';
+import MainNavigation from '../components/navigation/MainNavigation';
+import NavigationCareer from '../components/navigation/NavigationCareer';
+import SiteFooter from '../components/SiteFooter';
 import StorageHelper from '../utils/storageHelper';
 
 import './gatsrap.scss';
 import 'animate.css/animate.css';
-
-import ReactGA from 'react-ga';
-
-import MainNavigation from '../components/navigation/MainNavigation';
-import NavigationCareer from '../components/navigation/NavigationCareer';
-import SiteFooter from '../components/SiteFooter';
 
 interface Props {
   location: any;
@@ -25,7 +23,7 @@ interface State {
   locationUpdate: any;
 }
 
-class Template extends React.Component<Props, State> {
+class Layout extends React.Component<Props, State> {
   private perspectives: string[];
 
   constructor(props: Props) {
@@ -114,4 +112,4 @@ class Template extends React.Component<Props, State> {
   }
 }
 
-export default Template;
+export default Layout;
