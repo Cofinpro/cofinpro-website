@@ -169,6 +169,7 @@ class Startseite extends React.Component<Props> {
           iconRight={this.props.data.iconVorteilRechtsSharp}
           titleRight="Technologieberatung"
           linkRight={'/beratungsfelder/technologie'}
+          sourceTyp={SourceTyp.Sharp}
         />
 
         <div className="container margin-120-top margin-md-100-top margin-xs-80-top">

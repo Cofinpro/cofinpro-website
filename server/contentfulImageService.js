@@ -11,12 +11,12 @@ exports.refreshImages = function(graphql, callback) {
     _.each(testDataAllContentfulAsset.data.allContentfulAsset.edges, edge => {
       var fileName = edge.node.file.fileName
       var newFileName =
-        edge.node.id +
+        edge.node.contentful_id +
         fileName.substring(fileName.lastIndexOf('.'), fileName.length)
       var path = './static/img/contentful/' + newFileName
 
       if (!existsAsset(path)) {
-        console.log('asset for id:' + edge.node.id + ' not found.')
+        console.log('asset for id:' + edge.node.contentful_id + ' not found.')
 
         var url = 'http:' + edge.node.file.url
 
@@ -33,6 +33,7 @@ exports.refreshImages = function(graphql, callback) {
             edges {
               node {
                 id
+                contentful_id
                 file {
                   url
                   fileName
@@ -55,7 +56,7 @@ exports.refreshImages = function(graphql, callback) {
         console.log('checking if asset exists under:' + path)
 
         if (path !== '' && !existsAsset(path)) {
-          console.log('asset for id:' + edge.node.id + ' not found.')
+          console.log('asset for id:' + edge.node.contentful_id + ' not found.')
 
           var url = 'http:' + edge.node.file.url
 
@@ -97,7 +98,7 @@ exports.refreshImages = function(graphql, callback) {
 function getDestinationPath(edge) {
   var fileName = edge.node.file.fileName
   var newFileName =
-    edge.node.id +
+    edge.node.contentful_id +
     fileName.substring(fileName.lastIndexOf('.'), fileName.length)
 
   console.log('new file name:' + newFileName)

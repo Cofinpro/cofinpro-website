@@ -50,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     async.waterfall(
       [
-        // TODO: async.apply(contentfulImageService.refreshImages, globalGraphql),
+        async.apply(contentfulImageService.refreshImages, globalGraphql),
         getNews,
         getStockImages,
         createPages,

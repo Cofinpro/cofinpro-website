@@ -6,20 +6,33 @@ import { SharpImage } from 'models/SharpImage';
 
 interface Props {
   styleClass: any;
-  iconLeft: SharpImage;
+  iconLeft: any;
   titleLeft: string;
   linkLeft: string;
-  iconMiddle: SharpImage;
+  iconMiddle: any;
   titleMiddle: string;
   linkMiddle: string;
-  iconRight: SharpImage;
+  iconRight: any;
   titleRight: string;
   linkRight: string;
+  sourceTyp: SourceTyp;
 }
 
 class ThreeIconsWithLinks extends React.Component<Props> {
   render() {
-    const { styleClass, iconLeft, titleLeft, linkLeft, iconMiddle, titleMiddle, linkMiddle, iconRight, titleRight, linkRight } = this.props;
+    const {
+      styleClass,
+      iconLeft,
+      titleLeft,
+      linkLeft,
+      iconMiddle,
+      titleMiddle,
+      linkMiddle,
+      iconRight,
+      titleRight,
+      linkRight,
+      sourceTyp,
+    } = this.props;
 
     return (
       <div className={`container threeIconsWithLinks ${styleClass}`}>
@@ -28,7 +41,7 @@ class ThreeIconsWithLinks extends React.Component<Props> {
             <Link to={linkLeft}>
               <div className="row justify-content-center">
                 <div className="col-8 col-md-8 col-lg-6 text-center">
-                  <ImageWrapper source={iconLeft} sourceType={SourceTyp.Sharp} />
+                  <ImageWrapper source={iconLeft} sourceType={sourceTyp} />
                 </div>
                 <div className="col-12 text-center">
                   <p className="h5 padding-sm-top text-dark margin-10-top bold-font">{titleLeft}</p>
@@ -40,7 +53,7 @@ class ThreeIconsWithLinks extends React.Component<Props> {
             <Link to={linkMiddle}>
               <div className="row justify-content-center">
                 <div className="col-8 col-md-8 col-lg-6 text-center">
-                  <ImageWrapper source={iconMiddle} sourceType={SourceTyp.Sharp} />
+                  <ImageWrapper source={iconMiddle} sourceType={sourceTyp} />
                 </div>
                 <div className="col-12 text-center">
                   <p className="h5 padding-sm-top text-dark margin-10-top bold-font">{titleMiddle}</p>
@@ -52,7 +65,7 @@ class ThreeIconsWithLinks extends React.Component<Props> {
             <Link to={linkRight}>
               <div className="row justify-content-center">
                 <div className="col-8 col-md-8 col-lg-6 text-center">
-                  <ImageWrapper source={iconRight} sourceType={SourceTyp.Sharp} />
+                  <ImageWrapper source={iconRight} sourceType={sourceTyp} />
                 </div>
                 <div className="col-12 text-center">
                   <p className="h5 padding-sm-top text-dark margin-10-top bold-font">{titleRight}</p>

@@ -135,6 +135,7 @@ class ThemaDigitalisierung extends React.Component<Props> {
           iconRight={this.props.data.iconThemeThreeSharp}
           titleRight="Blockchain"
           linkRight={'/fokusthemen/thema/blockchain'}
+          sourceTyp={SourceTyp.Sharp}
         />
 
         <FokusThemenFachLayout

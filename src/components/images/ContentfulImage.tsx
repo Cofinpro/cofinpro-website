@@ -15,7 +15,7 @@ class ContentfulImage extends React.Component<Props> {
     }
 
     const fileEnding = imageFile.file.fileName.substring(imageFile.file.fileName.lastIndexOf('.'), imageFile.file.fileName.length);
-    const filePath = `${pathPrefix}/img/contentful/${imageFile.id}${fileEnding}`;
+    const filePath = `${pathPrefix}/img/contentful/${imageFile.contentful_id}${fileEnding}`;
 
     return (
       <img

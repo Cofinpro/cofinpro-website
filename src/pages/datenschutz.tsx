@@ -1,8 +1,19 @@
 import React from 'react';
 
+import Layout from 'components/Layout';
 import HtmlHeader from 'components/HtmlHeader';
 
-class Datenschutz extends React.Component {
+interface Props {
+  location: any;
+  history: any;
+}
+
+class Datenschutz extends React.Component<Props> {
+
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
 
     const seoTitle = 'Datenschutz - Cofinpro';
@@ -10,6 +21,7 @@ class Datenschutz extends React.Component {
       'Datenschutz Datenschutzerklärung Wir freuen uns über Ihr Interesse an unserem Unternehmen. Der Schutz Ihrer personenbezogenen Daten und Ihrer Privatsphäre bei…';
 
     return (
+      <Layout {...this.props}>
       <div className="min-view-height">
         <HtmlHeader
           direktData={{
@@ -405,6 +417,7 @@ class Datenschutz extends React.Component {
           </div>
         </div>
       </div>
+      </Layout>
     );
   }
 }
