@@ -1,24 +1,32 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
-import { SharpImage } from 'models/SharpImage';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   data: {
-    titelBildDesktopSharp: SharpImage;
-    titelBildMobileSharp: SharpImage;
-    headlineImageSharp: SharpImage;
-    processImageSharp: SharpImage;
+    titelBildDesktopSharp: SharpImageFluid;
+    titelBildMobileSharp: SharpImageFluid;
+    headlineImageSharp: SharpImageFluid;
+    processImageSharp: SharpImageFluid;
   };
+  location: any;
+  history: any;
 }
 
 class BeratungsfelderTechnologie extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div>
+      <Layout location={this.props.location}>
         <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
@@ -176,7 +184,7 @@ class BeratungsfelderTechnologie extends React.Component<Props> {
             />
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -202,34 +210,52 @@ export const pageQuery = graphql`
         }
       }
     }
-    titelBildDesktopSharp: imageSharp(id: { regex: "/Technologie-Titelbild-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
+
+    titelBildDesktopSharp: file(relativePath: { regex: "/Technologie-Titelbild-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    titelBildMobileSharp: imageSharp(id: { regex: "/Technologie-Titelbild-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+
+    titelBildMobileSharp: file(relativePath: { regex: "/Technologie-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconImageSharp: imageSharp(id: { regex: "/technologieberatung/" }) {
-      fluid(quality: 100, maxWidth: 200) {
-        ...GatsbyImageSharpFluid
+
+    iconImageSharp: file(relativePath: { regex: "/technologieberatung/" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 200) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    headlineImageSharp: imageSharp(id: { regex: "/tech3/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    headlineImageSharp: file(relativePath: { regex: "/tech3/" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    processImageSharp: imageSharp(id: { regex: "/tech4/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    processImageSharp: file(relativePath: { regex: "/tech4/" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    processImageSharpM: imageSharp(id: { regex: "/tech4_m/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    processImageSharpM: file(relativePath: { regex: "/tech4_m/" }) {
+      childImageSharp {
+        fluid(quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

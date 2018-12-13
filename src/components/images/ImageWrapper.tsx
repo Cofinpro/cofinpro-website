@@ -3,8 +3,9 @@ import React from 'react';
 import ContentfulImage from './ContentfulImage';
 import BootstrapImage from './BootstrapImage';
 import SharpImage from './SharpImage';
+import IconImage from './IconImage';
 import PlaceholderImage from './PlaceholderImage';
-import { SharpImage as SharpImageModel } from 'models/SharpImage';
+import { SharpImageFluid as SharpImageModel } from 'models/SharpImageFluid';
 
 import './ImageWrapper.scss';
 
@@ -56,8 +57,8 @@ export class ImageWrapper extends React.Component<Props> {
         return <PlaceholderImage {...this.props} />;
       case SourceTyp.Icon:
         // tslint:disable-next-line:prettier
-        // TODO return <IconImage {...this.props} />;
-        throw new Error('Brauchen wir IconImage noch?');
+        return <IconImage {...this.props} />;
+      // throw new Error('Brauchen wir IconImage noch? ja...');
       default:
         return null;
     }

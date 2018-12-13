@@ -1,29 +1,37 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import FokusThemenFachLayout from 'components/layouts/FokusThemenFachLayout';
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
-import { SharpImage } from 'models/SharpImage';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   data: {
     allContentfulFokusthemaEinteilung: any;
-    processImageSharp: SharpImage;
-    processImageSharpM: SharpImage;
-    titelBildDesktopSharp: SharpImage;
-    titelBildMobileSharp: SharpImage;
+    processImageSharp: SharpImageFluid;
+    processImageSharpM: SharpImageFluid;
+    titelBildDesktopSharp: SharpImageFluid;
+    titelBildMobileSharp: SharpImageFluid;
   };
+  location: any;
+  history: any;
 }
 
 class BeratungsfelderKredit extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     const focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
     const fokusthemen = [...focusThemsWrapper.fokusthemenKredit];
 
     return (
-      <div>
+      <Layout location={this.props.location}>
         <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
@@ -155,7 +163,7 @@ class BeratungsfelderKredit extends React.Component<Props> {
             }}
           />
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -181,24 +189,36 @@ export const pageQuery = graphql`
         }
       }
     }
-    titelBildDesktopSharp: imageSharp(id: { regex: "/Kredit-Titelbild-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
+
+    titelBildDesktopSharp: file(relativePath: { regex: "/Kredit-Titelbild-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    titelBildMobileSharp: imageSharp(id: { regex: "/Kredit-Titelbild-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+
+    titelBildMobileSharp: file(relativePath: { regex: "/Kredit-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    processImageSharp: imageSharp(id: { regex: "/fb1/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    processImageSharp: file(relativePath: { regex: "/fb1/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    processImageSharpM: imageSharp(id: { regex: "/kreditprozessmobile/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    processImageSharpM: file(relativePath: { regex: "/kreditprozessmobile/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

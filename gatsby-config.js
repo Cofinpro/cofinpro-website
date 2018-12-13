@@ -44,8 +44,7 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        plugins: [
-          {
+        plugins: [{
             resolve: 'gatsby-remark-external-links',
             options: {
               target: '_blank',
@@ -61,9 +60,16 @@ module.exports = {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: 'niza6hilizwt',
-        accessToken:
-          'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
+        accessToken: 'a704fc9382cff5b6845fcf5bfe9c60bd55613437cd05898442c7c4e820e1a0bd',
       },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: `/svg-icons/fokusthemen/`,
+        }
+      }
     },
     {
       resolve: 'gatsby-plugin-manifest',

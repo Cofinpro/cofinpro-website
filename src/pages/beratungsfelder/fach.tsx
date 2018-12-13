@@ -1,22 +1,30 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import LinkButton from 'components/buttons/LinkButton';
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
-import { SharpImage } from 'models/SharpImage';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   data: {
-    titelBildDesktopSharp: SharpImage;
-    titelBildMobileSharp: SharpImage;
+    titelBildDesktopSharp: SharpImageFluid;
+    titelBildMobileSharp: SharpImageFluid;
   };
+  location: any;
+  history: any;
 }
 
 class BeratungsfelderFach extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div>
+      <Layout {...this.props}>
         <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
@@ -90,7 +98,7 @@ class BeratungsfelderFach extends React.Component<Props> {
             <div className="col-md-3" />
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -99,14 +107,19 @@ export default BeratungsfelderFach;
 
 export const pageQuery = graphql`
   query BeratungsfelderFachQuery {
-    titelBildDesktopSharp: imageSharp(id: { regex: "/Fachberatung-Titelbild-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
+    titelBildDesktopSharp: file(relativePath: { regex: "/Fachberatung-Titelbild-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    titelBildMobileSharp: imageSharp(id: { regex: "/Fachberatung-Titelbild-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+
+    titelBildMobileSharp: file(relativePath: { regex: "/Fachberatung-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

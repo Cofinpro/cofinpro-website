@@ -1,28 +1,36 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import LinkButton from 'components/buttons/LinkButton';
 import HtmlHeader from 'components/HtmlHeader';
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
-import { SharpImage } from 'models/SharpImage';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   data: {
-    mngmtHeroImageSharp: SharpImage;
-    fachHeroImageSharp: SharpImage;
-    techHeroImageSharp: SharpImage;
+    mngmtHeroImageSharp: SharpImageFluid;
+    fachHeroImageSharp: SharpImageFluid;
+    techHeroImageSharp: SharpImageFluid;
   };
+  location: any;
+  history: any;
 }
 
 class BeratungsfelderStartseite extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     const seoTitle = 'Beratungsfelder - Management-, Fach- und Technologieberatung';
     const seoDescription =
       'Wir sind Experten für Kredit und Wertpapier und beraten führende Banken und Kapitalverwaltungsgesellschaften. Als Managementberater, Fachberater und Technologieberater haben wir die Zukunftsfähigkeit unserer Kunden im Blick.';
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -101,7 +109,7 @@ class BeratungsfelderStartseite extends React.Component<Props> {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -110,39 +118,27 @@ export default BeratungsfelderStartseite;
 
 export const pageQuery = graphql`
   query BeratungsfelderQuery {
-    imageCool: imageSharp {
-      fluid(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpFluid
+    mngmtHeroImageSharp: file(relativePath: { regex: "/Management-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilLinksSharp: imageSharp(id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+
+    fachHeroImageSharp: file(relativePath: { regex: "/Fachberatung-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilMitteSharp: imageSharp(id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    iconVorteilRechtsSharp: imageSharp(id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    mngmtHeroImageSharp: imageSharp(id: { regex: "/Management-Titelbild-Mobile/" }) {
-      fluid(quality: 80, maxWidth: 800) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    fachHeroImageSharp: imageSharp(id: { regex: "/Fachberatung-Titelbild-Mobile/" }) {
-      fluid(quality: 80, maxWidth: 800) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    techHeroImageSharp: imageSharp(id: { regex: "/Technologie-Titelbild-Mobile/" }) {
-      fluid(quality: 80, maxWidth: 800) {
-        ...GatsbyImageSharpFluid
+
+    techHeroImageSharp: file(relativePath: { regex: "/Technologie-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 800) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

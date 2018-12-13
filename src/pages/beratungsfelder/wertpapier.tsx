@@ -1,31 +1,39 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import PageIntroText from 'components/PageIntroText';
 import FokusThemenFachLayout from 'components/layouts/FokusThemenFachLayout';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
-import { SharpImage } from 'models/SharpImage';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   data: {
     allContentfulFokusthemaEinteilung: any;
-    titelBildDesktopSharp: SharpImage;
-    titelBildMobileSharp: SharpImage;
-    processImageSharp: SharpImage;
-    processImageSharpM: SharpImage;
-    process2ImageSharp: SharpImage;
-    process2ImageSharpM: SharpImage;
+    titelBildDesktopSharp: SharpImageFluid;
+    titelBildMobileSharp: SharpImageFluid;
+    processImageSharp: SharpImageFluid;
+    processImageSharpM: SharpImageFluid;
+    process2ImageSharp: SharpImageFluid;
+    process2ImageSharpM: SharpImageFluid;
   };
+  location: any;
+  history: any;
 }
 
 class BeratungsfelderWertpapierTemplate extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     const focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
     const fokusthemen = [...focusThemsWrapper.fokusthemenWertpapier];
 
     return (
-      <div>
+      <Layout location={this.props.location}>
         <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
@@ -159,7 +167,7 @@ class BeratungsfelderWertpapierTemplate extends React.Component<Props> {
             />
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -185,34 +193,52 @@ export const pageQuery = graphql`
         }
       }
     }
-    titelBildDesktopSharp: imageSharp(id: { regex: "/Wertpapier-Titelbild-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
+
+    titelBildDesktopSharp: file(relativePath: { regex: "/Wertpapier-Titelbild-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    titelBildMobileSharp: imageSharp(id: { regex: "/Wertpapier-Titelbild-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+
+    titelBildMobileSharp: file(relativePath: { regex: "/Wertpapier-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    processImageSharp: imageSharp(id: { regex: "/fb2/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    processImageSharp: file(relativePath: { regex: "/fb2/" }) {
+      childImageSharp {
+        fluid(quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    process2ImageSharp: imageSharp(id: { regex: "/fb3/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    process2ImageSharp: file(relativePath: { regex: "/fb3/" }) {
+      childImageSharp {
+        fluid(quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    processImageSharpM: imageSharp(id: { regex: "/prozessmobile2/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    processImageSharpM: file(relativePath: { regex: "/prozessmobile2/" }) {
+      childImageSharp {
+        fluid(quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    process2ImageSharpM: imageSharp(id: { regex: "/prozessmobile3/" }) {
-      fluid(quality: 100) {
-        ...GatsbyImageSharpFluid
+
+    process2ImageSharpM: file(relativePath: { regex: "/prozessmobile3/" }) {
+      childImageSharp {
+        fluid(quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

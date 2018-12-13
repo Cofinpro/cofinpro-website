@@ -1,30 +1,36 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import ReferenzAndDownload from 'components/ReferenzAndDownload';
 import FokusThemenSmallLayout from 'components/layouts/FokusThemenSmallLayout';
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
-import { SharpImage } from 'models/SharpImage';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   data: {
     allContentfulFokusthemaEinteilung: any;
-    processImageSharp: SharpImage;
-    processImageSharpM: SharpImage;
-    titelBildDesktopSharp: SharpImage;
-    titelBildMobileSharp: SharpImage;
-    managementMatrixSharp: SharpImage;
+    titelBildDesktopSharp: SharpImageFluid;
+    titelBildMobileSharp: SharpImageFluid;
+    managementMatrixSharp: SharpImageFluid;
   };
+  location: any;
+  history: any;
 }
 
 class BeratungsfelderManagementTemplate extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   render() {
     const focusThemsWrapper = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
     const fokusthemen = [...focusThemsWrapper.fokusthemenManagement];
 
     return (
-      <div>
+      <Layout location={this.props.location}>
         <div className="container negative-margin-30-top">
           <div className="row">
             <div className="col-md-12">
@@ -110,7 +116,7 @@ class BeratungsfelderManagementTemplate extends React.Component<Props> {
             }}
           />
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -136,19 +142,28 @@ export const pageQuery = graphql`
         }
       }
     }
-    titelBildDesktopSharp: imageSharp(id: { regex: "/Management-Titelbild-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
+
+    titelBildDesktopSharp: file(relativePath: { regex: "/Management-Titelbild-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    titelBildMobileSharp: imageSharp(id: { regex: "/Management-Titelbild-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+
+    titelBildMobileSharp: file(relativePath: { regex: "/Management-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    managementMatrixSharp: imageSharp(id: { regex: "/Management-Beratungsmatrix/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+
+    managementMatrixSharp: file(relativePath: { regex: "/Management-Beratungsmatrix/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
