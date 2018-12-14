@@ -1,0 +1,55 @@
+image: node:8.9.1
+
+stages:
+- build
+- deployDev
+- deployProd
+
+variables:
+  BUCKET_NAME_DEV: cofinpro-website-dev
+  BUCKET_NAME_PROD: cofinpro-website
+ 
+gatsbyBuild:
+  stage: build
+  script:
+    - npm install
+    - npm install gatsby-cli
+    - node_modules/.bin/gatsby build --prefix-paths
+  artifacts:
+    paths:
+    - public
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+      - public
+
+deploys3dev:
+  image: "python:3.6.6"  # We use python because there is a well-working AWS Sdk
+  stage: deployDev
+  dependencies:
+    - gatsbyBuild
+  before_script:
+    - pip install awscli # Install the SDK
+  script:
+    - aws s3 cp public s3://${BUCKET_NAME_DEV} --recursive
+  environment:
+    name: 's3-deploy'
+    url: http://${BUCKET_NAME_DEV}.s3-website.eu-central-1.amazonaws.com  # This is the url of the bucket we saved before
+  only:
+    - dev-main-website
+
+deploys3prod:
+  image: "python:3.6.6"  # We use python because there is a well-working AWS Sdk
+  stage: deployProd
+  dependencies:
+    - gatsbyBuild
+  before_script:
+    - pip install awscli # Install the SDK
+  script:
+    - aws s3 cp public s3://${BUCKET_NAME_PROD} --recursive
+  environment:
+    name: 's3-deploy'
+    url: http://${BUCKET_NAME_PROD}.s3-website.eu-central-1.amazonaws.com  # This is the url of the bucket we saved before
+  only:
+    - master

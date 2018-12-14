@@ -70,12 +70,26 @@ class NewsMedienVerteiler extends React.Component<Props> {
                 uns derzeit beschäftigen und welche Lösungswege wir gehen. Dazu gehört auch unser eigener Podcast, für den sich unsere
                 Experten regelmäßig ans Mikro setzen, um aktuelle Herausforderungen und Trendthemen zu diskutieren.
               </p>
-              <ExternalLinkButton
-                styleSpan="w-100 w-md-unset margin-10-top"
-                text="ZUM BLOG"
-                _target="_blank"
-                _href="https://medium.com/cofinpro"
-              />
+              <div className="row">
+                <div className="col-12 col-md-auto">
+                  <ExternalLinkButton
+                    styleSpan="w-100 w-md-unset margin-10-top"
+                    styleLink="d-block"
+                    text="ZUM BLOG"
+                    _target="_blank"
+                    _href="https://medium.com/cofinpro"
+                  />
+                </div>
+                <div className="col-12 col-md-auto">
+                  <ExternalLinkButton
+                    styleSpan="w-100 w-md-unset margin-10-top"
+                    styleLink="d-block"
+                    text="ZUM PODCAST"
+                    _target="_blank"
+                    _href="https://podcast.cofinpro.de"
+                  />
+                </div>
+              </div>
             </div>
             <div className="col-12 col-md-6 order-1 order-md-2">
               <ImageWrapper sourceType={SourceTyp.Sharp} source={this.props.data.blogImage} />

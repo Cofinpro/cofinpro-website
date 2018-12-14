@@ -82,5 +82,6 @@ module.exports = {
         icon: config.favicon,
       },
     },
+    'gatsby-plugin-meta-redirect',
   ]
 };

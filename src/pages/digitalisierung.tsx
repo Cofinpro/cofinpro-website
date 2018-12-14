@@ -63,7 +63,7 @@ class ThemaDigitalisierung extends React.Component<Props> {
         <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
           <div className="row">
             <div className="col-12 col-md-9 col-lg-7">
-              <h2 className="h2">Wo liegen unsere Stärken in der Digitalisierung?</h2>
+              <h2 className="h2">Ganzheitlich muss es sein</h2>
               <p>
                 Unsere Leistungen sind auf führende Finanzdienstleister zugeschnitten. Zunächst stand die Modernisierung exemplarischer
                 Geschäftsmodelle, der Aufbau von Innovationslaboren und die Digitalisierungsstrategie im Vordergrund.{' '}

@@ -106,7 +106,7 @@ function getDestinationPath(edge) {
   if (isImage(newFileName)) {
     return './static/img/contentful/' + newFileName
   } else if (isPdf(newFileName)) {
-    return './static/pdf/contentful/' + newFileName
+    return './static/pdf/contentful/' + newFileName.replace('.PDF', '.pdf')
   }
 }
 
