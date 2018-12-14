@@ -1,6 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from 'components/Layout';
+
 import LinkButton from 'components/buttons/LinkButton';
 import ThreeIconsWithLinks from 'components/layouts/ThreeIconsWithLinks';
 import PageIntroText from 'components/PageIntroText';
@@ -23,7 +25,7 @@ class Media {
 class DownloadMedia extends Media {
   constructor(input: any) {
     super();
-    this.to = `/pdf/contentful/${input.datei.id}.pdf`;
+    this.to = `/pdf/contentful/${input.datei.contentful_id}.pdf`;
     this.linkType = 'external';
     this.header = input.beschriftungDesDownloads;
     this.date = input.datumDerVerffentlichung;
@@ -47,7 +49,7 @@ class VeroeffentlichungMedia extends Media {
       return input.urlDerVerffentlichung;
     }
     if (!!input.pdfDatei) {
-      return `/pdf/contentful/${input.pdfDatei.id}.pdf`;
+      return `/pdf/contentful/${input.pdfDatei.contentful_id}.pdf`;
     }
 
     return '';
@@ -72,15 +74,18 @@ interface Props {
     allContentfulMedienEinteilung: any;
     titelBildDesktopSharp: SharpImage;
     titelBildMobileSharp: SharpImage;
-    iconVorteilLinksSharp: SharpImage;
-    iconVorteilMitteSharp: SharpImage;
-    iconVorteilRechtsSharp: SharpImage;
     newsMedienLinks: SharpImage;
     newsMedienRechts: SharpImage;
   };
+  location: any;
+  history: any;
 }
 
 class Startseite extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+  }
+
   getMedien(medienEinteilung: any): Media[] {
     let medien: any[] = [];
 
@@ -108,7 +113,8 @@ class Startseite extends React.Component<Props> {
     const fokusthemen = focusThemsWrapper.fokusthemenStartseite.map((x: any) => x);
 
     const medienEinteilungWrapper = this.props.data.allContentfulMedienEinteilung.edges;
-    const medienEinteilung = medienEinteilungWrapper.find((x: any) => x.node.id === 'A2YNdv1hwOCuGueqyCiMO').node;
+
+    const medienEinteilung = medienEinteilungWrapper.find((x: any) => x.node.contentful_id === 'A2YNdv1hwOCuGueqyCiMO').node;
     const medien = this.getMedien(medienEinteilung);
 
     const seoTitle = 'Cofinpro - Die Experten für Management-, Fach- und Technologieberatung';
@@ -116,7 +122,7 @@ class Startseite extends React.Component<Props> {
       'Wir sind die Management-, Fach- und Technologieberatung für Deutschlands führende Banken und Kapitalverwaltungsgesellschaften.';
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -160,16 +166,16 @@ class Startseite extends React.Component<Props> {
 
         <ThreeIconsWithLinks
           styleClass="d-none d-md-block margin-80-top"
-          iconLeft={this.props.data.iconVorteilLinksSharp}
+          iconLeft={'/img/contentful/ZEiMMpHD0Ium86MUc6oi0.jpg'}
           titleLeft="Managementberatung"
           linkLeft={'/beratungsfelder/management'}
-          iconMiddle={this.props.data.iconVorteilMitteSharp}
+          iconMiddle={'/img/contentful/c14zZzUPkdQy4gMImWEWAMS.jpg'}
           titleMiddle="Fachberatung"
           linkMiddle={'/beratungsfelder/fach'}
-          iconRight={this.props.data.iconVorteilRechtsSharp}
+          iconRight={'/img/contentful/c6jYnfcyIh2Q4Mm4YMiI822.jpg'}
           titleRight="Technologieberatung"
           linkRight={'/beratungsfelder/technologie'}
-          sourceTyp={SourceTyp.Sharp}
+          sourceTyp={SourceTyp.Bootstrap}
         />
 
         <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
@@ -183,14 +189,14 @@ class Startseite extends React.Component<Props> {
               {medien.length > 0 && (
                 <NewsMedienPreview
                   content={{
-                    url: medien[0].to,
-                    linkType: medien[0].linkType,
-                    header: medien[0].header,
-                    subHeader: medien[0].subHeader,
+                    url: medien[0][0].to,
+                    linkType: medien[0][0].linkType,
+                    header: medien[0][0].header,
+                    subHeader: medien[0][0].subHeader,
                     image: this.props.data.newsMedienLinks,
-                    date: medien[0].date,
-                    publishedBy: medien[0].publishedBy,
-                    intro: medien[0].description,
+                    date: medien[0][0].date,
+                    publishedBy: medien[0][0].publishedBy,
+                    intro: medien[0][0].description,
                   }}
                 />
               )}
@@ -199,14 +205,14 @@ class Startseite extends React.Component<Props> {
               {medien.length > 1 && (
                 <NewsMedienPreview
                   content={{
-                    url: medien[1].to,
-                    linkType: medien[1].linkType,
-                    header: medien[1].header,
-                    subHeader: medien[1].subHeader,
+                    url: medien[1][0].to,
+                    linkType: medien[1][0].linkType,
+                    header: medien[1][0].header,
+                    subHeader: medien[1][0].subHeader,
                     image: this.props.data.newsMedienRechts,
-                    date: medien[1].date,
-                    publishedBy: medien[1].publishedBy,
-                    intro: medien[1].description,
+                    date: medien[1][0].date,
+                    publishedBy: medien[1][0].publishedBy,
+                    intro: medien[1][0].description,
                   }}
                 />
               )}
@@ -235,7 +241,7 @@ class Startseite extends React.Component<Props> {
             container: 'margin-120-top margin-md-100-top margin-xs-80-top',
           }}
         />
-      </div>
+      </Layout>
     );
   }
 }
@@ -248,8 +254,10 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          contentful_id
           fokusthemenStartseite {
             id
+            contentful_id
             url
             uberschriftGanzOben
             unterueberschrift
@@ -265,8 +273,10 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          contentful_id
           startseiteVerlinkungZuDownloads {
             id
+            contentful_id
             contentfulInternerName
             datumDerVerffentlichung
             beschriftungDesDownloads
@@ -278,17 +288,20 @@ export const pageQuery = graphql`
             }
             datei {
               id
+              contentful_id
               title
               description
             }
           }
           startseiteVerlinkungZuPressemeldungen {
             id
+            contentful_id
             contentfulInternerName
             verffentlichungsdatum
             urlDerSeite
             downloadDatei {
               id
+              contentful_id
               title
               description
             }
@@ -305,6 +318,7 @@ export const pageQuery = graphql`
           }
           startseiteVerlinkungZuVeroeffentlichungen {
             id
+            contentful_id
             contentfulInternerName
             datumDerVerffentlichung
             ueberschrift
@@ -312,6 +326,7 @@ export const pageQuery = graphql`
             zuordnungZuBereiche
             pdfDatei {
               id
+              contentful_id
               title
               description
             }
@@ -323,39 +338,36 @@ export const pageQuery = graphql`
         }
       }
     }
-    iconVorteilLinksSharp: imageSharp(id: { regex: "/ZEiMMpHD0Ium86MUc6oi0/" }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+
+    titelBildDesktopSharp: file(relativePath: { regex: "/Startseite-Titelbild-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1400) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilMitteSharp: imageSharp(id: { regex: "/c14zZzUPkdQy4gMImWEWAMS/" }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+
+    titelBildMobileSharp: file(relativePath: { regex: "/Startseite-Titelbild-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilRechtsSharp: imageSharp(id: { regex: "/c6jYnfcyIh2Q4Mm4YMiI822/" }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+
+    newsMedienLinks: file(relativePath: { regex: "/startseite-b12/" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    titelBildDesktopSharp: imageSharp(id: { regex: "/Startseite-Titelbild-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 2000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    titelBildMobileSharp: imageSharp(id: { regex: "/Startseite-Titelbild-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    newsMedienLinks: imageSharp(id: { regex: "/startseite-b12/" }) {
-      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-    newsMedienRechts: imageSharp(id: { regex: "/startseite-b17/" }) {
-      fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
-        ...GatsbyImageSharpFluid
+
+    newsMedienRechts: file(relativePath: { regex: "/startseite-b17/" }) {
+      childImageSharp {
+        fluid(quality: 100, maxWidth: 1000, maxHeight: 595, cropFocus: CENTER) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

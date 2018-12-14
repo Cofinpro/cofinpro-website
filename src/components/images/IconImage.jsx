@@ -22,7 +22,8 @@ import SettlementIcon from '!svg-react-loader!../images/svg-icons/fokusthemen/se
 import SteuergesetzgebungIcon from '!svg-react-loader!../images/svg-icons/fokusthemen/steuergesetzgebung.svg';
 import UnbundlingbanksIcon from '!svg-react-loader!../images/svg-icons/fokusthemen/unbundlingbanks.svg';
 
-class IconImage extends React.Component {
+export class IconImage extends React.Component {
+
   componentDidMount() {
     $('.icon-image__icon-wrapper').each(function() {
       $(this)
@@ -31,6 +32,7 @@ class IconImage extends React.Component {
       $(this)
         .find('rect[stroke]')
         .attr('stroke', $(this).css('fill'));
+      $(this).find('rect').css('stroke', $(this).css('fill'))
     });
   }
 
