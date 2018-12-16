@@ -6,6 +6,7 @@ import HtmlHeader from 'components/HtmlHeader';
 import ContentMaxParagraph from './ContentMaxParagraph';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 import { SharpImage } from 'models/SharpImage';
+import Layout from 'components/Layout';
 
 interface Paragraph {
   text: string;
@@ -13,6 +14,7 @@ interface Paragraph {
 }
 
 interface Props {
+  location: any;
   pageContext: {
     content: any;
     paragraphThreeImageSharp: SharpImage;
@@ -50,7 +52,7 @@ class ContentseiteMax extends React.Component<Props> {
     const seoDescription = !!content.introText ? content.introText.introText.substring(0, 215) : seoTitle;
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -149,7 +151,7 @@ class ContentseiteMax extends React.Component<Props> {
               </div>
             </div>
           )}
-      </div>
+      </Layout>
     );
   }
 }

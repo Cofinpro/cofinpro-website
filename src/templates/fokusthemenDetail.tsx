@@ -7,6 +7,7 @@ import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import StockphotoWithExternalLink from 'components/images/StockphotoWithExternalLink';
 import PageIntroText from 'components/PageIntroText';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
+import Layout from 'components/Layout';
 
 interface Link {
   title: string;
@@ -22,6 +23,7 @@ interface Medien {
 }
 
 interface Props {
+  location: any;
   data: {
     contentfulFokusthema: any;
     stockImageOne: any;
@@ -131,7 +133,7 @@ class FokusthemenDetailTeamplate extends React.Component<Props> {
     const seoDescription = !!graphQlResult.headline ? graphQlResult.headline.headline : seoTitel;
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: `Fokusthema: ${seoTitel}`,
@@ -280,7 +282,7 @@ class FokusthemenDetailTeamplate extends React.Component<Props> {
             }}
           />
         ))}
-      </div>
+      </Layout>
     );
   }
 }

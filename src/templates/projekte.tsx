@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import Layout from 'components/Layout';
 import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import ToggleWithButton from 'components/buttons/ToggleWithButton';
 import NavigationBeratungsfelder from 'components/navigation/NavigationBeratungsfelder';
@@ -9,6 +10,7 @@ import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 
 interface Props {
+  location: any;
   pageContext: {
     title: string;
     description: string;
@@ -29,7 +31,7 @@ interface LayoutProps {
 class ProjekteUebersicht extends React.Component<Props> {
   render() {
     // tslint:disable-next-line:function-name
-    function Layout(props: LayoutProps) {
+    function ProjektLayout(props: LayoutProps) {
       return (
         <div className={`container ${props.style.container}`}>
           {props.projects.map((item, index) => {
@@ -132,7 +134,7 @@ class ProjekteUebersicht extends React.Component<Props> {
     const seoDescription = description;
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitel,
@@ -165,10 +167,10 @@ class ProjekteUebersicht extends React.Component<Props> {
           description={'Aus welchem unserer Beratungsfelder möchten Sie Projekte ansehen? Wählen Sie selbst.'}
         />
 
-        <Layout projects={firstShowProjects} images={backgroundImages} imageIndexOffset={0} style={{ container: 'margin-60-top' }} />
+        <ProjektLayout projects={firstShowProjects} images={backgroundImages} imageIndexOffset={0} style={{ container: 'margin-60-top' }} />
 
         <div className="collapse" id="collapse-more-projects">
-          <Layout projects={moreProjects} images={backgroundImages} imageIndexOffset={7} style={{ container: '' }} />
+          <ProjektLayout projects={moreProjects} images={backgroundImages} imageIndexOffset={7} style={{ container: '' }} />
         </div>
         {moreProjects.length > 0 && (
           <div className="container margin-40-top">
@@ -177,7 +179,7 @@ class ProjekteUebersicht extends React.Component<Props> {
             </div>
           </div>
         )}
-      </div>
+      </Layout>
     );
   }
 }

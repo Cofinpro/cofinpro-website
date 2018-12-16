@@ -8,8 +8,10 @@ import PageIntroText from 'components/PageIntroText';
 import PresseKontakt from 'components/PresseKontakt';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 import { SharpImage } from '../models/SharpImage';
+import Layout from 'components/Layout';
 
 interface Props {
+  location: any;
   data: {
     newsImage: SharpImage;
     blogImage: SharpImage;
@@ -23,7 +25,7 @@ class NewsMedienVerteiler extends React.Component<Props> {
       'Weil Zukunft unser Geschäft ist, tut sich bei uns ständig etwas, und natürlich wollen wir Sie daran teilhaben lassen. Wenn Sie erfahren möchten, welche Neuigkeiten unsere Experten haben, sind Sie hier ganz richtig.';
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -104,7 +106,7 @@ class NewsMedienVerteiler extends React.Component<Props> {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }

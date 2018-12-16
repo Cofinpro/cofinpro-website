@@ -6,9 +6,11 @@ import NavigationBeratungsfelder from 'components/navigation/NavigationBeratungs
 import HtmlHeader from 'components/HtmlHeader';
 import PageIntroText from 'components/PageIntroText';
 import { SharpImage } from 'models/SharpImage';
-import { ArchivpageContext } from 'models/ArchivpageContext';
+import { ArchivpageContext } from 'models/ArchivPathContext';
+import Layout from 'components/Layout';
 
 interface Props {
+  location: any;
   data: {
     studienOneSharp: SharpImage;
     studienTwoSharp: SharpImage;
@@ -33,7 +35,7 @@ class StudienArchivTemplate extends React.Component<Props> {
     const seoDescription = siteDescription;
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitel,
@@ -120,7 +122,7 @@ class StudienArchivTemplate extends React.Component<Props> {
             </div>
           );
         })}
-      </div>
+      </Layout>
     );
   }
 }

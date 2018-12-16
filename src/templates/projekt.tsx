@@ -4,8 +4,10 @@ import { graphql } from 'gatsby';
 import ContentfulMarkdownText from 'components/ContentfulMarkdownText';
 import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
+import Layout from 'components/Layout';
 
 interface Props {
+  location: any;
   data: any;
   pageContext: {
     bigImage: any;
@@ -25,7 +27,7 @@ class Projekt extends React.Component<Props> {
     const seoDescription = seoTitle;
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -94,7 +96,7 @@ class Projekt extends React.Component<Props> {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }

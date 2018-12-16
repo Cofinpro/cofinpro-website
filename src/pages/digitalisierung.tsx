@@ -7,8 +7,10 @@ import ThreeIconsWithLinks from 'components/layouts/ThreeIconsWithLinks';
 import FokusThemenFachLayout from 'components/layouts/FokusThemenFachLayout';
 import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
+import Layout from 'components/Layout';
 
 interface Props {
+  location: any;
   data: any;
 }
 
@@ -24,7 +26,7 @@ class ThemaDigitalisierung extends React.Component<Props> {
     const fokusthemen = fokusthema.map((x: any) => x.fokusthemenDigitalisierungsseite);
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -170,7 +172,7 @@ class ThemaDigitalisierung extends React.Component<Props> {
             },
           }}
         />
-      </div>
+      </Layout>
     );
   }
 }

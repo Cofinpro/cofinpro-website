@@ -4,8 +4,10 @@ import FokusthemenLayout from 'components/layouts/FokusthemenLayout';
 import NavigationBeratungsfelder from 'components/navigation/NavigationBeratungsfelder';
 import HtmlHeader from 'components/HtmlHeader';
 import PageIntroText from 'components/PageIntroText';
+import Layout from 'components/Layout';
 
 interface Props {
+  location: any;
   pageContext: {
     name: string;
     header: string;
@@ -25,7 +27,7 @@ class FokusthemenStartseite extends React.Component<Props> {
     const seoDescription = `${seoTitel} - Hier finden Sie alle unsere aktuellen Fokusthemen auf einen Blick. Entdecken sie unsere Themenvielfalt.`;
 
     return (
-      <div>
+      <Layout {...this.props}>
         <HtmlHeader
           direktData={{
             title: seoTitel,
@@ -68,7 +70,7 @@ class FokusthemenStartseite extends React.Component<Props> {
           showButton={false}
           style={{ container: 'margin-60-top' }}
         />
-      </div>
+      </Layout>
     );
   }
 }
