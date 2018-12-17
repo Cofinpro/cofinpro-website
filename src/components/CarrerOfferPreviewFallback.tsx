@@ -18,7 +18,7 @@ class CarrerOfferPreviewFallback extends React.Component<Props> {
               className="text-dark d-block"
               target="_blank"
               rel="noopener"
-              href="https://recruitingapp-2586.umantis.com/Vacancies/297/Application/CheckLogin/1?lang=ger"
+              href="https://recruitingapp-2586.umantis.com/Vacancies/337/Application/CheckLogin/1?lang=ger"
             >
               <p className="no-margin-bottom text-left padding-sm-bottom">
                 Dass wir hier aktuell keinen Job ausgeschrieben haben, bedeutet nicht, dass wir Dich nicht kennenlernen möchten.
