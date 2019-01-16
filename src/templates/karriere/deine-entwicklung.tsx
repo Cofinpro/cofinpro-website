@@ -9,9 +9,11 @@ import SiteHeaderContent from 'components/SiteHeaderContent';
 import ContentfulImage from 'components/images/ContentfulImage';
 import HtmlHeader from 'components/HtmlHeader';
 import LinkButton from 'components/buttons/LinkButton';
+import Layout from 'components/Layout';
 
 interface Props {
   data: any;
+  location: any;
 }
 
 class DeineEntwicklungTemplate extends React.Component<Props> {
@@ -19,7 +21,7 @@ class DeineEntwicklungTemplate extends React.Component<Props> {
     const graphQlResult = this.props.data.contentfulSeiteDeineEntwicklung;
 
     return (
-      <div>
+      <Layout location={this.props.location}>
         <HtmlHeader dataFromCms={graphQlResult.metaData} {...this.props} />
 
         <HeroImageLayout
@@ -78,7 +80,7 @@ class DeineEntwicklungTemplate extends React.Component<Props> {
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }
@@ -226,29 +228,39 @@ export const pageQuery = graphql`
         }
       }
     }
-    imageTitelBildSharp: imageSharp(id: { regex: $titelbildId }) {
-      fluid(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpFluid
+    imageTitelBildSharp: file(relativePath: { regex: $titelbildId }) {
+      childImageSharp {
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    imageTitelBildKleinSharp: imageSharp(id: { regex: $titelbildKleinId }) {
-      fluid(maxWidth: 1600, quality: 90) {
-        ...GatsbyImageSharpFluid
+    imageTitelBildKleinSharp: file(relativePath: { regex: $titelbildKleinId }) {
+      childImageSharp {
+        fluid(maxWidth: 1600, quality: 90) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilLinksSharp: imageSharp(id: { regex: $vorteilIconLinksId }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+    iconVorteilLinksSharp: file(relativePath: { regex: $vorteilIconLinksId }) {
+      childImageSharp {
+        fluid(quality: 60) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilMitteSharp: imageSharp(id: { regex: $vorteilIconMitteId }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+    iconVorteilMitteSharp: file(relativePath: { regex: $vorteilIconMitteId }) {
+      childImageSharp {
+        fluid(quality: 60) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconVorteilRechtsSharp: imageSharp(id: { regex: $vorteilIconRechtsId }) {
-      fluid(quality: 60) {
-        ...GatsbyImageSharpFluid
+    iconVorteilRechtsSharp: file(relativePath: { regex: $vorteilIconRechtsId }) {
+      childImageSharp {
+        fluid(quality: 60) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

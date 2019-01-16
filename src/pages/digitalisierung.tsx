@@ -8,10 +8,18 @@ import FokusThemenFachLayout from 'components/layouts/FokusThemenFachLayout';
 import HtmlHeader from 'components/HtmlHeader';
 import { ImageWrapper, SourceTyp } from 'components/images/ImageWrapper';
 import Layout from 'components/Layout';
+import { SharpImageFluid } from 'models/SharpImageFluid';
 
 interface Props {
   location: any;
-  data: any;
+  data: {
+    allContentfulFokusthemaEinteilung: any;
+    ueberblickDigitalisierungDesktopSharp: SharpImageFluid;
+    ueberblickDigitalisierungMobileSharp: SharpImageFluid;
+    iconThemeOneSharp: SharpImageFluid;
+    iconThemeTwoSharp: SharpImageFluid;
+    iconThemeThreeSharp: SharpImageFluid;
+  };
 }
 
 class ThemaDigitalisierung extends React.Component<Props> {
@@ -23,10 +31,10 @@ class ThemaDigitalisierung extends React.Component<Props> {
       'Sämtliche unserer Leistungen sind auf führende Finanzdienstleister zugeschnitten. Nachdem zunächst die Modernisierung exemplarischer Geschäftsmodelle, der Aufbau von Innovationslaboren und die Digitalisierungsstrategie im Vordergrund stand, ist nun die Renovierung etablierter Vorgehensweisen, die Prozesskettenstraffung, der konsequente Transfer von Best Practices aus Keimzellen in Fachbereichen sowie die ganzheitliche Digitale Transformation ins Zentrum gerückt.';
 
     const fokusthema = this.props.data.allContentfulFokusthemaEinteilung.edges[0].node;
-    const fokusthemen = fokusthema.map((x: any) => x.fokusthemenDigitalisierungsseite);
+    const fokusthemen = [...fokusthema.fokusthemenDigitalisierungsseite];
 
     return (
-      <Layout {...this.props}>
+      <Layout location={this.props.location}>
         <HtmlHeader
           direktData={{
             title: seoTitle,
@@ -198,29 +206,39 @@ export const pageQuery = graphql`
         }
       }
     }
-    ueberblickDigitalisierungDesktopSharp: imageSharp(id: { regex: "/Digitalisierung-Uebersicht-Desktop/" }) {
-      fluid(quality: 80, maxWidth: 1800) {
-        ...GatsbyImageSharpFluid
+    ueberblickDigitalisierungDesktopSharp: file(relativePath: { regex: "/Digitalisierung-Uebersicht-Desktop/" }) {
+      childImageSharp {
+        fluid(quality: 80, maxWidth: 1800) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    ueberblickDigitalisierungMobileSharp: imageSharp(id: { regex: "/Digitalisierung-Uebersicht-Mobile/" }) {
-      fluid(quality: 80) {
-        ...GatsbyImageSharpFluid
+    ueberblickDigitalisierungMobileSharp: file(relativePath: { regex: "/Digitalisierung-Uebersicht-Mobile/" }) {
+      childImageSharp {
+        fluid(quality: 80) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconThemeOneSharp: imageSharp(id: { regex: "/machinelearning-color/" }) {
-      fluid(quality: 70) {
-        ...GatsbyImageSharpFluid
+    iconThemeOneSharp: file(relativePath: { regex: "/machinelearning-color/" }) {
+      childImageSharp {
+        fluid(quality: 70) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconThemeTwoSharp: imageSharp(id: { regex: "/unbundlingbanks-color/" }) {
-      fluid(quality: 70) {
-        ...GatsbyImageSharpFluid
+    iconThemeTwoSharp: file(relativePath: { regex: "/unbundlingbanks-color/" }) {
+      childImageSharp {
+        fluid(quality: 70) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
-    iconThemeThreeSharp: imageSharp(id: { regex: "/blockchain-color/" }) {
-      fluid(quality: 70) {
-        ...GatsbyImageSharpFluid
+    iconThemeThreeSharp: file(relativePath: { regex: "/blockchain-color/" }) {
+      childImageSharp {
+        fluid(quality: 70) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }
