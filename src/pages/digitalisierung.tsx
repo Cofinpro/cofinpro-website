@@ -113,33 +113,6 @@ class ThemaDigitalisierung extends React.Component<Props> {
           </div>
         </div>
 
-        <div className="container margin-120-top margin-md-100-top margin-xs-80-top">
-          <div className="row">
-            <div className="col-12 col-md-8 col-lg-6">
-              <h2 className="h2">Trends sind unser Ding</h2>
-              <p>
-                Wir unterstützen unsere Kunden in ihrem Ziel, Digitalisierungsstrategien zu entwickeln, und begleiten sie auf ihrem Weg zur
-                agilen Organisation. Themen, mit denen wir uns im Kontext der Digitalisierung aktuell beschäftigen, sind etwa digitale
-                Transformation, Machine Learning, Unbundling Banks und Blockchain.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <ThreeIconsWithLinks
-          styleClass="margin-40-top"
-          iconLeft={this.props.data.iconThemeOneSharp}
-          titleLeft="Machine Learning"
-          linkLeft={'/fokusthemen/thema/machine-learning'}
-          iconMiddle={this.props.data.iconThemeTwoSharp}
-          titleMiddle="Unbundling Banks"
-          linkMiddle={'/fokusthemen/thema/unbundling-banks'}
-          iconRight={this.props.data.iconThemeThreeSharp}
-          titleRight="Blockchain"
-          linkRight={'/fokusthemen/thema/blockchain'}
-          sourceTyp={SourceTyp.Sharp}
-        />
-
         <FokusThemenFachLayout
           style={{
             container: 'margin-120-top margin-xs-80-top',
